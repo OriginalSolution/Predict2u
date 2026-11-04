@@ -40,7 +40,6 @@
     {href:'board.html',label:'Picks',icon:'picks'},
     {href:'bankers.html',label:'Bankers',icon:'bankers'},
     {href:'engines.html',label:'Full Board',icon:'fullboard'},
-    {href:'all-engines.html',label:'Engines',icon:'engines'},
     {href:'team-rankings.html',label:'Teams',icon:'rankings'},
     {href:'news.html',label:'News',icon:'news'},
     {href:'community.html',label:'Community',icon:'community'}
@@ -49,7 +48,6 @@
     {href:'index.html',label:'Overview',mobileLabel:'Home',icon:'overview'},
     {href:'board.html',label:'Picks',icon:'picks'},
     {href:'bankers.html',label:'Bankers',icon:'bankers'},
-    {href:'all-engines.html',label:'Engines',icon:'engines'}
   ];
   const moreLinks=[
     {href:'engines.html',label:'Full Board',icon:'fullboard'},
