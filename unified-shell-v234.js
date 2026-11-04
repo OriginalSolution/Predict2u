@@ -92,7 +92,6 @@
     {href:'bankers.html',label:'Bankers',icon:'bankers'},
     {href:'news.html',label:'News',icon:'news'},
     {href:'community.html',label:'Community',icon:'community'},
-    {href:'all-engines.html',label:'Engines',icon:'engines'},
     {href:'proof.html',label:'Proof',icon:'proof'},
     {href:'hot-picks.html',label:'🔥 Hot Picks',icon:'hot'}
   ];
@@ -103,7 +102,6 @@
     {href:'community.html',label:'Community',icon:'community'}
   ];
   const moreLinks=[
-    {href:'all-engines.html',label:'Engines',icon:'engines'},
     {href:'board.html',label:'Board',icon:'picks'},
     {href:'proof.html',label:'Proof',icon:'proof'},
     {href:'engines.html',label:'Full Board',icon:'fullboard'},
