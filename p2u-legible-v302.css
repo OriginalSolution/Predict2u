@@ -1,0 +1,41 @@
+/* v302 legibility layer: solid code text, shimmer overlay only, high-contrast muted text */
+:root{--mut:#c9d1d9;--tx:#f3f6fa}
+body{line-height:1.5}
+/* solid backdrop behind text on glass/gradient cards */
+.cc-card,.hp-code-c,.bp-book,.bp-card,.hp-pick,.bcod{background:linear-gradient(160deg,#10231a,#070e0a)!important;backdrop-filter:none}
+#home-picks,.hp-wrap,.bp-car{background-color:#070b12}
+.cc-card,.hp-code-c,.bp-card,.hp-pick,.bcod,.bp-book{color:#f3f6fa;text-shadow:0 1px 2px #000c}
+/* codes: solid white, shimmer as overlay sweep */
+.cc-code,.hp-code-n,.bp-card-code,.bp-code,.bcod-code{color:#fff!important;-webkit-text-fill-color:#fff;background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;animation:none!important;position:relative;overflow:hidden;text-shadow:0 2px 6px #000,0 0 10px color-mix(in srgb,var(--brand,#1fdc7a) 45%,transparent)}
+.cc-code,.bp-card-code,.bcod-code{display:inline-block}
+.cc-code::after,.bp-card-code::after,.bp-code::after,.bcod-code::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,transparent 35%,#ffffff30 50%,transparent 65%) 0 0/250% 100%;animation:fxShine 3.5s linear infinite}
+.hp-code-n{font-family:system-ui,sans-serif!important;letter-spacing:0;color:#d7dee7!important;-webkit-text-fill-color:#d7dee7}
+/* muted text and labels */
+.hp-case,.cc-m,.bp-card-m,.hp-lr-s,.hp-lr-rest,.hp-mt,.hp-stats{color:#dde4ec!important}
+.cc-t,.bp-card-l,.bp-book small,.p2u-bankers-meta,.p2u-bankers-hero p,.p2u-bankers-note,.p2u-bankers-toolbar label,.bp-card-x,.hp-t,.hp-tl{color:#c9d1d9!important}
+.cc-n,.bp-card-n,.hp-code-w{color:#ffe08a!important}
+.hp-why{background:#1a2433!important;color:#ffd84d!important;border-color:#ffd84d66!important}
+.hp-pick.is-lost{opacity:1;filter:saturate(.6)}
+/* tables */
+.hp-wrap table,#home-picks table{background:#0b121c}
+.hp-wrap th,#home-picks th{background:#16263a!important;color:#fff!important;font-weight:800}
+.hp-wrap td,#home-picks td{color:#e8eef7!important;border-color:#ffffff1f}
+/* MSport yellow: dark text */
+.hp-code-h-ms,.bp-code-ms,.hp-code-ms button,[class*="-ms"] .bcod-chip{color:#111!important;-webkit-text-fill-color:#111;text-shadow:none}
+.hp-code-ms .hp-code-n{color:#fff!important;-webkit-text-fill-color:#fff}
+/* banker pop-up */
+.bcod-kick,.bcod-also,.bcod-18{color:#dbe7df!important;font-weight:700}
+.bcod-act,.bcod-all{color:#fff!important}
+/* phone sizing */
+@media(max-width:640px){
+ body{font-size:16px}
+ .hp-case,.cc-m,.bp-card-m,.p2u-bankers-hero p,.p2u-bankers-note{font-size:15px!important;line-height:1.5}
+ .cc-t,.cc-n,.bp-card-l,.bp-card-n,.bp-book small,.hp-code-n,.hp-code-w,.p2u-bankers-meta,.p2u-bankers-toolbar label,.bp-card-x,.hp-why,.bp-res,.bcod-kick,.bcod-also,.bcod-18,.hp-wrap th,.hp-wrap td{font-size:13px!important;font-weight:700}
+ .hp-wrap td,.hp-wrap th{font-size:13px!important}
+}
+@media(prefers-reduced-motion:reduce){.cc-code::after,.bp-card-code::after,.bp-code::after,.bcod-code::after{animation:none;display:none}}
+.cc-a a,.hp-code-c a:not(.hp-why){background:color-mix(in srgb,var(--brand,#1fdc7a) 78%,#000)!important;color:#fff!important;text-shadow:0 1px 2px #000a;font-weight:800}
+.cc-card[style*="ffd325"] .cc-a a,.hp-code-ms a{background:#ffd325!important;color:#111!important;text-shadow:none}
+.hp-sel small,.hp-pick small{color:#c9d1d9!important;font-weight:700}
+.hp-stats dt{color:#c9d1d9!important;font-weight:700;font-size:max(12px,.8rem)}.hp-stats dd{color:#fff!important}
+.hp-code-c p,.hp-code-i,.hp-code-c small{color:#e3e9f0!important}
