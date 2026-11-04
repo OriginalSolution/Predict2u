@@ -18,15 +18,15 @@
       .map(function(s,i){return Object.assign({},s,{label:'Slip '+(i+1)});});
   }
   var OPEN_KEY='p2u_books_open_v1';
-  function openState(){try{return JSON.parse(localStorage.getItem(OPEN_KEY))||null;}catch(e){return null;}}
-  function saveOpen(id,on){var st=openState()||{};st[id]=on;try{localStorage.setItem(OPEN_KEY,JSON.stringify(st));}catch(e){}}
+  function openState(){try{return JSON.parse(sessionStorage.getItem(OPEN_KEY))||null;}catch(e){return null;}}
+  function saveOpen(id,on){var st=openState()||{};st[id]=on;try{sessionStorage.setItem(OPEN_KEY,JSON.stringify(st));}catch(e){}}
   function legsHtml(s){return '<ul class="bp-card-legs">'+s.legs.map(function(x){return '<li><span>'+esc(ko(x.kickoff))+' '+esc(x.match)+'</span><b>'+esc(x.selection)+' @'+(x.odds==null?'—':Number(x.odds).toFixed(2))+'</b> '+badge(x.result)+'</li>';}).join('')+'</ul>';}
   function carousel(slips){
     var st=openState(),first=true;
     return BOOKS.map(function(b){
       var cards=slips.filter(function(s){return s.codes&&s.codes[b[0]];});
       if(!cards.length)return '';
-      var open=st&&st.hasOwnProperty(b[0])?!!st[b[0]]:first;first=false;
+      var open=st&&st.hasOwnProperty(b[0])?!!st[b[0]]:false;first=false;
       var pid='bp-panel-'+b[0];
       return '<div class="bp-book bp-book-'+b[0]+(open?' is-open':'')+'" style="--brand:'+b[3]+'"><button type="button" class="bp-book-h" data-book="'+b[0]+'" aria-expanded="'+open+'" aria-controls="'+pid+'"><img class="bp-blogo" src="'+b[2]+'" alt="'+b[1]+' logo" width="28" height="28" loading="lazy" decoding="async"><span>'+b[1]+' codes</span><small>'+cards.length+'</small><i class="bp-chev" aria-hidden="true"></i></button>'+
         '<div class="bp-book-p" id="'+pid+'" role="region"><div class="bp-book-in"><div class="bp-car" tabindex="0">'+cards.map(function(s,i){
@@ -54,7 +54,7 @@
     if(!slips.length){list.innerHTML='<div class="p2u-bankers-empty">No slips for this day yet.</div>';return;}
     list.innerHTML=slips.map(function(s,i){
       var st=s.legs.some(function(x){return x.result==='lost';})?'lost':(s.legs.every(function(x){return x.result==='won'||x.result==='void';})?'won':'pending');
-      return '<details class="bp-slip"'+(i===0?' open':'')+'><summary><header><div class="bp-hl">'+grade(s.grade)+' <b>'+esc(s.label)+'</b> <small>'+s.picks+' picks</small></div><div class="bp-hr"><b>@'+Number(s.totalOdds).toFixed(2)+'</b> '+badge(st)+'</div></header>'+chips(s)+'</summary><table class="bp-legs"><thead><tr><th>KO</th><th>Match</th><th>Pick</th><th>Odds</th><th>P2U score</th><th>Result</th></tr></thead><tbody>'+
+      return '<details class="bp-slip"'+''+'><summary><header><div class="bp-hl">'+grade(s.grade)+' <b>'+esc(s.label)+'</b> <small>'+s.picks+' picks</small></div><div class="bp-hr"><b>@'+Number(s.totalOdds).toFixed(2)+'</b> '+badge(st)+'</div></header>'+chips(s)+'</summary><table class="bp-legs"><thead><tr><th>KO</th><th>Match</th><th>Pick</th><th>Odds</th><th>P2U score</th><th>Result</th></tr></thead><tbody>'+
         s.legs.map(function(x){return '<tr><td data-l="KO">'+esc(ko(x.kickoff))+'</td><td class="bp-m"><div>'+esc(x.match)+'</div><small>'+esc(x.league)+'</small></td><td class="bp-p"><div>'+esc(x.selection)+'</div><small>'+esc(x.market)+'</small></td><td data-l="Odds">'+(x.odds==null?'—':Number(x.odds).toFixed(2))+'</td><td data-l="P2U">'+pct(x.score)+'</td><td data-l="Result">'+badge(x.result)+'</td></tr>';}).join('')+
         '</tbody></table></details>';
     }).join('');

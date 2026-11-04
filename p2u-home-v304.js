@@ -90,7 +90,7 @@
   function fdate(f){return String(f.ko||'').slice(0,10);}
   function fko(f){var k=String(f.ko||'');return k.length>10?k.slice(11,16):'';}
   var LKEY='p2u-lg-open-',open={},day='';
-  function save(){try{localStorage.setItem(LKEY+day,JSON.stringify(open));}catch(_){}}
+  function save(){try{sessionStorage.setItem(LKEY+day,JSON.stringify(open));}catch(_){}}
   function css2(){if($('hp-lg2-css'))return;var st=document.createElement('style');st.id='hp-lg2-css';st.textContent=
     '.lg-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0 12px}.lg-tools input{flex:1 1 180px;min-width:0;min-height:44px;font-size:1rem;padding:8px 12px;border-radius:12px;background:#0d1522;color:#fff;border:1px solid #3a5a8a}.lg-tools input:focus{outline:2px solid #7fb2ff;outline-offset:2px}'+
     '.lg-tools button,.lg-days button{min-height:44px;padding:0 14px;border-radius:999px;border:1px solid #2c4a7a;background:#16233a;color:#e6eefb;font-weight:800;font-size:.85rem;cursor:pointer}.lg-days{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}.lg-days button[aria-pressed=true]{background:linear-gradient(135deg,#ffcc33,#ff7a18);color:#111;border-color:transparent}'+
@@ -123,7 +123,7 @@
     var today=stamp(new Date()),dates={};L.forEach(function(x){(x.fixtures||[]).forEach(function(f){var d=fdate(f);if(d>=today)dates[d]=1;});});
     var D=Object.keys(dates).sort();
     if(!day||D.indexOf(day)<0)day=D.indexOf(today)>=0?today:(D[0]||today);
-    try{open=JSON.parse(localStorage.getItem(LKEY+day)||'{}')||{};}catch(_){open={};}
+    try{open=JSON.parse(sessionStorage.getItem(LKEY+day)||'{}')||{};}catch(_){open={};}
     var rows=L.map(function(x){var F=(x.fixtures||[]).filter(function(f){return fdate(f)===day;}).sort(function(a,b){return String(a.ko).localeCompare(String(b.ko));});
       var P=(x.picks||[]).filter(function(p){return !p.date||p.date===day||F.some(function(f){return f.eventId===p.eventId;});});
       return {x:Object.assign({},x,{picks:P}),F:F,first:F.length?String(F[0].ko):'~'};}).filter(function(r){return r.F.length;});
