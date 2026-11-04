@@ -90,24 +90,17 @@
   const desktopLinks=[
     {href:'index.html',label:'Home',icon:'rankings'},
     {href:'bankers.html',label:'Bankers',icon:'bankers'},
-    {href:'news.html',label:'News',icon:'news'},
-    {href:'community.html',label:'Community',icon:'community'},
-    {href:'hot-picks.html',label:'🔥 Hot Picks',icon:'hot'}
+    {href:'hot-picks.html',label:'🔥 Hot Picks',icon:'hot'},
+    {href:'news.html',label:'News',icon:'news'}
   ];
   const mobileLinks=[
     {href:'index.html',label:'Home',icon:'rankings'},
     {href:'bankers.html',label:'Bankers',icon:'bankers'},
-    {href:'news.html',label:'News',icon:'news'},
-    {href:'community.html',label:'Community',icon:'community'}
+    {href:'hot-picks.html',label:'Hot Picks',icon:'hot'},
+    {href:'news.html',label:'News',icon:'news'}
   ];
   const moreLinks=[
-    {href:'board.html',label:'Board',icon:'picks'},
-    {href:'engines.html',label:'Full Board',icon:'fullboard'},
-    {href:'scorecards.html',label:'Scorecards',icon:'score'},
-    {href:'league-dna.html',label:'League DNA',icon:'dna'},
-    {href:'trust.html',label:'Trust Center',icon:'trust'},
-    {href:'account.html',label:'Account',icon:'account'},
-    {href:'index.html?tour=1',label:'Replay walkthrough',icon:'overview'}
+    {href:'account.html',label:'Account',icon:'account'}
   ];
   const isActive=item=>{if(item.href==='index.html')return active==='index.html'||active==='team-rankings.html'||active==='';return active===item.href.split('?')[0];};
   const primaryHrefs=new Set([...desktopLinks,...mobileLinks].map(item=>item.href));
