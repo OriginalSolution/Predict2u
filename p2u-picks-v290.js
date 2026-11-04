@@ -20,11 +20,11 @@
     return BOOKS.map(function(b){
       var cards=slips.filter(function(s){return s.codes&&s.codes[b[0]];});
       if(!cards.length)return '';
-      return '<div class="bp-book"><h3>'+b[1]+' codes <small>('+cards.length+')</small></h3><div class="bp-car">'+cards.map(function(s){
+      return '<div class="bp-book"><h3>'+b[1]+' codes <small>('+cards.length+')</small></h3><div class="bp-car" tabindex="0">'+cards.map(function(s){
         var code=s.codes[b[0]],link=(s.links||{})[b[0]];
         return '<div class="bp-card">'+grade(s.grade)+'<div class="bp-card-l">'+esc(s.label)+'</div><div class="bp-card-code">'+esc(code)+'</div>'+
           '<div class="bp-card-m">@'+Number(s.totalOdds).toFixed(2)+' · '+s.picks+' picks</div>'+
-          '<div class="bp-card-a"><button type="button" data-copy="'+esc(code)+'">Copy</button>'+(link?'<a target="_blank" rel="noopener" href="'+esc(link)+'">Open '+b[1]+'</a>':'')+'</div></div>';
+          '<div class="bp-card-a"><button type="button" data-copy="'+esc(code)+'">Copy</button>'+(link?'<a target="_blank" rel="noopener" href="'+esc(link)+'" aria-label="Open on '+b[1]+'">Open ↗</a>':'')+'</div></div>';
       }).join('')+'</div></div>';
     }).join('');
   }
@@ -35,18 +35,18 @@
     $('bp-carousel').innerHTML=carousel(slips);
     var list=$('bp-list');
     if(!slips.length){list.innerHTML='<div class="p2u-bankers-empty">No slips for this day yet.</div>';return;}
-    list.innerHTML=slips.map(function(s){
+    list.innerHTML=slips.map(function(s,i){
       var st=s.legs.some(function(x){return x.result==='lost';})?'lost':(s.legs.every(function(x){return x.result==='won'||x.result==='void';})?'won':'pending');
-      return '<article class="bp-slip"><header><div>'+grade(s.grade)+' <b>'+esc(s.label)+'</b> <small>'+s.picks+' picks</small></div>'+
+      return '<details class="bp-slip"'+(i===0?' open':'')+'><summary><header><div>'+grade(s.grade)+' <b>'+esc(s.label)+'</b> <small>'+s.picks+' picks</small></div>'+
         '<div>'+(s.link?'<a class="bp-code" target="_blank" rel="noopener" href="'+esc(s.link)+'">SportyBet '+esc(s.code)+'</a>':'')+
-        ' <b>@'+Number(s.totalOdds).toFixed(2)+'</b> '+badge(st)+'</div></header><table class="bp-legs"><thead><tr><th>KO</th><th>Match</th><th>Pick</th><th>Odds</th><th>P2U score</th><th>Result</th></tr></thead><tbody>'+
-        s.legs.map(function(x){return '<tr><td>'+esc(ko(x.kickoff))+'</td><td><div>'+esc(x.match)+'</div><small>'+esc(x.league)+'</small></td><td><div>'+esc(x.selection)+'</div><small>'+esc(x.market)+'</small></td><td>'+(x.odds==null?'—':Number(x.odds).toFixed(2))+'</td><td>'+pct(x.score)+'</td><td>'+badge(x.result)+'</td></tr>';}).join('')+
-        '</tbody></table></article>';
+        ' <b>@'+Number(s.totalOdds).toFixed(2)+'</b> '+badge(st)+'</div></header></summary><table class="bp-legs"><thead><tr><th>KO</th><th>Match</th><th>Pick</th><th>Odds</th><th>P2U score</th><th>Result</th></tr></thead><tbody>'+
+        s.legs.map(function(x){return '<tr><td data-l="KO">'+esc(ko(x.kickoff))+'</td><td class="bp-m"><div>'+esc(x.match)+'</div><small>'+esc(x.league)+'</small></td><td class="bp-p"><div>'+esc(x.selection)+'</div><small>'+esc(x.market)+'</small></td><td data-l="Odds">'+(x.odds==null?'—':Number(x.odds).toFixed(2))+'</td><td data-l="P2U">'+pct(x.score)+'</td><td data-l="Result">'+badge(x.result)+'</td></tr>';}).join('')+
+        '</tbody></table></details>';
     }).join('');
   }
   document.addEventListener('click',function(e){
     var b=e.target.closest&&e.target.closest('[data-copy]');if(!b)return;
-    var c=b.getAttribute('data-copy'),done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1500);};
+    var c=b.getAttribute('data-copy'),done=function(){b.textContent='Copied ✓';b.classList.add('is-ok');setTimeout(function(){b.textContent='Copy';b.classList.remove('is-ok');},1600);};
     if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(c).then(done,done);else done();
   });
   function init(d){

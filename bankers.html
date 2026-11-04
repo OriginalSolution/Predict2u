@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="controls-v267.css">
   <link rel="stylesheet" href="ui-scale-v282.css">
   <link rel="stylesheet" href="bankers-of-the-day-v285.css">
+  <link rel="stylesheet" href="p2u-modern-v291.css">
 </head>
 <body>
 <script src="unified-shell-v234.js"></script>
@@ -32,29 +33,9 @@
     <label><span>Day</span><select id="bp-day"></select></label>
     <p class="p2u-bankers-note" id="bp-summary"></p>
   </section>
-  <section id="bp-carousel" class="bp-carousel"></section>
+  <section id="bp-carousel" class="bp-carousel" aria-label="Booking codes"></section>
   <section id="bp-list" class="bp-list"><div class="p2u-bankers-empty">Loading…</div></section>
 </main>
-<style>
-.bp-book h3{margin:14px 0 8px;font-size:1rem}.bp-book small{opacity:.6}
-.bp-car{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px}
-.bp-card{position:relative;flex:0 0 170px;scroll-snap-align:start;background:linear-gradient(160deg,#122033,#0b1522);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px}
-.bp-card .bp-grade{position:absolute;top:10px;right:10px}
-.bp-card-l{font-size:.8rem;opacity:.7}.bp-card-code{font-size:1.35rem;font-weight:900;color:#fbbf24;letter-spacing:1px;margin:4px 0}
-.bp-card-m{font-size:.85rem;opacity:.85}
-.bp-card-a{display:flex;gap:6px;margin-top:10px}.bp-card-a button,.bp-card-a a{flex:1;font:inherit;font-size:.78rem;font-weight:700;text-align:center;padding:6px 4px;border-radius:8px;border:0;cursor:pointer;text-decoration:none}
-.bp-card-a button{background:#1f2f45;color:#fff}.bp-card-a a{background:#16a34a;color:#fff}
-.bp-list{display:grid;gap:14px;margin:16px 0}
-.bp-slip{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:12px;overflow-x:auto}
-.bp-slip header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:8px}.bp-slip small{opacity:.65}
-.bp-code{color:#fbbf24;font-weight:700;text-decoration:underline}
-.bp-legs{width:100%;border-collapse:collapse;font-size:.88rem}
-.bp-legs th,.bp-legs td{padding:6px;text-align:left;border-top:1px solid rgba(255,255,255,.07);vertical-align:top}.bp-legs small{display:block}
-.bp-res{font-size:.72rem;font-weight:800;padding:2px 6px;border-radius:6px;background:#334155}
-.bp-won{background:#166534}.bp-lost{background:#991b1b}.bp-void{background:#475569}
-.bp-grade{display:inline-block;min-width:24px;text-align:center;font-weight:900;border-radius:7px;padding:2px 6px;color:#06120a}
-.bp-gA{background:#4ade80}.bp-gB{background:#facc15}.bp-gC{background:#94a3b8}
-</style>
-<script src="p2u-picks-v290.js"></script>
+<script src="p2u-picks-v290.js?v=291"></script>
 </body>
 </html>
