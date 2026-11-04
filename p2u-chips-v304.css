@@ -44,3 +44,10 @@
 .bp-book-onexbet .bp-card{--brand:#1a5f99;--on:#fff}
 .hp-code-c *,.bcod-chip *,.hp-bkd a *,.bp-book .bp-card *:not(.bp-grade):not(.bp-res){color:var(--on)!important}
 .hp-code-c button,.hp-code-c a.bp-open,.bp-book .bp-card-a button,.bp-book .bp-card-a a.bp-open{background:rgba(0,0,0,.28)!important;border:1px solid rgba(0,0,0,.25)!important;color:var(--on)!important}
+/* home carousel cards + yellow notes */
+.cc-card{--on:#fff;background:var(--brand)!important;color:var(--on)!important;border:1px solid rgba(0,0,0,.25)!important}
+.cc-card:has(img[src*="sportybet"]){--brand:#c8101e}.cc-card:has(img[src*="msport"]){--brand:#ffd325;--on:#111}.cc-card:has(img[src*="betika"]){--brand:#00813f}.cc-card:has(img[src*="1xbet"]){--brand:#1a5f99}
+.cc-card *:not(.bp-grade):not(.bp-res){color:var(--on)!important;-webkit-text-fill-color:var(--on)!important}
+.cc-card .cc-code,.hp-code-c b,.hp-code-c strong{background:none!important;animation:none!important;font-family:ui-monospace,Menlo,Consolas,monospace}
+.cc-card button,.cc-card a{background:rgba(0,0,0,.28)!important;border:1px solid rgba(0,0,0,.25)!important}
+.hp-code-c *{-webkit-text-fill-color:var(--on)!important}
