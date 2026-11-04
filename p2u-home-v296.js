@@ -36,13 +36,35 @@
   document.addEventListener('click',function(e){var w=e.target.closest&&e.target.closest('.hp-why');if(w){var o=w.getAttribute('aria-expanded')!=='true';w.setAttribute('aria-expanded',o);w.classList.toggle('is-open',o);var t=$(w.getAttribute('aria-controls'));if(t)t.hidden=!o;w.firstChild.nodeValue=o?'Hide why ':'Why this pick ';return;}
     var b=e.target.closest&&e.target.closest('#hp-code [data-copy]');if(!b)return;var c=b.getAttribute('data-copy'),ok=function(){b.textContent='Copied ✓';setTimeout(function(){b.textContent='Copy';},1600);};
     if(navigator.clipboard)navigator.clipboard.writeText(c).then(ok,ok);else{var t=document.createElement('textarea');t.value=c;document.body.appendChild(t);t.select();try{document.execCommand('copy');}catch(_){}t.remove();ok();}});
-  function leagues(){
-    var L=(data.leagues||[]).slice().sort(function(a,b){return (Number(b.favWinPct)||0)-(Number(a.favWinPct)||0);});
+  var BK=[['sportybet','SportyBet','codes','https://www.sportybet.com/gh/?shareCode='],['msport','MSport','msport','https://www.msport.com/gh/sports/share?shareCode='],['betika','Betika','betika','https://betika.com/en-gh/share/']];
+  function bookedFor(ids){var h=data.homeCode||{},out=[];BK.forEach(function(k){(h[k[2]]||[]).forEach(function(c){var m=c.matches||[];if(c[k[0]]&&ids.some(function(i){return m.indexOf(i)>=0;}))out.push({b:k[0],n:k[1],code:c[k[0]],url:k[3]+encodeURIComponent(c[k[0]])});});});return out;}
+  function css(){if($('hp-lt-css'))return;var st=document.createElement('style');st.id='hp-lt-css';st.textContent=
+    '.hp-lr{background:#111a27;border:1px solid #1f2a3a;border-radius:12px;padding:10px 12px;margin:8px 0}.hp-lr.is-off{opacity:.72}'+
+    '.hp-lr-h{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;justify-content:space-between}.hp-lr-h b{font-size:.95rem}.hp-lr-s{font-size:.8rem;color:#9fb0c6}'+
+    '.hp-lr-st{font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:99px;background:#1f2a3a;color:#9fb0c6}.hp-lr-st.ok{background:#0f3d2a;color:#5ee0a0}'+
+    '.hp-lr-p{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px;border-top:1px dashed #1f2a3a;margin-top:8px;padding-top:8px;font-size:.86rem}.hp-lr-p small{color:#9fb0c6}'+
+    '.hp-bkd{display:flex;flex-wrap:wrap;gap:6px;width:100%;margin-top:4px}.hp-bkd>span{font-size:.72rem;font-weight:700;color:#5ee0a0;align-self:center}'+
+    '.hp-bkd a{display:inline-flex;align-items:center;gap:5px;font-size:.75rem;padding:3px 8px;border-radius:99px;background:#16233a;color:#e6eefb;text-decoration:none;border:1px solid #27406a}.hp-bkd img{width:16px;height:16px;border-radius:4px}'+
+    '.hp-lr-r{font-size:.8rem;color:#9fb0c6;margin-top:6px}.hp-lr-tg{background:none;border:0;color:#7fb2ff;font-size:.8rem;cursor:pointer;padding:4px 0}';
+    document.head.appendChild(st);}
+  function leagues(){css();
+    var L=(data.leagues||[]).slice();
     if(!L.length){$('hp-leagues').innerHTML='<div class="p2u-bankers-empty">League table coming with today’s picks.</div>';return;}
-    $('hp-leagues').innerHTML='<table class="bp-legs hp-lt"><thead><tr><th>League</th><th>Games</th><th>Fav. win %</th><th>Recent form</th></tr></thead><tbody>'+L.map(function(x){
-      var f=Number(x.favWinPct);f=f<=1?f*100:f;
-      return '<tr><td class="bp-m">'+esc(x.league)+'</td><td data-l="Games">'+esc(x.games==null?'—':x.games)+(x.sample?' <small>('+esc(x.sample)+' fav)</small>':'')+'</td><td data-l="Fav. win %"><span class="hp-bar"><i style="width:'+Math.round(f||0)+'%"></i></span>'+(isFinite(f)?Math.round(f)+'%':'—')+'</td><td data-l="Recent form">'+esc(Array.isArray(x.recentForm)?x.recentForm.join(' '):(x.recentForm||'—'))+'</td></tr>';}).join('')+'</tbody></table>';
+    var hasStatus=L.some(function(x){return x.status;});
+    if(hasStatus)L.sort(function(a,b){var r=function(x){return x.status==='pick'?0:x.qualifies?1:2;};return r(a)-r(b)||(Number(b.favWinPct)||0)-(Number(a.favWinPct)||0);});
+    var withP=L.filter(function(x){return (x.picks||[]).length;}).length;
+    var row=function(x){var f=Number(x.favWinPct);f=f<=1?f*100:f;var P=x.picks||[],on=P.length>0;
+      var q=(x.qualifyingBands||[]).map(function(b){return 'fav '+esc(b.band)+': '+esc(b.market)+' '+Math.round(b.rate*100)+'% of '+esc(b.n);}).join(' · ');
+      return '<div class="hp-lr'+(on?'':' is-off')+'"><div class="hp-lr-h"><b>'+esc(x.league)+'</b><span class="hp-lr-st'+(on?' ok':'')+'">'+(on?P.length+' pick'+(P.length>1?'s':''):'No pick')+'</span></div>'+
+        '<div class="hp-lr-s"><span class="hp-bar"><i style="width:'+Math.round(f||0)+'%"></i></span>Fav. win '+(isFinite(f)?Math.round(f)+'%':'—')+' · '+esc(x.games==null?'—':x.games)+' games'+(q?' · '+q:'')+'</div>'+
+        P.map(function(p){var bk=bookedFor([p.eventId]);return '<div class="hp-lr-p"><span>'+esc(p.match)+' <small>'+esc(String(p.ko||'').slice(0,5))+'</small></span><b>'+esc(p.selection)+' @'+Number(p.odds).toFixed(2)+'</b>'+
+          (bk.length?'<div class="hp-bkd"><span>✓ Booked</span>'+bk.map(function(c){return '<a href="'+c.url+'" target="_blank" rel="noopener"><img src="book-'+c.b+'.webp" alt="'+c.n+' logo" width="16" height="16" loading="lazy">'+esc(c.n)+' '+esc(c.code)+'</a>';}).join('')+'</div>':'')+'</div>';}).join('')+
+        (!on&&x.reason?'<div class="hp-lr-r">No pick: '+esc(x.reason)+'</div>':'')+'</div>';};
+    var top=L.filter(function(x){return (x.picks||[]).length;}),rest=L.filter(function(x){return !(x.picks||[]).length;});
+    $('hp-leagues').innerHTML=(hasStatus?'<p class="hp-lr-s">'+withP+' of '+L.length+' leagues on today’s card have a pick. Every pick is booked on the sites shown.</p>':'')+top.map(row).join('')+
+      (rest.length?'<button type="button" class="hp-lr-tg" aria-expanded="false" data-lr-tg>Show '+rest.length+' leagues with no pick today ▾</button><div class="hp-lr-rest" hidden>'+rest.map(row).join('')+'</div>':'');
   }
+  document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-lr-tg]');if(!t)return;var r=t.nextElementSibling,o=r.hidden;r.hidden=!o;t.setAttribute('aria-expanded',o);t.textContent=(o?'Hide':'Show')+' '+r.children.length+' leagues with no pick today '+(o?'▴':'▾');});
   function init(d){data=d||{};
     var dd=$('hp-day');dd.innerHTML='<option>'+esc(d.date||'—')+'</option>';dd.disabled=true;
     $('hp-meta').textContent=d.DATA_UPDATED?'Updated '+new Date(d.DATA_UPDATED).toLocaleString('en-GB',{timeZone:ZONE,day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})+' GMT':'';
