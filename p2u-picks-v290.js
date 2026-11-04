@@ -4,7 +4,8 @@
   var $=function(id){return document.getElementById(id);};
   var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});};
   var ZONE='Africa/Accra',GR={A:0,B:1,C:2};
-  var BOOKS=[['sportybet','SportyBet','book-sportybet.webp','#e41827'],['msport','MSport','book-msport.webp','#ffd325'],['onexbet','1xBet','book-1xbet.webp','#1f6fb2']];
+  var BOOKS=[['sportybet','SportyBet','book-sportybet.webp','#e41827'],['msport','MSport','book-msport.webp','#ffd325'],['betika','Betika','book-betika.webp','#00a651'],['onexbet','1xBet','book-1xbet.webp','#1f6fb2']];
+  function chips(s){var c=s.codes||{};if(!c.sportybet&&s.code)c=Object.assign({sportybet:s.code},c);return '<div class="p2u-chips">'+BOOKS.filter(function(b){return c[b[0]];}).map(function(b){var k=b[0],l=(s.links||{})[k]||(k==='sportybet'?s.link:''),o=(s.bookOdds||{})[k]||(k==='sportybet'?s.totalOdds:null);return '<div class="p2u-chip p2u-chip-'+k+'"><img src="'+b[2]+'" alt="" width="24" height="24" loading="lazy"><span class="p2u-chip-t"><span class="p2u-chip-n">'+b[1]+'</span>'+(l?'<a class="p2u-chip-c" target="_blank" rel="noopener" href="'+esc(l)+'">'+esc(c[k])+'</a>':'<span class="p2u-chip-c">'+esc(c[k])+'</span>')+'<span class="p2u-chip-o">'+(o?'@'+Number(o).toFixed(2):'')+((s.bookPicks||{})[k]?' · '+s.bookPicks[k]+' picks':'')+'</span></span><button type="button" class="p2u-chip-cp" data-copy="'+esc(c[k])+'" aria-label="Copy '+b[1]+' code">Copy</button></div>';}).join('')+'</div>';}
   var data=null,state={day:null};
   function stamp(d){return new Intl.DateTimeFormat('en-CA',{timeZone:ZONE,year:'numeric',month:'2-digit',day:'2-digit'}).format(d);}
   function ko(iso){if(!iso)return '';var d=new Date(iso);if(isNaN(d))return '';return d.toLocaleTimeString('en-GB',{timeZone:ZONE,hour:'2-digit',minute:'2-digit'});}
@@ -53,15 +54,13 @@
     if(!slips.length){list.innerHTML='<div class="p2u-bankers-empty">No slips for this day yet.</div>';return;}
     list.innerHTML=slips.map(function(s,i){
       var st=s.legs.some(function(x){return x.result==='lost';})?'lost':(s.legs.every(function(x){return x.result==='won'||x.result==='void';})?'won':'pending');
-      return '<details class="bp-slip"'+(i===0?' open':'')+'><summary><header><div>'+grade(s.grade)+' <b>'+esc(s.label)+'</b> <small>'+s.picks+' picks</small></div>'+
-        '<div>'+(s.link?'<a class="bp-code" target="_blank" rel="noopener" href="'+esc(s.link)+'">SportyBet '+esc(s.code)+'</a>':'')+((s.links||{}).msport?' <a class="bp-code bp-code-ms" target="_blank" rel="noopener" href="'+esc(s.links.msport)+'">MSport '+esc(s.codes.msport)+((s.bookOdds||{}).msport?' @'+Number(s.bookOdds.msport).toFixed(2):'')+'</a>':'')+
-        ' <b>@'+Number(s.totalOdds).toFixed(2)+'</b> '+badge(st)+'</div></header></summary><table class="bp-legs"><thead><tr><th>KO</th><th>Match</th><th>Pick</th><th>Odds</th><th>P2U score</th><th>Result</th></tr></thead><tbody>'+
+      return '<details class="bp-slip"'+(i===0?' open':'')+'><summary><header><div class="bp-hl">'+grade(s.grade)+' <b>'+esc(s.label)+'</b> <small>'+s.picks+' picks</small></div><div class="bp-hr"><b>@'+Number(s.totalOdds).toFixed(2)+'</b> '+badge(st)+'</div></header>'+chips(s)+'</summary><table class="bp-legs"><thead><tr><th>KO</th><th>Match</th><th>Pick</th><th>Odds</th><th>P2U score</th><th>Result</th></tr></thead><tbody>'+
         s.legs.map(function(x){return '<tr><td data-l="KO">'+esc(ko(x.kickoff))+'</td><td class="bp-m"><div>'+esc(x.match)+'</div><small>'+esc(x.league)+'</small></td><td class="bp-p"><div>'+esc(x.selection)+'</div><small>'+esc(x.market)+'</small></td><td data-l="Odds">'+(x.odds==null?'—':Number(x.odds).toFixed(2))+'</td><td data-l="P2U">'+pct(x.score)+'</td><td data-l="Result">'+badge(x.result)+'</td></tr>';}).join('')+
         '</tbody></table></details>';
     }).join('');
   }
   document.addEventListener('click',function(e){
-    var b=e.target.closest&&e.target.closest('[data-copy]');if(!b)return;
+    var b=e.target.closest&&e.target.closest('[data-copy]');if(!b)return;if(b.closest('summary'))e.preventDefault();
     var c=b.getAttribute('data-copy'),done=function(){b.textContent='Copied ✓';b.classList.add('is-ok');setTimeout(function(){b.textContent='Copy';b.classList.remove('is-ok');},1600);};
     if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(c).then(done,done);else done();
   });

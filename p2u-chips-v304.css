@@ -1,0 +1,46 @@
+/* Predict2U v304 — one shared code-chip component for every booking code on the site. */
+:root{--chip-bg:rgba(15,23,36,.82);--chip-line:rgba(255,255,255,.12);--chip-tx:#f3f7fc;--chip-mut:#b9c6d8}
+.p2u-chips{display:grid;grid-template-columns:1fr;gap:8px;width:100%;margin:10px 0 0}
+@media (min-width:480px){.p2u-chips{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:900px){.p2u-chips{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.p2u-chip{--brand:#22c55e;position:relative;display:grid;grid-template-columns:24px minmax(0,1fr) auto;align-items:center;gap:4px 10px;min-height:56px;padding:8px 8px 8px 14px;border-radius:12px;background:var(--chip-bg)!important;border:1px solid var(--chip-line)!important;color:var(--chip-tx)!important;text-decoration:none;box-shadow:inset 4px 0 0 var(--brand);backdrop-filter:blur(6px);min-width:0;font-size:.8rem}
+.p2u-chip img{width:24px;height:24px;border-radius:6px;background:#fff;padding:1px;object-fit:contain}
+.p2u-chip-t{display:flex;flex-direction:column;min-width:0;line-height:1.2}
+.p2u-chip-n{font-size:.72rem;font-weight:700;color:var(--chip-mut);letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.p2u-chip-c{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-weight:800;font-size:1rem;color:#fff;letter-spacing:.06em;text-decoration:none;overflow-wrap:anywhere}
+.p2u-chip-o{font-size:.72rem;color:var(--chip-mut);font-variant-numeric:tabular-nums}
+.p2u-chip-cp{all:unset;box-sizing:border-box;min-height:40px;min-width:62px;padding:0 10px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;background:#1d2a3d;border:1px solid var(--chip-line);color:#fff;font-weight:800;font-size:.78rem;cursor:pointer}
+.p2u-chip-cp:hover,.p2u-chip-cp:focus-visible{border-color:var(--brand);outline:none}
+.p2u-chip-cp.is-ok{background:#15803d}
+.p2u-chip-sportybet{--brand:#e41827}.p2u-chip-msport{--brand:#ffd325}.p2u-chip-betika{--brand:#00a651}.p2u-chip-onexbet{--brand:#1f6fb2}
+/* bankers slip header: same structure everywhere */
+.bp-slip>summary header{display:grid!important;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;flex-direction:initial!important}
+.bp-slip>summary header>.bp-hl{display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-width:0}
+.bp-slip>summary header>.bp-hr{display:flex;flex-wrap:nowrap;align-items:center;gap:8px;justify-self:end;white-space:nowrap}
+.bp-slip>summary header>.bp-hr b{font-variant-numeric:tabular-nums}
+.bp-slip>summary .p2u-chips{margin:10px 0 0}
+/* restyle older code blocks to match the chip look (home code card, market panels, popup, league badges) */
+.hp-code-c,#hp-mkt-b .hp-code-c{background:var(--chip-bg)!important;border:1px solid var(--chip-line)!important;border-left:4px solid var(--brand,#e41827)!important;border-radius:12px!important;color:var(--chip-tx)!important}
+.hp-code-ms,.hp-mk-msport{--brand:#ffd325}.hp-mk-betika{--brand:#00a651}.hp-mk-sportybet{--brand:#e41827}
+.hp-code-c b,.hp-code-c strong{font-family:ui-monospace,Menlo,Consolas,monospace;color:#fff!important;background:none!important}
+.hp-code-c small{color:var(--chip-mut)!important}
+.bcod-chip,.hp-bkd a{background:var(--chip-bg)!important;border:1px solid var(--chip-line)!important;border-radius:10px!important;color:var(--chip-tx)!important;box-shadow:inset 3px 0 0 var(--brand,#22c55e)}
+.bcod-chip b,.hp-bkd a b{font-family:ui-monospace,Menlo,Consolas,monospace;color:#fff}
+.bp-code-ms,.bp-card-code{background:none!important;color:#fff!important;font-family:ui-monospace,Menlo,Consolas,monospace}
+.bp-book .bp-card{background:var(--chip-bg)!important;box-shadow:inset 4px 0 0 var(--brand)!important;border-top:1px solid var(--chip-line)!important}
+.bp-book-msport .bp-card-a a.bp-open,.bp-book-sportybet .bp-card-a a.bp-open,.bp-book-onexbet .bp-card-a a.bp-open{background:#1d2a3d!important;color:#fff!important;border:1px solid var(--brand)!important}
+/* v304b — solid brand-filled chips (user preference). Contrast: white on #c8101e 6.1:1, #111 on #ffd325 13:1, white on #00813f 5.0:1, white on #1a5f99 6.9:1 */
+.p2u-chip{background:var(--brand)!important;color:var(--on)!important;border:1px solid rgba(0,0,0,.25)!important;box-shadow:0 4px 14px rgba(0,0,0,.35)!important;backdrop-filter:none}
+.p2u-chip-sportybet{--brand:#c8101e;--on:#fff}.p2u-chip-msport{--brand:#ffd325;--on:#111}.p2u-chip-betika{--brand:#00813f;--on:#fff}.p2u-chip-onexbet{--brand:#1a5f99;--on:#fff}
+.p2u-chip .p2u-chip-n,.p2u-chip .p2u-chip-c,.p2u-chip .p2u-chip-o{color:var(--on)!important}
+.p2u-chip .p2u-chip-n,.p2u-chip .p2u-chip-o{opacity:.92}
+.p2u-chip-cp{background:rgba(0,0,0,.28)!important;color:var(--on)!important;border:1px solid rgba(0,0,0,.25)!important}
+.p2u-chip-msport .p2u-chip-cp{background:rgba(0,0,0,.12)!important}
+.p2u-chip-cp.is-ok{background:#0b5d2a!important;color:#fff!important}
+/* other code blocks follow the same solid theme */
+.hp-code-c,#hp-mkt-b .hp-code-c,.bcod-chip,.hp-bkd a,.bp-book .bp-card{--brand:#c8101e;--on:#fff;background:var(--brand)!important;color:var(--on)!important;border:1px solid rgba(0,0,0,.25)!important;box-shadow:0 4px 14px rgba(0,0,0,.35)!important}
+.hp-code-ms,.hp-mk-msport,.bp-book-msport .bp-card,.bcod-chip[href*="msport"],.hp-bkd a[href*="msport"]{--brand:#ffd325;--on:#111}
+.hp-mk-betika,.bp-book-betika .bp-card,.bcod-chip[href*="betika"],.hp-bkd a[href*="betika"]{--brand:#00813f;--on:#fff}
+.bp-book-onexbet .bp-card{--brand:#1a5f99;--on:#fff}
+.hp-code-c *,.bcod-chip *,.hp-bkd a *,.bp-book .bp-card *:not(.bp-grade):not(.bp-res){color:var(--on)!important}
+.hp-code-c button,.hp-code-c a.bp-open,.bp-book .bp-card-a button,.bp-book .bp-card-a a.bp-open{background:rgba(0,0,0,.28)!important;border:1px solid rgba(0,0,0,.25)!important;color:var(--on)!important}
