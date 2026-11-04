@@ -58,6 +58,6 @@
     $('bankers-meta').textContent='Updated '+up.toLocaleString('en-GB',{timeZone:ZONE,day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})+' GMT';
     render();
   }
-  fetch('picks.json?t='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(init)
+  fetch('picks.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(init)
     .catch(function(e){$('bankers-meta').textContent='Could not load picks ('+e.message+').';});
 })();

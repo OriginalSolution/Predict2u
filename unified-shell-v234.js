@@ -1,5 +1,7 @@
 (function(){
   'use strict';
+  // v293: lightweight pages skip match-tip add-ons they never use
+  const LITE=/bankers\.html$/i.test(location.pathname);
   // v257: load the foldable/mobile rescue layer before mounting navigation.
   if(!document.querySelector('link[data-p2u-mobile-zfold-v257]')){
     const rescue=document.createElement('link');
@@ -8,28 +10,28 @@
     rescue.dataset.p2uMobileZfoldV257='true';
     document.head.appendChild(rescue);
   }
-  if(!document.querySelector('link[data-p2u-context-flags-v280]')){
+  if(!LITE&&!document.querySelector('link[data-p2u-context-flags-v280]')){
     const riskCss=document.createElement('link');
     riskCss.rel='stylesheet';
     riskCss.href='pick-context-flags-v280.css';
     riskCss.dataset.p2uContextFlagsV280='true';
     document.head.appendChild(riskCss);
   }
-  if(!document.querySelector('script[data-p2u-context-flags-v280]')){
+  if(!LITE&&!document.querySelector('script[data-p2u-context-flags-v280]')){
     const riskJs=document.createElement('script');
     riskJs.src='pick-context-flags-v280.js';
     riskJs.async=false;
     riskJs.dataset.p2uContextFlagsV280='true';
     document.head.appendChild(riskJs);
   }
-  if(!document.querySelector('link[data-p2u-tip-clean-v281]')){
+  if(!LITE&&!document.querySelector('link[data-p2u-tip-clean-v281]')){
     const cleanCss=document.createElement('link');
     cleanCss.rel='stylesheet';
     cleanCss.href='tip-explanation-clean-v281.css';
     cleanCss.dataset.p2uTipCleanV281='true';
     document.head.appendChild(cleanCss);
   }
-  if(!document.querySelector('script[data-p2u-tip-clean-v281]')){
+  if(!LITE&&!document.querySelector('script[data-p2u-tip-clean-v281]')){
     const cleanJs=document.createElement('script');
     cleanJs.src='tip-explanation-clean-v281.js';
     cleanJs.async=false;
@@ -118,7 +120,7 @@
   nav.setAttribute('aria-label','Primary navigation');
   nav.innerHTML=`
     <div class="p2u-v245-shell">
-      <a class="p2u-v245-brand" href="index.html" aria-label="Predict2U overview"><img src="predict2u-logo.png" alt="Predict2U"/></a>
+      <a class="p2u-v245-brand" href="index.html" aria-label="Predict2U overview"><img src="predict2u-logo-sm.webp" alt="Predict2U" width="118" height="47" decoding="async"/></a>
       <div class="p2u-v245-rail" role="navigation">
         ${desktopLinks.map(item=>`<a href="${item.href}" class="p2u-v245-link${isActive(item)?' is-active':''}"${isActive(item)?' aria-current="page"':''}>${svg(item.icon)}<span>${item.label}</span></a>`).join('')}
       </div>
