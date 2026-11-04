@@ -9,7 +9,9 @@
     onexbet:{n:'1xBet',logo:'book-1xbet.webp',c:'#1f6fb2',link:'https://1xbet.com/en/?coupon={c}'},
     betway:{n:'Betway',logo:'book-betway.webp',c:'#00a826',link:null},
     '22bet':{n:'22Bet',logo:'book-22bet.webp',c:'#1b5e20',link:null},
-    betika:{n:'Betika',logo:'book-betika.webp',c:'#00b140',link:null}
+    betika:{n:'Betika',logo:'book-betika.webp',c:'#00b140',link:null},
+    footballcom:{n:'football.com',logo:'book-footballcom.webp',c:'#282450',link:'https://www.football.com/gh/?shareCode={c}'},
+    betpawa:{n:'Betpawa',logo:'book-betpawa.webp',c:'#78be20',link:'https://www.betpawa.com.gh/#{c}'}
   };
   BOOKS['1xbet']=BOOKS.onexbet;
   var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});};

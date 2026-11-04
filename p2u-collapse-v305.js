@@ -9,7 +9,7 @@ var css='.p2u-cx-h{all:unset;box-sizing:border-box;display:flex;align-items:cent
 'details>summary~*{animation:p2uCx .25s ease}@keyframes p2uCx{from{opacity:0;transform:translateY(-4px)}}'+
 '@media (prefers-reduced-motion:reduce){.p2u-cx-b,.p2u-cx-v{transition:none}details>summary~*{animation:none}}';
 var s=document.createElement('style');s.textContent=css;document.head.appendChild(s);
-var COL={sportybet:'#e41827',msport:'#ffd325',betika:'#00b140',onexbet:'#1f6fb2','1xbet':'#1f6fb2',betway:'#00a826','22bet':'#1b5e20'};
+var COL={sportybet:'#e41827',msport:'#ffd325',betika:'#00b140',footballcom:'#282450',betpawa:'#78be20',onexbet:'#1f6fb2','1xbet':'#1f6fb2',betway:'#00a826','22bet':'#1b5e20'};
 function dots(root){var seen={},h='';(root.querySelectorAll('[class*="p2u-chip-"],[class*="bp-book-"]')).forEach(function(el){(el.className.match(/(?:p2u-chip|bp-book)-([a-z0-9]+)/g)||[]).forEach(function(m){var k=m.split('-').pop();if(COL[k]&&!seen[k]){seen[k]=1;h+='<i style="--c:'+COL[k]+'" title="'+k+'"></i>';}});});return h?'<span class="p2u-cx-d" aria-hidden="true">'+h+'</span>':'';}
 function wrap(host,id,title,sub,body){var o=!!st[id];var w=document.createElement('div');w.className='p2u-cx'+(o?' is-open':'');w.dataset.cx=id;
  w.innerHTML='<button type="button" class="p2u-cx-h" aria-expanded="'+o+'"><span class="p2u-cx-s">'+title+(sub?'<small>'+sub+'</small>':'')+'</span>'+dots(body)+'<i class="p2u-cx-v" aria-hidden="true"></i></button><div class="p2u-cx-b"><div></div></div>';

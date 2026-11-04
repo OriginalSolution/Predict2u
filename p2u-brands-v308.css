@@ -1,0 +1,4 @@
+/* Brand colour variables for football.com and Betpawa chips/cards (text colours chosen for AA contrast) */
+html body .p2u-chip-footballcom,html body .hp-mk-footballcom,html body .bp-book-footballcom .bp-card,html body .bcod-chip[href*="football.com"],html body .hp-bkd a[href*="football.com"],html body .cc-card:has(img[src*="footballcom"]){--brand:#282450!important;--on:#fff!important}
+html body .p2u-chip-betpawa,html body .hp-mk-betpawa,html body .bp-book-betpawa .bp-card,html body .bcod-chip[href*="betpawa"],html body .hp-bkd a[href*="betpawa"],html body .cc-card:has(img[src*="betpawa"]){--brand:#78be20!important;--on:#0b0f14!important}
+html body .p2u-chip-footballcom{box-shadow:inset 0 0 0 1px #6f66c9}
