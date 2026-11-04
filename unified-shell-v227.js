@@ -44,7 +44,7 @@
   const mobileLinks=[
     {href:'index.html',label:'Overview',mobileLabel:'Home',icon:'overview'},
     {href:'bankers.html',label:'Bankers',icon:'bankers'},
-    {href:'hot-picks.html',label:'Hot Picks',icon:'picks'}
+    {href:'hot-picks.html',label:'🔥 Hot',icon:'picks'}
   ];
   const moreLinks=[
     {href:'news.html',label:'News',icon:'news'},
