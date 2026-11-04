@@ -1,0 +1,18 @@
+@property --a{syntax:'<angle>';inherits:false;initial-value:0deg}
+.cc-card,.hp-code-c,.bp-book,.bp-card,.hp-pick{position:relative;isolation:isolate;background:linear-gradient(160deg,rgba(20,40,30,.72),rgba(6,14,10,.85))!important;backdrop-filter:blur(8px);border:1px solid color-mix(in srgb,var(--brand,#1fdc7a) 45%,transparent)!important;border-radius:16px;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 22px #0006}
+.cc-card:hover,.hp-code-c:hover,.bp-card:hover,.hp-pick:hover{transform:translateY(-3px);box-shadow:0 10px 30px #0008,0 0 18px color-mix(in srgb,var(--brand,#1fdc7a) 55%,transparent)}
+.cc-card::before,.hp-code-c::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;padding:2px;background:conic-gradient(from var(--a),var(--brand,#1fdc7a),transparent 30%,#ffd23f 50%,transparent 70%,var(--brand,#1fdc7a));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:fxSpin 5s linear infinite;pointer-events:none}
+.hp-code-c{--brand:#e41827}.hp-code-ms{--brand:#ffcc00}
+.cc-code,.hp-code-n,.bp-card-code,.bp-code{font-family:Impact,"Arial Black",system-ui,sans-serif!important;letter-spacing:.1em;background:linear-gradient(100deg,#fff 40%,color-mix(in srgb,var(--brand,#1fdc7a) 70%,#fff) 50%,#fff 60%) 0 0/250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent!important;animation:fxShine 3.5s linear infinite}
+.cc-h::after,.hp-code-h::after{content:"LIVE TODAY";display:inline-flex;margin-left:8px;vertical-align:middle;font:900 10px/1 system-ui,sans-serif;letter-spacing:.12em;color:#fff;background:#e41827;padding:4px 8px;border-radius:999px;animation:fxBadge 1.6s ease-in-out infinite}
+.cc-card button,.hp-code-c button,.bp-card button[data-copy]{background:linear-gradient(135deg,#1fdc7a,#7dffb7)!important;color:#04140b!important;font-weight:900;border:0;border-radius:10px;box-shadow:0 4px 14px #1fdc7a44;transition:transform .15s}
+.cc-card button:active,.hp-code-c button:active,.bp-card button[data-copy]:active{transform:scale(.94)}
+.bp-book-h{background:linear-gradient(90deg,color-mix(in srgb,var(--brand,#1fdc7a) 28%,transparent),transparent)!important}
+.bp-book.is-open{box-shadow:0 0 22px color-mix(in srgb,var(--brand,#1fdc7a) 45%,transparent)}
+.hp-pick.is-won{border-color:#1fdc7a!important;box-shadow:0 0 16px #1fdc7a55}
+.hp-pick.is-lost{opacity:.75}
+.hp-why{border-radius:999px;transition:background .2s}
+#home-picks,.hp-wrap,.bp-car{background-image:linear-gradient(#1fdc7a0d 1px,transparent 1px),linear-gradient(90deg,#1fdc7a0d 1px,transparent 1px);background-size:28px 28px;animation:fxGrid 20s linear infinite}
+.cc-card *,.hp-code-c *,.bp-card *{min-width:0;overflow-wrap:anywhere}
+@keyframes fxSpin{to{--a:360deg}}@keyframes fxShine{to{background-position:-250% 0}}@keyframes fxBadge{50%{box-shadow:0 0 0 6px #e4182700,0 0 12px #e41827;transform:scale(1.06)}}@keyframes fxGrid{to{background-position:28px 28px}}
+@media(prefers-reduced-motion:reduce){.cc-card::before,.hp-code-c::before,.cc-code,.hp-code-n,.bp-card-code,.bp-code,.cc-h::after,.hp-code-h::after,#home-picks,.hp-wrap,.bp-car{animation:none!important}.cc-code,.hp-code-n,.bp-card-code,.bp-code{color:#fff!important;background:none}.cc-card:hover,.hp-code-c:hover,.bp-card:hover,.hp-pick:hover{transform:none}}

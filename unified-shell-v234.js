@@ -48,7 +48,7 @@
   if(!document.querySelector('link[data-p2u-bcod-v300]')){
     const adCss=document.createElement('link');
     adCss.rel='stylesheet';
-    adCss.href='p2u-banker-pop-v300.css?v=300';
+    adCss.href='p2u-banker-pop-v300.css?v=301';
     adCss.dataset.p2uBcodV300='true';
     document.head.appendChild(adCss);
   }
