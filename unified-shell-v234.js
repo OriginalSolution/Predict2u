@@ -150,7 +150,7 @@
   const st=document.createElement('style');
   st.textContent='.p2u-more-footer{margin:28px auto 0;padding:18px 14px 96px;max-width:1200px;border-top:1px solid rgba(255,255,255,.14)}.p2u-more-footer-in{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.p2u-more-footer a{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.08);color:#f4f6fb;font:600 13px/1.2 system-ui,sans-serif;text-decoration:none}.p2u-more-footer a:hover,.p2u-more-footer a.is-active{background:#ff6a00;color:#111}.p2u-more-footer svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2}.p2u-v245-dock .p2u-hot-tab.is-active,.p2u-v245-dock .p2u-hot-tab{color:#ff8a1f}';
   document.head.appendChild(st);
-  (document.readyState==='loading')?document.addEventListener('DOMContentLoaded',()=>document.body.insertBefore(foot,dock)):document.body.insertBefore(foot,dock);
+  (document.readyState==='loading')?document.addEventListener('DOMContentLoaded',()=>document.body.appendChild(foot)):document.body.appendChild(foot);
 
   document.body.classList.add('p2u-v227-ready','p2u-v245-ready','p2u-v245-page-'+active.replace('.html','').replace(/[^a-z0-9-]/g,''));
   document.documentElement.classList.add('p2u-v227-html','p2u-v245-html');
