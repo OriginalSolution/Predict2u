@@ -148,6 +148,7 @@ footer{color:var(--mut)}
     <p class="hp-cta"><a href="bankers.html">Booking codes &amp; slips →</a></p>
   </section>
   <section class="p2u-bankers-toolbar"><label><span>Date</span><select id="hp-day" aria-label="Date"></select></label></section>
+  <section id="hp-carousel" class="cc" hidden aria-label="Booking codes from all bookmakers"></section>
   <section id="hp-code" class="hp-code" hidden aria-label="Booking code for all picks"></section>
   <section id="hp-tally" class="hp-tally" aria-live="polite"></section>
   <section id="hp-list" class="hp-list"></section>
@@ -170,6 +171,7 @@ footer{color:var(--mut)}
 .hp-why{display:inline-flex;align-items:center;gap:6px;min-height:40px;margin-top:10px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card2);color:var(--gold);font-weight:800;font-size:.82rem;cursor:pointer}.hp-why .bp-chev{margin-left:2px;width:7px;height:7px}
 .hp-code{margin:14px 0;padding:14px;border-radius:var(--r);border:1px solid rgba(0,210,90,.55);background:linear-gradient(160deg,rgba(0,170,70,.22),var(--card))}
 .hp-code-h{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-size:clamp(1rem,3.6vw,1.2rem)}.hp-code-h img{border-radius:6px}
+.cc{margin:12px 0}.cc-h{font-size:1.05rem;margin:0 0 8px}.cc-vp{overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none}.cc-vp::-webkit-scrollbar{display:none}.cc-track{display:flex;gap:10px;width:max-content;padding:2px}.cc-card{scroll-snap-align:start;width:min(230px,72vw);background:var(--card2,#15202e);border:1px solid rgba(255,255,255,.08);border-top:4px solid var(--brand);border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;gap:4px}.cc-top{display:flex;align-items:center;gap:8px}.cc-top img{border-radius:6px}.cc-t{font-size:.8rem;color:#9fb0c6}.cc-code{font:700 1.35rem/1.1 ui-monospace,monospace;letter-spacing:.06em}.cc-m{font-size:.85rem;color:#c7d2e1}.cc-n{font-size:.75rem;color:#ffd36b;line-height:1.3}.cc-a{display:flex;gap:8px;margin-top:auto;padding-top:6px}.cc-a button,.cc-a a{flex:1;text-align:center;padding:7px 8px;border-radius:9px;border:0;background:var(--brand);color:#fff;font-weight:700;text-decoration:none;cursor:pointer;font-size:.85rem}.cc-card[style*="ffd325"] .cc-a button,.cc-card[style*="ffd325"] .cc-a a{color:#111}
 .hp-code-h-ms{margin-top:14px}.hp-code-w{display:block;color:#ffd36b}.hp-code-ms{border-left:4px solid #ffd325}
 .hp-code-c{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;background:var(--card2);border-radius:12px;margin-top:8px}
 .hp-code-i{min-width:0}.hp-code-i small{display:block;color:var(--mut);font-size:.78rem}.hp-code-i b{font-size:clamp(1.4rem,6vw,1.9rem);letter-spacing:.12em;color:#4ade80;overflow-wrap:anywhere}
@@ -182,5 +184,6 @@ footer{color:var(--mut)}
 @media (max-width:360px){.hp-tally{grid-template-columns:repeat(2,1fr)}}
 </style>
 <script src="p2u-home-v296.js?v=299" defer></script>
+<script src="p2u-codes-carousel-v299.js?v=299" defer></script>
 </body>
 </html>
