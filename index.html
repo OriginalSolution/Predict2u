@@ -147,6 +147,7 @@ footer{color:var(--mut)}
     <p class="hp-cta"><a href="bankers.html">Booking codes &amp; slips →</a></p>
   </section>
   <section class="p2u-bankers-toolbar"><label><span>Date</span><select id="hp-day" aria-label="Date"></select></label></section>
+  <section id="hp-code" class="hp-code" hidden aria-label="Booking code for all picks"></section>
   <section id="hp-tally" class="hp-tally" aria-live="polite"></section>
   <section id="hp-list" class="hp-list"></section>
   <section class="hp-lg"><h2>How favourites perform by league</h2><div id="hp-leagues"></div></section>
@@ -165,11 +166,17 @@ footer{color:var(--mut)}
 .hp-sel{display:flex;justify-content:space-between;gap:8px;margin:12px 0 10px;padding:10px 12px;background:var(--card2);border-radius:12px;font-weight:800}.hp-sel b{color:var(--gold)}
 .hp-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0}.hp-stats dt{font-size:.68rem;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}.hp-stats dd{margin:0;font-weight:800}
 .hp-case{margin:10px 0 0;font-size:.85rem;line-height:1.5;color:#c7d2e1;border-left:3px solid var(--acc);padding-left:10px}
+.hp-why{display:inline-flex;align-items:center;gap:6px;min-height:40px;margin-top:10px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card2);color:var(--gold);font-weight:800;font-size:.82rem;cursor:pointer}.hp-why .bp-chev{margin-left:2px;width:7px;height:7px}
+.hp-code{margin:14px 0;padding:14px;border-radius:var(--r);border:1px solid rgba(0,210,90,.55);background:linear-gradient(160deg,rgba(0,170,70,.22),var(--card))}
+.hp-code-h{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-size:clamp(1rem,3.6vw,1.2rem)}.hp-code-h img{border-radius:6px}
+.hp-code-c{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;background:var(--card2);border-radius:12px;margin-top:8px}
+.hp-code-i{min-width:0}.hp-code-i small{display:block;color:var(--mut);font-size:.78rem}.hp-code-i b{font-size:clamp(1.4rem,6vw,1.9rem);letter-spacing:.12em;color:#4ade80;overflow-wrap:anywhere}
+.hp-code-n{margin:8px 0 0;font-size:.75rem;color:var(--mut)}
 .hp-sel small{display:block;font-weight:600;color:var(--mut);font-size:.72rem}
 .hp-lg h2{font-size:1.15rem;margin:26px 0 10px}
 .hp-bar{display:inline-block;width:60px;height:6px;background:#1f2a3a;border-radius:9px;margin-right:6px;vertical-align:middle;overflow:hidden}.hp-bar i{display:block;height:100%;background:var(--acc)}
 @media (max-width:360px){.hp-tally{grid-template-columns:repeat(2,1fr)}}
 </style>
-<script src="p2u-home-v296.js?v=297" defer></script>
+<script src="p2u-home-v296.js?v=298" defer></script>
 </body>
 </html>
