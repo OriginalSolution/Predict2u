@@ -34,3 +34,7 @@ html body .bp-card .bp-card-a :is(button,a){background:#111!important;color:#fff
 html body .bp-book:not(.bp-book-msport) .bp-card .bp-card-a :is(button,a){background:#fff!important;color:var(--brand)!important;border-color:#fff!important}
 html body .bp-card.bp-card.bp-card .bp-card-a.bp-card-a :is(button,a){background:#111!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
 html body .bp-book:not(.bp-book-msport) .bp-card.bp-card.bp-card .bp-card-a.bp-card-a :is(button,a){background:#fff!important;color:var(--brand)!important;-webkit-text-fill-color:var(--brand)!important}
+html body .cc-card.cc-card:has(img[src*="msport"]) :is(.p2u-cx-h,.p2u-cx-h *,.cc-a button,.cc-a a){color:#fff!important;-webkit-text-fill-color:#fff!important}
+html body .cc-card.cc-card:not(:has(img[src*="msport"])) :is(.p2u-cx-h,.p2u-cx-h *,.cc-a button,.cc-a a){-webkit-text-fill-color:var(--brand)!important}
+html body .p2u-chip.p2u-chip-msport .p2u-chip-cp{-webkit-text-fill-color:#fff!important}
+html body .p2u-chip.p2u-chip:not(.p2u-chip-msport) .p2u-chip-cp{-webkit-text-fill-color:var(--brand)!important}
