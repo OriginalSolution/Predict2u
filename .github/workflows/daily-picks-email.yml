@@ -1,5 +1,6 @@
 name: Daily picks email
-# Runs each morning BEFORE the day's games: rebuilds the multi-slip acca
+# Runs each morning BEFORE the day's games: rebuilds one image per bot SportyBet slip
+# (NerdyTips + Bets For The Day, from picks.json) plus a today.png summary. Was: multi-slip acca
 # images (6 legs per slip) and the top-bankers cards (top 2 per engine,
 # 6 games per card) from the current data.js, commits them, and emails
 # EVERY slip/card as attachments. Reuses the same Gmail secrets.
@@ -28,8 +29,8 @@ jobs:
           # remove yesterday's page files first, so stale slips never linger,
           # get re-committed, or get re-attached by the glob below
           rm -f acca-*.png acca-*.svg today-*.png today-*.svg
-          node generate-acca.js  || echo "acca generation skipped"
-          node generate-image.js || echo "top-bankers generation skipped"
+          # bot picks feed (picks.json) -> one image per SportyBet slip + today.png summary
+          node bot-feed-media.js picks || echo "bot slip image generation skipped"
       - name: Commit the images (if changed)
         run: |
           git config user.name "predicto-bot"
@@ -52,7 +53,7 @@ jobs:
       - name: Collect attachment list
         id: att
         run: |
-          FILES=$(ls acca.png acca-*.png today.png today-*.png 2>/dev/null | sort -u | paste -sd, -)
+          FILES=$(ls acca-*.png today.png today-slips.txt 2>/dev/null | sort -u | paste -sd, -)
           echo "list=$FILES" >> "$GITHUB_OUTPUT"
           echo "Attaching: $FILES"
       - name: Email the picks images
@@ -65,13 +66,13 @@ jobs:
           secure: true
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "Predict2u — Today's Bankers (acca slips + top picks)"
+          subject: "Predict2u — Today's Bot Slips (SportyBet codes)"
           to: predict2u@gmail.com
           from: Predict2u Bot
           body: |
             Today's picks attached:
-            - Acca slips (6 legs per image, all engines consulted, no repeats)
-            - Top-banker cards (top 2 from every engine, 6 games per card)
+            - One image per bot slip (NerdyTips + Bets For The Day) with its SportyBet code
+            - today.png summary card and today-slips.txt (codes + sportybet.com links)
 
             Full board at predict2u.com
             Heuristic picks, not guarantees. 18+. Gamble responsibly.

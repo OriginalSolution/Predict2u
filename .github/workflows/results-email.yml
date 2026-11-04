@@ -30,7 +30,7 @@ jobs:
       - name: Build yesterday's results image
         run: |
           npm install sharp --no-save || echo "sharp install issue"
-          node generate-results.js || echo "results generation skipped"
+          node bot-feed-media.js results || echo "results generation skipped"
       - name: Commit results image (if any)
         run: |
           git config user.name "predicto-bot"
@@ -59,7 +59,7 @@ jobs:
           to: predict2u@gmail.com
           from: Predict2u Bot
           body: |
-            Yesterday's banker results are attached — wins and losses, honestly.
+            Yesterday's bot pick results (NerdyTips + Bets For The Day) are attached — wins and losses, honestly.
             Post it to your channels to show the record.
             18+. Gamble responsibly.
           attachments: results.png

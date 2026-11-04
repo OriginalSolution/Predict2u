@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: "20"
       - name: Build report from the committed tracker log
-        run: node track-log.js report || echo "tracker report skipped"
+        run: node bot-feed-media.js tracker || echo "tracker report skipped"
       - name: Read report into an output
         id: rpt
         run: |
@@ -51,8 +51,8 @@ jobs:
           to: predict2u@gmail.com
           from: Predict2u Bot
           body: |
-            Your daily Predict2u forward-tracker report — which engines, markets,
-            and leagues are performing, from real before-kickoff picks.
+            Your daily Predict2u forward-tracker report — which bots, markets,
+            and leagues are performing, from the settled bot picks (last 30 days).
 
             ${{ steps.rpt.outputs.body }}
 

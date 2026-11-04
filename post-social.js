@@ -24,25 +24,13 @@ const DRY   = process.env.DRY_RUN === "1" || !TOKEN || !CHAT;
 const SITE = "predict2u.com";
 const RG   = "18+ | Bet responsibly. Never stake what you can't afford to lose.";
 
-/* ---------- load the settled-pick ledger ---------- */
-let log = { picks: [] };
-try { log = JSON.parse(fs.readFileSync(path.join(HERE, "track-log.json"), "utf8")); } catch (e) {}
-const picks = Array.isArray(log.picks) ? log.picks : [];
-
+/* ---------- load the bot picks feed (picks.json + picks-history.json) ---------- */
+const feed = require("./bot-feed-media.js");
 const dstr = d => d.toISOString().slice(0, 10);
 const today = new Date();
-const yesterday = new Date(today.getTime() - 86400000);
-const TODAY = dstr(today), YDAY = dstr(yesterday);
-
-const settledOn = date => picks.filter(p =>
-  (p.matchDate || "").slice(0, 10) === date &&
-  (p.result === "Won" || p.result === "Lost"));
-
-const record = list => {
-  const w = list.filter(p => p.result === "Won").length;
-  const l = list.filter(p => p.result === "Lost").length;
-  return { w, l, n: w + l, pct: w + l ? Math.round(100 * w / (w + l)) : 0 };
-};
+const TODAY = feed.TODAY, YDAY = feed.YDAY;
+const settledOn = date => feed.settledOn(date);
+const record = list => feed.record(list);
 
 /* ---------- captions ---------- */
 const esc = t => String(t); // Telegram plain-text captions — no parse_mode, nothing to escape
@@ -54,24 +42,23 @@ if (yr.n > 0) {
   const tone = yr.pct >= 70 ? "Strong board." : yr.pct >= 50 ? "Mixed board — posted anyway. Every result counts here." : "Rough board. We post the losses too — that's the whole point.";
   messages.push({
     photo: ["social-results.png","results.png"].find(f => fs.existsSync(path.join(HERE, f))) || null,
-    caption: `YESTERDAY'S RESULTS — ${YDAY}\n\n${yr.w} WON  •  ${yr.l} LOST  (${yr.pct}%)\n${tone}\n\nFull settled board, every engine: ${SITE}\n\n${RG}`
+    caption: `YESTERDAY'S RESULTS — ${YDAY}\n\n${yr.w} WON  •  ${yr.l} LOST  (${yr.pct}%)\n${tone}\n\nEvery slip and result: ${SITE}/bankers.html\n\n${RG}`
   });
 }
 
-// 2) TODAY'S PICKS — teaser, drive to the site.
-const todaysPicks = picks.filter(p => (p.matchDate || "").slice(0, 10) === TODAY);
-const todayImg = ["social-today.png", "today.png", "today-1.png"].find(f => fs.existsSync(path.join(HERE, f)));
-if (todaysPicks.length && todayImg) {
-  const markets = {};
-  todaysPicks.forEach(p => { if (p.market) markets[p.market] = (markets[p.market] || 0) + 1; });
-  const top = Object.entries(markets).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([m]) => m).join(", ");
-  const engines = new Set(todaysPicks.map(p => p.engine)).size;
+// 2) TODAY'S PICKS — bot slips with SportyBet codes, drive to the site.
+const todaysPicks = feed.picksOn(TODAY);
+const todaysSlips = feed.slipsOn(TODAY);
+const todayImg = ["social-today.png", "today.png", "acca-1.png"].find(f => fs.existsSync(path.join(HERE, f)));
+if (todaysPicks.length) {
+  const bots = [...new Set(todaysSlips.map(s => s.bot))].join(" + ");
+  const codes = todaysSlips.filter(s => s.code).slice(0, 6).map(s => `${s.code} (${s.bot}, ${s.legs.filter(x => x.date === TODAY).length} legs)`).join("\n");
   messages.push({
-    photo: todayImg,
-    caption: `TODAY'S BANKERS — ${TODAY}\n\n${todaysPicks.length} picks across ${engines} engines are live.\nLeading markets: ${top}.\n\nEvery pick shows its full reasoning — and No Bet is a real output, not a missing one.\n\nFree, no signup: ${SITE}\n\n${RG}`
+    photo: todayImg || null,
+    caption: `TODAY'S BOT PICKS — ${TODAY}\n\n${todaysPicks.length} picks in ${todaysSlips.length} SportyBet slips from ${bots}.\n\nSportyBet codes:\n${codes}\n\nLoad a code at sportybet.com/gh or see every slip: ${SITE}/bankers.html\n\n${RG}`
   });
-} else if (todaysPicks.length === 0) {
-  console.log("No picks recorded for today — honest skip, no picks post.");
+} else {
+  console.log("No bot picks for today — honest skip, no picks post.");
 }
 
 // 3) SUNDAY — 7-day recap.
