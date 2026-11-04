@@ -23,60 +23,30 @@
 <script src="cache-refresh-v278.js?v=292"></script>
 <main class="p2u-bankers-page">
   <section class="p2u-bankers-hero">
-    <span class="p2u-bankers-kicker">PREDICT2U BANKERS</span>
+    <span class="p2u-bankers-kicker">PREDICT2U BOT PICKS</span>
     <h1>Bankers of the Day</h1>
-    <p>Two shortlists from the same board. Safest is favourite-win, favourite 2+ and Over 1.5. Value is Over 2.5 and Draw or Over 2.5.</p>
-    <div class="p2u-bankers-meta" id="bankers-meta">Reading today’s bankers…</div>
+    <p>Slips from our own strategy bots, NerdyTips and Bets For The Day. Tap a code to load the slip on SportyBet.</p>
+    <div class="p2u-bankers-meta" id="bankers-meta">Reading today’s picks…</div>
   </section>
-
   <section class="p2u-bankers-toolbar">
-    <label>
-      <span>Kickoff window</span>
-      <select id="bankers-window">
-        <option value="today" selected>Today</option>
-        <option value="36h">Next 36 hours</option>
-        <option value="weekend">This weekend</option>
-      </select>
-    </label>
-    <label>
-      <span>League</span>
-      <select id="bankers-league"><option value="all">All leagues</option></select>
-    </label>
-    <p class="p2u-bankers-note">Markets and prices come from SportyBet: 1 / X / 2, Over/Under and team totals. Combined odds use those SportyBet prices.</p>
+    <label><span>Day</span><select id="bp-day"></select></label>
+    <label><span>Bot</span><select id="bp-source"></select></label>
+    <p class="p2u-bankers-note" id="bp-summary"></p>
   </section>
-
-  <section class="p2u-bankers-columns">
-    <article class="p2u-bankers-col is-safe">
-      <header>
-        <div class="p2u-bankers-head-row">
-          <div>
-            <span>SAFEST</span>
-            <h2>Safest bankers</h2>
-          </div>
-          <button type="button" class="p2u-bankers-acca" data-banker-acca="safe">Add all to slip</button>
-        </div>
-        <p>Favourite to win, favourite 2+, and Over 1.5.</p>
-        <strong id="safe-acca">Combined —</strong>
-      </header>
-      <div id="safe-list" class="p2u-bankers-list"><div class="p2u-bankers-empty">Scanning safest lines…</div></div>
-    </article>
-    <article class="p2u-bankers-col is-value">
-      <header>
-        <div class="p2u-bankers-head-row">
-          <div>
-            <span>VALUE</span>
-            <h2>Value bankers</h2>
-          </div>
-          <button type="button" class="p2u-bankers-acca" data-banker-acca="value">Add all to slip</button>
-        </div>
-        <p>Over 2.5 and Draw or Over 2.5.</p>
-        <strong id="value-acca">Combined —</strong>
-      </header>
-      <div id="value-list" class="p2u-bankers-list"><div class="p2u-bankers-empty">Scanning value lines…</div></div>
-    </article>
-  </section>
+  <section id="bp-list" class="bp-list"><div class="p2u-bankers-empty">Loading…</div></section>
 </main>
-<script src="slip.js"></script>
-<script src="p2u-bankers-feed-v288.js"></script>
+<style>
+.bp-list{display:grid;gap:14px;margin:16px 0}
+.bp-slip{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:12px;overflow-x:auto}
+.bp-slip header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:8px}
+.bp-bot{font-weight:800;color:#5eead4}.bp-slip small{opacity:.65}
+.bp-code{color:#fbbf24;font-weight:700;text-decoration:underline}
+.bp-legs{width:100%;border-collapse:collapse;font-size:.88rem}
+.bp-legs th,.bp-legs td{padding:6px;text-align:left;border-top:1px solid rgba(255,255,255,.07);vertical-align:top}
+.bp-legs small{display:block}
+.bp-res{font-size:.72rem;font-weight:800;padding:2px 6px;border-radius:6px;background:#334155}
+.bp-won{background:#166534}.bp-lost{background:#991b1b}.bp-void{background:#475569}
+</style>
+<script src="p2u-bot-picks-v289.js"></script>
 </body>
 </html>
