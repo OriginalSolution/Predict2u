@@ -92,6 +92,48 @@ footer{color:var(--mut)}
 .bp-slip>summary header>div:first-child::after{content:"▾";color:var(--mut);margin-left:4px;transition:transform .2s}
 .bp-slip:not([open])>summary header>div:first-child::after{transform:rotate(-90deg)}
 .bp-slip[open]>summary{margin-bottom:10px}
+
+.bp-book{border:1px solid var(--line);border-radius:var(--r);background:var(--card);margin:12px 0;overflow:hidden}
+.bp-book-h{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:10px;width:100%;min-height:52px;padding:0 16px;cursor:pointer;font-weight:800;font-size:1.02rem;color:var(--tx)}
+.bp-book-h:focus-visible{outline:2px solid var(--acc);outline-offset:-2px}
+.bp-book-h small{background:rgba(34,197,94,.15);color:var(--acc);border-radius:999px;padding:2px 9px;font-size:.78rem}
+.bp-chev{margin-left:auto;width:10px;height:10px;border-right:2px solid var(--mut);border-bottom:2px solid var(--mut);transform:rotate(45deg);transition:transform .25s ease}
+[aria-expanded="true"]>.bp-chev{transform:rotate(-135deg)}
+.bp-book-p,.bp-card-lp{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+.bp-book.is-open>.bp-book-p,.bp-card.is-open>.bp-card-lp{grid-template-rows:1fr}
+.bp-book-in{overflow:hidden;min-height:0}
+.bp-book .bp-car{padding:4px 14px 14px}
+.bp-card{display:flex;flex-direction:column}
+.bp-card-x{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:6px;min-height:44px;margin-top:6px;font-size:.8rem;font-weight:700;color:var(--mut);cursor:pointer}
+.bp-card-x .bp-chev{width:7px;height:7px}
+.bp-card-legs{list-style:none;margin:0;padding:6px 0 0;font-size:.78rem;display:grid;gap:8px;max-height:260px;overflow:auto}
+.bp-card-legs li{border-top:1px solid var(--line);padding-top:6px}
+.bp-card-legs span{display:block;color:var(--mut)}.bp-card-legs .bp-res{display:inline-block;width:auto;margin-top:3px}.bp-card-legs b{font-weight:700}
+@media (prefers-reduced-motion:reduce){.bp-book-p,.bp-card-lp,.bp-chev{transition:none}}
+
+/* v295 foldables + tablets */
+.bp-slip{container-type:inline-size}
+@container (max-width:520px){.bp-slip header{flex-direction:column;align-items:flex-start}}
+@media (max-width:360px){
+ .p2u-bankers-page{padding-left:10px;padding-right:10px}
+ .p2u-bankers-hero{border-radius:18px;padding:16px}
+ .p2u-bankers-hero h1{font-size:1.55rem}
+ .bp-card{flex-basis:calc(100% - 36px);padding:12px}
+ .bp-card-code{font-size:1.25rem}
+ .bp-book-h{padding:0 12px;font-size:.95rem}
+ .bp-book .bp-car{padding:4px 10px 12px}
+ .bp-legs tr{grid-template-columns:1fr 1fr}
+ .bp-code{padding:0 10px;font-size:.9rem}
+}
+@media (min-width:641px) and (max-width:1024px){
+ .p2u-bankers-page{max-width:100%;padding-left:clamp(16px,3vw,28px);padding-right:clamp(16px,3vw,28px)}
+ .bp-card{flex-basis:clamp(190px,30cqi,240px)}
+ .bp-book{container-type:inline-size}
+}
+@media (min-width:641px) and (max-aspect-ratio:5/4) and (max-width:900px){ /* unfolded near-square screens */
+ .p2u-bankers-hero h1{font-size:2.1rem}
+}
+@media (min-width:1025px){.bp-card{flex-basis:220px}}
 </style>
 </head>
 <body>
@@ -110,6 +152,6 @@ footer{color:var(--mut)}
   <section id="bp-carousel" class="bp-carousel" aria-label="Booking codes"></section>
   <section id="bp-list" class="bp-list"><div class="p2u-bankers-empty">Loading…</div></section>
 </main>
-<script src="p2u-picks-v290.js?v=293" defer></script>
+<script src="p2u-picks-v290.js?v=295" defer></script>
 </body>
 </html>

@@ -55,3 +55,10 @@ body.p2u-s2p-ad-lock{overflow:hidden;}
   .p2u-s2p-ad-split b{font-size:22px;}
   .p2u-s2p-ad-split em{font-size:26px;}
 }
+/* v295: small/folded screens — keep the promo inside the viewport and the close button reachable */
+.p2u-s2p-ad-backdrop{overflow-y:auto;align-items:flex-start;padding-top:max(16px,env(safe-area-inset-top))}
+.p2u-s2p-ad-backdrop>*{max-width:min(420px,100%);margin:auto}
+.p2u-s2p-ad-close{width:44px;height:44px}
+@media (max-width:360px){.p2u-s2p-ad-backdrop{padding:10px}.p2u-s2p-ad-free{letter-spacing:.2em}}
+.p2u-s2p-ad-backdrop{z-index:2147483100}
+@media (max-width:360px),(max-height:700px){.p2u-s2p-ad-match,.p2u-s2p-ad-mark{display:none}.p2u-s2p-ad-card{padding:18px 12px 14px}}

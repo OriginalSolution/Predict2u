@@ -48,7 +48,7 @@
   if(!document.querySelector('link[data-p2u-s2p-ad-v288]')){
     const adCss=document.createElement('link');
     adCss.rel='stylesheet';
-    adCss.href='p2u-s2p-ad-v288.css?v=289';
+    adCss.href='p2u-s2p-ad-v288.css?v=295';
     adCss.dataset.p2uS2pAdV288='true';
     document.head.appendChild(adCss);
   }
