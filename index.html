@@ -6,7 +6,7 @@
   <title>Predict2U • Picks of the Day</title>
   <meta name="description" content="Predict2U picks of the day: favourites from leagues with strong favourite records, with confidence and results.">
   <meta name="theme-color" content="#07111d">
-  <link rel="preload" href="home.json" as="fetch" crossorigin>
+  <link rel="preload" href="home-picks.json" as="fetch" crossorigin>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="favicon-32x32.png">
   <link rel="stylesheet" href="intelligence.css">
@@ -146,7 +146,7 @@ footer{color:var(--mut)}
     <div class="p2u-bankers-meta" id="hp-meta">Reading today’s picks…</div>
     <p class="hp-cta"><a href="bankers.html">Booking codes &amp; slips →</a></p>
   </section>
-  <section class="p2u-bankers-toolbar"><label><span>Day</span><select id="hp-day"></select></label></section>
+  <section class="p2u-bankers-toolbar"><label><span>Date</span><select id="hp-day" aria-label="Date"></select></label></section>
   <section id="hp-tally" class="hp-tally" aria-live="polite"></section>
   <section id="hp-list" class="hp-list"></section>
   <section class="hp-lg"><h2>How favourites perform by league</h2><div id="hp-leagues"></div></section>
@@ -164,10 +164,12 @@ footer{color:var(--mut)}
 .hp-top{display:flex;gap:10px;align-items:flex-start}.hp-mt{flex:1;min-width:0}.hp-mt b{display:block;overflow-wrap:anywhere}.hp-mt small{color:var(--mut);font-size:.78rem}
 .hp-sel{display:flex;justify-content:space-between;gap:8px;margin:12px 0 10px;padding:10px 12px;background:var(--card2);border-radius:12px;font-weight:800}.hp-sel b{color:var(--gold)}
 .hp-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0}.hp-stats dt{font-size:.68rem;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}.hp-stats dd{margin:0;font-weight:800}
+.hp-case{margin:10px 0 0;font-size:.85rem;line-height:1.5;color:#c7d2e1;border-left:3px solid var(--acc);padding-left:10px}
+.hp-sel small{display:block;font-weight:600;color:var(--mut);font-size:.72rem}
 .hp-lg h2{font-size:1.15rem;margin:26px 0 10px}
 .hp-bar{display:inline-block;width:60px;height:6px;background:#1f2a3a;border-radius:9px;margin-right:6px;vertical-align:middle;overflow:hidden}.hp-bar i{display:block;height:100%;background:var(--acc)}
 @media (max-width:360px){.hp-tally{grid-template-columns:repeat(2,1fr)}}
 </style>
-<script src="p2u-home-v296.js" defer></script>
+<script src="p2u-home-v296.js?v=297" defer></script>
 </body>
 </html>
