@@ -31,7 +31,7 @@
         '<div class="bp-book-p" id="'+pid+'" role="region"><div class="bp-book-in"><div class="bp-car" tabindex="0">'+cards.map(function(s,i){
         var code=s.codes[b[0]],link=(s.links||{})[b[0]],lid='bp-legs-'+b[0]+'-'+i;
         return '<div class="bp-card">'+grade(s.grade)+'<div class="bp-card-l"><img class="bp-clogo" src="'+b[2]+'" alt="" width="16" height="16" loading="lazy" decoding="async">'+esc(s.label)+'</div><div class="bp-card-code">'+esc(code)+'</div>'+
-          '<div class="bp-card-m">@'+Number(s.totalOdds).toFixed(2)+' · '+s.picks+' picks</div>'+
+          '<div class="bp-card-m">@'+Number((s.bookOdds||{})[b[0]]||s.totalOdds).toFixed(2)+' · '+((s.bookPicks||{})[b[0]]||s.picks)+' picks'+(s.house?' · P2U banker':'')+'</div>'+((s.bookNotes||{})[b[0]]?'<div class="bp-card-n">⚠ '+esc(s.bookNotes[b[0]])+'</div>':'')+
           '<div class="bp-card-a"><button type="button" data-copy="'+esc(code)+'">Copy</button>'+(link?'<a target="_blank" rel="noopener" href="'+esc(link)+'" class="bp-open" aria-label="Open on '+b[1]+'">Open ↗</a>':'')+'</div>'+
           '<button type="button" class="bp-card-x" data-legs aria-expanded="false" aria-controls="'+lid+'">Show '+s.picks+' picks <i class="bp-chev" aria-hidden="true"></i></button>'+
           '<div class="bp-card-lp" id="'+lid+'"><div class="bp-book-in">'+legsHtml(s)+'</div></div></div>';
@@ -54,7 +54,7 @@
     list.innerHTML=slips.map(function(s,i){
       var st=s.legs.some(function(x){return x.result==='lost';})?'lost':(s.legs.every(function(x){return x.result==='won'||x.result==='void';})?'won':'pending');
       return '<details class="bp-slip"'+(i===0?' open':'')+'><summary><header><div>'+grade(s.grade)+' <b>'+esc(s.label)+'</b> <small>'+s.picks+' picks</small></div>'+
-        '<div>'+(s.link?'<a class="bp-code" target="_blank" rel="noopener" href="'+esc(s.link)+'">SportyBet '+esc(s.code)+'</a>':'')+
+        '<div>'+(s.link?'<a class="bp-code" target="_blank" rel="noopener" href="'+esc(s.link)+'">SportyBet '+esc(s.code)+'</a>':'')+((s.links||{}).msport?' <a class="bp-code bp-code-ms" target="_blank" rel="noopener" href="'+esc(s.links.msport)+'">MSport '+esc(s.codes.msport)+((s.bookOdds||{}).msport?' @'+Number(s.bookOdds.msport).toFixed(2):'')+'</a>':'')+
         ' <b>@'+Number(s.totalOdds).toFixed(2)+'</b> '+badge(st)+'</div></header></summary><table class="bp-legs"><thead><tr><th>KO</th><th>Match</th><th>Pick</th><th>Odds</th><th>P2U score</th><th>Result</th></tr></thead><tbody>'+
         s.legs.map(function(x){return '<tr><td data-l="KO">'+esc(ko(x.kickoff))+'</td><td class="bp-m"><div>'+esc(x.match)+'</div><small>'+esc(x.league)+'</small></td><td class="bp-p"><div>'+esc(x.selection)+'</div><small>'+esc(x.market)+'</small></td><td data-l="Odds">'+(x.odds==null?'—':Number(x.odds).toFixed(2))+'</td><td data-l="P2U">'+pct(x.score)+'</td><td data-l="Result">'+badge(x.result)+'</td></tr>';}).join('')+
         '</tbody></table></details>';
