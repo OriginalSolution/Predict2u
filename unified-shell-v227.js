@@ -53,7 +53,6 @@
     {href:'engines.html',label:'Full Board',icon:'fullboard'},
     {href:'news.html',label:'News',icon:'news'},
     {href:'community.html',label:'Community',icon:'community'},
-    {href:'proof.html',label:'Proof',icon:'proof'},
     {href:'scorecards.html',label:'Scorecards',icon:'score'},
     {href:'league-dna.html',label:'League DNA',icon:'dna'},
     {href:'team-rankings.html',label:'Best/Worst Teams',icon:'rankings'},
