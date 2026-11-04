@@ -1,0 +1,32 @@
+.nh{margin:22px 0;padding:14px;border-radius:18px;background:linear-gradient(160deg,rgba(99,102,241,.16),rgba(15,23,42,.9));border:1px solid rgba(148,163,184,.25)}
+.nh h2{margin:0 0 4px;font-size:clamp(1.15rem,4vw,1.45rem);color:#fff;font-weight:900}
+.nh-sub{margin:0 0 12px;color:#cbd5e1;font-size:.82rem}
+.nh-tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}.nh-tabs::-webkit-scrollbar{display:none}
+.nh-tab{flex:0 0 auto;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:#1e293b;color:#e2e8f0;font-weight:800;font-size:.86rem;cursor:pointer}
+.nh-tab[aria-selected=true]{background:linear-gradient(135deg,#facc15,#f97316);color:#111;border-color:transparent;box-shadow:0 4px 18px rgba(249,115,22,.35)}
+.nh-tab i{font-style:normal;margin-left:6px;padding:1px 7px;border-radius:999px;background:rgba(0,0,0,.25);font-size:.72rem}
+.nh-pane{margin-top:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:10px}
+.nh-pane[hidden]{display:none}
+.nh-it{display:block;background:#0f172a;border:1px solid rgba(255,255,255,.1);border-left:4px solid #6366f1;border-radius:14px;padding:12px;color:#f1f5f9;text-decoration:none;min-width:0}
+.nh-it:hover,.nh-it:focus{border-color:#facc15}
+.nh-it b{display:block;font-size:.95rem;line-height:1.35;color:#fff}
+.nh-it p{margin:6px 0 8px;font-size:.82rem;line-height:1.45;color:#cbd5e1}
+.nh-src{display:flex;justify-content:space-between;gap:8px;font-size:.74rem;color:#fcd34d;font-weight:700}.nh-src span{color:#94a3b8;font-weight:600}
+.nh-inj{border-left-color:#ef4444}.nh-trf{border-left-color:#22c55e}.nh-hot{box-shadow:0 0 0 1px rgba(250,204,21,.35) inset}
+.nh-fx{background:#0f172a;border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:10px 12px}
+.nh-fx h3{margin:0 0 6px;font-size:.8rem;color:#fcd34d;text-transform:uppercase;letter-spacing:.06em}
+.nh-fx ul{list-style:none;margin:0;padding:0}.nh-fx li{display:flex;gap:8px;padding:5px 0;border-top:1px solid rgba(255,255,255,.06);font-size:.84rem;color:#e2e8f0}.nh-fx li time{color:#94a3b8;font-variant-numeric:tabular-nums;min-width:42px}
+.nh-rec{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.nh-rec div{background:#0f172a;border-radius:12px;padding:10px;text-align:center}.nh-rec b{display:block;font-size:1.4rem;color:#fff}.nh-rec span{font-size:.7rem;color:#cbd5e1;text-transform:uppercase}
+.nh-code{background:#0f172a;border:1px solid rgba(255,255,255,.1);border-radius:14px;color:#f1f5f9}
+.nh-code summary{list-style:none;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 12px;cursor:pointer;min-height:44px}.nh-code summary::-webkit-details-marker{display:none}
+.nh-code code{font:800 1.05rem ui-monospace,monospace;letter-spacing:.06em;color:#fff}
+.nh-bk{padding:3px 8px;border-radius:999px;font-size:.72rem;font-weight:800;background:#334155;color:#fff}
+.nh-bk-sportybet{background:#C8101E}.nh-bk-msport{background:#FFD325;color:#111}.nh-bk-betika{background:#00813F}.nh-bk-footballcom{background:#0B1F3A;border:1px solid #39d353}.nh-bk-betpawa{background:#1d2b0a;color:#c4f000}
+.nh-st{margin-left:auto;padding:3px 10px;border-radius:999px;font-weight:900;font-size:.75rem}
+.nh-won{background:#16a34a;color:#fff}.nh-lost{background:#dc2626;color:#fff}.nh-pending{background:#475569;color:#fff}
+.nh-meta{width:100%;font-size:.76rem;color:#cbd5e1}
+.nh-code ol{margin:0;padding:0 12px 10px 30px;font-size:.8rem;color:#e2e8f0}.nh-code li{padding:2px 0}.nh-code li.w{color:#86efac}.nh-code li.l{color:#fca5a5}
+.nh-empty{color:#cbd5e1;font-size:.85rem}
+@media (max-width:420px){.nh-rec{grid-template-columns:repeat(2,1fr)}}
+.nh-fx summary{list-style:none;cursor:pointer;min-height:40px;display:flex;align-items:center}.nh-fx summary::-webkit-details-marker{display:none}.nh-fx h3{margin:0}.nh-fx[open] h3{margin-bottom:6px}
