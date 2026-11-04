@@ -1,0 +1,25 @@
+/* Predict2U v309 — 🔥 Hot Picks: most-backed selections across shared booking codes, booked on every site */
+(function(){
+  var BK={sportybet:['SportyBet','https://www.sportybet.com/gh/?shareCode='],msport:['MSport','https://www.msport.com/gh/sports/share?shareCode='],
+    betika:['Betika','https://betika.com/en-gh/share/'],footballcom:['football.com','https://www.football.com/gh/?shareCode='],betpawa:['Betpawa','https://www.betpawa.com.gh/']};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function fo(x){var n=Number(x);return isFinite(n)?(n>=1000?Math.round(n).toLocaleString():n.toFixed(2)):'–';}
+  function when(p){try{var d=new Date(p.start);return d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',timeZone:'Africa/Accra'})+' '+d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:'Africa/Accra'})+' GMT';}catch(e){return p.date+' '+p.ko;}}
+  function chips(s){return Object.keys(BK).filter(function(b){return s.codes&&s.codes[b];}).map(function(b){var L=s.codes[b];return L.map(function(c,i){
+    var href=b==='betpawa'?BK[b][1]:BK[b][1]+encodeURIComponent(c.code);
+    return '<div class="p2u-chip p2u-chip-'+b+'"><img src="book-'+b+'.webp" alt="'+BK[b][0]+' logo" width="24" height="24" loading="lazy"><span class="p2u-chip-t"><span class="p2u-chip-n">'+BK[b][0]+(L.length>1?' · code '+(i+1)+'/'+L.length:'')+'</span><a class="p2u-chip-c" target="_blank" rel="noopener" href="'+href+'">'+esc(c.code)+'</a><span class="p2u-chip-o">@'+fo(c.totalOdds)+' · '+esc(c.legs)+' picks</span></span><button type="button" class="p2u-chip-cp hot-chip-cp" data-copy="'+esc(c.code)+'" aria-label="Copy '+BK[b][0]+' code">Copy</button></div>';}).join('');}).join('');}
+  function render(d){
+    var el=document.getElementById('hot');var P=d.picks||[];var max=P.length?P[0].count:1;
+    var up=new Date(d.updatedAt);
+    var h='<section class="hot-hero"><h1>🔥 Hot Picks</h1><p>The matches and markets backed most across shared booking codes right now. One pick per match (its most-backed selection), upcoming games only, booked on every site.</p>'+
+      '<div class="hot-stats"><div class="hot-stat">'+(d.codesAnalysed||0).toLocaleString()+'<small>codes analysed</small></div><div class="hot-stat">'+(d.selectionsAnalysed||0).toLocaleString()+'<small>selections counted</small></div><div class="hot-stat">'+P.length+'<small>hot matches</small></div><div class="hot-stat">'+up.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:'Africa/Accra'})+' GMT<small>updated</small></div></div></section>';
+    h+='<h2 class="hot-h2">Booking codes</h2>'+(d.slips||[]).map(function(s){return '<details class="hot-slip"><summary><span>'+esc(s.name)+' <small>· '+s.legs+' picks · '+fo(s.totalOdds)+' odds</small></span></summary><div class="p2u-chips">'+chips(s)+'</div></details>';}).join('');
+    h+='<h2 class="hot-h2">Trending markets</h2><div class="hot-tags">'+(d.markets||[]).map(function(m){return '<span class="hot-tag">'+esc(m.name)+'<b>'+m.count.toLocaleString()+'</b></span>';}).join('')+'</div>';
+    h+='<h2 class="hot-h2">Most-backed teams</h2><div class="hot-tags">'+(d.teams||[]).map(function(m){return '<span class="hot-tag">'+esc(m.name)+'<b>'+m.count+'</b></span>';}).join('')+'</div>';
+    h+='<h2 class="hot-h2">Hot matches</h2><div class="hot-list">'+P.slice(0,40).map(function(p,i){return '<div class="hot-m"><span class="hot-rank">'+(i+1)+'</span><span class="t"><b>'+esc(p.match)+'</b><span>'+esc(p.selection)+'</span><small>'+esc(when(p))+' · in '+p.count+' codes ('+p.share+'%) · '+p.pickShare+'% of this match\u2019s picks</small><div class="hot-bar"><i style="width:'+Math.max(4,Math.round(100*p.count/max))+'%"></i></div></span><span class="o">'+fo(p.odds)+'<small>odds</small></span></div>';}).join('')+'</div>';
+    h+='<p class="hot-note">Popularity is how many shared booking codes include the pick. Odds move; check them on the site before you bet. 18+, bet responsibly.</p>';
+    el.innerHTML=h;
+  }
+  document.addEventListener('click',function(e){var b=e.target.closest('.hot-chip-cp');if(!b)return;var c=b.getAttribute('data-copy');(navigator.clipboard?navigator.clipboard.writeText(c):Promise.reject()).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1500);}).catch(function(){});});
+  fetch('hot-picks.json?t='+Date.now()).then(function(r){return r.json();}).then(render).catch(function(){document.getElementById('hot').innerHTML='<p class="hot-load">Hot Picks are being refreshed. Check back shortly.</p>';});
+})();

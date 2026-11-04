@@ -81,6 +81,7 @@
       rankings:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20V7"/><path d="M3 20h20"/></svg>',
       trust:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/></svg>',
       account:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
+      hot:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 6 5 11a5 5 0 0 1-10 0c0-3 2-4 2-7 2 1 3 3 3 5 1-2 1-5 0-9z"/></svg>',
       more:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="19" cy="12" r="1.4"/></svg>'
     };
     return icons[name]||icons.overview;
@@ -92,7 +93,8 @@
     {href:'news.html',label:'News',icon:'news'},
     {href:'community.html',label:'Community',icon:'community'},
     {href:'all-engines.html',label:'Engines',icon:'engines'},
-    {href:'proof.html',label:'Proof',icon:'proof'}
+    {href:'proof.html',label:'Proof',icon:'proof'},
+    {href:'hot-picks.html',label:'🔥 Hot Picks',icon:'hot'}
   ];
   const mobileLinks=[
     {href:'index.html',label:'Home',icon:'rankings'},
@@ -137,26 +139,18 @@
   dock.className='p2u-v245-dock';
   dock.setAttribute('aria-label','Mobile navigation');
   dock.innerHTML=mobileLinks.map(item=>`<a href="${item.href}" class="${isActive(item)?'is-active':''}">${svg(item.icon)}<span>${item.mobileLabel||item.label}</span></a>`).join('')+
-    `<button type="button" id="p2u-v245-more" class="${moreActive?'is-active':''}" aria-haspopup="dialog" aria-controls="p2u-v245-more-panel" aria-expanded="false">${svg('more')}<span>More</span></button>`;
+    `<a href="hot-picks.html" class="p2u-hot-tab${active==='hot-picks.html'?' is-active':''}"><span style="font-size:20px;line-height:1">🔥</span><span>Hot Picks</span></a>`;
   document.body.appendChild(dock);
 
-  const backdrop=document.createElement('div');
-  backdrop.className='p2u-v245-more-backdrop';
-  backdrop.id='p2u-v245-more-panel';
-  backdrop.setAttribute('aria-hidden','true');
-  backdrop.innerHTML=`<section class="p2u-v245-more-panel" role="dialog" aria-modal="true" aria-label="More navigation">
-    <div class="p2u-v245-more-head"><div><strong>More</strong><small>Board, records and account tools</small></div><button type="button" class="p2u-v245-more-close" aria-label="Close">×</button></div>
-    <div class="p2u-v245-more-grid">${moreLinks.map(item=>`<a href="${item.href}" class="${isActive(item)?'is-active':''}">${svg(item.icon)}<span>${item.label}</span></a>`).join('')}</div>
-  </section>`;
-  document.body.appendChild(backdrop);
-
-  const moreButton=dock.querySelector('#p2u-v245-more');
-  const close=()=>{backdrop.classList.remove('is-open');backdrop.setAttribute('aria-hidden','true');moreButton.setAttribute('aria-expanded','false');document.body.classList.remove('p2u-v245-menu-open');};
-  const open=()=>{backdrop.classList.add('is-open');backdrop.setAttribute('aria-hidden','false');moreButton.setAttribute('aria-expanded','true');document.body.classList.add('p2u-v245-menu-open');
-};
-  moreButton.addEventListener('click',()=>backdrop.classList.contains('is-open')?close():open());
-  backdrop.addEventListener('click',event=>{if(event.target===backdrop||event.target.closest('.p2u-v245-more-close'))close();});
-  document.addEventListener('keydown',event=>{if(event.key==='Escape')close();});
+  // Links that used to live under "More" now sit in a footer strip on every page
+  const foot=document.createElement('footer');
+  foot.className='p2u-more-footer';
+  foot.setAttribute('aria-label','More links');
+  foot.innerHTML=`<div class="p2u-more-footer-in">${moreLinks.map(item=>`<a href="${item.href}" class="${isActive(item)?'is-active':''}">${svg(item.icon)}<span>${item.label}</span></a>`).join('')}</div>`;
+  const st=document.createElement('style');
+  st.textContent='.p2u-more-footer{margin:28px auto 0;padding:18px 14px 96px;max-width:1200px;border-top:1px solid rgba(255,255,255,.14)}.p2u-more-footer-in{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.p2u-more-footer a{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.08);color:#f4f6fb;font:600 13px/1.2 system-ui,sans-serif;text-decoration:none}.p2u-more-footer a:hover,.p2u-more-footer a.is-active{background:#ff6a00;color:#111}.p2u-more-footer svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2}.p2u-v245-dock .p2u-hot-tab.is-active,.p2u-v245-dock .p2u-hot-tab{color:#ff8a1f}';
+  document.head.appendChild(st);
+  (document.readyState==='loading')?document.addEventListener('DOMContentLoaded',()=>document.body.insertBefore(foot,dock)):document.body.insertBefore(foot,dock);
 
   document.body.classList.add('p2u-v227-ready','p2u-v245-ready','p2u-v245-page-'+active.replace('.html','').replace(/[^a-z0-9-]/g,''));
   document.documentElement.classList.add('p2u-v227-html','p2u-v245-html');
