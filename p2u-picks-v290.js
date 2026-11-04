@@ -4,7 +4,7 @@
   var $=function(id){return document.getElementById(id);};
   var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});};
   var ZONE='Africa/Accra',GR={A:0,B:1,C:2};
-  var BOOKS=[['sportybet','SportyBet'],['msport','MSport'],['onexbet','1xBet']];
+  var BOOKS=[['sportybet','SportyBet','book-sportybet.webp','#e41827'],['msport','MSport','book-msport.webp','#ffd325'],['onexbet','1xBet','book-1xbet.webp','#1f6fb2']];
   var data=null,state={day:null};
   function stamp(d){return new Intl.DateTimeFormat('en-CA',{timeZone:ZONE,year:'numeric',month:'2-digit',day:'2-digit'}).format(d);}
   function ko(iso){if(!iso)return '';var d=new Date(iso);if(isNaN(d))return '';return d.toLocaleTimeString('en-GB',{timeZone:ZONE,hour:'2-digit',minute:'2-digit'});}
@@ -27,12 +27,12 @@
       if(!cards.length)return '';
       var open=st&&st.hasOwnProperty(b[0])?!!st[b[0]]:first;first=false;
       var pid='bp-panel-'+b[0];
-      return '<div class="bp-book'+(open?' is-open':'')+'"><button type="button" class="bp-book-h" data-book="'+b[0]+'" aria-expanded="'+open+'" aria-controls="'+pid+'"><span>'+b[1]+' codes</span><small>'+cards.length+'</small><i class="bp-chev" aria-hidden="true"></i></button>'+
+      return '<div class="bp-book bp-book-'+b[0]+(open?' is-open':'')+'" style="--brand:'+b[3]+'"><button type="button" class="bp-book-h" data-book="'+b[0]+'" aria-expanded="'+open+'" aria-controls="'+pid+'"><img class="bp-blogo" src="'+b[2]+'" alt="'+b[1]+' logo" width="28" height="28" loading="lazy" decoding="async"><span>'+b[1]+' codes</span><small>'+cards.length+'</small><i class="bp-chev" aria-hidden="true"></i></button>'+
         '<div class="bp-book-p" id="'+pid+'" role="region"><div class="bp-book-in"><div class="bp-car" tabindex="0">'+cards.map(function(s,i){
         var code=s.codes[b[0]],link=(s.links||{})[b[0]],lid='bp-legs-'+b[0]+'-'+i;
-        return '<div class="bp-card">'+grade(s.grade)+'<div class="bp-card-l">'+esc(s.label)+'</div><div class="bp-card-code">'+esc(code)+'</div>'+
+        return '<div class="bp-card">'+grade(s.grade)+'<div class="bp-card-l"><img class="bp-clogo" src="'+b[2]+'" alt="" width="16" height="16" loading="lazy" decoding="async">'+esc(s.label)+'</div><div class="bp-card-code">'+esc(code)+'</div>'+
           '<div class="bp-card-m">@'+Number(s.totalOdds).toFixed(2)+' · '+s.picks+' picks</div>'+
-          '<div class="bp-card-a"><button type="button" data-copy="'+esc(code)+'">Copy</button>'+(link?'<a target="_blank" rel="noopener" href="'+esc(link)+'" aria-label="Open on '+b[1]+'">Open ↗</a>':'')+'</div>'+
+          '<div class="bp-card-a"><button type="button" data-copy="'+esc(code)+'">Copy</button>'+(link?'<a target="_blank" rel="noopener" href="'+esc(link)+'" class="bp-open" aria-label="Open on '+b[1]+'">Open ↗</a>':'')+'</div>'+
           '<button type="button" class="bp-card-x" data-legs aria-expanded="false" aria-controls="'+lid+'">Show '+s.picks+' picks <i class="bp-chev" aria-hidden="true"></i></button>'+
           '<div class="bp-card-lp" id="'+lid+'"><div class="bp-book-in">'+legsHtml(s)+'</div></div></div>';
       }).join('')+'</div></div></div></div>';
