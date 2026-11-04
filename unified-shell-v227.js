@@ -39,15 +39,18 @@
     {href:'index.html',label:'Overview',icon:'overview'},
     {href:'bankers.html',label:'Bankers',icon:'bankers'},
     {href:'hot-picks.html',label:'🔥 Hot Picks',icon:'picks'},
-    {href:'news.html',label:'News',icon:'news'}
+    {href:'news.html',label:'News',icon:'news'},
+    {href:'staked.html',label:'🎟 Staked',icon:'picks'}
   ];
   const mobileLinks=[
     {href:'index.html',label:'Overview',mobileLabel:'Home',icon:'overview'},
     {href:'bankers.html',label:'Bankers',icon:'bankers'},
-    {href:'hot-picks.html',label:'🔥 Hot',icon:'picks'}
+    {href:'hot-picks.html',label:'🔥 Hot',icon:'picks'},
+    {href:'staked.html',label:'🎟 Staked',icon:'picks'}
   ];
   const moreLinks=[
     {href:'news.html',label:'News',icon:'news'},
+    {href:'staked.html',label:'🎟 Staked',icon:'picks'},
     {href:'account.html',label:'Account',icon:'account'}
   ];
   const isActive=item=>active===item.href;

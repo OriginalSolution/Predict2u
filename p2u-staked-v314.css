@@ -1,0 +1,24 @@
+.st-wrap{max-width:980px;margin:0 auto;padding:18px 14px 110px;color:#eef4ff;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.st-wrap h1{font-size:clamp(24px,5vw,34px);margin:6px 0 4px;color:#fff}.st-sub{color:#c9d6ea;margin:0 0 14px;font-size:15px}
+.st-form{display:grid;grid-template-columns:1.3fr 1fr .8fr auto;gap:8px;background:#0e1b2e;border:1px solid #24405f;border-radius:14px;padding:12px}
+.st-form input,.st-form select{min-height:44px;border-radius:10px;border:1px solid #33557a;background:#07111d;color:#fff;padding:0 12px;font-size:16px}
+.st-btn{min-height:44px;border:0;border-radius:10px;padding:0 16px;font-weight:800;font-size:15px;cursor:pointer;background:#2ee59d;color:#04130c}
+.st-btn.ghost{background:transparent;color:#eef4ff;border:1px solid #33557a}.st-btn.sm{min-height:34px;padding:0 10px;font-size:13px}
+.st-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0;color:#c9d6ea;font-size:14px}
+.st-note{font-size:13px;color:#b8c7dc;margin:8px 0 0}
+.st-card{border:1px solid #24405f;border-radius:14px;background:#0b1626;margin:10px 0;overflow:hidden}
+.st-card>summary{list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding:12px 14px}
+.st-card>summary::-webkit-details-marker{display:none}
+.st-chip{font-weight:800;border-radius:8px;padding:4px 10px;font-size:13px;color:#fff}
+.st-chip.sportybet{background:#B00D19}.st-chip.footballcom{background:#0b7a3b}.st-chip.msport{background:#FFD325;color:#111}.st-chip.betika{background:#006B34}.st-chip.betpawa{background:#FFD325;color:#111}.st-chip.\31xbet{background:#164f80}
+.st-code{font:800 18px/1 ui-monospace,monospace;letter-spacing:.06em;color:#fff}.st-meta{color:#c9d6ea;font-size:13px}
+.st-stat{margin-left:auto;font-weight:900;border-radius:999px;padding:4px 12px;font-size:13px}
+.st-stat.won{background:#18c27a;color:#03140b}.st-stat.lost{background:#ff3b5c;color:#fff}.st-stat.pending{background:#2b3f5c;color:#fff}.st-stat.live{background:#ffb020;color:#1a1000}
+.st-body{padding:0 14px 14px}.st-legs{width:100%;border-collapse:collapse;font-size:14px}
+.st-legs td,.st-legs th{padding:8px 6px;border-top:1px solid #1d3450;text-align:left;vertical-align:top;color:#eef4ff}.st-legs th{color:#b8c7dc;font-weight:700;font-size:12px}
+.st-r{font-weight:900;font-size:12px;border-radius:6px;padding:2px 6px}.st-r.won{background:#18c27a;color:#03140b}.st-r.lost{background:#ff3b5c;color:#fff}.st-r.pending{background:#2b3f5c;color:#fff}.st-r.live{background:#ffb020;color:#1a1000}
+.st-sum{display:flex;flex-wrap:wrap;gap:8px 18px;margin:8px 0;color:#eef4ff;font-size:14px}.st-sum b{color:#fff}
+.st-empty{border:1px dashed #33557a;border-radius:14px;padding:22px;text-align:center;color:#c9d6ea}
+.st-changed{outline:2px solid #ffb020}
+.show-m{display:none}
+@media(max-width:640px){.show-m{display:block}.st-wrap{padding-left:10px;padding-right:10px}.st-body{padding:0 8px 12px}.st-legs td,.st-legs th{padding:7px 4px;font-size:13px}.st-r{font-size:11px;padding:2px 4px}.st-form{grid-template-columns:1fr 1fr}.st-form .st-btn{grid-column:1/-1}.st-legs .hide-m{display:none}.st-stat{margin-left:0}}

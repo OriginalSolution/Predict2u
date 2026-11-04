@@ -91,7 +91,8 @@
     {href:'index.html',label:'Home',icon:'rankings'},
     {href:'bankers.html',label:'Bankers',icon:'bankers'},
     {href:'hot-picks.html',label:'🔥 Hot Picks',icon:'hot'},
-    {href:'news.html',label:'News',icon:'news'}
+    {href:'news.html',label:'News',icon:'news'},
+    {href:'staked.html',label:'🎟 Staked',icon:'picks'}
   ];
   const mobileLinks=[
     {href:'index.html',label:'Home',icon:'rankings'},
@@ -127,7 +128,8 @@
   dock.className='p2u-v245-dock';
   dock.setAttribute('aria-label','Mobile navigation');
   dock.innerHTML=mobileLinks.map(item=>`<a href="${item.href}" class="${isActive(item)?'is-active':''}">${svg(item.icon)}<span>${item.mobileLabel||item.label}</span></a>`).join('')+
-    `<a href="hot-picks.html" class="p2u-hot-tab${active==='hot-picks.html'?' is-active':''}"><span style="font-size:20px;line-height:1">🔥</span><span>Hot</span></a>`;
+    `<a href="hot-picks.html" class="p2u-hot-tab${active==='hot-picks.html'?' is-active':''}"><span style="font-size:20px;line-height:1">🔥</span><span>Hot</span></a>`+
+    `<a href="staked.html" class="p2u-staked-tab${active==='staked.html'?' is-active':''}"><span style="font-size:20px;line-height:1">🎟</span><span>Staked</span></a>`;
   document.body.appendChild(dock);
 
   // Links that used to live under "More" now sit in a footer strip on every page
