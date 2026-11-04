@@ -45,18 +45,18 @@
     scale.dataset.p2uUiScaleV282='true';
     document.head.appendChild(scale);
   }
-  if(!document.querySelector('link[data-p2u-s2p-ad-v288]')){
+  if(!document.querySelector('link[data-p2u-bcod-v300]')){
     const adCss=document.createElement('link');
     adCss.rel='stylesheet';
-    adCss.href='p2u-s2p-ad-v288.css?v=295';
-    adCss.dataset.p2uS2pAdV288='true';
+    adCss.href='p2u-banker-pop-v300.css?v=300';
+    adCss.dataset.p2uBcodV300='true';
     document.head.appendChild(adCss);
   }
-  if(!document.querySelector('script[data-p2u-s2p-ad-v288]')){
+  if(!document.querySelector('script[data-p2u-bcod-v300]')){
     const adJs=document.createElement('script');
-    adJs.src='p2u-s2p-ad-v288.js?v=289';
+    adJs.src='p2u-banker-pop-v300.js?v=300';
     adJs.async=true;
-    adJs.dataset.p2uS2pAdV288='true';
+    adJs.dataset.p2uBcodV300='true';
     document.head.appendChild(adJs);
   }
   if(document.querySelector('.p2u-v245-nav-wrap')) return;
