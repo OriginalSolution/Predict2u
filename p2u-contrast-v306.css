@@ -1,0 +1,36 @@
+/* v306 contrast pass: loaded last; beats flashy/legible/chips */
+html body{--p2u-sb:#a50d18;--p2u-ms:#ffd325;--p2u-bk:#005f2e;--p2u-1x:#164f80}
+html body .p2u-chip-sportybet,html body .hp-mk-sportybet,html body .cc-card:has(img[src*="sportybet"]){--brand:var(--p2u-sb)!important;--on:#fff!important}
+html body .p2u-chip-msport,html body .hp-code-ms,html body .hp-mk-msport,html body .bp-book-msport .bp-card,html body .cc-card:has(img[src*="msport"]){--brand:var(--p2u-ms)!important;--on:#111!important}
+html body .p2u-chip-betika,html body .hp-mk-betika,html body .cc-card:has(img[src*="betika"]){--brand:var(--p2u-bk)!important;--on:#fff!important}
+html body .p2u-chip-onexbet,html body .cc-card:has(img[src*="1xbet"]){--brand:var(--p2u-1x)!important;--on:#fff!important}
+html body .p2u-chip,html body .cc-card{background:var(--brand)!important;color:var(--on)!important}
+html body .p2u-chip *,html body .cc-card *,html body .bp-card *,html body .bcod-chip,html body .bcod-chip *{text-shadow:none!important;-webkit-text-fill-color:currentColor!important;filter:none!important}
+html body .p2u-chip,html body .cc-card,html body .p2u-chip :is(span,a,b,small,div,i),html body .cc-card :is(span,a,b,small,div,i,.cc-t,.cc-m,.cc-n,.cc-code,.p2u-cx-s){color:var(--on)!important;opacity:1!important}
+html body .cc-card .p2u-cx-h,html body .cc-card .cc-a button,html body .cc-card .cc-a a,html body .p2u-chip .p2u-chip-cp{background:#111!important;color:#fff!important;border:1px solid #111!important;opacity:1!important}
+html body .cc-card .cc-a a,html body .cc-card .p2u-cx-h *{color:#fff!important}
+html body .cc-card:not(:has(img[src*="msport"])) .p2u-cx-h,html body .cc-card:not(:has(img[src*="msport"])) .cc-a :is(button,a),html body .p2u-chip:not(.p2u-chip-msport) .p2u-chip-cp{background:#fff!important;color:var(--brand)!important;border-color:#fff!important}
+html body .cc-card:not(:has(img[src*="msport"])) .p2u-cx-h *{color:var(--brand)!important}
+/* result badges own colours */
+html body .bp-res{text-shadow:none!important;-webkit-text-fill-color:currentColor!important;border-radius:99px}
+html body .bp-res.bp-won{background:#0b3d24!important;color:#7ff0b8!important}
+html body .bp-res.bp-lost{background:#4a0f14!important;color:#ffb3b8!important}
+html body .bp-res.bp-pending{background:#1d2a3d!important;color:#fff!important}
+/* headings on dark page */
+html body :is(h2,h3,.cc-h,.hp-code-h,.p2u-cx-h):not(.cc-card *):not(.p2u-chip *){color:#f3f6fb!important;-webkit-text-fill-color:#f3f6fb!important}
+html body .bp-card-code{color:var(--on,#fff)!important;text-shadow:none!important}
+html body .cc-card:has(img[src*="msport"]) :is(.p2u-cx-h,.p2u-cx-h *,.cc-a button,.cc-a a){background:#111!important;color:#fff!important}
+html body .cc-card:has(img[src*="msport"]) .p2u-cx-h *{background:transparent!important}
+html body .bcod-chip[href*="sportybet"]{--brand:var(--p2u-sb)!important;--on:#fff!important}
+html body .bcod-chip[href*="msport"]{--brand:var(--p2u-ms)!important;--on:#111!important}
+html body .bcod-chip[href*="betika"]{--brand:var(--p2u-bk)!important;--on:#fff!important}
+html body .bcod-chip[href*="1xbet"]{--brand:var(--p2u-1x)!important;--on:#fff!important}
+html body .bcod-chip,html body .bcod-chip *{background-color:var(--brand)!important;color:var(--on)!important}
+html body .bcod-chip img{background:transparent!important}
+html body .bp-book-sportybet .bp-card{--brand:var(--p2u-sb)!important;--on:#fff!important}
+html body .bp-book-betika .bp-card{--brand:var(--p2u-bk)!important;--on:#fff!important}
+html body .bp-book-onexbet .bp-card{--brand:var(--p2u-1x)!important;--on:#fff!important}
+html body .bp-card .bp-card-a :is(button,a){background:#111!important;color:#fff!important;border:1px solid #111!important}
+html body .bp-book:not(.bp-book-msport) .bp-card .bp-card-a :is(button,a){background:#fff!important;color:var(--brand)!important;border-color:#fff!important}
+html body .bp-card.bp-card.bp-card .bp-card-a.bp-card-a :is(button,a){background:#111!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+html body .bp-book:not(.bp-book-msport) .bp-card.bp-card.bp-card .bp-card-a.bp-card-a :is(button,a){background:#fff!important;color:var(--brand)!important;-webkit-text-fill-color:var(--brand)!important}
