@@ -5,14 +5,14 @@ html body .p2u-chip-msport,html body .hp-code-ms,html body .hp-mk-msport,html bo
 html body .p2u-chip-betika,html body .hp-mk-betika,html body .cc-card:has(img[src*="betika"]){--brand:var(--p2u-bk)!important;--on:#fff!important}
 html body .p2u-chip-onexbet,html body .cc-card:has(img[src*="1xbet"]){--brand:var(--p2u-1x)!important;--on:#fff!important}
 html body .p2u-chip,html body .cc-card{background:var(--brand)!important;color:var(--on)!important}
-html body .p2u-chip *,html body .cc-card *,html body .bp-card *,html body .bcod-chip,html body .bcod-chip *{text-shadow:none!important;-webkit-text-fill-color:currentColor!important;filter:none!important}
+html body .p2u-chip *,html body .cc-card *,html body .bp-card *,html body .bcod-chip,html body .bcod-chip *{text-shadow:none!important;-webkit-text-fill-color:initial!important;filter:none!important}
 html body .p2u-chip,html body .cc-card,html body .p2u-chip :is(span,a,b,small,div,i),html body .cc-card :is(span,a,b,small,div,i,.cc-t,.cc-m,.cc-n,.cc-code,.p2u-cx-s){color:var(--on)!important;opacity:1!important}
 html body .cc-card .p2u-cx-h,html body .cc-card .cc-a button,html body .cc-card .cc-a a,html body .p2u-chip .p2u-chip-cp{background:#111!important;color:#fff!important;border:1px solid #111!important;opacity:1!important}
 html body .cc-card .cc-a a,html body .cc-card .p2u-cx-h *{color:#fff!important}
 html body .cc-card:not(:has(img[src*="msport"])) .p2u-cx-h,html body .cc-card:not(:has(img[src*="msport"])) .cc-a :is(button,a),html body .p2u-chip:not(.p2u-chip-msport) .p2u-chip-cp{background:#fff!important;color:var(--brand)!important;border-color:#fff!important}
 html body .cc-card:not(:has(img[src*="msport"])) .p2u-cx-h *{color:var(--brand)!important}
 /* result badges own colours */
-html body .bp-res{text-shadow:none!important;-webkit-text-fill-color:currentColor!important;border-radius:99px}
+html body .bp-res{text-shadow:none!important;-webkit-text-fill-color:initial!important;border-radius:99px}
 html body .bp-res.bp-won{background:#0b3d24!important;color:#7ff0b8!important}
 html body .bp-res.bp-lost{background:#4a0f14!important;color:#ffb3b8!important}
 html body .bp-res.bp-pending{background:#1d2a3d!important;color:#fff!important}

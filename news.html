@@ -50,88 +50,13 @@
 <link rel="stylesheet" href="mobile-zfold-v257.css" data-p2u-mobile-zfold-v257="true"/>
 <link rel="stylesheet" href="ui-polish-v259.css" data-p2u-ui-v259="true"/>
 <link rel="stylesheet" href="mobile-responsive-v265.css" data-p2u-responsive-v265="true"/>  <link rel="stylesheet" href="controls-v267.css" data-p2u-controls-v267="true">
+  <link rel="stylesheet" href="p2u-newshub-v307.css?v=307">
 </head>
 <body class="p2u-news-page">
 <script src="unified-shell-v234.js"></script>
 
 
-<main class="p2u-news-wrap">
-  <section class="p2u-news-hero" aria-labelledby="news-hero-title">
-    <div class="p2u-news-hero-copy">
-      <div class="p2u-news-hero-topline">
-        <div class="p2u-news-kicker">GLOBAL FOOTBALL DESK</div>
-        <div class="p2u-news-live p2u-news-live--hero"><span></span><strong>Auto-updated</strong><small id="news-updated">Connecting…</small></div>
-      </div>
-      <h1 id="news-hero-title">Football news.<br><em>Transfer intelligence.</em></h1>
-      <p>Fresh, source-attributed football headlines from around the world—plus a respectful place for the Predict2U community to discuss every story.</p>
-      <div class="p2u-news-hero-actions">
-        <button class="p2u-news-hero-action primary" type="button" data-news-jump="#news-feed"><i class="fa-regular fa-newspaper"></i> Latest stories</button>
-        <button class="p2u-news-hero-action" type="button" data-news-hero-filter="transfer"><img src="predict2u-transfers-thumb.webp" alt="" width="24" height="24" decoding="async"> Transfer desk</button>
-      </div>
-      <div class="p2u-news-hero-proof" aria-label="News desk features">
-        <span><i class="fa-solid fa-earth-africa"></i> Worldwide</span>
-        <span><i class="fa-solid fa-link"></i> Original sources</span>
-        <span><i class="fa-regular fa-comments"></i> Community discussion</span>
-      </div>
-    </div>
-    <figure class="p2u-news-hero-art">
-      <img src="predict2u-transfers.webp" alt="Predict2U Transfers" width="1411" height="941" fetchpriority="high" decoding="async">
-      <figcaption><span>Predict2U Transfer Desk</span><strong>Latest moves, rumours and confirmed deals</strong></figcaption>
-    </figure>
-  </section>
-
-  <section class="p2u-news-controls" aria-label="News filters">
-    <div class="p2u-news-tabs" role="tablist">
-      <button class="is-active" data-news-filter="all" role="tab">Latest</button>
-      <button data-news-filter="transfer" role="tab"><img class="p2u-news-tab-mark" src="predict2u-transfers-thumb.webp" alt="" width="22" height="22" loading="lazy" decoding="async"> Transfers</button>
-      <button data-news-filter="news" role="tab">Football</button>
-      <button data-news-filter="breaking" role="tab">Breaking</button>
-      <button data-news-filter="foryou" role="tab"><i class="fa-solid fa-wand-magic-sparkles"></i> For You</button>
-      <button data-news-filter="discussed" role="tab"><i class="fa-regular fa-comments"></i> Most Discussed</button>
-      <button data-news-filter="saved" role="tab"><i class="fa-regular fa-bookmark"></i> Read Later</button>
-    </div>
-    <label class="p2u-news-search"><i class="fa-solid fa-magnifying-glass"></i><input id="news-search" type="search" placeholder="Search clubs, leagues or players…" autocomplete="off" spellcheck="true" aria-describedby="news-search-help"/></label>
-  </section>
-  <div id="news-search-help" class="p2u-news-search-help" role="status" aria-live="polite" hidden></div>
-  <div id="news-service-status" class="p2u-news-service-status" role="status" aria-live="polite" hidden></div>
-
-  <section class="p2u-news-personalize" aria-labelledby="news-personalize-title">
-    <div class="p2u-news-personalize-head">
-      <div>
-        <div class="p2u-news-kicker">YOUR FOOTBALL WORLD</div>
-        <h2 id="news-personalize-title">Follow what matters</h2>
-        <p>Clubs, leagues, countries, players, sources and topics shape your For You feed and personalized news alerts.</p>
-      </div>
-      <span class="p2u-news-follow-counter"><strong id="news-follow-count">0</strong> followed</span>
-    </div>
-    <div class="p2u-news-follow-form">
-      <label>
-        <span>Type</span>
-        <select id="news-follow-type">
-          <option value="club">Club</option>
-          <option value="league">League</option>
-          <option value="country">Country</option>
-          <option value="player">Player</option>
-          <option value="source">Publisher</option>
-          <option value="topic">Topic</option>
-        </select>
-      </label>
-      <label class="grow">
-        <span>Name</span>
-        <input id="news-follow-input" maxlength="100" placeholder="Arsenal, Ghana, Champions League, Mbappé…" autocomplete="off" spellcheck="true"/>
-      </label>
-      <button id="news-follow-add" class="p2u-news-button" type="button"><i class="fa-solid fa-plus"></i> Follow</button>
-    </div>
-    <div id="news-followed-topics" class="p2u-news-followed-topics" aria-live="polite"></div>
-  </section>
-
-  <section id="news-featured" class="p2u-news-featured" aria-live="polite"></section>
-  <section id="news-feed">
-    <div class="p2u-news-section-head"><div><div class="p2u-news-kicker">LIVE FEED</div><h2 id="news-list-title">Latest football stories</h2><span id="news-result-count" class="p2u-news-result-count">0 stories</span></div><button id="news-refresh" class="p2u-news-ghost"><i class="fa-solid fa-rotate"></i> Refresh</button></div>
-    <div id="news-list" class="p2u-news-grid"><div class="p2u-news-empty">Loading the football desk…</div></div>
-    <div class="p2u-news-load-wrap"><button id="news-load-more" class="p2u-news-button" hidden>Load more</button></div>
-  </section>
-</main>
+<main class="p2u-bankers-page"><section id="news-hub" class="nh" aria-label="Football hub"></section></main>
 
 <div id="news-discussion-backdrop" class="p2u-news-discussion-backdrop" aria-hidden="true">
   <aside id="news-discussion-panel" class="p2u-news-discussion" role="dialog" aria-modal="true" aria-label="News discussion"></aside>
@@ -144,7 +69,7 @@
 <script src="admin-config.js"></script>
 <script src="site-controls.js" defer></script>
 <script src="account-cloud.js" defer></script>
-<script src="news.js" defer></script>
+<script src="p2u-newshub-v307.js?v=307" defer></script>
 <script src="brand-experience.js" defer></script>
 <script src="site-health-widget.js" defer></script>
 <script src="performance-freshness.js" defer></script>
