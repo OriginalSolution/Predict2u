@@ -38,3 +38,10 @@ html body .cc-card.cc-card:has(img[src*="msport"]) :is(.p2u-cx-h,.p2u-cx-h *,.cc
 html body .cc-card.cc-card:not(:has(img[src*="msport"])) :is(.p2u-cx-h,.p2u-cx-h *,.cc-a button,.cc-a a){-webkit-text-fill-color:var(--brand)!important}
 html body .p2u-chip.p2u-chip-msport .p2u-chip-cp{-webkit-text-fill-color:#fff!important}
 html body .p2u-chip.p2u-chip:not(.p2u-chip-msport) .p2u-chip-cp{-webkit-text-fill-color:var(--brand)!important}
+/* light brands (betPawa) behave like MSport: dark text, dark buttons */
+html body .p2u-chip-betpawa,html body .cc-card:has(img[src*="betpawa"]),html body .bcod-chip[href*="betpawa"]{--brand:#78be20!important;--on:#111!important}
+html body .p2u-chip.p2u-chip.p2u-chip-betpawa .p2u-chip-cp,html body .cc-card.cc-card:has(img[src*="betpawa"]) :is(.p2u-cx-h,.p2u-cx-h *,.cc-a button,.cc-a a),html body .bp-book-betpawa .bp-card.bp-card.bp-card .bp-card-a.bp-card-a :is(button,a){background:#111!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border-color:#111!important}
+html body .cc-card:has(img[src*="betpawa"]) .p2u-cx-h *{background:transparent!important}
+html body .p2u-chip-footballcom,html body .cc-card:has(img[src*="football"]){--on:#fff!important}
+html body .bp-book.bp-book-betpawa .bp-card.bp-card.bp-card .bp-card-a.bp-card-a :is(button,a),html body .bp-card.bp-card.bp-card:has(img[src*="betpawa"]) .bp-card-a.bp-card-a :is(button,a){background:#111!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border-color:#111!important}
+html body .bp-card:has(img[src*="betpawa"]),html body .bp-book-betpawa .bp-card{--brand:#78be20!important;--on:#111!important}
