@@ -24,8 +24,8 @@ const DRY   = process.env.DRY_RUN === "1" || !TOKEN || !CHAT;
 const SITE = "predict2u.com";
 const RG   = "18+ | Bet responsibly. Never stake what you can't afford to lose.";
 
-/* ---------- load the bot picks feed (picks.json + picks-history.json) ---------- */
-const feed = require("./bot-feed-media.js");
+/* ---------- load the picks feed (picks.json + picks-history.json) ---------- */
+const feed = require("./picks-media.js");
 const dstr = d => d.toISOString().slice(0, 10);
 const today = new Date();
 const TODAY = feed.TODAY, YDAY = feed.YDAY;
@@ -46,19 +46,18 @@ if (yr.n > 0) {
   });
 }
 
-// 2) TODAY'S PICKS — bot slips with SportyBet codes, drive to the site.
+// 2) TODAY'S PICKS — graded slips with SportyBet codes, drive to the site.
 const todaysPicks = feed.picksOn(TODAY);
 const todaysSlips = feed.slipsOn(TODAY);
 const todayImg = ["social-today.png", "today.png", "acca-1.png"].find(f => fs.existsSync(path.join(HERE, f)));
 if (todaysPicks.length) {
-  const bots = [...new Set(todaysSlips.map(s => s.bot))].join(" + ");
-  const codes = todaysSlips.filter(s => s.code).slice(0, 6).map(s => `${s.code} (${s.bot}, ${s.legs.filter(x => x.date === TODAY).length} legs)`).join("\n");
+  const codes = todaysSlips.filter(s => s.code).slice(0, 6).map(s => `${s.code} (${s.label}, grade ${s.grade}, ${s.legs.filter(x => x.date === TODAY).length} legs @${Number(s.totalOdds).toFixed(2)})`).join("\n");
   messages.push({
     photo: todayImg || null,
-    caption: `TODAY'S BOT PICKS — ${TODAY}\n\n${todaysPicks.length} picks in ${todaysSlips.length} SportyBet slips from ${bots}.\n\nSportyBet codes:\n${codes}\n\nLoad a code at sportybet.com/gh or see every slip: ${SITE}/bankers.html\n\n${RG}`
+    caption: `TODAY'S PICKS — ${TODAY}\n\n${todaysPicks.length} picks in ${todaysSlips.length} graded SportyBet slips.\n\nSportyBet codes:\n${codes}\n\nLoad a code at sportybet.com/gh or see every slip: ${SITE}/bankers.html\n\n${RG}`
   });
 } else {
-  console.log("No bot picks for today — honest skip, no picks post.");
+  console.log("No picks for today — honest skip, no picks post.");
 }
 
 // 3) SUNDAY — 7-day recap.

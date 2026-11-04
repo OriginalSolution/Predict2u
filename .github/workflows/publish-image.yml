@@ -1,5 +1,5 @@
 name: Publish daily image (fast)
-# Regenerates today.png from the bot picks feed (picks.json) and redeploys GitHub Pages.
+# Regenerates today.png from the picks feed (picks.json) and redeploys GitHub Pages.
 # Does NOT run the slow fetcher — use this to refresh/republish the branded
 # image (and fix the today.png link) in ~1 minute. Trigger manually from the
 # Actions tab ("Run workflow").
@@ -29,7 +29,7 @@ jobs:
       - name: Generate daily branded image
         run: |
           npm install sharp --no-save || echo "sharp install issue"
-          node bot-feed-media.js picks || echo "image generation skipped"
+          node picks-media.js picks || echo "image generation skipped"
       - name: Commit the regenerated image (if changed)
         run: |
           git config user.name "predicto-bot"
