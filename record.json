@@ -1,0 +1,379 @@
+{
+ "DATA_UPDATED": "2026-11-05T00:22:54Z",
+ "stakeCurrency": "GHS",
+ "flatStake": 10.0,
+ "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
+ "overall": {
+  "n": 20,
+  "won": 0,
+  "lost": 20,
+  "winRate": 0.0,
+  "stake": 10.0,
+  "staked": 200.0,
+  "returned": 0,
+  "profit": -200.0,
+  "roi": -100.0,
+  "pending": 164,
+  "codesSettled": 20,
+  "codesWon": 0,
+  "codesLost": 20
+ },
+ "streak": {
+  "current": "lost",
+  "currentLen": 20,
+  "bestWin": 0,
+  "bestLoss": 20
+ },
+ "byType": [
+  {
+   "n": 20,
+   "won": 0,
+   "lost": 20,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 200.0,
+   "returned": 0,
+   "profit": -200.0,
+   "roi": -100.0,
+   "key": "slip"
+  }
+ ],
+ "bySite": [
+  {
+   "n": 20,
+   "won": 0,
+   "lost": 20,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 200.0,
+   "returned": 0,
+   "profit": -200.0,
+   "roi": -100.0,
+   "key": "sportybet"
+  }
+ ],
+ "byMarket": [
+  {
+   "n": 7,
+   "won": 0,
+   "lost": 7,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 70.0,
+   "returned": 0,
+   "profit": -70.0,
+   "roi": -100.0,
+   "key": "Double chance"
+  },
+  {
+   "n": 6,
+   "won": 0,
+   "lost": 6,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 60.0,
+   "returned": 0,
+   "profit": -60.0,
+   "roi": -100.0,
+   "key": "Under 3.5"
+  },
+  {
+   "n": 5,
+   "won": 0,
+   "lost": 5,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 50.0,
+   "returned": 0,
+   "profit": -50.0,
+   "roi": -100.0,
+   "key": "Over 2.5"
+  },
+  {
+   "n": 2,
+   "won": 0,
+   "lost": 2,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 20.0,
+   "returned": 0,
+   "profit": -20.0,
+   "roi": -100.0,
+   "key": "Match result / other"
+  }
+ ],
+ "byDay": [
+  {
+   "n": 19,
+   "won": 0,
+   "lost": 19,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 190.0,
+   "returned": 0,
+   "profit": -190.0,
+   "roi": -100.0,
+   "key": "2026-11-04"
+  },
+  {
+   "n": 1,
+   "won": 0,
+   "lost": 1,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 10.0,
+   "returned": 0,
+   "profit": -10.0,
+   "roi": -100.0,
+   "key": "2026-11-03"
+  }
+ ],
+ "picks": {
+  "settled": 64,
+  "won": 46,
+  "lost": 18,
+  "winRate": 71.9
+ },
+ "recent": [
+  {
+   "code": "DCDEAR",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 3",
+   "kind": "slip",
+   "odds": 2982.51,
+   "status": "lost",
+   "hit": 2,
+   "total": 29,
+   "profit": -10.0
+  },
+  {
+   "code": "98WCRF",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 9",
+   "kind": "slip",
+   "odds": 30.44,
+   "status": "lost",
+   "hit": 2,
+   "total": 11,
+   "profit": -10.0
+  },
+  {
+   "code": "E3E2LZ",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 12",
+   "kind": "slip",
+   "odds": 38.28,
+   "status": "lost",
+   "hit": 1,
+   "total": 12,
+   "profit": -10.0
+  },
+  {
+   "code": "ACPEBK",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 13",
+   "kind": "slip",
+   "odds": 42.74,
+   "status": "lost",
+   "hit": 1,
+   "total": 11,
+   "profit": -10.0
+  },
+  {
+   "code": "9JYDV9",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 14",
+   "kind": "slip",
+   "odds": 66.83,
+   "status": "lost",
+   "hit": 6,
+   "total": 18,
+   "profit": -10.0
+  },
+  {
+   "code": "CWM487",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 15",
+   "kind": "slip",
+   "odds": 125.04,
+   "status": "lost",
+   "hit": 6,
+   "total": 14,
+   "profit": -10.0
+  },
+  {
+   "code": "DMMSTX",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 16",
+   "kind": "slip",
+   "odds": 132.86,
+   "status": "lost",
+   "hit": 1,
+   "total": 16,
+   "profit": -10.0
+  },
+  {
+   "code": "9TN8GF",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 17",
+   "kind": "slip",
+   "odds": 245.39,
+   "status": "lost",
+   "hit": 5,
+   "total": 24,
+   "profit": -10.0
+  },
+  {
+   "code": "F0PE5C",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 18",
+   "kind": "slip",
+   "odds": 186.01,
+   "status": "lost",
+   "hit": 1,
+   "total": 17,
+   "profit": -10.0
+  },
+  {
+   "code": "FRQ2JJ",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 19",
+   "kind": "slip",
+   "odds": 288.48,
+   "status": "lost",
+   "hit": 6,
+   "total": 21,
+   "profit": -10.0
+  },
+  {
+   "code": "8M4UK6",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 20",
+   "kind": "slip",
+   "odds": 54951.01,
+   "status": "lost",
+   "hit": 6,
+   "total": 12,
+   "profit": -10.0
+  },
+  {
+   "code": "A6Q086",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 21",
+   "kind": "slip",
+   "odds": 805.57,
+   "status": "lost",
+   "hit": 7,
+   "total": 21,
+   "profit": -10.0
+  },
+  {
+   "code": "83R48D",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 22",
+   "kind": "slip",
+   "odds": 1034.03,
+   "status": "lost",
+   "hit": 4,
+   "total": 22,
+   "profit": -10.0
+  },
+  {
+   "code": "FS8KLN",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 23",
+   "kind": "slip",
+   "odds": 1741.9,
+   "status": "lost",
+   "hit": 9,
+   "total": 25,
+   "profit": -10.0
+  },
+  {
+   "code": "F6Y2S2",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 26",
+   "kind": "slip",
+   "odds": 3346.56,
+   "status": "lost",
+   "hit": 3,
+   "total": 28,
+   "profit": -10.0
+  },
+  {
+   "code": "FJG8DU",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 27",
+   "kind": "slip",
+   "odds": 22120.73,
+   "status": "lost",
+   "hit": 11,
+   "total": 35,
+   "profit": -10.0
+  },
+  {
+   "code": "BTWWPF",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 28",
+   "kind": "slip",
+   "odds": 29933.55,
+   "status": "lost",
+   "hit": 5,
+   "total": 35,
+   "profit": -10.0
+  },
+  {
+   "code": "F84W6K",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 29",
+   "kind": "slip",
+   "odds": 29651.58,
+   "status": "lost",
+   "hit": 5,
+   "total": 33,
+   "profit": -10.0
+  },
+  {
+   "code": "995LYZ",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Slip 31",
+   "kind": "slip",
+   "odds": 221389.71,
+   "status": "lost",
+   "hit": 5,
+   "total": 36,
+   "profit": -10.0
+  },
+  {
+   "code": "AQX8SA",
+   "book": "sportybet",
+   "date": "2026-11-03",
+   "name": "Slip 1",
+   "kind": "slip",
+   "odds": 36.75,
+   "status": "lost",
+   "hit": 3,
+   "total": 5,
+   "profit": -10.0
+  }
+ ]
+}
