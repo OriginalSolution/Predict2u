@@ -27,7 +27,7 @@
       var code=hc?raw.code:raw;
       if(!code){
         if(!s.highOdds)return '';
-        return '<div class="p2u-chip p2u-chip-'+b[0]+' is-pending"><img src="/'+b[2]+'" alt="" width="24" height="24"><span class="p2u-chip-t"><span class="p2u-chip-n">'+b[1]+'</span><span class="p2u-chip-c">Unavailable</span><span class="p2u-chip-o">'+esc((s.bookingPending||{})[b[0]]||'Not booked')+'</span></span><button type="button" class="p2u-chip-cp" disabled>Pending</button></div>';
+        return '<div class="p2u-chip p2u-chip-'+b[0]+' is-pending"><img src="/'+b[2]+'" alt="" width="24" height="24"><span class="p2u-chip-t"><span class="p2u-chip-n">'+b[1]+'</span><span class="p2u-chip-c p2u-chip-unavailable">Not booked</span><span class="p2u-chip-o p2u-chip-reason">'+esc((s.bookingPending||{})[b[0]]||'Not booked')+'</span></span><button type="button" class="p2u-chip-cp" disabled>Pending</button></div>';
       }
       return '<div class="p2u-chip p2u-chip-'+b[0]+'" data-book="'+b[0]+'" data-code="'+esc(code)+'" data-legs="'+esc(n)+'" data-odds="'+esc(o)+'"><img src="/'+b[2]+'" alt="" width="24" height="24" loading="lazy"><span class="p2u-chip-t"><span class="p2u-chip-n">'+b[1]+'</span><a class="p2u-chip-c" target="_blank" rel="noopener" href="'+b[3]+encodeURIComponent(code)+'">'+esc(code)+'</a><span class="p2u-chip-o">@'+Number(o).toFixed(2)+' · '+n+' picks</span></span><button type="button" class="p2u-chip-cp" data-copy="'+esc(code)+'" aria-label="Copy '+b[1]+' code">Copy</button></div>';
     }).join('')+'</div>';
