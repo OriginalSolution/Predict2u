@@ -34,26 +34,26 @@
       .sort(function(a,b){var ra=RISK.hasOwnProperty(a.risk)?RISK[a.risk]:3,rb=RISK.hasOwnProperty(b.risk)?RISK[b.risk]:3;return ra-rb||(GR[a.grade]-GR[b.grade])||(b.rating-a.rating);})
       .map(function(s,i){return Object.assign({},s,{label:slipLabel(s)});});
   }
-  var OPEN_KEY='p2u_books_open_v1';
-  function openState(){try{return JSON.parse(sessionStorage.getItem(OPEN_KEY))||null;}catch(e){return null;}}
-  function saveOpen(id,on){var st=openState()||{};st[id]=on;try{sessionStorage.setItem(OPEN_KEY,JSON.stringify(st));}catch(e){}}
+  var OPEN_KEY='p2u_books_open_v2';
+  function openState(){try{return JSON.parse(sessionStorage.getItem(OPEN_KEY))||{};}catch(e){return {};}}
+  function saveOpen(id,on){var st=openState();st[id]=on;try{sessionStorage.setItem(OPEN_KEY,JSON.stringify(st));}catch(e){}}
   function legsHtml(s){return '<ul class="bp-card-legs">'+s.legs.map(function(x){return '<li><span>'+esc(ko(x.kickoff))+' '+esc(x.match)+'</span><b>'+esc(x.selection)+' @'+(x.odds==null?'—':Number(x.odds).toFixed(2))+'</b> '+badge(x.result)+'</li>';}).join('')+'</ul>';}
-  function carousel(slips){
-    var st=openState(),first=true;
-    return BOOKS.map(function(b){
+  function carousel(slips,opts){
+    opts=opts||{};var st=openState(),first=true,top=opts.topBook,books=opts.books||BOOKS.map(function(b){return b[0]});
+    return BOOKS.filter(function(b){return books.indexOf(b[0])>=0;}).map(function(b){
       var cards=slips.filter(function(s){return s.codes&&s.codes[b[0]];});
-      if(!cards.length)return '';
-      var open=st&&st.hasOwnProperty(b[0])?!!st[b[0]]:false;first=false;
-      var pid='bp-panel-'+b[0];
-      return '<div class="bp-book bp-book-'+b[0]+(open?' is-open':'')+'" style="--brand:'+b[3]+'"><button type="button" class="bp-book-h" data-book="'+b[0]+'" aria-expanded="'+open+'" aria-controls="'+pid+'"><img class="bp-blogo" src="'+b[2]+'" alt="'+b[1]+' logo" width="28" height="28" loading="lazy" decoding="async"><span>'+b[1]+' codes</span><small>'+cards.length+'</small><i class="bp-chev" aria-hidden="true"></i></button>'+
-        '<div class="bp-book-p" id="'+pid+'" role="region"><div class="bp-book-in"><div class="bp-car" tabindex="0">'+cards.map(function(s,i){
-        var code=s.codes[b[0]],link=(s.links||{})[b[0]],lid='bp-legs-'+b[0]+'-'+i;
-        return '<div class="bp-card bp-card-'+esc(s.risk||'high')+'">'+riskBadge(s.risk)+grade(s.grade)+'<div class="bp-card-l"><img class="bp-clogo" src="'+b[2]+'" alt="" width="16" height="16" loading="lazy" decoding="async">'+esc(s.label)+'</div><div class="bp-card-code">'+esc(code)+'</div>'+
+      if(!cards.length&&!opts.includeEmpty)return '';
+      var open=b[0]===top?true:(st&&st.hasOwnProperty(b[0])?!!st[b[0]]:false);first=false;var isTop=b[0]===top,logo=(opts.root?'/':'')+b[2];
+      var pid=(opts.idPrefix||'bp-panel-')+b[0];
+      return '<div class="bp-book bp-book-'+b[0]+(open?' is-open':'')+(isTop?' bp-book-top':'')+'" style="--brand:'+b[3]+'">'+(isTop?'':'<button type="button" class="bp-book-h" data-book="'+b[0]+'" aria-expanded="'+open+'" aria-controls="'+pid+'"><img class="bp-blogo" src="'+logo+'" alt="'+b[1]+' logo" width="28" height="28" loading="lazy" decoding="async"><span>'+b[1]+' codes</span><small>'+cards.length+'</small><i class="bp-chev" aria-hidden="true"></i></button>')+
+        '<div class="bp-book-p" id="'+pid+'" role="region"><div class="bp-book-in"><div class="bp-car" tabindex="0">'+(cards.length?cards.map(function(s,i){
+        var code=s.codes[b[0]],link=(s.links||{})[b[0]],lid=(opts.idPrefix||'bp-legs-')+b[0]+'-'+i,cardId=opts.cardId?opts.cardId(s,b[0],code):'';
+        return '<div class="bp-card bp-card-'+esc(s.risk||'high')+'"'+(cardId?' id="'+esc(cardId)+'"':'')+' data-slip-code="'+esc(s.code||code)+'">'+riskBadge(s.risk)+grade(s.grade)+'<div class="bp-card-l"><img class="bp-clogo" src="'+logo+'" alt="" width="16" height="16" loading="lazy" decoding="async">'+esc(s.label)+'</div><div class="bp-card-code">'+esc(code)+'</div>'+
           '<div class="bp-card-m">@'+Number((s.bookOdds||{})[b[0]]||s.totalOdds).toFixed(2)+' · '+((s.bookPicks||{})[b[0]]||s.picks)+' picks'+(s.house?' · P2U banker':'')+'</div>'+((s.bookNotes||{})[b[0]]?'<div class="bp-card-n">⚠ '+esc(s.bookNotes[b[0]])+'</div>':'')+
-          '<div class="bp-card-a"><button type="button" data-copy="'+esc(code)+'">Copy</button>'+(link?'<a target="_blank" rel="noopener" href="'+esc(link)+'" class="bp-open" aria-label="Open on '+b[1]+'">Open ↗</a>':'')+(window.P2UWA?'<a class="bp-wa" target="_blank" rel="noopener" href="'+P2UWA.href(s)+'" aria-label="Share on WhatsApp">WhatsApp</a>':'')+'</div>'+
+          '<div class="bp-card-a"><button type="button" data-copy="'+esc(code)+'">Copy</button>'+(link?'<a target="_blank" rel="noopener" href="'+esc(link)+'" class="bp-open" aria-label="Open on '+b[1]+'">Open ↗</a>':'')+(window.P2UWA?'<a class="bp-wa" target="_blank" rel="noopener" href="'+P2UWA.href(s)+'" aria-label="Share on WhatsApp">WA</a>':'')+'</div>'+
           '<button type="button" class="bp-card-x" data-legs aria-expanded="false" aria-controls="'+lid+'">Show '+s.picks+' picks <i class="bp-chev" aria-hidden="true"></i></button>'+
           '<div class="bp-card-lp" id="'+lid+'"><div class="bp-book-in">'+legsHtml(s)+'</div></div></div>';
-      }).join('')+'</div></div></div></div>';
+      }).join(''):'<div class="p2u-bankers-empty">No booked codes yet.</div>')+'</div></div></div></div>';
     }).join('');
   }
   document.addEventListener('click',function(e){
@@ -101,6 +101,8 @@
     $('bankers-meta').textContent='Updated '+up.toLocaleString('en-GB',{timeZone:ZONE,day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})+' GMT';
     render();
   }
+  window.P2UBankers={carousel:carousel,css:riskCss,riskBadge:riskBadge,grade:grade};
+  if(!document.getElementById('bp-day')||!document.getElementById('bp-carousel'))return;
   fetch('picks.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(init)
     .catch(function(e){$('bankers-meta').textContent='Could not load picks ('+e.message+').';});
 })();
