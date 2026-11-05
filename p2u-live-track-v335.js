@@ -11,8 +11,8 @@
     if(blocked()||document.hidden&&type==='heartbeat')return;
     var sid=id(sessionStorage,SID),vid=id(localStorage,VID);if(!sid||!vid)return;
     var payload=JSON.stringify({type:type,sid:sid,vid:vid,page:location.pathname,referrer:document.referrer,device:device()});
-    if(navigator.sendBeacon){try{if(navigator.sendBeacon(RELAY,new Blob([payload],{type:'application/json'})))return;}catch(e){}}
-    try{fetch(RELAY,{method:'POST',headers:{'Content-Type':'application/json'},body:payload,keepalive:true,credentials:'omit',cache:'no-store'}).catch(function(){});}catch(e){}
+    if(navigator.sendBeacon){try{if(navigator.sendBeacon(RELAY,new Blob([payload],{type:'text/plain;charset=UTF-8'})))return;}catch(e){}}
+    try{fetch(RELAY,{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:payload,keepalive:true,credentials:'omit',cache:'no-store'}).catch(function(){});}catch(e){}
   }
   function boot(){if(blocked()||sent.page)return;sent.page=true;send('page');clearInterval(timer);timer=setInterval(function(){send('heartbeat');},60000);}
   document.addEventListener('click',function(e){if(blocked())return;var el=e.target.closest&&e.target.closest('[data-p2u-pay],[data-p2u-info],[data-p2u-go],a[href*="unlock" i]');if(!el)return;var key=location.pathname+'|'+((el.getAttribute('data-p2u-pay')||el.getAttribute('data-p2u-info')||'link'))+'|'+Math.floor(Date.now()/1000);if(sent[key])return;sent[key]=true;send('unlock');},true);
