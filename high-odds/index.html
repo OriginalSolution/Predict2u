@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>High Odds Booking Codes Today — Higher Risk | Predict2u</title>
+<meta name="description" content="Today's high odds SportyBet booking codes on Predict2u. High odds, high risk — stake small."/>
+<link rel="canonical" href="https://predict2u.com/high-odds/"/>
+<meta property="og:title" content="High Odds — higher risk | Predict2u"/><meta property="og:url" content="https://predict2u.com/high-odds/"/><meta property="og:image" content="https://predict2u.com/og-card.png?v=1"/>
+<style>
+body{margin:0;background:#0b1119;color:#e8eef6;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.w{max-width:760px;margin:0 auto;padding:14px}a{color:#7fd1ff}
+.top a{font-weight:700;text-decoration:none}
+.hd{background:linear-gradient(135deg,#3a0d0d,#40210a);border:1px solid #ff5a2e;border-radius:16px;padding:16px;margin:12px 0}
+.hd h1{margin:6px 0;font-size:1.4rem}
+.risk{display:inline-block;background:linear-gradient(90deg,#e11d1d,#ff7a1a);color:#fff;font-weight:900;letter-spacing:.08em;font-size:.78rem;padding:4px 10px;border-radius:999px;box-shadow:0 0 12px rgba(255,90,40,.55)}
+.warn{color:#ffb38a;font-weight:700;margin:6px 0 0}
+.card{background:#15202e;border:1px solid rgba(255,255,255,.08);border-left:5px solid #00a84f;border-radius:14px;margin:10px 0;overflow:hidden}
+.card summary{list-style:none;cursor:pointer;padding:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.card summary::-webkit-details-marker{display:none}
+.chip{background:#00a84f;color:#fff;font-weight:800;font-size:.75rem;padding:3px 9px;border-radius:7px}
+.nm{flex:1 1 100%;font-weight:700}.meta{color:#9fb0c6;font-size:.85rem}
+.code{font:700 1.25rem ui-monospace,monospace;letter-spacing:.06em}
+.tg{margin-left:auto;color:#9fb0c6;font-size:.8rem}
+.body{padding:0 12px 12px}.acts{display:flex;gap:8px;margin:8px 0}
+.acts a,.acts button{flex:1;text-align:center;padding:9px;border-radius:9px;border:0;background:#00a84f;color:#fff;font-weight:700;text-decoration:none;font-size:.9rem;cursor:pointer}
+table{width:100%;border-collapse:collapse;font-size:.82rem}td{padding:6px 4px;border-top:1px solid rgba(255,255,255,.07);vertical-align:top}
+td.o{text-align:right;font-weight:700;color:#ffd36b;white-space:nowrap}.lg{color:#8a9bb0;font-size:.75rem}
+.empty{color:#9fb0c6;text-align:center;padding:24px}.ft{color:#8a9bb0;font-size:.8rem;margin:18px 0}
+</style></head><body><div class="w">
+<p class="top"><a href="/">← Predict2u</a> · <a href="/bankers.html">Main codes</a></p>
+<section class="hd"><span class="risk">⚠ HIGH RISK</span><h1>High Odds — higher risk</h1>
+<p class="warn">High odds, high risk. Stake small.</p>
+<p class="meta">Separate from our Banker, Hot Picks and main slips. These long-shot accumulators do not follow our standard low-risk filters. Play only what you can afford to lose. 18+.</p></section>
+<div id="list"><p class="empty">Loading…</p></div>
+<p class="ft">Odds are approximate and may change at the bookmaker. <a href="/responsible-gambling.html">Responsible gambling</a></p>
+</div>
+<script>
+(function(){
+var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+var now=Date.now();
+fetch('/high_odds.json?t='+Math.floor(now/6e5)).then(function(r){return r.json()}).then(function(d){
+ var out=(d.slips||[]).filter(function(s){var L=s.legs||[];if(!L.length)return false;
+   return L.some(function(l){var t=Date.parse(l.date+'T'+(l.ko||'00:00')+':00Z');var st=(l.result||'pending').toLowerCase();return st==='pending'&&t>now;});
+ }).map(function(s){
+  var rows=(s.legs||[]).map(function(l){return '<tr><td>'+esc(l.match)+'<div class="lg">'+esc(l.league)+' · '+esc(l.ko)+' GMT</div></td><td>'+esc(l.selection)+'</td><td class="o">'+esc(l.odds)+'</td></tr>'}).join('');
+  return '<details class="card"><summary><span class="chip">SportyBet</span><span class="risk">⚠ HIGH RISK</span><span class="tg">Tap to show ▾</span><span class="nm">'+esc(s.name)+'</span><span class="meta">'+s.legs.length+' picks · odds ~'+esc(s.odds)+'</span></summary><div class="body"><div class="code">'+esc(s.code)+'</div><p class="warn">High odds, high risk. Stake small.</p><div class="acts"><button data-c="'+esc(s.code)+'">Copy code</button><a href="'+esc(s.share)+'" target="_blank" rel="noopener">Open on SportyBet</a></div><table>'+rows+'</table></div></details>';
+ });
+ document.getElementById('list').innerHTML=out.length?out.join(''):'<p class="empty">No high odds codes live right now. Check back later today.</p>';
+}).catch(function(){document.getElementById('list').innerHTML='<p class="empty">Could not load codes.</p>'});
+document.addEventListener('click',function(e){var b=e.target.closest('button[data-c]');if(!b)return;navigator.clipboard&&navigator.clipboard.writeText(b.dataset.c);b.textContent='Copied ✓';});
+})();
+</script>
+<script src="/p2u-live-track-v335.js?v=335" defer></script>
+</body></html>
