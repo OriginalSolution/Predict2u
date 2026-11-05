@@ -38,7 +38,11 @@
     document.head.appendChild(st);
   }
 
+  var applying=false, lastBarHtml='';
   function apply(){
+    if(applying) return;
+    applying=true;
+    try{
     css();
     var nLive=0,nFt=0;
     document.querySelectorAll('[data-score-eid]').forEach(function(dd){
@@ -69,13 +73,15 @@
     }
     if(bar){
       var ago=lastFetch? Math.max(0, Math.round((Date.now()-lastFetch)/1000)) : null;
-      bar.innerHTML='<span>Scores · <b>'+esc(source)+'</b>'+(ago!=null?' · '+ago+'s ago':'')+'</span>'+
+      var html='<span>Scores · <b>'+esc(source)+'</b>'+(ago!=null?' · '+ago+'s ago':'')+'</span>'+
         (nLive?'<span class="hp-livepill live">'+nLive+' live</span>':'')+
         (nFt?'<span class="hp-livepill ft">'+nFt+' finished</span>':'')+
         (!nLive&&!nFt?'<span class="hp-livepill sync">waiting for kick-off</span>':'');
+      if(html!==lastBarHtml){ lastBarHtml=html; bar.innerHTML=html; }
     }
     if(nLive && !timer) timer=setInterval(function(){ refresh(null,true); }, 60000);
     if(!nLive && timer){ clearInterval(timer); timer=null; }
+    } finally { applying=false; }
   }
 
   function mergeSync(data){
@@ -141,7 +147,12 @@
 
   function boot(){
     try{
-      var mo=new MutationObserver(function(){ apply(); });
+      var moTimer=null;
+      var mo=new MutationObserver(function(){
+        if(applying) return;
+        if(moTimer) return;
+        moTimer=setTimeout(function(){ moTimer=null; apply(); }, 50);
+      });
       mo.observe(document.body,{childList:true,subtree:true});
     }catch(_){}
     setInterval(function(){ refresh(null,true); }, 120000);
