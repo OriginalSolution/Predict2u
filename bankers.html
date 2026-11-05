@@ -41,6 +41,7 @@
   <link rel="stylesheet" href="p2u-legible-v302.css?v=302">
   <link rel="stylesheet" href="p2u-chips-v304.css?v=304">
   <link rel="stylesheet" href="p2u-contrast-v306.css?v=306f"><link rel="stylesheet" href="p2u-brands-v308.css">
+  <link rel="stylesheet" href="p2u-bp-fit-v331.css?v=331">
   <style>/* Predict2U v291 — modern dark, mobile-first bankers page + light shell polish. No frameworks. */
 :root{--bg:#070b12;--card:#0f1724;--card2:#131e2e;--line:rgba(255,255,255,.08);--tx:#e8eef7;--mut:#8b98ab;--acc:#22c55e;--gold:#fbbf24;--r:16px}
 html,body{background:var(--bg)!important;color:var(--tx);overflow-x:hidden;max-width:100%}
@@ -62,7 +63,7 @@ img,svg,video{max-width:100%;height:auto}
 .bp-book small{color:var(--mut);font-weight:600}
 .bp-car{display:flex;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:2px 2px 12px;scroll-padding:2px;scrollbar-width:thin}
 .bp-car:focus-visible{outline:2px solid var(--acc);outline-offset:4px;border-radius:12px}
-.bp-card{position:relative;flex:0 0 min(78vw,220px);scroll-snap-align:start;background:linear-gradient(165deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:14px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.bp-card{position:relative;flex:0 0 clamp(240px,82vw,340px);scroll-snap-align:start;background:linear-gradient(165deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:14px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
 .bp-card .bp-grade{position:absolute;top:12px;right:12px}
 .bp-card-l{font-size:.78rem;color:var(--mut);font-weight:700}
 .bp-card-code{font-size:1.5rem;font-weight:900;color:var(--gold);letter-spacing:.06em;margin:6px 0 2px;font-variant-numeric:tabular-nums;word-break:break-all}
@@ -151,13 +152,13 @@ footer{color:var(--mut)}
 }
 @media (min-width:641px) and (max-width:1024px){
  .p2u-bankers-page{max-width:100%;padding-left:clamp(16px,3vw,28px);padding-right:clamp(16px,3vw,28px)}
- .bp-card{flex-basis:clamp(190px,30cqi,240px)}
+ .bp-card{flex-basis:clamp(220px,42cqi,320px)}
  .bp-book{container-type:inline-size}
 }
 @media (min-width:641px) and (max-aspect-ratio:5/4) and (max-width:900px){ /* unfolded near-square screens */
  .p2u-bankers-hero h1{font-size:2.1rem}
 }
-@media (min-width:1025px){.bp-card{flex-basis:220px}}
+@media (min-width:1025px){.bp-card{flex-basis:clamp(210px,30vw,280px)}}
 
 /* v297 sportsbook branding */
 .bp-book{border-top:3px solid var(--brand,var(--acc))}
@@ -191,7 +192,7 @@ footer{color:var(--mut)}
 </main>
 <script src="pwa-launch.js?v=317" defer></script>
 <script src="p2u-wa-share-v325.js?v=325" defer></script>
-<script src="p2u-paywall-v324.js?v=324" defer></script>
+<script src="p2u-paywall-v324.js?v=331" defer></script>
 <script src="p2u-picks-v316.js?v=319" defer></script>
 <script src="p2u-flashy-v301.js?v=301" defer></script>
 <script src="p2u-collapse-v305.js?v=305" defer></script>
