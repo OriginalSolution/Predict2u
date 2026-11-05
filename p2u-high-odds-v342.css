@@ -4,3 +4,4 @@ html,body{background:var(--bg)!important;color:var(--tx);overflow-x:hidden;max-w
 @media(max-width:360px){.hp-tally{grid-template-columns:repeat(2,1fr)}.high-intro h1{font-size:1.55rem}.high-mini{flex-basis:88vw}.share-actions{gap:7px}.share-icon{width:36px;height:36px;min-width:36px}.bookchip{font-size:.66rem;padding:4px 6px}.bookchip b{font-size:.74rem}}
 @media(min-width:701px) and (max-width:1024px){.high-mini{flex-basis:330px}.high-card .bp-legs{font-size:.73rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.share-icon{transition:none}}
+.high-wrap .bp-car[data-auto="1"]{scroll-snap-type:none}
