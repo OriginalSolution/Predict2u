@@ -40,17 +40,17 @@
   function legsHtml(s){return '<ul class="bp-card-legs">'+s.legs.map(function(x){return '<li><span>'+esc(ko(x.kickoff))+' '+esc(x.match)+'</span><b>'+esc(x.selection)+' @'+(x.odds==null?'—':Number(x.odds).toFixed(2))+'</b> '+badge(x.result)+'</li>';}).join('')+'</ul>';}
   function carousel(slips,opts){
     opts=opts||{};var st=openState(),first=true,top=opts.topBook,books=opts.books||BOOKS.map(function(b){return b[0]});
-    return BOOKS.filter(function(b){return books.indexOf(b[0])>=0;}).map(function(b){
+    return books.map(function(bookKey){var b=BOOKS.find(function(x){return x[0]===bookKey});if(!b)return '';
       var cards=slips.filter(function(s){return s.codes&&s.codes[b[0]];});
       if(!cards.length&&!opts.includeEmpty)return '';
       var open=b[0]===top?true:(st&&st.hasOwnProperty(b[0])?!!st[b[0]]:false);first=false;var isTop=b[0]===top,logo=(opts.root?'/':'')+b[2];
       var pid=(opts.idPrefix||'bp-panel-')+b[0];
       return '<div class="bp-book bp-book-'+b[0]+(open?' is-open':'')+(isTop?' bp-book-top':'')+'" style="--brand:'+b[3]+'">'+(isTop?'':'<button type="button" class="bp-book-h" data-book="'+b[0]+'" aria-expanded="'+open+'" aria-controls="'+pid+'"><img class="bp-blogo" src="'+logo+'" alt="'+b[1]+' logo" width="28" height="28" loading="lazy" decoding="async"><span>'+b[1]+' codes</span><small>'+cards.length+'</small><i class="bp-chev" aria-hidden="true"></i></button>')+
         '<div class="bp-book-p" id="'+pid+'" role="region"><div class="bp-book-in"><div class="bp-car" tabindex="0">'+(cards.length?cards.map(function(s,i){
-        var code=s.codes[b[0]],link=(s.links||{})[b[0]],lid=(opts.idPrefix||'bp-legs-')+b[0]+'-'+i,cardId=opts.cardId?opts.cardId(s,b[0],code):'';
-        return '<div class="bp-card bp-card-'+esc(s.risk||'high')+'"'+(cardId?' id="'+esc(cardId)+'"':'')+' data-slip-code="'+esc(s.code||code)+'">'+riskBadge(s.risk)+grade(s.grade)+'<div class="bp-card-l"><img class="bp-clogo" src="'+logo+'" alt="" width="16" height="16" loading="lazy" decoding="async">'+esc(s.label)+'</div><div class="bp-card-code">'+esc(code)+'</div>'+
+        var code=s.codes[b[0]],link=(s.links||{})[b[0]],lid=(opts.idPrefix||'bp-legs-')+b[0]+'-'+i,cardId=opts.cardId?opts.cardId(s,b[0],code):'',progress=opts.progress&&s.hit!=null;
+        return '<div class="bp-card bp-card-'+esc(s.risk||'high')+(progress?' bp-card-progress':'')+'"'+(cardId?' id="'+esc(cardId)+'"':'')+' data-slip-code="'+esc(s.code||code)+'">'+riskBadge(s.risk)+grade(s.grade)+'<div class="bp-card-l"><img class="bp-clogo" src="'+logo+'" alt="" width="16" height="16" loading="lazy" decoding="async">'+esc(s.label)+'</div><div class="bp-card-code">'+esc(code)+'</div>'+
           '<div class="bp-card-m">@'+Number((s.bookOdds||{})[b[0]]||s.totalOdds).toFixed(2)+' · '+((s.bookPicks||{})[b[0]]||s.picks)+' picks'+(s.house?' · P2U banker':'')+'</div>'+((s.bookNotes||{})[b[0]]?'<div class="bp-card-n">⚠ '+esc(s.bookNotes[b[0]])+'</div>':'')+
-          '<div class="bp-card-a"><button type="button" data-copy="'+esc(code)+'">Copy</button>'+(link?'<a target="_blank" rel="noopener" href="'+esc(link)+'" class="bp-open" aria-label="Open on '+b[1]+'">Open ↗</a>':'')+(window.P2UWA?'<a class="bp-wa" target="_blank" rel="noopener" href="'+P2UWA.href(s)+'" aria-label="Share on WhatsApp">WA</a>':'')+'</div>'+
+          (progress?'<div class="bp-progress"><div class="bp-progress-label">'+s.hit+'/'+s.picks+' legs won</div><div class="bp-progress-track" role="progressbar" aria-label="'+s.hit+' of '+s.picks+' legs won" aria-valuemin="0" aria-valuemax="'+s.picks+'" aria-valuenow="'+s.hit+'"><i style="width:'+Math.min(100,Math.round(100*s.hit/Math.max(1,s.picks)))+'%"></i></div></div>':'')+'<div class="bp-card-a"><button type="button" data-copy="'+esc(code)+'">Copy</button>'+(link?'<a target="_blank" rel="noopener" href="'+esc(link)+'" class="bp-open" aria-label="Open on '+b[1]+'">Open ↗</a>':'')+(window.P2UWA?'<a class="bp-wa" target="_blank" rel="noopener" href="'+P2UWA.href(s)+'" aria-label="Share on WhatsApp">WA</a>':'')+'</div>'+
           '<button type="button" class="bp-card-x" data-legs aria-expanded="false" aria-controls="'+lid+'">Show '+s.picks+' picks <i class="bp-chev" aria-hidden="true"></i></button>'+
           '<div class="bp-card-lp" id="'+lid+'"><div class="bp-book-in">'+legsHtml(s)+'</div></div></div>';
       }).join(''):'<div class="p2u-bankers-empty">No booked codes yet.</div>')+'</div></div></div></div>';
@@ -89,6 +89,7 @@
     '.bp-risk-safe{background:#0f3d2a;color:#7ff0b8;border:1px solid #1f7a4d}.bp-risk-medium{background:#3a2a12;color:#ffd99a;border:1px solid #7a5a20}.bp-risk-high{background:#3a1520;color:#ffb0c0;border:1px solid #8a3048}'+
     '.bp-slip-safe{border-color:#1f7a4d;box-shadow:0 0 0 1px rgba(127,240,184,.18)}.bp-slip-medium{border-color:#7a5a20;box-shadow:0 0 0 1px rgba(255,217,154,.15)}'+
     '.bp-card-safe{outline:1px solid rgba(127,240,184,.35)}.bp-card-medium{outline:1px solid rgba(255,217,154,.3)}'+
+    '.bp-progress{margin-top:9px}.bp-progress-label{font-size:.8rem;font-weight:800;line-height:1.3;margin-bottom:5px}.bp-progress-track{height:7px;border-radius:999px;background:rgba(0,0,0,.32);overflow:hidden}.bp-progress-track i{display:block;height:100%;background:#22c55e;border-radius:inherit}'+
     '.bp-risk-legend{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px;font-size:.82rem;color:#c3d0e2}.bp-risk-legend span{display:inline-flex;align-items:center;gap:6px}';
     document.head.appendChild(st);}
   function init(d){
