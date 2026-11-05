@@ -25,7 +25,7 @@
     var out=[],seen={},h=d.homeCode||{},add=addFactory(out,seen);
     (h.codes||[]).forEach(function(c){add('sportybet',c.sportybet||c.code,c.totalOdds,c.legs,'All picks of the day',null,c.link);});
     Object.keys(h).forEach(function(k){if(k==='codes'||!Array.isArray(h[k]))return;h[k].forEach(function(c){add(k,c[k]||c.code,c.totalOdds,c.legs,'All picks of the day',c.of&&c.of>c.legs?(c.of-c.legs)+((c.of-c.legs)>1?' picks':' pick')+' not on '+((BOOKS[k]||{}).n||k):null,c.link);});});
-    (d.slips||[]).forEach(function(s){var C=s.codes||{};Object.keys(C).forEach(function(k){
+    (d.slips||[]).forEach(function(s){if(s.earlier||/^earlier code/i.test(String(s.name||'')))return;var C=s.codes||{};Object.keys(C).forEach(function(k){
       add(k,C[k],(s.bookOdds||{})[k]||(k==='sportybet'?s.totalOdds:null),(s.bookPicks||{})[k]||(s.legs||[]).length,String(s.name||'Banker slip').replace(/\s*\(.*\)$/,''),(s.bookNotes||{})[k]);});});
     return out;
   }

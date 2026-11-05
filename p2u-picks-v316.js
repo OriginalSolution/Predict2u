@@ -24,6 +24,8 @@
   function daySlips(){
     var today=stamp(new Date());
     return data.slips.filter(function(s){
+        if(s.earlier||/^earlier code/i.test(String(s.name||''))) return false;
+        if(s.date && s.date < today && !(s.dates||[]).some(function(d){return d>=today;})) return false;
         if((s.dates||[s.date]).indexOf(state.day)>=0) return true;
         // Safe/Medium: show whenever the user is viewing today (legs may kick off tomorrow)
         if((s.risk==='safe'||s.risk==='medium') && s.house && state.day===today) return true;
