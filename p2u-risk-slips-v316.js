@@ -6,7 +6,7 @@
     ['msport','MSport','book-msport.webp','https://www.msport.com/gh/sports/share?shareCode='],
     ['betika','Betika','book-betika.webp','https://betika.com/en-gh/share/'],
     ['footballcom','football.com','book-footballcom.webp','https://www.football.com/gh/?shareCode='],
-    ['betpawa','Betpawa','book-betpawa.webp','https://www.betpawa.com.gh/#']];
+    ['betpawa','Betpawa','book-betpawa.webp','https://www.betpawa.com.gh/#'],['betway','Betway','book-betway.webp','https://www.betway.com.gh/sport/soccer?bookingCode=']];
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function css(){if(document.getElementById('p2u-risk-css'))return;var st=document.createElement('style');st.id='p2u-risk-css';st.textContent=
     '.p2u-risk{margin:14px 0}.p2u-risk-h{font-size:1.05rem;margin:0 0 6px;color:#fff}.p2u-risk-h small{display:block;font-size:.78rem;font-weight:500;color:#b9c8dc;margin-top:2px}'+

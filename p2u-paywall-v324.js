@@ -4,7 +4,7 @@
   'use strict';
   var RELAY='https://p2u-relay.onrender.com', RX=/P2ULOCK-([a-z]+-\d{8})-[a-z]+\d*/i, KEY='p2u-unlocks-v1';
   var BOOKS=[['sportybet','SportyBet','book-sportybet.webp','https://www.sportybet.com/gh/?shareCode='],['msport','MSport','book-msport.webp','https://www.msport.com/gh/sports/share?shareCode='],
-    ['betika','Betika','book-betika.webp','https://betika.com/en-gh/share/'],['footballcom','football.com','book-footballcom.webp','https://www.football.com/gh/?shareCode='],['betpawa','Betpawa','book-betpawa.webp','https://www.betpawa.com.gh/']];
+    ['betika','Betika','book-betika.webp','https://betika.com/en-gh/share/'],['footballcom','football.com','book-footballcom.webp','https://www.football.com/gh/?shareCode='],['betpawa','Betpawa','book-betpawa.webp','https://www.betpawa.com.gh/'],['betway','Betway','book-betway.webp','https://www.betway.com.gh/sport/soccer?bookingCode=']];
   var TITLE={banker:'Main Banker',medium:'Medium slip',hot:'Hot Picks main'};
   /* Display in USD; Paystack still charges GHS 50 (≈ $4.29 at 0.085815 USD/GHS on 2026-11-05). */
   var DISP_USD='4.29', DISP_NOTE='≈ GHS 50';

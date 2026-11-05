@@ -1,7 +1,7 @@
 /* Predict2U v309 — 🔥 Hot Picks: most-backed selections across shared booking codes, booked on every site. Hot by market / trending / teams collapsed by default. */
 (function(){
   var BK={sportybet:['SportyBet','https://www.sportybet.com/gh/?shareCode='],msport:['MSport','https://www.msport.com/gh/sports/share?shareCode='],
-    betika:['Betika','https://betika.com/en-gh/share/'],footballcom:['football.com','https://www.football.com/gh/?shareCode='],betpawa:['Betpawa','https://www.betpawa.com.gh/']};
+    betika:['Betika','https://betika.com/en-gh/share/'],footballcom:['football.com','https://www.football.com/gh/?shareCode='],betpawa:['Betpawa','https://www.betpawa.com.gh/'],betway:['Betway','https://www.betway.com.gh/sport/soccer?bookingCode=']};
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   function fo(x){var n=Number(x);return isFinite(n)?(n>=1000?Math.round(n).toLocaleString():n.toFixed(2)):'–';}
   function when(p){try{var d=new Date(p.start);return d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',timeZone:'Africa/Accra'})+' '+d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:'Africa/Accra'})+' GMT';}catch(e){return p.date+' '+p.ko;}}

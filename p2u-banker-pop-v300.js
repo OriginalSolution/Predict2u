@@ -7,6 +7,7 @@
     betika:['Betika','book-betika.webp','https://betika.com/en-gh/share/{c}'],
     footballcom:['football.com','book-footballcom.webp','https://www.football.com/gh/?shareCode={c}'],
     betpawa:['Betpawa','book-betpawa.webp','https://www.betpawa.com.gh/#{c}'],
+    betway:['Betway','book-betway.webp','https://www.betway.com.gh/sport/soccer?bookingCode={c}'],
     onexbet:['1xBet','book-1xbet.webp','https://1xbet.com/en/?coupon={c}'],
     betway:['Betway','book-betway.webp',null],'22bet':['22Bet','book-22bet.webp',null]
   };

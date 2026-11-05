@@ -1,7 +1,7 @@
 /* Predict2U v325 — WhatsApp share: image card + per-slip link predict2u.com/s/<code>/ (link preview shows the card). Deep-link highlight via ?code=. */
 (function(global){
   'use strict';
-  var BOOKS=[['sportybet','SportyBet'],['msport','MSport'],['betika','Betika'],['footballcom','football.com'],['betpawa','Betpawa']];
+  var BOOKS=[['sportybet','SportyBet'],['msport','MSport'],['betika','Betika'],['footballcom','football.com'],['betpawa','Betpawa'],['betway','Betway']];
   var REG={};
   function cv(v){ if(Array.isArray(v)) v=v[0]; if(v&&typeof v==='object') v=v.code; return v||''; }
   function codesOf(s){ var o={},c=s.codes||{}; Object.keys(c).forEach(function(k){var x=cv(c[k]); if(x&&!/^P2ULOCK-/.test(x))o[k]=x;}); if(!o.sportybet&&s.code&&!/^P2ULOCK-/i.test(s.code))o.sportybet=s.code; return o; }

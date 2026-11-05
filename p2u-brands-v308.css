@@ -2,3 +2,7 @@
 html body .p2u-chip-footballcom,html body .hp-mk-footballcom,html body .bp-book-footballcom .bp-card,html body .bcod-chip[href*="football.com"],html body .hp-bkd a[href*="football.com"],html body .cc-card:has(img[src*="footballcom"]){--brand:#282450!important;--on:#fff!important}
 html body .p2u-chip-betpawa,html body .hp-mk-betpawa,html body .bp-book-betpawa .bp-card,html body .bcod-chip[href*="betpawa"],html body .hp-bkd a[href*="betpawa"],html body .cc-card:has(img[src*="betpawa"]){--brand:#78be20!important;--on:#0b0f14!important}
 html body .p2u-chip-footballcom{box-shadow:inset 0 0 0 1px #6f66c9}
+
+/* Betway: black/white with green accent */
+html body .p2u-chip-betway,html body .hp-mk-betway,html body .bp-book-betway .bp-card,html body .bcod-chip[href*="betway"],html body .hp-bkd a[href*="betway"],html body .cc-card:has(img[src*="betway"]){--brand:#0b0b0b!important;--on:#ffffff!important;border-color:#00a826!important;box-shadow:inset 0 -3px 0 #00a826}
+html body .p2u-chip-betway{background:#0b0b0b!important;color:#fff!important;border:1px solid #00a826!important}
