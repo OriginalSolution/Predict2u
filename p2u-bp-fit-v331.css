@@ -225,13 +225,7 @@ html body .bp-car > .p2u-lock{
     min-width:220px;
     max-width:320px!important;
   }
-  html body .bp-book .bp-card .bp-card-a .bp-wa,
-  html body #bp-carousel .bp-card .bp-card-a .bp-wa{font-size:0!important}
-  html body .bp-book .bp-card .bp-card-a .bp-wa::before,
-  html body #bp-carousel .bp-card .bp-card-a .bp-wa::before{
-    content:"WhatsApp"!important;
-    font-size:clamp(.72rem,2.4vw,.8rem)!important;
-  }
+  /* keep short WA label — full "WhatsApp" still overflows ~270px cards */
 }
 
 /* ~3 cards on large tablets / desktop */
@@ -243,5 +237,36 @@ html body .bp-car > .p2u-lock{
     width:calc((100% - 36px) / 3.2)!important;
     min-width:210px;
     max-width:280px!important;
+  }
+}
+
+/* locked card polish for whole-card paywall replacement */
+html body .bp-car > .p2u-bp-lock,
+html body .bp-book .bp-card.p2u-bp-lock{
+  display:flex!important;flex-direction:column!important;gap:6px!important;overflow:hidden!important
+}
+html body .bp-car > .p2u-bp-lock .bp-risk,
+html body .bp-book .p2u-bp-lock .bp-risk{align-self:flex-start}
+html body .bp-car > .p2u-bp-lock .p2u-lock > b,
+html body .bp-book .p2u-bp-lock .p2u-lock > b{
+  font-size:clamp(.78rem,3.2vw,.92rem)!important;line-height:1.2!important
+}
+html body .bp-car > .p2u-bp-lock .p2u-lock > p,
+html body .bp-book .p2u-bp-lock .p2u-lock > p{
+  -webkit-line-clamp:2!important;font-size:clamp(.68rem,2.7vw,.76rem)!important
+}
+html body .bp-car > .p2u-bp-lock .p2u-lock-btn,
+html body .bp-book .p2u-bp-lock .p2u-lock-btn{
+  font-size:clamp(.72rem,2.9vw,.84rem)!important;padding:6px 8px!important;min-height:34px!important;
+  white-space:normal!important;line-height:1.15!important
+}
+html body .bp-car > .p2u-bp-lock .p2u-lock-btn .p2u-lock-fx,
+html body .bp-book .p2u-bp-lock .p2u-lock-btn .p2u-lock-fx{display:block;margin-left:0;font-size:.85em}
+@media (min-width:900px){
+  html body .bp-book .bp-card .bp-card-a .bp-wa,
+  html body #bp-carousel .bp-card .bp-card-a .bp-wa{font-size:0!important}
+  html body .bp-book .bp-card .bp-card-a .bp-wa::before,
+  html body #bp-carousel .bp-card .bp-card-a .bp-wa::before{
+    content:"WhatsApp"!important;font-size:clamp(.72rem,1.6vw,.8rem)!important
   }
 }
