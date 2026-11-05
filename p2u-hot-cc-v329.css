@@ -37,3 +37,8 @@ html body #hot-carousel .p2u-cc-lock .p2u-lock-row{margin:0!important}
 html body #hot-carousel .p2u-cc-lock .p2u-lock-btn{width:100%;min-height:36px!important;padding:6px 10px!important;font-size:clamp(.78rem,3.3vw,.88rem)!important;background:#ffd23f!important;color:#1a1400!important;-webkit-text-fill-color:#1a1400!important;border:0!important}
 html body #hot-carousel .p2u-cc-lock .p2u-lock-btn *{color:#1a1400!important;-webkit-text-fill-color:#1a1400!important}
 html body #hot-carousel .p2u-cc-lock :is(.p2u-cx,.p2u-cx-h){display:none!important}
+/* v330 — tighten space under the carousel on phones */
+html body #hot-carousel{margin-bottom:4px!important}
+html body #hot-carousel:not([hidden])+main#hot{padding-top:6px!important;margin-top:0!important}
+html body #hot-carousel:not([hidden])+main#hot>.hot-hero:first-child{margin-top:0!important}
+html body #hot-carousel .p2u-cc-lock .p2u-lock>p{-webkit-line-clamp:1!important}
