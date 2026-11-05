@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-05T13:21:51+00:00",
+ "updatedAt": "2026-11-05T13:29:00+00:00",
  "sources": [
   "BBC Sport",
   "ESPN",
@@ -595,97 +595,12 @@
  ],
  "record": {
   "won": 0,
-  "lost": 56,
-  "settled": 56,
-  "pending": 395,
+  "lost": 26,
+  "settled": 26,
+  "pending": 263,
   "winRate": 0.0
  },
  "codes": [
-  {
-   "code": "P2ULOCK-medium-20261105-sportybet",
-   "book": "sportybet",
-   "date": "2026-11-06",
-   "name": "Slip 2",
-   "kind": "slip",
-   "odds": 6.72,
-   "status": "pending",
-   "hit": 0,
-   "total": 12,
-   "legs": [
-    {
-     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CR Beni Thour v NC Magra",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Dordrecht v NAC Breda",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bangor 1876 FC v Gresford Athletic",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ruthin Town v Newtown AFC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Holywell Town v Airbus UK Broughton",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Connah`s Quay Nomads FC v Flint Town United",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA San Lorenzo de Almagro v CA Platense",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Independiente Avellaneda v Deportivo Riestra AFBC",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
   {
    "code": "AASUWQ",
    "book": "sportybet",
@@ -4223,1821 +4138,19 @@
    ]
   },
   {
-   "code": "DFXQWL",
+   "code": "8C06QM",
    "book": "sportybet",
    "date": "2026-11-05",
-   "name": "Safe slip (low risk)",
-   "kind": "alt",
-   "odds": 1.92,
+   "name": "Over 1.5 (full)",
+   "kind": "market",
+   "odds": 8.9,
    "status": "pending",
-   "hit": 0,
-   "total": 5,
-   "legs": [
-    {
-     "match": "CA San Lorenzo de Almagro v CA Platense",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Independiente Avellaneda v Deportivo Riestra AFBC",
-     "selection": "CA Independiente Avellaneda or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Chomutov v Tj Slovan Velvary",
-     "selection": "FC Chomutov or Tj Slovan Velvary",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bangor 1876 FC v Gresford Athletic",
-     "selection": "Bangor 1876 FC or Gresford Athletic",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "B3FMCYL",
-   "book": "msport",
-   "date": "2026-11-05",
-   "name": "Safe slip (low risk)",
-   "kind": "alt",
-   "odds": 1.97,
-   "status": "pending",
-   "hit": 0,
-   "total": 5,
-   "legs": [
-    {
-     "match": "CA San Lorenzo de Almagro v CA Platense",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Independiente Avellaneda v Deportivo Riestra AFBC",
-     "selection": "CA Independiente Avellaneda or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Chomutov v Tj Slovan Velvary",
-     "selection": "FC Chomutov or Tj Slovan Velvary",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bangor 1876 FC v Gresford Athletic",
-     "selection": "Bangor 1876 FC or Gresford Athletic",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "2vnAWk",
-   "book": "betika",
-   "date": "2026-11-05",
-   "name": "Safe slip (low risk)",
-   "kind": "alt",
-   "odds": 1.63,
-   "status": "pending",
-   "hit": 0,
-   "total": 5,
-   "legs": [
-    {
-     "match": "CA San Lorenzo de Almagro v CA Platense",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Independiente Avellaneda v Deportivo Riestra AFBC",
-     "selection": "CA Independiente Avellaneda or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Chomutov v Tj Slovan Velvary",
-     "selection": "FC Chomutov or Tj Slovan Velvary",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bangor 1876 FC v Gresford Athletic",
-     "selection": "Bangor 1876 FC or Gresford Athletic",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "DFXQWL",
-   "book": "footballcom",
-   "date": "2026-11-05",
-   "name": "Safe slip (low risk)",
-   "kind": "alt",
-   "odds": 1.9,
-   "status": "pending",
-   "hit": 0,
-   "total": 5,
-   "legs": [
-    {
-     "match": "CA San Lorenzo de Almagro v CA Platense",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Independiente Avellaneda v Deportivo Riestra AFBC",
-     "selection": "CA Independiente Avellaneda or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Chomutov v Tj Slovan Velvary",
-     "selection": "FC Chomutov or Tj Slovan Velvary",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bangor 1876 FC v Gresford Athletic",
-     "selection": "Bangor 1876 FC or Gresford Athletic",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "80YAAIL",
-   "book": "betpawa",
-   "date": "2026-11-05",
-   "name": "Safe slip (low risk)",
-   "kind": "alt",
-   "odds": 1.78,
-   "status": "pending",
-   "hit": 0,
-   "total": 5,
-   "legs": [
-    {
-     "match": "CA San Lorenzo de Almagro v CA Platense",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Independiente Avellaneda v Deportivo Riestra AFBC",
-     "selection": "CA Independiente Avellaneda or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Chomutov v Tj Slovan Velvary",
-     "selection": "FC Chomutov or Tj Slovan Velvary",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bangor 1876 FC v Gresford Athletic",
-     "selection": "Bangor 1876 FC or Gresford Athletic",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "8B6FNR",
-   "book": "sportybet",
-   "date": "2026-11-05",
-   "name": "Medium slip (balanced)",
-   "kind": "alt",
-   "odds": 8.23,
-   "status": "pending",
-   "hit": 0,
-   "total": 9,
-   "legs": [
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "JSM Skikda v Nrb Teleghma",
-     "selection": "JSM Skikda or Nrb Teleghma",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "B3FMCZP",
-   "book": "msport",
-   "date": "2026-11-05",
-   "name": "Medium slip (balanced)",
-   "kind": "alt",
-   "odds": 8.74,
-   "status": "pending",
-   "hit": 0,
-   "total": 9,
-   "legs": [
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "JSM Skikda v Nrb Teleghma",
-     "selection": "JSM Skikda or Nrb Teleghma",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "FCFwQf",
-   "book": "betika",
-   "date": "2026-11-05",
-   "name": "Medium slip (balanced)",
-   "kind": "alt",
-   "odds": 7.56,
-   "status": "pending",
-   "hit": 0,
-   "total": 9,
-   "legs": [
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "JSM Skikda v Nrb Teleghma",
-     "selection": "JSM Skikda or Nrb Teleghma",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "8B6FNR",
-   "book": "footballcom",
-   "date": "2026-11-05",
-   "name": "Medium slip (balanced)",
-   "kind": "alt",
-   "odds": 8.12,
-   "status": "pending",
-   "hit": 0,
-   "total": 9,
-   "legs": [
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "JSM Skikda v Nrb Teleghma",
-     "selection": "JSM Skikda or Nrb Teleghma",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "3NUXX8Q",
-   "book": "betpawa",
-   "date": "2026-11-05",
-   "name": "Medium slip (balanced)",
-   "kind": "alt",
-   "odds": 7.29,
-   "status": "pending",
-   "hit": 0,
-   "total": 9,
-   "legs": [
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "JSM Skikda v Nrb Teleghma",
-     "selection": "JSM Skikda or Nrb Teleghma",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "8D8TVG",
-   "book": "sportybet",
-   "date": "2026-11-05",
-   "name": "Main banker: Banker code of the day",
-   "kind": "banker",
-   "odds": 29.21,
-   "status": "pending",
-   "hit": 0,
-   "total": 19,
-   "legs": [
-    {
-     "match": "CA San Lorenzo de Almagro v CA Platense",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Independiente Avellaneda v Deportivo Riestra AFBC",
-     "selection": "CA Independiente Avellaneda or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Chomutov v Tj Slovan Velvary",
-     "selection": "FC Chomutov or Tj Slovan Velvary",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bangor 1876 FC v Gresford Athletic",
-     "selection": "Bangor 1876 FC or Gresford Athletic",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Connah`s Quay Nomads FC v Flint Town United",
-     "selection": "Connah`s Quay Nomads FC or Flint Town United",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Dordrecht v NAC Breda",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ruthin Town v Newtown AFC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Trefelin BGC v Colwyn Bay",
-     "selection": "Trefelin BGC or Colwyn Bay",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "SE Palmeiras SP v Clube do Remo PA",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Talaba v Ghaz Al-Shamal SC",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "B3FMD2B",
-   "book": "msport",
-   "date": "2026-11-05",
-   "name": "Main banker: Banker code of the day",
-   "kind": "banker",
-   "odds": 31.88,
-   "status": "pending",
-   "hit": 0,
-   "total": 19,
-   "legs": [
-    {
-     "match": "CA San Lorenzo de Almagro v CA Platense",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Independiente Avellaneda v Deportivo Riestra AFBC",
-     "selection": "CA Independiente Avellaneda or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Chomutov v Tj Slovan Velvary",
-     "selection": "FC Chomutov or Tj Slovan Velvary",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bangor 1876 FC v Gresford Athletic",
-     "selection": "Bangor 1876 FC or Gresford Athletic",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Connah`s Quay Nomads FC v Flint Town United",
-     "selection": "Connah`s Quay Nomads FC or Flint Town United",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Dordrecht v NAC Breda",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ruthin Town v Newtown AFC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Trefelin BGC v Colwyn Bay",
-     "selection": "Trefelin BGC or Colwyn Bay",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "SE Palmeiras SP v Clube do Remo PA",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Talaba v Ghaz Al-Shamal SC",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "HEuF8p",
-   "book": "betika",
-   "date": "2026-11-05",
-   "name": "Main banker: Banker code of the day",
-   "kind": "banker",
-   "odds": 27.45,
-   "status": "pending",
-   "hit": 0,
-   "total": 19,
-   "legs": [
-    {
-     "match": "CA San Lorenzo de Almagro v CA Platense",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Independiente Avellaneda v Deportivo Riestra AFBC",
-     "selection": "CA Independiente Avellaneda or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Chomutov v Tj Slovan Velvary",
-     "selection": "FC Chomutov or Tj Slovan Velvary",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bangor 1876 FC v Gresford Athletic",
-     "selection": "Bangor 1876 FC or Gresford Athletic",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Connah`s Quay Nomads FC v Flint Town United",
-     "selection": "Connah`s Quay Nomads FC or Flint Town United",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Dordrecht v NAC Breda",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ruthin Town v Newtown AFC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Trefelin BGC v Colwyn Bay",
-     "selection": "Trefelin BGC or Colwyn Bay",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "SE Palmeiras SP v Clube do Remo PA",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Talaba v Ghaz Al-Shamal SC",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "8D8TVG",
-   "book": "footballcom",
-   "date": "2026-11-05",
-   "name": "Main banker: Banker code of the day",
-   "kind": "banker",
-   "odds": 28.57,
-   "status": "pending",
-   "hit": 0,
-   "total": 19,
-   "legs": [
-    {
-     "match": "CA San Lorenzo de Almagro v CA Platense",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Independiente Avellaneda v Deportivo Riestra AFBC",
-     "selection": "CA Independiente Avellaneda or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Chomutov v Tj Slovan Velvary",
-     "selection": "FC Chomutov or Tj Slovan Velvary",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bangor 1876 FC v Gresford Athletic",
-     "selection": "Bangor 1876 FC or Gresford Athletic",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Connah`s Quay Nomads FC v Flint Town United",
-     "selection": "Connah`s Quay Nomads FC or Flint Town United",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Dordrecht v NAC Breda",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ruthin Town v Newtown AFC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Trefelin BGC v Colwyn Bay",
-     "selection": "Trefelin BGC or Colwyn Bay",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "SE Palmeiras SP v Clube do Remo PA",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Talaba v Ghaz Al-Shamal SC",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "IEZDF2O",
-   "book": "betpawa",
-   "date": "2026-11-05",
-   "name": "Main banker: Banker code of the day",
-   "kind": "banker",
-   "odds": 26.52,
-   "status": "pending",
-   "hit": 0,
-   "total": 19,
-   "legs": [
-    {
-     "match": "CA San Lorenzo de Almagro v CA Platense",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Independiente Avellaneda v Deportivo Riestra AFBC",
-     "selection": "CA Independiente Avellaneda or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Chomutov v Tj Slovan Velvary",
-     "selection": "FC Chomutov or Tj Slovan Velvary",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bangor 1876 FC v Gresford Athletic",
-     "selection": "Bangor 1876 FC or Gresford Athletic",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Connah`s Quay Nomads FC v Flint Town United",
-     "selection": "Connah`s Quay Nomads FC or Flint Town United",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Dordrecht v NAC Breda",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ruthin Town v Newtown AFC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Trefelin BGC v Colwyn Bay",
-     "selection": "Trefelin BGC or Colwyn Bay",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "SE Palmeiras SP v Clube do Remo PA",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Talaba v Ghaz Al-Shamal SC",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "DLJX61",
-   "book": "sportybet",
-   "date": "2026-11-05",
-   "name": "Alternative B: skip the top 5 (>=25)",
-   "kind": "alt",
-   "odds": 28.19,
-   "status": "pending",
-   "hit": 0,
-   "total": 17,
-   "legs": [
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Connah`s Quay Nomads FC v Flint Town United",
-     "selection": "Connah`s Quay Nomads FC or Flint Town United",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Dordrecht v NAC Breda",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ruthin Town v Newtown AFC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Trefelin BGC v Colwyn Bay",
-     "selection": "Trefelin BGC or Colwyn Bay",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "SE Palmeiras SP v Clube do Remo PA",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Talaba v Ghaz Al-Shamal SC",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "JSM Skikda v Nrb Teleghma",
-     "selection": "JSM Skikda or Nrb Teleghma",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Roskilde v HIK Hellerup",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Batna v Paradou AC",
-     "selection": "CA Batna or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Kuopion Palloseura v Gent",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "B3FMD3Q",
-   "book": "msport",
-   "date": "2026-11-05",
-   "name": "Alternative B: skip the top 5 (>=25)",
-   "kind": "alt",
-   "odds": 31.2,
-   "status": "pending",
-   "hit": 0,
-   "total": 17,
-   "legs": [
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Connah`s Quay Nomads FC v Flint Town United",
-     "selection": "Connah`s Quay Nomads FC or Flint Town United",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Dordrecht v NAC Breda",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ruthin Town v Newtown AFC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Trefelin BGC v Colwyn Bay",
-     "selection": "Trefelin BGC or Colwyn Bay",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "SE Palmeiras SP v Clube do Remo PA",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Talaba v Ghaz Al-Shamal SC",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "JSM Skikda v Nrb Teleghma",
-     "selection": "JSM Skikda or Nrb Teleghma",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Roskilde v HIK Hellerup",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Batna v Paradou AC",
-     "selection": "CA Batna or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Kuopion Palloseura v Gent",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "FprD4N",
-   "book": "betika",
-   "date": "2026-11-05",
-   "name": "Alternative B: skip the top 5 (>=25)",
-   "kind": "alt",
-   "odds": 21.18,
-   "status": "pending",
-   "hit": 0,
-   "total": 17,
-   "legs": [
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Connah`s Quay Nomads FC v Flint Town United",
-     "selection": "Connah`s Quay Nomads FC or Flint Town United",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Dordrecht v NAC Breda",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ruthin Town v Newtown AFC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Trefelin BGC v Colwyn Bay",
-     "selection": "Trefelin BGC or Colwyn Bay",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "SE Palmeiras SP v Clube do Remo PA",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Talaba v Ghaz Al-Shamal SC",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "JSM Skikda v Nrb Teleghma",
-     "selection": "JSM Skikda or Nrb Teleghma",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Roskilde v HIK Hellerup",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Batna v Paradou AC",
-     "selection": "CA Batna or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Kuopion Palloseura v Gent",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "DLJX61",
-   "book": "footballcom",
-   "date": "2026-11-05",
-   "name": "Alternative B: skip the top 5 (>=25)",
-   "kind": "alt",
-   "odds": 27.12,
-   "status": "pending",
-   "hit": 0,
-   "total": 17,
-   "legs": [
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Connah`s Quay Nomads FC v Flint Town United",
-     "selection": "Connah`s Quay Nomads FC or Flint Town United",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Dordrecht v NAC Breda",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ruthin Town v Newtown AFC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Trefelin BGC v Colwyn Bay",
-     "selection": "Trefelin BGC or Colwyn Bay",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "SE Palmeiras SP v Clube do Remo PA",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Talaba v Ghaz Al-Shamal SC",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "JSM Skikda v Nrb Teleghma",
-     "selection": "JSM Skikda or Nrb Teleghma",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Roskilde v HIK Hellerup",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Batna v Paradou AC",
-     "selection": "CA Batna or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Kuopion Palloseura v Gent",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "AXA9XFF",
-   "book": "betpawa",
-   "date": "2026-11-05",
-   "name": "Alternative B: skip the top 5 (>=25)",
-   "kind": "alt",
-   "odds": 23.81,
-   "status": "pending",
-   "hit": 0,
-   "total": 17,
-   "legs": [
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Connah`s Quay Nomads FC v Flint Town United",
-     "selection": "Connah`s Quay Nomads FC or Flint Town United",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Dordrecht v NAC Breda",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ruthin Town v Newtown AFC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Trefelin BGC v Colwyn Bay",
-     "selection": "Trefelin BGC or Colwyn Bay",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "SE Palmeiras SP v Clube do Remo PA",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Talaba v Ghaz Al-Shamal SC",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "JSM Skikda v Nrb Teleghma",
-     "selection": "JSM Skikda or Nrb Teleghma",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Roskilde v HIK Hellerup",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Batna v Paradou AC",
-     "selection": "CA Batna or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Kuopion Palloseura v Gent",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "C7HB31",
-   "book": "sportybet",
-   "date": "2026-11-05",
-   "name": "All picks of the day",
-   "kind": "all",
-   "odds": 922792.47,
-   "status": "lost",
    "hit": 1,
-   "total": 72,
+   "total": 13,
    "legs": [
-    {
-     "match": "CA San Lorenzo de Almagro v CA Platense",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CA Independiente Avellaneda v Deportivo Riestra AFBC",
-     "selection": "CA Independiente Avellaneda or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Chomutov v Tj Slovan Velvary",
-     "selection": "FC Chomutov or Tj Slovan Velvary",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bangor 1876 FC v Gresford Athletic",
-     "selection": "Bangor 1876 FC or Gresford Athletic",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Cruzeiro EC MG v EC Bahia BA",
-     "selection": "Cruzeiro EC MG or Draw",
-     "result": "pending",
-     "score": null
-    },
     {
      "match": "FC Van Charentsavan v FC Pyunik Yerevan",
      "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Penrhyncoch v Caersws",
-     "selection": "Penrhyncoch or Caersws",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Connah`s Quay Nomads FC v Flint Town United",
-     "selection": "Connah`s Quay Nomads FC or Flint Town United",
      "result": "pending",
      "score": null
     },
@@ -6054,62 +4167,8 @@
      "score": null
     },
     {
-     "match": "Standard Liege v KV Waasland-Beveren",
-     "selection": "Standard Liege or KV Waasland-Beveren",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "WA Tlemcen v GC Mascara",
-     "selection": "WA Tlemcen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Trefelin BGC v Colwyn Bay",
-     "selection": "Trefelin BGC or Colwyn Bay",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "SE Palmeiras SP v Clube do Remo PA",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AVS Futebol SAD v FC Vizela",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
      "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
      "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Talaba v Ghaz Al-Shamal SC",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sporting Hasselt v Patro Eisden Maasmechelen",
-     "selection": "Sporting Hasselt or Patro Eisden Maasmechelen",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "JSM Skikda v Nrb Teleghma",
-     "selection": "JSM Skikda or Nrb Teleghma",
      "result": "pending",
      "score": null
     },
@@ -6120,50 +4179,14 @@
      "score": null
     },
     {
-     "match": "CA Batna v Paradou AC",
-     "selection": "CA Batna or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
      "match": "Kuopion Palloseura v Gent",
      "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "SC Red Star Penzing v SV Schwechat",
-     "selection": "SC Red Star Penzing or SV Schwechat",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Toulouse v Strasbourg",
-     "selection": "Toulouse or Strasbourg",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Nea Salamina Famagusta v Omonia Aradippou",
-     "selection": "Nea Salamina Famagusta or Omonia Aradippou",
      "result": "pending",
      "score": null
     },
     {
      "match": "Beitar Naharia v FC Zeirey Tamra",
      "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Diyala FC v AL Minaa",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Dijon v Red Star FC",
-     "selection": "Dijon or Red Star FC",
      "result": "pending",
      "score": null
     },
@@ -6180,58 +4203,10 @@
      "score": null
     },
     {
-     "match": "CR Beni Thour v NC Magra",
-     "selection": "CR Beni Thour or NC Magra",
+     "match": "SE Palmeiras SP v Clube do Remo PA",
+     "selection": "Over 1.5",
      "result": "pending",
      "score": null
-    },
-    {
-     "match": "SC Kriens v FC Rapperswil-Jona",
-     "selection": "SC Kriens or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Botev Plovdiv v FC Dunav Ruse",
-     "selection": "Botev Plovdiv or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Montpellier v Metz",
-     "selection": "Montpellier or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Polissya Zhytomyr v Veres Rivne",
-     "selection": "FC Polissya Zhytomyr or Veres Rivne",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Madura United v Arema FC",
-     "selection": "Madura United or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Zaqatala FK v Moik Baku",
-     "selection": "Zaqatala FK or Moik Baku",
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "FC Marchfeld Donauauen v SR Donaufeld",
-     "selection": "FC Marchfeld Donauauen or Draw",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Marines FC Gisenyi v Police FC Rwanda",
-     "selection": "Marines FC Gisenyi or Draw",
-     "result": "pending",
-     "score": "0:0"
     },
     {
      "match": "Sydney FC v Central Coast Mariners",
@@ -6240,14 +4215,636 @@
      "score": null
     },
     {
-     "match": "Maccabi Tel Aviv FC v Maccabi Petah Tikva FC",
-     "selection": "Maccabi Tel Aviv FC or Maccabi Petah Tikva FC",
+     "match": "CD Marathon San Pedro Sula v Platense FC Puerto Cortes",
+     "selection": "Over 1.5",
      "result": "pending",
      "score": null
     },
     {
-     "match": "Baglan Dragons v Ynyshir Albions",
-     "selection": "Ynyshir Albions or Draw",
+     "match": "Machida Zelvia v Shanghai Shenhua FC",
+     "selection": "Over 1.5",
+     "result": "won",
+     "score": "2:1"
+    }
+   ]
+  },
+  {
+   "code": "B3FMD87",
+   "book": "msport",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (full)",
+   "kind": "market",
+   "odds": 9.35,
+   "status": "pending",
+   "hit": 1,
+   "total": 13,
+   "legs": [
+    {
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Dordrecht v NAC Breda",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kuopion Palloseura v Gent",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Beitar Naharia v FC Zeirey Tamra",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AEK Larnaca v Karmiotissa FC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC BKMA Yerevan v FC Alashkert Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "SE Palmeiras SP v Clube do Remo PA",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sydney FC v Central Coast Mariners",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "CD Marathon San Pedro Sula v Platense FC Puerto Cortes",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Machida Zelvia v Shanghai Shenhua FC",
+     "selection": "Over 1.5",
+     "result": "won",
+     "score": "2:1"
+    }
+   ]
+  },
+  {
+   "code": "WhmDg9",
+   "book": "betika",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (full)",
+   "kind": "market",
+   "odds": 5.24,
+   "status": "pending",
+   "hit": 1,
+   "total": 13,
+   "legs": [
+    {
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Dordrecht v NAC Breda",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kuopion Palloseura v Gent",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Beitar Naharia v FC Zeirey Tamra",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AEK Larnaca v Karmiotissa FC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC BKMA Yerevan v FC Alashkert Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "SE Palmeiras SP v Clube do Remo PA",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sydney FC v Central Coast Mariners",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "CD Marathon San Pedro Sula v Platense FC Puerto Cortes",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Machida Zelvia v Shanghai Shenhua FC",
+     "selection": "Over 1.5",
+     "result": "won",
+     "score": "2:1"
+    }
+   ]
+  },
+  {
+   "code": "8C06QM",
+   "book": "footballcom",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (full)",
+   "kind": "market",
+   "odds": 8.83,
+   "status": "pending",
+   "hit": 1,
+   "total": 13,
+   "legs": [
+    {
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Dordrecht v NAC Breda",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kuopion Palloseura v Gent",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Beitar Naharia v FC Zeirey Tamra",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AEK Larnaca v Karmiotissa FC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC BKMA Yerevan v FC Alashkert Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "SE Palmeiras SP v Clube do Remo PA",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sydney FC v Central Coast Mariners",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "CD Marathon San Pedro Sula v Platense FC Puerto Cortes",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Machida Zelvia v Shanghai Shenhua FC",
+     "selection": "Over 1.5",
+     "result": "won",
+     "score": "2:1"
+    }
+   ]
+  },
+  {
+   "code": "TQGCNO5",
+   "book": "betpawa",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (full)",
+   "kind": "market",
+   "odds": 4.83,
+   "status": "pending",
+   "hit": 1,
+   "total": 13,
+   "legs": [
+    {
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Dordrecht v NAC Breda",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kuopion Palloseura v Gent",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Beitar Naharia v FC Zeirey Tamra",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AEK Larnaca v Karmiotissa FC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC BKMA Yerevan v FC Alashkert Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "SE Palmeiras SP v Clube do Remo PA",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sydney FC v Central Coast Mariners",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "CD Marathon San Pedro Sula v Platense FC Puerto Cortes",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Machida Zelvia v Shanghai Shenhua FC",
+     "selection": "Over 1.5",
+     "result": "won",
+     "score": "2:1"
+    }
+   ]
+  },
+  {
+   "code": "8N7WQL",
+   "book": "sportybet",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (safe)",
+   "kind": "market",
+   "odds": 2.21,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Dordrecht v NAC Breda",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "B3FMD8N",
+   "book": "msport",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (safe)",
+   "kind": "market",
+   "odds": 2.28,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Dordrecht v NAC Breda",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "3UGqzT",
+   "book": "betika",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (safe)",
+   "kind": "market",
+   "odds": 1.84,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Dordrecht v NAC Breda",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "8N7WQL",
+   "book": "footballcom",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (safe)",
+   "kind": "market",
+   "odds": 2.19,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Dordrecht v NAC Breda",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "409F618",
+   "book": "betpawa",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (safe)",
+   "kind": "market",
+   "odds": 1.94,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Dordrecht v NAC Breda",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "DZVZLJ",
+   "book": "sportybet",
+   "date": "2026-11-05",
+   "name": "Under 3.5 (full)",
+   "kind": "market",
+   "odds": 9.66,
+   "status": "pending",
+   "hit": 0,
+   "total": 11,
+   "legs": [
+    {
+     "match": "CA San Lorenzo de Almagro v CA Platense",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AVS Futebol SAD v FC Vizela",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AL Talaba v Ghaz Al-Shamal SC",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Diyala FC v AL Minaa",
+     "selection": "Under 3.5",
      "result": "pending",
      "score": null
     },
@@ -6264,62 +4861,81 @@
      "score": null
     },
     {
-     "match": "Holon Yermiyahu FC v Hapoel Mahane Yehuda",
-     "selection": "Holon Yermiyahu FC or Draw",
+     "match": "Amman FC v Al Hashemehya",
+     "selection": "Under 3.5",
      "result": "pending",
      "score": null
     },
     {
-     "match": "Maccabi Kiryat Ata-Bialik v Hapoel Beit Shean Mesilot",
-     "selection": "Maccabi Kiryat Ata-Bialik or Hapoel Beit Shean Mesilot",
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "FCM Traiskirchen v SC Wiener Viktoria",
-     "selection": "FCM Traiskirchen or Draw",
+     "match": "Sama AL Sarhan SC v Sahl Horan SC",
+     "selection": "Under 3.5",
      "result": "pending",
      "score": null
     },
     {
-     "match": "KF Trepca Mitrovice v KF Istogu",
-     "selection": "KF Trepca Mitrovice or KF Istogu",
+     "match": "Ntugasaze FC v Entebbe UPPC FC",
+     "selection": "Under 3.5",
      "result": "pending",
      "score": "1:0"
     },
     {
-     "match": "Strabane Athletic FC v Annagh United FC",
-     "selection": "Strabane Athletic FC or Annagh United FC",
+     "match": "Rubio Nu v Sportivo Luqueno",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "B3FMDAS",
+   "book": "msport",
+   "date": "2026-11-05",
+   "name": "Under 3.5 (full)",
+   "kind": "market",
+   "odds": 10.22,
+   "status": "pending",
+   "hit": 0,
+   "total": 11,
+   "legs": [
+    {
+     "match": "CA San Lorenzo de Almagro v CA Platense",
+     "selection": "Under 3.5",
      "result": "pending",
      "score": null
     },
     {
-     "match": "Sunrise FC v Al-Merrikh SC (SDN)",
-     "selection": "Al-Merrikh SC (SDN) or Draw",
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "CA Aldosivi v CA River Plate (ARG)",
-     "selection": "CA River Plate (ARG) or Draw",
+     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
+     "selection": "Under 3.5",
      "result": "pending",
      "score": null
     },
     {
-     "match": "Holywell Town v Airbus UK Broughton",
-     "selection": "Airbus UK Broughton or Draw",
+     "match": "AVS Futebol SAD v FC Vizela",
+     "selection": "Under 3.5",
      "result": "pending",
      "score": null
     },
     {
-     "match": "Crystal Palace v Hoffenheim",
-     "selection": "Crystal Palace or Hoffenheim",
+     "match": "AL Talaba v Ghaz Al-Shamal SC",
+     "selection": "Under 3.5",
      "result": "pending",
      "score": null
     },
     {
-     "match": "Bayer Leverkusen v Marseille",
-     "selection": "Bayer Leverkusen or Marseille",
+     "match": "Diyala FC v AL Minaa",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Obolon Kyiv v FC Livyi Bereh Kyiv",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Limonest Dardilly Saint-Didier v Andrezieux-Boutheon FC",
+     "selection": "Under 3.5",
      "result": "pending",
      "score": null
     },
@@ -6336,14 +4952,81 @@
      "score": null
     },
     {
-     "match": "SK Rapid v Wolfsberger AC",
-     "selection": "SK Rapid or Wolfsberger AC",
+     "match": "Ntugasaze FC v Entebbe UPPC FC",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Rubio Nu v Sportivo Luqueno",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "vjVqmd",
+   "book": "betika",
+   "date": "2026-11-05",
+   "name": "Under 3.5 (full)",
+   "kind": "market",
+   "odds": 6.06,
+   "status": "pending",
+   "hit": 0,
+   "total": 11,
+   "legs": [
+    {
+     "match": "CA San Lorenzo de Almagro v CA Platense",
+     "selection": "Under 3.5",
      "result": "pending",
      "score": null
     },
     {
-     "match": "Sparta Prague v Bournemouth",
-     "selection": "Sparta Prague or Bournemouth",
+     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AVS Futebol SAD v FC Vizela",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AL Talaba v Ghaz Al-Shamal SC",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Diyala FC v AL Minaa",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Obolon Kyiv v FC Livyi Bereh Kyiv",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Limonest Dardilly Saint-Didier v Andrezieux-Boutheon FC",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Amman FC v Al Hashemehya",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sama AL Sarhan SC v Sahl Horan SC",
+     "selection": "Under 3.5",
      "result": "pending",
      "score": null
     },
@@ -6351,29 +5034,242 @@
      "match": "Ntugasaze FC v Entebbe UPPC FC",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "1:0"
     },
     {
-     "match": "Fanja v AL Musannah SC",
-     "selection": "Fanja or AL Musannah SC",
+     "match": "Rubio Nu v Sportivo Luqueno",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "DZVZLJ",
+   "book": "footballcom",
+   "date": "2026-11-05",
+   "name": "Under 3.5 (full)",
+   "kind": "market",
+   "odds": 9.12,
+   "status": "pending",
+   "hit": 0,
+   "total": 11,
+   "legs": [
+    {
+     "match": "CA San Lorenzo de Almagro v CA Platense",
+     "selection": "Under 3.5",
      "result": "pending",
      "score": null
     },
     {
-     "match": "RSC Anderlecht v Salzburg",
-     "selection": "RSC Anderlecht or Salzburg",
+     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
+     "selection": "Under 3.5",
      "result": "pending",
      "score": null
     },
     {
-     "match": "Llandudno FC v The New Saints FC",
-     "selection": "Over 2.5",
+     "match": "AVS Futebol SAD v FC Vizela",
+     "selection": "Under 3.5",
      "result": "pending",
      "score": null
     },
     {
-     "match": "Lillestroem SK v Viktoria Plzen",
-     "selection": "Lillestroem SK or Viktoria Plzen",
+     "match": "AL Talaba v Ghaz Al-Shamal SC",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Diyala FC v AL Minaa",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Obolon Kyiv v FC Livyi Bereh Kyiv",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Limonest Dardilly Saint-Didier v Andrezieux-Boutheon FC",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Amman FC v Al Hashemehya",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sama AL Sarhan SC v Sahl Horan SC",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ntugasaze FC v Entebbe UPPC FC",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Rubio Nu v Sportivo Luqueno",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "GXMI97T",
+   "book": "betpawa",
+   "date": "2026-11-05",
+   "name": "Under 3.5 (full)",
+   "kind": "market",
+   "odds": 5.89,
+   "status": "pending",
+   "hit": 0,
+   "total": 11,
+   "legs": [
+    {
+     "match": "CA San Lorenzo de Almagro v CA Platense",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "NK Kustosija Zagreb v Orijent 1919 Rijeka",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AVS Futebol SAD v FC Vizela",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AL Talaba v Ghaz Al-Shamal SC",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Diyala FC v AL Minaa",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Obolon Kyiv v FC Livyi Bereh Kyiv",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Limonest Dardilly Saint-Didier v Andrezieux-Boutheon FC",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Amman FC v Al Hashemehya",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sama AL Sarhan SC v Sahl Horan SC",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ntugasaze FC v Entebbe UPPC FC",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Rubio Nu v Sportivo Luqueno",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "D4HCWQ",
+   "book": "sportybet",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (full)",
+   "kind": "market",
+   "odds": 8.08,
+   "status": "pending",
+   "hit": 1,
+   "total": 12,
+   "legs": [
+    {
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kuopion Palloseura v Gent",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Beitar Naharia v FC Zeirey Tamra",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AEK Larnaca v Karmiotissa FC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC BKMA Yerevan v FC Alashkert Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "SE Palmeiras SP v Clube do Remo PA",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sydney FC v Central Coast Mariners",
+     "selection": "Over 1.5",
      "result": "pending",
      "score": null
     },
@@ -6384,20 +5280,87 @@
      "score": null
     },
     {
-     "match": "Alkmaar v Juventus",
-     "selection": "Alkmaar or Juventus",
+     "match": "Machida Zelvia v Shanghai Shenhua FC",
+     "selection": "Over 1.5",
+     "result": "won",
+     "score": "2:1"
+    }
+   ]
+  },
+  {
+   "code": "B3FL3M7",
+   "book": "msport",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (full)",
+   "kind": "market",
+   "odds": 8.49,
+   "status": "pending",
+   "hit": 1,
+   "total": 12,
+   "legs": [
+    {
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
      "result": "pending",
      "score": null
     },
     {
-     "match": "PKR Svay Rieng v BG Tampines Rovers",
-     "selection": "PKR Svay Rieng or BG Tampines Rovers",
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
      "result": "pending",
-     "score": "1:0"
+     "score": null
     },
     {
-     "match": "Lincoln Red Imps v HNK Hajduk Split",
-     "selection": "Lincoln Red Imps or HNK Hajduk Split",
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kuopion Palloseura v Gent",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Beitar Naharia v FC Zeirey Tamra",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AEK Larnaca v Karmiotissa FC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC BKMA Yerevan v FC Alashkert Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "SE Palmeiras SP v Clube do Remo PA",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sydney FC v Central Coast Mariners",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "CD Marathon San Pedro Sula v Platense FC Puerto Cortes",
+     "selection": "Over 1.5",
      "result": "pending",
      "score": null
     },
@@ -6406,22 +5369,345 @@
      "selection": "Over 1.5",
      "result": "won",
      "score": "2:1"
-    },
+    }
+   ]
+  },
+  {
+   "code": "XmU9MU",
+   "book": "betika",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (full)",
+   "kind": "market",
+   "odds": 4.28,
+   "status": "pending",
+   "hit": 1,
+   "total": 12,
+   "legs": [
     {
-     "match": "Rubio Nu v Sportivo Luqueno",
-     "selection": "Under 3.5",
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
      "result": "pending",
      "score": null
     },
     {
-     "match": "Mohun Bagan Super Giant v Odisha FC",
-     "selection": "Mohun Bagan Super Giant or Draw",
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
      "result": "pending",
      "score": null
     },
     {
-     "match": "FC Liefering v Austria Salzburg",
-     "selection": "FC Liefering or Austria Salzburg",
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kuopion Palloseura v Gent",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Beitar Naharia v FC Zeirey Tamra",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AEK Larnaca v Karmiotissa FC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC BKMA Yerevan v FC Alashkert Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "SE Palmeiras SP v Clube do Remo PA",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sydney FC v Central Coast Mariners",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "CD Marathon San Pedro Sula v Platense FC Puerto Cortes",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Machida Zelvia v Shanghai Shenhua FC",
+     "selection": "Over 1.5",
+     "result": "won",
+     "score": "2:1"
+    }
+   ]
+  },
+  {
+   "code": "D4HCWQ",
+   "book": "footballcom",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (full)",
+   "kind": "market",
+   "odds": 8.01,
+   "status": "pending",
+   "hit": 1,
+   "total": 12,
+   "legs": [
+    {
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kuopion Palloseura v Gent",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Beitar Naharia v FC Zeirey Tamra",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AEK Larnaca v Karmiotissa FC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC BKMA Yerevan v FC Alashkert Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "SE Palmeiras SP v Clube do Remo PA",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sydney FC v Central Coast Mariners",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "CD Marathon San Pedro Sula v Platense FC Puerto Cortes",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Machida Zelvia v Shanghai Shenhua FC",
+     "selection": "Over 1.5",
+     "result": "won",
+     "score": "2:1"
+    }
+   ]
+  },
+  {
+   "code": "W79WHLJ",
+   "book": "betpawa",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (full)",
+   "kind": "market",
+   "odds": 4.31,
+   "status": "pending",
+   "hit": 1,
+   "total": 12,
+   "legs": [
+    {
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kuopion Palloseura v Gent",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Beitar Naharia v FC Zeirey Tamra",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AEK Larnaca v Karmiotissa FC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC BKMA Yerevan v FC Alashkert Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "SE Palmeiras SP v Clube do Remo PA",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sydney FC v Central Coast Mariners",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "CD Marathon San Pedro Sula v Platense FC Puerto Cortes",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Machida Zelvia v Shanghai Shenhua FC",
+     "selection": "Over 1.5",
+     "result": "won",
+     "score": "2:1"
+    }
+   ]
+  },
+  {
+   "code": "C0EX4T",
+   "book": "sportybet",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (safe)",
+   "kind": "market",
+   "odds": 2.5,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kuopion Palloseura v Gent",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "B3FL3MR",
+   "book": "msport",
+   "date": "2026-11-05",
+   "name": "Over 1.5 (safe)",
+   "kind": "market",
+   "odds": 2.6,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "FC Van Charentsavan v FC Pyunik Yerevan",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Ruthin Town v Newtown AFC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Stade Nyonnais v Stade Lausanne Ouchy",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Roskilde v HIK Hellerup",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kuopion Palloseura v Gent",
+     "selection": "Over 1.5",
      "result": "pending",
      "score": null
     }
