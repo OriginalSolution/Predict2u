@@ -18,7 +18,7 @@ const OFFLINE_URL='./offline.html';
 // Do not put current-data.js here — it is 20–30 MB and is fetched network-first with a long timeout.
 const CODE_DATA=[
   './home-picks.json','./picks.json','./hot-picks.json','./record.json',
-  './news-hub.json','./staked-codes.json','./staked-index.json','./staked-status.json'
+  './news-hub.json','./staked-codes.json','./staked-index.json','./staked-status.json','./live-scores.json'
 ];
 
 const CORE_SHELL=[
@@ -30,7 +30,7 @@ const CORE_SHELL=[
   './bankers-of-the-day-v285.css','./predict2u-logo.png','./predict2u-mark.png','./favicon.ico',
   './icon-192.png','./icon-512.png','./maskable-icon.png','./apple-touch-icon.png',
   './book-sportybet.webp','./book-msport.webp','./book-betika.webp','./book-footballcom.webp','./book-betpawa.webp',
-  './home-picks.json','./picks.json','./hot-picks.json','./record.json','./news-hub.json','./staked-codes.json','./staked-index.json','./staked-status.json'
+  './home-picks.json','./picks.json','./hot-picks.json','./record.json','./news-hub.json','./staked-codes.json','./staked-index.json','./staked-status.json','./live-scores.json'
 ]
 
 // Listed for release validation and optional idle prefetch. These do not block install.
@@ -225,7 +225,7 @@ self.addEventListener('fetch',event=>{
   if(!sameOrigin(url))return;
 
   // Latest booking codes — network-first with long timeout, fall back to cached copy offline
-  if(/\/(?:home-picks|picks|hot-picks|record|news-hub|staked-codes|staked-index|staked-status)\.json$/.test(url.pathname)){
+  if(/\/(?:home-picks|picks|hot-picks|record|news-hub|staked-codes|staked-index|staked-status|live-scores)\.json$/.test(url.pathname)){
     event.respondWith(networkFirst(request, DATA_NETWORK_TIMEOUT));
     return;
   }
