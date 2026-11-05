@@ -1,28 +1,28 @@
 {
- "DATA_UPDATED": "2026-11-05T00:33:10Z",
+ "DATA_UPDATED": "2026-11-05T02:12:09Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
  "overall": {
-  "n": 21,
+  "n": 29,
   "won": 0,
-  "lost": 21,
+  "lost": 29,
   "winRate": 0.0,
   "stake": 10.0,
-  "staked": 210.0,
+  "staked": 290.0,
   "returned": 0,
-  "profit": -210.0,
+  "profit": -290.0,
   "roi": -100.0,
-  "pending": 441,
-  "codesSettled": 22,
+  "pending": 562,
+  "codesSettled": 46,
   "codesWon": 0,
-  "codesLost": 22
+  "codesLost": 46
  },
  "streak": {
   "current": "lost",
-  "currentLen": 21,
+  "currentLen": 29,
   "bestWin": 0,
-  "bestLoss": 21
+  "bestLoss": 29
  },
  "byType": [
   {
@@ -36,6 +36,30 @@
    "profit": -200.0,
    "roi": -100.0,
    "key": "slip"
+  },
+  {
+   "n": 6,
+   "won": 0,
+   "lost": 6,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 60.0,
+   "returned": 0,
+   "profit": -60.0,
+   "roi": -100.0,
+   "key": "all-picks"
+  },
+  {
+   "n": 2,
+   "won": 0,
+   "lost": 2,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 20.0,
+   "returned": 0,
+   "profit": -20.0,
+   "roi": -100.0,
+   "key": "market"
   },
   {
    "n": 1,
@@ -52,54 +76,16 @@
  ],
  "bySite": [
   {
-   "n": 20,
+   "n": 26,
    "won": 0,
-   "lost": 20,
+   "lost": 26,
    "winRate": 0.0,
    "stake": 10.0,
-   "staked": 200.0,
+   "staked": 260.0,
    "returned": 0,
-   "profit": -200.0,
+   "profit": -260.0,
    "roi": -100.0,
    "key": "sportybet"
-  },
-  {
-   "n": 1,
-   "won": 0,
-   "lost": 1,
-   "winRate": 0.0,
-   "stake": 10.0,
-   "staked": 10.0,
-   "returned": 0,
-   "profit": -10.0,
-   "roi": -100.0,
-   "key": "msport"
-  },
-  {
-   "n": 1,
-   "won": 0,
-   "lost": 1,
-   "winRate": 0.0,
-   "stake": 10.0,
-   "staked": 10.0,
-   "returned": 0,
-   "profit": -10.0,
-   "roi": -100.0,
-   "key": "betika"
-  }
- ],
- "byMarket": [
-  {
-   "n": 8,
-   "won": 0,
-   "lost": 8,
-   "winRate": 0.0,
-   "stake": 10.0,
-   "staked": 80.0,
-   "returned": 0,
-   "profit": -80.0,
-   "roi": -100.0,
-   "key": "Under 3.5"
   },
   {
    "n": 7,
@@ -111,7 +97,81 @@
    "returned": 0,
    "profit": -70.0,
    "roi": -100.0,
+   "key": "msport"
+  },
+  {
+   "n": 7,
+   "won": 0,
+   "lost": 7,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 70.0,
+   "returned": 0,
+   "profit": -70.0,
+   "roi": -100.0,
+   "key": "betika"
+  },
+  {
+   "n": 3,
+   "won": 0,
+   "lost": 3,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 30.0,
+   "returned": 0,
+   "profit": -30.0,
+   "roi": -100.0,
+   "key": "footballcom"
+  },
+  {
+   "n": 3,
+   "won": 0,
+   "lost": 3,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 30.0,
+   "returned": 0,
+   "profit": -30.0,
+   "roi": -100.0,
+   "key": "betpawa"
+  }
+ ],
+ "byMarket": [
+  {
+   "n": 15,
+   "won": 0,
+   "lost": 15,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 150.0,
+   "returned": 0,
+   "profit": -150.0,
+   "roi": -100.0,
    "key": "Double chance"
+  },
+  {
+   "n": 14,
+   "won": 0,
+   "lost": 14,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 140.0,
+   "returned": 0,
+   "profit": -140.0,
+   "roi": -100.0,
+   "key": "Under 3.5"
+  },
+  {
+   "n": 10,
+   "won": 0,
+   "lost": 10,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 100.0,
+   "returned": 0,
+   "profit": -100.0,
+   "roi": -100.0,
+   "key": "Under 4.5"
   },
   {
    "n": 5,
@@ -140,14 +200,14 @@
  ],
  "byDay": [
   {
-   "n": 21,
+   "n": 45,
    "won": 0,
-   "lost": 21,
+   "lost": 45,
    "winRate": 0.0,
    "stake": 10.0,
-   "staked": 210.0,
+   "staked": 450.0,
    "returned": 0,
-   "profit": -210.0,
+   "profit": -450.0,
    "roi": -100.0,
    "key": "2026-11-04"
   },
@@ -165,12 +225,264 @@
   }
  ],
  "picks": {
-  "settled": 67,
-  "won": 48,
-  "lost": 19,
-  "winRate": 71.6
+  "settled": 72,
+  "won": 51,
+  "lost": 21,
+  "winRate": 70.8
  },
  "recent": [
+  {
+   "code": "DMX4FT",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "All picks of the day",
+   "kind": "all-picks",
+   "odds": 685892.16,
+   "status": "lost",
+   "hit": 0,
+   "total": 61,
+   "profit": -10.0
+  },
+  {
+   "code": "B3FK3AV",
+   "book": "msport",
+   "date": "2026-11-04",
+   "name": "All picks of the day",
+   "kind": "all-picks",
+   "odds": 1186.0,
+   "status": "lost",
+   "hit": 0,
+   "total": 30,
+   "profit": -10.0
+  },
+  {
+   "code": "nqrztx",
+   "book": "betika",
+   "date": "2026-11-04",
+   "name": "All picks of the day",
+   "kind": "all-picks",
+   "odds": 87774.47,
+   "status": "lost",
+   "hit": 0,
+   "total": 53,
+   "profit": -10.0
+  },
+  {
+   "code": "8Y9XT1",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Under 4.5 (full)",
+   "kind": "market",
+   "odds": 356.94,
+   "status": "lost",
+   "hit": 0,
+   "total": 31,
+   "profit": -10.0
+  },
+  {
+   "code": "AUFRPH",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Under 4.5 (full)",
+   "kind": "market",
+   "odds": 1.23,
+   "status": "lost",
+   "hit": 0,
+   "total": 31,
+   "profit": -10.0
+  },
+  {
+   "code": "B3FJK3N",
+   "book": "msport",
+   "date": "2026-11-04",
+   "name": "Under 4.5 (full)",
+   "kind": "market",
+   "odds": 266.03,
+   "status": "lost",
+   "hit": 0,
+   "total": 31,
+   "profit": -10.0
+  },
+  {
+   "code": "B3FJK3V",
+   "book": "msport",
+   "date": "2026-11-04",
+   "name": "Under 4.5 (full)",
+   "kind": "market",
+   "odds": 1.23,
+   "status": "lost",
+   "hit": 0,
+   "total": 31,
+   "profit": -10.0
+  },
+  {
+   "code": "XeWNKJ",
+   "book": "betika",
+   "date": "2026-11-04",
+   "name": "Under 4.5 (full)",
+   "kind": "market",
+   "odds": 99.25,
+   "status": "lost",
+   "hit": 0,
+   "total": 31,
+   "profit": -10.0
+  },
+  {
+   "code": "HZrZhH",
+   "book": "betika",
+   "date": "2026-11-04",
+   "name": "Under 4.5 (full)",
+   "kind": "market",
+   "odds": 1.21,
+   "status": "lost",
+   "hit": 0,
+   "total": 31,
+   "profit": -10.0
+  },
+  {
+   "code": "8Y9XT1",
+   "book": "footballcom",
+   "date": "2026-11-04",
+   "name": "Under 4.5 (full)",
+   "kind": "market",
+   "odds": 356.94,
+   "status": "lost",
+   "hit": 0,
+   "total": 31,
+   "profit": -10.0
+  },
+  {
+   "code": "AUFRPH",
+   "book": "footballcom",
+   "date": "2026-11-04",
+   "name": "Under 4.5 (full)",
+   "kind": "market",
+   "odds": 1.23,
+   "status": "lost",
+   "hit": 0,
+   "total": 31,
+   "profit": -10.0
+  },
+  {
+   "code": "1N0AMNG",
+   "book": "betpawa",
+   "date": "2026-11-04",
+   "name": "Under 4.5 (full)",
+   "kind": "market",
+   "odds": 120.34,
+   "status": "lost",
+   "hit": 0,
+   "total": 31,
+   "profit": -10.0
+  },
+  {
+   "code": "HAMACW3",
+   "book": "betpawa",
+   "date": "2026-11-04",
+   "name": "Under 4.5 (full)",
+   "kind": "market",
+   "odds": 1.2,
+   "status": "lost",
+   "hit": 0,
+   "total": 31,
+   "profit": -10.0
+  },
+  {
+   "code": "AC50QG",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Under 3.5 (full)",
+   "kind": "market",
+   "odds": 3965.7,
+   "status": "lost",
+   "hit": 0,
+   "total": 26,
+   "profit": -10.0
+  },
+  {
+   "code": "B3FJKRP",
+   "book": "msport",
+   "date": "2026-11-04",
+   "name": "Under 3.5 (full)",
+   "kind": "market",
+   "odds": 3221.14,
+   "status": "lost",
+   "hit": 0,
+   "total": 26,
+   "profit": -10.0
+  },
+  {
+   "code": "62TmDe",
+   "book": "betika",
+   "date": "2026-11-04",
+   "name": "Under 3.5 (full)",
+   "kind": "market",
+   "odds": 1371.31,
+   "status": "lost",
+   "hit": 0,
+   "total": 26,
+   "profit": -10.0
+  },
+  {
+   "code": "AC50QG",
+   "book": "footballcom",
+   "date": "2026-11-04",
+   "name": "Under 3.5 (full)",
+   "kind": "market",
+   "odds": 3773.85,
+   "status": "lost",
+   "hit": 0,
+   "total": 26,
+   "profit": -10.0
+  },
+  {
+   "code": "ZGH12N1",
+   "book": "betpawa",
+   "date": "2026-11-04",
+   "name": "Under 3.5 (full)",
+   "kind": "market",
+   "odds": 1307.41,
+   "status": "lost",
+   "hit": 0,
+   "total": 26,
+   "profit": -10.0
+  },
+  {
+   "code": "FZgS5X",
+   "book": "betika",
+   "date": "2026-11-04",
+   "name": "All picks of the day",
+   "kind": "all-picks",
+   "odds": 147520.21,
+   "status": "lost",
+   "hit": 1,
+   "total": 55,
+   "profit": -10.0
+  },
+  {
+   "code": "B3FJJJV",
+   "book": "msport",
+   "date": "2026-11-04",
+   "name": "All picks of the day",
+   "kind": "all-picks",
+   "odds": 1546.28,
+   "status": "lost",
+   "hit": 1,
+   "total": 31,
+   "profit": -10.0
+  },
+  {
+   "code": "D05DTN",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "Main banker acca (>=25)",
+   "kind": "banker",
+   "odds": 25.62,
+   "status": "lost",
+   "hit": 1,
+   "total": 15,
+   "profit": -10.0
+  },
   {
    "code": "B3FFYB6",
    "book": "msport",
@@ -193,6 +505,42 @@
    "status": "lost",
    "hit": 1,
    "total": 15,
+   "profit": -10.0
+  },
+  {
+   "code": "A35XJ7",
+   "book": "sportybet",
+   "date": "2026-11-04",
+   "name": "All picks of the day",
+   "kind": "all-picks",
+   "odds": 1215833.61,
+   "status": "lost",
+   "hit": 1,
+   "total": 63,
+   "profit": -10.0
+  },
+  {
+   "code": "B3FJHNU",
+   "book": "msport",
+   "date": "2026-11-04",
+   "name": "All picks of the day",
+   "kind": "all-picks",
+   "odds": 1546.28,
+   "status": "lost",
+   "hit": 1,
+   "total": 31,
+   "profit": -10.0
+  },
+  {
+   "code": "4AgWQa",
+   "book": "betika",
+   "date": "2026-11-04",
+   "name": "All picks of the day",
+   "kind": "all-picks",
+   "odds": 146320.86,
+   "status": "lost",
+   "hit": 1,
+   "total": 55,
    "profit": -10.0
   },
   {
@@ -361,78 +709,6 @@
    "status": "lost",
    "hit": 9,
    "total": 25,
-   "profit": -10.0
-  },
-  {
-   "code": "F6Y2S2",
-   "book": "sportybet",
-   "date": "2026-11-04",
-   "name": "Slip 26",
-   "kind": "slip",
-   "odds": 3346.56,
-   "status": "lost",
-   "hit": 3,
-   "total": 28,
-   "profit": -10.0
-  },
-  {
-   "code": "FJG8DU",
-   "book": "sportybet",
-   "date": "2026-11-04",
-   "name": "Slip 27",
-   "kind": "slip",
-   "odds": 22120.73,
-   "status": "lost",
-   "hit": 11,
-   "total": 35,
-   "profit": -10.0
-  },
-  {
-   "code": "BTWWPF",
-   "book": "sportybet",
-   "date": "2026-11-04",
-   "name": "Slip 28",
-   "kind": "slip",
-   "odds": 29933.55,
-   "status": "lost",
-   "hit": 5,
-   "total": 35,
-   "profit": -10.0
-  },
-  {
-   "code": "F84W6K",
-   "book": "sportybet",
-   "date": "2026-11-04",
-   "name": "Slip 29",
-   "kind": "slip",
-   "odds": 29651.58,
-   "status": "lost",
-   "hit": 5,
-   "total": 33,
-   "profit": -10.0
-  },
-  {
-   "code": "995LYZ",
-   "book": "sportybet",
-   "date": "2026-11-04",
-   "name": "Slip 31",
-   "kind": "slip",
-   "odds": 221389.71,
-   "status": "lost",
-   "hit": 5,
-   "total": 36,
-   "profit": -10.0
-  },
-  {
-   "code": "AQX8SA",
-   "book": "sportybet",
-   "date": "2026-11-03",
-   "name": "Slip 1",
-   "kind": "slip",
-   "odds": 36.75,
-   "status": "lost",
-   "hit": 3,
-   "total": 5,
    "profit": -10.0
   }
  ]
