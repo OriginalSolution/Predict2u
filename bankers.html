@@ -8,6 +8,7 @@
   <meta name="theme-color" content="#07111d">
   <link rel="preload" href="picks.json" as="fetch" crossorigin>
   <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="pwa-launch.css?v=317">
   <link rel="icon" href="favicon-32x32.png">
   <link rel="stylesheet" href="intelligence.css">
   <link rel="stylesheet" href="brand-experience.css">
@@ -161,6 +162,7 @@ footer{color:var(--mut)}
     <p>Today's graded slips with booking codes. Every pick gets a Predict2U score and every slip a grade (A best). Copy a code or open it at the bookmaker.</p>
     <div class="p2u-bankers-meta" id="bankers-meta">Reading today’s picks…</div>
     <p class="hp-cta" style="margin-top:10px"><a href="record.html" style="color:var(--gold,#ffd36b);font-weight:800">Track record →</a></p>
+    <p class="hp-cta" style="margin-top:8px"><button type="button" class="p2u-install-cta" data-p2u-install style="display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:0;background:linear-gradient(135deg,#22c55e,#16a34a);color:#052e22;font-weight:900;cursor:pointer">Install app</button></p>
   </section>
   <section class="p2u-bankers-toolbar">
     <label><span>Day</span><select id="bp-day"></select></label>
@@ -169,6 +171,7 @@ footer{color:var(--mut)}
   <section id="bp-carousel" class="bp-carousel" aria-label="Booking codes"></section>
   <section id="bp-list" class="bp-list"><div class="p2u-bankers-empty">Loading…</div></section>
 </main>
+<script src="pwa-launch.js?v=317" defer></script>
 <script src="p2u-wa-share-v317.js?v=317" defer></script>
 <script src="p2u-picks-v316.js?v=317w" defer></script>
 <script src="p2u-flashy-v301.js?v=301" defer></script>

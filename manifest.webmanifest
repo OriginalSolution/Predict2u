@@ -1,7 +1,7 @@
 {
-  "name": "Predict2U \u2014 Know the Game. Predict Better.",
+  "name": "Predict2U — Know the Game. Predict Better.",
   "short_name": "Predict2U",
-  "description": "Fresh football predictions from governed independent model families, strict bankers and a transparent proof record.",
+  "description": "Daily football booking codes for Ghana — Safe, Medium and Banker slips on SportyBet, MSport, Betika, football.com and Betpawa. Offline-ready.",
   "id": "./",
   "start_url": "./index.html?source=pwa",
   "scope": "./",
@@ -14,7 +14,7 @@
   ],
   "orientation": "any",
   "background_color": "#08090d",
-  "theme_color": "#08090d",
+  "theme_color": "#0a111c",
   "categories": [
     "sports",
     "utilities"
@@ -60,22 +60,9 @@
   ],
   "shortcuts": [
     {
-      "name": "Today\u2019s Picks",
-      "short_name": "Today",
-      "description": "Open current qualified picks",
-      "url": "./board.html?source=shortcut",
-      "icons": [
-        {
-          "src": "icon-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
-      "name": "Bankers",
-      "short_name": "Bankers",
-      "description": "Open strict qualified banker selections",
+      "name": "Today’s codes",
+      "short_name": "Codes",
+      "description": "Open Safe, Medium and Banker slips",
       "url": "./bankers.html?source=shortcut",
       "icons": [
         {
@@ -86,10 +73,10 @@
       ]
     },
     {
-      "name": "Engine Hub",
-      "short_name": "Engines",
-      "description": "Browse active and shadow prediction engines",
-      "url": "./all-engines.html?source=shortcut",
+      "name": "Hot Picks",
+      "short_name": "Hot",
+      "description": "Most-backed code-hub picks",
+      "url": "./hot-picks.html?source=shortcut",
       "icons": [
         {
           "src": "icon-192.png",
@@ -99,10 +86,23 @@
       ]
     },
     {
-      "name": "Proof",
-      "short_name": "Proof",
-      "description": "Review settled public results",
-      "url": "./proof.html?source=shortcut",
+      "name": "Track record",
+      "short_name": "Record",
+      "description": "Settled win rate and ROI",
+      "url": "./record.html?source=shortcut",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Staked codes",
+      "short_name": "Staked",
+      "description": "Track codes you tapped",
+      "url": "./staked.html?source=shortcut",
       "icons": [
         {
           "src": "icon-192.png",

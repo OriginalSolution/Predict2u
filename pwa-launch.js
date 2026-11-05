@@ -1,8 +1,8 @@
-/* Predict2U v207 — native PWA install, lighter startup, update safety and offline recovery. */
+/* Predict2U v317 — native PWA install, lighter startup, update safety and offline recovery. */
 (function(){
   'use strict';
 
-  const VERSION='v264';
+  const VERSION='v317';
   const SW='sw.js';
   const DISMISS_KEY='p2u_app_prompt_dismissed_v202';
   const UPDATE_CHECK_KEY='p2u_sw_update_check_v202';

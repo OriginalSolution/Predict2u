@@ -8,6 +8,7 @@
   <meta name="theme-color" content="#07111d">
   <link rel="preload" href="home-picks.json" as="fetch" crossorigin>
   <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="pwa-launch.css?v=317">
   <link rel="icon" href="favicon-32x32.png">
   <link rel="stylesheet" href="intelligence.css">
   <link rel="stylesheet" href="brand-experience.css">
@@ -141,6 +142,9 @@ footer{color:var(--mut)}
  .p2u-bankers-hero h1{font-size:2.1rem}
 }
 @media (min-width:1025px){.bp-card{flex-basis:220px}}
+.p2u-install-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:999px;border:0;background:linear-gradient(135deg,#22c55e,#16a34a);color:#052e22;font-weight:900;font-size:.92rem;cursor:pointer;box-shadow:0 0 0 1px rgba(34,197,94,.35),0 8px 24px rgba(0,0,0,.35)}
+.p2u-install-cta:hover{filter:brightness(1.06)}
+html.p2u-standalone .p2u-install-cta{display:none}
 </style>
 </head>
 <body>
@@ -152,6 +156,7 @@ footer{color:var(--mut)}
     <p>Favourites from leagues where the favourite has a strong record. Each pick shows the league's historical favourite rate, the sample behind it, the price and our confidence.</p>
     <div class="p2u-bankers-meta" id="hp-meta">Reading today’s picks…</div>
     <p class="hp-cta"><a href="bankers.html">Booking codes &amp; slips →</a> · <a href="record.html">Track record →</a></p>
+    <p class="hp-cta" style="margin-top:10px"><button type="button" class="p2u-install-cta" data-p2u-install>Install app</button></p>
   </section>
   <section class="p2u-bankers-toolbar"><label><span>Date</span><select id="hp-day" aria-label="Date"></select></label></section>
   <section id="hp-carousel" class="cc" hidden aria-label="Booking codes from all bookmakers"></section>
@@ -191,6 +196,7 @@ footer{color:var(--mut)}
 @media (max-width:360px){.hp-tally{grid-template-columns:repeat(2,1fr)}}
 </style>
 <script src="p2u-home-v304.js?v=306f" defer></script>
+<script src="pwa-launch.js?v=317" defer></script>
 <script src="p2u-wa-share-v317.js?v=317" defer></script>
 <script src="p2u-risk-slips-v316.js?v=317w" defer></script>
 <script src="p2u-codes-carousel-v299.js?v=300" defer></script>
