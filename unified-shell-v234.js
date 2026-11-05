@@ -149,9 +149,9 @@
 
   
   // Responsible gambling: 18+ strip + one-time age check
-  if(!document.querySelector('script[data-p2u-rg-v318]')){
+  if(!document.querySelector('script[data-p2u-rg-v322]')){
     const rg=document.createElement('script');
-    rg.src='p2u-rg-v318.js?v=318';
+    rg.src='p2u-rg-v322.js?v=322';
     rg.defer=true;
     rg.dataset.p2uRgV318='true';
     document.head.appendChild(rg);

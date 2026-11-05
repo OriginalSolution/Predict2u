@@ -1,4 +1,4 @@
-/* Predict2U v318 — one-time 18+ age check + sitewide responsible-gambling notice. */
+/* Predict2U v322 — one-time 18+ age check + sitewide responsible-gambling notice. */
 (function(){
   'use strict';
   var KEY='p2u-age-ok';
@@ -10,7 +10,7 @@
     if(document.getElementById('p2u-rg-css')) return;
     var st=document.createElement('style'); st.id='p2u-rg-css';
     st.textContent=
-      '.p2u-rg-strip{position:relative;z-index:40;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:center;padding:8px 12px;background:#1a1408;border-bottom:1px solid #7a5a20;color:#ffd99a;font:700 .78rem/1.3 system-ui,sans-serif;text-align:center}'+
+      '.p2u-rg-strip{position:relative;z-index:40;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:center;padding:8px 12px;background:#1a1408;border-top:1px solid #7a5a20;margin-top:24px;padding-bottom:calc(8px + env(safe-area-inset-bottom));color:#ffd99a;font:700 .78rem/1.3 system-ui,sans-serif;text-align:center}'+
       '.p2u-rg-strip b{color:#fff;letter-spacing:.04em}'+
       '.p2u-rg-strip a{color:#7ff0b8;font-weight:800;text-decoration:none;min-height:40px;display:inline-flex;align-items:center}'+
       '.p2u-rg-strip a:hover{text-decoration:underline}'+
@@ -35,10 +35,11 @@
     el.className='p2u-rg-strip';
     el.setAttribute('role','note');
     el.innerHTML='<span><b>18+</b> only · Gamble responsibly</span><a href="rg.html">Ghana help &amp; self-exclusion →</a>';
-    var nav=document.querySelector('.p2u-v245-nav-wrap, .legal-nav, nav');
-    if(nav && nav.parentNode){ nav.insertAdjacentElement('afterend', el); }
-    else if(document.body.firstChild){ document.body.insertBefore(el, document.body.firstChild); }
-    else document.body.appendChild(el);
+    el.setAttribute('data-p2u-rg-footer','1');
+    var foot=document.querySelector('footer, .footer, .site-footer');
+    if(foot){ foot.appendChild(el); } else document.body.appendChild(el);
+    // keep last in body if other scripts append later
+    if(!foot) setTimeout(function(){ if(el.parentNode===document.body && el.nextElementSibling){ var n=el.nextElementSibling, moved=false; while(n){ if(n.tagName!=='SCRIPT' && getComputedStyle(n).position!=='fixed'){ moved=true; break;} n=n.nextElementSibling;} if(moved) document.body.appendChild(el);} },1500);
   }
 
   function ageGate(){
