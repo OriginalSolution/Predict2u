@@ -4,7 +4,7 @@
   var BOOKS=[['sportybet','SportyBet'],['msport','MSport'],['betika','Betika'],['footballcom','football.com'],['betpawa','Betpawa']];
   var REG={};
   function cv(v){ if(Array.isArray(v)) v=v[0]; if(v&&typeof v==='object') v=v.code; return v||''; }
-  function codesOf(s){ var o={},c=s.codes||{}; Object.keys(c).forEach(function(k){var x=cv(c[k]); if(x&&!/^P2ULOCK-/.test(x))o[k]=x;}); if(!o.sportybet&&s.code)o.sportybet=s.code; return o; }
+  function codesOf(s){ var o={},c=s.codes||{}; Object.keys(c).forEach(function(k){var x=cv(c[k]); if(x&&!/^P2ULOCK-/.test(x))o[k]=x;}); if(!o.sportybet&&s.code&&!/^P2ULOCK-/i.test(s.code))o.sportybet=s.code; return o; }
   function label(s){
     var r=(s.risk||'').toLowerCase(), n=s.name||s.label||'Slip';
     if(r==='safe'||/safe slip/i.test(n)) return 'Safe slip';
