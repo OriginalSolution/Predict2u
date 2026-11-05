@@ -36,3 +36,13 @@ body.p2u-hot-page{background:#070b12!important;color:#eef3fa;font-family:Inter,s
 .hot-sub{opacity:.85;font-size:.9em;margin:.3em 0 .6em}.hot-mkt>.hot-list{margin:.5em 0}.hot-codes{margin-top:.5em}
 
 .hot-sec>.hot-sec-b{padding:0 12px 12px}.hot-sec>.hot-sec-b>.hot-slip{margin:8px 0}.hot-sec>.hot-sec-b>.hot-sub{margin:.2em 0 .6em}
+
+.hot-mkt>summary{flex-wrap:nowrap;gap:8px}
+.hot-mkt>summary>span:first-child{flex:1;min-width:0}
+.hot-mkt-code{display:inline-flex;align-items:center;gap:5px;flex-shrink:0;max-width:46%;padding:4px 8px;border-radius:999px;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.12);color:#fff;text-decoration:none;font-size:.72rem;font-weight:800;line-height:1.1}
+.hot-mkt-code img{border-radius:4px;flex-shrink:0}
+.hot-mkt-code b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hot-mkt-code small{color:#ffd2a6;font-weight:700;white-space:nowrap}
+.hot-mkt>.p2u-chips{padding:0 12px 8px}
+.hot-mkt>.hot-list{padding:0 12px 12px}
+.hot-mkt>.p2u-wa-row{padding:0 12px 8px}
