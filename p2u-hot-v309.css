@@ -46,3 +46,12 @@ body.p2u-hot-page{background:#070b12!important;color:#eef3fa;font-family:Inter,s
 .hot-mkt>.p2u-chips{padding:0 12px 8px}
 .hot-mkt>.hot-list{padding:0 12px 12px}
 .hot-mkt>.p2u-wa-row{padding:0 12px 8px}
+
+.hot-m{grid-template-columns:28px 22px minmax(0,1fr) auto}
+.hot-crests{display:inline-flex;align-items:center;gap:2px;width:22px;flex-direction:column}
+.hot-crests .hot-crest,.hot-crests .p2u-team-crest,.hot-crests .p2u-crest-fallback{width:18px!important;height:18px!important;flex-basis:18px!important}
+.hot-crest.p2u-team-crest,.hot-m>.p2u-team-crest{width:22px;height:22px;object-fit:contain;flex:0 0 22px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.34))}
+.hot-crest.p2u-crest-fallback,.hot-m>.p2u-crest-fallback{width:22px;height:24px;flex:0 0 22px;display:inline-grid;place-items:center;clip-path:polygon(50% 0,92% 14%,86% 72%,50% 100%,14% 72%,8% 14%);background:linear-gradient(145deg,#b7ef31,#6f9b12);color:#071000;font:900 8px/1 Inter,system-ui,sans-serif;letter-spacing:-.02em;box-shadow:0 2px 6px rgba(0,0,0,.28)}
+.hot-sum-team{display:inline-flex;align-items:center;gap:8px;min-width:0;flex:1}
+.hot-sum-team .hot-crest,.hot-sum-team .p2u-team-crest,.hot-sum-team .p2u-crest-fallback{flex-shrink:0}
+.hot-mkt>summary .hot-sum-team small{display:inline}
