@@ -37,8 +37,9 @@
       '<div class="bcod-stats"><div><small>Total odds</small><b>'+Number(s.totalOdds).toFixed(2)+'</b></div><div><small>Picks</small><b>'+n+'</b></div></div>'+
       '<div class="bcod-act"><button type="button" class="bcod-copy">Copy code</button><a class="bcod-open" href="'+link+'" target="_blank" rel="noopener">Open on SportyBet</a></div>'+
       (chips?'<p class="bcod-also">Also booked on</p><div class="bcod-chips">'+chips+'</div>':'')+
+      (window.P2UWA?'<div class="p2u-wa-row" style="justify-content:center">'+P2UWA.button(s,'p2u-wa')+'</div>':'')+
       '<a class="bcod-all" href="bankers.html">See all codes</a><p class="bcod-18">18+ | Bet responsibly</p></div>';
-    document.body.appendChild(wrap);
+    document.body.appendChild(wrap);if(window.P2UWA)P2UWA.css();
     var box=wrap.firstChild;
     function close(){try{localStorage.setItem(KEY,day);}catch(e){}wrap.remove();document.removeEventListener('keydown',key);if(prev&&prev.focus)prev.focus();}
     function key(e){

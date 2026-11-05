@@ -54,7 +54,7 @@
   }
   if(!document.querySelector('script[data-p2u-bcod-v300]')){
     const adJs=document.createElement('script');
-    adJs.src='p2u-banker-pop-v300.js?v=300';
+    adJs.src='p2u-banker-pop-v300.js?v=320';
     adJs.async=true;
     adJs.dataset.p2uBcodV300='true';
     document.head.appendChild(adJs);
