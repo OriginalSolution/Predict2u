@@ -100,7 +100,9 @@
     {href:'news.html',label:'News',icon:'news'}
   ];
   const moreLinks=[
-    {href:'account.html',label:'Account',icon:'account'}
+    {href:'account.html',label:'Account',icon:'account'},
+    {href:'rg.html',label:'18+ Responsible',icon:'trust'},
+    {href:'record.html',label:'Track record',icon:'proof'}
   ];
   const isActive=item=>{if(item.href==='index.html')return active==='index.html'||active==='team-rankings.html'||active==='';return active===item.href.split('?')[0];};
   const primaryHrefs=new Set([...desktopLinks,...mobileLinks].map(item=>item.href));
@@ -136,16 +138,25 @@
   const foot=document.createElement('footer');
   foot.className='p2u-more-footer';
   foot.setAttribute('aria-label','More links');
-  foot.innerHTML=`<div class="p2u-more-footer-in">${moreLinks.map(item=>`<a href="${item.href}" class="${isActive(item)?'is-active':''}">${svg(item.icon)}<span>${item.label}</span></a>`).join('')}</div>`;
+  foot.innerHTML=`<div class="p2u-more-footer-in">${moreLinks.map(item=>`<a href="${item.href}" class="${isActive(item)?'is-active':''}">${svg(item.icon)}<span>${item.label}</span></a>`).join('')}</div><p class="p2u-rg-foot">18+ only · <a href="rg.html">Responsible gambling</a> · Gamble responsibly</p>`;
   const st=document.createElement('style');
-  st.textContent='.p2u-more-footer{margin:28px auto 0;padding:18px 14px 96px;max-width:1200px;border-top:1px solid rgba(255,255,255,.14)}.p2u-more-footer-in{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.p2u-more-footer a{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.08);color:#f4f6fb;font:600 13px/1.2 system-ui,sans-serif;text-decoration:none}.p2u-more-footer a:hover,.p2u-more-footer a.is-active{background:#ff6a00;color:#111}.p2u-more-footer svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2}.p2u-v245-dock .p2u-hot-tab.is-active,.p2u-v245-dock .p2u-hot-tab{color:#ff8a1f}';
+  st.textContent='.p2u-more-footer{margin:28px auto 0;padding:18px 14px 96px;max-width:1200px;border-top:1px solid rgba(255,255,255,.14)}.p2u-more-footer-in{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.p2u-more-footer a{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.08);color:#f4f6fb;font:600 13px/1.2 system-ui,sans-serif;text-decoration:none}.p2u-more-footer a:hover,.p2u-more-footer a.is-active{background:#ff6a00;color:#111}.p2u-more-footer svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2}.p2u-v245-dock .p2u-hot-tab.is-active,.p2u-v245-dock .p2u-hot-tab{color:#ff8a1f}.p2u-rg-foot{margin:12px 0 0;text-align:center;color:#9fb0c6;font:600 12px/1.4 system-ui,sans-serif}.p2u-rg-foot a{color:#7ff0b8;font-weight:800;text-decoration:none}';
   document.head.appendChild(st);
   (document.readyState==='loading')?document.addEventListener('DOMContentLoaded',()=>document.body.appendChild(foot)):document.body.appendChild(foot);
 
   document.body.classList.add('p2u-v227-ready','p2u-v245-ready','p2u-v245-page-'+active.replace('.html','').replace(/[^a-z0-9-]/g,''));
   document.documentElement.classList.add('p2u-v227-html','p2u-v245-html');
 
-  requestAnimationFrame(()=>{
+  
+  // Responsible gambling: 18+ strip + one-time age check
+  if(!document.querySelector('script[data-p2u-rg-v318]')){
+    const rg=document.createElement('script');
+    rg.src='p2u-rg-v318.js?v=318';
+    rg.defer=true;
+    rg.dataset.p2uRgV318='true';
+    document.head.appendChild(rg);
+  }
+requestAnimationFrame(()=>{
     const current=nav.querySelector('.p2u-v245-rail .is-active');
     const rail=nav.querySelector('.p2u-v245-rail');
     if(current&&rail)rail.scrollLeft=Math.max(0,current.offsetLeft-(rail.clientWidth-current.offsetWidth)/2);
