@@ -1,28 +1,28 @@
 {
- "DATA_UPDATED": "2026-11-05T03:25:43Z",
+ "DATA_UPDATED": "2026-11-05T04:03:57Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
  "overall": {
-  "n": 52,
+  "n": 54,
   "won": 0,
-  "lost": 52,
+  "lost": 54,
   "winRate": 0.0,
   "stake": 10.0,
-  "staked": 520.0,
+  "staked": 540.0,
   "returned": 0,
-  "profit": -520.0,
+  "profit": -540.0,
   "roi": -100.0,
-  "pending": 464,
-  "codesSettled": 218,
+  "pending": 444,
+  "codesSettled": 238,
   "codesWon": 0,
-  "codesLost": 218
+  "codesLost": 238
  },
  "streak": {
   "current": "lost",
-  "currentLen": 52,
+  "currentLen": 54,
   "bestWin": 0,
-  "bestLoss": 52
+  "bestLoss": 54
  },
  "byType": [
   {
@@ -38,14 +38,14 @@
    "key": "slip"
   },
   {
-   "n": 16,
+   "n": 18,
    "won": 0,
-   "lost": 16,
+   "lost": 18,
    "winRate": 0.0,
    "stake": 10.0,
-   "staked": 160.0,
+   "staked": 180.0,
    "returned": 0,
-   "profit": -160.0,
+   "profit": -180.0,
    "roi": -100.0,
    "key": "market"
   },
@@ -88,16 +88,78 @@
  ],
  "bySite": [
   {
-   "n": 62,
+   "n": 66,
    "won": 0,
-   "lost": 62,
+   "lost": 66,
    "winRate": 0.0,
    "stake": 10.0,
-   "staked": 620.0,
+   "staked": 660.0,
    "returned": 0,
-   "profit": -620.0,
+   "profit": -660.0,
    "roi": -100.0,
    "key": "sportybet"
+  },
+  {
+   "n": 48,
+   "won": 0,
+   "lost": 48,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 480.0,
+   "returned": 0,
+   "profit": -480.0,
+   "roi": -100.0,
+   "key": "msport"
+  },
+  {
+   "n": 46,
+   "won": 0,
+   "lost": 46,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 460.0,
+   "returned": 0,
+   "profit": -460.0,
+   "roi": -100.0,
+   "key": "betika"
+  },
+  {
+   "n": 40,
+   "won": 0,
+   "lost": 40,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 400.0,
+   "returned": 0,
+   "profit": -400.0,
+   "roi": -100.0,
+   "key": "betpawa"
+  },
+  {
+   "n": 38,
+   "won": 0,
+   "lost": 38,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 380.0,
+   "returned": 0,
+   "profit": -380.0,
+   "roi": -100.0,
+   "key": "footballcom"
+  }
+ ],
+ "byMarket": [
+  {
+   "n": 48,
+   "won": 0,
+   "lost": 48,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 480.0,
+   "returned": 0,
+   "profit": -480.0,
+   "roi": -100.0,
+   "key": "Under 3.5"
   },
   {
    "n": 44,
@@ -109,46 +171,8 @@
    "returned": 0,
    "profit": -440.0,
    "roi": -100.0,
-   "key": "msport"
+   "key": "Over 1.5"
   },
-  {
-   "n": 42,
-   "won": 0,
-   "lost": 42,
-   "winRate": 0.0,
-   "stake": 10.0,
-   "staked": 420.0,
-   "returned": 0,
-   "profit": -420.0,
-   "roi": -100.0,
-   "key": "betika"
-  },
-  {
-   "n": 36,
-   "won": 0,
-   "lost": 36,
-   "winRate": 0.0,
-   "stake": 10.0,
-   "staked": 360.0,
-   "returned": 0,
-   "profit": -360.0,
-   "roi": -100.0,
-   "key": "betpawa"
-  },
-  {
-   "n": 34,
-   "won": 0,
-   "lost": 34,
-   "winRate": 0.0,
-   "stake": 10.0,
-   "staked": 340.0,
-   "returned": 0,
-   "profit": -340.0,
-   "roi": -100.0,
-   "key": "footballcom"
-  }
- ],
- "byMarket": [
   {
    "n": 43,
    "won": 0,
@@ -160,30 +184,6 @@
    "profit": -430.0,
    "roi": -100.0,
    "key": "Double chance 12"
-  },
-  {
-   "n": 39,
-   "won": 0,
-   "lost": 39,
-   "winRate": 0.0,
-   "stake": 10.0,
-   "staked": 390.0,
-   "returned": 0,
-   "profit": -390.0,
-   "roi": -100.0,
-   "key": "Over 1.5"
-  },
-  {
-   "n": 33,
-   "won": 0,
-   "lost": 33,
-   "winRate": 0.0,
-   "stake": 10.0,
-   "staked": 330.0,
-   "returned": 0,
-   "profit": -330.0,
-   "roi": -100.0,
-   "key": "Under 3.5"
   },
   {
    "n": 30,
@@ -260,26 +260,26 @@
  ],
  "byDay": [
   {
-   "n": 83,
+   "n": 98,
    "won": 0,
-   "lost": 83,
+   "lost": 98,
    "winRate": 0.0,
    "stake": 10.0,
-   "staked": 830.0,
+   "staked": 980.0,
    "returned": 0,
-   "profit": -830.0,
+   "profit": -980.0,
    "roi": -100.0,
    "key": "2026-11-05"
   },
   {
-   "n": 134,
+   "n": 139,
    "won": 0,
-   "lost": 134,
+   "lost": 139,
    "winRate": 0.0,
    "stake": 10.0,
-   "staked": 1340.0,
+   "staked": 1390.0,
    "returned": 0,
-   "profit": -1340.0,
+   "profit": -1390.0,
    "roi": -100.0,
    "key": "2026-11-04"
   },
@@ -297,10 +297,10 @@
   }
  ],
  "picks": {
-  "settled": 167,
-  "won": 120,
-  "lost": 47,
-  "winRate": 71.9
+  "settled": 185,
+  "won": 132,
+  "lost": 53,
+  "winRate": 71.4
  },
  "recent": [
   {
@@ -311,7 +311,7 @@
    "kind": "all-picks",
    "odds": 5664836277209225.0,
    "status": "lost",
-   "hit": 5,
+   "hit": 8,
    "total": 171,
    "profit": -10.0
   },
@@ -323,7 +323,7 @@
    "kind": "all-picks",
    "odds": 49266517647584.27,
    "status": "lost",
-   "hit": 5,
+   "hit": 8,
    "total": 151,
    "profit": -10.0
   },
@@ -635,7 +635,7 @@
    "kind": "market",
    "odds": 380.96,
    "status": "lost",
-   "hit": 4,
+   "hit": 6,
    "total": 103,
    "profit": -10.0
   },
@@ -647,7 +647,7 @@
    "kind": "market",
    "odds": 805.71,
    "status": "lost",
-   "hit": 4,
+   "hit": 6,
    "total": 103,
    "profit": -10.0
   },
@@ -659,7 +659,7 @@
    "kind": "market",
    "odds": 10.55,
    "status": "lost",
-   "hit": 4,
+   "hit": 6,
    "total": 103,
    "profit": -10.0
   },
@@ -671,7 +671,7 @@
    "kind": "market",
    "odds": 119.19,
    "status": "lost",
-   "hit": 4,
+   "hit": 6,
    "total": 103,
    "profit": -10.0
   },
@@ -683,7 +683,7 @@
    "kind": "market",
    "odds": 317.09,
    "status": "lost",
-   "hit": 4,
+   "hit": 6,
    "total": 103,
    "profit": -10.0
   },
@@ -695,7 +695,7 @@
    "kind": "market",
    "odds": 916.27,
    "status": "lost",
-   "hit": 4,
+   "hit": 6,
    "total": 103,
    "profit": -10.0
   },
@@ -707,7 +707,7 @@
    "kind": "market",
    "odds": 11.09,
    "status": "lost",
-   "hit": 4,
+   "hit": 6,
    "total": 103,
    "profit": -10.0
   },
@@ -719,7 +719,7 @@
    "kind": "market",
    "odds": 12.55,
    "status": "lost",
-   "hit": 4,
+   "hit": 6,
    "total": 103,
    "profit": -10.0
   },
@@ -731,7 +731,7 @@
    "kind": "market",
    "odds": 183.74,
    "status": "lost",
-   "hit": 4,
+   "hit": 6,
    "total": 103,
    "profit": -10.0
   },
@@ -743,7 +743,7 @@
    "kind": "market",
    "odds": 553.61,
    "status": "lost",
-   "hit": 4,
+   "hit": 6,
    "total": 103,
    "profit": -10.0
   },
@@ -755,7 +755,7 @@
    "kind": "market",
    "odds": 6.82,
    "status": "lost",
-   "hit": 4,
+   "hit": 6,
    "total": 103,
    "profit": -10.0
   },
@@ -767,7 +767,7 @@
    "kind": "market",
    "odds": 328.64,
    "status": "lost",
-   "hit": 4,
+   "hit": 6,
    "total": 103,
    "profit": -10.0
   },
@@ -779,7 +779,7 @@
    "kind": "market",
    "odds": 781.0,
    "status": "lost",
-   "hit": 4,
+   "hit": 6,
    "total": 103,
    "profit": -10.0
   }
