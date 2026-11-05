@@ -3,6 +3,9 @@
   'use strict';
   var $=function(id){return document.getElementById(id);};
   var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});};
+  var seoSlug=function(t){return String(t||'').toLowerCase().replace(/&/g,' and ').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,72)||'item';};
+  var matchHref=function(p){var m=p.match||'',sl=seoSlug(m),id=String(p.eventId||'').replace(/\D/g,'').slice(-8);if(id&&sl.indexOf(id)<0)sl+='-'+id;return 'match/'+sl+'.html';};
+  var leagueHref=function(lg){return lg?('league/'+seoSlug(lg)+'.html'):'leagues.html';};
   var ZONE='Africa/Accra';
   function stamp(d){return new Intl.DateTimeFormat('en-CA',{timeZone:ZONE,year:'numeric',month:'2-digit',day:'2-digit'}).format(d);}
   function ko(iso){var d=new Date(iso);return isNaN(d)?'':d.toLocaleTimeString('en-GB',{timeZone:ZONE,hour:'2-digit',minute:'2-digit'});}
@@ -26,7 +29,7 @@
       return '<article class="hp-pick'+(r==='won'?' is-won':r==='lost'?' is-lost':'')+'" data-eid="'+esc(p.eventId||'')+'"><div class="hp-top"><span class="bp-grade bp-g'+g+'">'+g+'</span><div class="hp-mt"><b>'+esc(p.match)+'</b><small>'+esc(koTxt(p))+' · '+esc(p.league)+'</small></div>'+badge(r)+'</div>'+
         '<div class="hp-sel"><span>'+stag(p)+' '+esc(p.selection)+(p.market?' <small>'+esc(p.market)+'</small>':'')+'</span><b>@'+(p.odds==null?'—':Number(p.odds).toFixed(2))+'</b></div>'+
         '<dl class="hp-stats"><div><dt>League fav. rate</dt><dd>'+rate(p.leagueFavRate)+'</dd></div><div><dt>Sample</dt><dd>'+(p.sample==null?'—':esc(p.sample)+' games')+'</dd></div><div><dt>Our confidence</dt><dd>'+rate(p.confidence)+'</dd></div><div><dt>Score</dt><dd class="hp-score" data-score-eid="'+esc(p.eventId||'')+'">'+(p.score?esc(p.score):(window.P2UScores&&P2UScores.text(p.eventId))||'—')+'</dd></div><div><dt>Result</dt><dd class="hp-resline" data-res-eid="'+esc(p.eventId||'')+'">'+badge(r)+'</dd></div></dl>'+
-        (p['case']?'<button type="button" class="hp-why" aria-expanded="false" aria-controls="hpw'+i+'">Why this pick <i class="bp-chev" aria-hidden="true"></i></button><p class="hp-case" id="hpw'+i+'" hidden>'+esc(p['case'])+'</p>':'')+'</article>';}
+        (p['case']?'<button type="button" class="hp-why" aria-expanded="false" aria-controls="hpw'+i+'">Why this pick <i class="bp-chev" aria-hidden="true"></i></button><p class="hp-case" id="hpw'+i+'" hidden>'+esc(p['case'])+'</p>':'')+'<p class="hp-seo"><a href="'+matchHref(p)+'">Match page</a> · <a href="'+leagueHref(p.league)+'">League</a></p></article>';}
   }
   function codes(){var el=$('hp-code');if(!el)return;var h=data.homeCode||{},C=h.codes||[];
     if(!C.length){el.innerHTML='';el.hidden=true;return;}el.hidden=false;
@@ -62,6 +65,7 @@
     '.mk-pl summary{cursor:pointer;color:#9ec3ff;font-size:.85rem;padding:8px 0;min-height:36px}@media(max-width:340px){.mk-p>summary{padding:10px 34px 10px 10px}.mk-act{margin-left:0;width:100%}.mk-act>*{flex:1;text-align:center}.mk-v{padding:4px 8px 10px}}'+
     '.hp-mkt-p{list-style:none;margin:8px 0;padding:0}.hp-mkt-p li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px;padding:6px 0;border-bottom:1px dashed #1f2a3a;font-size:.88rem;color:#e6eefb}.hp-mkt-p small{color:#b4c2d6}'+
     '.hp-lr-r{font-size:.8rem;color:#9fb0c6;margin-top:6px}.hp-lr-tg{background:none;border:0;color:#7fb2ff;font-size:.8rem;cursor:pointer;padding:4px 0}';
+    st.textContent+='.hp-seo{margin:10px 0 0;font-size:.8rem}.hp-seo a{color:#ffd36b;font-weight:800;min-height:40px;display:inline-flex;align-items:center;margin-right:6px}';
     document.head.appendChild(st);}
   function buckets(x){var B=x.buckets;if(!B)return '';var used={};(x.picks||[]).forEach(function(p){if(p.bucket)p.bucket.split('+').forEach(function(k){used[k]=1;});});
     var tr=function(r){var u=used[r.key];return '<tr'+(u?' class="is-used"':'')+'><th scope="row">'+esc(r.label)+(u?' <span class="hp-bk-u">today’s pick</span>':'')+'<small>'+esc(r.n)+' games'+(r.n<20?' · too few':'')+'</small></th><td>'+r.home+'/'+r.draw+'/'+r.away+'</td><td>'+r.fav+'%</td><td>'+r.o25+'/'+r.u25+'</td><td>'+r.o35+'/'+r.u35+'</td><td>'+r.btts+'%</td><td>'+r.dc1X+'/'+r.dcX2+'/'+r.dc12+'</td></tr>'+
