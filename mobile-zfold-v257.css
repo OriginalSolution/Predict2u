@@ -67,7 +67,7 @@ table{
     bottom:var(--p2u-v257-safe-bottom)!important;
     z-index:9997!important;
     display:grid!important;
-    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    grid-template-columns:repeat(6,minmax(0,1fr))!important;
     gap:4px!important;
     padding:6px!important;
     border-radius:19px!important;

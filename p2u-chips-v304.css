@@ -1,7 +1,7 @@
 /* Predict2U v304 — one shared code-chip component for every booking code on the site. */
 :root{--chip-bg:rgba(15,23,36,.82);--chip-line:rgba(255,255,255,.12);--chip-tx:#f3f7fc;--chip-mut:#b9c6d8}
 .p2u-chips{display:grid;grid-template-columns:1fr;gap:8px;width:100%;margin:10px 0 0}
-@media (min-width:480px){.p2u-chips{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.p2u-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media (min-width:900px){.p2u-chips{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .p2u-chip{--brand:#22c55e;position:relative;display:grid;grid-template-columns:24px minmax(0,1fr) auto;align-items:center;gap:4px 10px;min-height:56px;padding:8px 8px 8px 14px;border-radius:12px;background:var(--chip-bg)!important;border:1px solid var(--chip-line)!important;color:var(--chip-tx)!important;text-decoration:none;box-shadow:inset 4px 0 0 var(--brand);backdrop-filter:blur(6px);min-width:0;font-size:.8rem}
 .p2u-chip img{width:24px;height:24px;border-radius:6px;background:#fff;padding:1px;object-fit:contain}
@@ -51,3 +51,7 @@
 .cc-card .cc-code,.hp-code-c b,.hp-code-c strong{background:none!important;animation:none!important;font-family:ui-monospace,Menlo,Consolas,monospace}
 .cc-card button,.cc-card a{background:rgba(0,0,0,.28)!important;border:1px solid rgba(0,0,0,.25)!important}
 .hp-code-c *{-webkit-text-fill-color:var(--on)!important}
+
+/* Unbooked codes retain the tile structure without looking actionable. */
+.p2u-chip.is-pending{--brand:#475569!important;--on:#d2d8e1!important;filter:grayscale(1);opacity:.48;box-shadow:none!important}.p2u-chip.is-pending .p2u-chip-cp{cursor:not-allowed}
+@media(max-width:480px){.p2u-chips{gap:6px}.p2u-chip{grid-template-columns:20px minmax(0,1fr) auto;padding:7px;gap:4px 6px}.p2u-chip img{width:20px;height:20px}.p2u-chip-cp{min-width:40px;min-height:40px;padding:0 5px;font-size:.68rem}.p2u-chip-c{font-size:.86rem}.p2u-chip-n,.p2u-chip-o{font-size:.62rem}}

@@ -65,7 +65,7 @@
   ['user-chip','user-name','user-sub','user-av'].forEach(id=>document.querySelectorAll('#'+id).forEach(node=>node.removeAttribute('id')));
 
   const page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
-  const active=page===''?(location.pathname.replace(/\/$/,'').split('/').pop()||'index.html'):page;
+  const active=/\/high-odds\/?$/i.test(location.pathname)?'high-odds':page===''?'index.html':page;
   const svg=(name)=>{
     const icons={
       overview:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>',
@@ -82,6 +82,7 @@
       trust:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/></svg>',
       account:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
       hot:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 6 5 11a5 5 0 0 1-10 0c0-3 2-4 2-7 2 1 3 3 3 5 1-2 1-5 0-9z"/></svg>',
+      rocket:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h8l-1 8 11-13h-8V2Z"/></svg>',
       more:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="19" cy="12" r="1.4"/></svg>'
     };
     return icons[name]||icons.overview;
@@ -104,7 +105,7 @@
     {href:'/rg.html',label:'18+ Responsible',icon:'trust'},
     {href:'/record.html',label:'Track record',icon:'proof'}
   ];
-  const isActive=item=>{if(item.href==='/index.html')return active==='index.html'||active==='team-rankings.html'||active==='';return active===item.href.split('?')[0];};
+  const isActive=item=>{if(item.href==='/index.html')return active==='index.html'||active==='team-rankings.html'||active==='';return active===item.href.split('?')[0].replace(/^\//,'');};
   const primaryHrefs=new Set([...desktopLinks,...mobileLinks].map(item=>item.href));
   const moreActive=moreLinks.some(item=>isActive(item)&&!primaryHrefs.has(item.href));
 
@@ -130,8 +131,9 @@
   dock.className='p2u-v245-dock';
   dock.setAttribute('aria-label','Mobile navigation');
   dock.innerHTML=mobileLinks.map(item=>`<a href="${item.href}" class="${isActive(item)?'is-active':''}">${svg(item.icon)}<span>${item.mobileLabel||item.label}</span></a>`).join('')+
-    `<a href="hot-picks.html" class="p2u-hot-tab${active==='hot-picks.html'?' is-active':''}"><span style="font-size:20px;line-height:1">🔥</span><span>Hot</span></a>`+
-    `<a href="staked.html" class="p2u-staked-tab${active==='staked.html'?' is-active':''}"><span style="font-size:20px;line-height:1">🎟</span><span>Staked</span></a>`;
+    `<a href="/hot-picks.html" class="p2u-hot-tab${active==='hot-picks.html'?' is-active':''}"><span style="font-size:20px;line-height:1">🔥</span><span>Hot</span></a>`+
+    `<a href="/staked.html" class="p2u-staked-tab${active==='staked.html'?' is-active':''}"><span style="font-size:20px;line-height:1">🎟</span><span>Staked</span></a>`+
+    `<a href="/high-odds/" class="p2u-highodds-tab${active==='high-odds'?' is-active':''}"${active==='high-odds'?' aria-current="page"':''}>${svg('rocket')}<span>High Odds</span></a>`;
   document.body.appendChild(dock);
 
   // Links that used to live under "More" now sit in a footer strip on every page

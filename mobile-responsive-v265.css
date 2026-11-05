@@ -59,7 +59,7 @@ input,select,textarea,button{font-family:inherit}
   .p2u-v245-dock{
     position:fixed!important;left:max(7px,env(safe-area-inset-left,0px))!important;right:max(7px,env(safe-area-inset-right,0px))!important;
     bottom:max(7px,env(safe-area-inset-bottom,0px))!important;z-index:9997!important;display:grid!important;
-    grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:4px!important;padding:6px!important;border-radius:20px!important;
+    grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:4px!important;padding:6px!important;border-radius:20px!important;
     background:linear-gradient(180deg,rgba(9,15,26,.99),rgba(4,9,17,.995))!important;border:1px solid rgba(255,255,255,.09)!important;
     box-shadow:0 22px 54px rgba(0,0,0,.5)!important;backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important
   }

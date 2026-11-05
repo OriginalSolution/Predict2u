@@ -15,10 +15,10 @@
   function key(s){ var c=codesOf(s); return c.sportybet||c[Object.keys(c)[0]]||''; }
   function img(s){ var k=key(s); return k?'https://predict2u.com/share/'+encodeURIComponent(k)+'.png':''; }
   function slipUrl(s){ var k=key(s); return k?'https://predict2u.com/s/'+encodeURIComponent(k)+'/':page(); }
-  function page(){ var p=location.pathname.split('/').pop()||'index.html'; return 'https://predict2u.com/'+(/hot-picks|bankers/.test(p)?p:''); }
+  function page(){ var p=location.pathname.split('/').pop()||'index.html'; return 'https://predict2u.com/'+(/hot-picks|bankers/.test(p)?p:/high-odds/.test(location.pathname)?'high-odds/#':''); }
   function text(s){
     var codes=codesOf(s);
-    var odds=(s.bookOdds&&s.bookOdds.sportybet)||s.totalOdds;
+    var odds=(s.bookOdds&&s.bookOdds.sportybet)||s.totalOdds||s.odds;
     var n=(s.bookPicks&&s.bookPicks.sportybet)||s.picks||(Array.isArray(s.legs)?s.legs.length:s.legs);
     var lines=['Predict2U — '+label(s), '@'+Number(odds||0).toFixed(2)+' · '+n+' picks', ''];
     BOOKS.forEach(function(b){ if(codes[b[0]]) lines.push(b[1]+': '+codes[b[0]]); });
@@ -31,7 +31,7 @@
   function button(s, cls){
     var k=key(s);
     return '<a class="'+(cls||'p2u-wa')+'" data-p2u-share="'+k+'" target="_blank" rel="noopener" href="'+href(s)+'" aria-label="Share on WhatsApp">Share on WhatsApp</a>'+
-      (k?'<a class="p2u-dl" href="share/'+k+'.png" download="predict2u-'+k+'.png" aria-label="Download slip image">Download image</a>':'');
+      (k?'<a class="p2u-dl" href="/share/'+k+'.png" download="predict2u-'+k+'.png" aria-label="Download slip image">Download image</a>':'');
   }
   function share(s, a){
     var u=img(s);

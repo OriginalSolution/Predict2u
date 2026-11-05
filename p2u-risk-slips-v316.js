@@ -18,10 +18,21 @@
     '.p2u-risk-meta{font-size:.82rem;color:#c3d0e2}.p2u-risk-card details{margin-top:8px}.p2u-risk-card summary{cursor:pointer;color:#a9c9ff;font-weight:700;font-size:.85rem;padding:6px 0;min-height:36px;list-style:none}.p2u-risk-card summary::-webkit-details-marker{display:none}'+
     '.p2u-risk-legs{list-style:none;margin:0;padding:0}.p2u-risk-legs li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px;padding:6px 0;border-bottom:1px dashed #24324a;font-size:.86rem;color:#e6eefb}.p2u-risk-legs small{color:#b4c2d6}';
     document.head.appendChild(st);}
-  function chips(s){var c=s.codes||{};return '<div class="p2u-chips">'+BOOKS.filter(function(b){return c[b[0]];}).map(function(b){
-    var o=(s.bookOdds&&s.bookOdds[b[0]])||s.totalOdds,n=(s.bookPicks&&s.bookPicks[b[0]])||(s.legs||[]).length,code=c[b[0]];
-    return '<div class="p2u-chip p2u-chip-'+b[0]+'"><img src="'+b[2]+'" alt="" width="24" height="24" loading="lazy"><span class="p2u-chip-t"><span class="p2u-chip-n">'+b[1]+'</span><a class="p2u-chip-c" target="_blank" rel="noopener" href="'+b[3]+encodeURIComponent(code)+'">'+esc(code)+'</a><span class="p2u-chip-o">@'+Number(o).toFixed(2)+' · '+n+' picks</span></span><button type="button" class="p2u-chip-cp" data-copy="'+esc(code)+'" aria-label="Copy '+b[1]+' code">Copy</button></div>';
-  }).join('')+'</div>';}
+  function chips(s){
+    var c=s.codes||{};
+    return '<div class="p2u-chips">'+BOOKS.map(function(b){
+      var raw=c[b[0]],hc=raw&&typeof raw==='object';
+      var o=hc?raw.odds:(s.bookOdds&&s.bookOdds[b[0]])||s.totalOdds;
+      var n=hc?raw.legs:(s.bookPicks&&s.bookPicks[b[0]])||(s.legs||[]).length;
+      var code=hc?raw.code:raw;
+      if(!code){
+        if(!s.highOdds)return '';
+        return '<div class="p2u-chip p2u-chip-'+b[0]+' is-pending"><img src="/'+b[2]+'" alt="" width="24" height="24"><span class="p2u-chip-t"><span class="p2u-chip-n">'+b[1]+'</span><span class="p2u-chip-c">Unavailable</span><span class="p2u-chip-o">'+esc((s.bookingPending||{})[b[0]]||'Not booked')+'</span></span><button type="button" class="p2u-chip-cp" disabled>Pending</button></div>';
+      }
+      return '<div class="p2u-chip p2u-chip-'+b[0]+'" data-book="'+b[0]+'" data-code="'+esc(code)+'" data-legs="'+esc(n)+'" data-odds="'+esc(o)+'"><img src="/'+b[2]+'" alt="" width="24" height="24" loading="lazy"><span class="p2u-chip-t"><span class="p2u-chip-n">'+b[1]+'</span><a class="p2u-chip-c" target="_blank" rel="noopener" href="'+b[3]+encodeURIComponent(code)+'">'+esc(code)+'</a><span class="p2u-chip-o">@'+Number(o).toFixed(2)+' · '+n+' picks</span></span><button type="button" class="p2u-chip-cp" data-copy="'+esc(code)+'" aria-label="Copy '+b[1]+' code">Copy</button></div>';
+    }).join('')+'</div>';
+  }
+  document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.p2u-risk [data-copy],.high-wrap [data-copy]');if(!b)return;var c=b.getAttribute('data-copy'),ok=function(){b.textContent='Copied ✓';setTimeout(function(){b.textContent='Copy';},1600)};if(navigator.clipboard)navigator.clipboard.writeText(c).then(ok,ok);else{var t=document.createElement('textarea');t.value=c;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(_){}t.remove();ok()}});
   function card(s){
     var r=s.risk||'high', lab=r==='safe'?'Safe slip':r==='medium'?'Medium slip':(s.name||'High-risk slip');
     var hint=r==='safe'?'Low risk · aim odds 2–5':r==='medium'?'Balanced · aim odds 8–15':'High risk · 25+ odds';
@@ -41,6 +52,7 @@
     host.hidden=false;
     host.innerHTML='<h2 class="p2u-risk-h">Safe &amp; Medium slips <small>Lower risk first · high-risk 25+ codes stay below</small></h2>'+slips.map(card).join('');
   }
-  function go(){fetch('home-picks.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null;}).then(function(d){if(d)render(d);}).catch(function(){});}
+  function go(){if(!document.getElementById('hp-code'))return;fetch('/home-picks.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null;}).then(function(d){if(d)render(d);}).catch(function(){});}
+  window.P2URisk={chips:chips,css:css,legs:function(s){return '<details class="p2u-risk-picks"><summary>Show picks</summary><ul class="p2u-risk-legs">'+(s.legs||[]).map(function(l){return '<li><span>'+esc(l.match)+' <small>'+esc((l.date||'').slice(5)+' '+(l.ko||'').slice(0,5))+'</small></span><b>'+esc(l.selection)+' @'+Number(l.odds).toFixed(2)+'</b></li>';}).join('')+'</ul></details>';}};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
 })();
