@@ -20,7 +20,7 @@
   function legacy(x){var h=LIVE[x.book];if(!h)return Promise.resolve(null);
     return tryFetch('https://'+h+'/api/gh/orders/share/'+encodeURIComponent(x.code)).then(function(j){return (j.data.outcomes||[]).map(function(o){var m=o.markets[0],oc=m.outcomes[0],H=o.homeTeamName,A=o.awayTeamName;return{eventId:o.eventId,match:H+' v '+A,selection:side(oc.desc,H,A),market:m.desc,odds:+oc.odds||null,kickoff:o.estimateStartTime,score:o.setScore,status:o.matchStatus,played:o.playedSeconds,league:((o.sport||{}).category||{}).tournament&&o.sport.category.tournament.name}})}).catch(function(){return null})}
   function settle(l){if(l.result==='won'||l.result==='lost'||l.result==='void')return l.result;if(l.status!=='Ended'||!l.score)return isLive(l)?'live':'pending';
-    var p=l.score.split(':').map(Number),h=p[0],a=p[1],s=l.selection.trim(),m=s.match(/^(Over|Under) (\d+(?:\.\d+)?)$/);
+    if(/half|corner|card|handicap|booking|\(\d|team|over\/under/i.test(l.market||'')&&!/^(total|over\/under \| full time|over\/under)$/i.test(l.market||''))return 'pending';var p=l.score.split(':').map(Number),h=p[0],a=p[1],s=l.selection.trim(),m=s.match(/^(Over|Under) (\d+(?:\.\d+)?)$/);
     if(m)return((h+a)>+m[2])===(m[1]==='Over')?'won':'lost';var T=l.match.split(' v '),out={1:h>a,X:h===a,2:a>h};
     var ps=s.split(' or ').map(function(x){x=x.trim();return x===T[0]?'1':x===T[1]?'2':x.toLowerCase()==='draw'?'X':null});
     if(ps.every(Boolean))return ps.some(function(q){return out[q]})?'won':'lost';
@@ -28,7 +28,7 @@
   function isLive(l){return l.status&&l.status!=='Not start'&&l.status!=='Ended'&&l.status!=='Cancelled'}
   function legsFor(x){var k=x.book+':'+x.code,f=(feed[k]||{}).legs||[],L=live[k];if(!L)return f.map(function(l){var c=Object.assign({},l);c.result=settle(c);return c});
     var byE={};f.forEach(function(l){byE[l.eventId]=l});var seen={};var out=L.map(function(l){seen[l.eventId]=1;var c=Object.assign({},byE[l.eventId]||{},l);if(byE[l.eventId]&&byE[l.eventId].status==='Ended'&&!(l.status==='Ended')){c.status='Ended';c.score=byE[l.eventId].score}c.result=settle(c);return c});
-    f.forEach(function(l){if(!seen[l.eventId]){var c=Object.assign({},l);c.result=settle(c);out.push(c)}});return out}
+    return out}
   function overall(legs){var r=legs.map(function(l){return l.result});if(!r.length)return'unknown';if(r.indexOf('lost')>=0)return'lost';if(r.every(function(x){return x==='won'||x==='void'}))return'won';return r.indexOf('live')>=0?'live':'pending'}
   function ko(t){if(!t)return'';var d=new Date(+t);return d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',timeZone:'Africa/Accra'})+' '+d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:'Africa/Accra'})+' GMT'}
   var LBL={won:'WON',lost:'LOST',pending:'PENDING',live:'LIVE',unknown:'LOOKING UP'};
