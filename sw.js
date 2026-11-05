@@ -2,8 +2,8 @@
    native-install support, offline codes (home/picks/hot/record/staked),
    exact push deep links and recoverable offline navigation.
    current-data.js is 20–30 MB and must not share the 2.8s UI timeout. */
-const VERSION='v337';
-const CACHE_VERSION='predict2u-v338';
+const VERSION='v339';
+const CACHE_VERSION='predict2u-v339';
 const APP_CACHE=CACHE_VERSION;
 const RUNTIME_CACHE='predict2u-runtime-v317';
 const IMAGE_CACHE='predict2u-images-v317';
@@ -18,11 +18,11 @@ const OFFLINE_URL='./offline.html';
 // Do not put current-data.js here — it is 20–30 MB and is fetched network-first with a long timeout.
 const CODE_DATA=[
   './home-picks.json','./picks.json','./hot-picks.json','./record.json',
-  './news-hub.json','./staked-codes.json','./staked-index.json','./staked-status.json','./live-scores.json'
+  './news-hub.json','./high_odds.json','./staked-codes.json','./staked-index.json','./staked-status.json','./live-scores.json'
 ];
 
 const CORE_SHELL=[
-  './','./index.html','./bankers.html','./hot-picks.html','./news.html','./staked.html','./record.html','./account.html','./offline.html','./manifest.webmanifest',
+  './','./index.html','./bankers.html','./hot-picks.html','./news.html','./staked.html','./record.html','./high-odds/','./account.html','./offline.html','./manifest.webmanifest',
   './pwa-launch.js','./pwa-launch.css','./mobile-app-nav.js','./mobile-app-nav.css','./unified-shell-v234.js',
   './p2u-chips-v304.css','./p2u-contrast-v306.css','./p2u-legible-v302.css','./p2u-home-v304.js','./p2u-picks-v316.js','./p2u-risk-slips-v316.js','./p2u-wa-share-v317.js','./p2u-record-v317.js',
   './p2u-codes-carousel-v299.js','./p2u-cc-fit-v327.css','./p2u-hot-cc-v329.css','./p2u-bp-fit-v331.css','./p2u-collapse-v305.js','./p2u-banker-pop-v300.js','./p2u-banker-pop-v300.css','./p2u-flashy-v301.css','./p2u-hot-v309.js','./p2u-hot-v309.css',
@@ -30,7 +30,7 @@ const CORE_SHELL=[
   './bankers-of-the-day-v285.css','./predict2u-logo.png','./predict2u-mark.png','./favicon.ico',
   './icon-192.png','./icon-512.png','./maskable-icon.png','./apple-touch-icon.png',
   './book-sportybet.webp','./book-msport.webp','./book-betika.webp','./book-footballcom.webp','./book-betpawa.webp',
-  './home-picks.json','./picks.json','./hot-picks.json','./record.json','./news-hub.json','./staked-codes.json','./staked-index.json','./staked-status.json','./live-scores.json'
+  './home-picks.json','./picks.json','./hot-picks.json','./record.json','./news-hub.json','./high_odds.json','./staked-codes.json','./staked-index.json','./staked-status.json','./live-scores.json'
 ]
 
 // Listed for release validation and optional idle prefetch. These do not block install.
@@ -225,7 +225,7 @@ self.addEventListener('fetch',event=>{
   if(!sameOrigin(url))return;
 
   // Latest booking codes — network-first with long timeout, fall back to cached copy offline
-  if(/\/(?:home-picks|picks|hot-picks|record|news-hub|staked-codes|staked-index|staked-status|live-scores)\.json$/.test(url.pathname)){
+  if(/\/(?:home-picks|picks|hot-picks|high_odds|record|news-hub|staked-codes|staked-index|staked-status|live-scores)\.json$/.test(url.pathname)){
     event.respondWith(networkFirst(request, DATA_NETWORK_TIMEOUT));
     return;
   }
