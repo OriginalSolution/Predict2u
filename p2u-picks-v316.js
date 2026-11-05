@@ -22,13 +22,11 @@
     return s.name || 'High-risk slip';
   }
   function daySlips(){
+    var today=stamp(new Date());
     return data.slips.filter(function(s){
         if((s.dates||[s.date]).indexOf(state.day)>=0) return true;
-        // risk-tier house slips: show on today if any leg is today or the slip was built for today
-        if(s.risk==='safe'||s.risk==='medium'){
-          if((s.legs||[]).some(function(x){return x.date===state.day;})) return true;
-          if(s.house && state.day===(data.window&&data.window[1])) return true;
-        }
+        // Safe/Medium: show whenever the user is viewing today (legs may kick off tomorrow)
+        if((s.risk==='safe'||s.risk==='medium') && s.house && state.day===today) return true;
         return false;
       })
       .sort(function(a,b){var ra=RISK.hasOwnProperty(a.risk)?RISK[a.risk]:3,rb=RISK.hasOwnProperty(b.risk)?RISK[b.risk]:3;return ra-rb||(GR[a.grade]-GR[b.grade])||(b.rating-a.rating);})
