@@ -56,6 +56,6 @@
       if(navigator.clipboard)navigator.clipboard.writeText(code).then(done,done);else done();};
     box.querySelector('.bcod-x').focus();
   }
-  function go(){fetch('home-picks.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(d){if(d)setTimeout(function(){show(d);},900);}).catch(function(){});}
+  function go(){if(/\/high-odds\/?$/i.test(location.pathname))return;fetch('/home-picks.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(d){if(d)setTimeout(function(){show(d);},900);}).catch(function(){});}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
 })();

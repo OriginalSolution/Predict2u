@@ -1,25 +1,25 @@
 (function(){
   'use strict';
   // v293: lightweight pages skip match-tip add-ons they never use
-  const LITE=/bankers\.html$/i.test(location.pathname);
+  const LITE=/(?:bankers\.html$|\/high-odds\/?$)/i.test(location.pathname);
   // v257: load the foldable/mobile rescue layer before mounting navigation.
   if(!document.querySelector('link[data-p2u-mobile-zfold-v257]')){
     const rescue=document.createElement('link');
     rescue.rel='stylesheet';
-    rescue.href='mobile-zfold-v257.css';
+    rescue.href='/mobile-zfold-v257.css';
     rescue.dataset.p2uMobileZfoldV257='true';
     document.head.appendChild(rescue);
   }
   if(!LITE&&!document.querySelector('link[data-p2u-context-flags-v280]')){
     const riskCss=document.createElement('link');
     riskCss.rel='stylesheet';
-    riskCss.href='pick-context-flags-v280.css';
+    riskCss.href='/pick-context-flags-v280.css';
     riskCss.dataset.p2uContextFlagsV280='true';
     document.head.appendChild(riskCss);
   }
   if(!LITE&&!document.querySelector('script[data-p2u-context-flags-v280]')){
     const riskJs=document.createElement('script');
-    riskJs.src='pick-context-flags-v280.js';
+    riskJs.src='/pick-context-flags-v280.js';
     riskJs.async=false;
     riskJs.dataset.p2uContextFlagsV280='true';
     document.head.appendChild(riskJs);
@@ -27,13 +27,13 @@
   if(!LITE&&!document.querySelector('link[data-p2u-tip-clean-v281]')){
     const cleanCss=document.createElement('link');
     cleanCss.rel='stylesheet';
-    cleanCss.href='tip-explanation-clean-v281.css';
+    cleanCss.href='/tip-explanation-clean-v281.css';
     cleanCss.dataset.p2uTipCleanV281='true';
     document.head.appendChild(cleanCss);
   }
   if(!LITE&&!document.querySelector('script[data-p2u-tip-clean-v281]')){
     const cleanJs=document.createElement('script');
-    cleanJs.src='tip-explanation-clean-v281.js';
+    cleanJs.src='/tip-explanation-clean-v281.js';
     cleanJs.async=false;
     cleanJs.dataset.p2uTipCleanV281='true';
     document.head.appendChild(cleanJs);
@@ -41,20 +41,20 @@
   if(!document.querySelector('link[data-p2u-ui-scale-v282]')){
     const scale=document.createElement('link');
     scale.rel='stylesheet';
-    scale.href='ui-scale-v282.css';
+    scale.href='/ui-scale-v282.css';
     scale.dataset.p2uUiScaleV282='true';
     document.head.appendChild(scale);
   }
   if(!document.querySelector('link[data-p2u-bcod-v300]')){
     const adCss=document.createElement('link');
     adCss.rel='stylesheet';
-    adCss.href='p2u-banker-pop-v300.css?v=301';
+    adCss.href='/p2u-banker-pop-v300.css?v=301';
     adCss.dataset.p2uBcodV300='true';
     document.head.appendChild(adCss);
   }
-  if(!document.querySelector('script[data-p2u-bcod-v300]')){
+  if(!/\/high-odds\/?$/i.test(location.pathname)&&!document.querySelector('script[data-p2u-bcod-v300]')){
     const adJs=document.createElement('script');
-    adJs.src='p2u-banker-pop-v300.js?v=320';
+    adJs.src='/p2u-banker-pop-v300.js?v=320';
     adJs.async=true;
     adJs.dataset.p2uBcodV300='true';
     document.head.appendChild(adJs);
@@ -65,7 +65,7 @@
   ['user-chip','user-name','user-sub','user-av'].forEach(id=>document.querySelectorAll('#'+id).forEach(node=>node.removeAttribute('id')));
 
   const page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
-  const active=page===''?'index.html':page;
+  const active=page===''?(location.pathname.replace(/\/$/,'').split('/').pop()||'index.html'):page;
   const svg=(name)=>{
     const icons={
       overview:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>',
@@ -88,23 +88,23 @@
   };
 
   const desktopLinks=[
-    {href:'index.html',label:'Home',icon:'rankings'},
-    {href:'bankers.html',label:'Bankers',icon:'bankers'},
-    {href:'hot-picks.html',label:'🔥 Hot Picks',icon:'hot'},
-    {href:'news.html',label:'News',icon:'news'},
-    {href:'staked.html',label:'🎟 Staked',icon:'picks'}
+    {href:'/index.html',label:'Home',icon:'rankings'},
+    {href:'/bankers.html',label:'Bankers',icon:'bankers'},
+    {href:'/hot-picks.html',label:'🔥 Hot Picks',icon:'hot'},
+    {href:'/news.html',label:'News',icon:'news'},
+    {href:'/staked.html',label:'🎟 Staked',icon:'picks'}
   ];
   const mobileLinks=[
-    {href:'index.html',label:'Home',icon:'rankings'},
-    {href:'bankers.html',label:'Bankers',icon:'bankers'},
-    {href:'news.html',label:'News',icon:'news'}
+    {href:'/index.html',label:'Home',icon:'rankings'},
+    {href:'/bankers.html',label:'Bankers',icon:'bankers'},
+    {href:'/news.html',label:'News',icon:'news'}
   ];
   const moreLinks=[
-    {href:'account.html',label:'Account',icon:'account'},
-    {href:'rg.html',label:'18+ Responsible',icon:'trust'},
-    {href:'record.html',label:'Track record',icon:'proof'}
+    {href:'/account.html',label:'Account',icon:'account'},
+    {href:'/rg.html',label:'18+ Responsible',icon:'trust'},
+    {href:'/record.html',label:'Track record',icon:'proof'}
   ];
-  const isActive=item=>{if(item.href==='index.html')return active==='index.html'||active==='team-rankings.html'||active==='';return active===item.href.split('?')[0];};
+  const isActive=item=>{if(item.href==='/index.html')return active==='index.html'||active==='team-rankings.html'||active==='';return active===item.href.split('?')[0];};
   const primaryHrefs=new Set([...desktopLinks,...mobileLinks].map(item=>item.href));
   const moreActive=moreLinks.some(item=>isActive(item)&&!primaryHrefs.has(item.href));
 
@@ -113,7 +113,7 @@
   nav.setAttribute('aria-label','Primary navigation');
   nav.innerHTML=`
     <div class="p2u-v245-shell">
-      <a class="p2u-v245-brand" href="index.html" aria-label="Predict2U overview"><img src="predict2u-logo-sm.webp" alt="Predict2U" width="118" height="47" decoding="async"/></a>
+      <a class="p2u-v245-brand" href="/index.html" aria-label="Predict2U overview"><img src="/predict2u-logo-sm.webp" alt="Predict2U" width="118" height="47" decoding="async"/></a>
       <div class="p2u-v245-rail" role="navigation">
         ${desktopLinks.map(item=>`<a href="${item.href}" class="p2u-v245-link${isActive(item)?' is-active':''}"${isActive(item)?' aria-current="page"':''}>${svg(item.icon)}<span>${item.label}</span></a>`).join('')}
       </div>
@@ -151,7 +151,7 @@
   // Responsible gambling: 18+ strip + one-time age check
   if(!document.querySelector('script[data-p2u-rg-v322]')){
     const rg=document.createElement('script');
-    rg.src='p2u-rg-v322.js?v=322';
+    rg.src='/p2u-rg-v322.js?v=322';
     rg.defer=true;
     rg.dataset.p2uRgV318='true';
     document.head.appendChild(rg);
