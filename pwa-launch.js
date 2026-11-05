@@ -5,6 +5,8 @@
   const VERSION='v317';
   const SW='sw.js';
   const DISMISS_KEY='p2u_app_prompt_dismissed_v202';
+  const DISMISS_LS='p2u_install_dismissed_at_v327',DISMISS_MS=7*864e5;
+  const dismissed=()=>{try{if(sessionStorage.getItem(DISMISS_KEY))return true;return Date.now()-Number(localStorage.getItem(DISMISS_LS)||0)<DISMISS_MS;}catch(_){return false;}};
   const UPDATE_CHECK_KEY='p2u_sw_update_check_v202';
   const UPDATE_INTERVAL=6*60*60*1000;
   const IDB_NAME='p2u-app-v200'; // preserve the existing outbox database
@@ -163,7 +165,7 @@
   }
 
   function offerNativeInstall(){
-    if(standalone()||sessionStorage.getItem(DISMISS_KEY)||!nativeInstallReady)return;
+    if(standalone()||dismissed()||!nativeInstallReady)return;
     ensureInstallChip('Install app');
     appBanner({
       kind:'install',
@@ -172,12 +174,12 @@
       primary:'Install',
       secondary:'Not now',
       onPrimary:promptInstall,
-      onSecondary:()=>{sessionStorage.setItem(DISMISS_KEY,'1');hideInstallSurfaces();}
+      onSecondary:()=>{sessionStorage.setItem(DISMISS_KEY,'1');try{localStorage.setItem(DISMISS_LS,String(Date.now()));}catch(_){}hideInstallSurfaces();}
     });
   }
 
   function offerIOSInstall(){
-    if(!isIOS()||standalone()||sessionStorage.getItem(DISMISS_KEY))return;
+    if(!isIOS()||standalone()||dismissed())return;
     ensureInstallChip('Add to Home Screen');
   }
 
@@ -363,7 +365,7 @@
     });
     sanitizeDeepLink();
     connectPushBadge();
-    if(isIOS()&&!standalone()&&!sessionStorage.getItem(DISMISS_KEY))setTimeout(offerIOSInstall,1800);
+    if(isIOS()&&!standalone()&&!dismissed())setTimeout(offerIOSInstall,1800);
     exposeApi();
     document.documentElement.dataset.p2uPwaReady='true';
     window.dispatchEvent(new CustomEvent('p2u:pwa-ready',{detail:{version:VERSION,standalone:standalone(),nativeInstall:nativeInstallReady}}));

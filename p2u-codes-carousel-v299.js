@@ -15,7 +15,7 @@
   };
   BOOKS['1xbet']=BOOKS.onexbet;
   var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});};
-  var fmt=function(o){return o?Number(o).toLocaleString('en-GB',{maximumFractionDigits:2}):'—';};
+  var fmt=function(o){if(!o)return '—';var n=Number(o);if(!isFinite(n))return '—';if(n<100000)return n.toLocaleString('en-GB',{maximumFractionDigits:2});var U=[[1e18,'Qi'],[1e15,'Q'],[1e12,'T'],[1e9,'B'],[1e6,'M'],[1e3,'K']];for(var i=0;i<U.length;i++){if(n>=U[i][0]){var v=n/U[i][0];return (v>=1000?Math.round(v).toLocaleString('en-GB'):v.toFixed(v<10?2:1).replace(/\.?0+$/,''))+U[i][1];}}return String(n);};
   function cards(d){
     var out=[],seen={},h=d.homeCode||{};
     function add(book,code,odds,legs,title,note,link){if(!code)return;code=String(code);if(book!=='betika')code=code.toUpperCase();var k=book+':'+code;if(seen[k])return;seen[k]=1;
