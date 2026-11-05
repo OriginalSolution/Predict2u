@@ -1,28 +1,28 @@
 {
- "DATA_UPDATED": "2026-11-05T00:22:54Z",
+ "DATA_UPDATED": "2026-11-05T00:33:10Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
  "overall": {
-  "n": 20,
+  "n": 21,
   "won": 0,
-  "lost": 20,
+  "lost": 21,
   "winRate": 0.0,
   "stake": 10.0,
-  "staked": 200.0,
+  "staked": 210.0,
   "returned": 0,
-  "profit": -200.0,
+  "profit": -210.0,
   "roi": -100.0,
-  "pending": 164,
-  "codesSettled": 20,
+  "pending": 441,
+  "codesSettled": 22,
   "codesWon": 0,
-  "codesLost": 20
+  "codesLost": 22
  },
  "streak": {
   "current": "lost",
-  "currentLen": 20,
+  "currentLen": 21,
   "bestWin": 0,
-  "bestLoss": 20
+  "bestLoss": 21
  },
  "byType": [
   {
@@ -36,6 +36,18 @@
    "profit": -200.0,
    "roi": -100.0,
    "key": "slip"
+  },
+  {
+   "n": 1,
+   "won": 0,
+   "lost": 1,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 10.0,
+   "returned": 0,
+   "profit": -10.0,
+   "roi": -100.0,
+   "key": "banker"
   }
  ],
  "bySite": [
@@ -50,9 +62,45 @@
    "profit": -200.0,
    "roi": -100.0,
    "key": "sportybet"
+  },
+  {
+   "n": 1,
+   "won": 0,
+   "lost": 1,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 10.0,
+   "returned": 0,
+   "profit": -10.0,
+   "roi": -100.0,
+   "key": "msport"
+  },
+  {
+   "n": 1,
+   "won": 0,
+   "lost": 1,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 10.0,
+   "returned": 0,
+   "profit": -10.0,
+   "roi": -100.0,
+   "key": "betika"
   }
  ],
  "byMarket": [
+  {
+   "n": 8,
+   "won": 0,
+   "lost": 8,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 80.0,
+   "returned": 0,
+   "profit": -80.0,
+   "roi": -100.0,
+   "key": "Under 3.5"
+  },
   {
    "n": 7,
    "won": 0,
@@ -64,18 +112,6 @@
    "profit": -70.0,
    "roi": -100.0,
    "key": "Double chance"
-  },
-  {
-   "n": 6,
-   "won": 0,
-   "lost": 6,
-   "winRate": 0.0,
-   "stake": 10.0,
-   "staked": 60.0,
-   "returned": 0,
-   "profit": -60.0,
-   "roi": -100.0,
-   "key": "Under 3.5"
   },
   {
    "n": 5,
@@ -104,14 +140,14 @@
  ],
  "byDay": [
   {
-   "n": 19,
+   "n": 21,
    "won": 0,
-   "lost": 19,
+   "lost": 21,
    "winRate": 0.0,
    "stake": 10.0,
-   "staked": 190.0,
+   "staked": 210.0,
    "returned": 0,
-   "profit": -190.0,
+   "profit": -210.0,
    "roi": -100.0,
    "key": "2026-11-04"
   },
@@ -129,12 +165,36 @@
   }
  ],
  "picks": {
-  "settled": 64,
-  "won": 46,
-  "lost": 18,
-  "winRate": 71.9
+  "settled": 67,
+  "won": 48,
+  "lost": 19,
+  "winRate": 71.6
  },
  "recent": [
+  {
+   "code": "B3FFYB6",
+   "book": "msport",
+   "date": "2026-11-04",
+   "name": "Main banker acca (>=25)",
+   "kind": "banker",
+   "odds": 24.45,
+   "status": "lost",
+   "hit": 1,
+   "total": 15,
+   "profit": -10.0
+  },
+  {
+   "code": "q3Ep3f",
+   "book": "betika",
+   "date": "2026-11-04",
+   "name": "Main banker acca (>=25)",
+   "kind": "banker",
+   "odds": 10.31,
+   "status": "lost",
+   "hit": 1,
+   "total": 15,
+   "profit": -10.0
+  },
   {
    "code": "DCDEAR",
    "book": "sportybet",
