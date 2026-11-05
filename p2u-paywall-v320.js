@@ -2,7 +2,7 @@
    payment runs on Paystack (GHS, mobile money + card) and the relay returns the codes. Unlocks are remembered on this device. */
 (function(){
   'use strict';
-  var RELAY='https://p2u-relay.onrender.com', RX=/P2ULOCK-([a-z]+-\d{8})-[a-z]+\d*/, KEY='p2u-unlocks-v1';
+  var RELAY='https://p2u-relay.onrender.com', RX=/P2ULOCK-([a-z]+-\d{8})-[a-z]+\d*/i, KEY='p2u-unlocks-v1';
   var BOOKS=[['sportybet','SportyBet','book-sportybet.webp','https://www.sportybet.com/gh/?shareCode='],['msport','MSport','book-msport.webp','https://www.msport.com/gh/sports/share?shareCode='],
     ['betika','Betika','book-betika.webp','https://betika.com/en-gh/share/'],['footballcom','football.com','book-footballcom.webp','https://www.football.com/gh/?shareCode='],['betpawa','Betpawa','book-betpawa.webp','https://www.betpawa.com.gh/']];
   var TITLE={banker:'Main Banker',medium:'Medium slip',hot:'Hot Picks main'};
@@ -33,11 +33,12 @@
   function scan(){
     var hits=[];
     var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n;while((n=w.nextNode())){if(RX.test(n.nodeValue))hits.push(n.parentElement);}
-    document.querySelectorAll('[href*="P2ULOCK-"],[data-copy*="P2ULOCK-"],[data-cc-copy*="P2ULOCK-"],[data-p2u-share*="P2ULOCK-"]').forEach(function(e){hits.push(e);});
+    document.querySelectorAll('[href*="P2ULOCK-" i],[data-copy*="P2ULOCK-" i],[data-cc-copy*="P2ULOCK-" i],[data-p2u-share*="P2ULOCK-" i],[data-cx*="P2ULOCK-" i]').forEach(function(e){hits.push(e);});
     if(!hits.length)return;css();
     hits.forEach(function(el){if(!el||!el.isConnected||el.closest('.p2u-lock'))return;
-      var m=(el.textContent+' '+(el.getAttribute('href')||'')+' '+(el.getAttribute('data-copy')||'')+(el.getAttribute('data-cc-copy')||'')+(el.getAttribute('data-p2u-share')||'')).match(RX);if(!m)return;var id=m[1];
-      var c=el.closest('.p2u-chips,.bcod-main,.cc-card')||el.closest('.bcod-chips,.bcod-act,.bcod-also,.hp-bkd a')||el.closest('.p2u-chip')||el;
+      var m=(el.textContent+' '+(el.getAttribute('href')||'')+' '+(el.getAttribute('data-copy')||'')+(el.getAttribute('data-cc-copy')||'')+(el.getAttribute('data-p2u-share')||'')+(el.getAttribute('data-cx')||'')).match(RX);if(!m)return;var id=m[1].toLowerCase();
+      var cc=el.closest('.cc-card');if(cc){var tr=cc.parentNode;if(tr&&tr.querySelector('[data-p2u-lock="'+id+'"],[data-p2u-unlocked="'+id+'"]')){cc.remove();return;}var d0=document.createElement('div');d0.className='cc-card p2u-cc-lock';d0.innerHTML=box(id);tr.replaceChild(d0,cc);return;}
+      var c=el.closest('.p2u-chips,.bcod-main')||el.closest('.bcod-chips,.bcod-act,.bcod-also,.hp-bkd a')||el.closest('.p2u-chip')||el;
       if(c.classList.contains('p2u-dl')||c.classList.contains('bcod-copy')||c.classList.contains('bcod-open')||/bcod-(chips|act|also)/.test(c.className)||c.matches('.hp-bkd a')||c.closest('.p2u-wa-row')){c.remove();return;}
       var par=c.parentNode;if(!par)return;
       if(par.querySelector(':scope > [data-p2u-lock="'+id+'"],:scope > [data-p2u-unlocked="'+id+'"]')){c.remove();return;}
