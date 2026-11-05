@@ -48,7 +48,7 @@
         var code=s.codes[b[0]],link=(s.links||{})[b[0]],lid='bp-legs-'+b[0]+'-'+i;
         return '<div class="bp-card bp-card-'+esc(s.risk||'high')+'">'+riskBadge(s.risk)+grade(s.grade)+'<div class="bp-card-l"><img class="bp-clogo" src="'+b[2]+'" alt="" width="16" height="16" loading="lazy" decoding="async">'+esc(s.label)+'</div><div class="bp-card-code">'+esc(code)+'</div>'+
           '<div class="bp-card-m">@'+Number((s.bookOdds||{})[b[0]]||s.totalOdds).toFixed(2)+' · '+((s.bookPicks||{})[b[0]]||s.picks)+' picks'+(s.house?' · P2U banker':'')+'</div>'+((s.bookNotes||{})[b[0]]?'<div class="bp-card-n">⚠ '+esc(s.bookNotes[b[0]])+'</div>':'')+
-          '<div class="bp-card-a"><button type="button" data-copy="'+esc(code)+'">Copy</button>'+(link?'<a target="_blank" rel="noopener" href="'+esc(link)+'" class="bp-open" aria-label="Open on '+b[1]+'">Open ↗</a>':'')+'</div>'+
+          '<div class="bp-card-a"><button type="button" data-copy="'+esc(code)+'">Copy</button>'+(link?'<a target="_blank" rel="noopener" href="'+esc(link)+'" class="bp-open" aria-label="Open on '+b[1]+'">Open ↗</a>':'')+(window.P2UWA?'<a class="bp-wa" target="_blank" rel="noopener" href="'+P2UWA.href(s)+'" aria-label="Share on WhatsApp">WhatsApp</a>':'')+'</div>'+
           '<button type="button" class="bp-card-x" data-legs aria-expanded="false" aria-controls="'+lid+'">Show '+s.picks+' picks <i class="bp-chev" aria-hidden="true"></i></button>'+
           '<div class="bp-card-lp" id="'+lid+'"><div class="bp-book-in">'+legsHtml(s)+'</div></div></div>';
       }).join('')+'</div></div></div></div>';
@@ -72,7 +72,7 @@
     if(!slips.length){list.innerHTML='<div class="p2u-bankers-empty">No slips for this day yet.</div>';return;}
     list.innerHTML=slips.map(function(s,i){
       var st=s.legs.some(function(x){return x.result==='lost';})?'lost':(s.legs.every(function(x){return x.result==='won'||x.result==='void';})?'won':'pending');
-      return '<details class="bp-slip bp-slip-'+esc(s.risk||'high')+'"'+((s.risk==='safe'||s.risk==='medium')?' open':'')+'><summary><header><div class="bp-hl">'+riskBadge(s.risk)+grade(s.grade)+' <b>'+esc(s.label)+'</b> <small>'+s.picks+' picks'+(s.strategy?' · '+esc(s.strategy):'')+'</small></div><div class="bp-hr"><b>@'+Number(s.totalOdds).toFixed(2)+'</b> '+badge(st)+'</div></header>'+chips(s)+'</summary><table class="bp-legs"><thead><tr><th>KO</th><th>Match</th><th>Pick</th><th>Odds</th><th>P2U score</th><th>Result</th></tr></thead><tbody>'+
+      return '<details class="bp-slip bp-slip-'+esc(s.risk||'high')+'"'+((s.risk==='safe'||s.risk==='medium')?' open':'')+'><summary><header><div class="bp-hl">'+riskBadge(s.risk)+grade(s.grade)+' <b>'+esc(s.label)+'</b> <small>'+s.picks+' picks'+(s.strategy?' · '+esc(s.strategy):'')+'</small></div><div class="bp-hr"><b>@'+Number(s.totalOdds).toFixed(2)+'</b> '+badge(st)+'</div></header>'+chips(s)+(window.P2UWA?'<div class="p2u-wa-row">'+P2UWA.button(s,'p2u-wa')+'</div>':'')+'</summary><table class="bp-legs"><thead><tr><th>KO</th><th>Match</th><th>Pick</th><th>Odds</th><th>P2U score</th><th>Result</th></tr></thead><tbody>'+
         s.legs.map(function(x){return '<tr><td data-l="KO">'+esc(ko(x.kickoff))+'</td><td class="bp-m"><div>'+esc(x.match)+'</div><small>'+esc(x.league)+'</small></td><td class="bp-p"><div>'+esc(x.selection)+'</div><small>'+esc(x.market)+'</small></td><td data-l="Odds">'+(x.odds==null?'—':Number(x.odds).toFixed(2))+'</td><td data-l="P2U">'+pct(x.score)+'</td><td data-l="Result">'+badge(x.result)+'</td></tr>';}).join('')+
         '</tbody></table></details>';
     }).join('');
@@ -90,7 +90,7 @@
     '.bp-risk-legend{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px;font-size:.82rem;color:#c3d0e2}.bp-risk-legend span{display:inline-flex;align-items:center;gap:6px}';
     document.head.appendChild(st);}
   function init(d){
-    riskCss();
+    riskCss(); if(window.P2UWA)P2UWA.css();
     data=d;var days=[];d.slips.forEach(function(s){(s.dates||[s.date]).forEach(function(x){if(days.indexOf(x)<0)days.push(x);});});days.sort();
     var t=stamp(new Date());state.day=days.indexOf(t)>=0?t:(days.filter(function(x){return x>=t;})[0]||days[days.length-1]);
     $('bp-day').innerHTML=days.map(function(x){return '<option value="'+x+'"'+(x===state.day?' selected':'')+'>'+x+(x===t?' (today)':'')+'</option>';}).join('');

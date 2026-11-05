@@ -26,11 +26,11 @@
     var r=s.risk||'high', lab=r==='safe'?'Safe slip':r==='medium'?'Medium slip':(s.name||'High-risk slip');
     var hint=r==='safe'?'Low risk · aim odds 2–5':r==='medium'?'Balanced · aim odds 8–15':'High risk · 25+ odds';
     return '<article class="p2u-risk-card is-'+esc(r)+'"><div class="p2u-risk-top"><div><span class="p2u-risk-tag '+esc(r)+'">'+esc(r==='safe'?'Safe':r==='medium'?'Medium':'High risk')+'</span> <b>'+esc(lab)+'</b></div>'+
-      '<div class="p2u-risk-meta">@'+Number(s.totalOdds).toFixed(2)+' · '+(s.legs||[]).length+' picks · '+esc(hint)+'</div></div>'+chips(s)+
+      '<div class="p2u-risk-meta">@'+Number(s.totalOdds).toFixed(2)+' · '+(s.legs||[]).length+' picks · '+esc(hint)+'</div></div>'+chips(s)+(window.P2UWA?'<div class="p2u-wa-row">'+P2UWA.button(s,'p2u-wa')+'</div>':'')+
       '<details><summary>Show picks</summary><ul class="p2u-risk-legs">'+(s.legs||[]).map(function(l){return '<li><span>'+esc(l.match)+' <small>'+esc((l.date||'').slice(5)+' '+(l.ko||'').slice(0,5))+'</small></span><b>'+esc(l.selection)+' @'+Number(l.odds).toFixed(2)+'</b></li>';}).join('')+'</ul></details></article>';
   }
   function render(d){
-    css();
+    css(); if(window.P2UWA)P2UWA.css();
     var slips=(d.slips||[]).filter(function(s){return !s.earlier && s.codes && (s.codes.sportybet||s.codes.msport) && (s.risk==='safe'||s.risk==='medium'||/Safe slip|Medium slip/i.test(s.name||''));});
     slips.sort(function(a,b){return (a.risk==='safe'?0:1)-(b.risk==='safe'?0:1);});
     var host=document.getElementById('hp-risk');
