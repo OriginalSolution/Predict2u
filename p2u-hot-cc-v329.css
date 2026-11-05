@@ -1,0 +1,39 @@
+/* v329 Hot Picks booking-code carousel */
+#hot-carousel{margin:12px 0}#hot-carousel .cc-h{font-size:1.05rem;margin:0 0 8px}#hot-carousel .cc-vp{overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none}#hot-carousel .cc-vp::-webkit-scrollbar{display:none}#hot-carousel .cc-track{display:flex;gap:10px;width:max-content;padding:2px}#hot-carousel .cc-card{scroll-snap-align:start;width:min(230px,72vw);background:var(--card2,#15202e);border:1px solid rgba(255,255,255,.08);border-top:4px solid var(--brand);border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;gap:4px}#hot-carousel .cc-top{display:flex;align-items:center;gap:8px}#hot-carousel .cc-top img{border-radius:6px}#hot-carousel .cc-t{font-size:.8rem;color:#9fb0c6}#hot-carousel .cc-code{font:700 1.35rem/1.1 ui-monospace,monospace;letter-spacing:.06em}#hot-carousel .cc-m{font-size:.85rem;color:#c7d2e1}#hot-carousel .cc-n{font-size:.75rem;color:#ffd36b;line-height:1.3}#hot-carousel .cc-a{display:flex;gap:8px;margin-top:auto;padding-top:6px}#hot-carousel .cc-a button,.cc-a a{flex:1;text-align:center;padding:7px 8px;border-radius:9px;border:0;background:var(--brand);color:#fff;font-weight:700;text-decoration:none;cursor:pointer;font-size:.85rem}#hot-carousel .cc-card[style*="ffd325"] .cc-a button,.cc-card[style*="ffd325"] .cc-a a{color:#111}
+#hot-carousel{max-width:1100px;margin:12px auto;padding:0 12px}
+/* v327 — booking-code carousel fit: compact cards, fluid type, phone/fold/tablet widths */
+html body #hot-carousel .cc-vp{scroll-padding-inline:2px;overscroll-behavior-x:contain}
+html body #hot-carousel .cc-track{align-items:flex-start!important;gap:clamp(8px,2.4vw,12px)!important;padding:2px 2px 4px!important}
+html body #hot-carousel .cc-card{flex:0 0 auto!important;width:clamp(220px,82vw,340px)!important;height:auto!important;min-height:0!important;max-height:none!important;align-self:flex-start!important;padding:clamp(9px,2.6vw,12px) clamp(10px,3vw,14px)!important;gap:clamp(3px,1vw,5px)!important;border-radius:14px!important;box-sizing:border-box}
+html body #hot-carousel .cc-card>*{flex:0 0 auto!important}
+html body #hot-carousel .cc-top{gap:8px}
+html body #hot-carousel .cc-top img{width:clamp(20px,6vw,26px);height:clamp(20px,6vw,26px)}
+html body #hot-carousel .cc-top b{font-size:clamp(.95rem,4.2vw,1.15rem);line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html body #hot-carousel .cc-t{font-size:clamp(.72rem,3vw,.82rem)!important;line-height:1.25;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html body #hot-carousel .cc-m{font-size:clamp(.74rem,3.1vw,.86rem)!important;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;overflow-wrap:normal!important}
+html body #hot-carousel .cc-code{font-size:clamp(1.05rem,4.8vw,1.3rem)!important}
+html body #hot-carousel .cc-n{font-size:clamp(.68rem,2.8vw,.75rem)!important}
+html body #hot-carousel .cc-card :is(.p2u-cx-h,button,a){min-height:36px!important;height:auto!important;padding:6px 12px!important;font-size:clamp(.8rem,3.4vw,.92rem)!important;line-height:1.2!important;border-radius:10px!important;margin-top:4px!important}
+html body #hot-carousel .cc-card .p2u-cx-h *{font-size:inherit!important}
+html body #hot-carousel .cc-card .cc-a{margin-top:4px!important;padding-top:2px!important}
+html body #hot-carousel .cc-card::before{padding:1.5px}
+@media (max-width:344px){html body #hot-carousel .cc-card{width:84vw!important}}
+@media (min-width:560px){html body #hot-carousel .cc-card{width:calc((100% - 24px)/2.3)!important;min-width:220px;max-width:300px}}
+@media (min-width:900px){html body #hot-carousel .cc-card{width:calc((100% - 36px)/3.3)!important;max-width:280px}}
+/* compact install sheet */
+html body .p2u-app-banner{left:50%!important;right:auto!important;transform:translate(-50%,24px)!important;width:min(calc(100vw - 20px),420px)!important;padding:8px 10px!important;gap:8px!important;border-radius:14px!important;bottom:calc(72px + env(safe-area-inset-bottom))!important;flex-wrap:nowrap!important}
+html body .p2u-app-banner.is-show{transform:translate(-50%,0)!important}
+html body .p2u-app-banner__icon{width:30px!important;height:30px!important;flex-basis:30px!important;border-radius:9px!important}
+html body .p2u-app-banner__copy strong{font-size:13px!important}
+html body .p2u-app-banner__copy span{font-size:11px!important;margin-top:1px!important;display:-webkit-box!important;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+html body .p2u-app-banner__actions{flex-wrap:nowrap!important;gap:6px!important}
+html body .p2u-app-banner button{min-height:32px!important;padding:0 10px!important;font-size:12px!important;white-space:nowrap}
+/* locked premium cards: compact in carousel, tap opens the unlock popup */
+html body #hot-carousel .p2u-cc-lock{background:linear-gradient(160deg,#2a2208,#120e04)!important;--brand:#ffd23f;--on:#ffe9a6}
+html body #hot-carousel .p2u-cc-lock .p2u-lock{padding:0!important;margin:0!important;border:0!important;background:none!important;display:flex;flex-direction:column;gap:6px}
+html body #hot-carousel .p2u-cc-lock .p2u-lock>b{font-size:clamp(.85rem,3.6vw,1rem)!important;line-height:1.25!important;color:#ffd23f!important;-webkit-text-fill-color:#ffd23f!important}
+html body #hot-carousel .p2u-cc-lock .p2u-lock>p{font-size:clamp(.72rem,3vw,.8rem)!important;line-height:1.3!important;margin:0!important;display:-webkit-box!important;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+html body #hot-carousel .p2u-cc-lock .p2u-lock-row{margin:0!important}
+html body #hot-carousel .p2u-cc-lock .p2u-lock-btn{width:100%;min-height:36px!important;padding:6px 10px!important;font-size:clamp(.78rem,3.3vw,.88rem)!important;background:#ffd23f!important;color:#1a1400!important;-webkit-text-fill-color:#1a1400!important;border:0!important}
+html body #hot-carousel .p2u-cc-lock .p2u-lock-btn *{color:#1a1400!important;-webkit-text-fill-color:#1a1400!important}
+html body #hot-carousel .p2u-cc-lock :is(.p2u-cx,.p2u-cx-h){display:none!important}
