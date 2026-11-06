@@ -282,7 +282,7 @@ def book_other_sites(slips, cache):
     import ast
     sys.path.insert(0, str(RESEARCH))
     sys.path.insert(0, '/workspace')
-    src = (RESEARCH / 'book_home.py').read_text()
+    src = next(p for p in (RESEARCH / 'book_home.py', Path(__file__).resolve().parent / 'book_home.py') if p.exists()).read_text()
     tree = ast.parse(src)
     keep = [n for n in tree.body if isinstance(n, (ast.Import, ast.ImportFrom, ast.FunctionDef))]
     keep += [n for n in tree.body if isinstance(n, ast.Assign) and all(isinstance(t, ast.Name) and t.id in ('MU', 'BU', 'FCU', 'MAXL') for t in n.targets)]
@@ -544,6 +544,8 @@ def main():
     except Exception:
         pass
     house = {c['code'] for c in house_candidates()}
+    # Teammate batches routed via engine.teamcodes (inbox exports) always publish; the 12-card cap is for the public hub only.
+    house |= {c['code'] for c in export_candidates()}
     replacement_pairs = {s.get('replacementOf'): s['code'] for s in refreshed.values() if s.get('replacementOf')}
     hub_count = 0
     active, history = [], []

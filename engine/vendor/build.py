@@ -226,7 +226,7 @@ def home_build():
                   'homeCode': d.get('homeCode')})
     try:
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import pick_history as _PH
-        _PH.annotate(out, REPO, os.path.join(os.environ.get('ENGINE_DIR', os.path.join(REPO, 'engine')), 'data', 'pick_ledger.json'))
+        _PH.annotate(out, REPO, os.path.join(REPO, 'engine', 'data', 'pick_ledger.json'))
     except Exception as _e: print('hist: skipped', _e)
     hp = os.path.join(REPO, 'home-picks.json')
     old = None
