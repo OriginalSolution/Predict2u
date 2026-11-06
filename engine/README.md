@@ -52,3 +52,7 @@ The house engine reads:
 - Historical closing odds CSVs in `engine/data/` for a few leagues (football-data.co.uk extracts already used by the research engine)
 
 That is the same public data the box research pipeline already used, rather than calling other assistants.
+
+## Teammate code batches → High Odds
+
+`python -m engine.teamcodes CODE ... --void X Y` decodes each SportyBet code, applies every rule (`combine.process`), keeps codes still at or above `min_main_slip_odds` (25, `config.json`) as their own slip and pools the rest into deduped 25+ combined slips. It books SportyBet and writes `engine/inbox/p2u/<date>.json`; `vendor/high_odds.py` then publishes those slips on High Odds (its eligibility rule is odds ≥ 25), books Football.com / MSport / Betika / BetPawa, skips duplicates by leg fingerprint, and exempts these batches from the 12-card hub cap.
