@@ -17,13 +17,139 @@ def ko(p):
   try: return dt.datetime.fromisoformat(f"{p['date']}T{p['ko']}").replace(tzinfo=dt.timezone.utc)
   except Exception: return None
 legs=[p for p in d['picks'] if p.get('eventId') and (ko(p) is None or ko(p)>now+dt.timedelta(minutes=2))]
+if '--day-masters-only' in sys.argv:
+  # Minimal bookers for day masters only (skip full home / market rebook).
+  from sb_share_helper17 import book as _sb_book
+  import fav_day_masters as _FDM
+  import concurrent.futures as _cf
+  import bp_book as _bp
+  def sb_try(L):
+    code,st=_sb_book(L)
+    if code and st=='ok': return dict(code=code,totalOdds=round(math.prod(p['odds'] for p in L),2),legs=len(L),matches=[p['eventId'] for p in L])
+    ok=[p for p in L if _sb_book([p])[1]=='ok']
+    if not ok: return None
+    code,st=_sb_book(ok)
+    return dict(code=code,totalOdds=round(math.prod(p['odds'] for p in ok),2),legs=len(ok),matches=[p['eventId'] for p in ok]) if code and st=='ok' else None
+  MU='https://www.msport.com/api/gh/orders/real-sports/order/share'
+  def mcall(m,url,body=None):
+    c=['curl','-s','-m','30','-A','Mozilla/5.0 Chrome/120','-H','Content-Type: application/json','-H','operid: 3','-X',m,url]
+    if body: c+=['-d',json.dumps(body)]
+    try: return json.loads(__import__('subprocess').run(c,capture_output=True,text=True).stdout)
+    except Exception: return {}
+  def msel(p): return {'eventId':p['eventId'],'marketId':str(p.get('marketId','')),'specifier':p.get('specifier') or '','outcomeId':str(p.get('outcomeId',''))}
+  def mbook(L):
+    ok=[p for p in L if p.get('marketId') and p.get('outcomeId') and mcall('POST',MU,{'selections':[msel(p)]}).get('bizCode')==10000]
+    if not ok: return None
+    r=mcall('POST',MU,{'selections':[msel(p) for p in ok]})
+    if r.get('bizCode')!=10000: return None
+    code=r['data']['shareCode']; b=mcall('GET',MU+'/'+code); B=(b.get('data') or {}).get('bettableBetSlip') or []
+    tot=round(math.prod(float(x['outcome']['odds']) for x in B),2) if B else None
+    return dict(msport=code,totalOdds=tot,legs=len(B) or len(ok),of=len(L),matches=[p['eventId'] for p in ok],link=f'https://www.msport.com/gh/?shareCode={code}')
+  def ms_try(L):
+    m=mbook(L)
+    return dict(code=m['msport'],totalOdds=m['totalOdds'],legs=m['legs'],matches=m.get('matches')) if m else None
+  BU='https://api.betika.com.gh/v2/share/'
+  def bcall(m,url,body=None):
+    c=['curl','-s','-m','30','-A','Mozilla/5.0 Chrome/120','-H','Content-Type: application/json','-X',m,url]
+    if body: c+=['-d',json.dumps(body)]
+    try: return json.loads(__import__('subprocess').run(c,capture_output=True,text=True).stdout)
+    except Exception: return {}
+  def bsel(p): return {'odd_key':'','outcome_id':str(p.get('outcomeId','')),'special_bet_value':p.get('specifier') or '','parent_match_id':p['eventId'].split(':')[-1],'sub_type_id':str(p.get('marketId','')),'has_parent':None,'parent_code':None}
+  def bkbook(L):
+    L=[p for p in L if p.get('marketId') and p.get('outcomeId')]
+    if not L: return None
+    r=bcall('POST',BU+'encode',{'profile_id':0,'bet_id':None,'token':None,'src':'MOBILE_WEB','product_type':'PREMATCH','betslip':[bsel(p) for p in L]})
+    code=r.get('code')
+    if not code: return None
+    dd=bcall('GET',BU+'decode?code='+code+'&src=MOBILE_WEB').get('data') or []
+    V=[x for x in dd if str(x.get('valid'))=='1']
+    if not V: return None
+    tot=round(math.prod(float(x['odd_value']) for x in V),2)
+    ids={'sr:match:'+x['parent_match_id'] for x in V}
+    return dict(betika=code,totalOdds=tot,legs=len(V),of=len(L),link=f'https://betika.com/en-gh/share/{code}',matches=sorted(ids))
+  def bk_try(L):
+    b=bkbook(L)
+    return dict(code=b['betika'],totalOdds=b['totalOdds'],legs=b['legs'],matches=b['matches']) if b else None
+  FCU='https://www.football.com/api/gh/orders/share'
+  def fcall(m,url,body=None):
+    c=['curl','-s','-m','30','-A','Mozilla/5.0 Chrome/120','-H','Content-Type: application/json','-H','Accept: application/json','-X',m,url]
+    if body: c+=['-d',json.dumps(body)]
+    try: return json.loads(__import__('subprocess').run(c,capture_output=True,text=True).stdout)
+    except Exception: return {}
+  def fsel(p): return {'eventId':p['eventId'],'marketId':str(p.get('marketId','')),'specifier':p.get('specifier') or None,'outcomeId':str(p.get('outcomeId',''))}
+  def fc_book(L):
+    L=[p for p in L if p.get('marketId') and p.get('outcomeId')]
+    if not L: return None
+    r=fcall('POST',FCU,{'selections':[fsel(p) for p in L]})
+    if r.get('bizCode')!=10000:
+      L=[p for p in L if fcall('POST',FCU,{'selections':[fsel(p)]}).get('bizCode')==10000]
+      if not L: return None
+      r=fcall('POST',FCU,{'selections':[fsel(p) for p in L]})
+      if r.get('bizCode')!=10000: return None
+    code=r['data']['shareCode']
+    tot=round(math.prod(p['odds'] for p in L),2)
+    return dict(code=code,totalOdds=tot,legs=len(L),matches=[p['eventId'] for p in L])
+  def bp_try(L):
+    try: return _bp.book(L)
+    except Exception: return None
+  BOOK={'sportybet':sb_try,'msport':ms_try,'betika':bk_try,'footballcom':fc_book,'betpawa':bp_try}
+  _LINK={'sportybet':'https://www.sportybet.com/gh/?shareCode={}','msport':'https://www.msport.com/gh/?shareCode={}',
+    'betika':'https://betika.com/en-gh/share/{}','footballcom':'https://www.football.com/gh/?shareCode={}','betpawa':'https://www.betpawa.com.gh/share-betslip/{}'}
+  _PREV_DM=((d.get('homeCode') or {}).get('dayMasters') or {})
+  _DM_CACHE={}
+  for _day,_m in _PREV_DM.items():
+    if isinstance(_m,dict) and _m.get('codes'):
+      _DM_CACHE[tuple(sorted((p.get('eventId') or '')+':'+(str(p.get('outcomeId') or '')) for p in (_m.get('picks') or [])))]=_m
+  def _dm_slip(name,L):
+    key=tuple(sorted(p['eventId']+':'+str(p.get('outcomeId')) for p in L))
+    e=dict(name=name,legKey=list(key),legs=len(L),totalOdds=round(math.prod(float(p['odds']) for p in L),2),events=[p['eventId'] for p in L],codes={},bookedAt=None)
+    old=_DM_CACHE.get(key)
+    if old and old.get('codes'):
+      e['codes']=dict(old['codes']); e['bookedAt']=old.get('bookedAt')
+    e['bookedAt']=e['bookedAt'] or now.isoformat(timespec='seconds')
+    def _one(b):
+      fn=BOOK[b]; parts=[]
+      for i in range(0,len(L),30):
+        try: r=fn([dict(p) for p in L[i:i+30]])
+        except Exception: r=None
+        if r:
+          code=r.get('code') or r.get(b)
+          if not code: continue
+          parts.append(dict(code=code,totalOdds=r.get('totalOdds'),legs=r.get('legs') or len(L[i:i+30]),
+                            link=_LINK.get(b,'').format(code),matches=r.get('matches') or [p['eventId'] for p in L[i:i+30]]))
+      return b,parts
+    todo=[b for b in BOOK if b not in e['codes']]
+    if todo:
+      with _cf.ThreadPoolExecutor(5) as ex:
+        for b,parts in ex.map(_one,todo):
+          if parts: e['codes'][b]=parts
+    if e['codes']: _DM_CACHE[key]=e
+    print('favDay',name,e['legs'],e['totalOdds'],{b:[(x['code'],x['totalOdds'],x['legs']) for x in v] for b,v in e['codes'].items()})
+    return e
+  def _dm_pass(L):
+    out=[]
+    for p in L:
+      if _good(p): out.append(p); continue
+      try: alt=_MR.swap_to_goals(p) if hasattr(_MR,'swap_to_goals') else None
+      except Exception: alt=None
+      if alt:
+        try: _MR.enrich(alt); ok,_,_=_MR.check(alt)
+        except Exception: ok=False
+        if ok: out.append(alt)
+    return out
+  _dm=_FDM.build_day_masters(d.get('picks') or [], _dm_slip, pass_fn=_dm_pass, now=now, today=day, days_ahead=1)
+  d.setdefault('homeCode',{})['dayMasters']=_dm
+  json.dump(d,open(f,'w'),indent=1,ensure_ascii=False)
+  print('dayMasters',{k:{'legs':v.get('legs'),'of':v.get('of'),'odds':v.get('totalOdds'),'codes':{b:[x.get('code') for x in (vv or [])] for b,vv in (v.get('codes') or {}).items()}} for k,v in _dm.items()})
+  raise SystemExit(0)
 def try_book(L):
   code,st=book(L)
   if code and st=='ok': return code,L
   return None,st
 PREV_BM={g:v for g,v in ((d.get('homeCode') or {}).get('byMarket') or {}).items() if 'double chance' not in g.lower()}
 MS_ONLY='--msport-only' in sys.argv
-if MS_ONLY: d.setdefault('homeCode',{})
+DAY_MASTERS_ONLY='--day-masters-only' in sys.argv
+if MS_ONLY or DAY_MASTERS_ONLY: d.setdefault('homeCode',{})
 elif '--markets-only' in sys.argv: pass
 else:
   codes=[]; err=None
@@ -244,3 +370,63 @@ for g,L in G.items():
     BM[g][v]=e;print('market',g,v,len(LL),{k:(x['code'],x['totalOdds'],x['legs']) for k,x in e.items() if isinstance(x,dict)})
 d.setdefault('homeCode',{})['byMarket']=BM
 json.dump(d,open(f,'w'),indent=1,ensure_ascii=False)
+
+# ---- Favourites day masters (Today / Tomorrow tabs on "How favourites perform by league") ----
+import fav_day_masters as _FDM
+import concurrent.futures as _cf
+_LINK={'sportybet':'https://www.sportybet.com/gh/?shareCode={}','msport':'https://www.msport.com/gh/?shareCode={}',
+  'betika':'https://betika.com/en-gh/share/{}','footballcom':'https://www.football.com/gh/?shareCode={}','betpawa':'https://www.betpawa.com.gh/share-betslip/{}'}
+_PREV_DM=((d.get('homeCode') or {}).get('dayMasters') or {})
+_DM_CACHE={}
+for _day,_m in _PREV_DM.items():
+  if isinstance(_m,dict) and _m.get('codes'):
+    _DM_CACHE[tuple(sorted((p.get('eventId') or '')+':'+(str(p.get('outcomeId') or '')) for p in (_m.get('picks') or [])))]=_m
+def _dm_slip(name,L):
+  key=tuple(sorted(p['eventId']+':'+str(p.get('outcomeId')) for p in L))
+  e=dict(name=name,legKey=list(key),legs=len(L),totalOdds=round(math.prod(float(p['odds']) for p in L),2),events=[p['eventId'] for p in L],codes={},bookedAt=None)
+  old=_DM_CACHE.get(key)
+  if old and old.get('codes'):
+    e['codes']=dict(old['codes']); e['bookedAt']=old.get('bookedAt')
+  e['bookedAt']=e['bookedAt'] or now.isoformat(timespec='seconds')
+  def _one(b):
+    fn=BOOK[b]; parts=[]
+    for i in range(0,len(L),30):
+      try: r=fn([dict(p) for p in L[i:i+30]])
+      except Exception: r=None
+      if r:
+        code=r.get('code') or r.get(b)
+        if not code: continue
+        parts.append(dict(code=code,totalOdds=r.get('totalOdds'),legs=r.get('legs') or len(L[i:i+30]),
+                          link=_LINK.get(b,'').format(code),matches=r.get('matches') or [p['eventId'] for p in L[i:i+30]]))
+    return b,parts
+  todo=[b for b in BOOK if b not in e['codes']]
+  if todo:
+    with _cf.ThreadPoolExecutor(5) as ex:
+      for b,parts in ex.map(_one,todo):
+        if parts: e['codes'][b]=parts
+  if e['codes']: _DM_CACHE[key]=e
+  print('favDay',name,e['legs'],e['totalOdds'],{b:[(x['code'],x['totalOdds'],x['legs']) for x in v] for b,v in e['codes'].items()})
+  return e
+def _dm_pass(L):
+  """Keep legs that already pass, else try goals swap for obscure leagues."""
+  out=[]
+  for p in L:
+    if _good(p):
+      out.append(p); continue
+    try:
+      alt=_MR.swap_to_goals(p) if hasattr(_MR,'swap_to_goals') else None
+    except Exception:
+      alt=None
+    if alt:
+      k=(alt.get('eventId'),str(alt.get('marketId')),alt.get('specifier') or '',str(alt.get('outcomeId')))
+      # accept swap if check passes
+      try:
+        _MR.enrich(alt); ok,_,_= _MR.check(alt)
+      except Exception:
+        ok=False
+      if ok: out.append(alt)
+  return out
+_dm=_FDM.build_day_masters(d.get('picks') or [], _dm_slip, pass_fn=_dm_pass, now=now, today=day, days_ahead=1)
+d.setdefault('homeCode',{})['dayMasters']=_dm
+json.dump(d,open(f,'w'),indent=1,ensure_ascii=False)
+print('dayMasters',{k:{'legs':v.get('legs'),'of':v.get('of'),'odds':v.get('totalOdds'),'codes':{b:[x.get('code') for x in (vv or [])] for b,vv in (v.get('codes') or {}).items()}} for k,v in _dm.items()})

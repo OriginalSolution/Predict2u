@@ -31,7 +31,7 @@ On leagues with 10+ teams:
 
 | Strategy | How it runs | Schedule |
 |---|---|---|
-| House favourites / buckets | `vendor/fav_engine.py` + `vendor/run.py` + `vendor/book_home.py` | Daily 23:00 |
+| House favourites / buckets | `vendor/fav_engine.py` + `vendor/run.py` + `vendor/book_home.py` — also builds **dayMasters** (Today / Tomorrow favourites slips for the Home "How favourites perform by league" section), booked on every no-login bookmaker (`--day-masters-only` for a fast rebook) | Daily 23:00 |
 | Hot picks | `vendor/hot_picks.py` — hub scrape + per-market/team slips; also builds **sectionMasters** (one 25+ master slip per Hot page section: Hot matches, Hot by market, Trending markets, Hot teams, Most-backed teams), booked on every no-login bookmaker and shown in the Hot carousel | Daily 23:00 |
 | DC Shield Goals | `vendor/dc_shield.py` — finds next-day games whose DC price is under 1.20, then books Over 1.5 / Over 2.5 / GG (**never the DC pick**) | 21:00 and again inside the 23:00 book step |
 | High Odds (incl. Heavy Home + HIGH RISK labels) | `vendor/high_odds.py` full rebuild (house slips, approved inbox/export slips, SportyBet featured hub). Risk scoring can mark a slip HIGH RISK / Heavy Home. Settling also runs `--settle-only`. | Daily 23:00 + settle jobs |

@@ -1,4 +1,4 @@
-/* Predict2U v318 — live scores on home picks; collapsible leagues for today's card; was v297 — Picks of the Day (+ balance/draw-odds buckets, codes by market), reads home-picks.json (research feed). */
+/* Predict2U v318b — favourites day-master codes on leagues section (Today/Tomorrow tabs); was v318. */
 (function(){
   'use strict';
   var $=function(id){return document.getElementById(id);};
@@ -107,6 +107,7 @@
     '.lg-in h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:#a9c9ff;margin:12px 0 6px}.lg-fx{list-style:none;margin:0;padding:0}.lg-fx li{display:flex;gap:10px;justify-content:space-between;padding:7px 0;border-bottom:1px dashed #24324a;font-size:.88rem;color:#e6eefb}.lg-fx time{font-weight:800;color:#ffd36b;flex:none}.lg-fx span{flex:1;min-width:0;overflow-wrap:anywhere}.lg-fx em{font-style:normal;font-size:.7rem;color:#7ff0b8;flex:none}'+
     '.lg-in .hp-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:10px}.lg-ft{width:100%;border-collapse:collapse;font-size:.82rem;color:#e6eefb}.lg-ft th,.lg-ft td{padding:5px 6px;border-bottom:1px solid #24324a;text-align:left}.lg-ft thead th{color:#c3d0e2}'+
     '.lg-q{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}.lg-q li{font-size:.76rem;padding:3px 9px;border-radius:99px;background:#16233a;color:#d6e2f3;border:1px solid #2c4a7a}.lg-empty{color:#c3d0e2;font-size:.9rem;padding:10px 0}'+
+    '.lg-dm{margin:10px 0 14px;padding:12px;border-radius:14px;background:#0d1522;border:1px solid #2c4a7a}.lg-dm h3{margin:0 0 6px;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:#a9c9ff}.lg-dm .lg-sum{margin:0 0 10px}.lg-dm-chips{display:flex;flex-wrap:wrap;gap:8px}.lg-dm-chips a{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 12px;border-radius:10px;text-decoration:none;font-weight:800;font-size:.82rem;background:var(--brand,#c8101e);color:var(--on,#fff);border:1px solid rgba(0,0,0,.25);box-shadow:0 4px 14px rgba(0,0,0,.35)}.lg-dm-chips a img{width:18px;height:18px;border-radius:4px;background:#fff}.lg-dm-chips .lg-dm-meta{font-weight:600;opacity:.9;font-size:.72rem}'+
     '@media(max-width:400px){.lg-h{flex-wrap:wrap;position:relative;padding-right:34px}.lg-cv{position:absolute;right:12px;top:22px}.lg-m{max-width:none;width:100%;justify-content:flex-start;padding-left:34px}}@media(prefers-reduced-motion:reduce){.lg-b,.lg-cv{transition:none}}';
     document.head.appendChild(st);}
   function body(x,F){var f=Number(x.favWinPct);f=f<=1?f*100:f;var P=x.picks||[],ids=P.map(function(p){return p.eventId;}),bk=bookedFor(ids),h='';
@@ -122,6 +123,28 @@
     if(x.buckets)h+=buckets(x).replace('<details class="hp-bkw','<details open class="hp-bkw');
     if(bk.length)h+='<h3>Booked codes with this league</h3><div class="hp-bkd">'+bk.map(function(c){return '<a href="'+c.url+'" target="_blank" rel="noopener"><img src="book-'+c.b+'.webp" alt="'+c.n+' logo" width="16" height="16" loading="lazy">'+esc(c.n)+' '+esc(c.code)+'</a>';}).join('')+'</div>';
     return '<div class="lg-in">'+h+'</div>';}
+
+  var DMBK=[['sportybet','SportyBet','#c8101e','#fff','https://www.sportybet.com/gh/?shareCode='],['footballcom','football.com','#282450','#fff','https://www.football.com/gh/?shareCode='],['msport','MSport','#ffd325','#111','https://www.msport.com/gh/?shareCode='],['betika','Betika','#00813f','#fff','https://betika.com/en-gh/share/'],['betpawa','Betpawa','#78be20','#0b0f14','https://www.betpawa.com.gh/share-betslip/'],['betway','Betway','#0b0b0b','#fff','https://www.betway.com.gh/sport/soccer?bookingCode=']];
+  function dayMasterHTML(day){
+    var dm=((data.homeCode||{}).dayMasters||{})[day];
+    if(!dm||!dm.codes||!Object.keys(dm.codes).length) return '';
+    var chips='';
+    DMBK.forEach(function(k){
+      var list=dm.codes[k[0]]; if(!list)return;
+      if(!Array.isArray(list)) list=[{code:list}];
+      list.forEach(function(c){
+        var code=c.code||c[k[0]]||c; if(!code)return;
+        var url=c.link||(k[4]+encodeURIComponent(code));
+        var meta=(c.totalOdds!=null?' @'+Number(c.totalOdds).toLocaleString('en-GB',{maximumFractionDigits:2}):'')+(c.legs!=null?' · '+c.legs+'p':'');
+        chips+='<a class="p2u-chip-'+k[0]+'" style="--brand:'+k[2]+';--on:'+k[3]+'" href="'+esc(url)+'" target="_blank" rel="noopener" title="'+esc(k[1]+' '+code)+'"><img src="book-'+k[0]+'.webp" alt="" width="18" height="18" loading="lazy"><span>'+esc(k[1])+' '+esc(code)+'</span><span class="lg-dm-meta">'+esc(meta)+'</span></a>';
+      });
+    });
+    if(!chips) return '';
+    var note=dm.note?('<p class="lg-sum">'+esc(dm.note)+'</p>'):'';
+    var head=esc(dm.label||'Favourites of the day')+' · '+esc(dm.legs||'—')+' of '+esc(dm.of||'—')+' picks · @'+(dm.totalOdds!=null?Number(dm.totalOdds).toLocaleString('en-GB',{maximumFractionDigits:2}):'—')+(dm.parts>1?' · '+dm.parts+' parts':'');
+    return '<div class="lg-dm" role="region" aria-label="Favourites booking codes for '+esc(day)+'"><h3>Booking codes</h3><p class="lg-sum">'+head+'</p>'+note+'<div class="lg-dm-chips">'+chips+'</div></div>';
+  }
+
   function leagues(){css();css2();var host=$('hp-leagues');var hd=host.parentNode.querySelector('h2');if(hd)hd.textContent='Today’s leagues & competitions';
     var L=(data.leagues||[]);
     var today=stamp(new Date()),dates={};L.forEach(function(x){(x.fixtures||[]).forEach(function(f){var d=fdate(f);if(d>=today)dates[d]=1;});});
@@ -136,7 +159,7 @@
     var games=rows.reduce(function(s,r){return s+r.F.length;},0),picks=rows.reduce(function(s,r){return s+r.x.picks.length;},0);
     if(!rows.length){host.innerHTML='<div class="p2u-bankers-empty">No leagues on today’s card yet.</div>';return;}
     host.innerHTML=(D.length>1?'<div class="lg-days" role="group" aria-label="Match day">'+D.map(function(d){return '<button type="button" data-lg-day="'+d+'" aria-pressed="'+(d===day)+'">'+lbl(d)+'</button>';}).join('')+'</div>':'')+
-      '<p class="lg-sum">'+lbl(day)+': '+rows.length+' leagues · '+games+' games · '+picks+' picks. Tap a league to see everything.</p>'+
+      '<p class="lg-sum">'+lbl(day)+': '+rows.length+' leagues · '+games+' games · '+picks+' picks. Tap a league to see everything.</p>'+dayMasterHTML(day)+
       '<div class="lg-tools"><input type="search" id="lg-q" placeholder="Search leagues or teams" aria-label="Search leagues or teams"><button type="button" data-lg-all="1">Expand all</button><button type="button" data-lg-all="0">Collapse all</button></div><div id="lg-list">'+
       rows.map(function(r,i){var x=r.x,id='lg'+i,o=!!open[x.league],P=x.picks.length,bk=bookedFor(x.picks.map(function(p){return p.eventId;})).length,sp=split(x.league);
         return '<section class="lg'+(o?' is-open':'')+'" data-lg="'+esc(x.league)+'" data-s="'+esc((x.league+' '+r.F.map(function(f){return f.match;}).join(' ')).toLowerCase())+'"><button type="button" class="lg-h" aria-expanded="'+o+'" aria-controls="'+id+'"><span class="lg-f" aria-hidden="true">'+flag(x.league)+'</span><span class="lg-n"><b>'+esc(sp[1])+'</b><small>'+esc(sp[0]||'')+(sp[0]?' · ':'')+'first KO '+esc(fko(r.F[0]))+'</small></span><span class="lg-m"><span class="lg-chip">'+r.F.length+' game'+(r.F.length>1?'s':'')+'</span>'+(P?'<span class="lg-chip p">'+P+' pick'+(P>1?'s':'')+'</span>':'')+(bk?'<span class="lg-chip b">✓ Booked</span>':'')+'</span><i class="lg-cv" aria-hidden="true"></i></button>'+
