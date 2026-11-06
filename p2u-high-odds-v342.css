@@ -16,22 +16,32 @@ html,body{background:var(--bg)!important;color:var(--tx);overflow-x:hidden;max-w
 
 .high-mini .p2u-chip.is-pending .p2u-chip-t,.high-card .p2u-chip.is-pending .p2u-chip-t{display:block;min-width:0}.high-mini .p2u-chip-unavailable,.high-card .p2u-chip-unavailable{display:block;font-size:.76rem;line-height:1.25;white-space:nowrap;word-break:normal;overflow-wrap:normal}.high-mini .p2u-chip-reason,.high-card .p2u-chip-reason{display:block;margin-top:3px;font-size:.6rem;line-height:1.25;white-space:normal;overflow-wrap:anywhere}.high-share-row .p2u-wa,.high-share-row .p2u-dl{white-space:nowrap;font-size:.74rem;letter-spacing:-.01em}
 
-/* v346 — compact progress cards and a page-wide AA contrast floor. */
+/* v347 — carousel tiles and chips use official bookmaker colours (same as Bankers), with AA text. */
 .high-wrap{--mut:#cfd8dc}
 .high-wrap :is(p,small,span,div,td,th,summary,a,button,label){text-shadow:none!important}
-.high-wrap :is(.high-section-h span,.bp-card-l,.bp-card-m,.bp-card-x,.bp-card-legs span,.bp-legs small,.leg-meta,.high-card .meta,.high-card .note,.high-note,.fresh,.share-label,.bp-book small){color:#cfd8dc!important;-webkit-text-fill-color:#cfd8dc!important;opacity:1!important}
-.high-wrap :is(.bp-card-code,.bp-code,.high-code-row [data-main-code]){color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important}
-.high-wrap .bp-card{background:linear-gradient(160deg,#17263a,#0d1828)!important;color:#fff!important}
-.high-wrap .bp-book-msport .bp-card{background:#5b4b00!important;color:#fff!important}
-.high-wrap .bp-card .bp-card-l,.high-wrap .bp-card .bp-card-m,.high-wrap .bp-card .bp-card-x,.high-wrap .bp-card .bp-card-legs span{color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important}
-.high-wrap .bp-card .bp-card-code{color:#fff!important;-webkit-text-fill-color:#fff!important}
-.high-wrap .bp-book-msport .bp-card :is(.bp-card-l,.bp-card-m,.bp-card-code,.bp-card-x,.bp-card-legs span,.bp-progress-label){color:#fff!important;-webkit-text-fill-color:#fff!important}
-.high-wrap .bp-progress-label{color:#fff!important;-webkit-text-fill-color:#fff!important;position:static!important;transform:none!important}
-.high-wrap .bp-progress-track{background:#020617!important;border:1px solid rgba(255,255,255,.28)}
-.high-wrap .bp-progress-track i{background:#22c55e!important}
+.high-wrap :is(.high-section-h span,.bp-legs small,.leg-meta,.high-card .meta,.high-card .note,.high-note,.fresh,.share-label){color:#cfd8dc!important;-webkit-text-fill-color:#cfd8dc!important;opacity:1!important}
+.high-wrap :is(.bp-code,.high-code-row [data-main-code]){color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important}
+.high-wrap .bp-book small{color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important}
+
+/* Official brand fills: SportyBet red, MSport yellow, Betika green, Football.com purple, BetPawa lime, Betway black+green. */
+.high-wrap .bp-card{background:var(--brand)!important;color:var(--on,#fff)!important}
+.high-wrap .bp-book-sportybet,.high-wrap .bp-book-sportybet .bp-card,.high-wrap .p2u-chip-sportybet{--brand:#c8101e!important;--on:#fff!important}
+.high-wrap .bp-book-msport,.high-wrap .bp-book-msport .bp-card,.high-wrap .p2u-chip-msport{--brand:#ffd325!important;--on:#111!important}
+.high-wrap .bp-book-betika,.high-wrap .bp-book-betika .bp-card,.high-wrap .p2u-chip-betika{--brand:#00813f!important;--on:#fff!important}
+.high-wrap .bp-book-footballcom,.high-wrap .bp-book-footballcom .bp-card,.high-wrap .p2u-chip-footballcom{--brand:#282450!important;--on:#fff!important}
+.high-wrap .bp-book-betpawa,.high-wrap .bp-book-betpawa .bp-card,.high-wrap .p2u-chip-betpawa{--brand:#78be20!important;--on:#111!important}
+.high-wrap .bp-book-betway{--brand:#00a826!important}
+.high-wrap .bp-book-betway .bp-card,.high-wrap .p2u-chip-betway{--brand:#0b0b0b!important;--on:#fff!important;border-color:#00a826!important;box-shadow:inset 0 -3px 0 #00a826,0 4px 14px rgba(0,0,0,.35)!important}
+
+.high-wrap .bp-card :is(.bp-card-l,.bp-card-m,.bp-card-x,.bp-card-legs span,.bp-card-n,.bp-progress-label){color:var(--on,#fff)!important;-webkit-text-fill-color:var(--on,#fff)!important;opacity:1!important}
+.high-wrap .bp-card .bp-card-code{color:var(--on,#fff)!important;-webkit-text-fill-color:var(--on,#fff)!important;opacity:1!important}
+.high-wrap .bp-progress-label{position:static!important;transform:none!important}
+.high-wrap .bp-progress-track{background:rgba(0,0,0,.28)!important;border:1px solid rgba(255,255,255,.28)}
+.high-wrap .bp-book-msport .bp-progress-track,.high-wrap .bp-book-betpawa .bp-progress-track{background:rgba(0,0,0,.16)!important;border-color:rgba(0,0,0,.28)}
+.high-wrap .bp-progress-track i{background:#15803d!important}
 .high-wrap .bp-card-a :is(button,a){font-weight:900!important;opacity:1!important}
+.high-wrap .p2u-chip{background:var(--brand)!important;color:var(--on,#fff)!important}
 .high-wrap .p2u-chip :is(.p2u-chip-n,.p2u-chip-o,.p2u-chip-c,.p2u-chip-t,.p2u-chip-reason){color:var(--on,#fff)!important;-webkit-text-fill-color:var(--on,#fff)!important;opacity:1!important}
-.high-wrap .p2u-chip-msport,.high-wrap .p2u-chip-betpawa{--on:#111!important}
-.high-wrap .p2u-chip-unavailable{color:#e5e7eb!important;-webkit-text-fill-color:#e5e7eb!important}
+.high-wrap .p2u-chip-unavailable{color:var(--on,#fff)!important;-webkit-text-fill-color:var(--on,#fff)!important}
 #doing-carousel .bp-book,#doing-accordions .bp-book{margin:10px 0}
 #doing-carousel .bp-card{min-height:0!important}

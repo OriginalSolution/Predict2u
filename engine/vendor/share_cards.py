@@ -13,9 +13,9 @@ FD = "/usr/share/fonts/truetype/sand-box/google/Poppins/Poppins-"
 def F(w, s): return ImageFont.truetype(FD + w + ".ttf", s)
 W, H = 1080, 1350
 NAVY, NAVY2, GREEN, YEL, WHITE, MUTED = (8, 20, 36), (13, 34, 58), (120, 190, 32), (255, 204, 0), (255, 255, 255), (160, 178, 200)
-BOOKS = [("sportybet", "SportyBet", (226, 0, 26), WHITE), ("msport", "MSport", (255, 204, 0), (20, 20, 20)),
-         ("betika", "Betika", (0, 160, 70), WHITE), ("footballcom", "football.com", (40, 36, 80), WHITE),
-         ("betpawa", "Betpawa", (120, 190, 32), (10, 20, 10)), ("betway", "Betway", (10, 10, 10), WHITE)]
+BOOKS = [("sportybet", "SportyBet", (200, 16, 30), WHITE), ("msport", "MSport", (255, 211, 37), (17, 17, 17)),
+         ("betika", "Betika", (0, 129, 63), WHITE), ("footballcom", "football.com", (40, 36, 80), WHITE),
+         ("betpawa", "Betpawa", (120, 190, 32), (17, 17, 17)), ("betway", "Betway", (11, 11, 11), WHITE)]
 FORCE = "--force" in sys.argv
 MARK = Image.open(os.path.join(REPO, "predict2u-mark.png")).convert("RGBA")
 
