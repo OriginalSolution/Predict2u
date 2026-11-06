@@ -46,7 +46,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install runtime extras
-        run: pip install pillow
+        run: pip install pillow cryptography
       - name: Cache Sportradar / engine stats
         uses: actions/cache@v4
         with:
