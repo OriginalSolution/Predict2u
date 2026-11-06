@@ -133,7 +133,7 @@ def page(s, src, sc, c, odds):
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{img}"><meta name="robots" content="noindex,follow">
 <style>body{{margin:0;background:#081424;color:#fff;font-family:system-ui,sans-serif;text-align:center;padding:16px}}img{{max-width:100%;width:420px;border-radius:16px}}a.b{{display:inline-block;margin:14px 0;padding:12px 22px;border-radius:999px;background:#78be20;color:#081424;font-weight:800;text-decoration:none}}ul{{list-style:none;padding:0}}code{{color:#ffcc00;font-size:1.1em}}</style></head>
 <body><a class="b" href="{e(tgt)}">Open this slip on Predict2u.com</a><ul>{rows}</ul><img src="/share/{sc}.png" alt="{e(t)}"><p><small>18+ Bet responsibly.</small></p>
-<script src="/p2u-live-track-v335.js?v=335" defer></script><script>setTimeout(function(){{location.replace({json.dumps(tgt)})}},2500)</script></body></html>"""
+<script src="/p2u-live-track-v336.js?v=336" defer></script><script>setTimeout(function(){{location.replace({json.dumps(tgt)})}},2500)</script></body></html>"""
     d = os.path.join(SDIR, sc); os.makedirs(d, exist_ok=True)
     open(os.path.join(d, "index.html"), "w").write(h)
 
