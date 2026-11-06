@@ -42,3 +42,10 @@ html body #hot-carousel{margin-bottom:4px!important}
 html body #hot-carousel:not([hidden])+main#hot{padding-top:6px!important;margin-top:0!important}
 html body #hot-carousel:not([hidden])+main#hot>.hot-hero:first-child{margin-top:0!important}
 html body #hot-carousel .p2u-cc-lock .p2u-lock>p{-webkit-line-clamp:1!important}
+
+/* Section master cards */
+html body #hot-carousel.cc-sections .cc-card.cc-section{width:clamp(260px,88vw,380px)!important;max-width:380px}
+html body #hot-carousel .cc-chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 2px}
+html body #hot-carousel .cc-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid color-mix(in srgb, var(--brand) 55%, transparent);color:#e6eefb;text-decoration:none;font:700 .72rem/1.1 ui-monospace,monospace;letter-spacing:.03em}
+html body #hot-carousel .cc-chip img{border-radius:4px;background:#fff}
+html body #hot-carousel .cc-section .cc-top b{font-size:clamp(.95rem,4vw,1.1rem);color:#fff}

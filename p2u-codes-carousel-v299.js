@@ -48,11 +48,41 @@
   function card(x){return '<div class="cc-card" style="--brand:'+x.b.c+'"><div class="cc-top">'+(x.b.logo?'<img src="'+x.b.logo+'" alt="'+esc(x.b.n)+' logo" width="26" height="26" loading="lazy" decoding="async">':'')+'<b>'+esc(x.b.n)+'</b></div>'+
     '<div class="cc-t">'+esc(x.title)+'</div><div class="cc-code">'+esc(x.code)+'</div><div class="cc-m">@'+fmt(x.odds)+' · '+esc(x.legs)+' picks</div>'+(x.note?'<div class="cc-n">⚠ '+esc(x.note)+'</div>':'')+
     '<div class="cc-a"><button type="button" data-cc-copy="'+esc(x.code)+'">Copy</button>'+(x.link?'<a target="_blank" rel="noopener" href="'+esc(x.link)+'">Open ↗</a>':'')+'</div></div>';}
+
+  function logoFor(book){var B=BOOKS[book];return B&&B.logo?B.logo:('book-'+book+'.webp');}
+  function sectionCard(s){
+    var C=s.codes||{}, order=['sportybet','footballcom','msport','betika','betpawa','betway'];
+    var primary=null, primaryBook=null;
+    for(var i=0;i<order.length;i++){var L=C[order[i]]; if(!L)continue; if(!Array.isArray(L))L=[{code:L}]; if(L[0]&&(L[0].code||L[0])){primary=L[0]; primaryBook=order[i]; break;}}
+    var code=primary?(primary.code||primary):'—';
+    var odds=primary&&primary.totalOdds!=null?primary.totalOdds:s.totalOdds;
+    var legs=primary&&primary.legs!=null?primary.legs:s.legs;
+    var brand=(BOOKS[primaryBook]||{c:'#7fb2ff'}).c;
+    var chips=order.filter(function(b){return C[b];}).map(function(b){
+      var list=Array.isArray(C[b])?C[b]:[{code:C[b]}];
+      return list.map(function(c){
+        var cd=c.code||c, link=c.link||(BOOKS[b]&&BOOKS[b].link?BOOKS[b].link.replace('{c}',encodeURIComponent(cd)):null);
+        var B=BOOKS[b]||{n:b,c:'#64748b'};
+        return '<a class="cc-chip" style="--brand:'+B.c+'" '+(link?'href="'+esc(link)+'" target="_blank" rel="noopener"':'')+' title="'+esc(B.n)+' '+esc(cd)+'"><img src="'+esc(logoFor(b))+'" alt="" width="18" height="18" loading="lazy"><span>'+esc(cd)+'</span></a>';
+      }).join('');
+    }).join('');
+    return '<div class="cc-card cc-section" style="--brand:'+brand+'"><div class="cc-top"><b>'+esc(s.label||s.name||'Section')+'</b></div>'+
+      '<div class="cc-t">'+esc(s.name||'Master slip')+'</div><div class="cc-code">'+esc(code)+'</div><div class="cc-m">@'+fmt(odds)+' · '+esc(legs)+' picks'+(s.meetsFloor===false?' · under 25':'')+'</div>'+
+      (s.note?'<div class="cc-n">⚠ '+esc(s.note)+'</div>':'')+
+      '<div class="cc-chips">'+chips+'</div>'+
+      '<div class="cc-a"><button type="button" data-cc-copy="'+esc(code)+'">Copy</button>'+
+      (primary&&(primary.link||(BOOKS[primaryBook]&&BOOKS[primaryBook].link))?'<a target="_blank" rel="noopener" href="'+esc(primary.link||BOOKS[primaryBook].link.replace('{c}',encodeURIComponent(code)))+'">Open ↗</a>':'')+
+      '</div></div>';
+  }
+  function cardsSectionMasters(d){
+    return (d.sectionMasters||[]).filter(function(s){return s&&s.codes&&Object.keys(s.codes).length;}).map(sectionCard);
+  }
+
   function mount(el,C,heading){
     if(!el)return;
     if(!C||!C.length){el.hidden=true;el.innerHTML='';return;}
     el.hidden=false;
-    el.innerHTML='<h2 class="cc-h">'+(heading||'Booking codes')+'</h2><div class="cc-vp" tabindex="0" aria-label="Booking codes, swipe to scroll"><div class="cc-track">'+C.map(card).join('')+'</div></div>';
+    el.innerHTML='<h2 class="cc-h">'+(heading||'Booking codes')+'</h2><div class="cc-vp" tabindex="0" aria-label="Booking codes, swipe to scroll"><div class="cc-track">'+C.map(function(x){return typeof x==='string'?x:card(x);}).join('')+'</div></div>';
     var vp=el.querySelector('.cc-vp'),paused=false,rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,last=0,acc=0,resume;
     ['mouseenter','touchstart','focusin','pointerdown'].forEach(function(e){vp.addEventListener(e,function(){paused=true;clearTimeout(resume);},{passive:true});});
     ['mouseleave','touchend','focusout','pointerup'].forEach(function(e){vp.addEventListener(e,function(){clearTimeout(resume);resume=setTimeout(function(){paused=false;},2500);},{passive:true});});
@@ -65,8 +95,8 @@
   window.P2UCarousel={
     mount:mount,
     cardsHome:cardsHome,
-    cardsHot:cardsHot,
-    mountHot:function(el,d){mount(el,cardsHot(d),'Hot Picks codes today');}
+    cardsHot:cardsHot,cardsSectionMasters:cardsSectionMasters,
+    mountHot:function(el,d){var C=cardsSectionMasters(d); if(C.length){mount(el,C,'Section master slips today'); el.classList.add('cc-sections');} else mount(el,cardsHot(d),'Hot Picks codes today');}
   };
   var hc=document.getElementById('hot-carousel');
   if(hc)fetch('hot-picks.json?t='+Date.now()).then(function(r){return r.json();}).then(function(d){window.P2UCarousel.mountHot(hc,d);}).catch(function(){});

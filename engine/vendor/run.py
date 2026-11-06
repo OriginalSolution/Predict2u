@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Usage: run.py YYYY-MM-DD [--days N] [--book]  -> /workspace/predict2u-research/YYYY-MM-DD.json"""
 import json,os,sys,subprocess,datetime as dt,math,itertools,csv
-import os as _os,_sys; _sys.path.insert(0, _os.environ.get('ENGINE_DIR', str(__import__('pathlib').Path(__file__).resolve().parents[1]))); _sys.path.insert(0, _os.environ.get('VENDOR_DIR', str(__import__('pathlib').Path(__file__).resolve().parent)))
+import os as _os, sys as _sys; _sys.path.insert(0, _os.environ.get('ENGINE_DIR', str(__import__('pathlib').Path(__file__).resolve().parents[1]))); _sys.path.insert(0, _os.environ.get('VENDOR_DIR', str(__import__('pathlib').Path(__file__).resolve().parent)))
 D=os.environ.get('RESEARCH_DIR') or os.path.dirname(os.path.abspath(__file__));os.chdir(D)
 _VENDOR=os.environ.get('VENDOR_DIR') or os.path.dirname(os.path.abspath(__file__))
 day=sys.argv[1] if len(sys.argv)>1 and not sys.argv[1].startswith('-') else dt.date.today().isoformat()

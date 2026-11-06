@@ -89,6 +89,20 @@ def main() -> int:
         if "share-betslip/{}" not in build:
             fail("build.py BOOK_LINKS betpawa must be share-betslip/{}")
 
+    hot_src = hot
+    if "sectionMasters" not in hot_src:
+        fail("hot_picks.py must build sectionMasters for each Hot page section")
+    if not (ENGINE / "vendor" / "hot_section_masters.py").exists():
+        fail("missing vendor/hot_section_masters.py")
+    hsm = (ENGINE / "vendor" / "hot_section_masters.py").read_text()
+    if "SECTION_BUILDERS" not in hsm:
+        fail("hot_section_masters.py must define SECTION_BUILDERS")
+    for sid in ("hot_matches", "hot_by_market", "trending_markets", "hot_teams", "most_backed_teams"):
+        if sid not in hsm:
+            fail(f"hot_section_masters.py missing section id {sid}")
+    if "sectionMasters" not in rules:
+        fail("RULES.md must document Hot sectionMasters")
+
     for name in cfg["required_vendor"]:
         path = ENGINE / "vendor" / name
         if not path.exists():

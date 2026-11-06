@@ -3,7 +3,7 @@
 selection per upcoming match, and book the slips on every site book_home.py supports.
 Usage: hot_picks.py OUT_JSON   (rebooks only when a slip's legs change)"""
 import concurrent.futures as cf,json,sys,os,ast,math,subprocess,datetime as dt,collections
-D=os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0,D); import os as _os,_sys; _sys.path.insert(0, _os.environ.get('ENGINE_DIR', str(__import__('pathlib').Path(__file__).resolve().parents[1]))); _sys.path.insert(0, _os.environ.get('VENDOR_DIR', str(__import__('pathlib').Path(__file__).resolve().parent)))
+D=os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0,D); import os as _os, sys as _sys; _sys.path.insert(0, _os.environ.get('ENGINE_DIR', str(__import__('pathlib').Path(__file__).resolve().parents[1]))); _sys.path.insert(0, _os.environ.get('VENDOR_DIR', str(__import__('pathlib').Path(__file__).resolve().parent)))
 # reuse booking functions from book_home.py without running its script body
 src=open(os.path.join(D,'book_home.py')).read(); T=ast.parse(src); keep=[]
 for n in T.body:
@@ -11,6 +11,7 @@ for n in T.body:
   elif isinstance(n,ast.Assign) and all(isinstance(t,ast.Name) and t.id in ('MU','BU','FCU','MAXL') for t in n.targets): keep.append(n)
 G={'__name__':'bh'}; exec(compile(ast.Module(body=keep,type_ignores=[]),'book_home_funcs','exec'),G)
 book=G['book']
+import hot_section_masters as HSM
 def sb(L):
   code,st=book(L)
   if code and st=='ok': return dict(code=code,totalOdds=round(math.prod(p['odds'] for p in L),2),legs=len(L))
@@ -30,7 +31,80 @@ except Exception: pass
 LINK={'sportybet':'https://www.sportybet.com/gh/?shareCode={}','msport':'https://www.msport.com/gh/?shareCode={}',
   'betika':'https://betika.com/en-gh/share/{}','footballcom':'https://www.football.com/gh/?shareCode={}','betpawa':'https://www.betpawa.com.gh/share-betslip/{}'}
 OUT=sys.argv[1]; now=dt.datetime.now(dt.timezone.utc); nowms=now.timestamp()*1000
+SECTION_ONLY='--section-masters-only' in sys.argv
 UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
+
+if SECTION_ONLY:
+  # Booking-only rebuild from existing hot-picks.json (no hub scrape).
+  doc=json.load(open(OUT))
+  prev={s['name']:s for s in (doc.get('slips') or [])+(doc.get('byMarket') or [])+(doc.get('byTeam') or [])+(doc.get('sectionMasters') or []) if s.get('name')}
+  CACHE={}
+  def _seed(lst):
+    for x in lst or []:
+      if x.get('legKey') and x.get('codes'): CACHE.setdefault(tuple(x['legKey']),x)
+  _seed(doc.get('slips')); _seed(doc.get('byMarket')); _seed(doc.get('byTeam')); _seed(doc.get('sectionMasters'))
+  _PH=__import__("re").compile(r'^P2ULOCK-')
+  def _strip_ph(codes):
+    out={}
+    for b,v in (codes or {}).items():
+      keep=[]
+      for x in (v if isinstance(v,list) else [v]):
+        cd=(x.get('code') if isinstance(x,dict) else x) or ''
+        if _PH.match(str(cd)): continue
+        keep.append(x)
+      if keep: out[b]=keep
+    return out
+  for k,v in list(CACHE.items()):
+    cleaned=_strip_ph(v.get('codes'))
+    if cleaned: CACHE[k]=dict(v,codes=cleaned)
+    else: CACHE.pop(k,None)
+  def slip(name,L):
+    key=sorted(p['eventId']+':'+p['outcomeId'] for p in L); old=prev.get(name) or {}
+    e=dict(name=name,legKey=key,legs=len(L),totalOdds=round(math.prod(float(p['odds']) for p in L),2),events=[p['eventId'] for p in L])
+    oc=_strip_ph(old.get('codes') or {})
+    e['codes']=dict(oc) if old.get('legKey')==key else {}
+    e['bookedAt']=old.get('bookedAt') if e['codes'] else None
+    c=CACHE.get(tuple(key))
+    if c:
+      for b,v in _strip_ph(c.get('codes') or {}).items(): e['codes'].setdefault(b,v)
+      e['bookedAt']=e['bookedAt'] or c.get('bookedAt')
+    e['bookedAt']=e['bookedAt'] or now.isoformat(timespec='seconds')
+    def one(b):
+      fn=BOOK[b]; parts=[]
+      for i in range(0,len(L),30):
+        try: r=fn([dict(p) for p in L[i:i+30]])
+        except Exception: r=None
+        if r: parts.append(dict(r,link=LINK[b].format(r['code'])))
+      return b,parts
+    todo=[b for b in BOOK if b not in e['codes']]
+    with cf.ThreadPoolExecutor(5) as ex:
+      for b,parts in ex.map(one,todo):
+        if parts: e['codes'][b]=parts
+    if e['codes']: CACHE[tuple(key)]=e
+    print(name,e['legs'],e['totalOdds'],{b:[(x['code'],x['totalOdds'],x['legs']) for x in v] for b,v in e['codes'].items()})
+    return e
+  eng=str(__import__('pathlib').Path(D).resolve().parent)
+  try:
+    import matchup_rules as _MR
+    _RC={}
+    def _pass(L):
+      out=[]
+      for p in L:
+        k=(p.get('eventId'),str(p.get('marketId')),p.get('specifier') or '',str(p.get('outcomeId')))
+        if k not in _RC:
+          try: _MR.enrich(p); r=_MR.check(p)
+          except Exception as ex: r=(False,'err',str(ex))
+          _RC[k]=r
+        if _RC[k][0]: out.append(p)
+      return out
+  except Exception:
+    def _pass(L): return list(L or [])
+  doc['sectionMasters']=HSM.build_section_masters(doc, slip, pass_fn=_pass, today=now.date().isoformat(), engine_dir=eng)
+  doc['updatedAt']=now.isoformat(timespec='seconds')
+  json.dump(doc,open(OUT,'w'),indent=1,ensure_ascii=False)
+  print('sectionMasters',[(m.get('section'),m.get('label'),m.get('legs'),m.get('totalOdds'),{b:(v[0].get('code') if isinstance(v,list) and v else None) for b,v in (m.get('codes') or {}).items()}) for m in doc['sectionMasters']])
+  sys.exit(0)
+
 codes={}
 for p in range(1,80):
   try: j=json.loads(subprocess.run(['curl','-s','-m','20','-A',UA,'-H','Accept: application/json',f'https://www.sportybet.com/api/gh/orders/bookingCode/featured?pageNum={p}&pageSize=20'],capture_output=True,text=True).stdout)
@@ -118,6 +192,7 @@ def slip(name,L):
   if e['codes']: CACHE[tuple(key)]=e
   print(name,e['legs'],e['totalOdds'],{b:[(x['code'],x['totalOdds'],x['legs']) for x in v] for b,v in e['codes'].items()})
   return e
+
 slips=[]
 # main: top picks by popularity until total odds >= 25 (at least 5 legs, at most 30)
 L=[]
@@ -205,6 +280,7 @@ print('dropped incomplete byMarket',[x['name'] for x in byMarket if not full(x)]
 byMarket=[x for x in byMarket if full(x)]; byTeam=[x for x in byTeam if full(x)]
 out=dict(hotRule=HOT,maxDays=MAXDAYS,mainNote=mainNote,byTeam=byTeam,updatedAt=now.isoformat(timespec='seconds'),codesAnalysed=len(codes),selectionsAnalysed=sum(sel.values()),
   picks=picks[:60],markets=[dict(name=x['market'],count=x['backed']) for x in byMarket],teams=[dict(name=x['team'],count=x['backed']) for x in byTeam],slips=slips,byMarket=byMarket)
+out['sectionMasters']=HSM.build_section_masters(out, slip, pass_fn=_pass, today=now.date().isoformat(), engine_dir=str(__import__('pathlib').Path(D).resolve().parent))
 json.dump(out,open(OUT,'w'),indent=1,ensure_ascii=False)
 json.dump(_hdrop,open(os.path.join(D,'hot_dropped.json'),'w'),indent=1,ensure_ascii=False)
-print('codes',len(codes),'hotSelections',len(picks),'hotSelAll',sum(1 for v in sel.values() if v>=HOT),'markets',len(byMarket),'teams',len(byTeam),'mainOdds',round(mainOdds,2))
+print('codes',len(codes),'hotSelections',len(picks),'hotSelAll',sum(1 for v in sel.values() if v>=HOT),'markets',len(byMarket),'teams',len(byTeam),'mainOdds',round(mainOdds,2),'sectionMasters',len(out.get('sectionMasters') or []))

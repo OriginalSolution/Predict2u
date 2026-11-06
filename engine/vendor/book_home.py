@@ -2,7 +2,7 @@
 """Book one SportyBet GH code (split if capped) for every home pick not yet kicked off.
 Usage: book_home.py [YYYY-MM-DD]  -> writes homeCode into the research JSON."""
 import json,sys,os,datetime as dt,math
-import os as _os,_sys; _sys.path.insert(0, _os.environ.get('ENGINE_DIR', str(__import__('pathlib').Path(__file__).resolve().parents[1]))); _sys.path.insert(0, _os.environ.get('VENDOR_DIR', str(__import__('pathlib').Path(__file__).resolve().parent)))
+import os as _os, sys as _sys; _sys.path.insert(0, _os.environ.get('ENGINE_DIR', str(__import__('pathlib').Path(__file__).resolve().parents[1]))); _sys.path.insert(0, _os.environ.get('VENDOR_DIR', str(__import__('pathlib').Path(__file__).resolve().parent)))
 from sb_share_helper17 import book
 D=os.environ.get('RESEARCH_DIR') or os.path.dirname(os.path.abspath(__file__))
 day=next((a for a in sys.argv[1:] if not a.startswith('--')),None) or dt.date.today().isoformat()

@@ -3,7 +3,7 @@ def bandof(p):
   for lo,hi,nm in BANDS:
     if lo<p<=hi: return nm
 import json,re,os,sys,time,subprocess,collections,math,csv,concurrent.futures as cf
-import os as _os,_sys; _sys.path.insert(0, _os.environ.get('ENGINE_DIR', str(__import__('pathlib').Path(__file__).resolve().parents[1]))); _sys.path.insert(0, _os.environ.get('VENDOR_DIR', str(__import__('pathlib').Path(__file__).resolve().parent)));from sb_share_helper17 import UA
+import os as _os, sys as _sys; _sys.path.insert(0, _os.environ.get('ENGINE_DIR', str(__import__('pathlib').Path(__file__).resolve().parents[1]))); _sys.path.insert(0, _os.environ.get('VENDOR_DIR', str(__import__('pathlib').Path(__file__).resolve().parent)));from sb_share_helper17 import UA
 SR="https://stats.fn.sportradar.com/sportybet/en/Europe:Berlin/gismo/"
 def curl(u):
   for i in range(3):

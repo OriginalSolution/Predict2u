@@ -286,8 +286,8 @@ def prune_hot(doc: dict) -> tuple[dict, list]:
             removed.append(("hot", code or s.get("name"), str(s.get("bookedAt") or "")[:10], "stale"))
     doc["picks"] = picks
     doc["slips"] = keep_slips
-    # byMarket / byTeam: drop entries whose picks all started
-    for key in ("byMarket", "byTeam"):
+    # byMarket / byTeam / sectionMasters: drop entries whose picks all started
+    for key in ("byMarket", "byTeam", "sectionMasters"):
         arr = doc.get(key)
         if not isinstance(arr, list):
             continue
@@ -295,7 +295,7 @@ def prune_hot(doc: dict) -> tuple[dict, list]:
         for m in arr:
             mp = [p for p in (m.get("picks") or []) if live_pick(p)]
             if not mp and (m.get("picks") or []):
-                removed.append(("hot-" + key, m.get("market") or m.get("team") or m.get("name"), TODAY, "stale"))
+                removed.append(("hot-" + key, m.get("market") or m.get("team") or m.get("section") or m.get("label") or m.get("name"), TODAY, "stale"))
                 continue
             m = dict(m)
             if mp:
