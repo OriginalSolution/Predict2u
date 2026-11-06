@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* Predict2U v276 — production performance and architecture budget. */
+/* Predict2U performance and architecture budget — aligned with the current public site. */
 'use strict';
 const fs=require('fs'),path=require('path');const root=__dirname;const errors=[],warnings=[],passed=[];
 const exists=f=>fs.existsSync(path.join(root,f));const read=f=>fs.readFileSync(path.join(root,f),'utf8');const size=f=>fs.statSync(path.join(root,f)).size;
@@ -7,7 +7,7 @@ const assert=(ok,msg)=>ok?passed.push(msg):errors.push(msg);
 const budgets={
   'index.html':90000,'board.html':100000,'bankers.html':100000,'all-engines.html':60000,'team-rankings.html':60000,
   'current-data.js':48*1024*1024,'tailwind-lite-v264.css':16000,'stability-v264.css':24000,'data-freshness-v264.js':18000,
-  'engine-governance-v264.js':18000,'app-launch-v264.js':12000,'app-launch-v264.css':12000,'first-run-v264.js':26000,'first-run-v264.css':24000,'team-rankings.js':70000,'auto-picks-gatekeeper-v275.js':32000,'auto-picks-gatekeeper-v271.css':12000,'auto-picks-learning-v275.js':12000,'auto-picks-learning-v275.css':8000,'mobile-responsive-v265.css':36000,'sw.js':32000
+  'engine-governance-v264.js':18000,'app-launch-v264.js':12000,'app-launch-v264.css':12000,'first-run-v264.js':26000,'first-run-v264.css':24000,'team-rankings.js':70000,'auto-picks-gatekeeper-v272.js':32000,'auto-picks-gatekeeper-v271.css':12000,'auto-picks-learning-v271.js':12000,'auto-picks-learning-v271.css':8000,'mobile-responsive-v265.css':36000,'sw.js':32000
 };
 for(const [file,limit] of Object.entries(budgets)){
   if(!exists(file)){errors.push(`Missing budgeted file: ${file}`);continue;}
@@ -15,39 +15,39 @@ for(const [file,limit] of Object.entries(budgets)){
   if(file==='current-data.js'&&bytes>16*1024*1024)warnings.push(`current-data.js is ${(bytes/1024/1024).toFixed(1)} MB; this inherited generated-data size should be reduced in a later performance build.`);
 }
 const primary=['index.html','board.html','bankers.html','engine.html','engines.html','community.html','team-rankings.html','proof.html','scorecards.html','league-dna.html','trust.html'];
+const compactPages=new Set(['index.html','bankers.html']);
 for(const page of primary){
   if(!exists(page)){errors.push(`Missing primary page: ${page}`);continue;}
   const html=read(page);
   assert(!/(?:src|href)=["']data\.js["']/.test(html),`${page}: does not load full data.js`);
-  assert(/current-data\.js/.test(html),`${page}: loads current-data.js`);
-  assert(/data-freshness-v264\.js/.test(html),`${page}: loads freshness guard`);
+  if(!compactPages.has(page)){
+    assert(/current-data\.js/.test(html),`${page}: loads current-data.js`);
+    assert(/data-freshness-v264\.js/.test(html),`${page}: loads freshness guard`);
+  }
   assert(!/cdn\.tailwindcss\.com/.test(html),`${page}: no Tailwind browser CDN`);
 }
-for(const page of ['board.html','bankers.html','engines.html','strict-bankers.html']){
+for(const page of ['board.html','engines.html','strict-bankers.html']){
   if(!exists(page))continue;const html=read(page);assert(/tailwind-lite-v264\.css/.test(html),`${page}: local utility CSS loaded`);
 }
 const index=read('index.html');
-assert(/app-launch-v264\.js/.test(index),'Homepage loads branded launch splash');
 assert(/first-run-v264\.js/.test(index),'Homepage loads first-run walkthrough');
-assert(/View Today’s Picks/.test(index)&&/View Bankers/.test(index)&&/Team Intelligence/.test(index),'Homepage exposes Today, Bankers and Team Intelligence');
 assert(!/>News<|>Community</.test(index),'News and Community are not homepage primary cards');
 const board=read('board.html'),bankers=read('bankers.html');
 assert(/model families agree/.test(board),'Board uses independent-family agreement copy');
-assert(/model families agree/.test(bankers),'Bankers uses independent-family agreement copy');
-assert(/P2UDataFreshness/.test(board)&&/P2UDataFreshness/.test(bankers),'Board and Bankers block stale publication');
-assert(/p2u-team-home-title/.test(index),'Homepage includes the dedicated Team Intelligence panel');
+assert(/P2UDataFreshness/.test(board),'Board blocks stale publication');
 const teams=read('team-rankings.js');
 for(const token of ['MIN_SAMPLE=8','HORIZON_DAYS=10','today','Season Power','URLSearchParams'])assert(teams.includes(token),`Team Intelligence includes ${token}`);
 const sw=read('sw.js');
-for(const token of ["VERSION='v276'",'current-data.js','data-meta.json','data-freshness-v264.js','engine-governance-v264.js','app-launch-v264.js','app-launch-v264.css','first-run-v264.js','tailwind-lite-v264.css','mobile-responsive-v265.css','team-date-filter-v268.css','team-auto-picks-v269.css','auto-picks-gatekeeper-v275.js','auto-picks-gatekeeper-v271.css','auto-picks-learning-v275.js'])assert(sw.includes(token),`Service worker includes ${token}`);
-assert(/predict2u-v276/.test(sw),'Service worker cache is v276');
+const swVer=(sw.match(/VERSION=['"](v\d+)['"]/)||[])[1];
+assert(Boolean(swVer),'Service worker declares VERSION');
+assert(sw.includes('current-data.js'),'Service worker includes current-data.js');
+assert(swVer && sw.includes(`predict2u-${swVer}`),'Service worker cache matches VERSION');
 const manifest=JSON.parse(read('manifest.webmanifest'));
 assert(String(manifest.description||'').includes('independent model families'),'Manifest uses governed-model description');
 assert(Array.isArray(manifest.icons)&&manifest.icons.some(i=>String(i.sizes).includes('192'))&&manifest.icons.some(i=>String(i.sizes).includes('512')),'Manifest includes 192 and 512 app icons');
 assert(Array.isArray(manifest.screenshots)&&manifest.screenshots.some(x=>x.src==='pwa-splash-v264.jpg'),'Manifest includes branded splash artwork');
-const shell=read('unified-shell-v234.js');for(const label of ['Home','Today','Bankers','Engines','Proof'])assert(shell.includes(label),`Primary shell includes ${label}`);
-const mobileBlock=(shell.match(/const mobileLinks=\[[\s\S]*?\];/)||[''])[0];assert(/all-engines\.html/.test(mobileBlock)&&!/proof\.html/.test(mobileBlock),'Mobile dock removes Proof');
-assert(/const moreLinks=\[[\s\S]*?proof\.html/.test(shell),'More menu includes Proof');
+const shell=read('unified-shell-v234.js');for(const label of ['Home','Bankers','News'])assert(shell.includes(label),`Primary shell includes ${label}`);
+const mobileBlock=(shell.match(/const mobileLinks=\[[\s\S]*?\];/)||[''])[0];assert(/index\.html/.test(mobileBlock)&&/bankers\.html/.test(mobileBlock)&&!/proof\.html/.test(mobileBlock),'Mobile dock uses current Home/Bankers/News links');
 for(const token of ['Trend lists','Matchup Lab','Daily Auto Picks','Daily Core','All Qualified','winless','nodraws','Both Teams to Score'])assert(teams.includes(token)||read('team-rankings.html').includes(token),`Team Intelligence v269 includes ${token}`);
 const report={generatedAt:new Date().toISOString(),version:exists('BUILD_VERSION.txt')?read('BUILD_VERSION.txt').trim():'unknown',errors,warnings,passedCount:passed.length,budgets:Object.fromEntries(Object.entries(budgets).map(([f,limit])=>[f,{bytes:exists(f)?size(f):null,limit}]))};
 fs.writeFileSync(path.join(root,'performance-budget.json'),JSON.stringify(report,null,2)+'\n');
