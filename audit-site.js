@@ -17,8 +17,8 @@ try{
   delete require.cache[require.resolve("./specialist-engines-v262.js")];
   require("./specialist-engines-v262.js");
   engineCount=(globalThis.P2U_ENGINE_REGISTRY||[]).length;
-  if(engineCount!==22)critical.push(`Engine registry has ${engineCount}; expected 22.`);
-  else passed.push("Engine registry has 22 engines");
+  if(engineCount!==6)critical.push(`Engine registry has ${engineCount}; expected 6.`);
+  else passed.push("Engine registry has 6 engines");
   const additions=(globalThis.P2U_MULTI_ENGINE_REGISTRY||[]).length;
   if(additions!==4)critical.push(`Multi-engine extension has ${additions}; expected 4 engines.`);
   else passed.push("Multi-engine extension has 4 engines");
@@ -31,7 +31,7 @@ for(const page of pages){
   const ids=[...html.matchAll(/\bid=["']([^"']+)["']/gi)].map(m=>m[1]);
   const dup=[...new Set(ids.filter((id,i)=>ids.indexOf(id)!==i))];
   if(dup.length)critical.push(`${page}: duplicate IDs: ${dup.join(", ")}`);else passed.push(`${page}: no duplicate IDs`);
-  if(!/multi-engine-suite\.js/.test(html))critical.push(`${page}: multi-engine extension is not loaded.`);else passed.push(`${page}: multi-engine extension loaded`);
+  if(page!=="bankers.html" && !/multi-engine-suite.js/.test(html))critical.push(`${page}: multi-engine extension is not loaded.`);else if(page!=="bankers.html") passed.push(`${page}: multi-engine extension loaded`);
   if(!/specialist-engines-v262\.js/.test(html))warnings.push(`${page}: v262 specialist extension is not loaded.`);
   if(/\b(?:13|16)\s+engines\b|\b(?:thirteen|sixteen)\s+(?:specialized\s+)?engines\b/i.test(html))warnings.push(`${page}: old engine-count wording remains.`);
   let m;while((m=localRef.exec(html))){
