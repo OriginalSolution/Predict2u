@@ -7,6 +7,7 @@
   python -m engine.pipeline settle    # grade every pending code
   python -m engine.pipeline daily     # collect + book + publish
   python -m engine.pipeline all       # daily + settle
+  python -m engine.pipeline shield    # 21:00 DC Shield Goals + AH -1 scan
 
 Use --dry-run to skip live booking and git commits.
 """
@@ -21,7 +22,7 @@ from pathlib import Path
 
 from . import inbox, settle_codes
 from .paths import ENGINE_DIR, REPO_DIR, RESEARCH_DIR, VENDOR_DIR, SBJSON, ensure_dirs, environ
-from .rules import apply_all, is_double_chance
+from .rules import apply_all, is_double_chance, is_btts_no
 
 
 def run(cmd, env, cwd=None, timeout=None, check=True):
@@ -46,9 +47,9 @@ def collect(env, days=2, dry_run=False):
         print(f"inbox: kept {len(extra)} extra picks, dropped {len(log)}")
         data["picks"] = inbox.merge(data.get("picks") or [], extra)
         path.write_text(json.dumps(data, indent=1, ensure_ascii=False))
-    # never let a DC pick survive
+    # never let a DC or NG pick survive
     data = json.loads(path.read_text())
-    data["picks"] = [p for p in data.get("picks") or [] if not is_double_chance(p)]
+    data["picks"] = [p for p in data.get("picks") or [] if not is_double_chance(p) and not is_btts_no(p)]
     path.write_text(json.dumps(data, indent=1, ensure_ascii=False))
     print("collect:", path, "picks", len(data.get("picks") or []))
     return path
@@ -62,6 +63,8 @@ def book(env, dry_run=False):
     run([sys.executable, str(VENDOR_DIR / "book_home.py"), day], env=env, cwd=str(RESEARCH_DIR), timeout=900)
     run([sys.executable, str(VENDOR_DIR / "hot_picks.py"), str(REPO_DIR / "hot-picks.json")], env=env, cwd=str(RESEARCH_DIR), timeout=1500, check=False)
     run([sys.executable, str(VENDOR_DIR / "dc_shield.py")], env=env, timeout=900, check=False)
+    run([sys.executable, str(VENDOR_DIR / "ah_minus_one.py")], env=env, timeout=900, check=False)
+    run([sys.executable, str(VENDOR_DIR / "high_odds.py"), str(REPO_DIR)], env=env, timeout=1500, check=False)
 
 
 def publish(env, dry_run=False):
@@ -83,6 +86,18 @@ def publish(env, dry_run=False):
     run([sys.executable, str(VENDOR_DIR / "build_record.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
 
 
+    run([sys.executable, str(VENDOR_DIR / "share_cards.py"), str(REPO_DIR)], env=env, timeout=180, check=False)
+    if os.environ.get("TELEGRAM_BOT_TOKEN") and (os.environ.get("TELEGRAM_CHANNEL") or os.environ.get("TELEGRAM_CHAT_ID")):
+        run([sys.executable, str(VENDOR_DIR / "telegram_post.py"), str(REPO_DIR), "--codes"], env=env, timeout=120, check=False)
+    else:
+        print("publish: Telegram skipped (TELEGRAM_BOT_TOKEN / TELEGRAM_CHANNEL not set)")
+
+def shield(env, dry_run=False):
+    """Nightly ~9 PM DC Shield Goals run (also books AH-1 scan into the inbox)."""
+    run([sys.executable, str(VENDOR_DIR / "dc_shield.py")] + (["--skip-book"] if dry_run else []), env=env, timeout=900, check=False)
+    run([sys.executable, str(VENDOR_DIR / "ah_minus_one.py")], env=env, timeout=900, check=False)
+
+
 def settle(env):
     print(json.dumps(settle_codes.settle_files(REPO_DIR)))
     run([sys.executable, str(VENDOR_DIR / "prune_live.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
@@ -92,7 +107,7 @@ def settle(env):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("command", choices=("collect", "book", "publish", "settle", "daily", "all"))
+    ap.add_argument("command", choices=("collect", "book", "publish", "settle", "daily", "all", "shield"))
     ap.add_argument("--days", type=int, default=2)
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args(argv)
@@ -102,7 +117,9 @@ def main(argv=None):
         collect(env, days=args.days, dry_run=args.dry_run)
     if args.command in ("book", "daily", "all"):
         book(env, dry_run=args.dry_run)
-    if args.command in ("publish", "daily", "all"):
+    if args.command == "shield":
+        shield(env, dry_run=args.dry_run)
+    if args.command in ("publish", "daily", "all", "shield"):
         publish(env, dry_run=args.dry_run)
     if args.command in ("settle", "all"):
         settle(env)

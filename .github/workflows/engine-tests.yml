@@ -26,4 +26,4 @@ jobs:
           python-version: "3.12"
       - name: Install pytest
         run: pip install pytest
-      - run: python -m pytest engine/tests -q
+      - run: python -m pytest engine/tests -q && python -m engine.check_rules
