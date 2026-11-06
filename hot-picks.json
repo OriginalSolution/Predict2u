@@ -3112,7 +3112,7 @@
    "backed": 181
   }
  ],
- "updatedAt": "2026-11-06T11:57:21+00:00",
+ "updatedAt": "2026-11-06T13:30:52+00:00",
  "codesAnalysed": 1169,
  "selectionsAnalysed": 28949,
  "picks": [
@@ -3135,7 +3135,8 @@
    "backing": 4666,
    "icon": "https://s.sporty.net/common/main/res/a8694bcb5dd1e35e883a59fb015af140.png",
    "x12": "4.67/3.67/1.84",
-   "table": "11 v 5/20"
+   "table": "11 v 5/20",
+   "league": "Italy - Serie A"
   },
   {
    "eventId": "sr:match:72513294",
@@ -3156,7 +3157,8 @@
    "backing": 2959,
    "icon": "https://s.sporty.net/ng/main/res/5a3769d4c1ba239747f9ba238c167146.png",
    "x12": "1.48/5.66/5.90",
-   "table": "4 v 10/18"
+   "table": "4 v 10/18",
+   "league": "Germany - Bundesliga"
   },
   {
    "eventId": "sr:match:72478700",
@@ -3177,7 +3179,8 @@
    "backing": 2426,
    "icon": "https://s.sporty.net/ng/main/res/e7f770fd357a8ee8ad5b0406e7c7f0aa.png",
    "x12": "1.98/3.54/4.29",
-   "table": "6 v 11/20"
+   "table": "6 v 11/20",
+   "league": "Spain - LaLiga"
   },
   {
    "eventId": "sr:match:72036282",
@@ -3198,7 +3201,8 @@
    "backing": 2065,
    "icon": "https://s.sporty.net/ng/main/res/d3b9de1ea4a4f22f6ee330fdb75285cd.png",
    "x12": "4.42/4.11/1.78",
-   "table": "17 v 7/18"
+   "table": "17 v 7/18",
+   "league": "France - Ligue 1"
   },
   {
    "eventId": "sr:match:71945394",
@@ -3219,7 +3223,8 @@
    "backing": 2026,
    "icon": "https://s.sporty.net/common/main/res/a8694bcb5dd1e35e883a59fb015af140.png",
    "x12": "3.33/3.80/2.15",
-   "table": "18 v 13/20"
+   "table": "18 v 13/20",
+   "league": "Italy - Serie A"
   },
   {
    "eventId": "sr:match:72036276",
@@ -3240,7 +3245,8 @@
    "backing": 1878,
    "icon": "https://s.sporty.net/ng/main/res/d3b9de1ea4a4f22f6ee330fdb75285cd.png",
    "x12": "4.46/4.07/1.82",
-   "table": "14 v 4/18"
+   "table": "14 v 4/18",
+   "league": "France - Ligue 1"
   },
   {
    "eventId": "sr:match:72221390",
@@ -3261,7 +3267,8 @@
    "backing": 1959,
    "icon": "https://s.sporty.net/common/main/res/6ad6134cba3225c2f5126b0ae8c17dfc.png",
    "x12": "3.76/3.71/2.02",
-   "table": "20 v 4/20"
+   "table": "20 v 4/20",
+   "league": "England - Premier League"
   },
   {
    "eventId": "sr:match:71945386",
@@ -3282,7 +3289,8 @@
    "backing": 1774,
    "icon": "https://s.sporty.net/common/main/res/a8694bcb5dd1e35e883a59fb015af140.png",
    "x12": "2.80/3.74/2.53",
-   "table": "12 v 6/20"
+   "table": "12 v 6/20",
+   "league": "Italy - Serie A"
   },
   {
    "eventId": "sr:match:72221382",
@@ -3303,7 +3311,8 @@
    "backing": 3593,
    "icon": "https://s.sporty.net/common/main/res/6ad6134cba3225c2f5126b0ae8c17dfc.png",
    "x12": "3.80/3.80/1.98",
-   "table": "14 v 8/20"
+   "table": "14 v 8/20",
+   "league": "England - Premier League"
   },
   {
    "eventId": "sr:match:72531014",
@@ -3324,7 +3333,8 @@
    "backing": 1371,
    "icon": "https://s.sporty.net/ng/main/res/d4aa6f519ef3ef6e81cf04c0a5325c50.png",
    "x12": "1.19/8.19/15.33",
-   "table": "3 v 9/18"
+   "table": "3 v 9/18",
+   "league": "Portugal - Liga Portugal"
   },
   {
    "eventId": "sr:match:72513300",
@@ -3347,7 +3357,8 @@
    "x12": "1.52/4.76/6.22",
    "table": "3 v 16/18",
    "case": "team support: x home 90% of 10, x away 70% of 10; H2H 33% of 6",
-   "leagueFavRate": 1.0
+   "leagueFavRate": 1.0,
+   "league": "Germany - Bundesliga"
   },
   {
    "eventId": "sr:match:67015458",
@@ -3368,17 +3379,18 @@
    "backing": 1126,
    "icon": "https://s.sporty.net/common/main/res/721ddc242c2d6b00b14fc4b3efe9352e.png",
    "x12": "1.25/7.10/11.10",
-   "table": "4 v 16/16"
+   "table": "4 v 16/16",
+   "league": "Norway - Eliteserien"
   },
   {
    "eventId": "sr:match:71925092",
-   "marketId": "60100",
-   "specifier": null,
-   "outcomeId": "1",
-   "odds": 1.3,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "odds": 1.28,
    "match": "FC Midtjylland vs SonderjyskE",
-   "market": "1X2 - 2UP",
-   "selection": "1X2 - 2UP: Home",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
    "date": "2026-11-08",
    "ko": "17:00",
    "start": "2026-11-08T17:00:00+00:00",
@@ -3389,7 +3401,10 @@
    "backing": 899,
    "icon": "https://s.sporty.net/common/main/res/bbddda6e6de84193f13748b815d3eb43.png",
    "x12": "1.33/5.90/7.60",
-   "table": "1 v 12/12"
+   "table": "1 v 12/12",
+   "tip": "Over 1.5",
+   "case": "team support: x home 90% of 10, x away 100% of 10; H2H 100% of 6",
+   "leagueFavRate": 1.0
   },
   {
    "eventId": "sr:match:72478690",
@@ -3410,17 +3425,18 @@
    "backing": 1862,
    "icon": "https://s.sporty.net/ng/main/res/e7f770fd357a8ee8ad5b0406e7c7f0aa.png",
    "x12": "3.27/3.76/2.18",
-   "table": "17 v 4/20"
+   "table": "17 v 4/20",
+   "league": "Spain - LaLiga"
   },
   {
    "eventId": "sr:match:72608070",
-   "marketId": "60100",
-   "specifier": null,
-   "outcomeId": "1",
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
    "odds": 1.15,
    "match": "Slavia Prague vs SK Artis Brno",
-   "market": "1X2 - 2UP",
-   "selection": "1X2 - 2UP: Home",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
    "date": "2026-11-08",
    "ko": "14:00",
    "start": "2026-11-08T14:00:00+00:00",
@@ -3431,7 +3447,10 @@
    "backing": 1046,
    "icon": "https://s.sporty.net/ng/main/res/748443b0c80e9a08df462af21bee4a6d.png",
    "x12": "1.16/7.80/13.50",
-   "table": "1 v 14/16"
+   "table": "1 v 14/16",
+   "tip": "Over 1.5",
+   "case": "team support: x home 80% of 10, x away 80% of 10; H2H 100% of 1",
+   "leagueFavRate": 1.0
   },
   {
    "eventId": "sr:match:72723318",
@@ -3452,17 +3471,18 @@
    "backing": 1042,
    "icon": "https://s.sporty.net/common/main/res/7e0e4d31c50658568c0b1bf50023b317.png",
    "x12": "1.23/6.74/11.13",
-   "table": "4 v 14/18"
+   "table": "4 v 14/18",
+   "league": "Turkiye - Super Lig"
   },
   {
    "eventId": "sr:match:72334410",
-   "marketId": "60100",
-   "specifier": null,
-   "outcomeId": "1",
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
    "odds": 1.24,
    "match": "FK Spartak Moscow vs FK Akron Tolyatti",
-   "market": "1X2 - 2UP",
-   "selection": "1X2 - 2UP: Home",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
    "date": "2026-11-08",
    "ko": "13:15",
    "start": "2026-11-08T13:15:00+00:00",
@@ -3473,7 +3493,10 @@
    "backing": 1373,
    "icon": "https://s.sporty.net/common/main/res/ab87514d82e0036a4a7c192778fb27e0.png",
    "x12": "1.26/6.40/9.80",
-   "table": "4 v 13/16"
+   "table": "4 v 13/16",
+   "tip": "Over 1.5",
+   "case": "team support: x home 80% of 10, x away 90% of 10; H2H 100% of 6",
+   "leagueFavRate": 1.0
   },
   {
    "eventId": "sr:match:72221376",
@@ -3494,7 +3517,8 @@
    "backing": 1893,
    "icon": "https://s.sporty.net/common/main/res/6ad6134cba3225c2f5126b0ae8c17dfc.png",
    "x12": "5.40/4.53/1.60",
-   "table": "18 v 5/20"
+   "table": "18 v 5/20",
+   "league": "England - Premier League"
   },
   {
    "eventId": "sr:match:72513298",
@@ -3515,17 +3539,18 @@
    "backing": 1267,
    "icon": "https://s.sporty.net/ng/main/res/5a3769d4c1ba239747f9ba238c167146.png",
    "x12": "1.63/4.58/5.09",
-   "table": "12 v 17/18"
+   "table": "12 v 17/18",
+   "league": "Germany - Bundesliga"
   },
   {
    "eventId": "sr:match:72201708",
-   "marketId": "60100",
-   "specifier": null,
-   "outcomeId": "1",
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
    "odds": 1.18,
    "match": "Celtic vs Kilmarnock FC",
-   "market": "1X2 - 2UP",
-   "selection": "1X2 - 2UP: Home",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
    "date": "2026-11-08",
    "ko": "16:00",
    "start": "2026-11-08T16:00:00+00:00",
@@ -3536,7 +3561,10 @@
    "backing": 1132,
    "icon": "https://s.sporty.net/common/main/res/2e6056e96d22b4c4187eb61114c4cfbf.png",
    "x12": "1.19/8.39/12.99",
-   "table": "1 v 11/12"
+   "table": "1 v 11/12",
+   "tip": "Over 1.5",
+   "case": "team support: x home 90% of 10, x away 70% of 10; H2H 100% of 6",
+   "leagueFavRate": 1.0
   },
   {
    "eventId": "sr:match:72936122",
@@ -3557,7 +3585,8 @@
    "backing": 871,
    "icon": "https://s.sporty.net/common/main/res/2cf182292090ae374fd4d82345ca4375.png",
    "x12": "1.21/6.75/14.00",
-   "table": "4 v 11/14"
+   "table": "4 v 11/14",
+   "league": "Greece - Super League"
   },
   {
    "eventId": "sr:match:72221380",
@@ -3578,7 +3607,8 @@
    "backing": 2275,
    "icon": "https://s.sporty.net/common/main/res/6ad6134cba3225c2f5126b0ae8c17dfc.png",
    "x12": "2.14/3.78/3.46",
-   "table": "15 v 13/20"
+   "table": "15 v 13/20",
+   "league": "England - Premier League"
   },
   {
    "eventId": "sr:match:72221384",
@@ -3599,7 +3629,8 @@
    "backing": 2199,
    "icon": "https://s.sporty.net/common/main/res/6ad6134cba3225c2f5126b0ae8c17dfc.png",
    "x12": "2.81/3.46/2.67",
-   "table": "12 v 9/20"
+   "table": "12 v 9/20",
+   "league": "England - Championship"
   },
   {
    "eventId": "sr:match:72936132",
@@ -3620,7 +3651,8 @@
    "backing": 1614,
    "icon": "https://s.sporty.net/common/main/res/2cf182292090ae374fd4d82345ca4375.png",
    "x12": "7.75/5.00/1.39",
-   "table": "9 v 1/14"
+   "table": "9 v 1/14",
+   "league": "Greece - Super League"
   },
   {
    "eventId": "sr:match:72513296",
@@ -3641,7 +3673,8 @@
    "backing": 1105,
    "icon": "https://s.sporty.net/ng/main/res/5a3769d4c1ba239747f9ba238c167146.png",
    "x12": "1.70/4.76/4.53",
-   "table": "11 v 5/18"
+   "table": "11 v 5/18",
+   "league": "Germany - Bundesliga"
   },
   {
    "eventId": "sr:match:72221386",
@@ -3662,7 +3695,8 @@
    "backing": 1187,
    "icon": "https://s.sporty.net/common/main/res/6ad6134cba3225c2f5126b0ae8c17dfc.png",
    "x12": "2.24/3.74/3.17",
-   "table": "17 v 10/20"
+   "table": "17 v 10/20",
+   "league": "England - Championship"
   },
   {
    "eventId": "sr:match:71945402",
@@ -3683,7 +3717,8 @@
    "backing": 3249,
    "icon": "https://s.sporty.net/common/main/res/a8694bcb5dd1e35e883a59fb015af140.png",
    "x12": "1.84/3.79/4.68",
-   "table": "10 v 14/20"
+   "table": "10 v 14/20",
+   "league": "Italy - Serie A"
   },
   {
    "eventId": "sr:match:72478694",
@@ -3704,17 +3739,18 @@
    "backing": 2180,
    "icon": "https://s.sporty.net/ng/main/res/e7f770fd357a8ee8ad5b0406e7c7f0aa.png",
    "x12": "2.45/3.70/2.93",
-   "table": "20 v 16/20"
+   "table": "20 v 16/20",
+   "league": "Spain - LaLiga"
   },
   {
    "eventId": "sr:match:76161546",
-   "marketId": "60100",
-   "specifier": null,
-   "outcomeId": "1",
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
    "odds": 1.22,
    "match": "FK Borac Banja Luka vs FK Radnik Bijeljina",
-   "market": "1X2 - 2UP",
-   "selection": "1X2 - 2UP: Home",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
    "date": "2026-11-08",
    "ko": "14:00",
    "start": "2026-11-08T14:00:00+00:00",
@@ -3725,7 +3761,10 @@
    "backing": 689,
    "icon": "https://s.sporty.net/ng/main/res/c57115c0c9b7c84f53494376c79c9aac.png",
    "x12": "1.23/5.60/10.50",
-   "table": "2 v 7/10"
+   "table": "2 v 7/10",
+   "tip": "Over 1.5",
+   "case": "team support: x home 80% of 10, x away 80% of 10; H2H 33% of 6",
+   "leagueFavRate": 1.0
   },
   {
    "eventId": "sr:match:72345570",
@@ -3746,7 +3785,8 @@
    "backing": 993,
    "icon": "https://s.sporty.net/common/main/res/501d7ef52aae7891c8f31e21a88eab30.png",
    "x12": "1.26/6.40/9.10",
-   "table": "1 v 12/12"
+   "table": "1 v 12/12",
+   "league": "Austria - Bundesliga"
   },
   {
    "eventId": "sr:match:72366438",
@@ -3767,17 +3807,18 @@
    "backing": 779,
    "icon": "https://s.sporty.net/common/main/res/12112b621b7cc306aa01c7b8566264dc.png",
    "x12": "1.48/4.61/6.69",
-   "table": "3 v 18/18"
+   "table": "3 v 18/18",
+   "league": "Belgium - Pro League"
   },
   {
    "eventId": "sr:match:72042326",
-   "marketId": "60100",
-   "specifier": null,
-   "outcomeId": "1",
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
    "odds": 1.21,
    "match": "Slovan Bratislava vs AS Trencin",
-   "market": "1X2 - 2UP",
-   "selection": "1X2 - 2UP: Home",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
    "date": "2026-11-07",
    "ko": "14:30",
    "start": "2026-11-07T14:30:00+00:00",
@@ -3788,17 +3829,20 @@
    "backing": 604,
    "icon": "",
    "x12": "1.23/6.30/9.40",
-   "table": "2 v 12/12"
+   "table": "2 v 12/12",
+   "tip": "Over 1.5",
+   "case": "team support: x home 100% of 10, x away 70% of 10; H2H 100% of 6",
+   "leagueFavRate": 1.0
   },
   {
    "eventId": "sr:match:73346098",
-   "marketId": "60100",
-   "specifier": null,
-   "outcomeId": "1",
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
    "odds": 1.26,
    "match": "London City Lionesses vs Birmingham City WFC",
-   "market": "1X2 - 2UP",
-   "selection": "1X2 - 2UP: Home",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
    "date": "2026-11-08",
    "ko": "14:30",
    "start": "2026-11-08T14:30:00+00:00",
@@ -3809,7 +3853,10 @@
    "backing": 603,
    "icon": "https://s.sporty.net/ng/main/res/f2669bdb47c2ac4e31a3f2eb761bd5fa.png",
    "x12": "1.28/5.40/7.60",
-   "table": "3 v 12/14"
+   "table": "3 v 12/14",
+   "tip": "Over 1.5",
+   "case": "team support: x home 90% of 10, x away 90% of 10; H2H 50% of 4",
+   "leagueFavRate": 1.0
   },
   {
    "eventId": "sr:match:72041236",
@@ -3830,7 +3877,8 @@
    "backing": 1133,
    "icon": "https://s.sporty.net/common/main/res/630c54e5b737d917d4a43e574fb8223f.png",
    "x12": "6.38/5.70/1.39",
-   "table": "9 v 3/18"
+   "table": "9 v 3/18",
+   "league": "Netherlands - Eredivisie"
   },
   {
    "eventId": "sr:match:71945398",
@@ -3851,7 +3899,8 @@
    "backing": 2730,
    "icon": "https://s.sporty.net/common/main/res/a8694bcb5dd1e35e883a59fb015af140.png",
    "x12": "4.55/3.61/1.91",
-   "table": "15 v 9/20"
+   "table": "15 v 9/20",
+   "league": "Italy - Serie A"
   },
   {
    "eventId": "sr:match:72513304",
@@ -3872,7 +3921,8 @@
    "backing": 6892,
    "icon": "https://s.sporty.net/ng/main/res/5a3769d4c1ba239747f9ba238c167146.png",
    "x12": "2.50/3.73/2.84",
-   "table": "15 v 18/18"
+   "table": "15 v 18/18",
+   "league": "Germany - Bundesliga"
   },
   {
    "eventId": "sr:match:72036274",
@@ -3893,17 +3943,18 @@
    "backing": 1154,
    "icon": "https://s.sporty.net/ng/main/res/d3b9de1ea4a4f22f6ee330fdb75285cd.png",
    "x12": "3.50/3.70/2.11",
-   "table": "15 v 8/18"
+   "table": "15 v 8/18",
+   "league": "France - Ligue 1"
   },
   {
    "eventId": "sr:match:73160460",
-   "marketId": "60100",
-   "specifier": null,
-   "outcomeId": "1",
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
    "odds": 1.17,
    "match": "AEK Larnaca vs Karmiotissa FC",
-   "market": "1X2 - 2UP",
-   "selection": "1X2 - 2UP: Home",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
    "date": "2026-11-06",
    "ko": "17:00",
    "start": "2026-11-06T17:00:00+00:00",
@@ -3914,7 +3965,11 @@
    "backing": 918,
    "icon": "https://s.sporty.net/ng/main/res/c22194f573b3143ff1a82a1e8057f544.png",
    "x12": "1.18/7.00/12.50",
-   "table": "1 v 9/14"
+   "table": "1 v 9/14",
+   "league": "Cyprus - 1st Division",
+   "tip": "Over 1.5",
+   "case": "team support: x home 80% of 10, x away 70% of 10; H2H 100% of 6",
+   "leagueFavRate": 1.0
   },
   {
    "eventId": "sr:match:72531016",
@@ -3935,7 +3990,8 @@
    "backing": 835,
    "icon": "https://s.sporty.net/ng/main/res/d4aa6f519ef3ef6e81cf04c0a5325c50.png",
    "x12": "5.06/4.08/1.65",
-   "table": "13 v 1/18"
+   "table": "13 v 1/18",
+   "league": "Portugal - Liga Portugal"
   },
   {
    "eventId": "sr:match:72936124",
@@ -3956,17 +4012,18 @@
    "backing": 488,
    "icon": "https://s.sporty.net/common/main/res/2cf182292090ae374fd4d82345ca4375.png",
    "x12": "1.39/4.90/7.90",
-   "table": "5 v 10/14"
+   "table": "5 v 10/14",
+   "league": "Greece - Super League"
   },
   {
    "eventId": "sr:match:72278534",
-   "marketId": "60200",
-   "specifier": null,
-   "outcomeId": "3",
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
    "odds": 1.28,
    "match": "NK Radomlje vs NK Celje",
-   "market": "1X2 - 1UP",
-   "selection": "1X2 - 1UP: Away",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
    "date": "2026-11-08",
    "ko": "16:30",
    "start": "2026-11-08T16:30:00+00:00",
@@ -3977,7 +4034,10 @@
    "backing": 828,
    "icon": "https://s.sporty.net/gh/main/res/a75c52482ca86d0afd3c4c4f39d96554.png",
    "x12": "5.10/4.30/1.53",
-   "table": "10 v 5/10"
+   "table": "10 v 5/10",
+   "tip": "Over 1.5",
+   "case": "team support: x home 80% of 10, x away 70% of 10; H2H 100% of 6",
+   "leagueFavRate": 1.0
   },
   {
    "eventId": "sr:match:72037450",
@@ -3998,7 +4058,8 @@
    "backing": 532,
    "icon": "https://s.sporty.net/common/main/res/9403fd59db384169e15cbe850c73dd44.png",
    "x12": "1.36/5.10/7.75",
-   "table": "1 v 16/18"
+   "table": "1 v 16/18",
+   "league": "France - Ligue 2"
   },
   {
    "eventId": "sr:match:67126884",
@@ -4023,13 +4084,13 @@
   },
   {
    "eventId": "sr:match:72225408",
-   "marketId": "60100",
-   "specifier": null,
-   "outcomeId": "1",
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
    "odds": 1.17,
    "match": "Maccabi Tel Aviv FC vs Maccabi Petah Tikva FC",
-   "market": "1X2 - 2UP",
-   "selection": "1X2 - 2UP: Home",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
    "date": "2026-11-06",
    "ko": "12:00",
    "start": "2026-11-06T12:00:00+00:00",
@@ -4040,7 +4101,11 @@
    "backing": 512,
    "icon": "https://s.sporty.net/ng/main/res/db5ddedec823033d5f57d9f53336e8b.png",
    "x12": "1.19/7.25/12.00",
-   "table": "1 v 9/14"
+   "table": "1 v 9/14",
+   "league": "Israel - Premier League",
+   "tip": "Over 1.5",
+   "case": "team support: x home 80% of 10, x away 100% of 10; H2H 100% of 6",
+   "leagueFavRate": 1.0
   },
   {
    "eventId": "sr:match:72043322",
@@ -4061,17 +4126,18 @@
    "backing": 394,
    "icon": "https://s.sporty.net/common/main/res/fd4a6303a9f288659249f857c0a5c2bf.png",
    "x12": "1.62/4.20/4.90",
-   "table": "2 v 18/18"
+   "table": "2 v 18/18",
+   "league": "Poland - Ekstraklasa"
   },
   {
    "eventId": "sr:match:75174724",
-   "marketId": "105",
-   "specifier": "from=1|to=10",
-   "outcomeId": "2",
+   "marketId": "29",
+   "specifier": null,
+   "outcomeId": "74",
    "odds": 1.18,
    "match": "Al Dhafra SSC vs Ittihad Kalba FC",
-   "market": "10 minutes - 1X2 from 1 to 10 10",
-   "selection": "10 minutes - 1X2 from 1 to 10 10: Draw",
+   "market": "BTTS",
+   "selection": "GG (BTTS Yes)",
    "date": "2026-11-07",
    "ko": "12:55",
    "start": "2026-11-07T12:55:00+00:00",
@@ -4082,17 +4148,18 @@
    "backing": 891,
    "icon": "https://s.sporty.net/gh/main/res/187702b14f7136ee7dad414458ac7a25.png",
    "x12": "2.80/3.70/2.15",
-   "table": "10 v 11/14"
+   "table": "10 v 11/14",
+   "tip": "GG (BTTS Yes)"
   },
   {
    "eventId": "sr:match:72278530",
-   "marketId": "60100",
-   "specifier": null,
-   "outcomeId": "1",
-   "odds": 1.54,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "odds": 1.28,
    "match": "FC Koper vs Mura Murska Sobota",
-   "market": "1X2 - 2UP",
-   "selection": "1X2 - 2UP: Home",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
    "date": "2026-11-07",
    "ko": "14:00",
    "start": "2026-11-07T14:00:00+00:00",
@@ -4103,17 +4170,21 @@
    "backing": 385,
    "icon": "https://s.sporty.net/gh/main/res/a75c52482ca86d0afd3c4c4f39d96554.png",
    "x12": "1.59/4.00/4.90",
-   "table": "1 v 8/10"
+   "table": "1 v 8/10",
+   "league": "Slovenia - PrvaLiga",
+   "tip": "Over 1.5",
+   "case": "team support: x home 60% of 10, x away 60% of 10; H2H 67% of 6",
+   "leagueFavRate": 1.0
   },
   {
    "eventId": "sr:match:72388082",
-   "marketId": "105",
-   "specifier": "from=1|to=10",
-   "outcomeId": "2",
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
    "odds": 1.2,
    "match": "AFK Csikszereda Miercurea Ciuc vs FC Universitatea Cluj",
-   "market": "10 minutes - 1X2 from 1 to 10 10",
-   "selection": "10 minutes - 1X2 from 1 to 10 10: Draw",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
    "date": "2026-11-07",
    "ko": "13:00",
    "start": "2026-11-07T13:00:00+00:00",
@@ -4124,17 +4195,21 @@
    "backing": 872,
    "icon": "https://s.sporty.net/ng/main/res/f72725fa4b69306085d7d51aeb53521a.png",
    "x12": "5.40/4.40/1.54",
-   "table": "16 v 4/16"
+   "table": "16 v 4/16",
+   "league": "Romania - Superliga",
+   "tip": "Over 1.5",
+   "case": "team support: x home 90% of 10, x away 80% of 10; H2H 100% of 5",
+   "leagueFavRate": 1.0
   },
   {
    "eventId": "sr:match:72680278",
-   "marketId": "105",
-   "specifier": "from=1|to=10",
-   "outcomeId": "2",
+   "marketId": "29",
+   "specifier": null,
+   "outcomeId": "74",
    "odds": 1.19,
    "match": "FC Ingolstadt 04 vs Fortuna D",
-   "market": "10 minutes - 1X2 from 1 to 10 10",
-   "selection": "10 minutes - 1X2 from 1 to 10 10: Draw",
+   "market": "BTTS",
+   "selection": "GG (BTTS Yes)",
    "date": "2026-11-07",
    "ko": "13:00",
    "start": "2026-11-07T13:00:00+00:00",
@@ -4145,17 +4220,18 @@
    "backing": 872,
    "icon": "https://s.sporty.net/common/main/res/227b6a7aaa035b2beff00df4e8b376ad.png",
    "x12": "2.70/3.60/2.45",
-   "table": "7 v 10/20"
+   "table": "7 v 10/20",
+   "tip": "GG (BTTS Yes)"
   },
   {
    "eventId": "sr:match:72524022",
-   "marketId": "105",
-   "specifier": "from=1|to=10",
-   "outcomeId": "2",
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
    "odds": 1.16,
    "match": "FC Rouen vs SC Bastia",
-   "market": "10 minutes - 1X2 from 1 to 10 10",
-   "selection": "10 minutes - 1X2 from 1 to 10 10: Draw",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
    "date": "2026-11-07",
    "ko": "13:45",
    "start": "2026-11-07T13:45:00+00:00",
@@ -4166,17 +4242,21 @@
    "backing": 872,
    "icon": "https://s.sporty.net/ng/main/res/238b10fa5ff732d4ccdf97d77d8f6d54.png",
    "x12": "1.67/3.75/4.60",
-   "table": "2 v 11/18"
+   "table": "2 v 11/18",
+   "league": "France - Ligue 3",
+   "tip": "Over 1.5",
+   "case": "team support: x home 90% of 10, x away 60% of 10; H2H 33% of 3",
+   "leagueFavRate": 1.0
   },
   {
    "eventId": "sr:match:72524020",
-   "marketId": "105",
-   "specifier": "from=1|to=10",
-   "outcomeId": "2",
+   "marketId": "29",
+   "specifier": null,
+   "outcomeId": "74",
    "odds": 1.16,
    "match": "US Concarneau vs FC Fleury 91",
-   "market": "10 minutes - 1X2 from 1 to 10 10",
-   "selection": "10 minutes - 1X2 from 1 to 10 10: Draw",
+   "market": "BTTS",
+   "selection": "GG (BTTS Yes)",
    "date": "2026-11-07",
    "ko": "13:45",
    "start": "2026-11-07T13:45:00+00:00",
@@ -4187,7 +4267,8 @@
    "backing": 872,
    "icon": "https://s.sporty.net/ng/main/res/238b10fa5ff732d4ccdf97d77d8f6d54.png",
    "x12": "2.10/3.33/3.25",
-   "table": "7 v 9/18"
+   "table": "7 v 9/18",
+   "tip": "GG (BTTS Yes)"
   },
   {
    "eventId": "sr:match:72302680",
@@ -4231,17 +4312,18 @@
    "backing": 847,
    "icon": "https://s.sporty.net/ng/main/res/1aacdf5681c33c113ac1c32048c52b8b.png",
    "x12": "1.65/4.10/4.40",
-   "table": "6 v 16/20"
+   "table": "6 v 16/20",
+   "league": "Turkiye - 1. Lig"
   },
   {
    "eventId": "sr:match:72334424",
-   "marketId": "105",
-   "specifier": "from=1|to=10",
-   "outcomeId": "2",
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
    "odds": 1.17,
    "match": "FC Fakel Voronezh vs FK Dinamo Moscow",
-   "market": "10 minutes - 1X2 from 1 to 10 10",
-   "selection": "10 minutes - 1X2 from 1 to 10 10: Draw",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
    "date": "2026-11-07",
    "ko": "11:00",
    "start": "2026-11-07T11:00:00+00:00",
@@ -4252,17 +4334,21 @@
    "backing": 847,
    "icon": "https://s.sporty.net/common/main/res/ab87514d82e0036a4a7c192778fb27e0.png",
    "x12": "5.00/4.00/1.67",
-   "table": "16 v 2/16"
+   "table": "16 v 2/16",
+   "league": "Russia - Premier League",
+   "tip": "Over 1.5",
+   "case": "team support: x home 60% of 10, x away 80% of 10; H2H 67% of 6",
+   "leagueFavRate": 1.0
   },
   {
    "eventId": "sr:match:73576712",
-   "marketId": "105",
-   "specifier": "from=1|to=10",
-   "outcomeId": "2",
+   "marketId": "29",
+   "specifier": null,
+   "outcomeId": "74",
    "odds": 1.17,
    "match": "Persija Jakarta vs Persebaya Surabaya",
-   "market": "10 minutes - 1X2 from 1 to 10 10",
-   "selection": "10 minutes - 1X2 from 1 to 10 10: Draw",
+   "market": "BTTS",
+   "selection": "GG (BTTS Yes)",
    "date": "2026-11-07",
    "ko": "12:00",
    "start": "2026-11-07T12:00:00+00:00",
@@ -4273,17 +4359,19 @@
    "backing": 847,
    "icon": "https://s.sporty.net/ng/main/res/b3e223ff152ce7444928dce3a6ab4fa5.png",
    "x12": "1.64/3.75/4.60",
-   "table": "2 v 7/18"
+   "table": "2 v 7/18",
+   "league": "Indonesia - Super League",
+   "tip": "GG (BTTS Yes)"
   },
   {
    "eventId": "sr:match:72340012",
-   "marketId": "900069",
-   "specifier": "minute=5",
-   "outcomeId": "2",
+   "marketId": "29",
+   "specifier": null,
+   "outcomeId": "74",
    "odds": 1.11,
    "match": "Bristol City vs Norwich",
-   "market": "1X2 from 1 to 5 minute 5",
-   "selection": "1X2 from 1 to 5 minute 5: Draw",
+   "market": "BTTS",
+   "selection": "GG (BTTS Yes)",
    "date": "2026-11-07",
    "ko": "12:30",
    "start": "2026-11-07T12:30:00+00:00",
@@ -4294,17 +4382,18 @@
    "backing": 811,
    "icon": "https://s.sporty.net/common/main/res/2e911d8614a00112a34f431c9477795.png",
    "x12": "2.71/3.56/2.63",
-   "table": "15 v 12/24"
+   "table": "15 v 12/24",
+   "tip": "GG (BTTS Yes)"
   },
   {
    "eventId": "sr:match:72723320",
-   "marketId": "900069",
-   "specifier": "minute=5",
-   "outcomeId": "2",
+   "marketId": "29",
+   "specifier": null,
+   "outcomeId": "74",
    "odds": 1.09,
    "match": "Samsunspor vs Konyaspor",
-   "market": "1X2 from 1 to 5 minute 5",
-   "selection": "1X2 from 1 to 5 minute 5: Draw",
+   "market": "BTTS",
+   "selection": "GG (BTTS Yes)",
    "date": "2026-11-07",
    "ko": "13:00",
    "start": "2026-11-07T13:00:00+00:00",
@@ -4315,7 +4404,8 @@
    "backing": 810,
    "icon": "https://s.sporty.net/common/main/res/7e0e4d31c50658568c0b1bf50023b317.png",
    "x12": "2.33/3.45/3.21",
-   "table": "17 v 15/18"
+   "table": "17 v 15/18",
+   "tip": "GG (BTTS Yes)"
   },
   {
    "eventId": "sr:match:68995432",
@@ -4359,17 +4449,18 @@
    "backing": 601,
    "icon": "https://s.sporty.net/ng/main/res/d3b9de1ea4a4f22f6ee330fdb75285cd.png",
    "x12": "2.15/3.84/3.41",
-   "table": "12 v 13/18"
+   "table": "12 v 13/18",
+   "league": "France - Ligue 1"
   },
   {
    "eventId": "sr:match:72522158",
-   "marketId": "60100",
-   "specifier": null,
-   "outcomeId": "1",
-   "odds": 1.36,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "odds": 1.28,
    "match": "Connah`s Quay Nomads FC vs Flint Town United",
-   "market": "1X2 - 2UP",
-   "selection": "1X2 - 2UP: Home",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
    "date": "2026-11-06",
    "ko": "20:00",
    "start": "2026-11-06T20:00:00+00:00",
@@ -4380,7 +4471,11 @@
    "backing": 361,
    "icon": "https://s.sporty.net/gh/main/res/1755c94a89881efcb29a8b870f662ec6.png",
    "x12": "1.38/5.00/7.00",
-   "table": "2 v 13/16"
+   "table": "2 v 13/16",
+   "league": "Wales - Cymru Premier",
+   "tip": "Over 1.5",
+   "case": "team support: x home 70% of 10, x away 80% of 10; H2H 100% of 6",
+   "leagueFavRate": 1.0
   }
  ],
  "markets": [
@@ -7712,7 +7807,7 @@
    "name": "Master · Hot matches",
    "legKey": [
     "sr:match:67015458:1",
-    "sr:match:71925092:1",
+    "sr:match:71925092:12",
     "sr:match:71945386:12",
     "sr:match:71945390:12",
     "sr:match:71945394:12",
@@ -7721,17 +7816,17 @@
     "sr:match:72221376:3",
     "sr:match:72221382:12",
     "sr:match:72221390:12",
-    "sr:match:72334410:1",
+    "sr:match:72334410:12",
     "sr:match:72478690:12",
     "sr:match:72478700:12",
     "sr:match:72513294:1",
     "sr:match:72513300:12",
     "sr:match:72531014:1",
-    "sr:match:72608070:1",
+    "sr:match:72608070:12",
     "sr:match:72723318:1"
    ],
    "legs": 18,
-   "totalOdds": 27.64,
+   "totalOdds": 27.21,
    "events": [
     "sr:match:71945390",
     "sr:match:72513294",
@@ -7755,46 +7850,46 @@
    "codes": {
     "sportybet": [
      {
-      "code": "9V9YXM",
-      "totalOdds": 27.64,
-      "legs": 18,
-      "link": "https://www.sportybet.com/gh/?shareCode=9V9YXM"
+      "code": "FLTX7J",
+      "totalOdds": 23.66,
+      "legs": 17,
+      "link": "https://www.sportybet.com/gh/?shareCode=FLTX7J"
      }
     ],
     "msport": [
      {
-      "code": "B3G4LK9",
-      "totalOdds": 4.79,
-      "legs": 10,
-      "link": "https://www.msport.com/gh/?shareCode=B3G4LK9"
+      "code": "B3G5F2V",
+      "totalOdds": 6.61,
+      "legs": 13,
+      "link": "https://www.msport.com/gh/?shareCode=B3G5F2V"
      }
     ],
     "betika": [
      {
-      "code": "2pcyxZ",
-      "totalOdds": 5.09,
-      "legs": 10,
-      "link": "https://betika.com/en-gh/share/2pcyxZ"
+      "code": "SnnpY7",
+      "totalOdds": 5.75,
+      "legs": 11,
+      "link": "https://betika.com/en-gh/share/SnnpY7"
      }
     ],
     "footballcom": [
      {
-      "code": "9V9YXM",
-      "totalOdds": 28.62,
-      "legs": 18,
-      "link": "https://www.football.com/gh/?shareCode=9V9YXM"
+      "code": "FLTX7J",
+      "totalOdds": 19.18,
+      "legs": 17,
+      "link": "https://www.football.com/gh/?shareCode=FLTX7J"
      }
     ],
     "betpawa": [
      {
-      "code": "1NCDRJ0",
-      "totalOdds": 5.67,
-      "legs": 10,
-      "link": "https://www.betpawa.com.gh/share-betslip/1NCDRJ0"
+      "code": "N0HUXG8",
+      "totalOdds": 7.9,
+      "legs": 13,
+      "link": "https://www.betpawa.com.gh/share-betslip/N0HUXG8"
      }
     ]
    },
-   "bookedAt": "2026-11-06T11:57:21+00:00",
+   "bookedAt": "2026-11-06T13:30:52+00:00",
    "section": "hot_matches",
    "label": "Hot matches",
    "picks": [
@@ -7817,7 +7912,8 @@
      "backing": 4666,
      "icon": "https://s.sporty.net/common/main/res/a8694bcb5dd1e35e883a59fb015af140.png",
      "x12": "4.67/3.67/1.84",
-     "table": "11 v 5/20"
+     "table": "11 v 5/20",
+     "league": "Italy - Serie A"
     },
     {
      "eventId": "sr:match:72513294",
@@ -7838,7 +7934,8 @@
      "backing": 2959,
      "icon": "https://s.sporty.net/ng/main/res/5a3769d4c1ba239747f9ba238c167146.png",
      "x12": "1.48/5.66/5.90",
-     "table": "4 v 10/18"
+     "table": "4 v 10/18",
+     "league": "Germany - Bundesliga"
     },
     {
      "eventId": "sr:match:72478700",
@@ -7859,7 +7956,8 @@
      "backing": 2426,
      "icon": "https://s.sporty.net/ng/main/res/e7f770fd357a8ee8ad5b0406e7c7f0aa.png",
      "x12": "1.98/3.54/4.29",
-     "table": "6 v 11/20"
+     "table": "6 v 11/20",
+     "league": "Spain - LaLiga"
     },
     {
      "eventId": "sr:match:72036282",
@@ -7880,7 +7978,8 @@
      "backing": 2065,
      "icon": "https://s.sporty.net/ng/main/res/d3b9de1ea4a4f22f6ee330fdb75285cd.png",
      "x12": "4.42/4.11/1.78",
-     "table": "17 v 7/18"
+     "table": "17 v 7/18",
+     "league": "France - Ligue 1"
     },
     {
      "eventId": "sr:match:71945394",
@@ -7901,7 +8000,8 @@
      "backing": 2026,
      "icon": "https://s.sporty.net/common/main/res/a8694bcb5dd1e35e883a59fb015af140.png",
      "x12": "3.33/3.80/2.15",
-     "table": "18 v 13/20"
+     "table": "18 v 13/20",
+     "league": "Italy - Serie A"
     },
     {
      "eventId": "sr:match:72036276",
@@ -7922,7 +8022,8 @@
      "backing": 1878,
      "icon": "https://s.sporty.net/ng/main/res/d3b9de1ea4a4f22f6ee330fdb75285cd.png",
      "x12": "4.46/4.07/1.82",
-     "table": "14 v 4/18"
+     "table": "14 v 4/18",
+     "league": "France - Ligue 1"
     },
     {
      "eventId": "sr:match:72221390",
@@ -7943,7 +8044,8 @@
      "backing": 1959,
      "icon": "https://s.sporty.net/common/main/res/6ad6134cba3225c2f5126b0ae8c17dfc.png",
      "x12": "3.76/3.71/2.02",
-     "table": "20 v 4/20"
+     "table": "20 v 4/20",
+     "league": "England - Premier League"
     },
     {
      "eventId": "sr:match:71945386",
@@ -7964,7 +8066,8 @@
      "backing": 1774,
      "icon": "https://s.sporty.net/common/main/res/a8694bcb5dd1e35e883a59fb015af140.png",
      "x12": "2.80/3.74/2.53",
-     "table": "12 v 6/20"
+     "table": "12 v 6/20",
+     "league": "Italy - Serie A"
     },
     {
      "eventId": "sr:match:72221382",
@@ -7985,7 +8088,8 @@
      "backing": 3593,
      "icon": "https://s.sporty.net/common/main/res/6ad6134cba3225c2f5126b0ae8c17dfc.png",
      "x12": "3.80/3.80/1.98",
-     "table": "14 v 8/20"
+     "table": "14 v 8/20",
+     "league": "England - Premier League"
     },
     {
      "eventId": "sr:match:72531014",
@@ -8006,7 +8110,8 @@
      "backing": 1371,
      "icon": "https://s.sporty.net/ng/main/res/d4aa6f519ef3ef6e81cf04c0a5325c50.png",
      "x12": "1.19/8.19/15.33",
-     "table": "3 v 9/18"
+     "table": "3 v 9/18",
+     "league": "Portugal - Liga Portugal"
     },
     {
      "eventId": "sr:match:72513300",
@@ -8029,7 +8134,8 @@
      "x12": "1.52/4.76/6.22",
      "table": "3 v 16/18",
      "case": "team support: x home 90% of 10, x away 70% of 10; H2H 33% of 6",
-     "leagueFavRate": 1.0
+     "leagueFavRate": 1.0,
+     "league": "Germany - Bundesliga"
     },
     {
      "eventId": "sr:match:67015458",
@@ -8050,17 +8156,18 @@
      "backing": 1126,
      "icon": "https://s.sporty.net/common/main/res/721ddc242c2d6b00b14fc4b3efe9352e.png",
      "x12": "1.25/7.10/11.10",
-     "table": "4 v 16/16"
+     "table": "4 v 16/16",
+     "league": "Norway - Eliteserien"
     },
     {
      "eventId": "sr:match:71925092",
-     "marketId": "60100",
-     "specifier": null,
-     "outcomeId": "1",
-     "odds": 1.3,
+     "marketId": "18",
+     "specifier": "total=1.5",
+     "outcomeId": "12",
+     "odds": 1.28,
      "match": "FC Midtjylland vs SonderjyskE",
-     "market": "1X2 - 2UP",
-     "selection": "1X2 - 2UP: Home",
+     "market": "Over/Under",
+     "selection": "Over 1.5",
      "date": "2026-11-08",
      "ko": "17:00",
      "start": "2026-11-08T17:00:00+00:00",
@@ -8071,7 +8178,10 @@
      "backing": 899,
      "icon": "https://s.sporty.net/common/main/res/bbddda6e6de84193f13748b815d3eb43.png",
      "x12": "1.33/5.90/7.60",
-     "table": "1 v 12/12"
+     "table": "1 v 12/12",
+     "tip": "Over 1.5",
+     "case": "team support: x home 90% of 10, x away 100% of 10; H2H 100% of 6",
+     "leagueFavRate": 1.0
     },
     {
      "eventId": "sr:match:72478690",
@@ -8092,17 +8202,18 @@
      "backing": 1862,
      "icon": "https://s.sporty.net/ng/main/res/e7f770fd357a8ee8ad5b0406e7c7f0aa.png",
      "x12": "3.27/3.76/2.18",
-     "table": "17 v 4/20"
+     "table": "17 v 4/20",
+     "league": "Spain - LaLiga"
     },
     {
      "eventId": "sr:match:72608070",
-     "marketId": "60100",
-     "specifier": null,
-     "outcomeId": "1",
+     "marketId": "18",
+     "specifier": "total=1.5",
+     "outcomeId": "12",
      "odds": 1.15,
      "match": "Slavia Prague vs SK Artis Brno",
-     "market": "1X2 - 2UP",
-     "selection": "1X2 - 2UP: Home",
+     "market": "Over/Under",
+     "selection": "Over 1.5",
      "date": "2026-11-08",
      "ko": "14:00",
      "start": "2026-11-08T14:00:00+00:00",
@@ -8113,7 +8224,10 @@
      "backing": 1046,
      "icon": "https://s.sporty.net/ng/main/res/748443b0c80e9a08df462af21bee4a6d.png",
      "x12": "1.16/7.80/13.50",
-     "table": "1 v 14/16"
+     "table": "1 v 14/16",
+     "tip": "Over 1.5",
+     "case": "team support: x home 80% of 10, x away 80% of 10; H2H 100% of 1",
+     "leagueFavRate": 1.0
     },
     {
      "eventId": "sr:match:72723318",
@@ -8134,17 +8248,18 @@
      "backing": 1042,
      "icon": "https://s.sporty.net/common/main/res/7e0e4d31c50658568c0b1bf50023b317.png",
      "x12": "1.23/6.74/11.13",
-     "table": "4 v 14/18"
+     "table": "4 v 14/18",
+     "league": "Turkiye - Super Lig"
     },
     {
      "eventId": "sr:match:72334410",
-     "marketId": "60100",
-     "specifier": null,
-     "outcomeId": "1",
+     "marketId": "18",
+     "specifier": "total=1.5",
+     "outcomeId": "12",
      "odds": 1.24,
      "match": "FK Spartak Moscow vs FK Akron Tolyatti",
-     "market": "1X2 - 2UP",
-     "selection": "1X2 - 2UP: Home",
+     "market": "Over/Under",
+     "selection": "Over 1.5",
      "date": "2026-11-08",
      "ko": "13:15",
      "start": "2026-11-08T13:15:00+00:00",
@@ -8155,7 +8270,10 @@
      "backing": 1373,
      "icon": "https://s.sporty.net/common/main/res/ab87514d82e0036a4a7c192778fb27e0.png",
      "x12": "1.26/6.40/9.80",
-     "table": "4 v 13/16"
+     "table": "4 v 13/16",
+     "tip": "Over 1.5",
+     "case": "team support: x home 80% of 10, x away 90% of 10; H2H 100% of 6",
+     "leagueFavRate": 1.0
     },
     {
      "eventId": "sr:match:72221376",
@@ -8176,7 +8294,8 @@
      "backing": 1893,
      "icon": "https://s.sporty.net/common/main/res/6ad6134cba3225c2f5126b0ae8c17dfc.png",
      "x12": "5.40/4.53/1.60",
-     "table": "18 v 5/20"
+     "table": "18 v 5/20",
+     "league": "England - Premier League"
     }
    ],
    "meetsFloor": true

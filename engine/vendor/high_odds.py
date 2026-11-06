@@ -402,9 +402,12 @@ def mr_is_hard_veto(leg):
     sys.path.insert(0, str(RESEARCH))
     sys.path.insert(0, str(FEED))
     import matchup_rules as mr
+    if leg.get('gateExempt') or leg.get('exempt'):
+        return False
+    obscure = hasattr(mr, 'is_obscure_league_non_goals') and mr.is_obscure_league_non_goals(leg)
     if hasattr(mr, 'is_dc_vetoed'):
-        return mr.is_dc_vetoed(leg) or mr_is_btts_no(leg)
-    return mr_is_double_chance(leg) or mr_is_btts_no(leg)
+        return mr.is_dc_vetoed(leg) or mr_is_btts_no(leg) or obscure
+    return mr_is_double_chance(leg) or mr_is_btts_no(leg) or obscure
 
 
 def rebook_dc_free_existing(existing, previous_replacements=None):
@@ -424,8 +427,10 @@ def rebook_dc_free_existing(existing, previous_replacements=None):
         if not any(mr_is_hard_veto(p) for p in legs):
             continue
         kept = []
+        sys.path.insert(0, str(FEED))
+        import matchup_rules as mr
         for p in legs:
-            if mr_is_hard_veto(p) or p.get('matchStatus') not in (None, 'Not start'):
+            if p.get('matchStatus') not in (None, 'Not start'):
                 continue
             start = p.get('kickoff')
             try:
@@ -433,7 +438,16 @@ def rebook_dc_free_existing(existing, previous_replacements=None):
                     continue
             except Exception:
                 pass
-            kept.append(p)
+            q = dict(p)
+            if mr_is_hard_veto(q):
+                if hasattr(mr, 'is_obscure_league_non_goals') and mr.is_obscure_league_non_goals(q) and hasattr(mr, 'swap_to_goals'):
+                    swapped = mr.swap_to_goals(q)
+                    if not swapped:
+                        continue
+                    q = swapped
+                else:
+                    continue
+            kept.append(q)
         odds = math.prod(float(p.get('odds') or 1) for p in kept)
         if not kept or odds < 25:
             print('drop vetoed high-odds code', old.get('code'), 'no 25+ DC/NG-free replacement')

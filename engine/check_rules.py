@@ -42,7 +42,7 @@ def main() -> int:
         fail("config.json max_leg_odds must be 1.6")
     if int(cfg["min_main_slip_odds"]) != 25:
         fail("config.json min_main_slip_odds must be 25")
-    if cfg.get("hard_vetoes") != ["double_chance_12", "double_chance_1x_x2_above_1.35", "btts_no"]:
+    if cfg.get("hard_vetoes") != ["double_chance_12", "double_chance_1x_x2_above_1.35", "btts_no", "obscure_league_non_goals"]:
         fail("config.json hard_vetoes drifted")
     if abs(float(cfg.get("dc_1x_x2_max") or 0) - 1.35) > 0.001:
         fail("config.json dc_1x_x2_max must be 1.35")
@@ -102,6 +102,21 @@ def main() -> int:
             fail(f"hot_section_masters.py missing section id {sid}")
     if "sectionMasters" not in rules:
         fail("RULES.md must document Hot sectionMasters")
+
+
+    if "obscure_league_non_goals" not in cfg.get("hard_vetoes", []):
+        fail("config.json hard_vetoes must include obscure_league_non_goals")
+    majors = (cfg.get("major_leagues") or {}).get("patterns") or []
+    if len(majors) < 20:
+        fail("config.json major_leagues.patterns must list major competitions")
+    if "ghana - premier league" not in [str(x).lower() for x in majors]:
+        fail("major_leagues must include Ghana Premier League")
+    if "obscure" not in rules.lower() or "goals only" not in rules.lower():
+        fail("RULES.md must document obscure-league goals-only veto")
+    mr = (ENGINE / "vendor" / "matchup_rules.py").read_text()
+    for token in ("is_obscure_league_non_goals", "is_goals_market", "is_major_league", "swap_to_goals"):
+        if token not in mr:
+            fail(f"matchup_rules.py missing {token}")
 
     for name in cfg["required_vendor"]:
         path = ENGINE / "vendor" / name

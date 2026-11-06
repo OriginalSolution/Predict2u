@@ -6,7 +6,7 @@ from engine.rules import check, classify, is_double_chance, is_dc_vetoed, dc_var
 
 
 def pick(**kw):
-    base = dict(match="Alpha v Beta", league="Test - League", market="1X2", selection="Alpha",
+    base = dict(match="Alpha v Beta", league="England - Premier League", market="1X2", selection="Alpha",
                 odds=1.25, eventId="sr:match:1", marketId="1", specifier="", outcomeId="1",
                 table="8 v 12/20", x12="1.40/4.00/8.00", case="table 8 v 12/20; 1X2 1.40/4.00/8.00")
     base.update(kw)

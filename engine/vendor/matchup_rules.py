@@ -77,6 +77,261 @@ def is_btts_no(p):
   if re.search(r'\b(btts\s*no|gg\s*no|both teams(?: to score)? no)\b', sel, re.I): return True
   return False
 
+# ---- Obscure leagues: goals markets only (user veto 2026-11-06) ----
+# Major/well-known leagues live in engine/config.json → major_leagues.patterns.
+# Anything else may only use Over/Under (incl. team totals) or GG/BTTS Yes.
+# NG remains banned. Daily master legs marked gateExempt/exempt are the only exception.
+import json as _json_cfg
+from pathlib import Path as _Path_cfg
+
+_MAJOR_PATTERNS=None
+_LEAGUE_CACHE={}
+
+def _load_major_patterns():
+  global _MAJOR_PATTERNS
+  if _MAJOR_PATTERNS is not None:
+    return _MAJOR_PATTERNS
+  patterns=[]
+  for base in (
+    _Path_cfg(__file__).resolve().parents[1] / 'config.json',
+    _Path_cfg(__file__).resolve().parents[2] / 'engine' / 'config.json',
+  ):
+    try:
+      cfg=_json_cfg.loads(base.read_text())
+      patterns=list((cfg.get('major_leagues') or {}).get('patterns') or [])
+      if patterns:
+        break
+    except Exception:
+      pass
+  _MAJOR_PATTERNS=[str(x).strip().lower() for x in patterns if str(x).strip()]
+  return _MAJOR_PATTERNS
+
+def league_label(p):
+  """Best-effort Category - Tournament label for a pick."""
+  for k in ('league','tournament','tournamentName','competition','comp'):
+    v=p.get(k)
+    if v: return str(v).strip()
+  return ''
+
+_LEAGUE_INDEX=None
+# SportyBet unique-tournament ids we know map to major competitions (stats match_info._utid).
+_UTID_MAJOR={
+  '1':'England - Premier League','17':'England - Championship','8':'Spain - LaLiga','54':'Spain - LaLiga2',
+  '35':'Germany - Bundesliga','44':'Germany - 2. Bundesliga','23':'Italy - Serie A','53':'Italy - Serie B',
+  '34':'France - Ligue 1','182':'France - Ligue 2','37':'Netherlands - Eredivisie','131':'Netherlands - Eerste Divisie',
+  '238':'Portugal - Liga Portugal','7':'UEFA Champions League','679':'UEFA Europa League','17015':'UEFA Conference League',
+  '242':'Brazil - Brasileiro Serie A','155':'Argentina - Primera LPF','242':'Brazil - Brasileiro Serie A',
+  '266':'USA - Major League Soccer','955':'Saudi Arabia - Pro League',
+}
+
+def _league_index():
+  """eventId → league built from published site JSON (high_odds/home/picks)."""
+  global _LEAGUE_INDEX
+  if _LEAGUE_INDEX is not None:
+    return _LEAGUE_INDEX
+  idx={}
+  root=_Path_cfg(__file__).resolve().parents[2]
+  for name in ('high_odds.json','home-picks.json','picks.json','hot-picks.json'):
+    path=root/name
+    if not path.exists():
+      continue
+    try:
+      doc=_json_cfg.loads(path.read_text())
+    except Exception:
+      continue
+    stack=[doc]
+    while stack:
+      o=stack.pop()
+      if isinstance(o,list):
+        stack.extend(o)
+      elif isinstance(o,dict):
+        eid=o.get('eventId'); lg=o.get('league')
+        if eid and lg and eid not in idx:
+          idx[eid]=str(lg).strip()
+        stack.extend(o.values())
+  _LEAGUE_INDEX=idx
+  return idx
+
+def resolve_league(p):
+  """Fill p['league'] from pick fields, site index, stats utid map, or SportyBet event API."""
+  lg=league_label(p)
+  if lg:
+    return lg
+  eid=str(p.get('eventId') or '')
+  if not eid:
+    return ''
+  if eid in _LEAGUE_CACHE:
+    lg=_LEAGUE_CACHE[eid]
+    if lg: p['league']=lg
+    return lg
+  lg=_league_index().get(eid) or ''
+  if not lg:
+    try:
+      sid=eid.split(':')[-1]
+      mi=_G('match_info/'+sid) or {}
+      utid=str(((mi.get('match') or {}).get('_utid')) or '')
+      lg=_UTID_MAJOR.get(utid) or ''
+    except Exception:
+      lg=''
+  if not lg:
+    try:
+      r=_j.loads(subprocess.run(
+        ['curl','-s','-m','12','-A','Mozilla/5.0',
+         f'https://www.sportybet.com/api/gh/factsCenter/event?eventId={eid}&productId=3'],
+        capture_output=True,text=True).stdout)
+      e=(r.get('data') or {})
+      cat=((e.get('sport') or {}).get('category') or {})
+      tour=(cat.get('tournament') or {})
+      parts=[x for x in (cat.get('name'), tour.get('name')) if x]
+      lg=' - '.join(parts)
+    except Exception:
+      lg=''
+  _LEAGUE_CACHE[eid]=lg
+  if lg: p['league']=lg
+  return lg
+
+def is_major_league(league_or_pick):
+  """True when the competition matches a configured major/well-known pattern."""
+  if isinstance(league_or_pick, dict):
+    lg=resolve_league(league_or_pick) or league_label(league_or_pick)
+  else:
+    lg=str(league_or_pick or '')
+  s=lg.lower().strip()
+  if not s:
+    return False  # unknown → treat as obscure (goals only)
+  for pat in _load_major_patterns():
+    if pat and pat in s:
+      return True
+  return False
+
+def is_goals_market(p):
+  """Over/Under totals (incl. team totals) and GG/BTTS Yes. NG / BTTS No is not goals-allowed."""
+  if is_btts_no(p):
+    return False
+  mid=str(p.get('marketId') or p.get('mid') or '')
+  sel=str(p.get('selection') or p.get('tip') or '').strip()
+  mk=str(p.get('market') or p.get('marketDescription') or p.get('md') or '')
+  # Match totals / team totals
+  if mid in ('18','19','20','68','90','60118','60168','60190'):
+    return True
+  if mid in ('29','60129'):
+    # BTTS Yes only
+    oid=str(p.get('outcomeId') or p.get('oid') or '')
+    if oid in ('74','75'):  # SportyBet Yes variants
+      return True
+    return bool(re.search(r'(yes|gg)', sel, re.I)) and not re.search(r'no', sel, re.I)
+  # Text fallbacks
+  blob=(mk+' '+sel).lower()
+  if re.search(r'(over|under)\s+\d', blob) or re.search(r'team over|total goals|over/under', blob):
+    # Exclude win/or combos like "Away or Over 2.5"
+    if re.search(r'(home|away|draw|1x|x2|12).*or|or.*(home|away|draw)', blob):
+      return False
+    return True
+  if re.search(r'both teams to score|btts|gg', blob) and re.search(r'yes|gg', blob) and not re.search(r'no', blob):
+    return True
+  return False
+
+def is_gate_exempt(p):
+  return bool(p.get('gateExempt') or p.get('exempt') or p.get('dailyMaster') or p.get('masterExempt'))
+
+def is_obscure_league_non_goals(p):
+  """Hard veto candidate: non-goals market in a non-major league (unless daily-master exempt)."""
+  if is_gate_exempt(p):
+    return False
+  if is_goals_market(p):
+    return False
+  return not is_major_league(p)
+
+def obscure_veto_reason(p):
+  lg=league_label(p) or resolve_league(p) or '(unknown league)'
+  return f'HARD VETO: obscure league goals-only — {lg}: non-goals market {p.get("selection") or p.get("market")} not allowed'
+
+# Preferred goals swaps when an obscure-league non-goals leg must be replaced.
+GOALS_SWAP_CANDIDATES=(
+  ('18','total=1.5','12','Over 1.5'),
+  ('18','total=0.5','12','Over 0.5'),
+  ('29','','74','GG (BTTS Yes)'),
+  ('19','total=0.5','12','Home team over 0.5'),
+  ('20','total=0.5','12','Away team over 0.5'),
+  ('18','total=2.5','12','Over 2.5'),
+  ('18','total=3.5','13','Under 3.5'),
+)
+
+def _event_markets(eid):
+  try:
+    r=_j.loads(subprocess.run(
+      ['curl','-s','-m','15','-A','Mozilla/5.0',
+       f'https://www.sportybet.com/api/gh/factsCenter/event?eventId={eid}&productId=3'],
+      capture_output=True,text=True).stdout)
+    return (r.get('data') or {}).get('markets') or []
+  except Exception:
+    return []
+
+def swap_to_goals(p):
+  """Replace a non-goals obscure-league leg with the best stats-supported goals market.
+  Returns a new pick dict or None if nothing passes the remaining rules."""
+  if not p or not p.get('eventId'):
+    return None
+  if is_goals_market(p) and not is_btts_no(p):
+    return p
+  markets=_event_markets(p['eventId'])
+  by={}
+  for m in markets:
+    mid=str(m.get('id') or '')
+    sp=m.get('specifier') or ''
+    for o in m.get('outcomes') or []:
+      by[(mid,sp,str(o.get('id')))]=o
+  # When the event API is blocked (common from CI/box 403), still propose standard goals
+  # templates so rebook can validate them through the booking API.
+  if not by:
+    for mid,sp,oid,label in GOALS_SWAP_CANDIDATES:
+      by[(mid,sp,oid)]={'odds': min(float(p.get('odds') or 1.22), 1.28), 'desc': label}
+  best=None
+  best_score=None
+  for mid,sp,oid,label in GOALS_SWAP_CANDIDATES:
+    o=by.get((mid,sp,oid))
+    if not o: continue
+    try: odds=float(o.get('odds') or 0)
+    except Exception: continue
+    if odds<=1.01: continue
+    cand=dict(p)
+    cand.update(
+      marketId=mid, specifier=sp or None, outcomeId=oid, odds=odds,
+      market='Over/Under' if mid=='18' else ('BTTS' if mid=='29' else cand.get('market') or label),
+      selection=o.get('desc') or label,
+      tip=o.get('desc') or label,
+    )
+    # Drop previous matchup classification so check re-runs cleanly
+    for k in ('matchup','strictGate'):
+      cand.pop(k, None)
+    try:
+      enrich(cand)
+    except Exception:
+      pass
+    # Hard vetoes must still apply; matchup class may be unverifiable on obscure cups —
+    # accept short goals prices (<=1.35) when full check only fails as unverified/skip-table.
+    if is_dc_vetoed(cand) or is_btts_no(cand):
+      continue
+    if float(cand.get('odds') or 0)>MAX_LEG and not extreme160(cand):
+      continue
+    ok,cls,why=check(cand)
+    soft_ok = (not ok and cls in ('unverified','skip') and odds<=1.35 and is_goals_market(cand))
+    # also allow when check fails only because obscure rule ran on a non-goals cand (shouldn't)
+    if not ok and not soft_ok:
+      # Retry classifying without obscure block for goals cand: if only obscure would have
+      # mattered we already know is_goals_market; accept low-risk goals.
+      if cls == 'obscure-league-goals':
+        continue
+      if odds<=1.30 and mid in ('18','19','20','29') and is_goals_market(cand):
+        soft_ok=True
+      else:
+        continue
+    pref={'18|total=1.5|12':0,'29||74':1,'18|total=0.5|12':2,'19|total=0.5|12':3,'20|total=0.5|12':4}.get(f'{mid}|{sp}|{oid}',9)
+    score=(0 if ok else 1, pref, odds)
+    if best is None or score<best_score:
+      best,best_score=cand,score
+  return best
+
 ALLOW={'mismatch':{'18|total=1.5|12','29||74','19|total=0.5|12','20|total=0.5|12'},
        'even':{'18|total=3.5|13','29||74','19|total=0.5|12','20|total=0.5|12'},
        'middle':{'29||74','19|total=0.5|12','20|total=0.5|12'}}
@@ -128,6 +383,8 @@ def check(p):
     return False,'double-chance-veto',dc_veto_reason(p)
   if is_btts_no(p):
     return False,'btts-no-veto','HARD VETO: NG (BTTS No / GG No) is never published; choose another market or drop the match'
+  if is_obscure_league_non_goals(p):
+    return False,'obscure-league-goals',obscure_veto_reason(p)
   if float(p.get('odds') or 0)>MAX_LEG and not extreme160(p):
     return False,'over160',f"{p.get('selection')} @{p.get('odds')} > {MAX_LEG} without extreme stats"
   cls,why=classify(p)

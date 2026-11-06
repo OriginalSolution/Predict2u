@@ -18,4 +18,9 @@ from matchup_rules import (  # noqa: E402
     dc_variant,
     DC_1X_X2_MAX,
     is_btts_no,
+    is_goals_market,
+    is_major_league,
+    is_obscure_league_non_goals,
+    swap_to_goals,
+    resolve_league,
 )

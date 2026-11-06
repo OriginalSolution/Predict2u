@@ -9,6 +9,7 @@ All times below are Africa/Accra (UTC+0).
 - Never publish or book **DC 12** (Home or Away) at any price.
 - Never publish or book **1X or X2** (Home or Draw / Draw or Away, including DC combo markets) when priced **above 1.35**. **1X/X2 at 1.35 or below is allowed.**
 - Never publish or book **NG** (BTTS No / GG No). BTTS Yes / GG is allowed when other gates pass.
+- **Obscure leagues → goals only:** competitions outside the major/well-known allowlist in `config.json` → `major_leagues.patterns` (top European leagues + their 2nd tiers, UEFA/FIFA/continental club comps, major domestic cups, MLS, Brasileiro, Argentina Primera, Saudi Pro League, Ghana Premier League, other named majors) may only use **goals markets**: Over/Under totals (including team totals) and GG/BTTS Yes. **NG remains banned.** 1X2, DC, handicap, win-to-nil, and similar non-goals markets in obscure leagues are swapped to the best stats-supported goals market or dropped. The **daily master** (`gateExempt` / Code of the Day) is the only exception.
 - Never print tipster or bot names on the public site.
 - Ignore SMAGPF as a pick source.
 - Main slips must stay at **25+** combined odds.
