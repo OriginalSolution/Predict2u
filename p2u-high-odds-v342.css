@@ -45,3 +45,7 @@ html,body{background:var(--bg)!important;color:var(--tx);overflow-x:hidden;max-w
 .high-wrap .p2u-chip-unavailable{color:var(--on,#fff)!important;-webkit-text-fill-color:var(--on,#fff)!important}
 #doing-carousel .bp-book,#doing-accordions .bp-book{margin:10px 0}
 #doing-carousel .bp-card{min-height:0!important}
+
+/* v352 — never show pending/unavailable bookmaker chips */
+.high-wrap .p2u-chip.is-pending,.high-wrap .bookchip.pending,.high-wrap .p2u-chip:has(.p2u-chip-unavailable){display:none!important}
+.high-wrap .bp-book:has(.p2u-bankers-empty):not(:has(.bp-card)){display:none!important}

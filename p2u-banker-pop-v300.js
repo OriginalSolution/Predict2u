@@ -24,7 +24,7 @@
     try{if(localStorage.getItem(KEY)===day)return;}catch(e){}
     var code=s.codes.sportybet,link='https://www.sportybet.com/gh/?shareCode='+encodeURIComponent(code);
     var n=(s.bookPicks&&s.bookPicks.sportybet)||(s.legs||[]).length;
-    var chips=Object.keys(s.codes).filter(function(k){return k!=='sportybet'&&s.codes[k]&&BOOKS[k];}).map(function(k){
+    var chips=Object.keys(s.codes).filter(function(k){return k!=='sportybet'&&BOOKS[k]&&(window.P2UCode?P2UCode.isReal(s.codes[k]):!!s.codes[k]);}).map(function(k){
       var b=BOOKS[k],c=esc(s.codes[k]),inner='<img src="'+b[1]+'" alt="" width="20" height="20"><span>'+b[0]+'</span><b>'+c+'</b>';
       return b[2]?'<a class="bcod-chip" href="'+b[2].replace('{c}',encodeURIComponent(s.codes[k]))+'" target="_blank" rel="noopener" aria-label="'+b[0]+' code '+c+'">'+inner+'</a>':'<span class="bcod-chip">'+inner+'</span>';
     }).join('');

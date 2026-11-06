@@ -1,4 +1,4 @@
-/* Predict2U v316 — Safe + Medium slips on the home page, above the 25+ all-picks codes. */
+/* Predict2U v316b — hide bookmakers with no code (no Not booked / pending chips). */
 (function(){
   'use strict';
   var ZONE='Africa/Accra';
@@ -20,17 +20,16 @@
     document.head.appendChild(st);}
   function chips(s){
     var c=s.codes||{};
-    return '<div class="p2u-chips">'+BOOKS.map(function(b){
+    var html=BOOKS.map(function(b){
       var raw=c[b[0]],hc=raw&&typeof raw==='object';
       var o=hc?raw.odds:(s.bookOdds&&s.bookOdds[b[0]])||s.totalOdds;
       var n=hc?raw.legs:(s.bookPicks&&s.bookPicks[b[0]])||(s.legs||[]).length;
       var code=hc?raw.code:raw;
-      if(!code){
-        if(!s.highOdds)return '';
-        return '<div class="p2u-chip p2u-chip-'+b[0]+' is-pending"><img src="/'+b[2]+'" alt="" width="24" height="24"><span class="p2u-chip-t"><span class="p2u-chip-n">'+b[1]+'</span><span class="p2u-chip-c p2u-chip-unavailable">Not booked</span><span class="p2u-chip-o p2u-chip-reason">'+esc((s.bookingPending||{})[b[0]]||'Not booked')+'</span></span><button type="button" class="p2u-chip-cp" disabled>Pending</button></div>';
-      }
+      if(!(window.P2UCode?P2UCode.isReal(code):!!code))return '';
       return '<div class="p2u-chip p2u-chip-'+b[0]+'" data-book="'+b[0]+'" data-code="'+esc(code)+'" data-legs="'+esc(n)+'" data-odds="'+esc(o)+'"><img src="/'+b[2]+'" alt="" width="24" height="24" loading="lazy"><span class="p2u-chip-t"><span class="p2u-chip-n">'+b[1]+'</span><a class="p2u-chip-c" target="_blank" rel="noopener" href="'+b[3]+encodeURIComponent(code)+'">'+esc(code)+'</a><span class="p2u-chip-o">@'+Number(o).toFixed(2)+' · '+n+' picks</span></span><button type="button" class="p2u-chip-cp" data-copy="'+esc(code)+'" aria-label="Copy '+b[1]+' code">Copy</button></div>';
-    }).join('')+'</div>';
+    }).join('');
+    if(!html.replace(/\s+/g,''))return '';
+    return '<div class="p2u-chips">'+html+'</div>';
   }
   document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.p2u-risk [data-copy],.high-wrap [data-copy]');if(!b)return;var c=b.getAttribute('data-copy'),ok=function(){b.textContent='Copied ✓';setTimeout(function(){b.textContent='Copy';},1600)};if(navigator.clipboard)navigator.clipboard.writeText(c).then(ok,ok);else{var t=document.createElement('textarea');t.value=c;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(_){}t.remove();ok()}});
   function card(s){

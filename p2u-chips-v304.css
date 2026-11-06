@@ -55,3 +55,10 @@
 /* Unbooked codes retain the tile structure without looking actionable. */
 .p2u-chip.is-pending{--brand:#475569!important;--on:#d2d8e1!important;filter:grayscale(1);opacity:.48;box-shadow:none!important}.p2u-chip.is-pending .p2u-chip-cp{cursor:not-allowed}
 @media(max-width:480px){.p2u-chips{gap:6px}.p2u-chip{grid-template-columns:20px minmax(0,1fr) auto;padding:7px;gap:4px 6px}.p2u-chip img{width:20px;height:20px}.p2u-chip-cp{min-width:40px;min-height:40px;padding:0 5px;font-size:.68rem}.p2u-chip-c{font-size:.86rem}.p2u-chip-n,.p2u-chip-o{font-size:.62rem}}
+
+/* v352 hide empty / pending bookmaker chips site-wide */
+.p2u-chip.is-pending,.bookchip.pending,.p2u-chip:has(.p2u-chip-unavailable){display:none!important}
+.p2u-chips:empty,.lg-dm-chips:empty,.bcod-chips:empty,.hp-bkd:empty,.bookchips:empty{display:none!important}
+.lg-dm:not(:has(a)):not(:has(.p2u-chip)){display:none!important}
+.bp-book:has(.p2u-bankers-empty):not(:has(.bp-card)){display:none!important}
+.cc-card:has(.cc-code:empty),.cc-card .cc-code:is(:empty){/*sweep handles*/}
