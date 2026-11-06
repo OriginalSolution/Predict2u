@@ -25,26 +25,30 @@ def main() -> int:
     bookers = (ENGINE / "bookers.py").read_text()
     inbox = (ENGINE / "inbox.py").read_text()
 
-    if "Never publish or book **double chance**" not in rules and "double chance" not in rules.lower():
-        fail("RULES.md must document the double-chance veto")
+    if "DC 12" not in rules or "1.35" not in rules:
+        fail("RULES.md must document the DC 12 veto and the 1.35 1X/X2 cap")
     if "NG" not in rules or "BTTS No" not in rules:
         fail("RULES.md must document the NG / BTTS No veto")
     if "25+" not in rules and "25 +" not in rules:
         fail("RULES.md must require 25+ main slips")
 
-    if "def is_double_chance" not in mr or "def is_btts_no" not in mr:
-        fail("matchup_rules.py must define is_double_chance and is_btts_no")
+    if "def is_double_chance" not in mr or "def is_dc_vetoed" not in mr or "def is_btts_no" not in mr:
+        fail("matchup_rules.py must define is_double_chance, is_dc_vetoed and is_btts_no")
+    if not re.search(r"DC_1X_X2_MAX\s*=\s*1\.35", mr):
+        fail("matchup_rules.py DC_1X_X2_MAX must be 1.35")
     if not re.search(r"MAX_LEG\s*=\s*1\.60", mr):
         fail("matchup_rules.py MAX_LEG must be 1.60")
     if abs(float(cfg["max_leg_odds"]) - 1.6) > 0.001:
         fail("config.json max_leg_odds must be 1.6")
     if int(cfg["min_main_slip_odds"]) != 25:
         fail("config.json min_main_slip_odds must be 25")
-    if cfg["hard_vetoes"] != ["double_chance", "btts_no"]:
-        fail("config.json hard_vetoes must be [double_chance, btts_no]")
+    if cfg.get("hard_vetoes") != ["double_chance_12", "double_chance_1x_x2_above_1.35", "btts_no"]:
+        fail("config.json hard_vetoes drifted")
+    if abs(float(cfg.get("dc_1x_x2_max") or 0) - 1.35) > 0.001:
+        fail("config.json dc_1x_x2_max must be 1.35")
 
-    if "is_btts_no" not in pipe or "is_double_chance" not in pipe:
-        fail("pipeline.py must strip both DC and NG after collect")
+    if "is_btts_no" not in pipe or "is_dc_vetoed" not in pipe:
+        fail("pipeline.py must strip vetoed DC and NG after collect")
     if "ah_minus_one" not in pipe or "dc_shield" not in pipe or "high_odds.py" not in pipe:
         fail("pipeline.py must invoke dc_shield, high_odds and ah_minus_one")
     if "share_cards" not in pipe or "telegram_post" not in pipe:

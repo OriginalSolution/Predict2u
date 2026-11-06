@@ -52,7 +52,7 @@ def test_dedupe_keeps_one_market_per_game():
 
 def test_filter_drops_dc_ng_and_started():
     now = dt.datetime(2026, 11, 6, 12, 0, tzinfo=dt.timezone.utc)
-    dc = _p(market="Double chance", selection="1X", marketId="10", outcomeId="9")
+    dc = _p(market="Double chance", selection="12", marketId="10", outcomeId="10", odds=1.10)
     ng = _p(selection="No", market="GG/NG", marketId="29", outcomeId="76")
     started = _p(eventId="sr:match:9", kickoff="2026-11-06T11:00:00+00:00")
     ok = _p(eventId="sr:match:8", kickoff="2026-11-06T18:00:00+00:00")

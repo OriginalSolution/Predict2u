@@ -16,7 +16,7 @@ import subprocess
 import time
 from pathlib import Path
 
-from .rules import check, is_btts_no, is_double_chance
+from .rules import check, is_btts_no, is_dc_vetoed
 from .paths import ENGINE_DIR, VENDOR_DIR
 import sys
 if str(VENDOR_DIR) not in sys.path:
@@ -152,7 +152,7 @@ def filter_legs(picks, now=None, enrich=True, apply_rules=True):
         if is_started(p, now=now):
             dropped.append({**_brief(p), "reason": "started"})
             continue
-        if is_double_chance(p):
+        if is_dc_vetoed(p):
             dropped.append({**_brief(p), "reason": "double-chance-veto"})
             continue
         if is_btts_no(p):

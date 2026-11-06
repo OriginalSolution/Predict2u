@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-from engine.rules import check, classify, is_double_chance, is_btts_no, filter_picks
+from engine.rules import check, classify, is_double_chance, is_dc_vetoed, dc_variant, is_btts_no, filter_picks
 
 
 def pick(**kw):
@@ -14,11 +14,37 @@ def pick(**kw):
 
 
 def test_double_chance_hard_veto():
-    p = pick(market="Double chance", selection="1X", marketId="10", outcomeId="9")
+    p = pick(market="Double chance", selection="12", marketId="10", outcomeId="10", odds=1.10)
     assert is_double_chance(p)
+    assert dc_variant(p) == "12"
+    assert is_dc_vetoed(p)
     ok, cls, why = check(p)
     assert not ok
     assert cls == "double-chance-veto"
+
+def test_dc_1x_at_or_below_135_not_vetoed():
+    p = pick(market="Double chance", selection="1X", marketId="10", outcomeId="9", odds=1.35)
+    assert is_double_chance(p)
+    assert dc_variant(p) == "1X"
+    assert not is_dc_vetoed(p)
+
+def test_dc_1x_above_135_vetoed():
+    p = pick(market="Double chance", selection="1X", marketId="10", outcomeId="9", odds=1.36)
+    assert is_dc_vetoed(p)
+    ok, cls, why = check(p)
+    assert not ok and cls == "double-chance-veto"
+
+def test_dc_x2_above_135_vetoed():
+    p = pick(market="Double chance", selection="X2", marketId="10", outcomeId="11", odds=1.40)
+    assert dc_variant(p) == "X2"
+    assert is_dc_vetoed(p)
+
+def test_dc_combo_1x_short_allowed():
+    p = pick(market="Double Chance & Over/Under 1.5", selection="Home/Draw & Over 1.5",
+             marketId="547", specifier="total=1.5", outcomeId="1727", odds=1.11)
+    assert is_double_chance(p)
+    assert dc_variant(p) == "1X"
+    assert not is_dc_vetoed(p)
 
 
 def test_dc_text_only_veto():

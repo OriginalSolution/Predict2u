@@ -6,12 +6,13 @@ All times below are Africa/Accra (UTC+0).
 
 ## Hard vetoes
 
-- Never publish or book **double chance** (1X, X2, 12 / Home or Draw / etc.).
+- Never publish or book **DC 12** (Home or Away) at any price.
+- Never publish or book **1X or X2** (Home or Draw / Draw or Away, including DC combo markets) when priced **above 1.35**. **1X/X2 at 1.35 or below is allowed.**
 - Never publish or book **NG** (BTTS No / GG No). BTTS Yes / GG is allowed when other gates pass.
 - Never print tipster or bot names on the public site.
 - Ignore SMAGPF as a pick source.
 - Main slips must stay at **25+** combined odds.
-- Inbox / imported bot codes **under 25 are combined, never dropped** for being short. Decode (if needed), drop started games, drop DC and NG, apply matchup rules and the odds caps, keep one market per game, then pack surviving legs into one or more 25+ slips and rebook them. Leftover legs that cannot form another 25+ slip are merged into the last slip so they still get booked.
+- Inbox / imported bot codes **under 25 are combined, never dropped** for being short. Decode (if needed), drop started games, drop vetoed DC (12, or 1X/X2 above 1.35) and NG, apply matchup rules and the odds caps, keep one market per game, then pack surviving legs into one or more 25+ slips and rebook them. Leftover legs that cannot form another 25+ slip are merged into the last slip so they still get booked.
 
 - No single leg above **1.60** without extreme stats (each side last-10 hit ≥ 90% from 8+ games, H2H ≥ 80% from 4+, league rate ≥ 80%).
 - Over 1.5 or Under 3.5 above **1.30** needs strong stats (team last-10 ≥ 80% from 8+, H2H ≥ 75% from 4+, league rate ≥ 80%).

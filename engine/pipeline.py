@@ -23,7 +23,7 @@ from pathlib import Path
 from . import inbox, settle_codes, combine
 from .bookers import book_all
 from .paths import ENGINE_DIR, REPO_DIR, RESEARCH_DIR, VENDOR_DIR, SBJSON, ensure_dirs, environ
-from .rules import apply_all, is_double_chance, is_btts_no
+from .rules import apply_all, is_double_chance, is_dc_vetoed, is_btts_no
 
 
 def run(cmd, env, cwd=None, timeout=None, check=True):
@@ -57,7 +57,7 @@ def collect(env, days=2, dry_run=False):
         path.write_text(json.dumps(data, indent=1, ensure_ascii=False))
     # never let a DC or NG pick survive
     data = json.loads(path.read_text())
-    data["picks"] = [p for p in data.get("picks") or [] if not is_double_chance(p) and not is_btts_no(p)]
+    data["picks"] = [p for p in data.get("picks") or [] if not is_dc_vetoed(p) and not is_btts_no(p)]
     path.write_text(json.dumps(data, indent=1, ensure_ascii=False))
     print("collect:", path, "picks", len(data.get("picks") or []))
     return path
