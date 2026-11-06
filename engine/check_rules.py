@@ -63,6 +63,15 @@ def main() -> int:
     if "smagpf" not in inbox.lower():
         fail("inbox.py must ignore SMAGPF")
 
+    if "combined" not in rules.lower() and "combine" not in rules.lower():
+        fail("RULES.md must document combining short codes to 25+")
+    if not cfg.get("combine_under_min_odds"):
+        fail("config.json combine_under_min_odds must be true")
+    if "combine" not in pipe:
+        fail("pipeline.py must run the combine-to-25 inbox step")
+    if not (ENGINE / "combine.py").exists():
+        fail("missing engine/combine.py")
+
     for name in cfg["required_vendor"]:
         path = ENGINE / "vendor" / name
         if not path.exists():

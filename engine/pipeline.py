@@ -20,7 +20,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-from . import inbox, settle_codes
+from . import inbox, settle_codes, combine
+from .bookers import book_all
 from .paths import ENGINE_DIR, REPO_DIR, RESEARCH_DIR, VENDOR_DIR, SBJSON, ensure_dirs, environ
 from .rules import apply_all, is_double_chance, is_btts_no
 
@@ -41,11 +42,18 @@ def collect(env, days=2, dry_run=False):
         return path
     data = json.loads(path.read_text())
     extra = inbox.load_picks()
+    for code in inbox.load_share_codes():
+        extra.extend(combine.decode_share(code))
     if extra:
-        log = []
-        extra = apply_all(extra, log)
-        print(f"inbox: kept {len(extra)} extra picks, dropped {len(log)}")
-        data["picks"] = inbox.merge(data.get("picks") or [], extra)
+        report = combine.process(extra)
+        extra_used = [p for s in report["slips"] for p in s["legs"]]
+        print(f"inbox: kept {len(extra_used)} extra picks, dropped {len(report['dropped'])}, combined slips {len(report['slips'])}")
+        data["picks"] = inbox.merge(data.get("picks") or [], extra_used)
+        data["combinedSlips"] = [
+            {k: s[k] for k in ("name", "label", "odds", "minOdds", "meetsFloor") } | {"legs": s["legs"]}
+            for s in report["slips"]
+        ]
+        data["combinedReport"] = {"dropped": report["dropped"], "used": report["used"]}
         path.write_text(json.dumps(data, indent=1, ensure_ascii=False))
     # never let a DC or NG pick survive
     data = json.loads(path.read_text())
@@ -55,12 +63,42 @@ def collect(env, days=2, dry_run=False):
     return path
 
 
+
+def _book_combined(env, day, dry_run=False):
+    path = RESEARCH_DIR / f"{day}.json"
+    if not path.exists():
+        return
+    data = json.loads(path.read_text())
+    slips = data.get("combinedSlips") or []
+    if not slips:
+        return
+    for s in slips:
+        if s.get("codes"):
+            continue
+        if dry_run:
+            print("combined: dry-run, skip booking", s.get("label"), s.get("odds"))
+            continue
+        books = book_all(s.get("legs") or [])
+        s["codes"] = books
+        sporty = (books.get("sportybet") or {}).get("code") if isinstance(books.get("sportybet"), dict) else None
+        data.setdefault("slips", []).append({
+            "name": s.get("name") or "Combined selection",
+            "totalOdds": s.get("odds"),
+            "legs": s.get("legs") or [],
+            "codes": {"sportybet": sporty} if sporty else {},
+            "bookCodes": books,
+        })
+        print("combined booked", s.get("label"), s.get("odds"), {k: (v or {}).get("code") if isinstance(v, dict) else v for k, v in books.items()})
+    path.write_text(json.dumps(data, indent=1, ensure_ascii=False))
+
+
 def book(env, dry_run=False):
     day = dt.date.today().isoformat()
     if dry_run:
         print("book: dry-run, skipped live booking")
         return
     run([sys.executable, str(VENDOR_DIR / "book_home.py"), day], env=env, cwd=str(RESEARCH_DIR), timeout=900)
+    _book_combined(env, day, dry_run=dry_run)
     run([sys.executable, str(VENDOR_DIR / "hot_picks.py"), str(REPO_DIR / "hot-picks.json")], env=env, cwd=str(RESEARCH_DIR), timeout=1500, check=False)
     run([sys.executable, str(VENDOR_DIR / "dc_shield.py")], env=env, timeout=900, check=False)
     run([sys.executable, str(VENDOR_DIR / "ah_minus_one.py")], env=env, timeout=900, check=False)
