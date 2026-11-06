@@ -1,0 +1,59 @@
+name: Predict2u engine — settle all codes
+
+on:
+  schedule:
+    - cron: "45 1 * * *"     # 01:45 UTC = 1:45 AM Africa/Accra
+    - cron: "15 */2 * * *"   # every two hours at :15
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: predict2u-engine-settle
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pytest
+        run: pip install pytest
+      - run: python -m pytest engine/tests -q
+
+  settle:
+    needs: test
+    if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Settle published codes
+        run: python -m engine.pipeline settle
+      - name: Commit settlements on main
+        if: github.ref == 'refs/heads/main'
+        run: |
+          set -euo pipefail
+          git config user.name "predict2u-engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- \
+            picks.json picks-history.json home-picks.json hot-picks.json \
+            high_odds.json record.json staked-codes.json staked-status.json \
+            staked-index.json || true
+          if git diff --cached --quiet; then
+            echo "no settlement changes"
+            exit 0
+          fi
+          git commit -m "Engine settle codes $(date -u +%FT%TZ)"
+          git pull --rebase -X theirs || true
+          git push origin HEAD
