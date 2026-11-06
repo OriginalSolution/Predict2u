@@ -46,6 +46,16 @@ On leagues with 10+ teams:
 
 No-login public share APIs only: SportyBet, football.com, MSport, Betika, BetPawa.
 
+Booking deep-link formats (Open / chip hrefs must load the code, not a 404 or bare homepage):
+
+- SportyBet: `https://www.sportybet.com/gh/?shareCode={code}`
+- MSport: `https://www.msport.com/gh/?shareCode={code}` (not `/gh/sports/share`)
+- Betika: `https://betika.com/en-gh/share/{code}`
+- football.com: `https://www.football.com/gh/?shareCode={code}`
+- BetPawa: `https://www.betpawa.com.gh/share-betslip/{code}` (not `/#{code}` or bare `/`)
+- Betway (when booked): `https://www.betway.com.gh/sport/soccer?bookingCode={code}`
+
+
 **Betway is skipped** until a login secret exists. Do not store Betway passwords in the tree.
 
 ## Gates

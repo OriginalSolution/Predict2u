@@ -3,13 +3,13 @@
   'use strict';
   var KEY='p2u-bcod-seen';
   var BOOKS={
-    msport:['MSport','book-msport.webp','https://www.msport.com/gh/sports/share?shareCode={c}'],
+    msport:['MSport','book-msport.webp','https://www.msport.com/gh/?shareCode={c}'],
     betika:['Betika','book-betika.webp','https://betika.com/en-gh/share/{c}'],
     footballcom:['football.com','book-footballcom.webp','https://www.football.com/gh/?shareCode={c}'],
-    betpawa:['Betpawa','book-betpawa.webp','https://www.betpawa.com.gh/#{c}'],
+    betpawa:['Betpawa','book-betpawa.webp','https://www.betpawa.com.gh/share-betslip/{c}'],
     betway:['Betway','book-betway.webp','https://www.betway.com.gh/sport/soccer?bookingCode={c}'],
     onexbet:['1xBet','book-1xbet.webp','https://1xbet.com/en/?coupon={c}'],
-    betway:['Betway','book-betway.webp',null],'22bet':['22Bet','book-22bet.webp',null]
+    '22bet':['22Bet','book-22bet.webp',null]
   };
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function pick(d){

@@ -27,8 +27,8 @@ PRIV = os.environ.get('PRIV_DIR', os.path.join(os.environ.get('FEED_DIR', os.env
 REPO = sys.argv[1] if len(sys.argv) > 1 else (__import__('os').environ.get('REPO_DIR','/workspace/Predict2u'))
 today = dt.datetime.now(dt.timezone.utc).date()
 days = [(today + dt.timedelta(d)).isoformat() for d in range(0, 4)]  # today + upcoming only (Accra/UTC)
-BOOK_LINKS = {'betika': 'https://betika.com/en-gh/share/{}', 'footballcom': 'https://www.football.com/gh/?shareCode={}', 'betpawa': 'https://www.betpawa.com.gh/#{}', 'sportybet': 'https://www.sportybet.com/gh/?shareCode={}',
-              'msport': 'https://www.msport.com/gh/sports/share?shareCode={}',
+BOOK_LINKS = {'betika': 'https://betika.com/en-gh/share/{}', 'footballcom': 'https://www.football.com/gh/?shareCode={}', 'betpawa': 'https://www.betpawa.com.gh/share-betslip/{}', 'sportybet': 'https://www.sportybet.com/gh/?shareCode={}',
+              'msport': 'https://www.msport.com/gh/?shareCode={}',
               'onexbet': 'https://1xbet.com/en/?coupon={}', 'betway': 'https://www.betway.com.gh/sport/soccer?bookingCode={}'}
 
 def ko_iso(date, ko):

@@ -27,8 +27,8 @@ if 'fc_book' in G: BOOK['footballcom']=lambda L:(lambda r:dict(code=r['code'],to
 try:
   import bp_book; BOOK['betpawa']=lambda L:(lambda r:dict(code=r['code'],totalOdds=r['totalOdds'],legs=r['legs']) if r else None)(bp_book.book(L))
 except Exception: pass
-LINK={'sportybet':'https://www.sportybet.com/gh/?shareCode={}','msport':'https://www.msport.com/gh/sports/share?shareCode={}',
-  'betika':'https://betika.com/en-gh/share/{}','footballcom':'https://www.football.com/gh/?shareCode={}','betpawa':'https://www.betpawa.com.gh/'}
+LINK={'sportybet':'https://www.sportybet.com/gh/?shareCode={}','msport':'https://www.msport.com/gh/?shareCode={}',
+  'betika':'https://betika.com/en-gh/share/{}','footballcom':'https://www.football.com/gh/?shareCode={}','betpawa':'https://www.betpawa.com.gh/share-betslip/{}'}
 OUT=sys.argv[1]; now=dt.datetime.now(dt.timezone.utc); nowms=now.timestamp()*1000
 UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
 codes={}

@@ -1,14 +1,14 @@
 /* Predict2U v309 — 🔥 Hot Picks: most-backed selections across shared booking codes, booked on every site. Hot by market / trending / teams collapsed by default. */
 (function(){
-  var BK={sportybet:['SportyBet','https://www.sportybet.com/gh/?shareCode='],msport:['MSport','https://www.msport.com/gh/sports/share?shareCode='],
-    betika:['Betika','https://betika.com/en-gh/share/'],footballcom:['football.com','https://www.football.com/gh/?shareCode='],betpawa:['Betpawa','https://www.betpawa.com.gh/'],betway:['Betway','https://www.betway.com.gh/sport/soccer?bookingCode=']};
+  var BK={sportybet:['SportyBet','https://www.sportybet.com/gh/?shareCode='],msport:['MSport','https://www.msport.com/gh/?shareCode='],
+    betika:['Betika','https://betika.com/en-gh/share/'],footballcom:['football.com','https://www.football.com/gh/?shareCode='],betpawa:['Betpawa','https://www.betpawa.com.gh/share-betslip/'],betway:['Betway','https://www.betway.com.gh/sport/soccer?bookingCode=']};
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   function fo(x){var n=Number(x);return isFinite(n)?(n>=1000?Math.round(n).toLocaleString():n.toFixed(2)):'–';}
   function when(p){try{var d=new Date(p.start);return d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',timeZone:'Africa/Accra'})+' '+d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:'Africa/Accra'})+' GMT';}catch(e){return p.date+' '+p.ko;}}
   function chips(s){return Object.keys(BK).filter(function(b){return s.codes&&s.codes[b];}).map(function(b){var L=s.codes[b];return L.map(function(c,i){
-    var href=b==='betpawa'?BK[b][1]:BK[b][1]+encodeURIComponent(c.code);
+    var href=BK[b][1]+encodeURIComponent(c.code);
     return '<div class="p2u-chip p2u-chip-'+b+'"><img src="book-'+b+'.webp" alt="'+BK[b][0]+' logo" width="24" height="24" loading="lazy"><span class="p2u-chip-t"><span class="p2u-chip-n">'+BK[b][0]+(L.length>1?' · code '+(i+1)+'/'+L.length:'')+'</span><a class="p2u-chip-c" target="_blank" rel="noopener" href="'+href+'">'+esc(c.code)+'</a><span class="p2u-chip-o">@'+fo(c.totalOdds)+' · '+esc(c.legs)+' picks</span></span><button type="button" class="p2u-chip-cp hot-chip-cp" data-copy="'+esc(c.code)+'" aria-label="Copy '+BK[b][0]+' code">Copy</button></div>';}).join('');}).join('');}
-  function headCode(s){var order=['sportybet','footballcom','msport','betika','betpawa'];var b=null;for(var i=0;i<order.length;i++){if(s.codes&&s.codes[order[i]]&&s.codes[order[i]][0]){b=order[i];break;}}if(!b)return '';var c=s.codes[b][0];var href=b==='betpawa'?BK[b][1]:BK[b][1]+encodeURIComponent(c.code);return '<a class="hot-mkt-code p2u-chip-'+b+'" target="_blank" rel="noopener" href="'+href+'"><img src="book-'+b+'.webp" alt="" width="18" height="18" loading="lazy"><b>'+esc(c.code)+'</b><small>@'+fo(c.totalOdds)+'</small></a>';}
+  function headCode(s){var order=['sportybet','footballcom','msport','betika','betpawa'];var b=null;for(var i=0;i<order.length;i++){if(s.codes&&s.codes[order[i]]&&s.codes[order[i]][0]){b=order[i];break;}}if(!b)return '';var c=s.codes[b][0];var href=BK[b][1]+encodeURIComponent(c.code);return '<a class="hot-mkt-code p2u-chip-'+b+'" target="_blank" rel="noopener" href="'+href+'"><img src="book-'+b+'.webp" alt="" width="18" height="18" loading="lazy"><b>'+esc(c.code)+'</b><small>@'+fo(c.totalOdds)+'</small></a>';}
   function render(d){
     var el=document.getElementById('hot');var P=d.picks||[];var max=P.length?P[0].count:1;
     var up=new Date(d.updatedAt);

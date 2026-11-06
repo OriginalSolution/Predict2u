@@ -61,7 +61,7 @@ def mbook(L):
   if r.get('bizCode')!=10000: return None
   code=r['data']['shareCode']; b=mcall('GET',MU+'/'+code); B=(b.get('data') or {}).get('bettableBetSlip') or []
   tot=round(math.prod(float(x['outcome']['odds']) for x in B),2) if B else None
-  return dict(msport=code,totalOdds=tot,legs=len(B) or len(ok),of=len(L),matches=[p['eventId'] for p in ok],link=f'https://www.msport.com/gh/sports/share?shareCode={code}')
+  return dict(msport=code,totalOdds=tot,legs=len(B) or len(ok),of=len(L),matches=[p['eventId'] for p in ok],link=f'https://www.msport.com/gh/?shareCode={code}')
 mcodes=[]
 for c in d['homeCode'].get('codes') or []:
   L=[p for p in legs if p['eventId'] in set(c.get('matches') or [])]
@@ -142,7 +142,7 @@ for c in d['homeCode'].get('codes') or []:
   x=fc_book(L)
   if x: fcodes.append(dict(footballcom=x['code'],totalOdds=x['totalOdds'],legs=x['legs'],of=len(L),link=f"https://www.football.com/gh/?shareCode={x['code']}",matches=x['matches']))
   y=bp_try(L)
-  if y: pcodes.append(dict(betpawa=y['code'],totalOdds=y['totalOdds'],legs=y['legs'],of=len(L),link='https://www.betpawa.com.gh/',matches=y['matches']))
+  if y: pcodes.append(dict(betpawa=y['code'],totalOdds=y['totalOdds'],legs=y['legs'],of=len(L),link=(y.get('link') or ('https://www.betpawa.com.gh/share-betslip/'+y['code'])),matches=y['matches']))
 d['homeCode']['footballcom']=fcodes;d['homeCode']['betpawa']=pcodes
 json.dump(d,open(f,'w'),indent=1,ensure_ascii=False)
 print('footballcom',[(x['footballcom'],x['totalOdds'],x['legs']) for x in fcodes],'betpawa',[(x['betpawa'],x['totalOdds'],x['legs']) for x in pcodes])

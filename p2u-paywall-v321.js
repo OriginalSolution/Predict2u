@@ -3,8 +3,8 @@
 (function(){
   'use strict';
   var RELAY='https://p2u-relay.onrender.com', RX=/P2ULOCK-([a-z]+-\d{8})-[a-z]+\d*/i, KEY='p2u-unlocks-v1';
-  var BOOKS=[['sportybet','SportyBet','book-sportybet.webp','https://www.sportybet.com/gh/?shareCode='],['msport','MSport','book-msport.webp','https://www.msport.com/gh/sports/share?shareCode='],
-    ['betika','Betika','book-betika.webp','https://betika.com/en-gh/share/'],['footballcom','football.com','book-footballcom.webp','https://www.football.com/gh/?shareCode='],['betpawa','Betpawa','book-betpawa.webp','https://www.betpawa.com.gh/']];
+  var BOOKS=[['sportybet','SportyBet','book-sportybet.webp','https://www.sportybet.com/gh/?shareCode='],['msport','MSport','book-msport.webp','https://www.msport.com/gh/?shareCode='],
+    ['betika','Betika','book-betika.webp','https://betika.com/en-gh/share/'],['footballcom','football.com','book-footballcom.webp','https://www.football.com/gh/?shareCode='],['betpawa','Betpawa','book-betpawa.webp','https://www.betpawa.com.gh/share-betslip/']];
   var TITLE={banker:'Main Banker',medium:'Medium slip',hot:'Hot Picks main'};
   /* Display in USD; Paystack still charges GHS 50 (≈ $4.29 at 0.085815 USD/GHS on 2026-11-05). */
   var DISP_USD='4.29', DISP_NOTE='≈ GHS 50';
@@ -28,7 +28,7 @@
     '.p2u-lock-m small{color:#b9c8dc;display:block;margin-top:10px}.p2u-lock-x{float:right;background:none;border:0;color:#fff;font-size:1.4rem;cursor:pointer}.p2u-lock-err{color:#ffb0c0;font-size:.85rem}';
     document.head.appendChild(s);}
   function chips(g){var c=g.codes||{};return '<div class="p2u-chips" data-p2u-unlocked="'+esc(g.id)+'">'+BOOKS.filter(function(b){return c[b[0]]&&c[b[0]].length;}).map(function(b){return c[b[0]].map(function(x){
-    var href=b[0]==='betpawa'?b[3]:b[3]+encodeURIComponent(x.code);
+    var href=b[3]+encodeURIComponent(x.code);
     return '<div class="p2u-chip p2u-chip-'+b[0]+'"><img src="'+b[2]+'" alt="" width="24" height="24" loading="lazy"><span class="p2u-chip-t"><span class="p2u-chip-n">'+b[1]+'</span><a class="p2u-chip-c" target="_blank" rel="noopener" href="'+href+'">'+esc(x.code)+'</a><span class="p2u-chip-o">'+(x.totalOdds?'@'+Number(x.totalOdds).toFixed(2):'')+(x.legs?' · '+x.legs+' picks':'')+'</span></span><button type="button" class="p2u-chip-cp" data-copy="'+esc(x.code)+'">Copy</button></div>';}).join('');}).join('')+'</div>';}
   function box(id){var k=id.split('-')[0],m=(cfg&&cfg.locked&&cfg.locked[id])||{},on=cfg&&cfg.enabled,pl=priceHtml();
     if(got[id]&&got[id].codes)return chips(got[id]);

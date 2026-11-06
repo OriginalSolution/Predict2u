@@ -76,6 +76,19 @@ def main() -> int:
     if not (ENGINE / "combine.py").exists():
         fail("missing engine/combine.py")
 
+    # Bookmaker deep-link formats (must load the booking code, not a 404 / bare homepage).
+    build = (ENGINE / "vendor" / "build.py").read_text()
+    hot = (ENGINE / "vendor" / "hot_picks.py").read_text()
+    book_home = (ENGINE / "vendor" / "book_home.py").read_text()
+    if "msport.com/gh/sports/share" in build or "msport.com/gh/sports/share" in hot or "msport.com/gh/sports/share" in book_home:
+        fail("MSport share links must use https://www.msport.com/gh/?shareCode= (not /gh/sports/share)")
+    if "betpawa.com.gh/#" in build or "betpawa.com.gh/#" in hot:
+        fail("Betpawa share links must use /share-betslip/{code}, not /#code")
+    if "share-betslip/{}" not in build and "share-betslip/{}" not in hot:
+        # build uses BOOK_LINKS with {}; hot uses LINK with {}
+        if "share-betslip/{}" not in build:
+            fail("build.py BOOK_LINKS betpawa must be share-betslip/{}")
+
     for name in cfg["required_vendor"]:
         path = ENGINE / "vendor" / name
         if not path.exists():

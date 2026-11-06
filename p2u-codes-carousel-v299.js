@@ -5,13 +5,12 @@
   'use strict';
   var BOOKS={
     sportybet:{n:'SportyBet',logo:'book-sportybet.webp',c:'#e41827',link:'https://www.sportybet.com/gh/?shareCode={c}'},
-    msport:{n:'MSport',logo:'book-msport.webp',c:'#ffd325',link:'https://www.msport.com/gh/sports/share?shareCode={c}'},
+    msport:{n:'MSport',logo:'book-msport.webp',c:'#ffd325',link:'https://www.msport.com/gh/?shareCode={c}'},
     onexbet:{n:'1xBet',logo:'book-1xbet.webp',c:'#1f6fb2',link:'https://1xbet.com/en/?coupon={c}'},
-    betway:{n:'Betway',logo:'book-betway.webp',c:'#00a826',link:null},
     '22bet':{n:'22Bet',logo:'book-22bet.webp',c:'#1b5e20',link:null},
-    betika:{n:'Betika',logo:'book-betika.webp',c:'#00b140',link:null},
+    betika:{n:'Betika',logo:'book-betika.webp',c:'#00b140',link:'https://betika.com/en-gh/share/{c}'},
     footballcom:{n:'football.com',logo:'book-footballcom.webp',c:'#282450',link:'https://www.football.com/gh/?shareCode={c}'},
-    betpawa:{n:'Betpawa',logo:'book-betpawa.webp',c:'#78be20',link:'https://www.betpawa.com.gh/#{c}'},
+    betpawa:{n:'Betpawa',logo:'book-betpawa.webp',c:'#78be20',link:'https://www.betpawa.com.gh/share-betslip/{c}'},
     betway:{n:'Betway',logo:'book-betway.webp',c:'#00a826',link:'https://www.betway.com.gh/sport/soccer?bookingCode={c}'}
   };
   BOOKS['1xbet']=BOOKS.onexbet;
