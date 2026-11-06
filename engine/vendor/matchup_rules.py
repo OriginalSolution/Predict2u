@@ -3,7 +3,7 @@
 2) classify mismatch / middle / even:
    mismatch: straight win picks are not booked (use GG / Over 1.5 instead)
    middle:   GG only (plus home/away team over 0.5)
-0) HARD VETO: no double chance (1X, X2 or 12), on any slip or bookmaker
+0) HARD VETO: no double chance (1X, X2 or 12) and no NG (BTTS No / GG No), on any slip or bookmaker
    even:     no Over 1.5 / Over 2.5
 """
 import re
@@ -22,6 +22,19 @@ def is_double_chance(p):
    teams=[t.strip() for t in re.split(r'\s+(?:v|vs)\s+',match,maxsplit=1)]
    if len(teams)==2 and sel in (teams[0]+' or '+teams[1],teams[1]+' or '+teams[0]): return True
   return bool(re.search(r'\bdc\b',market,re.I) and re.search(r'\b(1X|X2|12)\b',sel,re.I))
+NG_OUTCOME_IDS={'76'}  # SportyBet BTTS / GG No
+def is_btts_no(p):
+  """True for NG / BTTS No / GG No. BTTS Yes is not vetoed."""
+  oid=str(p.get('outcomeId') or p.get('oid') or '')
+  if oid in NG_OUTCOME_IDS: return True
+  mid=str(p.get('marketId') or p.get('mid') or '')
+  sel=str(p.get('selection') or p.get('tip') or '').strip()
+  mk=str(p.get('market') or p.get('marketDescription') or p.get('md') or '')
+  if mid in ('29','60129') and re.fullmatch(r'(no|ng)', sel, re.I): return True
+  if re.search(r'both\s*teams|btts|gg\s*/?\s*ng|\bgg\b', mk, re.I) and re.fullmatch(r'(no|ng|btts no|gg no)', sel, re.I): return True
+  if re.search(r'\b(btts\s*no|gg\s*no|both teams(?: to score)? no)\b', sel, re.I): return True
+  return False
+
 ALLOW={'mismatch':{'18|total=1.5|12','29||74','19|total=0.5|12','20|total=0.5|12'},
        'even':{'18|total=3.5|13','29||74','19|total=0.5|12','20|total=0.5|12'},
        'middle':{'29||74','19|total=0.5|12','20|total=0.5|12'}}
@@ -68,9 +81,11 @@ def extreme160(p):
   return (len(t)>=2 and all(int(a)/100>=X_TEAM and int(b)>=X_TEAM_N for a,b in t[:2]) and bool(h) and int(h.group(1))/100>=X_H2H
           and int(h.group(2))>=X_H2H_N and lr>=X_LEAGUE)
 def check(p):
-  """-> (ok, class, reason); the DC veto cannot be relaxed by report mode."""
+  """-> (ok, class, reason); the DC and NG vetos cannot be relaxed by report mode."""
   if is_double_chance(p):
     return False,'double-chance-veto','HARD VETO: double chance (1X, X2 or 12) is never published; choose another market or drop the match'
+  if is_btts_no(p):
+    return False,'btts-no-veto','HARD VETO: NG (BTTS No / GG No) is never published; choose another market or drop the match'
   if float(p.get('odds') or 0)>MAX_LEG and not extreme160(p):
     return False,'over160',f"{p.get('selection')} @{p.get('odds')} > {MAX_LEG} without extreme stats"
   cls,why=classify(p)

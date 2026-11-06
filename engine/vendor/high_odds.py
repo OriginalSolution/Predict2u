@@ -3,7 +3,7 @@
 
 Public labels never expose an import source. Candidate sources are the house
 research slips, approved local exports, and SportyBet's public featured hub.
-Only decoded SportyBet football shares without double chance are accepted.
+Only decoded SportyBet football shares without double chance or NG (BTTS No) are accepted.
 Other rule failures remain high-risk signals, not a publishing filter.
 """
 from __future__ import annotations
@@ -127,8 +127,8 @@ def risk_score(slip):
     """Run the real shared rules and strict gates; publish failures as risk evidence."""
     try:
         import matchup_rules as mr
-        if any(mr.is_double_chance(p) for p in slip.get('legs') or []):
-            return 100, 'Unscored', [], 'HARD VETO: double chance legs cannot be verified or published'
+        if any(mr.is_double_chance(p) or mr.is_btts_no(p) for p in slip.get('legs') or []):
+            return 100, 'Unscored', [], 'HARD VETO: double chance or NG (BTTS No) legs cannot be verified or published'
     except Exception as e:
         return 100, 'Unscored', [], f'rule engine unavailable: {e}'
     flags = []
@@ -393,6 +393,14 @@ def mr_is_double_chance(leg):
     import matchup_rules as mr
     return mr.is_double_chance(leg)
 
+def mr_is_btts_no(leg):
+    sys.path.insert(0, str(RESEARCH))
+    import matchup_rules as mr
+    return mr.is_btts_no(leg)
+
+def mr_is_hard_veto(leg):
+    return mr_is_double_chance(leg) or mr_is_btts_no(leg)
+
 
 def rebook_dc_free_existing(existing, previous_replacements=None):
     """Replace old DC-containing shares with newly booked non-DC tickets.
@@ -406,11 +414,11 @@ def rebook_dc_free_existing(existing, previous_replacements=None):
     out = list(previous_replacements or [])
     for old in existing.values():
         legs = old.get('legs') or []
-        if not any(mr_is_double_chance(p) for p in legs):
+        if not any(mr_is_hard_veto(p) for p in legs):
             continue
         kept = []
         for p in legs:
-            if mr_is_double_chance(p) or p.get('matchStatus') not in (None, 'Not start'):
+            if mr_is_hard_veto(p) or p.get('matchStatus') not in (None, 'Not start'):
                 continue
             start = p.get('kickoff')
             try:
@@ -421,13 +429,13 @@ def rebook_dc_free_existing(existing, previous_replacements=None):
             kept.append(p)
         odds = math.prod(float(p.get('odds') or 1) for p in kept)
         if not kept or odds < 25:
-            print('drop DC high-odds code', old.get('code'), 'no 25+ DC-free replacement')
+            print('drop vetoed high-odds code', old.get('code'), 'no 25+ DC/NG-free replacement')
             continue
         code, status = book(kept)
         if not code or status != 'ok':
-            print('drop DC high-odds code', old.get('code'), 'rebook failed', status)
+            print('drop vetoed high-odds code', old.get('code'), 'rebook failed', status)
             continue
-        print('rebook DC-free high odds', old.get('code'), '->', code, len(kept), round(odds, 2))
+        print('rebook DC/NG-free high odds', old.get('code'), '->', code, len(kept), round(odds, 2))
         out.append(dict(code=code, name=old.get('name') or 'Verified High Odds', odds=round(odds, 2),
                         date=TODAY, original=kept, origin=old.get('origin') or 'code-hub', replacementOf=old.get('code')))
     return out
@@ -465,8 +473,8 @@ def main():
         s = settle_slip(dict(s), decoded.get(key))
         # Hard veto applies to active and historical High Odds codes too.
         # Remove the whole old share: editing its JSON would misrepresent the booked ticket.
-        if any(mr_is_double_chance(p) for p in s.get('legs') or []):
-            print('drop DC high-odds code', s.get('code'))
+        if any(mr_is_hard_veto(p) for p in s.get('legs') or []):
+            print('drop vetoed high-odds code', s.get('code'))
             continue
         if key in by_code and s.get('decodeError') is None:
             s['verification'] = 'Verified by Predict2u'
@@ -482,8 +490,8 @@ def main():
             if not decoded.get(key):
                 continue
             s = normalize_candidate(c, decoded[key])
-            if any(mr_is_double_chance(p) for p in s.get('legs') or []):
-                raise RuntimeError('HARD VETO: double chance leg')
+            if any(mr_is_hard_veto(p) for p in s.get('legs') or []):
+                raise RuntimeError('HARD VETO: double chance or NG leg')
             s = settle_slip(s, decoded[key])
             # Same legs under another code count as the same selection.
             if not c.get('replacementOf') and any(x.get('fingerprint') == s['fingerprint'] for x in refreshed.values()):

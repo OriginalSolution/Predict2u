@@ -14,4 +14,5 @@ from matchup_rules import (  # noqa: E402
     classify,
     filter_picks,
     is_double_chance,
+    is_btts_no,
 )

@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-from engine.rules import check, classify, is_double_chance, filter_picks
+from engine.rules import check, classify, is_double_chance, is_btts_no, filter_picks
 
 
 def pick(**kw):
@@ -78,3 +78,32 @@ def test_filter_strips_dc():
     ])
     assert len(kept) == 1
     assert kept[0]["marketId"] == "29"
+
+
+def test_btts_no_hard_veto():
+    p = pick(selection="No", market="GG/NG", marketId="29", specifier="", outcomeId="76",
+             odds=1.24, table="7 v 18/18", x12="1.46/3.20/9.70",
+             case="table 7 v 18/18; 1X2 1.46/3.20/9.70")
+    assert is_btts_no(p)
+    ok, cls, why = check(p)
+    assert not ok and cls == "btts-no-veto"
+
+
+def test_btts_yes_not_vetoed_as_ng():
+    p = pick(selection="Yes", market="GG/NG", marketId="29", specifier="", outcomeId="74",
+             odds=1.22, table="7 v 18/18", x12="1.46/3.20/9.70",
+             case="table 7 v 18/18; 1X2 1.46/3.20/9.70")
+    assert not is_btts_no(p)
+
+
+def test_filter_strips_ng():
+    kept = filter_picks([
+        pick(selection="No", market="Both teams to score", marketId="29", specifier="", outcomeId="76",
+             odds=1.24, table="7 v 18/18", x12="1.46/3.20/9.70",
+             case="table 7 v 18/18; 1X2 1.46/3.20/9.70"),
+        pick(selection="Yes", market="Both teams to score", marketId="29", specifier="", outcomeId="74",
+             odds=1.22, table="6 v 12/20", x12="1.75/3.50/5.00",
+             case="table 6 v 12/20; 1X2 1.75/3.50/5.00"),
+    ])
+    assert len(kept) == 1
+    assert kept[0]["outcomeId"] == "74"
