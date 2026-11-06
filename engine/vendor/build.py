@@ -224,6 +224,10 @@ def home_build():
                   'leagues': leagues, 'picks': [p for p in (d.get('picks') or []) if not _mr.is_double_chance(p)],
                   'slips': [s for s in (d.get('slips') or []) if not s.get('earlier') and not str(s.get('name') or '').lower().startswith('earlier code')],
                   'homeCode': d.get('homeCode')})
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import pick_history as _PH
+        _PH.annotate(out, REPO, os.path.join(os.environ.get('ENGINE_DIR', os.path.join(REPO, 'engine')), 'data', 'pick_ledger.json'))
+    except Exception as _e: print('hist: skipped', _e)
     hp = os.path.join(REPO, 'home-picks.json')
     old = None
     try: old = json.load(open(hp)); old.pop('DATA_UPDATED', None)

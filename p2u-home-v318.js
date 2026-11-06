@@ -1,5 +1,5 @@
-/* Predict2U v352 hide-empty-codes — was v318b — favourites day-master codes on leagues section (Today/Tomorrow tabs); was v318. */
-(function(){
+/* Predict2U v353 hide-empty-codes — was v318b — favourites day-master codes on leagues section (Today/Tomorrow tabs); was v318. */
+(function(){var _hcss=document.createElement('style');_hcss.textContent='.hp-odds{display:inline-flex;flex-direction:column;align-items:flex-end;background:#0f2a1a;border:1px solid #2ecc71;border-radius:10px;padding:4px 10px;line-height:1.15}.hp-odds b{font-size:1.15em;color:#2ecc71}.hp-odds small{font-size:.72em;opacity:.85}.hp-odds i{font-style:normal;font-size:.68em;opacity:.7}.hp-hist{margin:6px 0 4px;font-size:.8em;padding:6px 8px;border-left:3px solid #888;background:rgba(127,127,127,.08);border-radius:4px}.hp-hist.is-up{border-color:#2ecc71}.hp-hist.is-down{border-color:#e67e22}';document.head.appendChild(_hcss);
   'use strict';
   var $=function(id){return document.getElementById(id);};
   var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});};
@@ -25,10 +25,16 @@
     var hl=$('hp-list');if(hl){hl.innerHTML='';hl.hidden=true;}
   }
   var WHY=0;
+  function oddsChip(p){if(p.odds==null)return '';var H=p.hist||{};return '<span class="hp-odds"><b>@'+Number(p.odds).toFixed(2)+'</b>'+(H.implied!=null?'<small>'+H.implied+'% implied</small>':'')+(H.band?'<i>band '+esc(H.band.replace('-','–'))+'</i>':'')+'</span>';}
+  function histLine(p){var H=p.hist||{},b=[];if(!H.band)return '';
+    if(H.site)b.push('our '+esc(H.market)+' picks in this band hit <b>'+H.site.rate+'%</b> (n='+H.site.n+')');else if(H.siteAll)b.push('our '+esc(H.market)+' picks hit <b>'+H.siteAll.rate+'%</b> overall (n='+H.siteAll.n+')');
+    if(H.league)b.push('league '+H.league.rate+'% over '+H.league.n+' games');
+    if(!b.length)return '';var cls=H.site&&H.implied!=null?(H.site.rate>=H.implied?' is-up':' is-down'):'';
+    return '<p class="hp-hist'+cls+'">Falls in the <b>'+esc(H.band.replace('-','–'))+'</b> band · '+b.join(' · ')+'</p>';}
   function card(p){var i=WHY++,res=function(p){return String(p.result||'pending').toLowerCase();};{var c=Number(p.confidence);c=c>1?c/100:c;var g=c>=0.8?'A':c>=0.72?'B':'C';var r=res(p);
       return '<article class="hp-pick'+(r==='won'?' is-won':r==='lost'?' is-lost':'')+'" data-eid="'+esc(p.eventId||'')+'"><div class="hp-top"><span class="bp-grade bp-g'+g+'">'+g+'</span><div class="hp-mt"><b>'+esc(p.match)+'</b><small>'+esc(koTxt(p))+' · '+esc(p.league)+'</small></div>'+badge(r)+'</div>'+
-        '<div class="hp-sel"><span>'+stag(p)+' '+esc(p.selection)+(p.market?' <small>'+esc(p.market)+'</small>':'')+'</span><b>@'+(p.odds==null?'—':Number(p.odds).toFixed(2))+'</b></div>'+
-        '<dl class="hp-stats"><div><dt>League fav. rate</dt><dd>'+rate(p.leagueFavRate)+'</dd></div><div><dt>Sample</dt><dd>'+(p.sample==null?'—':esc(p.sample)+' games')+'</dd></div><div><dt>Our confidence</dt><dd>'+rate(p.confidence)+'</dd></div><div><dt>Score</dt><dd class="hp-score" data-score-eid="'+esc(p.eventId||'')+'">'+(p.score?esc(p.score):(window.P2UScores&&P2UScores.text(p.eventId))||'—')+'</dd></div><div><dt>Result</dt><dd class="hp-resline" data-res-eid="'+esc(p.eventId||'')+'">'+badge(r)+'</dd></div></dl>'+
+        '<div class="hp-sel"><span>'+stag(p)+' '+esc(p.selection)+(p.market?' <small>'+esc(p.market)+'</small>':'')+'</span>'+oddsChip(p)+'</div>'+histLine(p)+
+        '<dl class="hp-stats">'+(p.leagueFavRate!=null?'<div><dt>League fav. rate</dt><dd>'+rate(p.leagueFavRate)+'</dd></div>':'')+(p.sample!=null?'<div><dt>Sample</dt><dd>'+esc(p.sample)+' games</dd></div>':'')+(p.confidence!=null?'<div><dt>Our confidence</dt><dd>'+rate(p.confidence)+'</dd></div>':'')+'<div><dt>Score</dt><dd class="hp-score" data-score-eid="'+esc(p.eventId||'')+'">'+(p.score?esc(p.score):(window.P2UScores&&P2UScores.text(p.eventId))||'')+'</dd></div><div><dt>Result</dt><dd class="hp-resline" data-res-eid="'+esc(p.eventId||'')+'">'+badge(r)+'</dd></div></dl>'+
         (p['case']?'<button type="button" class="hp-why" aria-expanded="false" aria-controls="hpw'+i+'">Why this pick <i class="bp-chev" aria-hidden="true"></i></button><p class="hp-case" id="hpw'+i+'" hidden>'+esc(p['case'])+'</p>':'')+'<p class="hp-seo"><a href="'+matchHref(p)+'">Match page</a> · <a href="'+leagueHref(p.league)+'">League</a></p></article>';}
   }
   function codes(){var el=$('hp-code');if(!el)return;var h=data.homeCode||{},C=h.codes||[];
