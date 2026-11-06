@@ -31,7 +31,7 @@ jobs:
       - name: Install pytest
         run: pip install pytest
       - name: Rule and settle unit tests
-        run: python -m pytest engine/tests -q
+        run: python -m pytest engine/tests -q && python -m engine.check_rules
 
   daily:
     needs: test
@@ -45,6 +45,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install runtime extras
+        run: pip install pillow
       - name: Cache Sportradar / engine stats
         uses: actions/cache@v4
         with:
@@ -56,6 +58,9 @@ jobs:
         env:
           P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
           P2U_STRICT_GATES: report
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL: ${{ secrets.TELEGRAM_CHANNEL }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           set -euo pipefail
           DRY="${{ github.event.inputs.dry_run || 'false' }}"
@@ -80,7 +85,7 @@ jobs:
             picks.json picks-history.json home-picks.json hot-picks.json \
             high_odds.json record.json live-scores.json \
             staked-codes.json staked-index.json staked-status.json \
-            locked.enc.json \
+            locked.enc.json share s \
             sportybet-codes-today msport-booking-codes-today \
             betika-booking-codes-today betpawa-booking-codes-today \
             football-com-booking-codes-today betway-booking-codes-today \

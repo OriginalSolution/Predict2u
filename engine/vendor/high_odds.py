@@ -556,9 +556,9 @@ def main():
     build_og(doc)
     # Keep each High Odds slip's downloadable/share-preview image in the existing card pipeline.
     try:
-        share_src = (FEED / 'share_cards.py').read_text().replace('\nmain()\n', '\n')
+        share_src = next((p.read_text() for p in (Path(__file__).resolve().parent/'share_cards.py', FEED/'share_cards.py') if p.exists()), '').replace('\nmain()\n', '\n')
         share_mod = {'__name__': 'p2u_high_share_cards'}
-        exec(compile(share_src, str(FEED / 'share_cards.py'), 'exec'), share_mod)
+        exec(compile(share_src, 'share_cards.py', 'exec'), share_mod) if share_src else (_ for _ in ()).throw(RuntimeError('share_cards.py missing'))
         seen = set()
         for slip in active + history:
             code = share_mod['codes'](slip).get('sportybet')

@@ -1,0 +1,96 @@
+name: Predict2u engine — DC Shield Goals (21:00)
+
+on:
+  schedule:
+    - cron: "0 21 * * *"   # 21:00 UTC = 9:00 PM Africa/Accra
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Skip live booking and skip committing to main"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: predict2u-engine
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pytest
+        run: pip install pytest
+      - run: python -m pytest engine/tests -q && python -m engine.check_rules
+
+  shield:
+    needs: test
+    if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install runtime extras
+        run: pip install pillow
+      - name: Cache Sportradar / engine stats
+        uses: actions/cache@v4
+        with:
+          path: engine/data/stats-cache
+          key: p2u-engine-stats-${{ github.run_id }}
+          restore-keys: |
+            p2u-engine-stats-
+      - name: Run DC Shield + AH -1
+        env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
+          P2U_STRICT_GATES: report
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL: ${{ secrets.TELEGRAM_CHANNEL }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          set -euo pipefail
+          DRY="${{ github.event.inputs.dry_run || 'false' }}"
+          if [ "$DRY" = "true" ]; then
+            python -m engine.pipeline shield --dry-run
+          else
+            python -m engine.pipeline shield
+          fi
+      - name: Commit published picks when running on main
+        if: github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || github.event.inputs.dry_run != 'true')
+        env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
+        run: |
+          set -euo pipefail
+          if [ -z "${P2U_LOCK_KEY:-}" ]; then
+            echo "::warning::P2U_LOCK_KEY is not set; refusing to commit pick files so premium codes stay locked on the live site."
+            exit 0
+          fi
+          git config user.name "predict2u-engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- \
+            picks.json picks-history.json home-picks.json hot-picks.json \
+            high_odds.json record.json live-scores.json \
+            staked-codes.json staked-index.json staked-status.json \
+            locked.enc.json share s \
+            sportybet-codes-today msport-booking-codes-today \
+            betika-booking-codes-today betpawa-booking-codes-today \
+            football-com-booking-codes-today betway-booking-codes-today \
+            || true
+          if git diff --cached --quiet; then
+            echo "no publish changes"
+            exit 0
+          fi
+          git commit -m "Engine DC Shield Goals $(date -u +%FT%TZ)"
+          git pull --rebase -X theirs || true
+          git push origin HEAD
