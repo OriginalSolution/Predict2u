@@ -57,6 +57,9 @@ def book(selections):
     if j.get("bizCode") != 10000:
         return None, j.get("message") or str(j)[:200]
     data = j.get("data") or {}
-    bad = [x for x in data.get("outcomes", []) if x.get("matchStatus") != "Not start"]
+    def _pending(st):
+        s = str(st or "").strip().lower()
+        return s in {"not start", "0", ""}
+    bad = [x for x in data.get("outcomes", []) if not _pending(x.get("matchStatus"))]
     status = f"{len(bad)} not open" if bad else "ok"
     return data.get("shareCode"), status

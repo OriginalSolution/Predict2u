@@ -70,3 +70,27 @@ def merge(house_picks: list[dict], extra: list[dict]) -> list[dict]:
         seen.add(key)
         out.append(p)
     return out
+
+
+def load_share_codes(inbox: Path | None = None) -> list[str]:
+    """SportyBet share codes listed in inbox JSON (not yet decoded into picks)."""
+    codes = []
+    seen = set()
+    for path in iter_files(inbox) or []:
+        try:
+            data = json.loads(path.read_text())
+        except Exception:
+            continue
+        if not isinstance(data, dict):
+            continue
+        raw = data.get("shareCodes") or data.get("share_codes")
+        if isinstance(raw, str):
+            raw = raw.replace(",", " ").split()
+        extra = list(raw or [])
+        if isinstance(data.get("code"), str) and not (data.get("picks") or data.get("legs")):
+            extra.append(data["code"])
+        for c in extra:
+            if isinstance(c, str) and c.strip() and c.strip() not in seen:
+                seen.add(c.strip())
+                codes.append(c.strip())
+    return codes

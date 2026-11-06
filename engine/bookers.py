@@ -28,9 +28,9 @@ def _curl_json(method, url, body=None, headers=None, timeout=30):
 def sportybet(legs):
     from sb_share_helper17 import book
     code, status = book(legs)
-    if code and status == "ok":
+    if code:
         tot = round(math.prod(float(p.get("odds") or 1) for p in legs), 2)
-        return {"code": code, "totalOdds": tot, "legs": len(legs), "matches": [p["eventId"] for p in legs]}
+        return {"code": code, "totalOdds": tot, "legs": len(legs), "matches": [p["eventId"] for p in legs], "status": status}
     return None
 
 
