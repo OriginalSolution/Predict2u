@@ -36,6 +36,7 @@
       '<p class="bcod-kick">Predict2U</p><h2 id="bcod-t">Banker code of the day</h2>'+
       '<div class="bcod-main"><img src="book-sportybet.webp" alt="SportyBet" width="36" height="36"><div><small>SportyBet code</small><strong class="bcod-code">'+esc(code)+'</strong></div></div>'+
       '<div class="bcod-stats"><div><small>Total odds</small><b>'+Number(s.totalOdds).toFixed(2)+'</b></div><div><small>Picks</small><b>'+n+'</b></div></div>'+
+      (s.highRisk||/high risk/i.test(s.warning||s.strategy||'')?'<p class="bcod-warn" style="margin:10px 0 0;color:#fecaca;font-weight:800;font-size:.85rem"><span style="display:inline-block;background:#b91c1c;color:#fff;padding:3px 8px;border-radius:999px;font-size:.66rem;letter-spacing:.04em;margin-right:6px">HIGH RISK</span>'+esc(s.warning||s.strategy||'High-risk accumulator, not safe or guaranteed, stake small')+'</p>':'')+
       '<div class="bcod-act"><button type="button" class="bcod-copy">Copy code</button><a class="bcod-open" href="'+link+'" target="_blank" rel="noopener">Open on SportyBet</a></div>'+
       (chips?'<p class="bcod-also">Also booked on</p><div class="bcod-chips">'+chips+'</div>':'')+
       (window.P2UWA?'<div class="p2u-wa-row" style="justify-content:center">'+P2UWA.button(s,'p2u-wa')+'</div>':'')+

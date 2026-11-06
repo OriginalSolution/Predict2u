@@ -71,14 +71,88 @@ def normalize_legs(slip: dict):
 
 
 def double_chance(leg: dict) -> bool:
-    if str(leg.get('marketId') or leg.get('mid') or '') in ('10', '60110'):
+    """True only for banned DC: 12 always, or 1X/X2 priced above 1.35.
+    Allowed 1X/X2 at 1.35 or below must NOT prune the slip.
+    """
+    try:
+        import sys
+        from pathlib import Path as _P
+        feed = _P(__file__).resolve().parent
+        for root in (feed, feed.parent / "predict2u-feed"):
+            if str(root) not in sys.path:
+                sys.path.insert(0, str(root))
+        import matchup_rules as mr
+        if hasattr(mr, "is_dc_vetoed"):
+            p = dict(leg)
+            if "selection" not in p and leg.get("outcomeDesc"):
+                p["selection"] = leg.get("outcomeDesc")
+            if "market" not in p and (leg.get("marketDesc") or leg.get("marketDescription")):
+                p["market"] = leg.get("marketDesc") or leg.get("marketDescription")
+            return bool(mr.is_dc_vetoed(p))
+    except Exception:
+        pass
+    import re as _re
+    mid = str(leg.get("marketId") or leg.get("mid") or "")
+    sel = str(leg.get("selection") or leg.get("outcomeDesc") or "")
+    mk = str(leg.get("market") or leg.get("marketDesc") or leg.get("marketDescription") or "")
+    is_dc = mid in ("10", "60110") or bool(_re.search(r"double\s*chance", mk, _re.I)) or bool(
+        _re.search(r"home\s+or\s+(?:draw|away)|draw\s+or\s+away|\b(?:1X|X2|12)\b", sel, _re.I)
+    )
+    if not is_dc:
+        return False
+    if _re.search(r"home\s+or\s+away|\b12\b", sel, _re.I) or str(leg.get("outcomeId") or "") in ("10", "13"):
         return True
-    import re
-    return bool(re.search(r'double\s*chance', str(leg.get('market') or leg.get('marketDescription') or ''), re.I))
+    try:
+        return float(leg.get("odds") or 0) > 1.35
+    except Exception:
+        return True
+
+
+def slip_exempt(slip: dict) -> bool:
+    """Pinned one-code exceptions stay until kickoffs pass (then settle/prune normally)."""
+    if slip.get("gateExempt") or slip.get("exempt"):
+        return True
+    codes = []
+    c = slip.get("code")
+    if c:
+        codes.append(str(c).upper())
+    sb = (slip.get("codes") or {}).get("sportybet")
+    if isinstance(sb, list):
+        for x in sb:
+            codes.append(str((x.get("code") if isinstance(x, dict) else x) or "").upper())
+    elif sb:
+        codes.append(str(sb).upper())
+    try:
+        import json
+        from pathlib import Path as _P
+        for path in (
+            _P("/workspace/predict2u-feed/gate_exempt.json"),
+            _P(__file__).resolve().parent / "gate_exempt.json",
+            _P(__file__).resolve().parent.parent / "gate_exempt.json",
+            _P(__file__).resolve().parent.parent / "engine" / "gate_exempt.json",
+        ):
+            if path.exists():
+                doc = json.loads(path.read_text())
+                pinned = {str(x).upper() for x in (doc.get("codes") or [])}
+                if any(c in pinned for c in codes if c):
+                    return True
+                break
+    except Exception:
+        pass
+    return False
 
 
 def live_slip(slip: dict) -> bool:
-    """True if the slip should stay on free code lists; DC is a hard veto."""
+    """True if the slip should stay on free code lists; banned DC is a hard veto."""
+    if slip_exempt(slip):
+        legs = normalize_legs(slip)
+        if legs and all(leg_settled(l) for l in legs):
+            return False
+        kos = [ko_dt(l) for l in legs]
+        known = [t for t in kos if t is not None]
+        if known and all(t <= NOW for t in known) and len(known) == len(legs):
+            return False
+        return True
     if any(double_chance(l) for l in normalize_legs(slip)):
         return False
     if slip.get("earlier"):
@@ -120,6 +194,8 @@ def live_pick(p: dict) -> bool:
 def hot_slip_live(slip: dict, picks_by_eid: dict) -> bool:
     if slip.get("earlier"):
         return False
+    if slip_exempt(slip):
+        return live_slip(slip) if normalize_legs(slip) else True
     events = slip.get("events") or []
     legs = normalize_legs(slip)
     if legs:

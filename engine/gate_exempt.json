@@ -1,0 +1,31 @@
+{
+  "updatedAt": "2026-11-06T07:13:04Z",
+  "note": "One-code publishing exceptions. Bypass gates/prune until last kickoff passes, then settle normally. Never include tipster/bot names.",
+  "codes": [
+    "F3PCEP"
+  ],
+  "entries": [
+    {
+      "code": "F3PCEP",
+      "bookmaker": "SportyBet",
+      "share": "https://www.sportybet.com/gh/?shareCode=F3PCEP",
+      "date": "2026-11-06",
+      "nLegs": 69,
+      "odds": 85255271.06,
+      "earliestKo": "2026-11-06 08:30",
+      "latestKo": "2026-11-06 23:00",
+      "placements": [
+        "codeOfTheDay",
+        "hotPicks",
+        "highOdds"
+      ],
+      "highRisk": true,
+      "warning": "High-risk 69-leg accumulator, not safe or guaranteed, stake small",
+      "gateExempt": true,
+      "source": "/workspace/master06/booked.json",
+      "supersedes": [
+        "DBKX8G"
+      ]
+    }
+  ]
+}

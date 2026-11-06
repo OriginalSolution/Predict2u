@@ -399,6 +399,9 @@ def mr_is_btts_no(leg):
     return mr.is_btts_no(leg)
 
 def mr_is_hard_veto(leg):
+    sys.path.insert(0, str(RESEARCH))
+    sys.path.insert(0, str(FEED))
+    import matchup_rules as mr
     if hasattr(mr, 'is_dc_vetoed'):
         return mr.is_dc_vetoed(leg) or mr_is_btts_no(leg)
     return mr_is_double_chance(leg) or mr_is_btts_no(leg)
@@ -416,6 +419,8 @@ def rebook_dc_free_existing(existing, previous_replacements=None):
     out = list(previous_replacements or [])
     for old in existing.values():
         legs = old.get('legs') or []
+        if old.get('gateExempt') or str(old.get('code') or '').upper() == 'F3PCEP':
+            continue
         if not any(mr_is_hard_veto(p) for p in legs):
             continue
         kept = []
@@ -475,6 +480,15 @@ def main():
         s = settle_slip(dict(s), decoded.get(key))
         # Hard veto applies to active and historical High Odds codes too.
         # Remove the whole old share: editing its JSON would misrepresent the booked ticket.
+        if s.get('gateExempt') or str(s.get('code') or '').upper() == 'F3PCEP':
+            refreshed[key] = s
+            # still settle status fields above; keep exempt code even if a future veto would drop it
+            if key in by_code and s.get('decodeError') is None:
+                s['verification'] = s.get('warning') or s.get('verification') or 'Verified by Predict2u'
+            if not s.get('riskRating') and s.get('legs'):
+                score, rating, flags, err = risk_score(s)
+                s.update(riskScore=score, riskRating=rating, riskFlags=flags, riskError=err)
+            continue
         if any(mr_is_hard_veto(p) for p in s.get('legs') or []):
             print('drop vetoed high-odds code', s.get('code'))
             continue
@@ -506,7 +520,15 @@ def main():
             added += 1
         except Exception as e:
             print('skip', c['code'], e)
-    pinned = {'D2BEMV', 'AE1S9M', 'AMNN1X', 'BQCUCP', 'E51P68', 'DZBHA7'}
+    pinned = {'D2BEMV', 'AE1S9M', 'AMNN1X', 'BQCUCP', 'E51P68', 'DZBHA7', 'F3PCEP'}
+    try:
+        import json as _json
+        for _p in (FEED / 'gate_exempt.json', Path('/workspace/predict2u-feed/gate_exempt.json'), REPO / 'engine' / 'gate_exempt.json'):
+            if _p.exists():
+                pinned |= {str(c).upper() for c in (_json.loads(_p.read_text()).get('codes') or [])}
+                break
+    except Exception:
+        pass
     house = {c['code'] for c in house_candidates()}
     replacement_pairs = {s.get('replacementOf'): s['code'] for s in refreshed.values() if s.get('replacementOf')}
     hub_count = 0
