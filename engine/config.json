@@ -2,7 +2,8 @@
   "version": 1,
   "source": "engine/RULES.md",
   "hard_vetoes": [
-    "double_chance",
+    "double_chance_12",
+    "double_chance_1x_x2_above_1.35",
     "btts_no"
   ],
   "max_leg_odds": 1.6,
@@ -74,5 +75,6 @@
     "telegram_post.py"
   ],
   "combine_under_min_odds": true,
-  "one_market_per_game": true
+  "one_market_per_game": true,
+  "dc_1x_x2_max": 1.35
 }

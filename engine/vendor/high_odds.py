@@ -127,7 +127,7 @@ def risk_score(slip):
     """Run the real shared rules and strict gates; publish failures as risk evidence."""
     try:
         import matchup_rules as mr
-        if any(mr.is_double_chance(p) or mr.is_btts_no(p) for p in slip.get('legs') or []):
+        if any((mr.is_dc_vetoed(p) if hasattr(mr,"is_dc_vetoed") else mr.is_double_chance(p)) or mr.is_btts_no(p) for p in slip.get('legs') or []):
             return 100, 'Unscored', [], 'HARD VETO: double chance or NG (BTTS No) legs cannot be verified or published'
     except Exception as e:
         return 100, 'Unscored', [], f'rule engine unavailable: {e}'
@@ -399,6 +399,8 @@ def mr_is_btts_no(leg):
     return mr.is_btts_no(leg)
 
 def mr_is_hard_veto(leg):
+    if hasattr(mr, 'is_dc_vetoed'):
+        return mr.is_dc_vetoed(leg) or mr_is_btts_no(leg)
     return mr_is_double_chance(leg) or mr_is_btts_no(leg)
 
 

@@ -3,11 +3,12 @@
 2) classify mismatch / middle / even:
    mismatch: straight win picks are not booked (use GG / Over 1.5 instead)
    middle:   GG only (plus home/away team over 0.5)
-0) HARD VETO: no double chance (1X, X2 or 12) and no NG (BTTS No / GG No), on any slip or bookmaker
+0) HARD VETO: DC 12 (Home or Away) is never published; 1X/X2 above 1.35 is never published; 1X/X2 at 1.35 or below is allowed. NG (BTTS No / GG No) is never published.
    even:     no Over 1.5 / Over 2.5
 """
 import re
 DC_MARKET_IDS={'10','60110'}
+DC_1X_X2_MAX=1.35
 def is_double_chance(p):
   """True for every double-chance variant, including text-only imported legs."""
   if str(p.get('marketId') or p.get('mid') or '') in DC_MARKET_IDS: return True
@@ -15,6 +16,8 @@ def is_double_chance(p):
   if re.search(r'double\s*chance',market,re.I): return True
   sel=str(p.get('selection') or '').strip()
   if re.fullmatch(r'(?:1X|X2|12)',sel,re.I): return True
+  if re.search(r'\b(1X|X2|12)\b', sel) and re.search(r'double|home\s*/\s*draw|draw\s*/\s*away|home\s*/\s*away', sel+' '+market, re.I): return True
+  if re.search(r'home\s*/\s*draw|draw\s*/\s*away|away\s*/\s*draw|home\s*/\s*away|home\s+or\s+draw|draw\s+or\s+away|away\s+or\s+draw|home\s+or\s+away', sel, re.I): return True
   # Legacy imported ledger legs have no market ID: Home or Draw / Home or Away.
   if not market and re.search(r'\bor\s+(?:draw|home|away)\s*$',sel,re.I): return True
   if not market:
@@ -22,6 +25,45 @@ def is_double_chance(p):
    teams=[t.strip() for t in re.split(r'\s+(?:v|vs)\s+',match,maxsplit=1)]
    if len(teams)==2 and sel in (teams[0]+' or '+teams[1],teams[1]+' or '+teams[0]): return True
   return bool(re.search(r'\bdc\b',market,re.I) and re.search(r'\b(1X|X2|12)\b',sel,re.I))
+def dc_variant(p):
+  """Return '12', '1X', 'X2', or None if the pick is not double chance."""
+  if not is_double_chance(p): return None
+  sel=str(p.get('selection') or p.get('tip') or '').strip()
+  mk=str(p.get('market') or p.get('marketDescription') or p.get('md') or '')
+  if re.fullmatch(r'12', sel, re.I) or re.search(r'\b12\b', sel) or re.search(r'home\s*/\s*away|home\s+or\s+away', sel, re.I):
+    return '12'
+  if re.fullmatch(r'1X', sel, re.I) or re.search(r'\b1X\b', sel) or re.search(r'home\s*/\s*draw|home\s+or\s+draw', sel, re.I):
+    return '1X'
+  if re.fullmatch(r'X2', sel, re.I) or re.search(r'\bX2\b', sel) or re.search(r'draw\s*/\s*away|away\s*/\s*draw|draw\s+or\s+away|away\s+or\s+draw', sel, re.I):
+    return 'X2'
+  if re.search(r'home\s*/\s*away|home\s+or\s+away', mk, re.I) and not re.search(r'draw', mk, re.I):
+    return '12'
+  oid=str(p.get('outcomeId') or p.get('oid') or '')
+  mid=str(p.get('marketId') or p.get('mid') or '')
+  if mid in DC_MARKET_IDS:
+    if oid in {'10','13'}: return '12'   # SportyBet Home or Away
+    if oid in {'9','11'} : return '1X' if oid=='9' else 'X2'
+  match=str(p.get('match') or '')
+  teams=[t.strip() for t in re.split(r'\s+(?:v|vs)\s+',match,maxsplit=1)]
+  if len(teams)==2 and sel in (teams[0]+' or '+teams[1], teams[1]+' or '+teams[0]):
+    return '12'
+  return None
+def is_dc_vetoed(p):
+  """Hard veto: DC 12 always; 1X/X2 only when priced above DC_1X_X2_MAX (1.35)."""
+  v=dc_variant(p)
+  if v is None: return False
+  if v=='12': return True
+  try: odds=float(p.get('odds') or 0)
+  except Exception: odds=0
+  if v in ('1X','X2'): return odds>DC_1X_X2_MAX
+  return odds>DC_1X_X2_MAX
+def dc_veto_reason(p):
+  v=dc_variant(p)
+  if v=='12':
+    return 'HARD VETO: DC 12 (Home or Away) is never published'
+  if v in ('1X','X2'):
+    return f'HARD VETO: DC {v} @{p.get("odds")} is above {DC_1X_X2_MAX}'
+  return f'HARD VETO: double chance @{p.get("odds")} is above {DC_1X_X2_MAX}'
 NG_OUTCOME_IDS={'76'}  # SportyBet BTTS / GG No
 def is_btts_no(p):
   """True for NG / BTTS No / GG No. BTTS Yes is not vetoed."""
@@ -82,8 +124,8 @@ def extreme160(p):
           and int(h.group(2))>=X_H2H_N and lr>=X_LEAGUE)
 def check(p):
   """-> (ok, class, reason); the DC and NG vetos cannot be relaxed by report mode."""
-  if is_double_chance(p):
-    return False,'double-chance-veto','HARD VETO: double chance (1X, X2 or 12) is never published; choose another market or drop the match'
+  if is_dc_vetoed(p):
+    return False,'double-chance-veto',dc_veto_reason(p)
   if is_btts_no(p):
     return False,'btts-no-veto','HARD VETO: NG (BTTS No / GG No) is never published; choose another market or drop the match'
   if float(p.get('odds') or 0)>MAX_LEG and not extreme160(p):
@@ -91,7 +133,7 @@ def check(p):
   cls,why=classify(p)
   if cls=='skip': return False,cls,why
   # LOOSENING L2: no table found (cup / no standings) -> only low-risk legs at odds <= 1.30 pass
-  #   (home/away team over 0.5 or GG); double chance is always vetoed above.
+  #   (home/away team over 0.5 or GG); DC 12 and 1X/X2 above 1.35 are vetoed above.
   if not re.search(r'\d+ v \d+/\d+',(p.get('table') or '')+' '+(p.get('case') or '')):
     if not (p.get('x12') or '1X2 ' in (p.get('case') or '')): return False,'unverified','no 1X2 odds to classify the game'
     if float(p.get('odds') or 9)<=1.30 and key(p) in {'19|total=0.5|12','20|total=0.5|12','29||74'}: return True,cls,why+' (no table: low-risk leg <= 1.30)'
