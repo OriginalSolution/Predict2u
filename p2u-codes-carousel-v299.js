@@ -20,12 +20,13 @@
     return function add(book,code,odds,legs,title,note,link){if(window.P2UCode?!P2UCode.isReal(code):!code)return;code=String(code);if(book!=='betika')code=code.toUpperCase();var k=book+':'+code;if(seen[k])return;seen[k]=1;
       var B=BOOKS[book]||{n:book,logo:null,c:'#64748b',link:null};out.push({b:B,code:code,odds:odds,legs:legs,title:title,note:note,link:link||(B.link?B.link.replace('{c}',encodeURIComponent(code)):null)});}
   }
+  function addParts(add,s,title){(s.parts||[]).forEach(function(pt,i){Object.keys(pt.codes||{}).forEach(function(k){(pt.codes[k]||[]).forEach(function(c){add(k,c.code,c.totalOdds,c.legs,title+' · part '+(i+1)+'/'+s.parts.length+' · HIGH RISK',null,c.link);});});});}
   function cardsHome(d){
     var out=[],seen={},h=d.homeCode||{},add=addFactory(out,seen);
     (h.codes||[]).forEach(function(c){add('sportybet',c.sportybet||c.code,c.totalOdds,c.legs,'All picks of the day',null,c.link);});
     Object.keys(h).forEach(function(k){if(k==='codes'||!Array.isArray(h[k]))return;h[k].forEach(function(c){add(k,c[k]||c.code,c.totalOdds,c.legs,'All picks of the day',c.of&&c.of>c.legs?(c.of-c.legs)+((c.of-c.legs)>1?' picks':' pick')+' not on '+((BOOKS[k]||{}).n||k):null,c.link);});});
     (d.slips||[]).forEach(function(s){if(s.earlier||/^earlier code/i.test(String(s.name||'')))return;var C=s.codes||{};Object.keys(C).forEach(function(k){
-      add(k,C[k],(s.bookOdds||{})[k]||(k==='sportybet'?s.totalOdds:null),(s.bookPicks||{})[k]||(s.legs||[]).length,String(s.name||'Banker slip').replace(/\s*\(.*\)$/,''),(s.bookNotes||{})[k]);});});
+      add(k,C[k],(s.bookOdds||{})[k]||(k==='sportybet'?s.totalOdds:null),(s.bookPicks||{})[k]||(s.legs||[]).length,String(s.name||'Banker slip').replace(/\s*\(.*\)$/,''),(s.bookNotes||{})[k]);});addParts(add,s,String(s.name||'Banker slip'));});
     return out;
   }
   function cardsHot(d){
@@ -42,6 +43,7 @@
           add(k,code,c.totalOdds!=null?c.totalOdds:s.totalOdds,c.legs!=null?c.legs:s.legs,title,null,c.link);
         });
       });
+      addParts(add,s,title);
     });
     return out;
   }
