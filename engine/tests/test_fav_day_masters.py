@@ -33,9 +33,15 @@ def test_upcoming_drops_kicked_off():
 
 
 def test_chunk_legs():
+    # Balanced round-robin split (not greedy) so each part has similar leg counts /
+    # odds instead of a short low-odds tail.
     legs = [{"eventId": str(i)} for i in range(65)]
     parts = FDM.chunk_legs(legs, max_legs=30)
-    assert [len(p) for p in parts] == [30, 30, 5]
+    assert [len(p) for p in parts] == [22, 22, 21]
+    assert all(len(p) <= 30 for p in parts)
+    assert sum(len(p) for p in parts) == 65
+    # Under the cap: single part.
+    assert [len(p) for p in FDM.chunk_legs(legs[:30], max_legs=30)] == [30]
 
 
 def test_build_day_masters_calls_book_fn():
