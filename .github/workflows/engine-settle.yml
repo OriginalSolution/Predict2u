@@ -46,10 +46,13 @@ jobs:
           set -euo pipefail
           git config user.name "predict2u-engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Never include missing/gitignored paths (e.g. engine/data/daily-master)
+          # on the same git-add as feed files: one bad pathspec aborts the whole
+          # add and settlements never get committed.
           git add -- \
             picks.json picks-history.json home-picks.json hot-picks.json \
             high_odds.json record.json staked-codes.json staked-status.json \
-            staked-index.json engine/data/daily-master || true
+            staked-index.json
           if git diff --cached --quiet; then
             echo "no settlement changes"
             exit 0
