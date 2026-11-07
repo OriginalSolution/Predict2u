@@ -125,6 +125,12 @@ def page(s, src, sc, c, odds):
     desc = "Free booking code: " + " · ".join(f"{nm} {c[k]}" for k, nm, *_ in BOOKS if k in c) + ". 18+ Bet responsibly."
     tgt = f"/high-odds/#{sc}" if src == "high" else f"/{PAGES.get(src, '')}?code={sc}#slip-{sc}"
     rows = "".join(f'<li><b>{e(nm)}</b> <code>{e(c[k])}</code></li>' for k, nm, *_ in BOOKS if k in c)
+    if src == "manual":  # unlisted shared slip: per-book picks + odds, no redirect into site listings
+        def _m(k):
+            v = (s.get("codes") or {}).get(k); v = v[0] if isinstance(v, list) and v else v
+            return v if isinstance(v, dict) else {}
+        rows = "".join(f'<li><b>{e(nm)}</b> <code>{e(c[k])}</code> <small>{e(_m(k).get("legs"))} picks · @{e(_m(k).get("totalOdds"))}</small></li>' for k, nm, *_ in BOOKS if k in c)
+        tgt = "/"
     P = s.get("parts") or []
     if P:  # >50-leg code: bookmakers take max 50 picks per code -> lead with the parts
         pr = ""
@@ -143,7 +149,7 @@ def page(s, src, sc, c, odds):
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{img}"><meta name="robots" content="noindex,follow">
 <style>body{{margin:0;background:#081424;color:#fff;font-family:system-ui,sans-serif;text-align:center;padding:16px}}img{{max-width:100%;width:420px;border-radius:16px}}a.b{{display:inline-block;margin:14px 0;padding:12px 22px;border-radius:999px;background:#78be20;color:#081424;font-weight:800;text-decoration:none}}ul{{list-style:none;padding:0}}code{{color:#ffcc00;font-size:1.1em}}</style></head>
 <body><a class="b" href="{e(tgt)}">Open this slip on Predict2u.com</a><ul>{rows}</ul><img src="/share/{sc}.png" alt="{e(t)}"><p><small>18+ Bet responsibly.</small></p>
-<script src="/p2u-live-track-v336.js?v=336" defer></script><script>setTimeout(function(){{location.replace({json.dumps(tgt)})}},2500)</script></body></html>"""
+<script src="/p2u-live-track-v336.js?v=336" defer></script>{'' if src == 'manual' else '<script>setTimeout(function(){location.replace(' + json.dumps(tgt) + ')},2500)</script>'}</body></html>"""
     d = os.path.join(SDIR, sc); os.makedirs(d, exist_ok=True)
     open(os.path.join(d, "index.html"), "w").write(h)
 
@@ -184,6 +190,8 @@ def main():
         for k in ("slips", "history"):
             for s in d.get(k) or []:
                 if s.get("parts"): parts_of(s, src)
+    for s in (load(os.path.join("engine", "data", "manual_shares.json")).get("slips") or []):
+        made.append(card(s, "manual", day))  # persisted unlisted share pages (never pruned)
     made = {p for p in made if p}
     for p in glob.glob(os.path.join(OUT, "*.png")):  # prune old unreferenced cards
         if p not in made: os.remove(p)
