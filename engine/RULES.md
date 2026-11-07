@@ -72,3 +72,7 @@ Optional `engine/gates/newrules.py` runs in `P2U_STRICT_GATES=report` (default) 
 1. Edit **this file** and `engine/config.json` together.
 2. `python -m engine.check_rules` (also run by `engine-tests.yml`) must pass.
 3. Land the change through a pull request.
+
+## Day masters persistence
+- Favourites day-master codes (homeCode.dayMasters) are built only by engine/vendor/book_home.py; the box sync.sh calls the engine copies (no box-only book_home).
+- Midnight UTC rollover: today's master must exist for the new date; .github/workflows/daymasters-guard.yml checks every 30 min (engine/daymasters_check.py) and dispatches engine-daily to rebook when missing. Hidden only when the day has no picks.

@@ -1,0 +1,28 @@
+name: Day masters guard — rebook if today's favourites codes are missing
+
+on:
+  schedule:
+    - cron: "10,40 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - name: Check today's dayMasters (rollover + codes)
+        id: c
+        run: python3 engine/daymasters_check.py home-picks.json && echo "ok=1" >> "$GITHUB_OUTPUT" || echo "ok=0" >> "$GITHUB_OUTPUT"
+      - name: Rebook via engine-daily (skip if one is already queued/running)
+        if: steps.c.outputs.ok == '0'
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          busy=$(gh run list --workflow engine-daily.yml --json status -q '[.[]|select(.status!="completed")]|length' -L 5)
+          if [ "$busy" != "0" ]; then echo "engine-daily already running"; exit 0; fi
+          gh workflow run engine-daily.yml
