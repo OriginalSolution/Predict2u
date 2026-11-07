@@ -120,11 +120,21 @@ def card(s, src, day):
     im.quantize(colors=256, method=Image.Quantize.FASTOCTREE).save(p, optimize=True); return p
 
 def page(s, src, sc, c, odds):
-    e = html.escape; url = f"https://predict2u.com/s/{sc}/"; img = f"https://predict2u.com/share/{sc}.png"
+    e = lambda x: html.escape(str(x if x is not None else "")); url = f"https://predict2u.com/s/{sc}/"; img = f"https://predict2u.com/share/{sc}.png"
     t = f"{title(s, src)} @{float(odds or 0):.2f} — Predict2u.com"
     desc = "Free booking code: " + " · ".join(f"{nm} {c[k]}" for k, nm, *_ in BOOKS if k in c) + ". 18+ Bet responsibly."
     tgt = f"/high-odds/#{sc}" if src == "high" else f"/{PAGES.get(src, '')}?code={sc}#slip-{sc}"
     rows = "".join(f'<li><b>{e(nm)}</b> <code>{e(c[k])}</code></li>' for k, nm, *_ in BOOKS if k in c)
+    P = s.get("parts") or []
+    if P:  # >50-leg code: bookmakers take max 50 picks per code -> lead with the parts
+        pr = ""
+        for i, pt in enumerate(P):
+            li = "".join(f'<li><b>{e(nm)}</b> <a href="/s/{e(code_of(pt["codes"][k]))}/"><code>{e(code_of(pt["codes"][k]))}</code></a> <small>{e((pt["codes"][k][0] or {}).get("legs"))} picks · @{e((pt["codes"][k][0] or {}).get("totalOdds"))}</small></li>' for k, nm, *_ in BOOKS if code_of((pt.get("codes") or {}).get(k)))
+            if li: pr += f'<h3>Part {i + 1} of {len(P)} · {e(pt.get("legs"))} picks</h3><ul>{li}</ul>'
+        rows = f'<p><b style="background:#b91c1c;padding:3px 10px;border-radius:999px">HIGH RISK</b></p><p>Bookmakers take up to 50 picks per code, so this slip is split into {len(P)} parts:</p>{pr}<p><small>Full {e(sc)} code ({e(s.get("legs") if not isinstance(s.get("legs"), list) else len(s["legs"]))} picks):</small></p><ul>{rows}</ul>'
+        desc = "HIGH RISK. Split into parts (max 50 picks per code): " + " | ".join(f"Part {i + 1}: " + " · ".join(f"{nm} {code_of(pt['codes'][k])}" for k, nm, *_ in BOOKS if code_of((pt.get('codes') or {}).get(k))) for i, pt in enumerate(P)) + ". 18+ Bet responsibly."
+    elif s.get("partOf"):
+        rows = f'<p><b style="background:#b91c1c;padding:3px 10px;border-radius:999px">HIGH RISK</b></p><p>{e(s.get("name"))}. Full slip: <a href="/s/{e(s["partOf"])}/">{e(s["partOf"])}</a></p><ul>{rows}</ul>'
     h = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(t)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{url}">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Predict2u.com"><meta property="og:url" content="{url}">
@@ -157,6 +167,23 @@ def main():
             sc = codes(s).get("sportybet")
             if sc in seen: continue
             seen.add(sc); made.append(card(s, "high", day))
+    def parts_of(s, src):
+        for i, pt in enumerate(s.get("parts") or []):
+            pc = {k: v for k, v in (pt.get("codes") or {}).items() if code_of(v)}
+            if not pc: continue
+            first = pc.get("sportybet") or next(iter(pc.values()))
+            ps = dict(name=f"{title(s, src)} · Part {i + 1}/{len(s['parts'])} · HIGH RISK", codes=pc, totalOdds=(first[0] or {}).get("totalOdds"),
+                      legs=(first[0] or {}).get("legs"), partOf=codes(s).get("sportybet"), highRisk=True)
+            made.append(card(ps, src, day))
+            for k, v in pc.items():  # every bookmaker's part code gets its own /s/ link
+                sc2 = code_of(v)
+                if sc2 and sc2 != code_of(first):
+                    made.append(card(dict(ps, codes={k: v}), src, day))
+    for n, src in (("home-picks.json", "home"), ("hot-picks.json", "hot"), ("high_odds.json", "high")):
+        d = load(n)
+        for k in ("slips", "history"):
+            for s in d.get(k) or []:
+                if s.get("parts"): parts_of(s, src)
     made = {p for p in made if p}
     for p in glob.glob(os.path.join(OUT, "*.png")):  # prune old unreferenced cards
         if p not in made: os.remove(p)

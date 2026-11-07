@@ -20,8 +20,18 @@
     var codes=codesOf(s);
     var odds=(s.bookOdds&&s.bookOdds.sportybet)||s.totalOdds||s.odds;
     var n=(s.bookPicks&&s.bookPicks.sportybet)||s.picks||(Array.isArray(s.legs)?s.legs.length:s.legs);
-    var lines=['Predict2U — '+label(s), '@'+Number(odds||0).toFixed(2)+' · '+n+' picks', ''];
-    BOOKS.forEach(function(b){ if(codes[b[0]]) lines.push(b[1]+': '+codes[b[0]]); });
+    var P=s.parts||[],ok=function(c){return c&&c.code&&(!window.P2UCode||P2UCode.isReal(c.code));};
+    var lines=['Predict2U — '+label(s)+(P.length||s.highRisk?' · HIGH RISK':''), '@'+Number(odds||0).toFixed(2)+' · '+n+' picks', ''];
+    if(P.length){
+      lines.push('Bookmakers take max 50 picks per code, so use the '+P.length+' parts:');
+      P.forEach(function(pt,i){
+        var L=BOOKS.map(function(b){var c=((pt.codes||{})[b[0]]||[])[0];return ok(c)?'  '+b[1]+': '+c.code+' ('+c.legs+' picks @'+Number(c.totalOdds).toFixed(2)+')':null;}).filter(Boolean);
+        if(!L.length)return; var f=((pt.codes||{}).sportybet||[])[0]||{};
+        lines.push('','Part '+(i+1)+' · '+pt.legs+' picks'+(ok(f)?' · https://predict2u.com/s/'+encodeURIComponent(f.code)+'/':''));
+        lines.push.apply(lines,L);
+      });
+      lines.push('', 'Full code ('+n+' picks, too many for one slip): '+(codes.sportybet||''));
+    } else BOOKS.forEach(function(b){ if(codes[b[0]]) lines.push(b[1]+': '+codes[b[0]]); });
     if(!Object.keys(codes).length) lines.push('🔒 Premium codes: unlock on predict2u.com');
     lines.push('', 'Open this slip: '+slipUrl(s), '18+ Bet responsibly');
     return lines.join('\n');

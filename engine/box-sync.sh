@@ -63,6 +63,7 @@ timeout 60 python3 "$REPO/engine/vendor/prune_live.py" "$REPO" || echo "prune st
 python3 "$REPO/engine/vendor/lock_codes.py" "$REPO" || { echo "lock step failed - not pushing"; exit 1; }
 timeout 900 python3 "$REPO/engine/vendor/split_codes.py" "$REPO" || echo "split step failed"
 timeout 300 python3 "$REPO/engine/vendor/daily_master.py" "$REPO" || echo "daily master step failed"
+timeout 600 python3 "$REPO/engine/vendor/share_cards.py" "$REPO" || echo "share cards (final) step failed"
 [ $rc -eq 3 ] && ! git diff --quiet -- . && rc=0
 if [ $rc -eq 3 ] && git diff --quiet -- news-hub.json share hot-picks.json staked-codes.json && [ -z "$(git ls-files --others --exclude-standard share)" ] && ! git ls-files --others --exclude-standard | grep -qx news-hub.json; then echo "no change, nothing pushed"; exit 0; fi
 [ $rc -ne 0 ] && [ $rc -ne 3 ] && exit $rc
