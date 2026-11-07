@@ -91,7 +91,7 @@ jobs:
             sportybet-codes-today msport-booking-codes-today \
             betika-booking-codes-today betpawa-booking-codes-today \
             football-com-booking-codes-today betway-booking-codes-today || true
-          for extra in engine/data/pick_ledger.json; do
+          for extra in engine/data/pick_ledger.json engine/data/daily-master engine/data/ho-masters engine/data/manual_shares.json; do
             [ -e "$extra" ] && git add -- "$extra" || true
           done
           if git diff --cached --quiet; then

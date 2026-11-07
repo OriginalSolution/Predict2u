@@ -53,6 +53,7 @@ jobs:
             picks.json picks-history.json home-picks.json hot-picks.json \
             high_odds.json record.json staked-codes.json staked-status.json \
             staked-index.json engine/data/daily-master
+          for extra in engine/data/ho-masters; do [ -e "$extra" ] && git add -- "$extra" || true; done
           if git diff --cached --quiet; then
             echo "no settlement changes"
             exit 0
