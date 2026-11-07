@@ -86,6 +86,7 @@ jobs:
             sportybet-codes-today msport-booking-codes-today \
             betika-booking-codes-today betpawa-booking-codes-today \
             football-com-booking-codes-today betway-booking-codes-today \
+            engine/data/20*.json engine/inbox \
             || true
           if git diff --cached --quiet; then
             echo "no publish changes"

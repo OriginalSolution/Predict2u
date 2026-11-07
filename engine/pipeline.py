@@ -142,7 +142,7 @@ def publish(env, dry_run=False):
 
 def shield(env, dry_run=False):
     """Nightly ~9 PM DC Shield Goals run (also books AH-1 scan into the inbox)."""
-    run([sys.executable, str(VENDOR_DIR / "dc_shield.py")] + (["--skip-book"] if dry_run else []), env=env, timeout=900, check=False)
+    run([sys.executable, str(VENDOR_DIR / "dc_shield.py")] + (["--skip-book"] if dry_run else []), env=env, timeout=900, check=True)
     run([sys.executable, str(VENDOR_DIR / "ah_minus_one.py")], env=env, timeout=900, check=False)
 
 

@@ -341,9 +341,19 @@ def publish(sporty: dict, others: dict, target_date: str) -> tuple[dict, Path]:
     """Write/replace DC Shield Goals slip into TODAY's research JSON."""
     today = dt.datetime.now(dt.timezone.utc).date().isoformat()
     rf = RESEARCH / f'{today}.json'
-    if not rf.exists():
-        raise FileNotFoundError(f'research file missing: {rf}')
-    d = json.loads(rf.read_text())
+    if rf.exists():
+        d = json.loads(rf.read_text())
+    else:
+        # Actions has no box research day-file; create a minimal shell so the
+        # shield slip can land and build.py can publish it the same run.
+        rf.parent.mkdir(parents=True, exist_ok=True)
+        now = dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds')
+        d = dict(
+            date=today, days=2, strategy='engine',
+            leagues=[], picks=[], slips=[], excluded={}, homeCode={},
+            updatedAt=now,
+        )
+        print(f'[dc_shield] created research shell {rf}', flush=True)
     L = sporty['legs']
     codes = {'sportybet': sporty['sportybet']}
     odds = {'sportybet': sporty['totalOdds']}
