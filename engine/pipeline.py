@@ -42,7 +42,7 @@ def collect(env, days=2, dry_run=False):
     ensure_dirs()
     run([sys.executable, str(VENDOR_DIR / "scan.py")], env=env, timeout=300)
     day = run_day()
-    run([sys.executable, str(VENDOR_DIR / "run.py"), day, "--days", str(days)], env=env, cwd=str(RESEARCH_DIR), timeout=1500)
+    run([sys.executable, str(VENDOR_DIR / "run.py"), day, "--days", str(days)], env=env, cwd=str(RESEARCH_DIR), timeout=int(os.environ.get("P2U_COLLECT_TIMEOUT", "4200")))
     path = RESEARCH_DIR / f"{day}.json"
     if not path.exists():
         print("collect: no research file written")
