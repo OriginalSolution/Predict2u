@@ -68,7 +68,9 @@ def chunk_legs(legs, max_legs=MAX_LEGS):
     L = list(legs or [])
     if not L:
         return []
-    return [L[i : i + max_legs] for i in range(0, len(L), max_legs)]
+    n = -(-len(L) // max_legs)
+    # Balanced round-robin split: every part gets a similar leg count and odds, so no short low-odds tail part (25+ odds per part).
+    return [L[k::n] for k in range(n)]
 
 
 def _slim(p):
