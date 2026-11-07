@@ -108,6 +108,42 @@ def main():
         for k in ('slips', 'history'):
             ho[k] = [s for s in (ho.get(k) or []) if s.get('code') != r['code']]
         (ho.setdefault('slips', []).insert(0, slip) if slip['status'] == 'pending' else ho.setdefault('history', []).insert(0, slip))
+    # High-Odds-only masters (engine/data/ho-masters): published on High Odds only, in parts, HIGH RISK, settled per leg.
+    HD = os.path.join(REPO, 'engine', 'data', 'ho-masters')
+    for f in sorted(glob.glob(os.path.join(HD, '*.json'))):
+        r = load(f)
+        if not r or not r.get('parts'): continue
+        if r.get('status') in (None, 'pending'):
+            sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            try:
+                import high_odds as HO
+                for pt in r['parts']:
+                    c = ((pt.get('codes') or {}).get('sportybet') or [{}])[0].get('code')
+                    if not c: continue
+                    sl = dict(code=c, legs=[x for x in r['legList'] if x['eventId'] in set(pt['events'])]); HO.settle_slip(sl)
+                    if not sl.get('decodeError'):
+                        res = {x['eventId']: x for x in sl['legs']}
+                        r['legList'] = [res.get(x['eventId'], x) for x in r['legList']]
+            except Exception as e: print('ho master settle failed', e)
+            import split_codes as SC; SC.settle_parts(r['legList'], r['parts'])
+            res = [(x.get('result') or 'pending').lower() for x in r['legList']]
+            r['hit'], r['total'] = res.count('won'), len(res)
+            r['status'] = 'lost' if 'lost' in res else 'won' if res and all(x in ('won', 'void') for x in res) else 'pending'
+            save(f, r, pretty=True)
+        for i, pt in enumerate(r['parts']):
+            cs = {b: dict(code=L[0]['code'], legs=L[0]['legs'], odds=L[0]['totalOdds'], link=L[0]['link']) for b, L in (pt.get('codes') or {}).items() if L}
+            if 'sportybet' not in cs: continue
+            sc = cs['sportybet']['code']; ev = set(pt['events']); pl = [x for x in r['legList'] if x['eventId'] in ev]
+            pr = [(x.get('result') or 'pending').lower() for x in pl]
+            st = 'lost' if 'lost' in pr else 'won' if pr and all(x in ('won', 'void') for x in pr) else 'pending'
+            slip = dict(code=sc, bookmaker='SportyBet', book='sportybet', name=f"{r['name']} · part {i + 1}/{len(r['parts'])} · HIGH RISK", date=r['date'],
+                        odds=pt['totalOdds'], share=cs['sportybet']['link'], legs=pl, verification=r.get('verification'), origin='ho-master',
+                        hit=pr.count('won'), lostLegs=pr.count('lost'), total=len(pl), status=st, riskRating='HIGH', riskLabel='HIGH RISK', highRisk=True,
+                        shareUrl=f"https://predict2u.com/high-odds/#{sc}", codes=cs, lastKickoff=max((x.get('kickoff') or '') for x in pl) or None,
+                        settledAt=NOW.isoformat(timespec='seconds').replace('+00:00', 'Z') if st != 'pending' else None)
+            for k in ('slips', 'history'):
+                ho[k] = [x for x in (ho.get(k) or []) if x.get('code') != sc]
+            (ho.setdefault('slips', []).append(slip) if st == 'pending' else ho.setdefault('history', []).insert(0, slip))
     H = ho.get('history') or []; won = sum(s.get('status') == 'won' for s in H); lost = sum(s.get('status') == 'lost' for s in H)
     ho['record'] = dict(won=won, lost=lost, settled=won + lost, pending=len(ho.get('slips') or []), winRate=round(100 * won / (won + lost), 1) if won + lost else None)
     save(ho_p, ho)

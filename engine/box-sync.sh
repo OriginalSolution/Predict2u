@@ -68,7 +68,7 @@ timeout 600 python3 "$REPO/engine/vendor/share_cards.py" "$REPO" || echo "share 
 if [ $rc -eq 3 ] && git diff --quiet -- news-hub.json share hot-picks.json staked-codes.json && [ -z "$(git ls-files --others --exclude-standard share)" ] && ! git ls-files --others --exclude-standard | grep -qx news-hub.json; then echo "no change, nothing pushed"; exit 0; fi
 [ $rc -ne 0 ] && [ $rc -ne 3 ] && exit $rc
 for f in high_odds.json og-high-odds.png high-odds locked.enc.json picks.json picks-history.json home-picks.json news-hub.json hot-picks.json staked-codes.json staked-index.json staked-status.json record.json live-scores.json seo-pages.json sitemap.xml robots.txt matches.html leagues.html sportybet-codes-today betway-booking-codes-today msport-booking-codes-today betika-booking-codes-today betpawa-booking-codes-today football-com-booking-codes-today; do [ -e "$f" ] && git add "$f"; done
-[ -d engine/data/daily-master ] && git add -A engine/data/daily-master engine/data/pick_ledger.json
+[ -d engine/data/daily-master ] && git add -A engine/data/daily-master engine/data/ho-masters engine/data/pick_ledger.json engine/data/manual_shares.json
 [ -d match ] && git add -A match
 [ -d league ] && git add -A league
 [ -d share ] && git add -A share

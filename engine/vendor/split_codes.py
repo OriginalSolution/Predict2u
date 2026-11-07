@@ -71,7 +71,9 @@ def ensure_parts(rec, legs_key='legList', base_name=None, now=None):
     """Book parts once per leg set; settle every call. rec gets parts, partsDropped (kicked off)."""
     now = now or dt.datetime.now(dt.timezone.utc)
     legs = rec.get(legs_key) or []
-    if len(legs) <= MAX_LEGS: return rec
+    if len(legs) <= MAX_LEGS:
+        if rec.get('parts'): settle_parts(legs, rec['parts'])
+        return rec
     if not rec.get('parts'):
         live = [p for p in legs if not started(p, now)]
         rec['partsDropped'] = [dict(match=p['match'], reason='already kicked off') for p in legs if started(p, now)]
