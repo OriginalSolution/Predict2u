@@ -136,7 +136,7 @@ def main():
             sc = cs['sportybet']['code']; ev = set(pt['events']); pl = [x for x in r['legList'] if x['eventId'] in ev]
             pr = [(x.get('result') or 'pending').lower() for x in pl]
             st = 'lost' if 'lost' in pr else 'won' if pr and all(x in ('won', 'void') for x in pr) else 'pending'
-            slip = dict(code=sc, bookmaker='SportyBet', book='sportybet', name=f"{r['name']} · part {i + 1}/{len(r['parts'])} · HIGH RISK", date=r['date'],
+            slip = dict(code=sc, bookmaker='SportyBet', book='sportybet', name=pt.get('label') or f"{r['name']} · part {i + 1}/{len(r['parts'])} · HIGH RISK", date=r['date'],
                         odds=pt['totalOdds'], share=cs['sportybet']['link'], legs=pl, verification=r.get('verification'), origin='ho-master',
                         hit=pr.count('won'), lostLegs=pr.count('lost'), total=len(pl), status=st, riskRating='HIGH', riskLabel='HIGH RISK', highRisk=True,
                         shareUrl=f"https://predict2u.com/high-odds/#{sc}", codes=cs, lastKickoff=max((x.get('kickoff') or '') for x in pl) or None,
