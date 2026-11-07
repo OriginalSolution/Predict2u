@@ -1,9 +1,18 @@
 import json,re,sys,collections,os
-sys.path.insert(0,'/workspace/nov05')
-_EV=None;LOG='/workspace/nov05/newrules_log.jsonl'
+from pathlib import Path as _P
+_GATES=_P(os.environ.get('ENGINE_GATES_DIR') or _P(__file__).resolve().parent)
+if str(_GATES) not in sys.path:
+    sys.path.insert(0, str(_GATES))
+_EV=None
+LOG=str(_GATES/'newrules_log.jsonl')
 def EV():
     global _EV
-    if _EV is None:_EV=json.load(open('/workspace/nov05/ev31.json'))
+    if _EV is None:
+        try:
+            from _gate_data import load_json
+            _EV=load_json('ev31.json', {})
+        except Exception:
+            _EV={}
     return _EV
 PROII=re.compile(r"^willem ii\b",re.I)  # Oct 31 approved R3 fix: pro clubs with II in name
 YT=re.compile(r"\bu-?1\d\b|\bu-?2\d\b|youth|reserve|\s(ii|iii)$|\biii\b|academy|castilla|primavera|next gen|next pro|juvenil|jong |amateur|\s(b|2)$|\bb\b",re.I)

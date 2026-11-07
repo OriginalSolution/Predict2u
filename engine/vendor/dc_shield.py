@@ -196,8 +196,10 @@ def local_hard_veto(p: dict) -> str | None:
 
 def filter_legs(games: list) -> tuple[list, list]:
     """Apply matchup_rules + newrules + gate31 (STRICT: no stats allowed)."""
-    sys.path.insert(0, str(RESEARCH))
-    sys.path.insert(0, str(NOV))
+    vendor = Path(__file__).resolve().parent
+    for p in (RESEARCH, NOV, vendor):
+        if str(p) not in sys.path:
+            sys.path.insert(0, str(p))
     import matchup_rules as MR
     import newrules as N
     import gate31 as G
@@ -270,7 +272,10 @@ def filter_legs(games: list) -> tuple[list, list]:
 
 def book_sporty(legs: list) -> dict:
     """Book SportyBet; drop not-open legs and retry until status ok or empty."""
-    sys.path.insert(0, '/workspace')
+    eng = Path(os.environ.get('ENGINE_DIR') or Path(__file__).resolve().parents[1])
+    for p in (eng, Path(__file__).resolve().parent):
+        if str(p) not in sys.path:
+            sys.path.insert(0, str(p))
     from sb_share_helper17 import book
 
     cur = list(legs)
@@ -392,10 +397,13 @@ def main():
     date_s = args.date
     wd = workdir_for(date_s)
     os.chdir(wd)
-    bh_src = FEED / 'dc_shield_nov05' / 'book_helpers.py'
     bh_dst = wd / 'book_helpers.py'
-    if not bh_dst.exists() and bh_src.exists():
-        bh_dst.write_text(bh_src.read_text())
+    if not bh_dst.exists():
+        vendored = Path(__file__).resolve().parent / 'book_helpers.py'
+        feed_src = FEED / 'dc_shield_nov05' / 'book_helpers.py'
+        src = vendored if vendored.exists() else feed_src
+        if src.exists():
+            bh_dst.write_text(src.read_text())
 
     print(f'[dc_shield] target={date_s} workdir={wd}', flush=True)
     games, n_events = fetch_dc_games(date_s)

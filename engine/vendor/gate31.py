@@ -1,14 +1,27 @@
 # Unified Oct 28 final gate: every strategy's legs pass the same standing rules before booking.
-import json,re,sys,collections
-sys.path.insert(0,'/workspace/nov07')
+# Path-resolved for GitHub Actions: gate modules live in engine/gates/; snapshot JSONs
+# soft-load (empty defaults) so hard vetoes still apply without box-only /workspace/novDD.
+import json,re,sys,collections,os
+from pathlib import Path as _P
+_GATES=_P(os.environ.get('ENGINE_GATES_DIR') or (_P(__file__).resolve().parents[1]/'gates'))
+for _p in (_GATES, _P(__file__).resolve().parent):
+    if str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
+from _gate_data import load_json, find_file
 import rules31 as R, flowrules as FR
 from rulebook import viol
-D=json.load(open('/workspace/nov07/graded31.json'));SB=json.load(open('/workspace/nov07/sbcombo31.json'))
-X=json.load(open('/workspace/nov07/mgst31.json'));MG,ST=X['MG'],X['ST']
-FX={f['eid']:f for f in json.load(open('/workspace/nov07/fx31dc.json'))}
-try:OSM=json.load(open('/workspace/nov07/osm2_booked.json')).get('fired',{})
-except Exception:OSM={}
-TH=json.load(open('/workspace/rules/market_thresholds_by_league.json'))
+D=load_json('graded31.json', {})
+SB=load_json('sbcombo31.json', {})
+_X=load_json('mgst31.json', {})
+MG=_X.get('MG') if isinstance(_X, dict) else {}
+ST=_X.get('ST') if isinstance(_X, dict) else {}
+if not isinstance(MG, dict): MG={}
+if not isinstance(ST, dict): ST={}
+_fx=load_json('fx31dc.json', [])
+FX={f['eid']:f for f in (_fx or []) if isinstance(f, dict) and 'eid' in f}
+OSM=(load_json('osm2_booked.json', {}) or {}).get('fired', {}) if True else {}
+if not isinstance(OSM, dict): OSM={}
+TH=load_json('market_thresholds_by_league.json', {})
 LC={'Argentina Primera LPF':'ARG','Austria Bundesliga':'AUT','Belgium Pro League':'B1','Brazil Brasileiro Serie A':'BRA','China Super League':'CHN','Germany Bundesliga':'D1','Germany 2. Bundesliga':'D2','Denmark Superliga':'DNK',
  'England Premier League':'E0','England Championship':'E1','England League One':'E2','England League Two':'E3','England National League':'EC','France Ligue 1':'F1','France Ligue 2':'F2','Finland Veikkausliiga':'FIN','Greece Super League':'G1',
  'Italy Serie A':'I1','Italy Serie B':'I2','Ireland Premier Division':'IRL','Japan J1 League':'JPN','Mexico Liga MX':'MEX','Netherlands Eredivisie':'N1','Norway Eliteserien':'NOR','Portugal Liga Portugal':'P1','Poland Ekstraklasa':'POL',
@@ -158,9 +171,14 @@ def _gate(e,m,lg,key,pk,price,w=None,mode='main',need_grade=True,skip_check=Fals
   st,txt=FR.standings(e)
   if st and ('TOP' in st or 'BOTTOM' in st):return st,notes,w
   mm=mism(e);k=mkind(key,pk)
-  if k=='U35' and mm:return 'MISMATCH: no Under 3.5 on a mismatch ('+'; '.join(mm)+')',notes,w
-  if k=='O15' and not mm:return 'MISMATCH: Over 1.5 only on a mismatch (teams even)',notes,w
-  notes.append('mismatch: '+'; '.join(mm) if mm else 'teams even')
+  # Skip mismatch filter when this event has no fixture/standings cache (Actions soft-load).
+  _has_fx=(e in FX) or (e in MG)
+  if _has_fx:
+    if k=='U35' and mm:return 'MISMATCH: no Under 3.5 on a mismatch ('+'; '.join(mm)+')',notes,w
+    if k=='O15' and not mm:return 'MISMATCH: Over 1.5 only on a mismatch (teams even)',notes,w
+    notes.append('mismatch: '+'; '.join(mm) if mm else 'teams even')
+  else:
+    notes.append('mismatch: n/a (no fixture cache)')
   v=viol(lg,pk if not pk.startswith(('Over/Under: ','Over/Under - Early Goals: ')) else pk.split(': ',1)[1])
   if v:return v,notes,w
   c=worst_of(e,key)

@@ -34,7 +34,7 @@ def environ() -> dict[str, str]:
         "P2U_STRICT_GATES": env.get("P2U_STRICT_GATES", "report"),
     })
     py = env.get("PYTHONPATH", "")
-    parts = [str(ENGINE_DIR), str(VENDOR_DIR)]
+    parts = [str(ENGINE_DIR), str(VENDOR_DIR), str(GATES_DIR)]
     env["PYTHONPATH"] = os.pathsep.join(parts + ([py] if py else []))
     return env
 
