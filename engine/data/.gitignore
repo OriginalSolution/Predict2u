@@ -11,3 +11,7 @@ hot_dropped.json
 stats-cache/
 event-cache.json
 code-ledger.json
+
+# Daily master records must be tracked so Actions settle can reinject Code of the Day.
+!daily-master/
+!daily-master/*.json

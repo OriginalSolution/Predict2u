@@ -63,7 +63,36 @@ def main():
                 print('daily master split failed:', e)
             save(f, r, pretty=True)
         recs.append(r)
-    if not recs: print('daily master: none'); return
+    if not recs:
+        # Fallback: rebuild today's record from gate_exempt when date files
+        # are missing (e.g. older checkouts before daily-master was tracked).
+        ge = load(os.path.join(REPO, 'engine', 'gate_exempt.json'), {}) or {}
+        for e in (ge.get('entries') or []):
+            if not e or e.get('date') != TODAY or not e.get('code'):
+                continue
+            # Prefer regenerating from an existing High Odds / home slip copy.
+            ho = load(os.path.join(REPO, 'high_odds.json'), {}) or {}
+            src = next((s for s in (ho.get('slips') or []) + (ho.get('history') or []) if s.get('code') == e['code']), None)
+            if not src:
+                print('daily master: none (gate_exempt', e['code'], 'has no slip copy)'); continue
+            r = dict(code=e['code'], date=e['date'], legs=e.get('nLegs') or len(src.get('legs') or []),
+                     totalOdds=e.get('odds') or src.get('odds'), link=e.get('share') or src.get('share'),
+                     name=f"Daily master · {e['date']}", riskLabel='HIGH RISK',
+                     uncertainLegs=src.get('uncertainLegs') or 0, note=e.get('warning') or src.get('warning'),
+                     bookedAt=src.get('bookedAt'), legList=src.get('legs') or [], status=src.get('status') or 'pending',
+                     parts=src.get('parts'), partsDropped=src.get('partsDropped'))
+            os.makedirs(DIR, exist_ok=True)
+            save(os.path.join(DIR, f"{e['date']}.json"), r, pretty=True)
+            settle(r)
+            try:
+                import split_codes as SC
+                SC.ensure_parts(r, 'legList', base_name=r['code'])
+            except Exception as ex:
+                print('daily master split failed:', ex)
+            save(os.path.join(DIR, f"{e['date']}.json"), r, pretty=True)
+            recs.append(r)
+        if not recs:
+            print('daily master: none'); return
     cur = [r for r in recs if r['date'] == TODAY]
     note_of = lambda r: r.get('note') or 'HIGH RISK accumulator.'
     # High Odds: active today, settled ones move to history (engine record).
