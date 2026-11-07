@@ -140,7 +140,7 @@ footer{color:var(--mut)}
 .bp-book-betway .bp-card-a a.bp-open{background:#00a826;color:#fff}
 .bp-book-onexbet .bp-card-a a.bp-open{background:#1f6fb2;color:#fff}
 </style>
-<link rel="stylesheet" href="/p2u-high-odds-v342.css?v=356"></head><body><script src="/p2u-rg-v322.js?v=322" data-p2u-rg-v322="true"></script><script src="/unified-shell-v234.js?v=346"></script><main class="p2u-bankers-page high-wrap">
+<link rel="stylesheet" href="/p2u-high-odds-v342.css?v=357"></head><body><script src="/p2u-rg-v322.js?v=322" data-p2u-rg-v322="true"></script><script src="/unified-shell-v234.js?v=346"></script><main class="p2u-bankers-page high-wrap">
 
 <section class="p2u-bankers-hero high-intro"><span class="p2u-bankers-kicker">PREDICT2U LONG SHOTS</span><h1>High Odds.<br>Clear proof.</h1><p class="high-warning"><span class="bp-res high-risk">HIGH RISK</span> High odds, high risk. Stake small.</p><p>Verified codes from Predict2u strategies and the code hub. Follow every leg live, then see the settled result. These long shots sit outside our standard low-risk filters.</p><div class="hero-actions"><span class="share-label">Share this page</span><button type="button" class="share-icon native" data-share-page aria-label="Share this page" title="Share this page"></button><a class="share-icon wa" data-share-social="wa" target="_blank" rel="noopener" aria-label="Share page on WhatsApp" title="Share page on WhatsApp"></a><a class="share-icon tg" data-share-social="tg" target="_blank" rel="noopener" aria-label="Share page on Telegram" title="Share page on Telegram"></a><a class="share-icon x" data-share-social="x" target="_blank" rel="noopener" aria-label="Share page on X" title="Share page on X"></a><a class="share-icon fb" data-share-social="fb" target="_blank" rel="noopener" aria-label="Share page on Facebook" title="Share page on Facebook"></a><button type="button" class="share-icon copy" data-copy-page aria-label="Copy page link" title="Copy page link"></button><a class="bp-copy" href="#settled">Settled history</a></div></section>
 <section class="hp-tally" aria-label="High Odds record"><div class="hp-t"><b id="n-active">—</b><span>Codes to watch</span></div><div class="hp-t"><b id="n-doing">—</b><span>Doing well</span></div><div class="hp-t"><b id="n-won">—</b><span>Settled wins</span></div><div class="hp-t"><b id="n-rate">—</b><span>Slip win rate</span></div></section>
@@ -150,7 +150,7 @@ footer{color:var(--mut)}
 <section class="high-section" id="settled" aria-labelledby="settled-title"><div class="high-section-h"><h2 id="settled-title">Settled history</h2><span id="record-text">Won, lost and legs hit</span></div><div class="bp-list high-list" id="history"></div></section>
 <section class="high-note"><p id="updated" class="fresh"></p><p>Verification checks the decoded selections, kickoffs and rule flags. It does not make a high-odds slip likely to win. Odds may change at the bookmaker. Separate from our main low-risk codes. Play only what you can afford to lose. 18+. <a href="/responsible-gambling.html">Responsible gambling</a>.</p></section>
 </main><div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="/p2u-wa-share-v325.js?v=343"></script><script src="/p2u-code-guard-v352.js?v=356"></script><script src="/p2u-risk-slips-v316.js?v=356"></script><script src="/p2u-picks-v316.js?v=356"></script>
+<script src="/p2u-wa-share-v325.js?v=343"></script><script src="/p2u-code-guard-v352.js?v=357"></script><script src="/p2u-risk-slips-v316.js?v=357"></script><script src="/p2u-picks-v316.js?v=357"></script>
 <script>
 (function(){'use strict';
 var PAGE='https://predict2u.com/high-odds/',DATA=[],HISTORY=[],toastTimer;
@@ -187,7 +187,7 @@ function bankersRecord(s,i){
 }
 function bookCarousel(){
   var host=document.getElementById('bp-carousel'),others=document.getElementById('book-accordions');
-  var records=DATA.map(function(s,i){return bankersRecord(s,i)});
+  var records=[];DATA.forEach(function(s,i){records.push(bankersRecord(s,i));(s.parts||[]).forEach(function(pt,j){var codes={},links={},bo={},bp={};Object.keys(pt.codes||{}).forEach(function(k){var c=(pt.codes[k]||[])[0];if(c&&c.code&&(!window.P2UCode||P2UCode.isReal(c.code))){codes[k]=c.code;links[k]=c.link;bo[k]=c.totalOdds;bp[k]=c.legs;}});if(!Object.keys(codes).length)return;var ev={};(pt.events||[]).forEach(function(e){ev[e]=1});records.push(Object.assign({},s,{code:codes.sportybet||s.code,label:cleanTitle(s)+' · part '+(j+1)+'/'+s.parts.length,risk:'high',grade:String.fromCharCode(65+(i%26)),codes:codes,links:links,bookOdds:bo,bookPicks:bp,picks:pt.legs,totalOdds:pt.totalOdds,legs:(s.legs||[]).filter(function(l){return ev[l.eventId]}),hit:null,house:false}));});});
   host.innerHTML=P2UBankers.carousel(records,{topBook:'sportybet',books:['sportybet'],root:true,idPrefix:'ho-top-',cardId:function(s){return s.code}});
   var html=P2UBankers.carousel(records,{books:['msport','betika','footballcom','betpawa','betway'],root:true,includeEmpty:false,idPrefix:'ho-book-'});
   others.innerHTML=html;
