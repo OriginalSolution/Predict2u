@@ -72,9 +72,11 @@ def test_is_started_numeric_ts():
 
 
 def test_process_combines_short_inbox_slips():
+    # Pin "now" before the earliest kickoff so this does not flake after ~10:00 UTC.
+    now = dt.datetime(2026, 11, 7, 8, 0, tzinfo=dt.timezone.utc)
     picks = [_p(eventId=f"sr:match:{i}", odds=1.4, kickoff=f"2026-11-07T{10+i:02d}:00:00+00:00") for i in range(12)]
     # 1.4^12 ~= 56.7
-    report = process(picks, enrich=False, min_odds=25)
+    report = process(picks, now=now, enrich=False, min_odds=25)
     assert report["slips"]
     assert all(s["odds"] >= 25 for s in report["slips"])
     assert len(report["used"]) == 12
