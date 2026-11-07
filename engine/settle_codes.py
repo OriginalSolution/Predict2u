@@ -52,6 +52,22 @@ def grade(selection: str, match: str, ev: dict) -> str:
         return "won" if (tot > float(m.group(2))) == (m.group(1).lower() == "over") else "lost"
     teams = re.split(r"\s+v(?:s)?\s+", match or "", maxsplit=1)
     H, A = (teams + [""])[:2]
+    # Team totals: "Sevilla over 0.5 goals" / "home over 0.5 goals" / "away under 1.5 goals"
+    tm = re.match(r"^(.+?)\s+(over|under)\s+(\d+(?:\.\d+)?)\s*goals?$", s, re.I)
+    if tm:
+        team, side, line = tm.group(1).strip(), tm.group(2).lower(), float(tm.group(3))
+        tl = team.lower()
+        if tl in ("home", "1") or team == H.strip():
+            goals = h
+        elif tl in ("away", "2") or team == A.strip():
+            goals = a
+        elif H.strip() and (tl == H.strip().lower() or H.strip().lower() in tl or tl in H.strip().lower()):
+            goals = h
+        elif A.strip() and (tl == A.strip().lower() or A.strip().lower() in tl or tl in A.strip().lower()):
+            goals = a
+        else:
+            return "pending"
+        return "won" if (goals > line) == (side == "over") else "lost"
     out = {"1": h > a, "X": h == a, "2": a > h}
 
     def tok(x):
