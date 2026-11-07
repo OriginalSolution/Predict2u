@@ -49,7 +49,7 @@ jobs:
           git add -- \
             picks.json picks-history.json home-picks.json hot-picks.json \
             high_odds.json record.json staked-codes.json staked-status.json \
-            staked-index.json || true
+            staked-index.json engine/data/daily-master || true
           if git diff --cached --quiet; then
             echo "no settlement changes"
             exit 0

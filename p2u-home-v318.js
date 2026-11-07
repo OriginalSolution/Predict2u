@@ -1,4 +1,4 @@
-/* Predict2U v353 hide-empty-codes — was v318b — favourites day-master codes on leagues section (Today/Tomorrow tabs); was v318. */
+/* Predict2U v354 hide-empty-codes — was v318b — favourites day-master codes on leagues section (Today/Tomorrow tabs); was v318. */
 (function(){var _hcss=document.createElement('style');_hcss.textContent='.hp-odds{display:inline-flex;flex-direction:column;align-items:flex-end;background:#0f2a1a;border:1px solid #2ecc71;border-radius:10px;padding:4px 10px;line-height:1.15}.hp-odds b{font-size:1.15em;color:#2ecc71}.hp-odds small{font-size:.72em;opacity:.85}.hp-odds i{font-style:normal;font-size:.68em;opacity:.7}.hp-hist{margin:6px 0 4px;font-size:.8em;padding:6px 8px;border-left:3px solid #888;background:rgba(127,127,127,.08);border-radius:4px}.hp-hist.is-up{border-color:#2ecc71}.hp-hist.is-down{border-color:#e67e22}';document.head.appendChild(_hcss);
   'use strict';
   var $=function(id){return document.getElementById(id);};

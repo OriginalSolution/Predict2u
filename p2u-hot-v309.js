@@ -1,4 +1,4 @@
-/* Predict2U v353 hide-empty-codes — v309 — 🔥 Hot Picks: most-backed selections across shared booking codes, booked on every site. Hot by market / trending / teams collapsed by default. */
+/* Predict2U v354 hide-empty-codes — v309 — 🔥 Hot Picks: most-backed selections across shared booking codes, booked on every site. Hot by market / trending / teams collapsed by default. */
 (function(){
   var BK={sportybet:['SportyBet','https://www.sportybet.com/gh/?shareCode='],msport:['MSport','https://www.msport.com/gh/?shareCode='],
     betika:['Betika','https://betika.com/en-gh/share/'],footballcom:['football.com','https://www.football.com/gh/?shareCode='],betpawa:['Betpawa','https://www.betpawa.com.gh/share-betslip/'],betway:['Betway','https://www.betway.com.gh/sport/soccer?bookingCode=']};

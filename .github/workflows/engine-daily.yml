@@ -82,7 +82,7 @@ jobs:
           git config user.name "predict2u-engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- \
-            picks.json picks-history.json home-picks.json hot-picks.json engine/data/pick_ledger.json \
+            picks.json picks-history.json home-picks.json hot-picks.json engine/data/pick_ledger.json engine/data/daily-master \
             high_odds.json record.json live-scores.json \
             staked-codes.json staked-index.json staked-status.json \
             locked.enc.json share s \

@@ -15,7 +15,7 @@
   function pick(d){
     var sl=(d&&d.slips||[]).filter(function(s){return s.codes&&s.codes.sportybet&&Number(s.totalOdds)>=25;});
     if(!sl.length)return null;
-    sl.sort(function(a,b){var am=/^main/i.test(a.name)?0:1,bm=/^main/i.test(b.name)?0:1;return am-bm||a.totalOdds-b.totalOdds;});
+    sl.sort(function(a,b){var dm=(b.dailyMaster?1:0)-(a.dailyMaster?1:0);if(dm)return dm;var am=/^main/i.test(a.name)?0:1,bm=/^main/i.test(b.name)?0:1;return am-bm||a.totalOdds-b.totalOdds;});
     return sl[0];
   }
   function show(d){
@@ -33,7 +33,7 @@
     wrap.className='bcod-back';
     wrap.innerHTML='<div class="bcod" role="dialog" aria-modal="true" aria-labelledby="bcod-t">'+
       '<button class="bcod-x" type="button" aria-label="Close">&times;</button>'+
-      '<p class="bcod-kick">Predict2U</p><h2 id="bcod-t">Banker code of the day</h2>'+
+      '<p class="bcod-kick">Predict2U</p><h2 id="bcod-t">'+(s.dailyMaster?'Code of the day':'Banker code of the day')+'</h2>'+(s.highRisk?'<p style="margin:4px 0 8px"><span style="display:inline-block;background:#b91c1c;color:#fff;padding:3px 10px;border-radius:999px;font-weight:800;font-size:.75rem;letter-spacing:.05em">HIGH RISK</span></p><p style="margin:0 0 8px;font-size:.8rem;color:#fecaca">'+esc(s.warning||'')+(s.verification?' '+esc(s.verification)+'.':'')+'</p>':'')+
       '<div class="bcod-main"><img src="book-sportybet.webp" alt="SportyBet" width="36" height="36"><div><small>SportyBet code</small><strong class="bcod-code">'+esc(code)+'</strong></div></div>'+
       '<div class="bcod-stats"><div><small>Total odds</small><b>'+Number(s.totalOdds).toFixed(2)+'</b></div><div><small>Picks</small><b>'+n+'</b></div></div>'+
       (s.highRisk||/high risk/i.test(s.warning||s.strategy||'')?'<p class="bcod-warn" style="margin:10px 0 0;color:#fecaca;font-weight:800;font-size:.85rem"><span style="display:inline-block;background:#b91c1c;color:#fff;padding:3px 8px;border-radius:999px;font-size:.66rem;letter-spacing:.04em;margin-right:6px">HIGH RISK</span>'+esc(s.warning||s.strategy||'High-risk accumulator, not safe or guaranteed, stake small')+'</p>':'')+

@@ -129,6 +129,7 @@ def publish(env, dry_run=False):
     else:
         print("publish: P2U_LOCK_KEY / lock.key missing — premium lock skipped (do not commit raw banker codes without it)")
     run([sys.executable, str(VENDOR_DIR / "high_odds.py"), str(REPO_DIR), "--settle-only"], env=env, timeout=300, check=False)
+    run([sys.executable, str(VENDOR_DIR / "daily_master.py"), str(REPO_DIR)], env=env, timeout=300, check=False)
     run([sys.executable, str(VENDOR_DIR / "build_record.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
 
 
@@ -149,6 +150,7 @@ def settle(env):
     run([sys.executable, str(VENDOR_DIR / "inject_exempt.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
     run([sys.executable, str(VENDOR_DIR / "prune_live.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
     run([sys.executable, str(VENDOR_DIR / "high_odds.py"), str(REPO_DIR), "--settle-only"], env=env, timeout=300, check=False)
+    run([sys.executable, str(VENDOR_DIR / "daily_master.py"), str(REPO_DIR)], env=env, timeout=300, check=False)
     run([sys.executable, str(VENDOR_DIR / "build_record.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
 
 

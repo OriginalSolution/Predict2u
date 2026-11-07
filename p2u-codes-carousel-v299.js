@@ -1,4 +1,4 @@
-/* Predict2U v353 — booking-code carousel (hide empty codes) for home + Hot Picks.
+/* Predict2U v354 — booking-code carousel (hide empty codes) for home + Hot Picks.
    Home: home-picks.json → #hp-carousel. Hot: hot-picks.json slips → #hot-carousel (mountHot).
    Cards use brand colours; auto-scroll is slow, pauses on hover/touch, respects prefers-reduced-motion. */
 (function(){

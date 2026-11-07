@@ -25,6 +25,7 @@ timeout 120 python3 "$REPO/engine/vendor/lock_codes.py" "$REPO" >/dev/null || ec
 timeout 600 python3 "$REPO/engine/vendor/news_hub.py" "$REPO" >/dev/null || echo "news hub step failed"
 # Same entry point used by the after-settle results sync; --settle-only adds no new codes.
 timeout 300 python3 "$REPO/engine/vendor/high_odds.py" "$REPO" --settle-only || echo "high odds settle failed"
+timeout 300 python3 "$REPO/engine/vendor/daily_master.py" "$REPO" || echo "daily master step failed"
 timeout 60 python3 "$REPO/engine/vendor/telegram_post.py" "$REPO" --results >/dev/null || echo "telegram results skipped"
 timeout 120 python3 "$REPO/engine/vendor/build_record.py" "$REPO" >/dev/null || echo "record step failed"
 timeout 60 python3 "$REPO/engine/vendor/telegram_post.py" "$REPO" --codes >/dev/null || echo "telegram codes skipped"
@@ -59,10 +60,12 @@ timeout 60 python3 "$REPO/engine/vendor/inject_exempt.py" "$REPO" || echo "exemp
 timeout 60 python3 "$REPO/engine/vendor/prune_live.py" "$REPO" || echo "prune step failed"
 # Pay-per-code: mask premium codes in every public file again after the rebuild
 python3 "$REPO/engine/vendor/lock_codes.py" "$REPO" || { echo "lock step failed - not pushing"; exit 1; }
+timeout 300 python3 "$REPO/engine/vendor/daily_master.py" "$REPO" || echo "daily master step failed"
 [ $rc -eq 3 ] && ! git diff --quiet -- . && rc=0
 if [ $rc -eq 3 ] && git diff --quiet -- news-hub.json share hot-picks.json staked-codes.json && [ -z "$(git ls-files --others --exclude-standard share)" ] && ! git ls-files --others --exclude-standard | grep -qx news-hub.json; then echo "no change, nothing pushed"; exit 0; fi
 [ $rc -ne 0 ] && [ $rc -ne 3 ] && exit $rc
 for f in high_odds.json og-high-odds.png high-odds locked.enc.json picks.json picks-history.json home-picks.json news-hub.json hot-picks.json staked-codes.json staked-index.json staked-status.json record.json live-scores.json seo-pages.json sitemap.xml robots.txt matches.html leagues.html sportybet-codes-today betway-booking-codes-today msport-booking-codes-today betika-booking-codes-today betpawa-booking-codes-today football-com-booking-codes-today; do [ -e "$f" ] && git add "$f"; done
+[ -d engine/data/daily-master ] && git add -A engine/data/daily-master engine/data/pick_ledger.json
 [ -d match ] && git add -A match
 [ -d league ] && git add -A league
 [ -d share ] && git add -A share
