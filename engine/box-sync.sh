@@ -10,9 +10,9 @@ R=/workspace/predict2u-research
 DAY=$(date -u +%F)
 ( cd "$R" && timeout 900 env RESEARCH_DIR="$R" SBJSON="$R/sb.json" python3 "$REPO/engine/vendor/scan.py" >/dev/null && timeout 1500 env RESEARCH_DIR="$R" SBJSON="$R/sb.json" python3 "$REPO/engine/vendor/run.py" "$DAY" --days 2 >/dev/null && timeout 900 env RESEARCH_DIR="$R" SBJSON="$R/sb.json" python3 "$REPO/engine/vendor/book_home.py" "$DAY" >/dev/null ) || echo "research/booking step failed"
 # Book the all-picks home code once per research run (re-book when research is newer than the code)
-RF=/workspace/predict2u-research/$(date -u +%F).json
+RF=/workspace/predict2u-research/$DAY.json
 if [ -e "$RF" ] && python3 -c "import json,sys;d=json.load(open('$RF'));h=d.get('homeCode') or {};sys.exit(0 if (not h.get('codes') or h.get('bookedAt','')<d.get('updatedAt','')) else 1)"; then
-  env RESEARCH_DIR="$R" SBJSON="$R/sb.json" python3 "$REPO/engine/vendor/book_home.py" "$(date -u +%F)" >/dev/null || echo "home booking failed"
+  env RESEARCH_DIR="$R" SBJSON="$R/sb.json" python3 "$REPO/engine/vendor/book_home.py" "$DAY" >/dev/null || echo "home booking failed"
 fi
 ( cd "$R" && timeout 60 env RESEARCH_DIR="$R" SBJSON="$R/sb.json" python3 "$REPO/engine/vendor/risk_slips.py" "$DAY" >/dev/null && timeout 900 env RESEARCH_DIR="$R" SBJSON="$R/sb.json" python3 "$REPO/engine/vendor/book_home.py" "$DAY" >/dev/null ) || echo "risk slips step failed"
 timeout 60 python3 /workspace/predict2u-feed/betway_overlay.py >/dev/null || echo "betway overlay failed"

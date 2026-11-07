@@ -26,6 +26,13 @@ from .paths import ENGINE_DIR, REPO_DIR, RESEARCH_DIR, VENDOR_DIR, SBJSON, ensur
 from .rules import apply_all, is_double_chance, is_dc_vetoed, is_btts_no
 
 
+_RUN_DAY = None
+def run_day():
+    """One date per pipeline run (fixes runs that cross midnight UTC); book falls back to the newest research file."""
+    global _RUN_DAY
+    if _RUN_DAY is None:
+        _RUN_DAY = os.environ.get('P2U_DAY') or dt.datetime.now(dt.timezone.utc).date().isoformat()
+    return _RUN_DAY
 def run(cmd, env, cwd=None, timeout=None, check=True):
     print("+", " ".join(cmd))
     return subprocess.run(cmd, env=env, cwd=cwd, timeout=timeout, check=check)
@@ -34,7 +41,7 @@ def run(cmd, env, cwd=None, timeout=None, check=True):
 def collect(env, days=2, dry_run=False):
     ensure_dirs()
     run([sys.executable, str(VENDOR_DIR / "scan.py")], env=env, timeout=300)
-    day = dt.date.today().isoformat()
+    day = run_day()
     run([sys.executable, str(VENDOR_DIR / "run.py"), day, "--days", str(days)], env=env, cwd=str(RESEARCH_DIR), timeout=1500)
     path = RESEARCH_DIR / f"{day}.json"
     if not path.exists():
@@ -93,7 +100,7 @@ def _book_combined(env, day, dry_run=False):
 
 
 def book(env, dry_run=False):
-    day = dt.date.today().isoformat()
+    day = run_day()
     if dry_run:
         print("book: dry-run, skipped live booking")
         return
