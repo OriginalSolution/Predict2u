@@ -1,8 +1,9 @@
 {
-  "updatedAt": "2026-11-06T07:13:04Z",
+  "updatedAt": "2026-11-07T06:10:30Z",
   "note": "One-code publishing exceptions. Bypass gates/prune until last kickoff passes, then settle normally. Never include tipster/bot names.",
   "codes": [
-    "F3PCEP"
+    "F3PCEP",
+    "AJ8D6U"
   ],
   "entries": [
     {
@@ -26,6 +27,25 @@
       "supersedes": [
         "DBKX8G"
       ]
+    },
+    {
+      "code": "AJ8D6U",
+      "bookmaker": "SportyBet",
+      "share": "https://www.sportybet.com/gh/?shareCode=AJ8D6U",
+      "date": "2026-11-07",
+      "nLegs": 77,
+      "odds": 196241771.25,
+      "earliestKo": "2026-11-07 06:30",
+      "latestKo": "2026-11-07 23:30",
+      "placements": [
+        "codeOfTheDay",
+        "hotPicks",
+        "highOdds"
+      ],
+      "highRisk": true,
+      "warning": "High-risk 77-leg accumulator, not safe or guaranteed, stake small",
+      "gateExempt": true,
+      "source": "/workspace/master07/booked.json"
     }
   ]
 }
