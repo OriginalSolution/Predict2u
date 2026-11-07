@@ -76,3 +76,6 @@ Optional `engine/gates/newrules.py` runs in `P2U_STRICT_GATES=report` (default) 
 ## Day masters persistence
 - Favourites day-master codes (homeCode.dayMasters) are built only by engine/vendor/book_home.py; the box sync.sh calls the engine copies (no box-only book_home).
 - Midnight UTC rollover: today's master must exist for the new date; .github/workflows/daymasters-guard.yml checks every 30 min (engine/daymasters_check.py) and dispatches engine-daily to rebook when missing. Hidden only when the day has no picks.
+
+## 50-leg split
+- Any code over 50 legs is auto-split (engine/vendor/split_codes.py) into balanced kickoff-ordered parts of <= 50 legs, each booked on SportyBet, Football.com, MSport, Betika, BetPawa (no Betway). Kicked-off legs are left out; legs a bookmaker does not offer are listed per part. Parts settle from the parent legs on every settle run. Empty bookmaker sections are hidden.

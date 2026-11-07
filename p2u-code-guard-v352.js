@@ -112,3 +112,10 @@
   window.P2UCode={isReal:isReal,extract:extract,parts:parts,hasBook:hasBook,filterMap:filterMap,sweep:sweep,arm:arm};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',arm);else arm();
 })();
+/* Split parts (codes over 50 legs are split into parts of <= 50 per bookmaker). Empty bookmakers are hidden. */
+(function(){if(typeof window==='undefined')return;var N={sportybet:'SportyBet',footballcom:'football.com',msport:'MSport',betika:'Betika',betpawa:'Betpawa'};
+function e(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function fo(x){return x==null?'':Number(x).toLocaleString('en-GB',{maximumFractionDigits:2});}
+window.P2UParts={html:function(parts){if(!parts||!parts.length)return '';var h='<div class="p2u-parts" style="margin:10px 0;padding:10px;border:1px solid rgba(185,28,28,.5);border-radius:10px"><p style="margin:0 0 6px;font-weight:800;font-size:.82rem"><span style="background:#b91c1c;color:#fff;padding:2px 8px;border-radius:999px;font-size:.66rem;margin-right:6px">HIGH RISK</span>Split into '+parts.length+' parts (bookmakers take up to 50 picks per code)</p>';
+parts.forEach(function(p,i){var rows=Object.keys(N).map(function(b){return ((p.codes||{})[b]||[]).filter(function(c){return window.P2UCode?P2UCode.isReal(c&&c.code):!!(c&&c.code);}).map(function(c){return '<a class="p2u-chip p2u-chip-'+b+'" href="'+e(c.link)+'" target="_blank" rel="noopener" style="display:inline-flex;gap:6px;align-items:center;margin:3px;padding:5px 9px;border-radius:8px;text-decoration:none"><img src="/book-'+b+'.webp" alt="" width="18" height="18"><b>'+N[b]+' '+e(c.code)+'</b><small>@'+fo(c.totalOdds)+' · '+e(c.legs)+'p</small></a>';}).join('');}).join('');
+if(rows)h+='<div style="margin:6px 0"><p style="margin:2px 0;font-size:.78rem;opacity:.85">Part '+(i+1)+' · '+e(p.legs)+' picks · @'+fo(p.totalOdds)+'</p>'+rows+'</div>';});return h+'</div>';}};})();

@@ -55,7 +55,13 @@ def main():
         r = load(f)
         if not r or not r.get('code'): continue
         if r.get('status') in (None, 'pending') or r['date'] >= TODAY:
-            settle(r); save(f, r, pretty=True)
+            settle(r)
+            try:
+                import split_codes as SC
+                SC.ensure_parts(r, 'legList', base_name=r['code'])
+            except Exception as e:
+                print('daily master split failed:', e)
+            save(f, r, pretty=True)
         recs.append(r)
     if not recs: print('daily master: none'); return
     cur = [r for r in recs if r['date'] == TODAY]
@@ -69,7 +75,7 @@ def main():
                     settledAt=r.get('settledAt'), riskRating='HIGH', riskLabel='HIGH RISK', highRisk=True, warning=note_of(r),
                     shareUrl=f"https://predict2u.com/high-odds/#{r['code']}",
                     codes={'sportybet': dict(code=r['code'], legs=r['legs'], odds=r['totalOdds'], link=r['link'])},
-                    lastKickoff=max((x.get('kickoff') or '') for x in r['legList']) or None)
+                    parts=r.get('parts'), partsDropped=r.get('partsDropped'), lastKickoff=max((x.get('kickoff') or '') for x in r['legList']) or None)
         for k in ('slips', 'history'):
             ho[k] = [s for s in (ho.get(k) or []) if s.get('code') != r['code']]
         (ho.setdefault('slips', []).insert(0, slip) if slip['status'] == 'pending' else ho.setdefault('history', []).insert(0, slip))
@@ -83,12 +89,12 @@ def main():
         if hot is not None:
             hot['slips'] = [s for s in (hot.get('slips') or []) if not s.get('dailyMaster')]
             hot['slips'].insert(0, dict(name=r['name'], legs=r['legs'], totalOdds=r['totalOdds'], codes={'sportybet': chip}, highRisk=True,
-                                        riskLabel='HIGH RISK', dailyMaster=True, warning=note_of(r) + ' ' + verification(r) + '.', status=r.get('status')))
+                                        riskLabel='HIGH RISK', dailyMaster=True, warning=note_of(r) + ' ' + verification(r) + '.', status=r.get('status'), parts=r.get('parts')))
         if hp is not None:
             hp['slips'] = [s for s in (hp.get('slips') or []) if not s.get('dailyMaster')]
             hp['slips'].insert(0, dict(name='Main · ' + r['name'], totalOdds=r['totalOdds'], legs=r['legList'], codes={'sportybet': r['code']},
                                        bookPicks={'sportybet': r['legs']}, dailyMaster=True, highRisk=True, riskLabel='HIGH RISK',
-                                       warning=note_of(r), verification=verification(r), status=r.get('status')))
+                                       warning=note_of(r), verification=verification(r), status=r.get('status'), parts=r.get('parts')))
     if not cur:  # yesterday's master must not stay as Code of the Day
         for d in (hot, hp):
             if d is not None: d['slips'] = [s for s in (d.get('slips') or []) if not s.get('dailyMaster')]
