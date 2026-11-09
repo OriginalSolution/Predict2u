@@ -59,5 +59,8 @@ jobs:
             exit 0
           fi
           git commit -m "Engine settle codes $(date -u +%FT%TZ)"
+          # Avoid "unstaged changes" blocking rebase (prune may touch ignored/extra paths).
+          git stash push -u -m "settle-pre-rebase" || true
           git pull --rebase -X theirs || true
+          git stash pop || true
           git push origin HEAD
