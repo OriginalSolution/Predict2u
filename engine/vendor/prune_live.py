@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
-"""Keep only current free-list codes: today + upcoming games (Africa/Accra = UTC+0).
+"""Keep only pending/upcoming tips on live pick sections (Africa/Accra = UTC+0).
 
-Drops from home-picks.json, picks.json and hot-picks.json any slip that is:
+Drops from home-picks.json, picks.json, hot-picks.json, high_odds.json (active slips),
+engine/data/ho-masters (live publish), and Code-of-the-Day / dayMasters any slip that is:
   - marked earlier (superseded rebook), or
   - dated before today, or
   - whose legs have all kicked off, or
   - whose legs have all settled (won/lost/void/push).
 
-Settled history stays in picks-history.json, record.json and staked-codes.json (proof).
+Partially settled slips stay on live lists until every leg is settled (cards still show
+per-leg results). Fully settled slips move to history only.
+
+Settled history stays in high_odds.history, picks-history.json, record.json,
+staked-codes.json and /s/ share pages (proof + hit-rates). Empty sections are cleared.
 """
 from __future__ import annotations
 import json, os, sys, datetime as dt
@@ -168,6 +173,8 @@ def live_slip(slip: dict) -> bool:
     if not legs:
         # Keep if undated/empty legs only when slip itself is today's booking
         return (sd >= TODAY) if sd else True
+    if str(slip.get("status") or "").lower() in SETTLED:
+        return False
     if all(leg_settled(l) for l in legs):
         return False
     kos = [ko_dt(l) for l in legs]
@@ -307,6 +314,76 @@ def prune_hot(doc: dict) -> tuple[dict, list]:
     return doc, removed
 
 
+
+def prune_high_odds(doc: dict) -> tuple[dict, list]:
+    """Move fully settled slips from active list into history; keep partials pending."""
+    removed = []
+    active, history = [], list(doc.get("history") or [])
+    seen = {str(h.get("code") or "").upper() for h in history}
+    for s in doc.get("slips") or []:
+        legs = normalize_legs(s)
+        status = str(s.get("status") or "").lower()
+        fully = status in SETTLED or (legs and all(leg_settled(l) for l in legs))
+        if fully:
+            s = dict(s)
+            if status not in ("won", "lost"):
+                results = [(l.get("result") or "pending").lower() for l in legs]
+                s["status"] = "lost" if "lost" in results else "won" if results and all(x in ("won", "void", "push") for x in results) else status or "settled"
+            if not s.get("settledAt"):
+                s["settledAt"] = NOW.isoformat(timespec="seconds").replace("+00:00", "Z")
+            code = str(s.get("code") or "").upper()
+            if code and code not in seen:
+                history.insert(0, s); seen.add(code)
+            removed.append(("high", s.get("code"), slip_date(s), s.get("status")))
+        else:
+            active.append(s)
+    history.sort(key=lambda s: (s.get("settledAt") or s.get("date") or ""), reverse=True)
+    won = sum(s.get("status") == "won" for s in history)
+    lost = sum(s.get("status") == "lost" for s in history)
+    doc["slips"] = active
+    doc["history"] = history[:120]
+    doc["record"] = dict(won=won, lost=lost, settled=won + lost, pending=len(active),
+                         winRate=round(100 * won / (won + lost), 1) if won + lost else None)
+    return doc, removed
+
+
+def prune_ho_masters(dir_path: Path) -> list:
+    """Mark settled masters; daily_master already skips republishing won/lost as active."""
+    removed = []
+    if not dir_path.exists():
+        return removed
+    for path in sorted(dir_path.glob("*.json")):
+        try: doc = json.loads(path.read_text())
+        except Exception: continue
+        legs = doc.get("legList") or []
+        if not legs: continue
+        if str(doc.get("status") or "").lower() in ("won", "lost"): continue
+        if all(leg_settled(l) for l in legs if isinstance(l, dict)):
+            results = [(l.get("result") or "pending").lower() for l in legs]
+            doc["status"] = "lost" if "lost" in results else "won"
+            doc["settledAt"] = NOW.isoformat(timespec="seconds").replace("+00:00", "Z")
+            path.write_text(json.dumps(doc, indent=1, ensure_ascii=False))
+            removed.append(("ho-master", path.name, doc.get("date"), doc["status"]))
+    return removed
+
+
+def prune_daily_master(dir_path: Path) -> list:
+    removed = []
+    if not dir_path.exists():
+        return removed
+    for path in sorted(dir_path.glob("????-??-??.json")):
+        try: doc = json.loads(path.read_text())
+        except Exception: continue
+        legs = doc.get("legList") or []
+        if legs and all(leg_settled(l) for l in legs if isinstance(l, dict)):
+            results = [(l.get("result") or "pending").lower() for l in legs]
+            doc["status"] = "lost" if "lost" in results else "won"
+            doc["settledAt"] = NOW.isoformat(timespec="seconds").replace("+00:00", "Z")
+            path.write_text(json.dumps(doc, indent=1, ensure_ascii=False))
+            removed.append(("daily-master", path.name, doc.get("date"), doc["status"]))
+    return removed
+
+
 def write_if_changed(path: Path, doc: dict) -> bool:
     body = json.dumps(doc, ensure_ascii=False, separators=(",", ":"))
     old = path.read_text() if path.exists() else None
@@ -362,8 +439,45 @@ def main():
         else:
             print("hot-picks unchanged")
 
-    # High Odds owns its active/settled split in high_odds.py. Never discard
-    # started-but-live codes here: Doing Well and leg-by-leg settlement need them.
+    # High Odds: move fully settled slips to history (partials stay active for leg-by-leg view).
+    ho = REPO / "high_odds.json"
+    if ho.exists():
+        doc = json.loads(ho.read_text())
+        doc, rem = prune_high_odds(doc)
+        removed_all.extend(rem)
+        if rem:
+            doc["updatedAt"] = NOW.isoformat(timespec="seconds").replace("+00:00", "Z")
+        if write_if_changed(ho, doc):
+            changed = True
+            print("high_odds pruned", len(doc.get("slips") or []), "active", len(doc.get("history") or []), "history")
+        else:
+            print("high_odds unchanged")
+
+    rem = prune_ho_masters(REPO / "engine" / "data" / "ho-masters")
+    removed_all.extend(rem)
+    rem = prune_daily_master(REPO / "engine" / "data" / "daily-master")
+    removed_all.extend(rem)
+    if rem:
+        print("masters marked settled", len(rem))
+
+    # homeCode.dayMasters: drop days whose booked legs are all settled/started
+    hp = REPO / "home-picks.json"
+    if hp.exists():
+        doc = json.loads(hp.read_text())
+        hc = doc.get("homeCode") or {}
+        dm = hc.get("dayMasters") if isinstance(hc, dict) else None
+        if isinstance(dm, dict) and dm:
+            keep = {}
+            for day, m in dm.items():
+                picks = m.get("picks") or []
+                if picks and all(leg_settled(p) if isinstance(p, dict) else False for p in picks):
+                    removed_all.append(("dayMaster", day, day, "settled")); continue
+                keep[day] = m
+            if len(keep) != len(dm):
+                hc = dict(hc); hc["dayMasters"] = keep; doc["homeCode"] = hc
+                if write_if_changed(hp, doc):
+                    changed = True
+                    print("dayMasters pruned", list(keep))
 
     for kind, code, day, why in removed_all:
         print(f"  drop {kind} {code} day={day} ({why})")

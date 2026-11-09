@@ -153,10 +153,11 @@ def shield(env, dry_run=False):
 def settle(env):
     print(json.dumps(settle_codes.settle_files(REPO_DIR)))
     run([sys.executable, str(VENDOR_DIR / "inject_exempt.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
-    run([sys.executable, str(VENDOR_DIR / "prune_live.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
     run([sys.executable, str(VENDOR_DIR / "high_odds.py"), str(REPO_DIR), "--settle-only"], env=env, timeout=300, check=False)
     run([sys.executable, str(VENDOR_DIR / "split_codes.py"), str(REPO_DIR)], env=env, timeout=900, check=False)
     run([sys.executable, str(VENDOR_DIR / "daily_master.py"), str(REPO_DIR)], env=env, timeout=300, check=False)
+    # After settlement: drop fully settled tips from live sections (history kept).
+    run([sys.executable, str(VENDOR_DIR / "prune_live.py"), str(REPO_DIR)], env=env, timeout=120, check=False)
     run([sys.executable, str(VENDOR_DIR / "build_record.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
 
 
