@@ -15,6 +15,7 @@ This package lets the daily pipeline run on GitHub Actions even when the assista
 | Workflow | Cron (UTC) | Job |
 |---|---|---|
 | `engine-shield.yml` | `0 21 * * *` (9:00 PM) | DC Shield Goals + AH −1 scan + publish |
+| `engine-strategies.yml` | `30 22 * * *` (10:30 PM) | Bets For The Day three-strategy High Odds masters + Verzzify Edge Banker |
 | `engine-daily.yml` | `0 23 * * *` (11:00 PM) | collect + book + publish (all strategies) |
 | `engine-settle.yml` | `45 1 * * *` (1:45 AM) and `15 */2 * * *` | settle + prune + record |
 | `engine-tests.yml` | on push/PR to `engine/**` | unit tests + `python -m engine.check_rules` |
@@ -41,6 +42,11 @@ python -m engine.pipeline settle
 python -m pytest engine/tests -q
 python -m engine.check_rules
 ```
+
+## Daily strategy jobs
+
+- `vendor/three_strategies.py` — ASC/DESC 50-pick masters (25+25 splits) + top5-v-bottom3 screens → `engine/data/ho-masters/` → High Odds (HIGH RISK).
+- `vendor/verzzify_banker.py` — Verzzify Edge Banker (>25 odds, all normal rules) → Bankers / home Main slip + `engine/inbox/p2u/`.
 
 ## Pick sources (no bot calls)
 
