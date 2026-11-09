@@ -26,6 +26,8 @@ timeout 600 python3 "$REPO/engine/vendor/news_hub.py" "$REPO" >/dev/null || echo
 # Same entry point used by the after-settle results sync; --settle-only adds no new codes.
 timeout 300 python3 "$REPO/engine/vendor/high_odds.py" "$REPO" --settle-only || echo "high odds settle failed"
 timeout 900 python3 "$REPO/engine/vendor/split_codes.py" "$REPO" || echo "split step failed"
+timeout 4200 python3 "$REPO/engine/vendor/three_strategies.py" 1 || echo "three strategies step failed"
+timeout 900 python3 "$REPO/engine/vendor/verzzify_banker.py" || echo "verzzify banker step failed"
 timeout 300 python3 "$REPO/engine/vendor/daily_master.py" "$REPO" || echo "daily master step failed"
 timeout 60 python3 "$REPO/engine/vendor/telegram_post.py" "$REPO" --results >/dev/null || echo "telegram results skipped"
 timeout 120 python3 "$REPO/engine/vendor/build_record.py" "$REPO" >/dev/null || echo "record step failed"

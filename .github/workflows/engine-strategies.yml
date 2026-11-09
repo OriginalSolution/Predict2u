@@ -1,0 +1,63 @@
+name: Predict2u engine — three-strategy High Odds + Verzzify Banker
+
+on:
+  schedule:
+    - cron: "30 22 * * *"   # 22:30 UTC = 10:30 PM Africa/Accra (before engine-daily)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Skip commit"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: predict2u-engine
+  cancel-in-progress: false
+
+jobs:
+  strategies:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install runtime extras
+        run: pip install pillow cryptography
+      - name: Cache Sportradar / engine stats
+        uses: actions/cache@v4
+        with:
+          path: engine/data/stats-cache
+          key: p2u-engine-stats-${{ github.run_id }}
+          restore-keys: |
+            p2u-engine-stats-
+      - name: Three strategies + Verzzify banker
+        env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
+          RESEARCH_DIR: ${{ github.workspace }}/engine/vendor
+          REPO_DIR: ${{ github.workspace }}
+          ENGINE_DIR: ${{ github.workspace }}/engine
+        run: |
+          set -euo pipefail
+          python -m engine.vendor.three_strategies 1 || python engine/vendor/three_strategies.py 1
+          python engine/vendor/verzzify_banker.py
+          python engine/vendor/daily_master.py "$REPO_DIR"
+          python engine/vendor/share_cards.py "$REPO_DIR" || true
+      - name: Commit published strategies
+        if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        run: |
+          set -euo pipefail
+          git config user.name "predict2u-engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- high_odds.json home-picks.json share s || true
+          for extra in engine/data/ho-masters engine/data/daily-master engine/data/verzzify-banker-*.json engine/inbox/p2u; do
+            [ -e $extra ] && git add -- $extra || true
+          done
+          if git diff --cached --quiet; then echo "no strategy changes"; exit 0; fi
+          git commit -m "Engine strategies $(date -u +%FT%TZ)"
+          git pull --rebase -X theirs || true
+          git push origin HEAD

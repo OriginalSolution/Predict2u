@@ -110,6 +110,10 @@ def book(env, dry_run=False):
     run([sys.executable, str(VENDOR_DIR / "dc_shield.py")], env=env, timeout=900, check=False)
     run([sys.executable, str(VENDOR_DIR / "ah_minus_one.py")], env=env, timeout=900, check=False)
     run([sys.executable, str(VENDOR_DIR / "high_odds.py"), str(REPO_DIR)], env=env, timeout=1500, check=False)
+    run([sys.executable, str(VENDOR_DIR / "three_strategies.py")], env=env, timeout=4200, check=False)
+    run([sys.executable, str(VENDOR_DIR / "verzzify_banker.py")], env=env, timeout=900, check=False)
+    run([sys.executable, str(VENDOR_DIR / "daily_master.py"), str(REPO_DIR)], env=env, timeout=600, check=False)
+    run([sys.executable, str(VENDOR_DIR / "share_cards.py"), str(REPO_DIR)], env=env, timeout=600, check=False)
 
 
 def publish(env, dry_run=False):
