@@ -61,12 +61,12 @@ def outcome(markets, mid, spec, oid=None, startswith=None):
     return None
 
 
-def upcoming(days=1):
+def upcoming(days=2):
     ids, now = [], dt.datetime.now(dt.timezone.utc)
     end = now + dt.timedelta(days=days)
-    for page in range(1, 10):
+    for page in range(1, 16):
         d = curl("https://www.sportybet.com/api/gh/factsCenter/pcUpcomingEvents"
-                 f"?sportId=sr%3Asport%3A1&marketId=1%2C14%2C16%2C18%2C19%2C20%2C29&pageSize=100&pageNum={page}&option=1").get("data") or {}
+                 f"?sportId=sr%3Asport%3A1&marketId=1%2C14%2C16%2C18%2C19%2C20%2C29%2C68%2C90%2C10&pageSize=100&pageNum={page}&option=1").get("data") or {}
         n = 0
         for t in d.get("tournaments") or []:
             for e in t.get("events") or []:
@@ -134,13 +134,17 @@ def leg(data, mid, spec, oid, market, selection, odds, case, strategy):
                 ko=ko.strftime("%H:%M") if ko else None, case=case, strategy=strategy, result="pending", matchStatus="Not start")
 
 
-def build_pool(days=1):
+def build_pool(days=2):
     """Return candidate picks keyed by eventId with priority tags."""
+    import concurrent.futures as cf
     ids = upcoming(days); pool = []; now = dt.datetime.now(dt.timezone.utc)
-    print(f"three_strategies: scanning {len(ids)} events", flush=True)
-    for eid in ids:
-        data = fetch(eid)
-        if not data: continue
+    print(f"three_strategies: scanning {len(ids)} events (days={days})", flush=True)
+    with cf.ThreadPoolExecutor(16) as ex:
+        evs = list(ex.map(fetch, ids))
+    diag = dict(events=0, o25_band=0, fh15_ok=0, avg_ok=0, o25_pick=0, win_dnb=0, dc=0, skip_side=0, no_data=0)
+    for eid, data in zip(ids, evs):
+        if not data: diag["no_data"] += 1; continue
+        diag["events"] += 1
         home = data.get("homeTeamName") or ""; away = data.get("awayTeamName") or ""
         league = ""
         try: league = data["sport"]["category"]["tournament"]["name"]
@@ -178,28 +182,32 @@ def build_pool(days=1):
 
         # --- Strategy 1: O2.5 ---
         o25 = outcome(markets, "18", "total=2.5", oid="12", startswith="Over")
-        fh15 = outcome(markets, "16", "total=1.5", oid="12", startswith="Over")
+        # SportyBet GH: 1st-half O/U is marketId 68 (not 16); 2nd-half often 90.
+        fh15 = outcome(markets, "68", "total=1.5", oid="12", startswith="Over")
+        if not fh15: fh15 = outcome(markets, "68", "total=1.5", startswith="Over")
+        if not fh15: fh15 = outcome(markets, "16", "total=1.5", oid="12", startswith="Over")
         if not fh15: fh15 = outcome(markets, "21", "total=1.5", oid="12", startswith="Over")
         if not fh15:
             for m in markets:
                 name = (m.get("name") or m.get("desc") or "").lower()
-                if not any(x in name for x in ("1st", "first half", "1h")): continue
-                if "over/under" not in name and "total" not in name: continue
+                mid = str(m.get("id") or "")
+                if mid not in ("68", "16", "21") and not any(x in name for x in ("1st", "first half", "1h")): continue
                 if (m.get("specifier") or "") != "total=1.5": continue
                 for o in m.get("outcomes") or []:
-                    if not str(o.get("desc") or "").startswith("Over"): continue
+                    desc = str(o.get("desc") or "")
+                    if not desc.startswith("Over"): continue
                     try: fh15 = (m, o, float(o.get("odds") or 0)); break
                     except Exception: continue
                 if fh15: break
         passes = 0; why = []
-        if o25 and 1.20 <= o25[2] <= 1.40: passes += 1; why.append(f"O2.5@{o25[2]}")
-        if fh15 and fh15[2] < 2.00: passes += 1; why.append(f"1HO1.5@{fh15[2]}")
-        if avg is not None and n_matches >= 20 and avg > 2.5: passes += 1; why.append(f"avgG={avg:.2f}/n={n_matches:.0f}")
+        if o25 and 1.20 <= o25[2] <= 1.40: passes += 1; why.append(f"O2.5@{o25[2]}"); diag["o25_band"] += 1
+        if fh15 and fh15[2] < 2.00: passes += 1; why.append(f"1HO1.5@{fh15[2]}"); diag["fh15_ok"] += 1
+        if avg is not None and n_matches >= 20 and avg > 2.5: passes += 1; why.append(f"avgG={avg:.2f}/n={n_matches:.0f}"); diag["avg_ok"] += 1
         o25_pick = None
         if o25 and passes >= 2 and not SKIP.search(league or ""):
             o25_pick = leg(data, "18", "total=2.5", o25[1].get("id") or "12", "Over/Under", o25[1].get("desc") or "Over 2.5",
                            o25[2], f"O2.5 {passes}/3: " + ", ".join(why), "o25-2of3")
-            o25_pick["o25Passes"] = passes
+            o25_pick["o25Passes"] = passes; diag["o25_pick"] += 1
 
         # --- Strategies 2 & 3: form / table (top flights) ---
         win_dnb = []; dc_against = []
@@ -282,6 +290,7 @@ def build_pool(days=1):
                 pool.append(leg(data, ah[0].get("id"), ah[0].get("specifier") or "", ah[1].get("id"),
                                 ah[0].get("name") or "Asian Handicap", ah[1].get("desc") or "AH -1", ah[2],
                                 f"stronger AH-1 @{ah[2]} (top5 v bottom3)", "ah-minus1-screen"))
+    print("three_strategies diag", diag, flush=True)
     return pool
 
 
@@ -335,7 +344,7 @@ def book_masters(pool, day):
     return out
 
 
-def main(days=1):
+def main(days=2):
     day = dt.datetime.now(dt.timezone.utc).date().isoformat()
     pool = build_pool(days=days)
     print(f"pool {len(pool)} by strategy:", {k: sum(1 for p in pool if p.get("strategy") == k) for k in
@@ -346,4 +355,4 @@ def main(days=1):
 
 
 if __name__ == "__main__":
-    sys.exit(main(int(sys.argv[1]) if len(sys.argv) > 1 else 1))
+    sys.exit(main(int(sys.argv[1]) if len(sys.argv) > 1 else 2))

@@ -43,7 +43,7 @@ jobs:
           ENGINE_DIR: ${{ github.workspace }}/engine
         run: |
           set -euo pipefail
-          python -m engine.vendor.three_strategies 1 || python engine/vendor/three_strategies.py 1
+          python -m engine.vendor.three_strategies 2 || python engine/vendor/three_strategies.py 2
           python engine/vendor/verzzify_banker.py
           python engine/vendor/nerdytips_strategies.py || python -m engine.vendor.nerdytips_strategies || true
           python engine/vendor/daily_master.py "$REPO_DIR"

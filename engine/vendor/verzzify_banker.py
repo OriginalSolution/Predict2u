@@ -46,7 +46,7 @@ def load_json(p, d=None):
 
 
 
-def scan_banker_band(days=1):
+def scan_banker_band(days=2):
     """Extra candidates from SportyBet: Over 1.5 / Under 3.5 / short win in 1.12–1.45 that pass matchup_rules."""
     import subprocess
     UA = "Mozilla/5.0"
@@ -56,7 +56,7 @@ def scan_banker_band(days=1):
         except Exception: return {}
     ids, now = [], dt.datetime.now(dt.timezone.utc)
     end = now + dt.timedelta(days=days)
-    for page in range(1, 6):
+    for page in range(1, 12):
         d = curl("https://www.sportybet.com/api/gh/factsCenter/pcUpcomingEvents?sportId=sr%3Asport%3A1&marketId=1%2C18&pageSize=100&pageNum="+str(page)+"&option=1").get("data") or {}
         for t in d.get("tournaments") or []:
             for e in t.get("events") or []:
@@ -65,8 +65,12 @@ def scan_banker_band(days=1):
                 if now < ko <= end: ids.append(e.get("eventId"))
         if page*100 >= int(d.get("totalNum") or 0): break
     out = []
-    for eid in ids[:80]:
-        data = curl(f"https://www.sportybet.com/api/gh/factsCenter/event?eventId={eid}&productId=3").get("data") or {}
+    import concurrent.futures as cf
+    def _fe(eid):
+        return eid, curl(f"https://www.sportybet.com/api/gh/factsCenter/event?eventId={eid}&productId=3").get("data") or {}
+    with cf.ThreadPoolExecutor(16) as ex:
+        fetched = list(ex.map(_fe, ids[:200]))
+    for eid, data in fetched:
         if not data: continue
         home, away = data.get("homeTeamName") or "", data.get("awayTeamName") or ""
         if SKIP.search(f"{home} {away}"): continue
@@ -166,7 +170,7 @@ def eligible(p):
     if src is None:
         lr, n = p.get("leagueFavRate"), p.get("sample") or 0
         if lr is not None and n >= 80 and (lr if lr > 1 else lr * 100) >= 80: return True, "league-strong"
-        if p.get("source")=="verzzify-scan" and str(p.get("marketId"))=="18": return True, "scan-goals"
+        if p.get("source")=="verzzify-scan" and str(p.get("marketId")) in ("18","1"): return True, "scan-banker"
         return False, "no-hist"
     c = p.get("confidence")
     if c is not None:
@@ -207,7 +211,7 @@ def main():
     day = dt.datetime.now(dt.timezone.utc).date().isoformat()
     picks = research_picks(day)
     try:
-        picks = picks + scan_banker_band(1)
+        picks = picks + scan_banker_band(2)
         print("verzzify scan added", len(picks))
     except Exception as e:
         print("verzzify scan skipped", e)
