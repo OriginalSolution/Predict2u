@@ -1,26 +1,26 @@
 {
- "DATA_UPDATED": "2026-11-09T12:13:05Z",
+ "DATA_UPDATED": "2026-11-09T20:43:16Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
  "overall": {
-  "n": 175,
+  "n": 176,
   "won": 18,
-  "lost": 157,
-  "winRate": 10.3,
+  "lost": 158,
+  "winRate": 10.2,
   "stake": 10.0,
-  "staked": 1750.0,
+  "staked": 1760.0,
   "returned": 2107.5,
-  "profit": 357.5,
-  "roi": 20.4,
+  "profit": 347.5,
+  "roi": 19.7,
   "pending": 67,
-  "codesSettled": 828,
+  "codesSettled": 829,
   "codesWon": 99,
-  "codesLost": 729
+  "codesLost": 730
  },
  "streak": {
   "current": "lost",
-  "currentLen": 27,
+  "currentLen": 28,
   "bestWin": 4,
   "bestLoss": 33
  },
@@ -50,14 +50,14 @@
    "key": "market"
   },
   {
-   "n": 11,
+   "n": 12,
    "won": 0,
-   "lost": 11,
+   "lost": 12,
    "winRate": 0.0,
    "stake": 10.0,
-   "staked": 110.0,
+   "staked": 120.0,
    "returned": 0,
-   "profit": -110.0,
+   "profit": -120.0,
    "roi": -100.0,
    "key": "high-odds"
   },
@@ -124,15 +124,15 @@
  ],
  "bySite": [
   {
-   "n": 220,
+   "n": 221,
    "won": 21,
-   "lost": 199,
+   "lost": 200,
    "winRate": 9.5,
    "stake": 10.0,
-   "staked": 2200.0,
+   "staked": 2210.0,
    "returned": 2177.6,
-   "profit": -22.4,
-   "roi": -1.0,
+   "profit": -32.4,
+   "roi": -1.5,
    "key": "sportybet"
   },
   {
@@ -234,15 +234,15 @@
    "key": "Over 0.5"
   },
   {
-   "n": 70,
+   "n": 71,
    "won": 10,
-   "lost": 60,
-   "winRate": 14.3,
+   "lost": 61,
+   "winRate": 14.1,
    "stake": 10.0,
-   "staked": 700.0,
+   "staked": 710.0,
    "returned": 318.6,
-   "profit": -381.4,
-   "roi": -54.5,
+   "profit": -391.4,
+   "roi": -55.1,
    "key": "Over 2.5"
   },
   {
@@ -356,6 +356,18 @@
  ],
  "byDay": [
   {
+   "n": 1,
+   "won": 0,
+   "lost": 1,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 10.0,
+   "returned": 0,
+   "profit": -10.0,
+   "roi": -100.0,
+   "key": "2026-11-09"
+  },
+  {
    "n": 12,
    "won": 0,
    "lost": 12,
@@ -429,12 +441,40 @@
   }
  ],
  "picks": {
-  "settled": 1756,
-  "won": 1307,
-  "lost": 449,
+  "settled": 1759,
+  "won": 1309,
+  "lost": 450,
   "winRate": 74.4
  },
  "recent": [
+  {
+   "code": "BFYU4V",
+   "book": "sportybet",
+   "date": "2026-11-09",
+   "name": "Descending odds · set · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 1.86,
+   "status": "lost",
+   "hit": 1,
+   "total": 2,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "MFK Tatran Liptovsky Mikulas v MFk Bytca",
+     "selection": "Over 2.5",
+     "odds": 1.33,
+     "result": "won",
+     "score": "4:0"
+    },
+    {
+     "match": "Kristiansund BK v Vaalerenga IF",
+     "selection": "Over 2.5",
+     "odds": 1.4,
+     "result": "lost",
+     "score": "1:0"
+    }
+   ]
+  },
   {
    "code": "FKR2ZQ",
    "book": "sportybet",
@@ -1836,7 +1876,7 @@
    "kind": "alternative",
    "odds": 30.34,
    "status": "lost",
-   "hit": 11,
+   "hit": 12,
    "total": 14,
    "profit": -10.0,
    "legs": [
@@ -1886,8 +1926,8 @@
      "match": "APS Zakynthos v Niki Volou 1924 PAE",
      "selection": "Under 3.5",
      "odds": 1.29,
-     "result": "pending",
-     "score": null
+     "result": "won",
+     "score": "0:2"
     },
     {
      "match": "Ass Naval 1º de Maio v At Malveira",
@@ -1948,7 +1988,7 @@
    "kind": "alternative",
    "odds": 25.64,
    "status": "lost",
-   "hit": 13,
+   "hit": 14,
    "total": 17,
    "profit": -10.0,
    "legs": [
@@ -2054,8 +2094,8 @@
      "match": "APS Zakynthos v Niki Volou 1924 PAE",
      "selection": "Under 3.5",
      "odds": 1.29,
-     "result": "pending",
-     "score": null
+     "result": "won",
+     "score": "0:2"
     },
     {
      "match": "JS Saoura v CS Constantine",
@@ -6527,300 +6567,6 @@
      "match": "Hoang Anh Gia Lai v Hanoi FC",
      "selection": "Over 1.5",
      "odds": 1.23,
-     "result": "won",
-     "score": "2:1"
-    }
-   ]
-  },
-  {
-   "code": "B3GDMSP",
-   "book": "msport",
-   "date": "2026-11-07",
-   "name": "Over 1.5 (full)",
-   "kind": "slip",
-   "odds": 68.69,
-   "status": "lost",
-   "hit": 0,
-   "total": 101,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Rosenborg BK v IK Start",
-     "selection": "Over 1.5",
-     "odds": 1.11,
-     "result": "won",
-     "score": "4:1"
-    },
-    {
-     "match": "SV Wehen Wiesbaden v TSV Havelse",
-     "selection": "Over 1.5",
-     "odds": 1.13,
-     "result": "won",
-     "score": "3:0"
-    },
-    {
-     "match": "Randers FC v Nordsjaelland",
-     "selection": "Over 1.5",
-     "odds": 1.14,
-     "result": "won",
-     "score": "1:6"
-    },
-    {
-     "match": "Viking FK v KFUM Oslo",
-     "selection": "Over 1.5",
-     "odds": 1.1,
-     "result": "won",
-     "score": "5:1"
-    },
-    {
-     "match": "FC Noah Yerevan v FC Shirak Gyumri",
-     "selection": "Over 1.5",
-     "odds": 1.13,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Hassleholms IF v Angelholms FF",
-     "selection": "Over 1.5",
-     "odds": 1.21,
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Swansea University v Cardiff Draconians",
-     "selection": "Over 1.5",
-     "odds": 1.1,
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "FC Koper v Mura Murska Sobota",
-     "selection": "Over 1.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Porthmadog FC v Llanuwchllyn",
-     "selection": "Over 1.5",
-     "odds": 1.11,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Valencia v Real Madrid",
-     "selection": "Over 1.5",
-     "odds": 1.14,
-     "result": "won",
-     "score": "0:3"
-    },
-    {
-     "match": "Chemnitzer FC v Greifswalder FC",
-     "selection": "Over 1.5",
-     "odds": 1.17,
-     "result": "won",
-     "score": "0:4"
-    },
-    {
-     "match": "Gornik Zabrze v Wieczysta Krakow",
-     "selection": "Over 1.5",
-     "odds": 1.19,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Rkav Volendam v De Treffers Groesbeek",
-     "selection": "Over 1.5",
-     "odds": 1.13,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Ankara Keciorengucu v Manisa Futbol Kulubu",
-     "selection": "Over 1.5",
-     "odds": 1.16,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Ebbsfleet United FC v Chesham United",
-     "selection": "Over 1.5",
-     "odds": 1.12,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Horsham FC v AFC Totton",
-     "selection": "Over 1.5",
-     "odds": 1.19,
-     "result": "won",
-     "score": "2:3"
-    },
-    {
-     "match": "Crystal Palace v Liverpool",
-     "selection": "Over 1.5",
-     "odds": 1.17,
-     "result": "won",
-     "score": "1:3"
-    },
-    {
-     "match": "Blau-Weiss Linz v FAC Wien",
-     "selection": "Over 1.5",
-     "odds": 1.19,
-     "result": "won",
-     "score": "3:0"
-    },
-    {
-     "match": "FC Midtjylland v SonderjyskE",
-     "selection": "Over 1.5",
-     "odds": 1.1,
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "GIF Sundsvall v Varbergs BoIS",
-     "selection": "Over 1.5",
-     "odds": 1.15,
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "Port FC v Chonburi FC",
-     "selection": "Over 1.5",
-     "odds": 1.19,
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "AEL Limassol v Krasava ENY Ypsonas FC",
-     "selection": "Over 1.5",
-     "odds": 1.24,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "FC Winterthur v Etoile Carouge FC",
-     "selection": "Over 1.5",
-     "odds": 1.15,
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "Arsenal v Hull City",
-     "selection": "Over 1.5",
-     "odds": 1.17,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "CF Montreal v Vancouver Whitecaps FC",
-     "selection": "Over 1.5",
-     "odds": 1.14,
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "Universidad de Chile v Cobresal",
-     "selection": "Over 1.5",
-     "odds": 1.11,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Beijing Guoan v Chongqing Tonglianglong FC",
-     "selection": "Over 1.5",
-     "odds": 1.14,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "South Shields v Southport FC",
-     "selection": "Over 1.5",
-     "odds": 1.15,
-     "result": "won",
-     "score": "5:1"
-    },
-    {
-     "match": "FK Majevica Lopare v FK Omarska",
-     "selection": "Over 1.5",
-     "odds": 1.17,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Sporting v Moreirense FC",
-     "selection": "Over 1.5",
-     "odds": 1.14,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Estrela Amadora v Benfica",
-     "selection": "Over 1.5",
-     "odds": 1.14,
-     "result": "won",
-     "score": "2:3"
-    },
-    {
-     "match": "Nongbua Pitchaya FC v Chainat Hornbill FC",
-     "selection": "Over 1.5",
-     "odds": 1.16,
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "Roma v Sassuolo",
-     "selection": "Over 1.5",
-     "odds": 1.1,
-     "result": "won",
-     "score": "3:0"
-    },
-    {
-     "match": "NK Krsko Posavje v NK Rudar Velenje",
-     "selection": "Over 1.5",
-     "odds": 1.22,
-     "result": "won",
-     "score": "1:3"
-    },
-    {
-     "match": "Dalian Yingbo FC v Tianjin Jinmen Tiger",
-     "selection": "Over 1.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Alanyaspor v Trabzonspor",
-     "selection": "Over 1.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "Anorthosis Famagusta v AC Omonia Nicosia",
-     "selection": "Over 1.5",
-     "odds": 1.2,
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "Boluspor v Bodrum FK",
-     "selection": "Over 1.5",
-     "odds": 1.26,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Kings Lynn FC v Spennymoor Town FC",
-     "selection": "Over 1.5",
-     "odds": 1.2,
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "FK Spartak Moscow v FK Akron Tolyatti",
-     "selection": "Over 1.5",
-     "odds": 1.13,
      "result": "won",
      "score": "2:1"
     }
