@@ -1,0 +1,150 @@
+{
+ "key": "desc",
+ "name": "Descending odds",
+ "date": "2026-11-09",
+ "riskLabel": "HIGH RISK",
+ "waived": true,
+ "verification": "Bets For The Day three-strategy set. Strategy-internal rules only; HIGH RISK, no guarantees.",
+ "parts": [
+  {
+   "name": "Descending odds · set",
+   "legs": 2,
+   "events": [
+    "sr:match:76146334",
+    "sr:match:76509750"
+   ],
+   "totalOdds": 1.86,
+   "codes": {
+    "sportybet": [
+     {
+      "code": "BFYU4V",
+      "totalOdds": 1.86,
+      "legs": 2,
+      "link": "https://www.sportybet.com/gh/?shareCode=BFYU4V",
+      "matches": [
+       "sr:match:76146334",
+       "sr:match:76509750"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "footballcom": [
+     {
+      "code": "BFYU4V",
+      "totalOdds": 1.86,
+      "legs": 2,
+      "link": "https://www.football.com/gh/?shareCode=BFYU4V",
+      "matches": [
+       "sr:match:76146334",
+       "sr:match:76509750"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "msport": [
+     {
+      "code": "B3HKMCL",
+      "totalOdds": 1.85,
+      "legs": 2,
+      "link": "https://www.msport.com/gh/?shareCode=B3HKMCL",
+      "matches": [
+       "sr:match:76146334",
+       "sr:match:76509750"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "betika": [
+     {
+      "code": "tmFxcd",
+      "totalOdds": 1.84,
+      "legs": 2,
+      "link": "https://betika.com/en-gh/share/tmFxcd",
+      "matches": [
+       "sr:match:76146334",
+       "sr:match:76509750"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "betpawa": [
+     {
+      "code": "GC9EO13",
+      "totalOdds": 1.85,
+      "legs": 2,
+      "link": "https://www.betpawa.com.gh/share-betslip/GC9EO13",
+      "matches": [
+       "sr:match:76146334",
+       "sr:match:76509750"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ]
+   },
+   "missing": {},
+   "label": "Descending odds · set · HIGH RISK",
+   "source": "desc",
+   "status": "pending"
+  }
+ ],
+ "legList": [
+  {
+   "eventId": "sr:match:76146334",
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "date": "2026-11-09",
+   "ko": "16:00",
+   "kickoff": "2026-11-09T16:00:00Z",
+   "league": "Slovakia - 2. Liga",
+   "match": "MFK Tatran Liptovsky Mikulas v MFk Bytca",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.33,
+   "liveOdds": 1.33,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": null,
+   "x12": null,
+   "case": "O2.5 2/3: O2.5@1.33, 1HO1.5@1.84",
+   "leagueFavRate": null,
+   "rate": null
+  },
+  {
+   "eventId": "sr:match:76509750",
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "date": "2026-11-09",
+   "ko": "18:00",
+   "kickoff": "2026-11-09T18:00:00Z",
+   "league": "Norway - Eliteserien",
+   "match": "Kristiansund BK v Vaalerenga IF",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.4,
+   "liveOdds": 1.4,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": null,
+   "x12": null,
+   "case": "O2.5 2/3: O2.5@1.4, 1HO1.5@1.99",
+   "leagueFavRate": null,
+   "rate": null
+  }
+ ],
+ "legs": 2,
+ "totalOdds": 1.86,
+ "hit": 0,
+ "total": 2,
+ "status": "pending"
+}
