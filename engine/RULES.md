@@ -79,3 +79,19 @@ Optional `engine/gates/newrules.py` runs in `P2U_STRICT_GATES=report` (default) 
 
 ## 50-leg split
 - Any code over 50 legs is auto-split (engine/vendor/split_codes.py) into balanced kickoff-ordered parts of <= 50 legs, each booked on SportyBet, Football.com, MSport, Betika, BetPawa (no Betway). Kicked-off legs are left out; legs a bookmaker does not offer are listed per part. Parts settle from the parent legs on every settle run. Empty bookmaker sections are hidden.
+
+
+## Bets For The Day three-strategy set (High Odds, HIGH RISK)
+Daily job: `engine/vendor/three_strategies.py` → `engine/data/ho-masters/`.
+- O2.5 when ≥2 of: price 1.20–1.40; 1H O1.5 <2.00; league avg goals/match >2.5 (n≥20).
+- Top-3 or won-last-3: win ≤1.45 else DNB. Bottom-3 or winless-last-3: DC against (never DC 12).
+- Top flights only for 2&3; no top5-v-top5 / bottom3-v-bottom3. One pick/match; DC > win/DNB; O2.5 with 3/3 beats result, 2/3 loses to result.
+- ASC = 50 lowest odds, DESC = 50 highest, each split 25+25. Drop started. No padding.
+- Screens: top5-v-bottom3 weaker to-score >1.70; stronger AH −1 <1.90.
+- Never NG, never DC 12. Published HIGH RISK, no guarantees. Settled via daily_master.
+
+## Verzzify Edge Banker (Bankers page, odds >25)
+Daily job: `engine/vendor/verzzify_banker.py`.
+- Banker band 1.12–1.45 from house research + settled history (site band hit-rate n≥20 beats implied by ≥3pp, else league fav rate ≥78% with sample ≥50).
+- ALL normal Predict2u rules (matchup_rules / hard vetoes / obscure goals-only / ≤50 legs).
+- Pack until combined odds first exceeds 25; refuse to pad. Booked on every no-login bookmaker.
