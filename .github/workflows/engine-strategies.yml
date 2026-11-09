@@ -38,7 +38,7 @@ jobs:
       - name: Three strategies + Verzzify banker
         env:
           P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
-          RESEARCH_DIR: ${{ github.workspace }}/engine/vendor
+          RESEARCH_DIR: ${{ github.workspace }}/engine/data
           REPO_DIR: ${{ github.workspace }}
           ENGINE_DIR: ${{ github.workspace }}/engine
         run: |

@@ -45,14 +45,94 @@ def load_json(p, d=None):
     except Exception: return d
 
 
+
+def scan_banker_band(days=1):
+    """Extra candidates from SportyBet: Over 1.5 / Under 3.5 / short win in 1.12–1.45 that pass matchup_rules."""
+    import subprocess
+    UA = "Mozilla/5.0"
+    def curl(url):
+        r = subprocess.run(["curl","-s","-m","20","-A",UA,"-H","Accept: application/json",url],capture_output=True,text=True)
+        try: return json.loads(r.stdout) if r.stdout and r.stdout.strip()[:1] in "{[" else {}
+        except Exception: return {}
+    ids, now = [], dt.datetime.now(dt.timezone.utc)
+    end = now + dt.timedelta(days=days)
+    for page in range(1, 6):
+        d = curl("https://www.sportybet.com/api/gh/factsCenter/pcUpcomingEvents?sportId=sr%3Asport%3A1&marketId=1%2C18&pageSize=100&pageNum="+str(page)+"&option=1").get("data") or {}
+        for t in d.get("tournaments") or []:
+            for e in t.get("events") or []:
+                ts = e.get("estimateStartTime") or 0
+                ko = dt.datetime.fromtimestamp(ts/1000, dt.timezone.utc) if ts else now
+                if now < ko <= end: ids.append(e.get("eventId"))
+        if page*100 >= int(d.get("totalNum") or 0): break
+    out = []
+    for eid in ids[:80]:
+        data = curl(f"https://www.sportybet.com/api/gh/factsCenter/event?eventId={eid}&productId=3").get("data") or {}
+        if not data: continue
+        home, away = data.get("homeTeamName") or "", data.get("awayTeamName") or ""
+        if SKIP.search(f"{home} {away}"): continue
+        try: league = data["sport"]["category"]["tournament"]["name"]
+        except Exception: league = ""
+        if SKIP.search(league): continue
+        ts = data.get("estimateStartTime") or 0
+        ko = dt.datetime.fromtimestamp(ts/1000, dt.timezone.utc) if ts else None
+        markets = data.get("markets") or []
+        # attach 1X2 for classify
+        x12 = None
+        try:
+            h=d_=a=None
+            for m in markets:
+                if str(m.get("id"))!="1": continue
+                for o in m.get("outcomes") or []:
+                    if str(o.get("id"))=="1": h=float(o["odds"])
+                    if str(o.get("id"))=="2": d_=float(o["odds"])
+                    if str(o.get("id"))=="3": a=float(o["odds"])
+            if h and d_ and a: x12=f"{h:.2f}/{d_:.2f}/{a:.2f}"
+        except Exception: pass
+        targets = [("18","total=1.5","12","Over 1.5"),("18","total=3.5","13","Under 3.5"),("1","","1","Home"),("1","","3","Away")]
+        for mid,spec,oid,label in targets:
+            for m in markets:
+                if str(m.get("id"))!=mid: continue
+                if (m.get("specifier") or "")!=(spec or ""): continue
+                for o in m.get("outcomes") or []:
+                    if str(o.get("id"))!=oid: continue
+                    try: odds=float(o.get("odds") or 0)
+                    except Exception: continue
+                    if not (BAND_LO<=odds<=BAND_HI): continue
+                    p=dict(eventId=eid,match=f"{home} v {away}",league=league,marketId=mid,specifier=spec,outcomeId=str(o.get("id")),
+                           market=m.get("name") or label,selection=o.get("desc") or label,odds=odds,x12=x12 or "",
+                           kickoff=ko.isoformat().replace("+00:00","Z") if ko else None,date=ko.date().isoformat() if ko else None,
+                           ko=ko.strftime("%H:%M") if ko else None,confidence=None,leagueFavRate=None,sample=None,source="verzzify-scan")
+                    if MR.is_btts_no(p) or (MR.is_double_chance(p) and MR.is_dc_vetoed(p)): continue
+                    if MR.is_obscure_league_non_goals(p): continue
+                    ok,cls,why=MR.check(p)
+                    if ok: out.append(p); break
+                    # short fav treated as mismatch for goals markets
+                    if cls=="unverified" and x12 and mid=="18":
+                        try:
+                            fp=min(float(x) for x in x12.split("/"))
+                            if fp<=1.70: p["gate"]="mismatch"; out.append(p); break
+                        except Exception: pass
+    return out
+
+
 def research_picks(day):
-    files = sorted(RESEARCH_DIR.glob("????-??-??.json"))
+    seen, out = set(), []
+    def add(L):
+        for p in L or []:
+            k = (p.get("eventId"), str(p.get("selection")), str(p.get("marketId")))
+            if k in seen or not p.get("eventId"): continue
+            seen.add(k); out.append(p)
+    files = sorted(Path(RESEARCH_DIR).glob("????-??-??.json")) if RESEARCH_DIR else []
     files = [f for f in files if f.name[:10] <= day]
-    if not files:
-        hp = load_json(REPO_DIR / "home-picks.json", {})
-        return list(hp.get("picks") or [])
-    d = load_json(files[-1], {})
-    return list(d.get("picks") or [])
+    if files: add(load_json(files[-1], {}).get("picks"))
+    add(load_json(REPO_DIR / "home-picks.json", {}).get("picks"))
+    hot = load_json(REPO_DIR / "hot-picks.json", {})
+    for s in (hot.get("slips") or []):
+        # hot slips are aggregates; prefer individual hot picks list
+        pass
+    add(hot.get("picks"))
+    # Expand band slightly for hot picks that already cleared site popularity
+    return out
 
 
 def edge(p):
@@ -83,7 +163,11 @@ def eligible(p):
     if src == "site" and e is not None and e < 3: return False, "site-edge"
     if src == "league" and e is not None and e < 0: return False, "league-edge"
     if src == "league-floor" and e is not None and e < 0: return False, "league-floor"
-    if src is None: return False, "no-hist"
+    if src is None:
+        lr, n = p.get("leagueFavRate"), p.get("sample") or 0
+        if lr is not None and n >= 80 and (lr if lr > 1 else lr * 100) >= 80: return True, "league-strong"
+        if p.get("source")=="verzzify-scan" and str(p.get("marketId"))=="18": return True, "scan-goals"
+        return False, "no-hist"
     c = p.get("confidence")
     if c is not None:
         c = c / 100 if c > 1 else c
@@ -122,6 +206,11 @@ def book(legs):
 def main():
     day = dt.datetime.now(dt.timezone.utc).date().isoformat()
     picks = research_picks(day)
+    try:
+        picks = picks + scan_banker_band(1)
+        print("verzzify scan added", len(picks))
+    except Exception as e:
+        print("verzzify scan skipped", e)
     # Attach hist from pick_history
     try:
         out = dict(picks=picks, leagues=[])
