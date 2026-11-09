@@ -1,3 +1,4 @@
+import json
 """Fully settled slips leave live lists; partials stay; history kept."""
 import importlib.util, pathlib, sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -33,3 +34,22 @@ def test_prune_high_odds_moves_settled_to_history():
 def test_settled_pick_not_live():
     assert pl.live_pick({"result": "won", "date": "2099-01-01", "kickoff": "2099-01-01T12:00:00Z"}) is False
     assert pl.live_pick({"result": "pending", "date": "2099-01-01", "kickoff": "2099-01-01T20:00:00Z"}) is True
+
+
+def test_prune_home_archives_settled(tmp_path, monkeypatch):
+    repo = tmp_path
+    (repo / "engine" / "data").mkdir(parents=True)
+    monkeypatch.setattr(pl, "REPO", repo)
+    doc = {"slips": [{
+        "name": "Old slip", "date": "2026-11-01",
+        "codes": {"sportybet": "ZZZZ99"},
+        "legs": [
+            {"result": "won", "kickoff": "2026-11-01T12:00:00Z", "match": "A v B", "selection": "Over 1.5", "odds": 1.2},
+            {"result": "lost", "kickoff": "2026-11-01T15:00:00Z", "match": "C v D", "selection": "Over 1.5", "odds": 1.3},
+        ],
+    }], "picks": []}
+    out, rem = pl.prune_home(doc)
+    assert out["slips"] == []
+    ledger = json.loads((repo / "engine" / "data" / "code-ledger.json").read_text())
+    assert "sportybet:ZZZZ99" in ledger
+    assert ledger["sportybet:ZZZZ99"]["status"] == "lost"

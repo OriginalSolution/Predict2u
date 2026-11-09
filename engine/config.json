@@ -74,7 +74,8 @@
     "lock_codes.py",
     "ah_minus_one.py",
     "share_cards.py",
-    "telegram_post.py"
+    "telegram_post.py",
+    "nerdytips_strategies.py"
   ],
   "combine_under_min_odds": true,
   "one_market_per_game": true,
@@ -189,5 +190,18 @@
       "turkiye - 1. lig",
       "switzerland - challenge league"
     ]
+  },
+  "optional_gates": {
+    "enabled": false,
+    "sportybet_gh_only": false,
+    "min_odds_every_code": false,
+    "gg_benched": false,
+    "riddim_edge_legs_below_1_50": false,
+    "max_codes_per_event": false,
+    "max_codes_per_event_n": 2,
+    "drop_top5_v_top5_bottom3_v_bottom3": false,
+    "max_tips_per_code_25": false,
+    "per_league_own_history": false,
+    "_comment": "All OFF. Several conflict with standing user rules (all bookmakers, 50-pick cap, GG allowed). Enable only after explicit user decision."
   }
 }

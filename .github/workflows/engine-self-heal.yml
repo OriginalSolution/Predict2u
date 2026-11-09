@@ -49,14 +49,17 @@ jobs:
         id: commit
         run: |
           set -euo pipefail
-          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
-            echo "changed=0" >> "$GITHUB_OUTPUT"; exit 0
-          fi
           git config user.name "predict2u-engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
+          # Only stage known heal targets (avoid hanging on huge untracked trees).
+          git add -u -- BUILD_VERSION.txt sw.js *.html high-odds engine/vendor/self_heal.py || true
+          git add -- share s home-picks.json high_odds.json hot-picks.json picks.json record.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "changed=0" >> "$GITHUB_OUTPUT"; exit 0
+          fi
           git commit -m "Self-heal: sync BUILD_VERSION/sw/cache, share pages, live JSON $(date -u +%FT%TZ)"
-          git pull --rebase --autostash -X theirs origin main || git pull --rebase --autostash origin main || true
+          git fetch origin main --depth=20
+          git pull --rebase --autostash -X theirs origin main || true
           git push origin HEAD
           echo "changed=1" >> "$GITHUB_OUTPUT"
       - name: Re-run Site Quality checks
