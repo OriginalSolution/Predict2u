@@ -9,8 +9,27 @@ REPO = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith("-") else
 OUT = os.path.join(REPO, "share"); os.makedirs(OUT, exist_ok=True)
 SDIR = os.path.join(REPO, "s"); os.makedirs(SDIR, exist_ok=True)
 PAGES = {"home": "", "bankers": "bankers.html", "hot": "hot-picks.html", "high": "high-odds/"}
-FD = "/usr/share/fonts/truetype/sand-box/google/Poppins/Poppins-"
-def F(w, s): return ImageFont.truetype(FD + w + ".ttf", s)
+def _font_base():
+    for cand in (
+        ("/usr/share/fonts/truetype/sand-box/google/Poppins/Poppins-", "-Bold.ttf"),
+        ("/usr/share/fonts/truetype/dejavu/DejaVuSans", "-Bold.ttf"),
+        ("/usr/share/fonts/truetype/liberation/LiberationSans", "-Bold.ttf"),
+    ):
+        try:
+            ImageFont.truetype(cand[0] + cand[1], 20); return cand[0]
+        except Exception:
+            continue
+    return None
+FD = _font_base()
+def F(w, s):
+    if not FD:
+        return ImageFont.load_default()
+    names = [w, "Bold" if any(x in w for x in ("Bold", "Extra")) else "Regular", "Bold", "Regular"]
+    for name in names:
+        for path in (f"{FD}-{name}.ttf" if not FD.endswith("-") else f"{FD}{name}.ttf", f"{FD}{name}.ttf", f"{FD}.ttf"):
+            try: return ImageFont.truetype(path, s)
+            except Exception: continue
+    return ImageFont.load_default()
 W, H = 1080, 1350
 NAVY, NAVY2, GREEN, YEL, WHITE, MUTED = (8, 20, 36), (13, 34, 58), (120, 190, 32), (255, 204, 0), (255, 255, 255), (160, 178, 200)
 BOOKS = [("sportybet", "SportyBet", (200, 16, 30), WHITE), ("msport", "MSport", (255, 211, 37), (17, 17, 17)),

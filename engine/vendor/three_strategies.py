@@ -157,12 +157,17 @@ def build_pool(days=1):
             except Exception: season_id = None
         # Map SportyBet event → sportradar match via eventId (sr:match:N)
         hu = au = None
-        try:
-            md = G(f"match_detailsextended/{eid}")
-            teams = (md.get("match") or md).get("teams") or {}
-            hu = (teams.get("home") or {}).get("uid"); au = (teams.get("away") or {}).get("uid")
-            season_id = season_id or (md.get("match") or md).get("_seasonid")
-        except Exception: pass
+        for path in (f"match_detailsextended/{eid}", f"match_details/{eid}"):
+            try:
+                md = G(path)
+                if not md: continue
+                teams = (md.get("match") or md).get("teams") or md.get("teams") or {}
+                hu = hu or (teams.get("home") or {}).get("uid")
+                au = au or (teams.get("away") or {}).get("uid")
+                season_id = season_id or (md.get("match") or md).get("_seasonid") or md.get("_seasonid")
+                if hu and au: break
+            except Exception:
+                continue
         avg, n_matches = season_avg_goals(season_id) if season_id else (None, 0)
         pos, N = table_pos(season_id) if season_id else ({}, 0)
         hp, ap = pos.get(hu), pos.get(au)
@@ -173,8 +178,19 @@ def build_pool(days=1):
 
         # --- Strategy 1: O2.5 ---
         o25 = outcome(markets, "18", "total=2.5", oid="12", startswith="Over")
-        fh15 = outcome(markets, "16", "total=1.5", oid="12", startswith="Over")  # 1H Over/Under often mid 16
+        fh15 = outcome(markets, "16", "total=1.5", oid="12", startswith="Over")
         if not fh15: fh15 = outcome(markets, "21", "total=1.5", oid="12", startswith="Over")
+        if not fh15:
+            for m in markets:
+                name = (m.get("name") or m.get("desc") or "").lower()
+                if not any(x in name for x in ("1st", "first half", "1h")): continue
+                if "over/under" not in name and "total" not in name: continue
+                if (m.get("specifier") or "") != "total=1.5": continue
+                for o in m.get("outcomes") or []:
+                    if not str(o.get("desc") or "").startswith("Over"): continue
+                    try: fh15 = (m, o, float(o.get("odds") or 0)); break
+                    except Exception: continue
+                if fh15: break
         passes = 0; why = []
         if o25 and 1.20 <= o25[2] <= 1.40: passes += 1; why.append(f"O2.5@{o25[2]}")
         if fh15 and fh15[2] < 2.00: passes += 1; why.append(f"1HO1.5@{fh15[2]}")
@@ -187,7 +203,7 @@ def build_pool(days=1):
 
         # --- Strategies 2 & 3: form / table (top flights) ---
         win_dnb = []; dc_against = []
-        top = bool(TOP_FLIGHT.search(league or "")) and N >= 10
+        top = (bool(TOP_FLIGHT.search(league or "")) or N >= 16) and N >= 10
         if top and hp and ap:
             # no top5 v top5 / bottom3 v bottom3
             clash_top = hp <= 5 and ap <= 5
