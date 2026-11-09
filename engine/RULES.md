@@ -95,3 +95,6 @@ Daily job: `engine/vendor/verzzify_banker.py`.
 - Banker band 1.12–1.45 from house research + settled history (site band hit-rate n≥20 beats implied by ≥3pp, else league fav rate ≥78% with sample ≥50).
 - ALL normal Predict2u rules (matchup_rules / hard vetoes / obscure goals-only / ≤50 legs).
 - Pack until combined odds first exceeds 25; refuse to pad. Booked on every no-login bookmaker.
+
+## Prune settled from live sections
+After every settle run, `vendor/prune_live.py` removes fully settled (won/lost/void) tips and codes from Home, Hot, High Odds (active), Bankers/picks, dayMasters and marks settled ho-masters/daily-masters. Partially settled slips stay until complete. History, record, picks-history, staked and `/s/` pages keep the results for hit-rates.
