@@ -59,7 +59,5 @@ jobs:
           done
           if git diff --cached --quiet; then echo "no strategy changes"; exit 0; fi
           git commit -m "Engine strategies $(date -u +%FT%TZ)"
-          git stash push -u -m "strategies-pre-rebase" || true
-          git pull --rebase -X theirs || true
-          git stash pop || true
+          git pull --rebase --autostash -X theirs origin main || git pull --rebase --autostash origin main || true
           git push origin HEAD
