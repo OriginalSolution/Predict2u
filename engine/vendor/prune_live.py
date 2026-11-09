@@ -12,13 +12,26 @@ Partially settled slips stay on live lists until every leg is settled (cards sti
 per-leg results). Fully settled slips move to history only.
 
 Settled history stays in high_odds.history, picks-history.json, record.json,
-staked-codes.json and /s/ share pages (proof + hit-rates). Empty sections are cleared.
+staked-codes.json, engine/data/code-ledger.json and /s/ share pages (proof + hit-rates).
+Fully settled slips pruned from Home/Hot/Bankers are archived into the ledger first.
+Empty sections are cleared.
 """
 from __future__ import annotations
 import json, os, sys, datetime as dt
 from pathlib import Path
 
-REPO = Path(sys.argv[1] if len(sys.argv) > 1 else (__import__('os').environ.get('REPO_DIR','/workspace/Predict2u')))
+def _repo_root() -> Path:
+    env = __import__('os').environ.get('REPO_DIR')
+    if env:
+        return Path(env)
+    # Only treat argv[1] as the repo when this file is run as a script (not under pytest).
+    if __name__ == '__main__' and len(sys.argv) > 1:
+        p = Path(sys.argv[1])
+        if p.is_dir():
+            return p
+    return Path(__file__).resolve().parents[2]
+
+REPO = _repo_root()
 # Accra is UTC+0 year-round
 NOW = dt.datetime.now(dt.timezone.utc)
 TODAY = NOW.date().isoformat()
@@ -230,6 +243,71 @@ def hot_slip_live(slip: dict, picks_by_eid: dict) -> bool:
     return True
 
 
+
+def archive_settled(slip: dict, section: str) -> None:
+    """Persist a fully settled slip so Records/build_record can find it after prune.
+    Never deletes history — only appends/merges into engine/data/code-ledger.json.
+    """
+    research = REPO / "engine" / "data"
+    try:
+        research.mkdir(parents=True, exist_ok=True)
+    except OSError:
+        return
+    path = research / "code-ledger.json"
+    try:
+        acc = json.loads(path.read_text()) if path.exists() else {}
+        if not isinstance(acc, dict):
+            acc = {}
+    except Exception:
+        acc = {}
+    codes = slip.get("codes") if isinstance(slip.get("codes"), dict) else None
+    entries = []
+    if codes:
+        for book, code in codes.items():
+            if isinstance(code, list):
+                code = (code[0].get("code") if code and isinstance(code[0], dict) else code[0]) if code else None
+            if not code:
+                continue
+            entries.append((book, code))
+    else:
+        code = slip.get("code")
+        book = slip.get("book") or slip.get("bookmaker") or "sportybet"
+        if code:
+            entries.append((book, code))
+    if not entries:
+        return
+    legs = normalize_legs(slip)
+    results = [(l.get("result") or "pending").lower() for l in legs]
+    status = str(slip.get("status") or "").lower()
+    if status not in SETTLED:
+        status = "lost" if "lost" in results else "won" if results and all(x in ("won", "void", "push") for x in results) else "settled"
+    if status == "settled":
+        status = "lost" if "lost" in results else "won"
+    for book, code in entries:
+        key = f"{str(book).lower()}:{str(code).upper()}"
+        prev = acc.get(key) if isinstance(acc.get(key), dict) else {}
+        ent = {
+            "code": str(code).upper(),
+            "book": str(book).lower(),
+            "date": slip_date(slip) or TODAY,
+            "name": slip.get("name") or slip.get("label") or slip.get("title") or section,
+            "kind": slip.get("kind") or section,
+            "odds": slip.get("odds") or slip.get("totalOdds"),
+            "legs": legs,
+            "hit": slip.get("hit"),
+            "total": slip.get("total") or len(legs),
+            "status": status if status in ("won", "lost") else prev.get("status") or status,
+            "settled": slip.get("settledAt") or NOW.isoformat(timespec="seconds").replace("+00:00", "Z"),
+            "section": section,
+        }
+        # never downgrade a settled status
+        if prev.get("status") in ("won", "lost") and ent["status"] not in ("won", "lost"):
+            ent["status"] = prev["status"]
+        acc[key] = ent
+    path.write_text(json.dumps(acc, ensure_ascii=False, separators=(",", ":")))
+
+
+
 def prune_home(doc: dict) -> tuple[dict, list]:
     removed = []
     slips_in = doc.get("slips") or []
@@ -238,6 +316,8 @@ def prune_home(doc: dict) -> tuple[dict, list]:
         if live_slip(s):
             keep.append(s)
         else:
+            if normalize_legs(s) and all(leg_settled(l) for l in normalize_legs(s)):
+                archive_settled(s, "home")
             removed.append(("home", (s.get("codes") or {}).get("sportybet") or s.get("name"), slip_date(s), "earlier" if s.get("earlier") else "stale"))
     doc["slips"] = keep
     picks_in = doc.get("picks") or []
@@ -260,6 +340,8 @@ def prune_picks(doc: dict) -> tuple[dict, list]:
         if live_slip(s):
             keep.append(s)
         else:
+            if normalize_legs(s) and all(leg_settled(l) for l in normalize_legs(s)):
+                archive_settled(s, "bankers")
             removed.append(("picks", s.get("code") or (s.get("codes") or {}).get("sportybet"), slip_date(s), "stale"))
     # relabel Slip N per day
     n = {}
@@ -284,6 +366,8 @@ def prune_hot(doc: dict) -> tuple[dict, list]:
         if hot_slip_live(s, by_eid):
             keep_slips.append(s)
         else:
+            if normalize_legs(s) and all(leg_settled(l) for l in normalize_legs(s)):
+                archive_settled(s, "hot")
             codes = s.get("codes") or {}
             sb = codes.get("sportybet")
             if isinstance(sb, list):
@@ -334,6 +418,7 @@ def prune_high_odds(doc: dict) -> tuple[dict, list]:
             code = str(s.get("code") or "").upper()
             if code and code not in seen:
                 history.insert(0, s); seen.add(code)
+            archive_settled(s, "high-odds")
             removed.append(("high", s.get("code"), slip_date(s), s.get("status")))
         else:
             active.append(s)

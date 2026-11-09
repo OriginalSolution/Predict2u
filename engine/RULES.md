@@ -98,3 +98,24 @@ Daily job: `engine/vendor/verzzify_banker.py`.
 
 ## Prune settled from live sections
 After every settle run, `vendor/prune_live.py` removes fully settled (won/lost/void) tips and codes from Home, Hot, High Odds (active), Bankers/picks, dayMasters and marks settled ho-masters/daily-masters. Partially settled slips stay until complete. History, record, picks-history, staked and `/s/` pages keep the results for hit-rates.
+
+
+## NerdyTips / Betting Strategies modules (candidates → existing pipeline)
+Daily (engine-strategies.yml): `vendor/nerdytips_strategies.py` writes inbox picks.
+- **2+ Streak** — SportyBet market 60010 YES <1.40 → book Win / team 2+ / O2.5
+- **Team Win <1.50** — win-only legs strictly below 1.50
+- **Draw rules** — draw>3.50 unbalanced → O1.5; draw<3.10 balanced → U3.5; draw>4.00 balanced → GG
+- **Heavy Home Favourites** — Home AH −1.0 in 1.20–1.90 (filter) → Home Win / O2.5 / Home 2+
+- **Team Total O2.5** — team O2.5 <2.00 → Win / team 2+ / O2.5
+- **Exclusive O2.5 Club** — U3.5 >1.50 and one team O1.5 <1.60 → O2.5
+- **BetMines Premium All Trends** — both teams support; price/league/H2H/form/table (needs `engine/data/betmines_trends.json`)
+Candidates then pass standing Predict2u rules (no NG, no DC 12, 1X/X2 ≤1.35, obscure goals-only, combine 25+, ≤50 split, all bookmakers). No padding.
+
+## Optional global gates (DISABLED by default)
+`engine/gates/optional_gates.py` + `config.json` → `optional_gates`. Master `enabled: false`.
+Proposed gates (all off — several conflict with standing user rules): SportyBet-GH-only, min 25 odds on every code, GG benched, Riddim-Edge legs <1.50, max 2 codes per event, force top5vtop5/bottom3vbottom3 drop, max 25 tips/code, per-league history. Do **not** enable without an explicit user decision.
+
+## Records / settlement lifecycle
+After settle: `prune_live.py` removes fully settled tips from live Home/Hot/Bankers/High Odds/dayMasters/ho-masters/daily-master.
+Before drop, slips are archived into `engine/data/code-ledger.json` (never delete history).
+`build_record.py` rebuilds `record.json` from that ledger **plus** staked-codes + high_odds history so the Records page shows won/lost and per-leg results even on GitHub Actions (where the old box-only feed ledger is absent).
