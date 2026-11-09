@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-09T12:05:38Z",
+ "DATA_UPDATED": "2026-11-09T12:13:05Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -13,7 +13,7 @@
   "returned": 2107.5,
   "profit": 357.5,
   "roi": 20.4,
-  "pending": 77,
+  "pending": 67,
   "codesSettled": 828,
   "codesWon": 99,
   "codesLost": 729
@@ -430,8 +430,8 @@
  ],
  "picks": {
   "settled": 1756,
-  "won": 1306,
-  "lost": 450,
+  "won": 1307,
+  "lost": 449,
   "winRate": 74.4
  },
  "recent": [
