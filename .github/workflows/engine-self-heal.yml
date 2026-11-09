@@ -1,0 +1,96 @@
+name: Predict2u engine — self-heal site quality
+
+on:
+  schedule:
+    - cron: "15 6,14,22 * * *"   # 06:15 / 14:15 / 22:15 UTC (Accra)
+  workflow_dispatch: {}
+  workflow_run:
+    workflows:
+      - "Predict2U Site Quality"
+      - "Predict2u engine — unit tests"
+    types: [completed]
+
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+concurrency:
+  group: predict2u-self-heal
+  cancel-in-progress: false
+
+jobs:
+  heal:
+    if: >
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 20
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Install pillow (share cards)
+        run: pip install pillow
+      - name: Self-heal known failures
+        id: heal
+        run: |
+          set +e
+          python engine/vendor/self_heal.py "$GITHUB_WORKSPACE" | tee /tmp/heal.json
+          echo "heal_rc=$?" >> "$GITHUB_OUTPUT"
+      - name: Commit fixes
+        id: commit
+        run: |
+          set -euo pipefail
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
+            echo "changed=0" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          git config user.name "predict2u-engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Self-heal: sync BUILD_VERSION/sw/cache, share pages, live JSON $(date -u +%FT%TZ)"
+          git stash push -u -m "heal-pre-rebase" || true
+          git pull --rebase -X theirs || true
+          git stash pop || true
+          git push origin HEAD
+          echo "changed=1" >> "$GITHUB_OUTPUT"
+      - name: Re-run Site Quality checks
+        id: check
+        run: |
+          set +e
+          node pwa-selftest.js
+          PWA=$?
+          node release-gate-v264.js
+          RG=$?
+          python -m pytest engine/tests -q
+          PY=$?
+          echo "pwa=$PWA rg=$RG py=$PY" | tee /tmp/check.txt
+          if [ "$PWA" -eq 0 ] && [ "$RG" -eq 0 ] && [ "$PY" -eq 0 ]; then
+            echo "ok=1" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          echo "ok=0" >> "$GITHUB_OUTPUT"; exit 0
+      - name: Open issue if still red
+        if: steps.check.outputs.ok != '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          TITLE="Self-heal could not clear Site Quality ($(date -u +%F))"
+          BODY=$(printf 'Automated self-heal ran but checks are still red.\n\n### Heal report\n```\n%s\n```\n\n### Check output\n```\n%s\n```\n\nTrigger: %s / %s\n' \
+            "$(cat /tmp/heal.json 2>/dev/null || true)" \
+            "$(cat /tmp/check.txt 2>/dev/null || true)" \
+            "${{ github.event_name }}" "${{ github.event.workflow_run.html_url || github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}")
+          # Avoid duplicate open issues with same title prefix
+          EXISTING=$(gh issue list --state open --search "Self-heal could not clear Site Quality" --json number -q '.[0].number' || true)
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            gh issue create --title "$TITLE" --body "$BODY" --label "bug" || gh issue create --title "$TITLE" --body "$BODY"
+          fi
