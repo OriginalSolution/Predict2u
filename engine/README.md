@@ -16,6 +16,7 @@ This package lets the daily pipeline run on GitHub Actions even when the assista
 |---|---|---|
 | `engine-shield.yml` | `0 21 * * *` (9:00 PM) | DC Shield Goals + AH −1 scan + publish |
 | `engine-strategies.yml` | `30 22 * * *` (10:30 PM) | Bets For The Day three-strategy High Odds masters + Verzzify Edge Banker |
+| `engine-morning.yml` | `0 7 * * *` (7:00 AM) | SportyBet stats markets (one 1.20–1.60 pick per match) |
 | `engine-daily.yml` | `0 23 * * *` (11:00 PM) | collect + book + publish (all strategies) |
 | `engine-settle.yml` | `45 1 * * *` (1:45 AM) and `15 */2 * * *` | settle + prune + record |
 | `engine-tests.yml` | on push/PR to `engine/**` | unit tests + `python -m engine.check_rules` |
@@ -62,3 +63,8 @@ That is the same public data the box research pipeline already used, rather than
 ## Teammate code batches → High Odds
 
 `python -m engine.teamcodes CODE ... --void X Y` decodes each SportyBet code, applies every rule (`combine.process`), keeps codes still at or above `min_main_slip_odds` (25, `config.json`) as their own slip and pools the rest into deduped 25+ combined slips. It books SportyBet and writes `engine/inbox/p2u/<date>.json`; `vendor/high_odds.py` then publishes those slips on High Odds (its eligibility rule is odds ≥ 25), books Football.com / MSport / Betika / BetPawa, skips duplicates by leg fingerprint, and exempts these batches from the 12-card hub cap.
+
+
+## SportyBet morning markets
+
+`python -m engine.pipeline morning` (cron 07:00 Africa/Accra) walks today's not-started SportyBet GH football, scores every modelable market with SportyBet-hosted Sportradar tables, last-x form, H2H and a Poisson model, and books one pick per match. Odds must be between 1.20 and 1.60 inclusive. Youth/reserve/women/virtual games, BTTS No and Home-or-Away double chance are skipped. Codes are published onto `home-picks.json` as `SportyBet Stats` slips (SportyBet, Football.com, MSport, Betika, BetPawa).

@@ -8,6 +8,7 @@
   python -m engine.pipeline daily     # collect + book + publish
   python -m engine.pipeline all       # daily + settle
   python -m engine.pipeline shield    # 21:00 DC Shield Goals + AH -1 scan
+  python -m engine.pipeline morning  # 07:00 SportyBet stats markets (1.20–1.60)
 
 Use --dry-run to skip live booking and git commits.
 """
@@ -157,6 +158,14 @@ def shield(env, dry_run=False):
     run([sys.executable, str(VENDOR_DIR / "ah_minus_one.py")], env=env, timeout=900, check=False)
 
 
+def morning(env, dry_run=False):
+    """07:00 SportyBet stats markets: one 1.20–1.60 pick per match, booked and published."""
+    cmd = [sys.executable, str(VENDOR_DIR / "sb_morning_markets.py")]
+    if dry_run:
+        cmd.append("--dry-run")
+    run(cmd, env=env, timeout=1800, check=True)
+
+
 def settle(env):
     print(json.dumps(settle_codes.settle_files(REPO_DIR)))
     run([sys.executable, str(VENDOR_DIR / "inject_exempt.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
@@ -170,7 +179,7 @@ def settle(env):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("command", choices=("collect", "book", "publish", "settle", "daily", "all", "shield"))
+    ap.add_argument("command", choices=("collect", "book", "publish", "settle", "daily", "all", "shield", "morning"))
     ap.add_argument("--days", type=int, default=2)
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args(argv)
@@ -185,6 +194,9 @@ def main(argv=None):
         book(env, dry_run=args.dry_run)
     if args.command == "shield":
         shield(env, dry_run=args.dry_run)
+    if args.command == "morning":
+        morning(env, dry_run=args.dry_run)
+        return 0
     if args.command in ("publish", "daily", "all", "shield"):
         publish(env, dry_run=args.dry_run)
     if args.command in ("settle", "all"):
