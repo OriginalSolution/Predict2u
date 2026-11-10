@@ -51,7 +51,7 @@ jobs:
           set -euo pipefail
           git config user.name "predict2u-engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- home-picks.json || true
+          git add -- home-picks.json high_odds.json || true
           [ -e engine/data/sb-morning ] && git add -- engine/data/sb-morning || true
           if git diff --cached --quiet; then echo "no morning changes"; exit 0; fi
           git commit -m "Engine morning markets $(date -u +%FT%TZ)"

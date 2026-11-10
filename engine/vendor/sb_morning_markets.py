@@ -579,6 +579,118 @@ def codes_from(books):
     return out, odds, picks, notes
 
 
+BOOK_LINKS = {
+    "sportybet": "https://www.sportybet.com/gh/?shareCode=",
+    "footballcom": "https://www.football.com/gh/?shareCode=",
+    "msport": "https://www.msport.com/gh/?shareCode=",
+    "betika": "https://betika.com/en-gh/share/",
+    "betpawa": "https://www.betpawa.com.gh/share-betslip/",
+}
+MASTER_MAX = 30
+
+
+def slip_risk(total):
+    if total >= 25:
+        return "high"
+    if total <= 2.2:
+        return "safe"
+    return "medium"
+
+
+def pack_legs(part):
+    out = []
+    for p in part:
+        kickoff = f"{p['date']}T{p['ko']}:00Z" if p.get("date") and p.get("ko") else None
+        out.append({
+            "eventId": p["eventId"],
+            "match": p["match"],
+            "league": p.get("league"),
+            "date": p["date"],
+            "ko": p["ko"],
+            "kickoff": kickoff,
+            "market": p["market"],
+            "selection": p["selection"],
+            "odds": p["odds"],
+            "marketId": p["marketId"],
+            "specifier": p.get("specifier") or "",
+            "outcomeId": p["outcomeId"],
+            "true_p": p.get("true_p"),
+            "ev": p.get("ev"),
+            "why": p.get("why"),
+            "result": "pending",
+        })
+    return out
+
+
+def coded_links(codes, book_odds, book_picks):
+    out = {}
+    for k, code in (codes or {}).items():
+        base = BOOK_LINKS.get(k)
+        if not base:
+            continue
+        out[k] = {
+            "code": code,
+            "legs": book_picks.get(k),
+            "odds": book_odds.get(k),
+            "link": base + code,
+        }
+    return out
+
+
+def publish_high_odds(master, day, dry_run=False):
+    """Put a 25+ master on the High Odds page; replace only this strategy's same-day master."""
+    if not master or not master.get("codes", {}).get("sportybet"):
+        return None
+    if float(master.get("totalOdds") or 0) < 25:
+        return None
+    path = REPO_DIR / "high_odds.json"
+    ho = {}
+    if path.exists():
+        try:
+            ho = json.loads(path.read_text())
+        except Exception:
+            ho = {}
+    ho.setdefault("slips", [])
+    ho.setdefault("history", ho.get("history") or [])
+    ho["slips"] = [
+        s for s in ho["slips"]
+        if not (s.get("origin") == "sb-morning-master" and s.get("date") == day)
+    ]
+    sb = master["codes"]["sportybet"]
+    links = coded_links(master["codes"], master.get("bookOdds") or {}, master.get("bookPicks") or {})
+    last = max((x.get("kickoff") or "") for x in master["legs"]) or None
+    ho["slips"].insert(0, {
+        "code": sb,
+        "bookmaker": "SportyBet",
+        "book": "sportybet",
+        "name": "SportyBet Stats · Master · HIGH RISK",
+        "date": day,
+        "odds": master["totalOdds"],
+        "share": BOOK_LINKS["sportybet"] + sb,
+        "legs": master["legs"],
+        "verification": "SportyBet morning markets master — one 1.20–1.60 pick per match.",
+        "origin": "sb-morning-master",
+        "hit": 0,
+        "lostLegs": 0,
+        "total": len(master["legs"]),
+        "status": "pending",
+        "riskRating": "HIGH",
+        "riskLabel": "HIGH RISK",
+        "highRisk": True,
+        "warning": "High-risk accumulator. Stake small. Not a safe or medium slip.",
+        "shareUrl": f"https://predict2u.com/high-odds/#{sb}",
+        "codes": links,
+        "lastKickoff": last,
+    })
+    ho["updatedAt"] = now_utc().strftime("%Y-%m-%dT%H:%M:%SZ")
+    ho["label"] = ho.get("label") or "High Odds"
+    if dry_run:
+        print("publish_high_odds: dry-run, not writing high_odds.json")
+        return path
+    path.write_text(json.dumps(ho, ensure_ascii=False, separators=(",", ":")) + "\n")
+    return path
+
+
 def book_slip(legs):
     payload = []
     for p in legs:
@@ -652,59 +764,71 @@ def run(day=None, dry_run=False):
             f"@ {best['odds']} ev={best['ev']:.2%} p={best['true_p']:.0%} — {best['why']}"
         )
     picks.sort(key=lambda p: (p["ko"], -p["ev"]))
+    def assembled(name, part, tot, codes=None, book_odds=None, book_picks=None, notes=None, risk=None, note=None, high_risk=False):
+        codes = codes or {}
+        return {
+            "name": name,
+            "totalOdds": tot,
+            "legs": pack_legs(part),
+            "codes": codes,
+            "bookOdds": book_odds or {},
+            "bookPicks": book_picks or {},
+            "bookNotes": notes or {},
+            "risk": risk or slip_risk(tot),
+            "highRisk": bool(high_risk or (tot >= 25)),
+            "warning": (
+                "High-risk accumulator. Stake small. Not a safe or medium slip."
+                if tot >= 25 else None
+            ),
+            "strategy": STRATEGY,
+            "bookedAt": now_utc().isoformat(timespec="seconds"),
+            "bookStatus": "ok" if codes.get("sportybet") else "partial",
+            "targetDate": day,
+            "note": note or (
+                "One best SportyBet market per match, odds 1.20–1.60, "
+                "scored from SportyBet tables, form, H2H and a Poisson model."
+            ),
+        }
+
     slips = []
     if not dry_run and picks:
+        nparts = math.ceil(len(picks) / LEGS_PER_SLIP)
         for i, part in enumerate(chunk(picks, LEGS_PER_SLIP), 1):
             tot = round(math.prod(p["odds"] for p in part), 2)
             print(f"booking slip {i} ({len(part)} legs, {tot} odds)")
-            books = book_slip(part)
-            codes, book_odds, book_picks, notes = codes_from(books)
+            codes, book_odds, book_picks, notes = codes_from(book_slip(part))
             print("  codes", codes, "notes", notes or "")
-            legs = []
-            for p in part:
-                legs.append({
-                    "eventId": p["eventId"],
-                    "match": p["match"],
-                    "league": p.get("league"),
-                    "date": p["date"],
-                    "ko": p["ko"],
-                    "market": p["market"],
-                    "selection": p["selection"],
-                    "odds": p["odds"],
-                    "marketId": p["marketId"],
-                    "specifier": p.get("specifier") or "",
-                    "outcomeId": p["outcomeId"],
-                    "true_p": p["true_p"],
-                    "ev": p["ev"],
-                    "why": p["why"],
-                    "result": "pending",
-                })
-            nparts = math.ceil(len(picks) / LEGS_PER_SLIP)
             name = "SportyBet Stats"
             if nparts > 1:
                 name = f"SportyBet Stats · part {i}/{nparts}"
-            slips.append({
-                "name": name,
-                "totalOdds": tot,
-                "legs": legs,
-                "codes": codes,
-                "bookOdds": book_odds,
-                "bookPicks": book_picks,
-                "bookNotes": notes,
-                "risk": "safe" if tot <= 2.2 else "medium",
-                "strategy": STRATEGY,
-                "bookedAt": now_utc().isoformat(timespec="seconds"),
-                "bookStatus": "ok" if codes.get("sportybet") else "partial",
-                "targetDate": day,
-                "note": (
-                    "One best SportyBet market per match, odds 1.20–1.60, "
-                    "scored from SportyBet tables, form, H2H and a Poisson model."
-                ),
-            })
+            slips.append(assembled(name, part, tot, codes, book_odds, book_picks, notes))
+        # Combined master of every qualifying leg (split only if a bookie cap forces it).
+        if len(picks) > 1:
+            for i, part in enumerate(chunk(picks, MASTER_MAX), 1):
+                tot = round(math.prod(p["odds"] for p in part), 2)
+                nmasters = math.ceil(len(picks) / MASTER_MAX)
+                name = "SportyBet Stats · Master"
+                if nmasters > 1:
+                    name = f"SportyBet Stats · Master · part {i}/{nmasters}"
+                print(f"booking {name} ({len(part)} legs, {tot} odds)")
+                codes, book_odds, book_picks, notes = codes_from(book_slip(part))
+                print("  codes", codes, "notes", notes or "")
+                slips.append(assembled(
+                    name, part, tot, codes, book_odds, book_picks, notes,
+                    risk=slip_risk(tot),
+                    high_risk=tot >= 25,
+                    note=(
+                        "Master slip: every SportyBet Stats pick from today in one accumulator. "
+                        "High risk when total odds are 25 or more."
+                    ),
+                ))
     elif dry_run:
         for i, part in enumerate(chunk(picks, LEGS_PER_SLIP), 1):
             tot = round(math.prod(p["odds"] for p in part), 2)
             print(f"dry-run slip {i}: {len(part)} legs, {tot} odds")
+        if len(picks) > 1:
+            tot = round(math.prod(p["odds"] for p in picks[:MASTER_MAX]), 2)
+            print(f"dry-run master: {min(len(picks), MASTER_MAX)} legs, {tot} odds")
     report = {
         "date": day,
         "generatedAt": now_utc().isoformat(),
@@ -718,6 +842,9 @@ def run(day=None, dry_run=False):
         ],
     }
     publish(slips, day, report, dry_run=dry_run or not slips)
+    master = next((s for s in slips if "Master" in s["name"] and s.get("codes", {}).get("sportybet")), None)
+    if master:
+        publish_high_odds(master, day, dry_run=dry_run)
     print(json.dumps({"picked": len(picks), "slips": len(slips), "rejected": len(rejected)}, indent=2))
     return report
 

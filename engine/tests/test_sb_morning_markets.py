@@ -59,3 +59,17 @@ def test_over_under_prob_sums():
     under = M.model_prob("18", "total=2.5", "Under 2.5", "13", mat, 1.3, 1.1)
     assert over and under
     assert abs((over + under) - 1) < 1e-9
+
+
+def test_master_risk_and_pack():
+    assert M.slip_risk(2.2) == "safe"
+    assert M.slip_risk(8.17) == "medium"
+    assert M.slip_risk(25) == "high"
+    assert M.slip_risk(12978.01) == "high"
+    packed = M.pack_legs([{
+        "eventId": "sr:match:1", "match": "A v B", "league": "X",
+        "date": "2026-11-10", "ko": "14:00", "market": "Over/Under",
+        "selection": "Under 3.5", "odds": 1.32, "marketId": "18",
+        "specifier": "total=3.5", "outcomeId": "13", "true_p": 0.79, "ev": 0.04, "why": "x",
+    }])
+    assert packed[0]["kickoff"] == "2026-11-10T14:00:00Z"
