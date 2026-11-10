@@ -276,7 +276,7 @@ print('footballcom',[(x['footballcom'],x['totalOdds'],x['legs']) for x in fcodes
 # ---- Slips (Banker code of the day + alternatives): book on SportyBet, MSport and Betika ----
 # For the banker slip, a platform that is missing legs gets topped up with the next strongest open picks until it is back to >=25.
 P={p['eventId']:p for p in d['picks']}
-openP=[p for p in sorted(d['picks'],key=lambda p:-p['confidence']) if p.get('eventId') and (ko(p) is None or ko(p)>now+dt.timedelta(minutes=2)) ]
+openP=[p for p in sorted(d['picks'],key=lambda p:-(p.get('confidence') or p.get('score') or 0)) if p.get('eventId') and (ko(p) is None or ko(p)>now+dt.timedelta(minutes=2)) ]
 openP=[p for p in openP if not p.get('thinSample')]+[p for p in openP if p.get('thinSample')]
 def full(l): return P.get(l['eventId'],l)
 def sb_try(L):
