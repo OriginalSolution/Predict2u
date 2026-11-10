@@ -76,7 +76,7 @@ jobs:
             exit 0
           fi
           git commit -m "Refresh multi-book odds and HTFT signals"
-          git pull --rebase -X theirs origin "${GITHUB_REF_NAME}"
+          git pull --rebase --autostash -X theirs origin "${GITHUB_REF_NAME}"
           node hydrate-fixtures-from-sportybet.js
           node build-public-data.js
           node assert-matches-present.js
