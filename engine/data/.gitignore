@@ -16,3 +16,7 @@ code-ledger.json
 # Daily master records must be tracked so Actions settle can reinject Code of the Day.
 !daily-master/
 !daily-master/*.json
+
+# Morning markets reports must be tracked.
+!sb-morning/
+!sb-morning/*.json
