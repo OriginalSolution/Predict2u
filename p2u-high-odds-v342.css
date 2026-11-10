@@ -49,3 +49,14 @@ html,body{background:var(--bg)!important;color:var(--tx);overflow-x:hidden;max-w
 /* v352 — never show pending/unavailable bookmaker chips */
 .high-wrap .p2u-chip.is-pending,.high-wrap .bookchip.pending,.high-wrap .p2u-chip:has(.p2u-chip-unavailable){display:none!important}
 .high-wrap .bp-book:has(.p2u-bankers-empty):not(:has(.bp-card)){display:none!important}
+
+/* v361 — Settled history stays collapsed until opened */
+.high-settled{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:0;overflow:hidden;scroll-margin-top:18px}
+.high-settled>summary.high-section-h{cursor:pointer;list-style:none;display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:8px 12px;margin:0;padding:14px 16px;width:100%}
+.high-settled>summary.high-section-h::-webkit-details-marker{display:none}
+.high-settled>summary.high-section-h h2{flex:1 1 auto}
+.high-settled>summary.high-section-h::after{content:"Show ▾";margin-left:auto;flex:0 0 auto;font-size:.75rem;color:var(--mut);font-weight:700}
+.high-settled[open]>summary.high-section-h::after{content:"Hide ▴"}
+.high-settled #record-text{flex:1 1 100%}
+.high-settled #history{padding:0 14px 14px;margin:0}
+@media(max-width:700px){.high-settled>summary.high-section-h{flex-direction:row;align-items:center}}
