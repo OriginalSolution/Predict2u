@@ -31,11 +31,11 @@ On leagues with 10+ teams:
 
 | Strategy | How it runs | Schedule |
 |---|---|---|
-| House favourites / buckets | `vendor/fav_engine.py` + `vendor/run.py` + `vendor/book_home.py` — also builds **dayMasters** (Today / Tomorrow favourites slips for the Home "How favourites perform by league" section), booked on every no-login bookmaker (`--day-masters-only` for a fast rebook) | Daily 23:00 |
-| Hot picks | `vendor/hot_picks.py` — hub scrape + per-market/team slips; also builds **sectionMasters** (one 25+ master slip per Hot page section: Hot matches, Hot by market, Trending markets, Hot teams, Most-backed teams), booked on every no-login bookmaker and shown in the Hot carousel | Daily 23:00 |
-| DC Shield Goals | `vendor/dc_shield.py` — finds next-day games whose DC price is under 1.20, then books Over 1.5 / Over 2.5 / GG (**never the DC pick**) | 21:00 and again inside the 23:00 book step |
-| High Odds (incl. Heavy Home + HIGH RISK labels) | `vendor/high_odds.py` full rebuild (house slips, approved inbox/export slips, SportyBet featured hub). Risk scoring can mark a slip HIGH RISK / Heavy Home. Settling also runs `--settle-only`. | Daily 23:00 + settle jobs |
-| AH −1 | `vendor/ah_minus_one.py` — SportyBet AH −1 in **1.20–1.90** (win prices nearby often 1.15–1.55). AH below 1.50 maps to Over 2.5 / team 3+ / Over 3.5; 1.50–1.90 maps to team 2+ or to-win if the matchup gate allows. Women/youth/reserves skipped. | Daily 23:00 |
+| House favourites / buckets | `vendor/fav_engine.py` + `vendor/run.py` + `vendor/book_home.py` — also builds **dayMasters** (Today / Tomorrow favourites slips for the Home "How favourites perform by league" section), booked on every no-login bookmaker (`--day-masters-only` for a fast rebook) | Daily 22:00 UTC (10:00 PM Africa/Accra) |
+| Hot picks | `vendor/hot_picks.py` — hub scrape + per-market/team slips; also builds **sectionMasters** (one 25+ master slip per Hot page section: Hot matches, Hot by market, Trending markets, Hot teams, Most-backed teams), booked on every no-login bookmaker and shown in the Hot carousel | Daily 22:00 UTC |
+| DC Shield Goals | `vendor/dc_shield.py` — finds next-day games whose DC price is under 1.20, then books Over 1.5 / Over 2.5 / GG (**never the DC pick**) | 21:00 and again inside the 22:00 book step |
+| High Odds (incl. Heavy Home + HIGH RISK labels) | `vendor/high_odds.py` full rebuild (house slips, approved inbox/export slips, SportyBet featured hub). Risk scoring can mark a slip HIGH RISK / Heavy Home. Settling also runs `--settle-only`. | Daily 22:00 UTC + settle jobs |
+| AH −1 | `vendor/ah_minus_one.py` — SportyBet AH −1 in **1.20–1.90** (win prices nearby often 1.15–1.55). AH below 1.50 maps to Over 2.5 / team 3+ / Over 3.5; 1.50–1.90 maps to team 2+ or to-win if the matchup gate allows. Women/youth/reserves skipped. | Daily 22:00 UTC |
 | Inbox / Betting Strategies exports | JSON dropped in `engine/inbox/` (and `INBOX_PARENT/*/YYYY-MM-DD.json`), including a `shareCodes` list. Names stripped. SMAGPF ignored. Short codes are combined to 25+ (`engine/combine.py`), not dropped. | Daily collect |
 | Settling, pruning, record/ledger | `engine/settle_codes.py`, `vendor/prune_live.py`, `vendor/build_record.py` | 01:45 and every two hours at :15 |
 | Share cards | `vendor/share_cards.py` | After publish |
@@ -96,8 +96,25 @@ Daily job: `engine/vendor/verzzify_banker.py`.
 - ALL normal Predict2u rules (matchup_rules / hard vetoes / obscure goals-only / ≤50 legs).
 - Pack until combined odds first exceeds 25; refuse to pad. Booked on every no-login bookmaker.
 
-## Prune settled from live sections
-After every settle run, `vendor/prune_live.py` removes fully settled (won/lost/void) tips and codes from Home, Hot, High Odds (active), Bankers/picks, dayMasters and marks settled ho-masters/daily-masters. Partially settled slips stay until complete. History, record, picks-history, staked and `/s/` pages keep the results for hit-rates.
+## Prune unusable codes from live sections
+`vendor/prune_live.py` runs at the start of the daily job, again after publish (including after `daily_master.py`, which used to put kicked-off High Odds parts back on the active list), and after every settle. It removes a code from Home, Hot, High Odds active slips, Bankers/picks and dayMasters as soon as it is no longer bookable:
+
+- settled (won/lost/void/push), or every leg settled
+- every known kickoff has passed (still marked `pending` is not an excuse)
+- slip date is before today and no leg is still upcoming
+- the bookmaker share is dead (`decodeError` / `shareDead`)
+- a leg breaks a hard rule (NG, DC 12, 1X/X2 above 1.35, obscure non-goals)
+
+A slip with a future leg stays. Formally settled High Odds slips move to `history` as won/lost. Pending slips that can no longer be booked move to `history` as `expired` (not counted as a win or a loss). History, record, picks-history, the code ledger and settled `/s/` pages keep results. Expired share pages do not offer the old booking code.
+
+The nightly publish is GitHub Actions `engine-daily.yml` at 22:00 UTC, which is 10:00 PM Africa/Accra. It does not depend on a chat bot. Settle (01:45 and every two hours) drops a code as soon as it becomes unusable, without waiting for 10 PM.
+
+## Thin-pool fallback
+`vendor/thin_pool.py` (`select`) is the only place non-hard filters may loosen, and only when the day's qualified pool has fewer than 6 bookable legs. It logs `thin-pool fallback used`. Callers: `run.py` (fav-engine near misses in `near.json`), `hot_picks.py` (backing floor 15 → 8, then matchup allow-lists), `dc_shield.py` (newrules / gate31 / short-price caps). A day that already has 6+ qualified legs does not loosen anything.
+
+Loosened only on a thin day: matchup allow-lists, the extreme-stats bar, favourite sample floors (70%/n≥20/60% support → 60%/n≥12/50%), hot backing floor, DC Shield strict gates.
+
+Never loosened: NG, DC 12, 1X/X2 above 1.35, obscure leagues limited to goals markets, and the 50-leg split.
 
 
 ## NerdyTips / Betting Strategies modules (candidates → existing pipeline)
@@ -116,6 +133,6 @@ Candidates then pass standing Predict2u rules (no NG, no DC 12, 1X/X2 ≤1.35, o
 Proposed gates (all off — several conflict with standing user rules): SportyBet-GH-only, min 25 odds on every code, GG benched, Riddim-Edge legs <1.50, max 2 codes per event, force top5vtop5/bottom3vbottom3 drop, max 25 tips/code, per-league history. Do **not** enable without an explicit user decision.
 
 ## Records / settlement lifecycle
-After settle: `prune_live.py` removes fully settled tips from live Home/Hot/Bankers/High Odds/dayMasters/ho-masters/daily-master.
+After settle: `prune_live.py` removes settled, expired and kicked-off tips from live Home/Hot/Bankers/High Odds/dayMasters/ho-masters/daily-master.
 Before drop, slips are archived into `engine/data/code-ledger.json` (never delete history).
 `build_record.py` rebuilds `record.json` from that ledger **plus** staked-codes + high_odds history so the Records page shows won/lost and per-leg results even on GitHub Actions (where the old box-only feed ledger is absent).

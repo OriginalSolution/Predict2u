@@ -58,25 +58,34 @@ for L in leagues:
 EV={}
 try: EV=json.load(open(os.environ.get('SBJSON', os.path.join(os.environ.get('RESEARCH_DIR', D if 'D' in dir() else '.'), 'sb.json'))))
 except Exception: pass
-picks=[]
-for l in C:
-  e=EV.get(l['eventId']) or next((v for v in EV.values() if v.get('eventId')==l['eventId']),None)
-  date=time.strftime('%Y-%m-%d',time.gmtime(e['estimateStartTime']/1000)) if e else day
-  mk={'29':'Both teams to score','1':'1X2','10':'Double chance','18':'Total goals','31':'Home clean sheet','32':'Away clean sheet','33':'Home win to nil','34':'Away win to nil'}.get(l['marketId'],l['marketId'])
-  thin=l['n']<60
-  BN={'bal':'balanced','unbal':'unbalanced','lowD':'low draw odds','highD':'high draw odds'}
-  bi=l.get('bucketInfo') or {}
-  head=(f"{l['league']}: favourites at {l['band']} -> this market hit" if l.get('strategy','favourite')=='favourite' else
-        f"{l['league']}: {' + '.join(BN.get(x,x) for x in l['bucket'].split('+'))} games ({bi.get('price')} prices {'/'.join(map(str,bi.get('x') or []))}) -> this market hit")
-  case=(f"{head} {l['rate']:.0%} over {l['n']} games ({l['src']}); fav price {l['fp']} (1X2 {l['x12']}); "
-        f"table {l['table']}; team support: {l['team']}; H2H {l['h2h'].split(' (')[0]}. Risk: "+("thin league sample; " if thin else "")+
-        ("away favourite; " if l['x12'].split('/')[2]==str(l['fp']) else "")+("short single-leg price, mainly adds safety" if l['odds']<1.3 else "price band volatility"))
-  picks.append(dict(date=date,ko=l['ko'],league=l['league'],match=l['match'],market=mk,selection=l['pick'].replace(' (fav games)',''),odds=l['odds'],
-    confidence=round(l['score'],3),leagueFavRate=l['rate'],sample=l['n'],case=case,result='pending',eventId=l['eventId'],marketId=l['marketId'],
-    specifier=l['specifier'],outcomeId=l['outcomeId'],thinSample=thin,strategy=l.get('strategy','favourite'),bucket=l.get('bucket')))
-import matchup_rules as _MR
-_mrlog=[];picks=_MR.apply_all(picks,_mrlog)
-json.dump(_mrlog,open('matchup_dropped.json','w'),indent=1,ensure_ascii=False)
+def _materialize(rows):
+  out=[]
+  for l in rows:
+    e=EV.get(l['eventId']) or next((v for v in EV.values() if v.get('eventId')==l['eventId']),None)
+    date=time.strftime('%Y-%m-%d',time.gmtime(e['estimateStartTime']/1000)) if e else day
+    mk={'29':'Both teams to score','1':'1X2','10':'Double chance','18':'Total goals','31':'Home clean sheet','32':'Away clean sheet','33':'Home win to nil','34':'Away win to nil'}.get(l['marketId'],l['marketId'])
+    thin=l['n']<60
+    BN={'bal':'balanced','unbal':'unbalanced','lowD':'low draw odds','highD':'high draw odds'}
+    bi=l.get('bucketInfo') or {}
+    head=(f"{l['league']}: favourites at {l['band']} -> this market hit" if l.get('strategy','favourite')=='favourite' else
+          f"{l['league']}: {' + '.join(BN.get(x,x) for x in l['bucket'].split('+'))} games ({bi.get('price')} prices {'/'.join(map(str,bi.get('x') or []))}) -> this market hit")
+    case=(f"{head} {l['rate']:.0%} over {l['n']} games ({l['src']}); fav price {l['fp']} (1X2 {l['x12']}); "
+          f"table {l['table']}; team support: {l['team']}; H2H {l['h2h'].split(' (')[0]}. Risk: "+("thin league sample; " if thin else "")+
+          ("away favourite; " if l['x12'].split('/')[2]==str(l['fp']) else "")+("short single-leg price, mainly adds safety" if l['odds']<1.3 else "price band volatility"))
+    item=dict(date=date,ko=l['ko'],league=l['league'],match=l['match'],market=mk,selection=l['pick'].replace(' (fav games)',''),odds=l['odds'],
+      confidence=round(l['score'],3),leagueFavRate=l['rate'],sample=l['n'],case=case,result='pending',eventId=l['eventId'],marketId=l['marketId'],
+      specifier=l['specifier'],outcomeId=l['outcomeId'],thinSample=thin,strategy=l.get('strategy','favourite'),bucket=l.get('bucket'),
+      table=l.get('table'),x12=l.get('x12'))
+    if l.get('thinPoolFallback'): item['thinPoolFallback']=True
+    out.append(item)
+  return out
+picks=_materialize(C)
+_near=[]
+try: _near=json.load(open('near.json'))
+except Exception: _near=[]
+import thin_pool as _tp
+picks,_fb=_tp.select(picks,_materialize(_near))
+json.dump([_fb],open('matchup_dropped.json','w'),indent=1,ensure_ascii=False)
 prev={}
 try: prev=json.load(open(f'{day}.json'))
 except Exception: pass

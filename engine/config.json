@@ -55,7 +55,7 @@
   },
   "schedules": {
     "shield": "0 21 * * *",
-    "daily": "0 23 * * *",
+    "daily": "0 22 * * *",
     "settle_morning": "45 1 * * *",
     "settle_bihourly": "15 */2 * * *"
   },
@@ -69,6 +69,7 @@
     "dc_shield.py",
     "high_odds.py",
     "prune_live.py",
+    "thin_pool.py",
     "build.py",
     "build_record.py",
     "lock_codes.py",

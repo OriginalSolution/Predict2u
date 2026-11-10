@@ -2,7 +2,7 @@ name: Predict2u engine — daily collect, book, publish
 
 on:
   schedule:
-    - cron: "0 23 * * *"   # 23:00 UTC = 11:00 PM Africa/Accra
+    - cron: "0 22 * * *"   # 22:00 UTC = 10:00 PM Africa/Accra (GMT). Clears unusable codes, then publishes the next slate.
   workflow_dispatch:
     inputs:
       dry_run:

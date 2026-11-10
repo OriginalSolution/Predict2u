@@ -556,9 +556,14 @@ def main():
             # The source hub can independently offer an identical ticket; keep one public card.
             print('dedupe replacement duplicate', s['code'], 'of', replacement_pairs[s['code']])
             continue
-        if s.get('status') in ('won', 'lost'):
-            history.append(s)
-        elif (s.get('date') or '') >= TODAY and s.get('lastKickoff') and dt.datetime.fromisoformat(s['lastKickoff'].replace('Z', '+00:00')) >= NOW:
+        # Live pages only keep a slip that can still be booked. Settled and
+        # kickoff-passed pending slips stay in history (expired if ungraded).
+        try:
+            import prune_live as _pl
+            bookable = _pl.live_slip(s)
+        except Exception:
+            bookable = s.get('status') not in ('won', 'lost', 'expired') and (s.get('date') or '') >= TODAY
+        if bookable:
             if s['code'] not in pinned and s['code'] not in house and not s.get('replacementOf'):
                 hub_count += 1
                 if hub_count > 12:
@@ -566,7 +571,12 @@ def main():
             s['origin'] = 'strategy' if s['code'] in house else 'code-hub'
             s.pop('bookingPending', None)
             active.append(s)
-        elif s.get('status') in ('won', 'lost'):
+        else:
+            if s.get('status') not in ('won', 'lost'):
+                s['status'] = 'expired'
+                s['expiredReason'] = s.get('expiredReason') or 'kickoff passed or share no longer bookable'
+                if not s.get('removedAt'):
+                    s['removedAt'] = NOW.isoformat(timespec='seconds').replace('+00:00', 'Z')
             history.append(s)
     active.sort(key=lambda s: (0 if s['code'] in pinned else 1 if s['code'] in house else 2, s.get('date') or '', -(s.get('odds') or 0)))
     history.sort(key=lambda s: (s.get('settledAt') or s.get('date') or ''), reverse=True)

@@ -2,7 +2,7 @@ name: Predict2u engine — three-strategy High Odds + Verzzify Banker
 
 on:
   schedule:
-    - cron: "30 22 * * *"   # 22:30 UTC = 10:30 PM Africa/Accra (before engine-daily)
+    - cron: "30 22 * * *"   # 22:30 UTC = 10:30 PM Africa/Accra, after the 22:00 cleanup cutoff
   workflow_dispatch:
     inputs:
       dry_run:
@@ -47,6 +47,7 @@ jobs:
           python engine/vendor/verzzify_banker.py
           python engine/vendor/nerdytips_strategies.py || python -m engine.vendor.nerdytips_strategies || true
           python engine/vendor/daily_master.py "$REPO_DIR"
+          python engine/vendor/prune_live.py "$REPO_DIR"
           python engine/vendor/share_cards.py "$REPO_DIR" || true
       - name: Commit published strategies
         if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}

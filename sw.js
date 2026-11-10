@@ -1,12 +1,12 @@
-/* Predict2U service worker v360 — fast core install, bounded caches,
+/* Predict2U service worker v361 — fast core install, bounded caches,
    native-install support, offline codes (home/picks/hot/record/staked),
    exact push deep links and recoverable offline navigation.
    current-data.js is 20–30 MB and must not share the 2.8s UI timeout. */
-const VERSION='v360';
-const CACHE_VERSION='predict2u-v360';
+const VERSION='v361';
+const CACHE_VERSION='predict2u-v361';
 const APP_CACHE=CACHE_VERSION;
-const RUNTIME_CACHE='predict2u-runtime-v360';
-const IMAGE_CACHE='predict2u-images-v360';
+const RUNTIME_CACHE='predict2u-runtime-v361';
+const IMAGE_CACHE='predict2u-images-v361';
 const IMAGE_LIMIT=90;
 const RUNTIME_LIMIT=90;
 const NETWORK_TIMEOUT=2800;

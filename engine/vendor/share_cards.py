@@ -140,6 +140,17 @@ def card(s, src, day):
 
 def page(s, src, sc, c, odds):
     e = lambda x: html.escape(str(x if x is not None else "")); url = f"https://predict2u.com/s/{sc}/"; img = f"https://predict2u.com/share/{sc}.png"
+    if str(s.get("status") or "").lower() == "expired":
+        t = "Expired code — Predict2u.com"
+        desc = "This booking code has expired and is no longer on Predict2u live pages."
+        h = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{e(t)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{url}">
+<meta name="robots" content="noindex,follow">
+<style>body{{margin:0;background:#081424;color:#fff;font-family:system-ui,sans-serif;text-align:center;padding:28px}}a.b{{display:inline-block;margin:14px 0;padding:12px 22px;border-radius:999px;background:#78be20;color:#081424;font-weight:800;text-decoration:none}}</style></head>
+<body><h1>This code has expired</h1><p>{e(desc)}</p><a class="b" href="/high-odds/#settled">Settled results</a><p><small>18+ Bet responsibly.</small></p></body></html>"""
+        d = os.path.join(SDIR, sc); os.makedirs(d, exist_ok=True)
+        open(os.path.join(d, "index.html"), "w").write(h)
+        return
     t = f"{title(s, src)} @{float(odds or 0):.2f} — Predict2u.com"
     desc = "Free booking code: " + " · ".join(f"{nm} {c[k]}" for k, nm, *_ in BOOKS if k in c) + ". 18+ Bet responsibly."
     tgt = f"/high-odds/#{sc}" if src == "high" else f"/{PAGES.get(src, '')}?code={sc}#slip-{sc}"
