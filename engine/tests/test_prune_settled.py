@@ -36,6 +36,58 @@ def test_settled_pick_not_live():
     assert pl.live_pick({"result": "pending", "date": "2099-01-01", "kickoff": "2099-01-01T20:00:00Z"}) is True
 
 
+def test_stale_pending_slip_is_not_live():
+    s = {"code": "8PLE8U", "date": "2026-11-07", "status": "pending", "lastKickoff": "2026-11-07T21:30:00Z", "legs": [
+        {"result": "pending", "kickoff": "2026-11-07T15:00:00Z", "date": "2026-11-07"},
+        {"result": "pending", "kickoff": "2026-11-07T21:30:00Z", "date": "2026-11-07"},
+    ]}
+    assert pl.live_slip(s) is False
+
+
+def test_btts_yes_on_non_major_league_stays_live():
+    s = {"date": "2099-06-01", "status": "pending", "legs": [{
+        "result": "pending", "kickoff": "2099-06-01T19:00:00Z", "date": "2099-06-01",
+        "league": "EFL Trophy", "market": "BTTS", "selection": "GG (BTTS Yes)", "odds": 1.46,
+    }]}
+    assert pl.live_slip(s) is True
+
+
+def test_future_leg_keeps_slip_live():
+    s = {"date": "2026-11-07", "status": "pending", "legs": [
+        {"result": "pending", "kickoff": "2026-11-07T21:30:00Z"},
+        {"result": "pending", "kickoff": "2099-01-02T18:00:00Z", "date": "2099-01-02"},
+    ]}
+    assert pl.live_slip(s) is True
+
+
+def test_dead_share_is_not_live_even_before_kickoff():
+    s = {"date": "2099-01-01", "status": "pending", "decodeError": "share unavailable", "legs": [
+        {"result": "pending", "kickoff": "2099-01-01T18:00:00Z"},
+    ]}
+    assert pl.live_slip(s) is False
+
+
+def test_prune_high_odds_moves_stale_pending_to_history_and_keeps_settled(tmp_path, monkeypatch):
+    monkeypatch.setattr(pl, "REPO", tmp_path)
+    doc = {"slips": [
+        {"code": "OLD", "status": "pending", "date": "2026-11-07", "lastKickoff": "2026-11-07T21:30:00Z",
+         "odds": 108.57, "legs": [{"result": "pending", "kickoff": "2026-11-07T21:30:00Z", "date": "2026-11-07"}]},
+        {"code": "NEW", "status": "pending", "date": "2099-01-01",
+         "legs": [{"result": "pending", "kickoff": "2099-01-01T20:00:00Z", "date": "2099-01-01"}]},
+    ], "history": [
+        {"code": "PAST", "status": "lost", "date": "2026-11-05", "legs": [{"result": "lost"}]},
+    ]}
+    out, rem = pl.prune_high_odds(doc)
+    live = {s["code"] for s in out["slips"]}
+    hist = {s["code"]: s["status"] for s in out["history"]}
+    assert live == {"NEW"}
+    assert hist["OLD"] == "expired"
+    assert hist["PAST"] == "lost"
+    assert any(r[1] == "OLD" for r in rem)
+    assert out["record"]["lost"] == 1
+    assert out["record"]["pending"] == 1
+
+
 def test_prune_home_archives_settled(tmp_path, monkeypatch):
     repo = tmp_path
     (repo / "engine" / "data").mkdir(parents=True)

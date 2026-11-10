@@ -88,15 +88,17 @@ if SECTION_ONLY:
     import matchup_rules as _MR
     _RC={}
     def _pass(L):
-      out=[]
-      for p in L:
-        k=(p.get('eventId'),str(p.get('marketId')),p.get('specifier') or '',str(p.get('outcomeId')))
-        if k not in _RC:
-          try: _MR.enrich(p); r=_MR.check(p)
-          except Exception as ex: r=(False,'err',str(ex))
-          _RC[k]=r
-        if _RC[k][0]: out.append(p)
-      return out
+      rows=[]
+      for p in L or []:
+        try: _MR.enrich(p)
+        except Exception: pass
+        rows.append(p)
+      try:
+        import thin_pool as _tp
+        chosen, _info = _tp.select(rows)
+        return chosen
+      except Exception:
+        return [p for p in rows if _MR.check(p)[0]]
   except Exception:
     def _pass(L): return list(L or [])
   doc['sectionMasters']=HSM.build_section_masters(doc, slip, pass_fn=_pass, today=now.date().isoformat(), engine_dir=eng)
@@ -115,6 +117,7 @@ for p in range(1,80):
 if len(codes)<5: print('code hub returned no public data',len(codes)); sys.exit(2)
 sel=collections.Counter(); w=collections.Counter(); info={}; teams=collections.Counter(); mk=collections.Counter(); ev=collections.Counter()
 HOT=15
+HOT_FALLBACK=8  # used only when the 15+ pool cannot fill the site
 MAXDAYS=4  # only legs kicking off within 4 days
 selC=collections.defaultdict(set); teamC=collections.defaultdict(set); mkC=collections.defaultdict(set); evC=collections.defaultdict(set)
 for cc,c in codes.items():
@@ -132,31 +135,42 @@ for k,n in sel.items():
   if str(k[1]) in ('10','60110'): continue  # hard DC veto; next eligible market can win
   e=k[0]
   if e not in best or (n,w[k])>(sel[best[e]],w[best[e]]): best[e]=k
-picks=[]
+wide=[]
 for e,k in best.items():
   s=info[k]; n=sel[k]
-  if n<HOT: continue
+  if n<HOT_FALLBACK: continue
   t=dt.datetime.fromtimestamp(s['startTime']/1000,dt.timezone.utc)
   mname=s['marketDescription']+(' '+s['marketSpecifiers'].split('=')[-1] if s.get('marketSpecifiers') else '')
-  picks.append(dict(eventId=e,marketId=k[1],specifier=k[2] or None,outcomeId=k[3],odds=float(s['odds']),
+  wide.append(dict(eventId=e,marketId=k[1],specifier=k[2] or None,outcomeId=k[3],odds=float(s['odds']),
     match=f"{s['homeTeamName']} vs {s['awayTeamName']}",market=mname,selection=f"{mname}: {s['outcomeDescription']}",
     date=t.date().isoformat(),ko=t.strftime('%H:%M'),start=t.isoformat(),count=n,matchCount=ev[e],share=round(100*n/len(codes),1),
     pickShare=round(100*n/ev[e]),backing=w[k],icon=s.get('tournamentIcon')))
-picks.sort(key=lambda p:(-p['count'],-p['backing']))
-# shared matchup rules (same filter as every other published code); legs we can't verify or that fail are dropped
+wide.sort(key=lambda p:(-p['count'],-p['backing']))
+# Normal hot list is selections backed by 15+ public slips. A thinner day may use 8+.
 import matchup_rules as _MR
+import thin_pool as _tp
+for p in wide:
+  try: _MR.enrich(p)
+  except Exception: pass
+core=[p for p in wide if p['count']>=HOT]
+picks, info=_tp.select(core, quiet=True)
+if info['used']:
+  wider, info2=_tp.select(wide, quiet=True)
+  if info2['used']:
+    print(info2['log'], flush=True)
+  else:
+    print(f"thin-pool fallback used: hot backing floor {HOT}->{HOT_FALLBACK}, qualified {info2['qualified']} (matchup rules unchanged)", flush=True)
+  picks=wider
 _hdrop=[]
-_RC={}
 def _pass(L):
-  out=[]
-  for p in L:
-    k=(p['eventId'],str(p['marketId']),p.get('specifier') or '',str(p['outcomeId']))
-    if k not in _RC:
-      _MR.enrich(p); r=_MR.check(p); _RC[k]=r
-      if not r[0]: _hdrop.append(dict(match=p['match'],selection=p['selection'],odds=p['odds'],reason=r[2]))
-    if _RC[k][0]: out.append(p)
-  return out
-picks=_pass(picks)
+  rows=[]
+  for p in L or []:
+    try: _MR.enrich(p)
+    except Exception: pass
+    rows.append(p)
+  chosen, info=_tp.select(rows)
+  if info.get('used'): _hdrop.append(dict(note=info.get('log'), candidates=len(rows), added=info.get('added')))
+  return chosen
 prev={}
 try: prev={s['name']:s for s in json.load(open(OUT)).get('slips',[])}
 except Exception: pass

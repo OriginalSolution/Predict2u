@@ -116,10 +116,15 @@ def book(env, dry_run=False):
     run([sys.executable, str(VENDOR_DIR / "share_cards.py"), str(REPO_DIR)], env=env, timeout=600, check=False)
 
 
+def _prune(env):
+    """Drop settled, expired, kicked-off and dead-share codes from every live JSON."""
+    run([sys.executable, str(VENDOR_DIR / "prune_live.py"), str(REPO_DIR)], env=env, timeout=120, check=False)
+
+
 def publish(env, dry_run=False):
     run([sys.executable, str(VENDOR_DIR / "build.py"), str(REPO_DIR)], env=env, timeout=180)
     run([sys.executable, str(VENDOR_DIR / "inject_exempt.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
-    run([sys.executable, str(VENDOR_DIR / "prune_live.py"), str(REPO_DIR)], env=env, timeout=60)
+    _prune(env)
     if os.environ.get("P2U_LOCK_KEY") or (Path(env["PRIV_DIR"]) / "lock.key").exists():
         if os.environ.get("P2U_LOCK_KEY") and not (Path(env["PRIV_DIR"]) / "lock.key").exists():
             Path(env["PRIV_DIR"]).mkdir(parents=True, exist_ok=True)
@@ -135,6 +140,8 @@ def publish(env, dry_run=False):
     run([sys.executable, str(VENDOR_DIR / "high_odds.py"), str(REPO_DIR), "--settle-only"], env=env, timeout=300, check=False)
     run([sys.executable, str(VENDOR_DIR / "split_codes.py"), str(REPO_DIR)], env=env, timeout=900, check=False)
     run([sys.executable, str(VENDOR_DIR / "daily_master.py"), str(REPO_DIR)], env=env, timeout=300, check=False)
+    # daily_master re-inserts ho-master parts; prune again so kicked-off pending codes cannot stay live.
+    _prune(env)
     run([sys.executable, str(VENDOR_DIR / "build_record.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
 
 
@@ -156,8 +163,8 @@ def settle(env):
     run([sys.executable, str(VENDOR_DIR / "high_odds.py"), str(REPO_DIR), "--settle-only"], env=env, timeout=300, check=False)
     run([sys.executable, str(VENDOR_DIR / "split_codes.py"), str(REPO_DIR)], env=env, timeout=900, check=False)
     run([sys.executable, str(VENDOR_DIR / "daily_master.py"), str(REPO_DIR)], env=env, timeout=300, check=False)
-    # After settlement: drop fully settled tips from live sections (history kept).
-    run([sys.executable, str(VENDOR_DIR / "prune_live.py"), str(REPO_DIR)], env=env, timeout=120, check=False)
+    # After settlement: drop settled, expired and kicked-off codes from live sections (history kept).
+    _prune(env)
     run([sys.executable, str(VENDOR_DIR / "build_record.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
 
 
@@ -169,6 +176,9 @@ def main(argv=None):
     args = ap.parse_args(argv)
     ensure_dirs()
     env = environ()
+    if args.command in ("daily", "all"):
+        # Clear yesterday's and unusable codes before booking, so a failed collect still unpublishes them.
+        _prune(env)
     if args.command in ("collect", "daily", "all"):
         collect(env, days=args.days, dry_run=args.dry_run)
     if args.command in ("book", "daily", "all"):

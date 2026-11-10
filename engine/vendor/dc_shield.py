@@ -267,6 +267,46 @@ def filter_legs(games: list) -> tuple[list, list]:
         if r[0] and r[0] != 'STRICT: no stats':
             continue
         final.append(p)
+    # Thin day: keep hard rules, drop newrules/gate31 and the short-price caps.
+    try:
+        import thin_pool as TP
+        if TP.pool_is_thin(final):
+            have = {p['eventId'] for p in final}
+            added = 0
+            before = len(final)
+            for g in games:
+                if g.get('eventId') in have:
+                    continue
+                chosen = None
+                for k, mid, sp, oid, sel in MK:
+                    if not g.get(k):
+                        continue
+                    market = 'Over/Under' if mid == '18' else 'BTTS'
+                    p = dict(
+                        eventId=g['eventId'], match=g['match'], league=g['league'],
+                        date=g['date'], ko=g['ko'], marketId=mid, specifier=sp,
+                        outcomeId=oid, odds=g[k], selection=sel, market=market, x12=g.get('x12'),
+                    )
+                    lv = local_hard_veto(p)
+                    if lv in ('women', 'youth/reserve'):
+                        continue
+                    if not TP.still_bookable(p, now) or not TP.relaxed_ok(p):
+                        continue
+                    p['thinPoolFallback'] = True
+                    p['strictGate'] = 'thin-pool'
+                    chosen = p
+                    break
+                if chosen:
+                    final.append(chosen)
+                    have.add(chosen['eventId'])
+                    added += 1
+            print(
+                f"thin-pool fallback used: DC Shield qualified {before}, added {added} "
+                f"by loosening non-hard filters only",
+                flush=True,
+            )
+    except Exception as e:
+        print('thin-pool fallback skipped in DC Shield', e, flush=True)
     return final, log
 
 

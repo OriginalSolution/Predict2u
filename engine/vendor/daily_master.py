@@ -49,6 +49,30 @@ def verification(rec):
     return f"Not fully verified — {u} leg{'s' if u != 1 else ''} status uncertain" if u else 'Checked by Predict2u'
 
 
+def _live(slip):
+    """Public slip is bookable only while prune_live says so (kickoff, share, hard rules)."""
+    try:
+        import prune_live as pl
+        return pl.live_slip(slip)
+    except Exception:
+        return str(slip.get('status') or 'pending') == 'pending'
+
+
+def place_slip(ho, slip, front=False):
+    """Put a master on the live list or in history. Pending-but-unusable becomes expired history."""
+    code = slip.get('code')
+    for k in ('slips', 'history'):
+        ho[k] = [x for x in (ho.get(k) or []) if x.get('code') != code]
+    if slip.get('status') not in ('won', 'lost') and _live(slip):
+        slips = ho.setdefault('slips', [])
+        (slips.insert(0, slip) if front else slips.append(slip))
+        return
+    if slip.get('status') not in ('won', 'lost'):
+        slip['status'] = 'expired'
+        slip['expiredReason'] = slip.get('expiredReason') or 'kickoff passed or no longer bookable'
+    ho.setdefault('history', []).insert(0, slip)
+
+
 def main():
     recs = []
     for f in sorted(glob.glob(os.path.join(DIR, '????-??-??.json'))):
@@ -94,6 +118,13 @@ def main():
         if not recs:
             print('daily master: none'); return
     cur = [r for r in recs if r['date'] == TODAY]
+
+    def _master_bookable(r):
+        legs = r.get('legList') or []
+        last = max((x.get('kickoff') or '' for x in legs), default='') or None
+        return _live(dict(date=r.get('date'), status=r.get('status') or 'pending', legs=legs, lastKickoff=last, code=r.get('code')))
+
+    cur = [r for r in cur if _master_bookable(r)]
     note_of = lambda r: r.get('note') or 'HIGH RISK accumulator.'
     # High Odds: active today, settled ones move to history (engine record).
     ho_p = os.path.join(REPO, 'high_odds.json'); ho = load(ho_p, {}) or {}
@@ -105,9 +136,7 @@ def main():
                     shareUrl=f"https://predict2u.com/high-odds/#{r['code']}",
                     codes={'sportybet': dict(code=r['code'], legs=r['legs'], odds=r['totalOdds'], link=r['link'])},
                     parts=r.get('parts'), partsDropped=r.get('partsDropped'), lastKickoff=max((x.get('kickoff') or '') for x in r['legList']) or None)
-        for k in ('slips', 'history'):
-            ho[k] = [s for s in (ho.get(k) or []) if s.get('code') != r['code']]
-        (ho.setdefault('slips', []).insert(0, slip) if slip['status'] == 'pending' else ho.setdefault('history', []).insert(0, slip))
+        place_slip(ho, slip, front=True)
     # High-Odds-only masters (engine/data/ho-masters): published on High Odds only, in parts, HIGH RISK, settled per leg.
     HD = os.path.join(REPO, 'engine', 'data', 'ho-masters')
     for f in sorted(glob.glob(os.path.join(HD, '*.json'))):
@@ -141,9 +170,7 @@ def main():
                         hit=pr.count('won'), lostLegs=pr.count('lost'), total=len(pl), status=st, riskRating='HIGH', riskLabel='HIGH RISK', highRisk=True,
                         shareUrl=f"https://predict2u.com/high-odds/#{sc}", codes=cs, lastKickoff=max((x.get('kickoff') or '') for x in pl) or None,
                         settledAt=NOW.isoformat(timespec='seconds').replace('+00:00', 'Z') if st != 'pending' else None)
-            for k in ('slips', 'history'):
-                ho[k] = [x for x in (ho.get(k) or []) if x.get('code') != sc]
-            (ho.setdefault('slips', []).append(slip) if st == 'pending' else ho.setdefault('history', []).insert(0, slip))
+            place_slip(ho, slip, front=False)
     H = ho.get('history') or []; won = sum(s.get('status') == 'won' for s in H); lost = sum(s.get('status') == 'lost' for s in H)
     ho['record'] = dict(won=won, lost=lost, settled=won + lost, pending=len(ho.get('slips') or []), winRate=round(100 * won / (won + lost), 1) if won + lost else None)
     save(ho_p, ho)

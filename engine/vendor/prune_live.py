@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
-"""Keep only pending/upcoming tips on live pick sections (Africa/Accra = UTC+0).
+"""Keep only bookable tips on live pick sections (Africa/Accra = UTC+0).
 
 Drops from home-picks.json, picks.json, hot-picks.json, high_odds.json (active slips),
 engine/data/ho-masters (live publish), and Code-of-the-Day / dayMasters any slip that is:
   - marked earlier (superseded rebook), or
-  - dated before today, or
-  - whose legs have all kicked off, or
-  - whose legs have all settled (won/lost/void/push).
+  - settled (won/lost/void/push) or every leg settled, or
+  - no longer bookable: every known kickoff has passed, the slip date is before
+    today and nothing is still upcoming, the bookmaker share is dead, or a leg
+    breaks a hard rule (NG, DC 12, 1X/X2 above 1.35, obscure non-goals).
 
-Partially settled slips stay on live lists until every leg is settled (cards still show
-per-leg results). Fully settled slips move to history only.
+A slip that still has a future kickoff stays, even if an earlier leg has started.
+Pending slips whose kickoffs have all passed are removed from live lists immediately
+(not left until the next night). High Odds moves those to history as status
+"expired" so records are kept without counting a fake win or loss. Formally
+settled slips move to history as won/lost.
 
 Settled history stays in high_odds.history, picks-history.json, record.json,
 staked-codes.json, engine/data/code-ledger.json and /s/ share pages (proof + hit-rates).
@@ -67,6 +71,61 @@ def ko_dt(leg: dict):
 
 def leg_settled(leg: dict) -> bool:
     return (leg.get("result") or "pending").lower() in SETTLED
+
+
+def _kick_info(slip: dict):
+    """Return (legs, known kickoff datetimes, whether any kickoff is still in the future)."""
+    legs = normalize_legs(slip)
+    known = []
+    future = False
+    for leg in legs:
+        t = ko_dt(leg)
+        if t is None:
+            continue
+        known.append(t)
+        if t > NOW:
+            future = True
+    return legs, known, future
+
+
+def _slip_last(slip: dict, known: list):
+    last = max(known) if known else None
+    raw = slip.get("lastKickoff") or slip.get("firstKickoff")
+    if not raw:
+        return last
+    try:
+        s = str(raw).replace("Z", "+00:00")
+        t = dt.datetime.fromisoformat(s)
+        if t.tzinfo is None:
+            t = t.replace(tzinfo=dt.timezone.utc)
+    except Exception:
+        return last
+    if last is None or t > last:
+        return t
+    return last
+
+
+def hard_market_leg(leg: dict) -> bool:
+    """NG, banned double chance, or a non-goals pick in an obscure league."""
+    if not isinstance(leg, dict):
+        return False
+    if double_chance(leg):
+        return True
+    sel = str(leg.get("selection") or leg.get("outcomeDesc") or "").strip()
+    mid = str(leg.get("marketId") or leg.get("mid") or "")
+    if mid in ("29", "60129") and sel.lower() in ("no", "ng", "btts no", "gg no"):
+        return True
+    try:
+        import matchup_rules as mr
+        if mr.is_btts_no(leg):
+            return True
+        # Only apply the obscure-league rule when the leg actually names a competition.
+        # Bare picks (no league yet) must not be wiped as if they were non-major.
+        if (leg.get("league") or leg.get("tournament") or leg.get("competition")) and hasattr(mr, "is_obscure_league_non_goals") and mr.is_obscure_league_non_goals(leg):
+            return True
+    except Exception:
+        pass
+    return False
 
 
 def slip_date(slip: dict) -> str:
@@ -161,17 +220,30 @@ def slip_exempt(slip: dict) -> bool:
 
 
 def live_slip(slip: dict) -> bool:
-    """True if the slip should stay on free code lists; banned DC is a hard veto."""
+    """True if the slip is still bookable on a live page.
+
+    Settled, expired, all-kicked-off, dead-share and hard-rule slips are not live.
+    A future leg keeps a multi-day slip up until that leg kicks off.
+    """
+    if not isinstance(slip, dict):
+        return False
+    status = str(slip.get("status") or "").lower()
+    if status in SETTLED or status == "expired":
+        return False
+    legs, known, future = _kick_info(slip)
+    dead_share = bool(slip.get("decodeError") or slip.get("shareDead") or slip.get("shareError"))
     if slip_exempt(slip):
-        legs = normalize_legs(slip)
         if legs and all(leg_settled(l) for l in legs):
             return False
-        kos = [ko_dt(l) for l in legs]
-        known = [t for t in kos if t is not None]
-        if known and all(t <= NOW for t in known) and len(known) == len(legs):
+        if known and not future and len(known) == len(legs):
+            return False
+        last = _slip_last(slip, known)
+        if last and last <= NOW and not future:
+            return False
+        if dead_share:
             return False
         return True
-    if any(double_chance(l) for l in normalize_legs(slip)):
+    if any(hard_market_leg(l) for l in legs):
         return False
     if slip.get("earlier"):
         return False
@@ -179,26 +251,28 @@ def live_slip(slip: dict) -> bool:
     if name.lower().startswith("earlier code"):
         return False
     sd = slip_date(slip)
-    if sd and sd < TODAY:
+    # Yesterday's code stays only while a leg is still in the future.
+    if sd and sd < TODAY and not future:
         return False
-    legs = normalize_legs(slip)
     # Hot-style slips may only carry event ids; fall back to events + picks lookup later
     if not legs:
-        # Keep if undated/empty legs only when slip itself is today's booking
+        if dead_share:
+            return False
         return (sd >= TODAY) if sd else True
-    if str(slip.get("status") or "").lower() in SETTLED:
-        return False
     if all(leg_settled(l) for l in legs):
         return False
-    kos = [ko_dt(l) for l in legs]
-    known = [t for t in kos if t is not None]
-    if known and all(t <= NOW for t in known) and len(known) == len(legs):
+    if known and not future and len(known) == len(legs):
+        return False
+    last = _slip_last(slip, known)
+    if last and last <= NOW and not future:
+        return False
+    if dead_share:
         return False
     return True
 
 
 def live_pick(p: dict) -> bool:
-    if not isinstance(p, dict) or double_chance(p):
+    if not isinstance(p, dict) or hard_market_leg(p):
         return False
     if leg_settled(p):
         return False
@@ -260,26 +334,36 @@ def archive_settled(slip: dict, section: str) -> None:
             acc = {}
     except Exception:
         acc = {}
+    def _code_str(code):
+        if isinstance(code, list):
+            code = (code[0].get("code") if code and isinstance(code[0], dict) else code[0]) if code else None
+        if isinstance(code, dict):
+            code = code.get("code")
+        if code is None:
+            return None
+        text = str(code).strip()
+        if not text or any(ch in text for ch in "{} ") or len(text) > 24:
+            return None
+        return text
+
     codes = slip.get("codes") if isinstance(slip.get("codes"), dict) else None
     entries = []
     if codes:
         for book, code in codes.items():
-            if isinstance(code, list):
-                code = (code[0].get("code") if code and isinstance(code[0], dict) else code[0]) if code else None
-            if not code:
-                continue
-            entries.append((book, code))
-    else:
-        code = slip.get("code")
-        book = slip.get("book") or slip.get("bookmaker") or "sportybet"
-        if code:
-            entries.append((book, code))
+            text = _code_str(code)
+            if text:
+                entries.append((book, text))
+    text = _code_str(slip.get("code"))
+    if text and not any(str(c).upper() == text.upper() for _, c in entries):
+        entries.append((slip.get("book") or slip.get("bookmaker") or "sportybet", text))
     if not entries:
         return
     legs = normalize_legs(slip)
     results = [(l.get("result") or "pending").lower() for l in legs]
     status = str(slip.get("status") or "").lower()
-    if status not in SETTLED:
+    if status == "expired":
+        pass
+    elif status not in SETTLED:
         status = "lost" if "lost" in results else "won" if results and all(x in ("won", "void", "push") for x in results) else "settled"
     if status == "settled":
         status = "lost" if "lost" in results else "won"
@@ -296,7 +380,7 @@ def archive_settled(slip: dict, section: str) -> None:
             "legs": legs,
             "hit": slip.get("hit"),
             "total": slip.get("total") or len(legs),
-            "status": status if status in ("won", "lost") else prev.get("status") or status,
+            "status": status if status in ("won", "lost", "expired") else prev.get("status") or status,
             "settled": slip.get("settledAt") or NOW.isoformat(timespec="seconds").replace("+00:00", "Z"),
             "section": section,
         }
@@ -400,28 +484,36 @@ def prune_hot(doc: dict) -> tuple[dict, list]:
 
 
 def prune_high_odds(doc: dict) -> tuple[dict, list]:
-    """Move fully settled slips from active list into history; keep partials pending."""
+    """Drop unusable slips from the active list. Settled and expired codes stay in history."""
     removed = []
     active, history = [], list(doc.get("history") or [])
-    seen = {str(h.get("code") or "").upper() for h in history}
+    seen = {str(h.get("code") or "").upper() for h in history if h.get("code")}
     for s in doc.get("slips") or []:
+        if live_slip(s):
+            active.append(s)
+            continue
+        s = dict(s)
         legs = normalize_legs(s)
         status = str(s.get("status") or "").lower()
+        results = [(l.get("result") or "pending").lower() for l in legs]
         fully = status in SETTLED or (legs and all(leg_settled(l) for l in legs))
         if fully:
-            s = dict(s)
             if status not in ("won", "lost"):
-                results = [(l.get("result") or "pending").lower() for l in legs]
                 s["status"] = "lost" if "lost" in results else "won" if results and all(x in ("won", "void", "push") for x in results) else status or "settled"
             if not s.get("settledAt"):
                 s["settledAt"] = NOW.isoformat(timespec="seconds").replace("+00:00", "Z")
-            code = str(s.get("code") or "").upper()
-            if code and code not in seen:
-                history.insert(0, s); seen.add(code)
-            archive_settled(s, "high-odds")
-            removed.append(("high", s.get("code"), slip_date(s), s.get("status")))
         else:
-            active.append(s)
+            # Still pending at the bookmaker, but the code can no longer be booked.
+            s["status"] = "expired"
+            s["expiredReason"] = s.get("expiredReason") or "kickoff passed or share no longer bookable"
+            if not s.get("removedAt"):
+                s["removedAt"] = NOW.isoformat(timespec="seconds").replace("+00:00", "Z")
+        code = str(s.get("code") or "").upper()
+        if code and code not in seen:
+            history.insert(0, s)
+            seen.add(code)
+        archive_settled(s, "high-odds")
+        removed.append(("high", s.get("code"), slip_date(s), s.get("status")))
     history.sort(key=lambda s: (s.get("settledAt") or s.get("date") or ""), reverse=True)
     won = sum(s.get("status") == "won" for s in history)
     lost = sum(s.get("status") == "lost" for s in history)

@@ -127,7 +127,7 @@ def od(e,mid,sp,desc):
     if str(m['id'])==mid and (m.get('specifier') or '')==sp:
       for o in m['outcomes']:
         if o['desc']==desc and str(o.get('isActive',1))=='1': return m,o
-PROFS={};legs=[];WEAK=[];MC=[]
+PROFS={};legs=[];NEAR=[];WEAK=[];MC=[]
 def persp(z,u):
   r=z.get('result') or {}
   if r.get('home') is None: return None
@@ -145,7 +145,7 @@ for m,e in zip(MI,EV):
     if key not in PROFS:
       R,ns,src=rows_sr(ut);PROFS[key]=(profile(R),f'PPG proxy, {ns} season(s)');BPROF[key]=bprofile(R)
   (n,c),src=PROFS[lg]
-  if n['all']<20: EXC[nm]=f"thin league history (n={n['all']})";continue
+  if n['all']<12: EXC[nm]=f"thin league history (n={n['all']})";continue
   hu,au=mm['teams']['home']['uid'],mm['teams']['away']['uid'];ut0=mm['_dt']['uts']
   try:
     t=G(f"stats_season_tables/{mm['_seasonid']}")['tables'];N=max(len(tb['tablerows']) for tb in t);pos={r['team']['uid']:r['pos'] for tb in t for r in tb['tablerows']}
@@ -163,7 +163,7 @@ for m,e in zip(MI,EV):
   # candidate (rate,n,label,market,cond(f,a) from home persp, sides needing team support)
   C=[]
   def add(rate,nn,label,mk,cond,kind,strat='favourite'): C.append((rate,nn,label,mk,cond,kind,strat))
-  if band and n[band]>=20 and not (src.startswith('PPG') and False):
+  if band and n[band]>=12 and not (src.startswith('PPG') and False):
     k=band;nn=n[k];F=fs;fav=fn[F]
     hd=lambda f,a,F=F:(f,a) if F=='H' else (a,f)
     add(c[k+'_w']/nn,nn,f'{fav} to win',('1','','Home' if F=='H' else 'Away'),lambda f,a,hd=hd:hd(f,a)[0]>hd(f,a)[1],'team')
@@ -183,12 +183,13 @@ for m,e in zip(MI,EV):
       bk=dict(balance=bb,draw=db,price='market' if lg in FD else 'model',x=[round(v,2) for v in xx])
       for key,strat in ((bb+'+'+db,'balance+draw-odds'),(bb,'balance'),(db,'draw-odds')):
         z=BP['b'].get(key)
-        if not z or z['n']<20 or 'midD' in key: continue
+        if not z or z['n']<12 or 'midD' in key: continue
         for m in BMK:
+          if m in ('12','nobtts'): continue  # hard: DC 12 and NG never enter the pool
           if m=='fw':
-            if z['fw']>=0.70: m2='hw' if H<A else 'aw'; mi=BMKT[m2];add(z['fw'],z['n'],f"{fn['H' if H<A else 'A']} to win",mi[:3],BCOND[m2],'team',(strat,key,'favourite win'))
+            if z['fw']>=0.60: m2='hw' if H<A else 'aw'; mi=BMKT[m2];add(z['fw'],z['n'],f"{fn['H' if H<A else 'A']} to win",mi[:3],BCOND[m2],'team',(strat,key,'favourite win'))
             continue
-          if z[m]>=0.70:
+          if z[m]>=0.60:
             mi=BMKT[m];lab=mi[3].replace('home',e['homeTeamName']).replace('away',e['awayTeamName']) if mi[4]=='team' else mi[3]
             add(z[m],z['n'],lab[0].upper()+lab[1:],mi[:3],BCOND[m],mi[4],(strat,key,mi[3]))
   hh=[y for y in TH if y['home']][:10];aa=[y for y in TA if not y['home']][:10]
@@ -206,29 +207,58 @@ for m,e in zip(MI,EV):
     MC.append(dict(eventId=e['eventId'],match=nm,league=lg,ko=time.strftime('%H:%M',time.gmtime(e['estimateStartTime']/1000)),date=time.strftime('%Y-%m-%d',time.gmtime(e['estimateStartTime']/1000)),
       marketId=str(o[0]['id']),specifier=o[0].get('specifier') or '',outcomeId=str(o[1]['id']),odds=float(o[1]['odds']),selection=label.replace(' (fav games)',''),
       rate=round(rate,3),n=nn,support=round(min(rh,ra),2),h2h=round(rv,2) if nv_ else None,score=round(rate*min(1,math.sqrt(nn/100))*(0.9+0.1*min(rh,ra)),3)))
-  best=None;why=[]
+  best=None;best_relax=None;why=[]
   for rate,nn,label,mk,cond,kind,strat in sorted(C,key=lambda t:-t[0]):
-    if str(mk[0]) in ('10','60110'): continue  # hard DC veto: try another market
-    if rate<0.70: break
+    if str(mk[0])=='29' and str(mk[2]).lower() in ('no','ng'): continue  # hard: never book NG
+    is_dc=str(mk[0]) in ('10','60110')
+    if is_dc and re.search(r'home or away|\b12\b', str(label)+' '+str(mk[2]), re.I): continue
+    if rate<0.60: break
     if tuple(mk) in NEWMK: continue
     o=od(e,*mk)
     if not o or float(o[1]['odds'])<1.10: continue
+    if is_dc and float(o[1]['odds'])>1.35: continue  # hard: 1X/X2 above 1.35
     # team-level: home team's home games (home persp) and away team's away games (convert to home persp)
     hh=[y for y in TH if y['home']][:10];aa=[y for y in TA if not y['home']][:10]
     rh=sum(cond(y['f'],y['a']) for y in hh)/max(1,len(hh));ra=sum(cond(y['a'],y['f']) for y in aa)/max(1,len(aa))
     l10h=sum(cond(y['f'],y['a']) if y['home'] else cond(y['a'],y['f']) for y in TH[:10])/10 if kind=='tot' else None
     rv=sum(cond(y['f'],y['a']) if y['home'] else cond(y['a'],y['f']) for y in V)/max(1,len(V))
-    if kind=='tot': ok=min(rh,ra)>=0.6
-    else: ok=rh>=0.6 and ra>=0.6
-    if len(V)>=3 and rv<0.5: ok=False
-    if not ok: why.append(f"{label}: team {rh:.0%}/{ra:.0%} H2H {rv:.0%}");continue
-    best=dict(strat=strat,rate=rate,n=nn,label=label,o=o,rh=rh,ra=ra,nh=len(hh),na=len(aa),rv=rv,nv=len(V));break
-  if not best: EXC[nm]='no favourite-band or bucket market >=70% (n>=20) with team support'+(f" (e.g. {why[0]})" if why else '');continue
-  b=best;o=b['o']
-  legs.append(dict(strategy=b['strat'] if isinstance(b['strat'],str) else b['strat'][0],bucket=None if isinstance(b['strat'],str) else b['strat'][1],bucketInfo=bk,fp=fp,band=band,bandn=n[band],bstats={k2:round(c[band+'_'+k2]/n[band],2) for k2 in('w','nl','cs','wtn','o25','u25','u35','os')} if band and n[band] else {},match=nm,league=lg,src=src,ko=time.strftime('%H:%M',time.gmtime(e['estimateStartTime']/1000)),eventId=e['eventId'],marketId=str(o[0]['id']),specifier=o[0].get('specifier') or '',outcomeId=o[1]['id'],odds=float(o[1]['odds']),pick=b['label'],
+    if kind=='tot': strict_sup=min(rh,ra)>=0.6; relax_sup=min(rh,ra)>=0.5
+    else: strict_sup=rh>=0.6 and ra>=0.6; relax_sup=rh>=0.5 and ra>=0.5
+    if len(V)>=3 and rv<0.5: strict_sup=False
+    if len(V)>=3 and rv<0.4: relax_sup=False
+    row=dict(strat=strat,rate=rate,n=nn,label=label,o=o,rh=rh,ra=ra,nh=len(hh),na=len(aa),rv=rv,nv=len(V))
+    # Normal day: 70% hit, 20+ games, 60% team support, and no double chance.
+    if (not is_dc) and rate>=0.70 and nn>=20 and strict_sup and best is None:
+      best=row; break
+    if rate>=0.60 and nn>=12 and relax_sup and best_relax is None:
+      best_relax=row
+    if not strict_sup: why.append(f"{label}: team {rh:.0%}/{ra:.0%} H2H {rv:.0%}")
+  if not best and not best_relax:
+    EXC[nm]='no favourite-band or bucket market >=70% (n>=20) with team support'+(f" (e.g. {why[0]})" if why else '');continue
+  b=best or best_relax;o=b['o']
+  packed=dict(strategy=b['strat'] if isinstance(b['strat'],str) else b['strat'][0],bucket=None if isinstance(b['strat'],str) else b['strat'][1],bucketInfo=bk,fp=fp,band=band,bandn=n[band],bstats={k2:round(c[band+'_'+k2]/n[band],2) for k2 in('w','nl','cs','wtn','o25','u25','u35','os')} if band and n[band] else {},match=nm,league=lg,src=src,ko=time.strftime('%H:%M',time.gmtime(e['estimateStartTime']/1000)),eventId=e['eventId'],marketId=str(o[0]['id']),specifier=o[0].get('specifier') or '',outcomeId=o[1]['id'],odds=float(o[1]['odds']),pick=b['label'],
     rate=round(b['rate'],3),n=b['n'],team=f"{e['homeTeamName']} home {b['rh']:.0%} of {b['nh']}, {e['awayTeamName']} away {b['ra']:.0%} of {b['na']}",h2h=f"{b['rv']:.0%} of {b['nv']} ({[y['s'] for y in V]})",
-    table=f"{hp or '?'} v {ap or '?'}/{N or '?'}",x12=f'{H}/{D}/{A}',score=b['rate']*min(1,math.sqrt(b['n']/100))*(1.05 if src.startswith('closing') else 1)*(0.9+0.1*min(b['rh'],b['ra']))))
-legs.sort(key=lambda l:-l['score']);json.dump(legs,open('cands.json','w'),indent=1,ensure_ascii=False);json.dump(EXC,open('excluded.json','w'),indent=1,ensure_ascii=False);json.dump({e['homeTeamName']+' v '+e['awayTeamName']:dict(league=e['sport']['category']['name']+' - '+e['sport']['category']['tournament']['name'],ko=time.strftime('%Y-%m-%d %H:%M',time.gmtime(e['estimateStartTime']/1000)),eventId=e['eventId']) for e in E.values()},open('fixtures_index.json','w'),ensure_ascii=False)
+    table=f"{hp or '?'} v {ap or '?'}/{N or '?'}",x12=f'{H}/{D}/{A}',score=b['rate']*min(1,math.sqrt(b['n']/100))*(1.05 if src.startswith('closing') else 1)*(0.9+0.1*min(b['rh'],b['ra'])))
+  if best: legs.append(packed)
+  else:
+    packed['thinPoolFallback']=True
+    NEAR.append(packed)
+legs.sort(key=lambda l:-l['score']);NEAR.sort(key=lambda l:-l['score'])
+try:
+  import thin_pool as _tp
+  if _tp.pool_is_thin(legs) and NEAR:
+    kept=[]
+    for l in NEAR:
+      p=dict(marketId=l.get('marketId'),specifier=l.get('specifier'),outcomeId=l.get('outcomeId'),selection=l.get('pick'),odds=l.get('odds'),league=l.get('league'),market=l.get('market') or '',match=l.get('match'))
+      if _tp.hard_blocked(p) or not _tp.relaxed_ok(p): continue
+      kept.append(l)
+    NEAR=kept
+    print(f"thin-pool fallback: fav engine stored {len(NEAR)} near-miss leg(s); strict pool {len(legs)}", flush=True)
+  elif not _tp.pool_is_thin(legs):
+    NEAR=[]  # normal filters stand when the qualified pool is already large enough
+except Exception as _e:
+  print('thin-pool near-miss filter skipped', _e)
+json.dump(legs,open('cands.json','w'),indent=1,ensure_ascii=False);json.dump(NEAR,open('near.json','w'),indent=1,ensure_ascii=False);json.dump(EXC,open('excluded.json','w'),indent=1,ensure_ascii=False);json.dump({e['homeTeamName']+' v '+e['awayTeamName']:dict(league=e['sport']['category']['name']+' - '+e['sport']['category']['tournament']['name'],ko=time.strftime('%Y-%m-%d %H:%M',time.gmtime(e['estimateStartTime']/1000)),eventId=e['eventId']) for e in E.values()},open('fixtures_index.json','w'),ensure_ascii=False)
 json.dump(MC,open('market_cands.json','w'),indent=1,ensure_ascii=False)
 json.dump({k:dict(src=v[1],n=v[0][0],c=v[0][1],buckets=BPROF.get(k)) for k,v in PROFS.items()},open('profiles.json','w'),indent=1,ensure_ascii=False)
 print(len(legs),collections.Counter(v.split(' (')[0] for v in EXC.values()))

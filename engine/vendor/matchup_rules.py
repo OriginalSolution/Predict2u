@@ -219,15 +219,15 @@ def is_goals_market(p):
     oid=str(p.get('outcomeId') or p.get('oid') or '')
     if oid in ('74','75'):  # SportyBet Yes variants
       return True
-    return bool(re.search(r'(yes|gg)', sel, re.I)) and not re.search(r'no', sel, re.I)
+    return bool(re.search(r'\b(yes|gg)\b', sel, re.I)) and not re.search(r'\bno\b', sel, re.I)
   # Text fallbacks
   blob=(mk+' '+sel).lower()
-  if re.search(r'(over|under)\s+\d', blob) or re.search(r'team over|total goals|over/under', blob):
+  if re.search(r'\b(over|under)\s+\d', blob) or re.search(r'team over|total goals|over/under', blob):
     # Exclude win/or combos like "Away or Over 2.5"
-    if re.search(r'(home|away|draw|1x|x2|12).*or|or.*(home|away|draw)', blob):
+    if re.search(r'\b(home|away|draw|1x|x2|12)\b.*\bor\b|\bor\b.*(home|away|draw)', blob):
       return False
     return True
-  if re.search(r'both teams to score|btts|gg', blob) and re.search(r'yes|gg', blob) and not re.search(r'no', blob):
+  if re.search(r'both teams to score|btts|\bgg\b', blob) and re.search(r'\byes\b|\bgg\b', blob) and not re.search(r'\bno\b', blob):
     return True
   return False
 
