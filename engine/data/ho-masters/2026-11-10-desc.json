@@ -1,0 +1,120 @@
+{
+ "key": "desc",
+ "name": "Descending odds",
+ "date": "2026-11-10",
+ "riskLabel": "HIGH RISK",
+ "waived": true,
+ "verification": "Bets For The Day three-strategy set. Strategy-internal rules only; HIGH RISK, no guarantees.",
+ "parts": [
+  {
+   "name": "Descending odds · set",
+   "legs": 1,
+   "events": [
+    "sr:match:76122400"
+   ],
+   "totalOdds": 1.34,
+   "codes": {
+    "sportybet": [
+     {
+      "code": "DPA1AJ",
+      "totalOdds": 1.34,
+      "legs": 1,
+      "link": "https://www.sportybet.com/gh/?shareCode=DPA1AJ",
+      "matches": [
+       "sr:match:76122400"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "footballcom": [
+     {
+      "code": "DPA1AJ",
+      "totalOdds": 1.34,
+      "legs": 1,
+      "link": "https://www.football.com/gh/?shareCode=DPA1AJ",
+      "matches": [
+       "sr:match:76122400"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "msport": [
+     {
+      "code": "B3HQSZ4",
+      "totalOdds": 1.34,
+      "legs": 1,
+      "link": "https://www.msport.com/gh/?shareCode=B3HQSZ4",
+      "matches": [
+       "sr:match:76122400"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "betika": [
+     {
+      "code": "MSyeN6",
+      "totalOdds": 1.31,
+      "legs": 1,
+      "link": "https://betika.com/en-gh/share/MSyeN6",
+      "matches": [
+       "sr:match:76122400"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "betpawa": [
+     {
+      "code": "OBJQYC8",
+      "totalOdds": 1.34,
+      "legs": 1,
+      "link": "https://www.betpawa.com.gh/share-betslip/OBJQYC8",
+      "matches": [
+       "sr:match:76122400"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ]
+   },
+   "missing": {},
+   "label": "Descending odds · set · HIGH RISK",
+   "source": "desc",
+   "status": "pending"
+  }
+ ],
+ "legList": [
+  {
+   "eventId": "sr:match:76122400",
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "date": "2026-11-10",
+   "ko": "19:45",
+   "kickoff": "2026-11-10T19:45:00Z",
+   "league": "England Amateur - National League South",
+   "match": "Salisbury FC v Braintree Town FC",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.34,
+   "liveOdds": 1.34,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": null,
+   "x12": null,
+   "case": "O2.5 2/3: O2.5@1.34, 1HO1.5@1.86",
+   "leagueFavRate": null,
+   "rate": null
+  }
+ ],
+ "legs": 1,
+ "totalOdds": 1.34,
+ "hit": 0,
+ "total": 1,
+ "status": "pending"
+}
