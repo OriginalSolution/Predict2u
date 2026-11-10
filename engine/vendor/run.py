@@ -87,7 +87,7 @@ def _started(p):
 _new={p['eventId'] for p in picks}
 for p in prev.get('picks') or []:
   if p.get('eventId') not in _new and (_started(p) or p.get('result') not in (None,'pending')): picks.append(p)
-picks.sort(key=lambda p:-p['confidence'])
+picks.sort(key=lambda p:-(p.get('confidence') or p.get('score') or 0))
 def slip(name,pool,target=25.0,maxlegs=20):
   legs=[];tot=1.0
   for p in pool:
