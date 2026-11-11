@@ -24,7 +24,7 @@
        "sr:match:76122400"
       ],
       "hit": 0,
-      "status": "pending"
+      "status": "lost"
      }
     ],
     "footballcom": [
@@ -37,7 +37,7 @@
        "sr:match:76122400"
       ],
       "hit": 0,
-      "status": "pending"
+      "status": "lost"
      }
     ],
     "msport": [
@@ -50,7 +50,7 @@
        "sr:match:76122400"
       ],
       "hit": 0,
-      "status": "pending"
+      "status": "lost"
      }
     ],
     "betika": [
@@ -63,7 +63,7 @@
        "sr:match:76122400"
       ],
       "hit": 0,
-      "status": "pending"
+      "status": "lost"
      }
     ],
     "betpawa": [
@@ -76,14 +76,14 @@
        "sr:match:76122400"
       ],
       "hit": 0,
-      "status": "pending"
+      "status": "lost"
      }
     ]
    },
    "missing": {},
    "label": "Ascending odds · set · HIGH RISK",
    "source": "asc",
-   "status": "pending"
+   "status": "lost"
   }
  ],
  "legList": [
@@ -100,11 +100,11 @@
    "market": "Over/Under",
    "selection": "Over 2.5",
    "odds": 1.34,
-   "liveOdds": 1.6,
-   "result": "pending",
-   "matchStatus": "HT",
-   "score": "1:0",
-   "played": "45:00",
+   "liveOdds": 4.0,
+   "result": "lost",
+   "matchStatus": "Ended",
+   "score": "2:0",
+   "played": "90:00",
    "table": null,
    "x12": null,
    "case": "O2.5 2/3: O2.5@1.34, 1HO1.5@1.86",
@@ -116,5 +116,5 @@
  "totalOdds": 1.34,
  "hit": 0,
  "total": 1,
- "status": "pending"
+ "status": "lost"
 }
