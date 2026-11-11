@@ -1,26 +1,26 @@
 {
- "DATA_UPDATED": "2026-11-10T20:49:02Z",
+ "DATA_UPDATED": "2026-11-11T00:59:08Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
  "overall": {
-  "n": 177,
+  "n": 178,
   "won": 18,
-  "lost": 159,
-  "winRate": 10.2,
+  "lost": 160,
+  "winRate": 10.1,
   "stake": 10.0,
-  "staked": 1770.0,
+  "staked": 1780.0,
   "returned": 2107.5,
-  "profit": 337.5,
-  "roi": 19.1,
+  "profit": 327.5,
+  "roi": 18.4,
   "pending": 65,
-  "codesSettled": 834,
+  "codesSettled": 835,
   "codesWon": 99,
-  "codesLost": 735
+  "codesLost": 736
  },
  "streak": {
   "current": "lost",
-  "currentLen": 29,
+  "currentLen": 30,
   "bestWin": 4,
   "bestLoss": 33
  },
@@ -50,14 +50,14 @@
    "key": "market"
   },
   {
-   "n": 12,
+   "n": 13,
    "won": 0,
-   "lost": 12,
+   "lost": 13,
    "winRate": 0.0,
    "stake": 10.0,
-   "staked": 120.0,
+   "staked": 130.0,
    "returned": 0,
-   "profit": -120.0,
+   "profit": -130.0,
    "roi": -100.0,
    "key": "high-odds"
   },
@@ -136,15 +136,15 @@
  ],
  "bySite": [
   {
-   "n": 222,
+   "n": 223,
    "won": 21,
-   "lost": 201,
-   "winRate": 9.5,
+   "lost": 202,
+   "winRate": 9.4,
    "stake": 10.0,
-   "staked": 2220.0,
+   "staked": 2230.0,
    "returned": 2177.6,
-   "profit": -42.4,
-   "roi": -1.9,
+   "profit": -52.4,
+   "roi": -2.3,
    "key": "sportybet"
   },
   {
@@ -246,15 +246,15 @@
    "key": "Over 0.5"
   },
   {
-   "n": 71,
+   "n": 72,
    "won": 10,
-   "lost": 61,
-   "winRate": 14.1,
+   "lost": 62,
+   "winRate": 13.9,
    "stake": 10.0,
-   "staked": 710.0,
+   "staked": 720.0,
    "returned": 318.6,
-   "profit": -391.4,
-   "roi": -55.1,
+   "profit": -401.4,
+   "roi": -55.8,
    "key": "Over 2.5"
   },
   {
@@ -368,14 +368,14 @@
  ],
  "byDay": [
   {
-   "n": 5,
+   "n": 6,
    "won": 0,
-   "lost": 5,
+   "lost": 6,
    "winRate": 0.0,
    "stake": 10.0,
-   "staked": 50.0,
+   "staked": 60.0,
    "returned": 0,
-   "profit": -50.0,
+   "profit": -60.0,
    "roi": -100.0,
    "key": "2026-11-10"
   },
@@ -465,12 +465,33 @@
   }
  ],
  "picks": {
-  "settled": 1764,
+  "settled": 1765,
   "won": 1313,
-  "lost": 451,
+  "lost": 452,
   "winRate": 74.4
  },
  "recent": [
+  {
+   "code": "DPA1AJ",
+   "book": "sportybet",
+   "date": "2026-11-10",
+   "name": "Descending odds · set · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 1.34,
+   "status": "lost",
+   "hit": 0,
+   "total": 1,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Salisbury FC v Braintree Town FC",
+     "selection": "Over 2.5",
+     "odds": 1.34,
+     "result": "lost",
+     "score": "2:0"
+    }
+   ]
+  },
   {
    "code": "D829N8",
    "book": "sportybet",
@@ -5947,55 +5968,6 @@
      "match": "Gimnasia y Esgrima Mendoza v Independiente Rivadavia",
      "selection": "Under 3.5",
      "odds": 1.22,
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "CA Talleres de Cordoba v Estudiantes de La Plata",
-     "selection": "Under 3.5",
-     "odds": 1.22,
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Esteghlal Khuzestan FC v Esteghlal FC Tehran",
-     "selection": "Under 3.5",
-     "odds": 1.16,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Rosenborg BK v IK Start",
-     "selection": "Over 1.5",
-     "odds": 1.11,
-     "result": "won",
-     "score": "4:1"
-    },
-    {
-     "match": "MO Constantine v US Chaouia",
-     "selection": "Under 3.5",
-     "odds": 1.16,
-     "result": "won",
-     "score": "2:1"
-    }
-   ]
-  },
-  {
-   "code": "ETC3GJ",
-   "book": "footballcom",
-   "date": "2026-11-07",
-   "name": "Safe slip (low risk)",
-   "kind": "safe",
-   "odds": 2.2,
-   "status": "won",
-   "hit": 0,
-   "total": 5,
-   "profit": 12.0,
-   "legs": [
-    {
-     "match": "Gimnasia y Esgrima Mendoza v Independiente Rivadavia",
-     "selection": "Under 3.5",
-     "odds": 1.21,
      "result": "won",
      "score": "1:1"
     },
