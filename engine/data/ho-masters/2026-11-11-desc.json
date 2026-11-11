@@ -1,0 +1,185 @@
+{
+ "key": "desc",
+ "name": "Descending odds",
+ "date": "2026-11-11",
+ "riskLabel": "HIGH RISK",
+ "waived": true,
+ "verification": "Bets For The Day three-strategy set. Strategy-internal rules only; HIGH RISK, no guarantees.",
+ "parts": [
+  {
+   "name": "Descending odds · set",
+   "legs": 3,
+   "events": [
+    "sr:match:76162994",
+    "sr:match:75468288",
+    "sr:match:75468426"
+   ],
+   "totalOdds": 2.11,
+   "codes": {
+    "sportybet": [
+     {
+      "code": "F68ZSU",
+      "totalOdds": 2.11,
+      "legs": 3,
+      "link": "https://www.sportybet.com/gh/?shareCode=F68ZSU",
+      "matches": [
+       "sr:match:75468288",
+       "sr:match:75468426",
+       "sr:match:76162994"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "footballcom": [
+     {
+      "code": "F68ZSU",
+      "totalOdds": 2.11,
+      "legs": 3,
+      "link": "https://www.football.com/gh/?shareCode=F68ZSU",
+      "matches": [
+       "sr:match:75468288",
+       "sr:match:75468426",
+       "sr:match:76162994"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "msport": [
+     {
+      "code": "B3HYLH6",
+      "totalOdds": 2.14,
+      "legs": 3,
+      "link": "https://www.msport.com/gh/?shareCode=B3HYLH6",
+      "matches": [
+       "sr:match:75468288",
+       "sr:match:75468426",
+       "sr:match:76162994"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "betika": [
+     {
+      "code": "UvTDVw",
+      "totalOdds": 1.72,
+      "legs": 2,
+      "link": "https://betika.com/en-gh/share/UvTDVw",
+      "matches": [
+       "sr:match:75468426",
+       "sr:match:76162994"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "betpawa": [
+     {
+      "code": "UWJ76CA",
+      "totalOdds": 1.57,
+      "legs": 2,
+      "link": "https://www.betpawa.com.gh/share-betslip/UWJ76CA",
+      "matches": [
+       "sr:match:75468288",
+       "sr:match:76162994"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ]
+   },
+   "missing": {
+    "betika": [
+     "Cayman Islands v Guyana"
+    ],
+    "betpawa": [
+     "Bonaire v Cuba"
+    ]
+   },
+   "label": "Descending odds · set · HIGH RISK",
+   "source": "desc",
+   "status": "pending"
+  }
+ ],
+ "legList": [
+  {
+   "eventId": "sr:match:76162994",
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "date": "2026-11-12",
+   "ko": "18:00",
+   "kickoff": "2026-11-12T18:00:00Z",
+   "league": "Spain - Copa del Rey",
+   "match": "CDA Navalcarnero v Betis",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.3,
+   "liveOdds": 1.3,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": null,
+   "x12": null,
+   "case": "O2.5 2/3: O2.5@1.3, 1HO1.5@1.81",
+   "leagueFavRate": null,
+   "rate": null
+  },
+  {
+   "eventId": "sr:match:75468288",
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "date": "2026-11-12",
+   "ko": "19:00",
+   "kickoff": "2026-11-12T19:00:00Z",
+   "league": "International - CONCACAF Nations League",
+   "match": "Cayman Islands v Guyana",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.22,
+   "liveOdds": 1.22,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": null,
+   "x12": null,
+   "case": "O2.5 2/3: O2.5@1.22, 1HO1.5@1.64",
+   "leagueFavRate": null,
+   "rate": null
+  },
+  {
+   "eventId": "sr:match:75468426",
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "date": "2026-11-12",
+   "ko": "20:00",
+   "kickoff": "2026-11-12T20:00:00Z",
+   "league": "International - CONCACAF Nations League",
+   "match": "Bonaire v Cuba",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.33,
+   "liveOdds": 1.33,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": null,
+   "x12": null,
+   "case": "O2.5 2/3: O2.5@1.33, 1HO1.5@1.84",
+   "leagueFavRate": null,
+   "rate": null
+  }
+ ],
+ "legs": 3,
+ "totalOdds": 2.11,
+ "hit": 0,
+ "total": 3,
+ "status": "pending"
+}
