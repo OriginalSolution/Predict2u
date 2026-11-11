@@ -1,0 +1,493 @@
+{
+ "date": "2026-11-11",
+ "generatedAt": "2026-11-11T14:51:47.135897+00:00",
+ "eligible": 24,
+ "picked": 11,
+ "picks": [
+  {
+   "eventId": "sr:match:75869416",
+   "match": "SK Artis Brno v FK Jablonec",
+   "league": "Czechia - Czech Cup",
+   "market": "2nd Half - Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.52,
+   "marketId": "85",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.8319,
+   "implied": 0.6579,
+   "ev": 0.2645,
+   "why": "season+form; λ 2.15-0.98; model 83% vs implied 66% (edge 26%)",
+   "lambda": [
+    2.147,
+    0.975
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-11",
+   "ko": "17:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:74041580",
+   "match": "Bourges FC v Hyeres FC",
+   "league": "France - National 1",
+   "market": "Over/Under",
+   "selection": "Under 2.5",
+   "odds": 1.5,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8077,
+   "implied": 0.6667,
+   "ev": 0.2115,
+   "why": "season+form; λ 0.42-1.08; model 81% vs implied 67% (edge 21%); table 16 v 4/17",
+   "lambda": [
+    0.42,
+    1.084
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-11",
+   "ko": "17:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Draw No Bet",
+     "selection": "Away",
+     "odds": 1.51,
+     "ev": 0.1437,
+     "true_p": 0.7574
+    },
+    {
+     "market": "2nd Half - Total",
+     "selection": "Under 1.5",
+     "odds": 1.43,
+     "ev": 0.1423,
+     "true_p": 0.7988
+    },
+    {
+     "market": "Draw No Bet",
+     "selection": "Away",
+     "odds": 1.43,
+     "ev": 0.1233,
+     "true_p": 0.7855
+    },
+    {
+     "market": "1st Half - Draw No Bet",
+     "selection": "Away",
+     "odds": 1.49,
+     "ev": 0.1188,
+     "true_p": 0.7508
+    },
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Draw or Away",
+     "odds": 1.22,
+     "ev": 0.0719,
+     "true_p": 0.8786
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:75879234",
+   "match": "UD Castellonense v CF La Nucia",
+   "league": "Spain - Segunda Federacion",
+   "market": "Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.34,
+   "marketId": "10",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.7858,
+   "implied": 0.7463,
+   "ev": 0.0529,
+   "why": "season+form+h2h; λ 1.71-0.97; model 79% vs implied 75% (edge 5%); table 4 v 10/18",
+   "lambda": [
+    1.707,
+    0.973
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-11",
+   "ko": "17:45",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:76678982",
+   "match": "Ypiranga PE v Afogados Ingazeira PE",
+   "league": "Brazil - Pernambucano",
+   "market": "Home O/U",
+   "selection": "Under 1.5",
+   "odds": 1.44,
+   "marketId": "19",
+   "specifier": "total=1.5",
+   "outcomeId": "13",
+   "true_p": 0.7259,
+   "implied": 0.6944,
+   "ev": 0.0454,
+   "why": "season+form; λ 1.03-1.12; model 73% vs implied 69% (edge 5%); table 5 v 3/6",
+   "lambda": [
+    1.027,
+    1.125
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-11",
+   "ko": "18:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:73661140",
+   "match": "Sheffield Wednesday v Accrington Stanley",
+   "league": "England - EFL Trophy",
+   "market": "Home O/U",
+   "selection": "Under 2.5",
+   "odds": 1.47,
+   "marketId": "19",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8453,
+   "implied": 0.6803,
+   "ev": 0.2426,
+   "why": "season+form+h2h; λ 1.35-1.24; model 85% vs implied 68% (edge 24%); table 1 v 2/4",
+   "lambda": [
+    1.351,
+    1.238
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-11",
+   "ko": "19:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Total",
+     "selection": "Under 2.5",
+     "odds": 1.35,
+     "ev": 0.1175,
+     "true_p": 0.8278
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:73787338",
+   "match": "Barnsley FC v Oldham Athletic",
+   "league": "England - EFL Trophy",
+   "market": "Over/Under",
+   "selection": "Under 4.5",
+   "odds": 1.52,
+   "marketId": "18",
+   "specifier": "total=4.5",
+   "outcomeId": "13",
+   "true_p": 0.7355,
+   "implied": 0.6579,
+   "ev": 0.1179,
+   "why": "season+form+h2h; λ 1.86-1.58; model 74% vs implied 66% (edge 12%); table 4 v 1/4",
+   "lambda": [
+    1.864,
+    1.583
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-11",
+   "ko": "19:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Total",
+     "selection": "Under 2.5",
+     "odds": 1.53,
+     "ev": 0.0785,
+     "true_p": 0.7049
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76320402",
+   "match": "CD Cieza v Valencia CF Mestalla",
+   "league": "Spain - Segunda Federacion",
+   "market": "Draw No Bet",
+   "selection": "Home",
+   "odds": 1.48,
+   "marketId": "11",
+   "specifier": "",
+   "outcomeId": "4",
+   "true_p": 0.7701,
+   "implied": 0.6757,
+   "ev": 0.1398,
+   "why": "season+form; λ 1.96-0.97; model 77% vs implied 68% (edge 14%); table 5 v 17/18",
+   "lambda": [
+    1.964,
+    0.97
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-11",
+   "ko": "19:30",
+   "alternatives": [
+    {
+     "market": "Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.27,
+     "ev": 0.0406,
+     "true_p": 0.8194
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76455730",
+   "match": "Tacuarembo FC v Miramar Misiones",
+   "league": "Uruguay - Segunda Division",
+   "market": "Away O/U",
+   "selection": "Under 1.5",
+   "odds": 1.51,
+   "marketId": "20",
+   "specifier": "total=1.5",
+   "outcomeId": "13",
+   "true_p": 0.714,
+   "implied": 0.6623,
+   "ev": 0.0782,
+   "why": "season+form+h2h; λ 1.12-1.06; model 71% vs implied 66% (edge 8%); table 7 v 5/14",
+   "lambda": [
+    1.12,
+    1.059
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-11",
+   "ko": "19:30",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Over 0.5",
+     "odds": 1.57,
+     "ev": 0.0576,
+     "true_p": 0.6736
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:75799148",
+   "match": "Avro FC v Whitby Town",
+   "league": "England Amateur - Northern Premier League Premier",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.45,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7507,
+   "implied": 0.6897,
+   "ev": 0.0885,
+   "why": "season+form; λ 2.30-1.39; model 75% vs implied 69% (edge 9%); table 8 v 15/22",
+   "lambda": [
+    2.302,
+    1.389
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-11",
+   "ko": "19:45",
+   "alternatives": [
+    {
+     "market": "GG/NG",
+     "selection": "Yes",
+     "odds": 1.58,
+     "ev": 0.0673,
+     "true_p": 0.6755
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76454790",
+   "match": "Independiente Petrolero v Always Ready",
+   "league": "Bolivia - Copa Bolivia",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.5,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "true_p": 0.7334,
+   "implied": 0.6667,
+   "ev": 0.1002,
+   "why": "season+form+h2h; λ 2.08-1.74; model 73% vs implied 67% (edge 10%); table 2 v 2/4",
+   "lambda": [
+    2.077,
+    1.738
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-11",
+   "ko": "22:00",
+   "alternatives": [
+    {
+     "market": "GG/NG",
+     "selection": "Yes",
+     "odds": 1.49,
+     "ev": 0.074,
+     "true_p": 0.7208
+    },
+    {
+     "market": "Away O/U",
+     "selection": "Under 2.5",
+     "odds": 1.4,
+     "ev": 0.0461,
+     "true_p": 0.7472
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:68823472",
+   "match": "Londrina EC PR v Nautico PE",
+   "league": "Brazil - Brasileiro Serie B",
+   "market": "Home O/U",
+   "selection": "Under 2.5",
+   "odds": 1.26,
+   "marketId": "19",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8265,
+   "implied": 0.7937,
+   "ev": 0.0414,
+   "why": "season+form+h2h; λ 1.43-1.17; model 83% vs implied 79% (edge 4%); table 18 v 15/20",
+   "lambda": [
+    1.429,
+    1.174
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-11",
+   "ko": "22:00",
+   "alternatives": []
+  }
+ ],
+ "rejected": {
+  "Oud-Heverlee Leuven W v HB KOEGE W": "youth/reserve/women/virtual",
+  "Juventus Turin W v Olympique Lyon W": "youth/reserve/women/virtual",
+  "SC Wiedenbruck v SC Preussen Munster II": "youth/reserve/women/virtual",
+  "Spain v Iceland": "youth/reserve/women/virtual",
+  "Bosnia and Herzegovina v San Marino": "youth/reserve/women/virtual",
+  "Kazakhstan v Scotland": "youth/reserve/women/virtual",
+  "Serbia v Faroe Islands": "youth/reserve/women/virtual",
+  "Austria v Belarus": "youth/reserve/women/virtual",
+  "France v Norway": "youth/reserve/women/virtual",
+  "Wales v Finland": "youth/reserve/women/virtual",
+  "CD Castellon B v Club Deportiva Minera": "youth/reserve/women/virtual",
+  "CD Ibiza Islas Pitiusas v UD Arenal": "kickoff too soon",
+  "Zamora FC Barinas II v Deportivo Lara": "youth/reserve/women/virtual",
+  "FK Zeleziarne Podbrezova v FC Vion Zlate Moravce - Vrable": "kickoff too soon",
+  "At Rafaela Reserve v CA Belgrano": "youth/reserve/women/virtual",
+  "CA Banfield v Racing Club Reserve": "youth/reserve/women/virtual",
+  "CA Platense v Deportivo Riestra Afbc Reserve": "youth/reserve/women/virtual",
+  "Ferro Carril Oeste v Defensa Y Justicia Reserve": "youth/reserve/women/virtual",
+  "Independiente Reserve v CA Lanus": "youth/reserve/women/virtual",
+  "Instituto AC Cordoba Reserves v San Lorenzo de Almagro Res.": "youth/reserve/women/virtual",
+  "FC Fleury v Toulouse FC": "youth/reserve/women/virtual",
+  "Birmingham City WFC v Sunderland AFC": "youth/reserve/women/virtual",
+  "Everton FC Women v Durham LFC": "youth/reserve/women/virtual",
+  "Liverpool LFC v Aston Villa WFC": "youth/reserve/women/virtual",
+  "Tottenham Hotspur FC v Crystal Palace": "youth/reserve/women/virtual",
+  "Charlton Athletic v Ipswich Town Lfc": "youth/reserve/women/virtual",
+  "Brighton and Hove Albion WFC v Watford LFC": "youth/reserve/women/virtual",
+  "Heart of Midlothian WFC v Montrose FC": "youth/reserve/women/virtual",
+  "FC Petrzalka 1898 v FC Spartak Trnava": "youth/reserve/women/virtual",
+  "Mamelodi Sundowns v Kawempe Muslim Ladies": "youth/reserve/women/virtual",
+  "EFC Frejus Saint-Raphael v Estac Troyes 2": "youth/reserve/women/virtual",
+  "CD Fuerte San Francisco v Alianza FC": "youth/reserve/women/virtual",
+  "AD Isidro Metapan v CD Platense": "youth/reserve/women/virtual",
+  "Olaria AC RJ v America FC RJ": "youth/reserve/women/virtual",
+  "Retro FC PE v SC Recife PE": "youth/reserve/women/virtual",
+  "Sunderland U21 v Paris Saint Germain": "youth/reserve/women/virtual",
+  "West Ham U21 v Juventus FC": "youth/reserve/women/virtual",
+  "Czarni Sosnowiec v SK Brann": "youth/reserve/women/virtual",
+  "Broendby IF v Rosenborg BK Kvinner": "youth/reserve/women/virtual",
+  "Fenerbahce Istanbul v Real Sociedad San Sebastian": "youth/reserve/women/virtual",
+  "Eintracht Frankfurt v PSV Eindhoven": "youth/reserve/women/virtual",
+  "Hammarby IF v Spartak Myjava": "youth/reserve/women/virtual",
+  "Malmo FF v Ajax Amsterdam": "youth/reserve/women/virtual",
+  "Silifke Belediyespor v Icel Idmanyurdu Spor": "no 1.20–1.60 market with an edge",
+  "Derby Academie v AS Kayes": "insufficient form/stats",
+  "CD Manacor v Inter Ibiza CD": "no 1.20–1.60 market with an edge",
+  "Colombe Sportive Du Dja Et Lobo v Victoria United Limbe": "no 1.20–1.60 market with an edge",
+  "NK Sampion Celje v NK Smartno 1928": "no 1.20–1.60 market with an edge",
+  "CD Alcoyano v Elche Ilicitano CF": "no 1.20–1.60 market with an edge",
+  "Ontinyent CF v CD Utiel": "no 1.20–1.60 market with an edge",
+  "La Luz FC v CA Fenix Montevideo": "even matchup (5 v 1/14)",
+  "Csd Vendaval v CD Once Municipal": "no 1.20–1.60 market with an edge",
+  "CD Fuerte San Francisco Morazan v Alianza FC San Salvador": "no 1.20–1.60 market with an edge",
+  "Real Cundinamarca v Real Cartagena FC": "even matchup (4 v 3/16)",
+  "Central SC PE v Salgueiro AC PE": "no 1.20–1.60 market with an edge",
+  "Facilnet FC PE v Belo Jardim": "insufficient form/stats"
+ },
+ "slips": [
+  {
+   "name": "SportyBet Stats · part 1/3",
+   "totalOdds": 6.47,
+   "codes": {
+    "sportybet": "E0U97E",
+    "footballcom": "E0U97E",
+    "msport": "B3J2VVF",
+    "betika": "UBxUZV",
+    "betpawa": "PRV420R"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 2/3",
+   "totalOdds": 7.39,
+   "codes": {
+    "sportybet": "BFPQDY",
+    "footballcom": "BFPQDY",
+    "msport": "B3J2VWL",
+    "betika": "AA49V2",
+    "betpawa": "1HIAX3C"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 3/3",
+   "totalOdds": 1.26,
+   "codes": {
+    "sportybet": "CQXUMM",
+    "footballcom": "CQXUMM",
+    "msport": "B3J2VXJ",
+    "betika": "DmrmZK",
+    "betpawa": "QLOPUXY"
+   },
+   "legs": 1
+  },
+  {
+   "name": "SportyBet Stats · Master",
+   "totalOdds": 60.2,
+   "codes": {
+    "sportybet": "F527N9",
+    "footballcom": "F527N9",
+    "msport": "B3J2VYL",
+    "betika": "2xm2AY",
+    "betpawa": "W4363L0"
+   },
+   "legs": 11
+  }
+ ]
+}
