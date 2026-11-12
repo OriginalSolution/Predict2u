@@ -1,4 +1,5 @@
 name: Predict2u engine — three-strategy High Odds + Verzzify Banker
+run-name: "${{ github.workflow }}${{ inputs.dry_run == true && ' (dry run)' || '' }}"
 
 on:
   schedule:
@@ -9,16 +10,40 @@ on:
         description: "Skip commit"
         type: boolean
         default: false
+      force:
+        description: "Run even if this slot already ran successfully"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
-
-concurrency:
-  group: predict2u-engine
-  cancel-in-progress: false
+  actions: read
 
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      run: ${{ steps.g.outputs.run }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: .github
+      - name: Run once per slot (GitHub's late cron duplicates skip here)
+        id: g
+        env:
+          GH_TOKEN: ${{ github.token }}
+          P2U_GATE_BYPASS: ${{ github.event_name == 'workflow_dispatch' && (inputs.force == true || inputs.dry_run == true) }}
+        run: python3 .github/scripts/p2u_gate.py --at 22:30 --job strategies
+
   strategies:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
+    concurrency:
+      group: predict2u-engine
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
@@ -61,5 +86,4 @@ jobs:
           done
           if git diff --cached --quiet; then echo "no strategy changes"; exit 0; fi
           git commit -m "Engine strategies $(date -u +%FT%TZ)"
-          git pull --rebase --autostash -X theirs origin main || git pull --rebase --autostash origin main || true
-          git push origin HEAD
+          .github/scripts/p2u_push.sh main
