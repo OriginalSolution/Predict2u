@@ -1,5 +1,5 @@
 {
- "checkedAt": "2026-11-12T09:26:16Z",
+ "checkedAt": "2026-11-12T09:44:30Z",
  "mode": "preflight",
  "ok": false,
  "problems": [
@@ -20,16 +20,9 @@
    "msg": "engine-daily.yml failed for its 22:00 GMT slot (https://github.com/riddimbossy-prog/Predict2u/actions/runs/43143358674) — its codes are on the site anyway, not re-run"
   },
   {
-   "area": "strategies",
-   "msg": "3 picks miss required fields (e.g. ['Czechia v Spain', 'El Entag El Harby v Baladiyyat AL Mehalla', 'AA Ponte Preta SP v Operario Ferroviario EC PR'])"
-  },
-  {
-   "area": "strategies",
-   "msg": "engine-shield.yml: python -m engine.pipeline shield --dry-run crashed (exit 1): subprocess.CalledProcessError: Command '['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '/home/runner/work/Predict2u/Predict2u/engine/vendor/build.py', '/home/runner/work/Predict2u/Predict2u']' returned non-zero exit status 3."
-  },
-  {
-   "area": "strategies",
-   "msg": "engine-refresh.yml: python engine/vendor/staked_feed.py /home/runner/work/Predict2u/Predict2u crashed (exit 1): FileNotFoundError: [Errno 2] No such file or directory: '/workspace/predict2u-feed/event-cache.json'"
+   "area": "actions",
+   "msg": "engine-self-heal.yml failed for its 06:15 GMT slot (https://github.com/riddimbossy-prog/Predict2u/actions/runs/43194096502)",
+   "healed": true
   }
  ],
  "warnings": [
@@ -47,11 +40,7 @@
   },
   {
    "area": "actions",
-   "msg": "sportybet-odds.yml started 119 min after its 06:19 slot"
-  },
-  {
-   "area": "actions",
-   "msg": "engine-self-heal.yml started 176 min after its 06:15 slot"
+   "msg": "engine-self-heal.yml started 179 min after its 06:15 slot"
   },
   {
    "area": "actions",
@@ -68,9 +57,19 @@
   {
    "area": "actions",
    "msg": "post-social.yml started 417 min after its 00:50 slot"
+  },
+  {
+   "area": "strategies",
+   "msg": "1 picks for 2026-11-13 carry no kickoff time (e.g. ['Czechia v Spain'])"
+  },
+  {
+   "area": "strategies",
+   "msg": "32 picks in 2026-11-13's file kick off on another day (e.g. ['CA Temperley v Club Ciudad de Bolivar (2026-11-14, balance)', 'Gimnasia y Esgrima de Jujuy v Club Almirante Brown (2026-11-14, balance)', 'Nairobi United FC v Mara Sugar FC (2026-11-14, favourite)'])"
   }
  ],
- "healed": [],
+ "healed": [
+  "re-ran engine-self-heal.yml"
+ ],
  "passed": [
   {
    "area": "code",
@@ -90,43 +89,43 @@
   },
   {
    "area": "site",
-   "msg": "home-picks.json fresh (0.3h old)"
+   "msg": "home-picks.json fresh (0.6h old)"
   },
   {
    "area": "site",
-   "msg": "picks.json fresh (7.3h old)"
+   "msg": "picks.json fresh (7.6h old)"
   },
   {
    "area": "site",
-   "msg": "high_odds.json fresh (0.6h old)"
+   "msg": "high_odds.json fresh (0.9h old)"
   },
   {
    "area": "site",
-   "msg": "record.json fresh (0.6h old)"
+   "msg": "record.json fresh (0.9h old)"
   },
   {
    "area": "site",
-   "msg": "news-hub.json fresh (0.0h old)"
+   "msg": "news-hub.json fresh (0.3h old)"
   },
   {
    "area": "site",
-   "msg": "live-scores.json fresh (1.3h old)"
+   "msg": "live-scores.json fresh (1.6h old)"
   },
   {
    "area": "site",
-   "msg": "data-meta.json fresh (0.1h old)"
+   "msg": "data-meta.json fresh (0.4h old)"
   },
   {
    "area": "site",
-   "msg": "fixtures.js fresh (0.1h old)"
+   "msg": "fixtures.js fresh (0.4h old)"
   },
   {
    "area": "site",
-   "msg": "sportybet-odds.js fresh (0.1h old)"
+   "msg": "sportybet-odds.js fresh (0.4h old)"
   },
   {
    "area": "site",
-   "msg": "current-data.js fresh (0.1h old)"
+   "msg": "current-data.js fresh (0.4h old)"
   },
   {
    "area": "codes",
@@ -150,15 +149,11 @@
   },
   {
    "area": "actions",
-   "msg": "sportybet-odds.yml 06:19 slot succeeded"
+   "msg": "sportybet-odds.yml 09:19 slot succeeded"
   },
   {
    "area": "actions",
-   "msg": "engine-self-heal.yml 06:15 slot succeeded"
-  },
-  {
-   "area": "actions",
-   "msg": "daymasters-guard.yml 08:40 slot succeeded"
+   "msg": "daymasters-guard.yml 09:10 slot succeeded"
   },
   {
    "area": "actions",
@@ -186,23 +181,31 @@
   },
   {
    "area": "strategies",
-   "msg": "engine-daily.yml: python -m engine.pipeline daily --dry-run ran clean in 291s"
+   "msg": "engine-daily.yml: python -m engine.pipeline daily --dry-run ran clean in 179s"
   },
   {
    "area": "strategies",
-   "msg": "engine-fav-leagues.yml: python -m engine.pipeline fav --dry-run ran clean in 40s"
+   "msg": "48 favourites picks for 2026-11-13: fields, odds and DC veto all fine"
   },
   {
    "area": "strategies",
-   "msg": "engine-morning.yml: python -m engine.pipeline morning --dry-run ran clean in 25s"
+   "msg": "engine-fav-leagues.yml: python -m engine.pipeline fav --dry-run ran clean in 35s"
   },
   {
    "area": "strategies",
-   "msg": "engine-m1m2.yml: python -m engine.vendor.m1m2 ran clean in 29s"
+   "msg": "engine-morning.yml: python -m engine.pipeline morning --dry-run ran clean in 22s"
   },
   {
    "area": "strategies",
-   "msg": "engine-m1m2.yml: python -m engine.vendor.safe50 ran clean in 28s"
+   "msg": "engine-shield.yml: python -m engine.pipeline shield --dry-run ran clean in 44s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-m1m2.yml: python -m engine.vendor.m1m2 ran clean in 22s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-m1m2.yml: python -m engine.vendor.safe50 ran clean in 22s"
   },
   {
    "area": "strategies",
@@ -210,19 +213,19 @@
   },
   {
    "area": "strategies",
-   "msg": "engine-strategies.yml: python -m engine.vendor.three_strategies 4 ran clean in 29s"
+   "msg": "engine-strategies.yml: python -m engine.vendor.three_strategies 4 ran clean in 23s"
   },
   {
    "area": "strategies",
-   "msg": "engine-strategies.yml: python engine/vendor/three_strategies.py 4 ran clean in 29s"
+   "msg": "engine-strategies.yml: python engine/vendor/three_strategies.py 4 ran clean in 24s"
   },
   {
    "area": "strategies",
-   "msg": "engine-strategies.yml: python engine/vendor/verzzify_banker.py ran clean in 23s"
+   "msg": "engine-strategies.yml: python engine/vendor/verzzify_banker.py ran clean in 19s"
   },
   {
    "area": "strategies",
-   "msg": "engine-strategies.yml: python engine/vendor/nerdytips_strategies.py ran clean in 16s"
+   "msg": "engine-strategies.yml: python engine/vendor/nerdytips_strategies.py ran clean in 14s"
   },
   {
    "area": "strategies",
@@ -238,7 +241,7 @@
   },
   {
    "area": "strategies",
-   "msg": "engine-settle.yml: python -m engine.pipeline settle ran clean in 7s"
+   "msg": "engine-settle.yml: python -m engine.pipeline settle ran clean in 6s"
   },
   {
    "area": "strategies",
@@ -247,6 +250,10 @@
   {
    "area": "strategies",
    "msg": "engine-refresh.yml: python engine/vendor/live_scores.py /home/runner/work/Predict2u/Predict2u ran clean in 0s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-refresh.yml: python engine/vendor/staked_feed.py /home/runner/work/Predict2u/Predict2u ran clean in 1s"
   }
  ],
  "sections": {
@@ -260,7 +267,7 @@
     "workflow": "engine-daily.yml",
     "command": "-m engine.pipeline daily --dry-run",
     "rc": 0,
-    "seconds": 291,
+    "seconds": 179,
     "errors": [],
     "tail": "rk/Predict2u/Predict2u/engine/vendor/inject_exempt.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u\npublish: P2U_LOCK_KEY / lock.key missing — premium lock skipped (do not commit raw banker codes without it)\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/high_odds.py /home/runner/work/Predict2u/Predict2u --settle-only\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/split_codes.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/daily_master.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u\npublish: P2U_LOCK_KEY / lock.key missing — premium lock skipped (do not commit raw banker codes without it)\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/share_cards.py /home/runner/work/Predict2u/Predict2u\npublish: Telegram skipped (TELEGRAM_BOT_TOKEN / TELEGRAM_CHANNEL not set)\n"
    },
@@ -268,41 +275,41 @@
     "workflow": "engine-fav-leagues.yml",
     "command": "-m engine.pipeline fav --dry-run",
     "rc": 0,
-    "seconds": 40,
+    "seconds": 35,
     "errors": [],
-    "tail": "stop 14\n992 /home/runner/work/Predict2u/Predict2u/engine/data/sb.json\n69 leagues 45 picks [('Safe slip (low risk)', 2.08, 5, None), ('Medium slip (balanced)', 7.98, 10, None), ('Main banker: Banker code of the day', 31.7, 20, None), ('Alternative A: higher prices (>=25)', 30.0, 13, None), ('Alternative B: skip the top 5 (>=25)', 26.01, 17, None)]\nfavDayMaster 2026-11-13 legs 15 of 15 odds 20.97 parts 1 codes {}\nfavDayMaster 2026-11-14 legs 30 of 30 odds 452.65 parts 1 codes {}\nfavLeagues 2026-11-13 leagues 69 picks 48 {'2026-11-12': {'sportybet': ['82P39J'], 'footballcom': ['82P39J'], 'msport': ['B3J8N5M'], 'betika': ['JDGAfP'], 'betpawa': ['V2R6RL4']}, '2026-11-13': {'sportybet': ['983KY4'], 'footballcom': ['983KY4'], 'msport': ['B3J8N7R'], 'betika': ['BukEaB'], 'betpawa': ['NGMI8KF']}, '2026-11-14': {}}\nfavLeagues: dry run, home-picks.json not written\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/scan.py\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/run.py 2026-11-13 --days 2\ninbox: kept 5 extra picks, dropped 52, combined slips 1\ncollect: /home/runner/work/Predict2u/Predict2u/engine/data/2026-11-13.json picks 48\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/fav_leagues.py /home/runner/work/Predict2u/Predict2u --dry-run\n"
+    "tail": "stop 14\n994 /home/runner/work/Predict2u/Predict2u/engine/data/sb.json\n70 leagues 45 picks [('Safe slip (low risk)', 2.08, 5, None), ('Medium slip (balanced)', 7.98, 10, None), ('Main banker: Banker code of the day', 31.7, 20, None), ('Alternative A: higher prices (>=25)', 30.0, 13, None), ('Alternative B: skip the top 5 (>=25)', 26.01, 17, None)]\nfavDayMaster 2026-11-13 legs 15 of 15 odds 20.97 parts 1 codes {}\nfavDayMaster 2026-11-14 legs 30 of 30 odds 452.65 parts 1 codes {}\nfavLeagues 2026-11-13 leagues 70 picks 48 {'2026-11-12': {'sportybet': ['82P39J'], 'footballcom': ['82P39J'], 'msport': ['B3J8N5M'], 'betika': ['JDGAfP'], 'betpawa': ['V2R6RL4']}, '2026-11-13': {'sportybet': ['983KY4'], 'footballcom': ['983KY4'], 'msport': ['B3J8N7R'], 'betika': ['BukEaB'], 'betpawa': ['NGMI8KF']}, '2026-11-14': {}}\nfavLeagues: dry run, home-picks.json not written\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/scan.py\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/run.py 2026-11-13 --days 2\ninbox: kept 5 extra picks, dropped 52, combined slips 1\ncollect: /home/runner/work/Predict2u/Predict2u/engine/data/2026-11-13.json picks 48\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/fav_leagues.py /home/runner/work/Predict2u/Predict2u --dry-run\n"
    },
    {
     "workflow": "engine-morning.yml",
     "command": "-m engine.pipeline morning --dry-run",
     "rc": 0,
-    "seconds": 25,
+    "seconds": 22,
     "errors": [],
     "tail": "ed or no event\n  skip Plaza Colonia v Club Atletico Rentistas: started or no event\n  skip Albania v Finland: started or no event\n  skip Czechia v Spain: started or no event\n  skip England v Croatia: started or no event\n  skip Italy v France: started or no event\n  skip Montenegro v Latvia: started or no event\n  skip San Marino v Belarus: started or no event\n  skip Bonaire v Cuba: started or no event\n  skip Mount Pleasant FC v Portmore United: started or no event\n  skip AD Izalco v AD Forfut: started or no event\n  skip Atletico Balboa v CD Inca: started or no event\n  skip CD Aguila San Miguel v Municipal Limeno: started or no event\n  skip Aruba v Martinique: started or no event\n  skip Academia Puerto Cabello v Monagas SC: started or no event\n  skip AA Ponte Preta SP v Operario Ferroviario EC PR: started or no event\n  skip AD Pasto v CD Junior FC: started or no event\n  skip Aurora FC v Deportivo Mixco: started or no event\n  skip Antigua and Barbuda v Trinidad and Tobago: started or no event\n  skip Estudiantes de La Plata v Independiente Rivadavia: started or no event\n  skip Sao Bernardo FC v Athletic Club Sjdr MG: started or no event\n  skip Cerro Largo FC v CA Progreso: started or no event\n  skip Real Potosi v CA Nacional Potosi: started or no event\npublish: dry-run, not writing home-picks.json\n{\n  \"picked\": 0,\n  \"slips\": 0,\n  \"rejected\": 99\n}\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/sb_morning_markets.py --dry-run\n"
    },
    {
     "workflow": "engine-shield.yml",
     "command": "-m engine.pipeline shield --dry-run",
-    "rc": 1,
-    "seconds": 41,
+    "rc": 0,
+    "seconds": 44,
     "errors": [],
-    "tail": " --skip-book\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/ah_minus_one.py\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/build.py /home/runner/work/Predict2u/Predict2u\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/home/runner/work/Predict2u/Predict2u/engine/pipeline.py\", line 225, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/home/runner/work/Predict2u/Predict2u/engine/pipeline.py\", line 218, in main\n    publish(env, dry_run=args.dry_run)\n  File \"/home/runner/work/Predict2u/Predict2u/engine/pipeline.py\", line 136, in publish\n    run([sys.executable, str(VENDOR_DIR / \"build.py\"), str(REPO_DIR)], env=env, timeout=180)\n  File \"/home/runner/work/Predict2u/Predict2u/engine/pipeline.py\", line 40, in run\n    return subprocess.run(cmd, env=env, cwd=cwd, timeout=timeout, check=check)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['/opt/hostedtoolcache/Python/3.12.16/x64/bin/python', '/home/runner/work/Predict2u/Predict2u/engine/vendor/build.py', '/home/runner/work/Predict2u/Predict2u']' returned non-zero exit status 3.\n"
+    "tail": "rk/Predict2u/Predict2u/engine/vendor/inject_exempt.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u\npublish: P2U_LOCK_KEY / lock.key missing — premium lock skipped (do not commit raw banker codes without it)\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/high_odds.py /home/runner/work/Predict2u/Predict2u --settle-only\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/split_codes.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/daily_master.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u\npublish: P2U_LOCK_KEY / lock.key missing — premium lock skipped (do not commit raw banker codes without it)\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/share_cards.py /home/runner/work/Predict2u/Predict2u\npublish: Telegram skipped (TELEGRAM_BOT_TOKEN / TELEGRAM_CHANNEL not set)\n"
    },
    {
     "workflow": "engine-m1m2.yml",
     "command": "-m engine.vendor.m1m2",
     "rc": 0,
-    "seconds": 29,
+    "seconds": 22,
     "errors": [],
-    "tail": "m1m2: 526 events in 4 days\nm1m2 raw {'M1': 0, 'M2': 0, 'T2': 0}\nm1m2 kept {'M1': 0, 'M2': 0, 'MIXED': 0} dropped 0\n{\n \"counts\": {\n  \"M1\": 0,\n  \"M2\": 0,\n  \"MIXED\": 0\n },\n \"slips\": []\n}\n"
+    "tail": "m1m2: 528 events in 4 days\nm1m2 raw {'M1': 0, 'M2': 0, 'T2': 0}\nm1m2 kept {'M1': 0, 'M2': 0, 'MIXED': 0} dropped 0\n{\n \"counts\": {\n  \"M1\": 0,\n  \"M2\": 0,\n  \"MIXED\": 0\n },\n \"slips\": []\n}\n"
    },
    {
     "workflow": "engine-m1m2.yml",
     "command": "-m engine.vendor.safe50",
     "rc": 0,
-    "seconds": 28,
+    "seconds": 22,
     "errors": [],
-    "tail": "safe50: 526 events in 4 days\nsafe50 priced 0\nsafe50 kept 0 dropped 0 checked 0\nsafe50 no code for Safest market\n{\n \"kept\": 0,\n \"slips\": []\n}\n"
+    "tail": "safe50: 528 events in 4 days\nsafe50 priced 0\nsafe50 kept 0 dropped 0 checked 0\nsafe50 no code for Safest market\n{\n \"kept\": 0,\n \"slips\": []\n}\n"
    },
    {
     "workflow": "engine-m1m2.yml",
@@ -316,23 +323,23 @@
     "workflow": "engine-strategies.yml",
     "command": "-m engine.vendor.three_strategies 4",
     "rc": 0,
-    "seconds": 29,
+    "seconds": 23,
     "errors": [],
-    "tail": "three_strategies: scanning 526 events (days=4)\nthree_strategies diag {'events': 0, 'no_data': 526, 'raw': 0, 'gated': 0, 'dropped': 0}\npool 0 by strategy: {'o25-2of3': 0, 'top3-form-win': 0, 'top3-form-dnb': 0, 'bottom3-form-dc': 0, 'weaker-score': 0, 'ah-minus1-screen': 0}\nwrote []\n"
+    "tail": "three_strategies: scanning 528 events (days=4)\nthree_strategies diag {'events': 0, 'no_data': 528, 'raw': 0, 'gated': 0, 'dropped': 0}\npool 0 by strategy: {'o25-2of3': 0, 'top3-form-win': 0, 'top3-form-dnb': 0, 'bottom3-form-dc': 0, 'weaker-score': 0, 'ah-minus1-screen': 0}\nwrote []\n"
    },
    {
     "workflow": "engine-strategies.yml",
     "command": "engine/vendor/three_strategies.py 4",
     "rc": 0,
-    "seconds": 29,
+    "seconds": 24,
     "errors": [],
-    "tail": "three_strategies: scanning 526 events (days=4)\nthree_strategies diag {'events': 0, 'no_data': 526, 'raw': 0, 'gated': 0, 'dropped': 0}\npool 0 by strategy: {'o25-2of3': 0, 'top3-form-win': 0, 'top3-form-dnb': 0, 'bottom3-form-dc': 0, 'weaker-score': 0, 'ah-minus1-screen': 0}\nwrote []\n"
+    "tail": "three_strategies: scanning 528 events (days=4)\nthree_strategies diag {'events': 0, 'no_data': 528, 'raw': 0, 'gated': 0, 'dropped': 0}\npool 0 by strategy: {'o25-2of3': 0, 'top3-form-win': 0, 'top3-form-dnb': 0, 'bottom3-form-dc': 0, 'weaker-score': 0, 'ah-minus1-screen': 0}\nwrote []\n"
    },
    {
     "workflow": "engine-strategies.yml",
     "command": "engine/vendor/verzzify_banker.py",
     "rc": 0,
-    "seconds": 23,
+    "seconds": 19,
     "errors": [],
     "tail": "verzzify scan added 0\nverzzify: candidates 0 packed 0 @0 (dropped 0)\nverzzify: no banker today (would be under 25 without padding)\n"
    },
@@ -340,7 +347,7 @@
     "workflow": "engine-strategies.yml",
     "command": "engine/vendor/nerdytips_strategies.py",
     "rc": 0,
-    "seconds": 16,
+    "seconds": 14,
     "errors": [],
     "tail": "nerdytips: 0 picks -> /home/runner/work/Predict2u/Predict2u/engine/inbox/nerdytips-strategies.json ({'streak_2plus': 0, 'team_win_lt_150': 0, 'draw_rules': 0, 'heavy_home_fav': 0, 'team_total_o25': 0, 'exclusive_o25': 0, 'betmines_trends': 0})\n"
    },
@@ -372,7 +379,7 @@
     "workflow": "engine-settle.yml",
     "command": "-m engine.pipeline settle",
     "rc": 0,
-    "seconds": 7,
+    "seconds": 6,
     "errors": [],
     "tail": "7', 'lost', '47/77')]\nhome-picks unchanged\npicks.json unchanged\nhot-picks unchanged\nhigh_odds pruned 2 active 53 history\nremoved 0 changed\nrecord wrote settled_slips 179 winRate 10.1 roi 17.7 pending 67 ledger 917 -> /home/runner/work/Predict2u/Predict2u/engine/data/code-ledger.json\nsettle home-picks.json: 0 updates\nsettle picks.json: 0 updates\nsettle hot-picks.json: 0 updates\nsettle high_odds.json: 0 updates\nsettle staked-codes.json: 0 updates\nsettle 2026-11-13.json: 0 updates\n{\"pending_looked_up\": 186, \"updated\": 0, \"events\": 0}\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/inject_exempt.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/high_odds.py /home/runner/work/Predict2u/Predict2u --settle-only\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/split_codes.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/daily_master.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py /home/runner/work/Predict2u/Predict2u\n"
    },
@@ -395,12 +402,10 @@
    {
     "workflow": "engine-refresh.yml",
     "command": "engine/vendor/staked_feed.py /home/runner/work/Predict2u/Predict2u",
-    "rc": 1,
+    "rc": 0,
     "seconds": 1,
-    "errors": [
-     "FileNotFoundError: [Errno 2] No such file or directory: '/workspace/predict2u-feed/event-cache.json'"
-    ],
-    "tail": "Traceback (most recent call last):\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/staked_feed.py\", line 58, in <module>\n    json.dump(evc, open(f'{F}/event-cache.json', 'w'))\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/workspace/predict2u-feed/event-cache.json'\n"
+    "errors": [],
+    "tail": "29 codes 29 with legs\n"
    }
   ]
  }
