@@ -194,6 +194,25 @@ def test_morning_master_ho_master_and_verzzify_are_sealed():
     assert store["banker-20261112"]["codes"]["sportybet"][0]["picks"][0]["match"] == "Edge v Bank"
 
 
+def test_favourites_day_master_over_25_is_sealed():
+    doc = {"date": "2026-11-12", "homeCode": {"dayMasters": {"2026-11-12": {
+        "date": "2026-11-12",
+        "name": "Favourites · 2026-11-12",
+        "label": "Favourites of the day",
+        "totalOdds": 40,
+        "legs": 1,
+        "picks": [{"match": "Fav v Dog", "selection": "Home", "odds": 1.4, "eventId": "e1", "date": "2026-11-12"}],
+        "codes": {"sportybet": [{"code": "FAVDAY", "totalOdds": 40, "legs": 1, "link": "https://www.sportybet.com/gh/?shareCode=FAVDAY"}]},
+    }}}}
+    store = {}
+    assert seal_document(doc, store, _ph) == 1
+    public = str(doc)
+    assert "FAVDAY" not in public and "Fav v Dog" not in public
+    assert doc["homeCode"]["dayMasters"]["2026-11-12"]["premium"] is True
+    assert store["hot-20261112"]["codes"]["sportybet"][0]["code"] == "FAVDAY"
+    assert store["hot-20261112"]["codes"]["sportybet"][0]["picks"][0]["match"] == "Fav v Dog"
+
+
 def test_seal_leaves_odds_at_25_readable():
     store = {}
     slip = _slip(totalOdds=25, code="FREE25", codes={"sportybet": "FREE25"})

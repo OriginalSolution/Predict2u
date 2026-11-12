@@ -138,12 +138,15 @@
     var dm=((data.homeCode||{}).dayMasters||{})[day];
     if(!dm||!dm.codes||!Object.keys(dm.codes).length) return '';
     if(window.P2UPremium&&P2UPremium.is(Object.assign({date:day},dm)))return '<div class="lg-dm" data-p2u-premium-root="1" role="region">'+P2UPremium.card(Object.assign({date:day,name:dm.label||'Favourites of the day'},dm))+'</div>';
-    var chips='';
+    var chips='',kos={},nowMs=Date.now();
+    (dm.picks||[]).forEach(function(p){var t=Date.parse((p.date||'')+'T'+(p.ko||'23:59')+':00Z');if(p.eventId&&isFinite(t))kos[p.eventId]=t;});
+    var stale=function(c){var M=c&&c.matches;if(!M||!M.length)return false;return M.every(function(e){return kos[e]!=null&&kos[e]<=nowMs;});};
     DMBK.forEach(function(k){
       var list=dm.codes[k[0]]; if(!list)return;
       if(!Array.isArray(list)) list=[{code:list}];
       list.forEach(function(c){
         var code=c.code||c[k[0]]||c; if(!(window.P2UCode?P2UCode.isReal(code):!!code))return;
+        if(stale(c))return; // every leg has kicked off: the code no longer loads, hide it
         var url=c.link||(k[4]+encodeURIComponent(code));
         var meta=(c.totalOdds!=null?' @'+Number(c.totalOdds).toLocaleString('en-GB',{maximumFractionDigits:2}):'')+(c.legs!=null?' · '+c.legs+'p':'');
         chips+='<a class="p2u-chip-'+k[0]+'" style="--brand:'+k[2]+';--on:'+k[3]+'" href="'+esc(url)+'" target="_blank" rel="noopener" title="'+esc(k[1]+' '+code)+'"><img src="book-'+k[0]+'.webp" alt="" width="18" height="18" loading="lazy"><span>'+esc(k[1])+' '+esc(code)+'</span><span class="lg-dm-meta">'+esc(meta)+'</span></a>';

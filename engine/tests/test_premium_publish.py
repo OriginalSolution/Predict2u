@@ -82,6 +82,7 @@ def test_prune_keeps_a_sealed_model_slip_for_its_day():
 
 def test_jobs_lock_on_publish_and_the_ticker_starts_them():
     ticker = (ROOT / ".github" / "scripts" / "p2u_ticker.py").read_text()
+    assert '("engine-fav-leagues.yml", "0", "6", "*")' in ticker
     assert '("engine-m1m2.yml", "45", "21", "*")' in ticker
     assert '("engine-strategies.yml", "30", "22", "*")' in ticker
     morning = (ROOT / ".github" / "workflows" / "engine-morning.yml").read_text()
