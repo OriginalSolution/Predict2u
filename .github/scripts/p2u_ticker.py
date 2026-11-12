@@ -45,6 +45,9 @@ SCHEDULE = [
     ("tracker-email.yml", "45", "0", "*"),
     ("post-social.yml", "50", "0", "*"),
     ("weekly-digest.yml", "0", "18", "0"),          # Sundays
+    ("engine-health.yml", "30", "7", "*"),         # health: post-run check of the night/morning jobs
+    ("engine-health.yml", "0", "18", "*"),         # health: preflight — dry-run every strategy for tomorrow
+    ("engine-health.yml", "15", "23", "*"),        # health: post-run check of the evening booking jobs
 ]
 
 
