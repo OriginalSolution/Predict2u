@@ -1,4 +1,13 @@
 """Total odds above 25 flag a booking code as premium / locked."""
+import pytest
+
+
+@pytest.fixture(autouse=True)
+def _paid_mode(monkeypatch):
+    """These tests cover paid-codes mode; the repo switch (p2u-free-mode.js) may be on."""
+    monkeypatch.setenv("P2U_FREE_CODES", "0")
+
+
 from engine.premium import (
     CURRENCY,
     PRICE,

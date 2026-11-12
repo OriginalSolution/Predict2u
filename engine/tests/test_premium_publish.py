@@ -1,4 +1,13 @@
 """Publish paths for morning, model slips, ho-masters and Verzzify go through the lock."""
+import pytest
+
+
+@pytest.fixture(autouse=True)
+def _paid_mode(monkeypatch):
+    """These tests cover paid-codes mode; the repo switch (p2u-free-mode.js) may be on."""
+    monkeypatch.setenv("P2U_FREE_CODES", "0")
+
+
 import importlib.util
 import json
 from pathlib import Path

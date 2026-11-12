@@ -24,7 +24,7 @@ const CODE_DATA=[
 const CORE_SHELL=[
   './','./index.html','./bankers.html','./hot-picks.html','./news.html','./staked.html','./record.html','./high-odds/','./account.html','./offline.html','./manifest.webmanifest',
   './pwa-launch.js','./pwa-launch.css','./mobile-app-nav.js','./mobile-app-nav.css','./unified-shell-v234.js',
-  './p2u-code-guard-v352.js','./p2u-chips-v304.css','./p2u-contrast-v306.css','./p2u-legible-v302.css','./p2u-home-v304.js','./p2u-picks-v316.js','./p2u-risk-slips-v316.js','./p2u-wa-share-v317.js','./p2u-record-v317.js',
+  './p2u-free-mode.js','./p2u-code-guard-v352.js','./p2u-chips-v304.css','./p2u-contrast-v306.css','./p2u-legible-v302.css','./p2u-home-v304.js','./p2u-picks-v316.js','./p2u-risk-slips-v316.js','./p2u-wa-share-v317.js','./p2u-record-v317.js',
   './p2u-codes-carousel-v299.js','./p2u-cc-fit-v327.css','./p2u-hot-cc-v329.css','./p2u-high-odds-v342.css','./p2u-bp-fit-v331.css','./p2u-collapse-v305.js','./p2u-banker-pop-v300.js','./p2u-banker-pop-v300.css','./p2u-flashy-v301.css','./p2u-hot-v309.js','./p2u-hot-v309.css',
   './p2u-staked-v315.js','./p2u-staked-v314.css','./p2u-staked-track-v314.js','./p2u-live-track-v336.js','./p2u-newshub-v310.js','./p2u-newshub-v310.css','./p2u-sections-v310.js',
   './bankers-of-the-day-v285.css','./predict2u-logo.png','./predict2u-mark.png','./favicon.ico',

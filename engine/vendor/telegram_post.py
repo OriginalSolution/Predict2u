@@ -144,7 +144,11 @@ def main():
     # home-picks often has the slips; research may too
     if picks and picks.get('slips'): day_doc = picks
     text = format_codes(day_doc, None)
-    if text:  # premium slips: never post their codes
+    _free = False
+    try:
+      sys.path.insert(0, os.path.dirname(os.path.dirname(FEED))); from engine.premium import free_mode; _free = free_mode(REPO)
+    except Exception: _free = False
+    if text and not _free:  # premium slips: never post their codes (paid mode only)
       import re as _re; sys.path.insert(0, FEED); import lock_codes
       text = _re.sub(r'`?P2ULOCK-[a-z]+-\d{8}-[a-z]+\d*`?', '🔒 unlock on predict2u.com', lock_codes.mask_text(text))
     if not text:

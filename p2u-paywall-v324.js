@@ -121,12 +121,25 @@
     var inf=e.target.closest('[data-p2u-info]');if(inf&&!e.target.closest('.p2u-lock-m')){e.preventDefault();info(inf.getAttribute('data-p2u-info'),inf.closest('[data-p2u-odds]')||inf);return;}
     var c=e.target.closest('[data-p2u-unlocked] .p2u-chip-cp');if(c){try{navigator.clipboard.writeText(c.getAttribute('data-copy'));c.textContent='Copied';}catch(_){}}});
   document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('.p2u-lock[data-p2u-info]')){e.preventDefault();info(e.target.getAttribute('data-p2u-info'));}});
-  function boot(){scan();new MutationObserver(function(){scan();}).observe(document.body,{childList:true,subtree:true});
+  /* Free-codes mode (/p2u-free-mode.js sets window.P2U_FREE_CODES=true): no payment, no lock boxes, no relay call.
+     Any old sealed placeholder whose real code was not saved is blanked so the code guard hides that chip. */
+  function isFree(){return window.P2U_FREE_CODES===true;}
+  function freeScan(){
+    var RXG=new RegExp(RX.source,'gi'),w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n,hit=[];
+    while((n=w.nextNode())){RXG.lastIndex=0;if(RXG.test(n.nodeValue))hit.push(n);}
+    hit.forEach(function(x){x.nodeValue=x.nodeValue.replace(RXG,'—');});
+    document.querySelectorAll('[href*="P2ULOCK-" i],[data-copy*="P2ULOCK-" i],[data-cc-copy*="P2ULOCK-" i],[data-p2u-share*="P2ULOCK-" i],[data-cx*="P2ULOCK-" i]').forEach(function(e){
+      ['href','data-copy','data-cc-copy','data-p2u-share','data-cx'].forEach(function(a){var v=e.getAttribute(a);if(v&&/P2ULOCK-/i.test(v))e.removeAttribute(a);});});
+    document.querySelectorAll('.p2u-lock-m').forEach(function(m){m.remove();});
+    if(window.P2UCode&&P2UCode.sweep)P2UCode.sweep(document);
+  }
+  function bootFree(){freeScan();var t=0;new MutationObserver(function(){clearTimeout(t);t=setTimeout(freeScan,60);}).observe(document.body,{childList:true,subtree:true,characterData:true});}
+  function boot(){if(isFree())return bootFree();scan();new MutationObserver(function(){scan();}).observe(document.body,{childList:true,subtree:true});
     config().then(function(){var s=store();var ids=Object.keys(s);
       var q=new URLSearchParams(location.search),ref=q.get('reference')||q.get('trxref'),sid=q.get('p2uslip');
       var jobs=ids.map(function(id){return post('/unlock',{token:s[id].token}).then(function(g){got[id]=g;}).catch(function(){});});
       if(ref&&sid&&cfg.enabled)jobs.push(verify(ref,sid).catch(function(){}));
       return Promise.all(jobs);}).then(refresh);}
-  window.P2UPaywall={has:function(id){return !!(got[id]&&got[id].codes);},show:function(g){if(!g||!g.id)return;got[g.id]=g;refresh();}};
+  window.P2UPaywall={free:isFree,has:function(id){return !!(got[id]&&got[id].codes);},show:function(g){if(!g||!g.id)return;got[g.id]=g;refresh();}};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();

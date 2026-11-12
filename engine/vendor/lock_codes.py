@@ -163,5 +163,15 @@ def main(repo):
   if enc: open(ep, 'w').write(enc); changed.append('locked.enc.json')
   print('locked', sorted(store), 'expired', sorted(exp), 'changed', changed)
 
+def _free():
+  try:
+    root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    if root not in sys.path: sys.path.insert(0, root)
+    from engine.premium import free_mode
+    return free_mode(sys.argv[1] if len(sys.argv) > 1 else os.environ.get('REPO_DIR'))
+  except Exception as e:
+    print('free-mode check failed', e); return False
+
 REV = {}
+if __name__ == '__main__' and _free(): print('free-codes mode (p2u-free-mode.js): nothing locked'); sys.exit(0)
 if __name__ == '__main__': main(sys.argv[1] if len(sys.argv) > 1 else (__import__('os').environ.get('REPO_DIR','/workspace/Predict2u')))
