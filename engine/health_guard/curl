@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# curl shim for Predict2u health dry runs: refuse anything that writes (booking, posting).
+# GET/HEAD pass through to the real curl. A blocked call prints {} like an empty API reply.
+for a in "$@"; do
+  case "$a" in
+    -d|--data|--data-*|-F|--form|--json|-T|--upload-file|-XPOST|-XPUT|-XPATCH|-XDELETE|POST|PUT|PATCH|DELETE)
+      echo "health dry run: blocked curl write request" >&2; echo '{}'; exit 0;;
+  esac
+done
+REAL="${P2U_REAL_CURL:-/usr/bin/curl}"
+exec "$REAL" "$@"

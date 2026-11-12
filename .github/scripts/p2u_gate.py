@@ -29,19 +29,19 @@ def gh(path: str):
         return json.load(r)
 
 
-def slot_window(at: str, now: dt.datetime):
+def slot_window(at: str, now: dt.datetime, window_h: float = 6):
     hh, mm = (int(x) for x in at.split(":"))
     slot = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
     if now < slot - dt.timedelta(hours=6):
         slot -= dt.timedelta(days=1)
-    return slot, slot - dt.timedelta(hours=6)
+    return slot, slot - dt.timedelta(hours=window_h)
 
 
-def decide(at: str, job: str) -> tuple[bool, str]:
+def decide(at: str, job: str, window_h: float = 6) -> tuple[bool, str]:
     repo = os.environ["GITHUB_REPOSITORY"]
     me = int(os.environ["GITHUB_RUN_ID"])
     now = dt.datetime.now(dt.timezone.utc)
-    slot, start = slot_window(at, now)
+    slot, start = slot_window(at, now, window_h)
     wid = gh(f"/repos/{repo}/actions/runs/{me}")["workflow_id"]
     since = start.strftime("%Y-%m-%dT%H:%M:%SZ")
     runs = gh(f"/repos/{repo}/actions/workflows/{wid}/runs?per_page=50&created=%3E%3D{since}")["workflow_runs"]
@@ -60,12 +60,13 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--at", required=True, help="scheduled time HH:MM UTC")
     ap.add_argument("--job", required=True, help="name of the job that does the real work")
+    ap.add_argument("--window-hours", type=float, default=6, help="how far before the slot a run still counts (use 1 for workflows with several slots a day)")
     a = ap.parse_args()
     if os.environ.get("P2U_GATE_BYPASS", "").lower() in ("1", "true"):
         ok, why = True, "bypass (manual force / dry run)"
     else:
         try:
-            ok, why = decide(a.at, a.job)
+            ok, why = decide(a.at, a.job, a.window_hours)
         except Exception as e:  # never block a run because the API hiccuped
             ok, why = True, f"gate check failed open: {e}"
     print(("RUN: " if ok else "SKIP: ") + why)

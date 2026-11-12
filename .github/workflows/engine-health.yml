@@ -1,0 +1,123 @@
+name: Predict2u engine — health check
+run-name: "${{ github.workflow }}${{ inputs.mode && inputs.mode != 'auto' && format(' ({0})', inputs.mode) || '' }}"
+
+# Daily health check of the engine and the whole site (engine/health.py).
+#   18:00 Africa/Accra  preflight: compile/import every engine module, dry-run every strategy for
+#                       TOMORROW in a no-write sandbox (no booking, no Telegram, no email), then the
+#                       site / codes / Actions checks below.
+#   23:15 and 07:30     quick post-run checks: data freshness, every page + data file, every published
+#                       code still loads with a match left, last scheduled runs succeeded on time.
+# Self-heals what is safe (ticker restart, refresh re-runs, hiding dead codes) and keeps one rolling
+# GitHub issue "Predict2u health check: N problems" (closed when all clear). Telegram alerts only if
+# the TELEGRAM_ALERT_CHAT_ID secret is set. engine-ticker.yml dispatches it on time.
+on:
+  schedule:
+    - cron: "30 7 * * *"   # 07:30 Africa/Accra (fallback; engine-ticker.yml dispatches on time)
+    - cron: "0 18 * * *"   # 18:00 Africa/Accra preflight
+    - cron: "15 23 * * *"  # 23:15 Africa/Accra
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "preflight (dry-run strategies for tomorrow) or post (quick checks). auto = by time of day"
+        type: choice
+        options: ["auto", "preflight", "post"]
+        default: "auto"
+      skip_strategies:
+        description: "Preflight without the strategy dry-runs"
+        type: boolean
+        default: false
+      no_book_heal:
+        description: "Never re-dispatch a booking workflow from this run"
+        type: boolean
+        default: false
+      force:
+        description: "Run even if this slot already ran successfully"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+  issues: write
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      run: ${{ steps.g.outputs.run }}
+      mode: ${{ steps.m.outputs.mode }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: .github
+      - name: Pick slot and mode
+        id: m
+        env:
+          IN_MODE: ${{ inputs.mode }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import datetime as dt, os
+          now = dt.datetime.utcnow()
+          slots = [(7, 30, "post"), (18, 0, "preflight"), (23, 15, "post")]
+          past = [s for s in slots if (s[0], s[1]) <= (now.hour, now.minute)] or [slots[-1]]
+          h, m, mode = past[-1]
+          print(f"slot={h:02d}:{m:02d}")
+          im = os.environ.get('IN_MODE') or 'auto'
+          print(f"mode={mode if im == 'auto' else im}")
+          PY
+          cat "$GITHUB_OUTPUT"
+      - name: Run once per slot (GitHub's late cron duplicates skip here)
+        id: g
+        env:
+          GH_TOKEN: ${{ github.token }}
+          P2U_GATE_BYPASS: ${{ github.event_name == 'workflow_dispatch' && (inputs.force == true || inputs.mode != 'auto') }}
+        run: python3 .github/scripts/p2u_gate.py --at "${{ steps.m.outputs.slot }}" --job health --window-hours 1
+
+  health:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
+    concurrency:
+      group: predict2u-health
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 210
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install check tools
+        run: pip install pyflakes pyyaml pillow cryptography pytest
+      - name: Restore Sportradar / engine stats cache (read-only)
+        uses: actions/cache/restore@v4
+        with:
+          path: engine/data/stats-cache
+          key: p2u-engine-stats-${{ github.run_id }}
+          restore-keys: |
+            p2u-engine-stats-
+      - name: Health check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ALERT_CHAT_ID: ${{ secrets.TELEGRAM_ALERT_CHAT_ID }}
+          MODE: ${{ needs.gate.outputs.mode }}
+          SKIP: ${{ inputs.skip_strategies == true && '--skip-strategies' || '' }}
+          NOBOOK: ${{ inputs.no_book_heal == true && '--no-book-heal' || '' }}
+        run: |
+          set -uo pipefail
+          # the script strips every secret before it dry-runs a strategy
+          python -m engine.health "$MODE" --heal --alert $SKIP $NOBOOK | tee health-summary.txt
+          { echo "## Health check ($MODE)"; echo; cat health-summary.txt; } >> "$GITHUB_STEP_SUMMARY" || true
+      - name: Commit health report
+        if: ${{ always() && github.ref == 'refs/heads/main' }}
+        run: |
+          set -euo pipefail
+          git config user.name "predict2u-engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- engine/data/health health.json dead-codes.json || true
+          if git diff --cached --quiet; then echo "no health changes"; exit 0; fi
+          git commit -m "Engine health check ${{ needs.gate.outputs.mode }} $(date -u +%FT%TZ)"
+          .github/scripts/p2u_push.sh main

@@ -15,9 +15,12 @@
     }
     return '';
   }
+  // codes the daily health check found dead (expired / no match left) — see dead-codes.json
+  var DEAD={};
   function isReal(raw){
     var c=extract(raw);
     if(!c)return false;
+    if(DEAD[c]||DEAD[c.toUpperCase()])return false;
     if(BAD.test(c))return false;
     if(/^P2ULOCK-/i.test(c))return false;
     if(/^TODO\b/i.test(c))return false;
@@ -193,6 +196,13 @@
   window.P2UPremium={LIMIT:LIMIT,is:isPremium,isOdds:isOdds,odds:oddsOf,legs:legsOf,id:lockId,key:slipKey,card:card,scrub:scrubPremium};
   window.P2UCode={isReal:isReal,extract:extract,parts:parts,hasBook:hasBook,filterMap:filterMap,sweep:sweep,arm:arm};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',arm);else arm();
+  try{
+    if(window.fetch)fetch('/dead-codes.json?t='+Math.floor(Date.now()/600000),{cache:'no-cache'}).then(function(r){return r.ok?r.json():null;}).then(function(d){
+      var c=(d&&d.codes)||{},n=0;
+      Object.keys(c).forEach(function(k){var v=c[k]&&c[k].code;if(v){DEAD[String(v)]=1;DEAD[String(v).toUpperCase()]=1;n++;}});
+      if(n&&document.body)sweep(document);
+    }).catch(function(){});
+  }catch(e){}
 })();
 /* Split parts (codes over 50 legs are split into parts of <= 50 per bookmaker). Empty bookmakers are hidden. */
 (function(){if(typeof window==='undefined')return;var N={sportybet:'SportyBet',footballcom:'football.com',msport:'MSport',betika:'Betika',betpawa:'Betpawa'};

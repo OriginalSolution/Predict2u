@@ -2,7 +2,7 @@
 """Builds staked-codes.json: every code shown on the site, with per-leg live score and WON/LOST/PENDING."""
 import json, os, re, sys, subprocess, concurrent.futures as cf, datetime as dt
 REPO = sys.argv[1] if len(sys.argv) > 1 else '/workspace/Predict2u'
-F = '/workspace/predict2u-feed'
+F = os.environ.get('NEWS_STATE_DIR') or '/workspace/predict2u-feed'
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36'
 def get(u):
     r = subprocess.run(['curl', '-s', '-m', '20', '-A', UA, '-H', 'Accept: application/json', u], capture_output=True, text=True)
