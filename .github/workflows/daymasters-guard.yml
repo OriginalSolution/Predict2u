@@ -25,4 +25,4 @@ jobs:
         run: |
           busy=$(gh run list --workflow engine-daily.yml --json status -q '[.[]|select(.status!="completed")]|length' -L 5)
           if [ "$busy" != "0" ]; then echo "engine-daily already running"; exit 0; fi
-          gh workflow run engine-daily.yml
+          gh workflow run engine-daily.yml -f force=true

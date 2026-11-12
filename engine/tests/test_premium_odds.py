@@ -6,6 +6,7 @@ from engine.premium import (
     flag_slip,
     is_premium_odds,
     lock_id,
+    seal_document,
     seal_slip,
 )
 
@@ -108,6 +109,89 @@ def test_seal_removes_code_and_picks_from_the_public_slip():
     again = _slip(totalOdds=30)
     seal_slip(again, store, placeholder)
     assert len(store["hot-20261112"]["codes"]["sportybet"]) == 1
+
+
+def _ph(lid, book, n):
+    return f"P2ULOCK-{lid}-{book}{n}"
+
+
+def _model(name, odds, code, picks):
+    return {
+        "name": name,
+        "label": name,
+        "strategy": "safe50",
+        "date": "2026-11-12",
+        "totalOdds": odds,
+        "legs": len(picks),
+        "picks": picks,
+        "codes": {"sportybet": [{"code": code, "totalOdds": odds, "legs": len(picks), "link": "https://www.sportybet.com/gh/?shareCode=" + code}]},
+    }
+
+
+def test_model_slips_lock_master_and_parts_over_25_only():
+    picks_hi = [{"match": "Alpha v Beta", "selection": "Over 1.5", "odds": 1.4, "date": "2026-11-12"}]
+    picks_free = [{"match": "Free v Game", "selection": "Under 2.5", "odds": 1.22, "date": "2026-11-12"}]
+    doc = {"modelSlips": [
+        _model("Safest market", 40.2, "MASTER9", picks_hi),
+        _model("Safest market · part 1", 25.01, "PART901", picks_hi),
+        _model("Safest market · part 2", 25, "FREE2500", picks_free),
+    ]}
+    store = {}
+    assert seal_document(doc, store, _ph) == 2
+    public = str(doc)
+    assert "MASTER9" not in public and "PART901" not in public and "Alpha v Beta" not in public
+    assert "FREE2500" in public and "Free v Game" in public
+    assert doc["modelSlips"][0]["premium"] is True and doc["modelSlips"][0]["picks"] == 1
+    assert doc["modelSlips"][2]["premium"] is False
+    saved = store["hot-20261112"]["codes"]["sportybet"]
+    assert {row["code"] for row in saved} == {"MASTER9", "PART901"}
+    assert saved[0]["picks"][0]["match"] == "Alpha v Beta"
+
+
+def test_morning_master_ho_master_and_verzzify_are_sealed():
+    doc = {"slips": [
+        {
+            "code": "MORNING",
+            "name": "SportyBet Stats · Master · HIGH RISK",
+            "date": "2026-11-12",
+            "odds": 26.5,
+            "origin": "sb-morning-master",
+            "share": "https://www.sportybet.com/gh/?shareCode=MORNING",
+            "shareUrl": "https://predict2u.com/high-odds/#MORNING",
+            "legs": [{"match": "Dawn v Dusk", "selection": "Over 1.5", "odds": 1.4, "date": "2026-11-12"}],
+            "codes": {"sportybet": {"code": "MORNING", "legs": 1, "odds": 26.5, "link": "https://www.sportybet.com/gh/?shareCode=MORNING"}},
+        },
+        {
+            "code": "HODAY",
+            "name": "Ascending odds · master · HIGH RISK",
+            "date": "2026-11-12",
+            "odds": 80,
+            "origin": "ho-master",
+            "legs": [{"match": "Up v Down", "selection": "Home", "odds": 1.35, "date": "2026-11-12"}],
+            "codes": {"sportybet": {"code": "HODAY", "legs": 1, "odds": 80, "link": "https://www.sportybet.com/gh/?shareCode=HODAY"}},
+        },
+        {
+            "name": "Main · Verzzify Edge Banker",
+            "totalOdds": 30,
+            "date": "2026-11-12",
+            "verzzify": True,
+            "legs": [{"match": "Edge v Bank", "selection": "Home", "odds": 1.3, "date": "2026-11-12"}],
+            "codes": {"sportybet": "VERZ1", "msport": "VERZ2"},
+        },
+    ]}
+    store = {}
+    assert seal_document(doc, store, _ph) == 3
+    public = str(doc)
+    for secret in ("MORNING", "HODAY", "VERZ1", "VERZ2", "Dawn v Dusk", "Up v Down", "Edge v Bank"):
+        assert secret not in public
+    assert doc["slips"][0]["origin"] == "sb-morning-master"
+    assert doc["slips"][0]["locked"]["id"] == "hot-20261112"
+    assert doc["slips"][1]["origin"] == "ho-master"
+    assert doc["slips"][1]["odds"] == 80
+    assert doc["slips"][2]["locked"]["id"] == "banker-20261112"
+    assert store["hot-20261112"]["codes"]["sportybet"][0]["code"] == "MORNING"
+    assert store["banker-20261112"]["codes"]["msport"][0]["code"] == "VERZ2"
+    assert store["banker-20261112"]["codes"]["sportybet"][0]["picks"][0]["match"] == "Edge v Bank"
 
 
 def test_seal_leaves_odds_at_25_readable():

@@ -1,4 +1,5 @@
 name: Predict2u engine — three-strategy High Odds + Verzzify Banker
+run-name: "${{ github.workflow }}${{ inputs.dry_run == true && ' (dry run)' || '' }}"
 
 on:
   schedule:
@@ -9,16 +10,40 @@ on:
         description: "Skip commit"
         type: boolean
         default: false
+      force:
+        description: "Run even if this slot already ran successfully"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
-
-concurrency:
-  group: predict2u-engine
-  cancel-in-progress: false
+  actions: read
 
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      run: ${{ steps.g.outputs.run }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: .github
+      - name: Run once per slot (GitHub's late cron duplicates skip here)
+        id: g
+        env:
+          GH_TOKEN: ${{ github.token }}
+          P2U_GATE_BYPASS: ${{ github.event_name == 'workflow_dispatch' && (inputs.force == true || inputs.dry_run == true) }}
+        run: python3 .github/scripts/p2u_gate.py --at 22:30 --job strategies
+
   strategies:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
+    concurrency:
+      group: predict2u-engine
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
@@ -43,23 +68,29 @@ jobs:
           ENGINE_DIR: ${{ github.workspace }}/engine
         run: |
           set -euo pipefail
-          python -m engine.vendor.three_strategies 2 || python engine/vendor/three_strategies.py 2
+          python -m engine.vendor.three_strategies 4 || python engine/vendor/three_strategies.py 4
           python engine/vendor/verzzify_banker.py
           python engine/vendor/nerdytips_strategies.py || python -m engine.vendor.nerdytips_strategies || true
           python engine/vendor/daily_master.py "$REPO_DIR"
           python engine/vendor/prune_live.py "$REPO_DIR"
+          python -m engine.premium --lock "$REPO_DIR"
           python engine/vendor/share_cards.py "$REPO_DIR" || true
       - name: Commit published strategies
         if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
         run: |
           set -euo pipefail
+          if [ -z "${P2U_LOCK_KEY:-}" ]; then
+            echo "::warning::P2U_LOCK_KEY is not set; refusing to commit pick files so premium codes stay locked on the live site."
+            exit 0
+          fi
           git config user.name "predict2u-engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- high_odds.json home-picks.json share s || true
+          git add -- high_odds.json home-picks.json locked.enc.json share s || true
           for extra in engine/data/ho-masters engine/data/daily-master engine/data/verzzify-banker-*.json engine/data/code-ledger.json engine/inbox/p2u engine/inbox/nerdytips-*.json; do
             [ -e $extra ] && git add -- $extra || true
           done
           if git diff --cached --quiet; then echo "no strategy changes"; exit 0; fi
           git commit -m "Engine strategies $(date -u +%FT%TZ)"
-          git pull --rebase --autostash -X theirs origin main || git pull --rebase --autostash origin main || true
-          git push origin HEAD
+          .github/scripts/p2u_push.sh main

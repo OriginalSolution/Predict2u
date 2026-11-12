@@ -3,8 +3,10 @@
 import json, os, re, sys, glob, html, datetime as dt, urllib.request, concurrent.futures as cf
 import xml.etree.ElementTree as ET
 REPO = sys.argv[1] if len(sys.argv) > 1 else '/workspace/Predict2u'
-R = '/workspace/predict2u-research'; FEED = os.path.dirname(os.path.abspath(__file__))
-LEDGER = os.path.join(FEED, 'code-ledger.json'); EV = os.path.join(FEED, 'event-cache.json')
+R = os.environ.get('RESEARCH_DIR') or '/workspace/predict2u-research'; FEED = os.path.dirname(os.path.abspath(__file__))
+# On Actions the ledger/event cache live in a cached dir (NEWS_STATE_DIR); the box keeps them beside this file.
+_ST = os.environ.get('NEWS_STATE_DIR') or FEED; os.makedirs(_ST, exist_ok=True)
+LEDGER = os.path.join(_ST, 'code-ledger.json'); EV = os.path.join(_ST, 'event-cache.json')
 UA = {'User-Agent': 'Mozilla/5.0 (predict2u.com news builder)'}
 now = dt.datetime.now(dt.timezone.utc)
 def get(u, t=20):
@@ -46,8 +48,11 @@ uniq.sort(key=lambda x: x['published'], reverse=True)
 day = now.strftime('%Y-%m-%d'); tom = (now + dt.timedelta(days=1)).strftime('%Y-%m-%d')
 fx = []; resf = sorted(glob.glob(os.path.join(R, '20??-??-??.json')))
 cur = json.load(open(resf[-1])) if resf else {}
+if not resf:  # Actions refresh job: no research file, use the published picks
+    try: cur = json.load(open(os.path.join(REPO, 'home-picks.json')))
+    except Exception: cur = {}
 for p in cur.get('picks', []):
-    if p.get('date') in (day, tom): fx.append(dict(date=p['date'], ko=p.get('ko'), league=p.get('league'), match=p['match']))
+    if p.get('date') in (day, tom) and p.get('match'): fx.append(dict(date=p['date'], ko=p.get('ko'), league=p.get('league'), match=p['match']))
 fx = sorted({(f['date'], f['ko'] or '', f['league'] or '', f['match']): f for f in fx}.values(), key=lambda f: (f['date'], f['ko'] or ''))
 STOP = {'fc','sc','cf','afc','ac','united','city','club','de','real','the','sp','rj','fk','cd','ca','v','and'}
 teams = set()
@@ -85,6 +90,14 @@ def dc_entry(e):
     return bool(re.search(r'double\s*chance', str(e.get('name') or ''), re.I)) or any(dc_leg(l) for l in e.get('legs') or [])
 try: led = json.load(open(LEDGER))
 except Exception: led = {}
+# Actions: fold in the engine's own append-only ledger (engine/data/code-ledger.json) so the hub
+# keeps the full code history without the box. Existing entries keep their settled state.
+_seed = os.environ.get('NEWS_SEED_LEDGER')
+if _seed and os.path.exists(_seed):
+    try:
+        for _k, _e in (json.load(open(_seed)) or {}).items():
+            if _k not in led and isinstance(_e, dict) and _e.get('legs'): led[_k] = _e
+    except Exception as e: print('seed ledger', e, file=sys.stderr)
 # Hard site-wide veto: purge legacy DC entries before settlement or publication.
 for k in list(led):
     if dc_entry(led[k]): led.pop(k)
@@ -179,7 +192,7 @@ need = [x for x in pre + inj + trf if not x.get('image')]
 with cf.ThreadPoolExecutor(8) as ex: list(ex.map(og, need))
 for x in pre + inj + trf:
     if x.get('image', '').startswith('http:'): x['image'] = 'https:' + x['image'][5:]
-codes = sorted((e for e in led.values() if not str(e.get('code') or '').startswith('P2ULOCK-')), key=lambda e: (e['date'], e['firstSeen']), reverse=True)
+codes = sorted((e for e in led.values() if not str(e.get('code') or '').startswith('P2ULOCK-')), key=lambda e: (e.get('date') or '', e.get('firstSeen') or ''), reverse=True)
 # win rate over distinct slips (same legs booked on several sites count once)
 slips = {}
 for e in codes:

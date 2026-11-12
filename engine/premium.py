@@ -14,7 +14,9 @@ from __future__ import annotations
 import json
 import os
 import re
+import subprocess
 import sys
+from pathlib import Path
 
 ODDS_LOCK = 25.0  # strictly above — 25.00 stays free
 PRICE = 50
@@ -230,18 +232,25 @@ def flag_document(doc, day=None):
     return doc
 
 
-def _briefs(slip):
-    legs = slip.get("legs")
-    if not isinstance(legs, list):
+def _brief_rows(raw):
+    if not isinstance(raw, list):
         return []
     out = []
-    for leg in legs:
+    for leg in raw:
         if not isinstance(leg, dict):
             continue
         brief = {k: leg[k] for k in _PICK_FIELDS if leg.get(k) not in (None, "")}
         if brief:
             out.append(brief)
     return out
+
+
+def _briefs(slip):
+    """Pick text lives on `legs` for most slips and on `picks` for model slips."""
+    rows = _brief_rows(slip.get("legs"))
+    if rows:
+        return rows
+    return _brief_rows(slip.get("picks"))
 
 
 def _code_items(slip):
@@ -429,9 +438,46 @@ def stamp_repo(repo):
     return changed
 
 
+def lock_published(repo=None, dry_run=False) -> int:
+    """Flag odds above 25, then hide the code and the picks when the lock key exists.
+
+    Used by the morning pipeline and by the M1/M2 and strategies workflows after
+    they write home-picks, hot-picks and high_odds. Price and Paystack are untouched.
+    """
+    from .paths import PRIV_DIR, REPO_DIR, VENDOR_DIR, ensure_dirs
+
+    repo = str(repo or os.environ.get("REPO_DIR") or REPO_DIR)
+    stamp_repo(repo)
+    key_path = Path(os.environ.get("PRIV_DIR") or PRIV_DIR) / "lock.key"
+    if os.environ.get("P2U_LOCK_KEY") and not key_path.exists():
+        ensure_dirs()
+        key_path.parent.mkdir(parents=True, exist_ok=True)
+        key_path.write_text(os.environ["P2U_LOCK_KEY"].strip() + "\n")
+        os.chmod(key_path, 0o600)
+    if os.environ.get("P2U_LOCK_KEY") or key_path.exists():
+        env = os.environ.copy()
+        env["PRIV_DIR"] = str(key_path.parent)
+        env["REPO_DIR"] = repo
+        proc = subprocess.run([sys.executable, str(VENDOR_DIR / "lock_codes.py"), repo], env=env)
+        if proc.returncode != 0:
+            print("lock failed:", proc.returncode)
+            if not dry_run:
+                raise SystemExit("refusing to publish unlocked premium codes")
+            return proc.returncode
+    else:
+        print("publish: P2U_LOCK_KEY / lock.key missing — premium lock skipped (do not commit raw banker codes without it)")
+    return 0
+
+
 def main(argv=None):
-    repo = (argv or sys.argv[1:])[:1]
-    repo = repo[0] if repo else os.environ.get("REPO_DIR", ".")
+    args = list(argv if argv is not None else sys.argv[1:])
+    do_lock = False
+    if "--lock" in args:
+        do_lock = True
+        args = [a for a in args if a != "--lock"]
+    repo = args[0] if args else os.environ.get("REPO_DIR", ".")
+    if do_lock:
+        return lock_published(repo)
     changed = stamp_repo(repo)
     print("premium flagged", changed or "unchanged")
     return 0

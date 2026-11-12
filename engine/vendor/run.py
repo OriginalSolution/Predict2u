@@ -84,6 +84,7 @@ _near=[]
 try: _near=json.load(open('near.json'))
 except Exception: _near=[]
 import thin_pool as _tp
+import matchup_rules as _MR  # is_double_chance() in the league table below
 picks,_fb=_tp.select(picks,_materialize(_near))
 json.dump([_fb],open('matchup_dropped.json','w'),indent=1,ensure_ascii=False)
 prev={}

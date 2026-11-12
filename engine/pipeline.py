@@ -124,19 +124,11 @@ def _prune(env):
 
 def _lock_premium(env, dry_run=False):
     """Flag odds > 25, then (when the lock key exists) hide those codes and picks."""
-    run([sys.executable, "-m", "engine.premium", str(REPO_DIR)], env=env, timeout=60, check=False)
-    if os.environ.get("P2U_LOCK_KEY") or (Path(env["PRIV_DIR"]) / "lock.key").exists():
-        if os.environ.get("P2U_LOCK_KEY") and not (Path(env["PRIV_DIR"]) / "lock.key").exists():
-            Path(env["PRIV_DIR"]).mkdir(parents=True, exist_ok=True)
-            (Path(env["PRIV_DIR"]) / "lock.key").write_text(os.environ["P2U_LOCK_KEY"].strip() + "\n")
-        try:
-            run([sys.executable, str(VENDOR_DIR / "lock_codes.py"), str(REPO_DIR)], env=env, timeout=60)
-        except Exception as e:
-            print("lock failed:", e)
-            if not dry_run:
-                raise SystemExit("refusing to publish unlocked premium codes")
-    else:
-        print("publish: P2U_LOCK_KEY / lock.key missing — premium lock skipped (do not commit raw banker codes without it)")
+    for key in ("P2U_LOCK_KEY", "PRIV_DIR", "ENGINE_DIR", "REPO_DIR", "FEED_DIR"):
+        if env.get(key):
+            os.environ.setdefault(key, env[key])
+    from .premium import lock_published
+    lock_published(env.get("REPO_DIR") or REPO_DIR, dry_run=dry_run)
 
 
 def publish(env, dry_run=False):
@@ -204,6 +196,9 @@ def main(argv=None):
         shield(env, dry_run=args.dry_run)
     if args.command == "morning":
         morning(env, dry_run=args.dry_run)
+        # Morning writes the 25+ master straight into high_odds.json and home-picks.json.
+        if not args.dry_run:
+            _lock_premium(env, dry_run=False)
         return 0
     if args.command in ("publish", "daily", "all", "shield"):
         publish(env, dry_run=args.dry_run)

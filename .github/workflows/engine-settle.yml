@@ -60,5 +60,4 @@ jobs:
           fi
           git commit -m "Engine settle codes $(date -u +%FT%TZ)"
           # Avoid "unstaged changes" blocking rebase (prune may touch ignored/extra paths).
-          git pull --rebase --autostash -X theirs origin main || git pull --rebase --autostash origin main || true
-          git push origin HEAD
+          .github/scripts/p2u_push.sh main
