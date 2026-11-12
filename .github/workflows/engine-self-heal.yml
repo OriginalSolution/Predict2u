@@ -59,8 +59,7 @@ jobs:
           fi
           git commit -m "Self-heal: sync BUILD_VERSION/sw/cache, share pages, live JSON $(date -u +%FT%TZ)"
           git fetch origin main --depth=20
-          git pull --rebase --autostash -X theirs origin main || true
-          git push origin HEAD
+          .github/scripts/p2u_push.sh main
           echo "changed=1" >> "$GITHUB_OUTPUT"
       - name: Re-run Site Quality checks
         id: check

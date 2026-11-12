@@ -1,0 +1,41 @@
+name: Predict2u engine — on-time scheduler
+
+# GitHub's cron on this repo runs hours late or not at all, so this job keeps the
+# engine on the clock: it stays up ~5h40m, dispatches each workflow at its slot
+# (see SCHEDULE in .github/scripts/p2u_ticker.py) and then dispatches its own next
+# run. The cron below only restarts the chain if it ever breaks; a restart that
+# finds a live ticker exits after a few minutes.
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: .github
+      - name: Dispatch due workflows on time
+        id: tick
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/p2u_ticker.py
+      - name: Hand over to the next ticker
+        if: steps.tick.outputs.handoff == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in 1 2 3; do
+            gh workflow run engine-ticker.yml --ref main -R "$GITHUB_REPOSITORY" && exit 0
+            sleep 15
+          done
+          echo "::warning::could not dispatch the next ticker; the cron restart will pick it up"
