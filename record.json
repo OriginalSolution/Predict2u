@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-12T18:19:24Z",
+ "DATA_UPDATED": "2026-11-12T20:15:46Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -13,7 +13,7 @@
   "returned": 2143.4,
   "profit": 313.4,
   "roi": 17.1,
-  "pending": 90,
+  "pending": 89,
   "codesSettled": 845,
   "codesWon": 101,
   "codesLost": 744
@@ -477,10 +477,10 @@
   }
  ],
  "picks": {
-  "settled": 1790,
-  "won": 1332,
+  "settled": 1794,
+  "won": 1336,
   "lost": 458,
-  "winRate": 74.4
+  "winRate": 74.5
  },
  "recent": [
   {
@@ -491,7 +491,7 @@
    "kind": "slip",
    "odds": 310.44,
    "status": "lost",
-   "hit": 5,
+   "hit": 7,
    "total": 25,
    "profit": -10.0,
    "legs": [
@@ -547,112 +547,112 @@
     {
      "match": "Guinea v Eritrea",
      "selection": "Over 1.5",
+     "odds": 1.27,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Malta v Eswatini",
+     "selection": "Over 1.5",
+     "odds": 1.16,
+     "result": "won",
+     "score": "1:1"
+    },
+    {
+     "match": "Chambery SF v Grenoble Foot",
+     "selection": "Over 1.5",
+     "odds": 3.05,
+     "result": "won",
+     "score": "0:2"
+    },
+    {
+     "match": "CDA Navalcarnero v Betis",
+     "selection": "Over 1.5",
+     "odds": 1.14,
+     "result": "pending",
+     "score": "2:3"
+    },
+    {
+     "match": "Kimberley de Mar Del Plata v Club Olimpo",
+     "selection": "Over 1.5",
+     "odds": 1.39,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Benin v Central African Republic",
+     "selection": "Over 1.5",
+     "odds": 1.1,
+     "result": "pending",
+     "score": "3:1"
+    },
+    {
+     "match": "Cameroon v Namibia",
+     "selection": "Over 1.5",
      "odds": 1.12,
      "result": "pending",
      "score": "2:0"
     },
     {
-     "match": "Malta v Eswatini",
-     "selection": "Over 1.5",
-     "odds": 1.42,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Chambery SF v Grenoble Foot",
-     "selection": "Over 1.5",
-     "odds": 1.13,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "CDA Navalcarnero v Betis",
+     "match": "Ivory Coast v Gambia",
      "selection": "Over 1.5",
      "odds": 1.09,
      "result": "pending",
-     "score": "0:1"
-    },
-    {
-     "match": "Kimberley de Mar Del Plata v Club Olimpo",
-     "selection": "Over 1.5",
-     "odds": 1.61,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Benin v Central African Republic",
-     "selection": "Over 1.5",
-     "odds": 1.39,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Cameroon v Namibia",
-     "selection": "Over 1.5",
-     "odds": 1.4,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ivory Coast v Gambia",
-     "selection": "Over 1.5",
-     "odds": 1.21,
-     "result": "pending",
-     "score": null
+     "score": "2:1"
     },
     {
      "match": "Senegal v Sudan",
      "selection": "Over 1.5",
-     "odds": 1.16,
+     "odds": 1.32,
      "result": "pending",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Cayman Islands v Guyana",
      "selection": "Over 2.5",
-     "odds": 1.19,
+     "odds": 1.1,
      "result": "pending",
-     "score": null
+     "score": "0:6"
     },
     {
      "match": "Czechia v Spain",
      "selection": "Over 1.5",
      "odds": 1.16,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "England v Croatia",
      "selection": "Over 1.5",
-     "odds": 1.14,
+     "odds": 1.13,
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Montenegro v Latvia",
      "selection": "Over 1.5",
      "odds": 1.26,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "San Marino v Belarus",
      "selection": "Over 1.5",
      "odds": 1.21,
      "result": "pending",
-     "score": null
+     "score": "0:2"
     },
     {
      "match": "Bonaire v Cuba",
      "selection": "Over 1.5",
      "odds": 1.14,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "CD Aguila San Miguel v Municipal Limeno",
      "selection": "Over 1.5",
-     "odds": 1.22,
+     "odds": 1.21,
      "result": "pending",
      "score": null
     },
