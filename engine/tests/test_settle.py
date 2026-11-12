@@ -21,6 +21,21 @@ def test_gg():
     assert grade("No", "A v B", ev(3, 0)) == "won"
 
 
+def test_m1_m2_combos():
+    assert grade("Home Team or Over 2.5", "A v B", ev(1, 0)) == "won"
+    assert grade("Home Team or Over 2.5", "A v B", ev(0, 1)) == "lost"
+    assert grade("Home Team or Over 2.5", "A v B", ev(1, 2)) == "won"  # 3 goals
+    assert grade("Away or Over 2.5", "A v B", ev(1, 1)) == "lost"
+    assert grade("Away or Over 2.5", "A v B", ev(0, 1)) == "won"
+    assert grade("Away or Over 2.5", "A v B", ev(1, 0)) == "lost"
+    assert grade("Home/Draw & Over 1.5", "A v B", ev(1, 0)) == "lost"
+    assert grade("Home/Draw & Over 1.5", "A v B", ev(2, 0)) == "won"
+    assert grade("Draw/Away & Over 1.5", "A v B", ev(0, 2)) == "won"
+    assert grade("Draw/Away & Over 1.5", "A v B", ev(2, 0)) == "lost"
+    # Generic Yes stays BTTS, not the M1 Yes outcome.
+    assert grade("Yes", "A v B", ev(1, 1)) == "won"
+
+
 def test_1x2_and_void():
     assert grade("A", "A v B", ev(2, 1)) == "won"
     assert grade("B", "A v B", ev(2, 1)) == "lost"

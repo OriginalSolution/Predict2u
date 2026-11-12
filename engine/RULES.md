@@ -81,14 +81,25 @@ Optional `engine/gates/newrules.py` runs in `P2U_STRICT_GATES=report` (default) 
 - Any code over 50 legs is auto-split (engine/vendor/split_codes.py) into balanced kickoff-ordered parts of <= 50 legs, each booked on SportyBet, Football.com, MSport, Betika, BetPawa (no Betway). Kicked-off legs are left out; legs a bookmaker does not offer are listed per part. Parts settle from the parent legs on every settle run. Empty bookmaker sections are hidden.
 
 
-## Bets For The Day three-strategy set (High Odds, HIGH RISK)
-Daily job: `engine/vendor/three_strategies.py` → `engine/data/ho-masters/`.
-- O2.5 when ≥2 of: price 1.20–1.40; 1H O1.5 <2.00; league avg goals/match >2.5 (n≥20).
-- Top-3 or won-last-3: win ≤1.45 else DNB. Bottom-3 or winless-last-3: DC against (never DC 12).
-- Top flights only for 2&3; no top5-v-top5 / bottom3-v-bottom3. One pick/match; DC > win/DNB; O2.5 with 3/3 beats result, 2/3 loses to result.
-- ASC = 50 lowest odds, DESC = 50 highest, each split 25+25. Drop started. No padding.
-- Screens: top5-v-bottom3 weaker to-score >1.70; stronger AH −1 <1.90.
-- Never NG, never DC 12. Published HIGH RISK, no guarantees. Settled via daily_master.
+## Bets For The Day (High Odds, HIGH RISK) — strategies 1–5
+Daily job: `engine/vendor/three_strategies.py` (4-day window) → `engine/data/ho-masters/`. Workflow `engine-strategies.yml` at 22:30 UTC (10:30 PM GMT).
+- O2.5 when ≥2 of: price 1.20–1.40; 1st-half O1.5 <2.00 (market 68); league avg goals/match >2.5 (n≥20).
+- Top-3 or won-last-3: win ≤1.45 else Draw No Bet. DNB is market **11**, outcomes **4 Home / 5 Away** (not 1X2 ids, not market 14).
+- Bottom-3 or winless-last-3: 1X/X2 against that side, and only at ≤1.35. Never DC 12.
+- Top flights only for 2–5; no top5-v-top5 / bottom3-v-bottom3. One pick/match among legs the gate kept. DC beats win/DNB. O2.5 with 3/3 beats a result pick; 2/3 loses to a result pick that itself cleared the gate.
+- Screens: top5-v-bottom3 weaker team Over 0.5 priced above 1.70; stronger Asian Handicap −1 (market 16, that side's outcome) under 1.90.
+- Team and season ids come from Sportradar `match_info/{numeric}`. The `sr:match:` path returns an exception and is not used.
+- Every candidate then passes `matchup_rules.check` (no NG, no DC 12, 1X/X2 ≤1.35, obscure leagues goals-only, 1.60 cap, Over 1.5 / Under 3.5 above 1.30 only with extreme stats). No waiver, no padding. ASC = up to 50 lowest, DESC = up to 50 highest, and only when those sets differ. A slip under 25 combined odds is booked and flagged, not filled. Published HIGH RISK. Settled via daily_master.
+
+## M1 / M2 (Hot page + Hot carousel)
+Nightly job: `engine/vendor/m1m2.py`. Workflow `engine-m1m2.yml` at 21:45 UTC (9:45 PM GMT). Original thresholds only — the relaxed upgrade (M1 1.35/1.55, M2 1.25/1.45) and the M1+M2 combined slip are not built.
+- M1: favourite win ≤1.30 and Over 2.5 ≤1.50 → market 854/858 "Team or Over 2.5" Yes (outcome 74).
+- M2: favourite win ≤1.20 and Over 2.5 ≤1.40 → market 547 "Home/Draw & Over 1.5" (1727) or "Draw/Away & Over 1.5" (1729). Outcome 1728 (Home/Away) is never used.
+- MIXED: only when a favourite team Over 1.5 (team 2+) clears the M1 prices and the normal gates. Otherwise it is not built.
+- Same gates as every other slip. Results ledger: `engine/data/m1m2_ledger.json` (seeded from the Nov 3–7 record; upgrade rows omitted). Slips are `modelSlips` on `hot-picks.json`, shown on the Hot page and in the Hot carousel. Empty slips are omitted.
+
+## Safest market (Hot page)
+Nightly job: `engine/vendor/safe50.py`, same 21:45 UTC workflow. One selection per not-started match in the 4-day window, priced 1.20–1.60, highest de-vigged fair probability, two-way goals preferred, extreme lines dropped, women/youth/reserve/amateur/university excluded, lower leagues goals-only, stats/table/form must support the line. Best 50, never padded. A full 50 is a master plus two 25-leg codes when each part's combined odds reach 25. A short remainder is not its own code. Normal gates apply, including the 1.30 cap on Over 1.5 and Under 3.5.
 
 ## Verzzify Edge Banker (Bankers page, odds >25)
 Daily job: `engine/vendor/verzzify_banker.py`.

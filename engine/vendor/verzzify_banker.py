@@ -46,10 +46,30 @@ def load_json(p, d=None):
 
 
 
-def scan_banker_band(days=2):
+def prepare(p):
+    """Attach table / 1X2 / form before the gate.
+
+    Nov 9 the scan found almost nothing because check() was called with no
+    league table. Sportradar was never asked, so every leg died as
+    'unverified', and a later bypass that marked those legs mismatch was
+    thrown away by eligible() calling check() again. Enrich first; do not
+    bypass the gate.
+    """
+    if p.get("table") and p.get("x12"):
+        return p
+    try:
+        MR.enrich(p)
+    except Exception:
+        pass
+    return p
+
+
+def scan_banker_band(days=4):
     """Extra candidates from SportyBet: Over 1.5 / Under 3.5 / short win in 1.12–1.45 that pass matchup_rules."""
     import subprocess
-    UA = "Mozilla/5.0"
+    # A bare "Mozilla/5.0" is rejected with an HTML block page, so the scan
+    # sees zero events. Use the same Chrome UA as the rest of the engine.
+    UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
     def curl(url):
         r = subprocess.run(["curl","-s","-m","20","-A",UA,"-H","Accept: application/json",url],capture_output=True,text=True)
         try: return json.loads(r.stdout) if r.stdout and r.stdout.strip()[:1] in "{[" else {}
@@ -68,14 +88,17 @@ def scan_banker_band(days=2):
     import concurrent.futures as cf
     def _fe(eid):
         return eid, curl(f"https://www.sportybet.com/api/gh/factsCenter/event?eventId={eid}&productId=3").get("data") or {}
-    with cf.ThreadPoolExecutor(16) as ex:
-        fetched = list(ex.map(_fe, ids[:200]))
+    with cf.ThreadPoolExecutor(12) as ex:
+        fetched = list(ex.map(_fe, ids))
     for eid, data in fetched:
         if not data: continue
         home, away = data.get("homeTeamName") or "", data.get("awayTeamName") or ""
         if SKIP.search(f"{home} {away}"): continue
-        try: league = data["sport"]["category"]["tournament"]["name"]
-        except Exception: league = ""
+        try:
+            cat = data["sport"]["category"]
+            league = " - ".join(x for x in (cat.get("name"), (cat.get("tournament") or {}).get("name")) if x)
+        except Exception:
+            league = ""
         if SKIP.search(league): continue
         ts = data.get("estimateStartTime") or 0
         ko = dt.datetime.fromtimestamp(ts/1000, dt.timezone.utc) if ts else None
@@ -93,7 +116,10 @@ def scan_banker_band(days=2):
             if h and d_ and a: x12=f"{h:.2f}/{d_:.2f}/{a:.2f}"
         except Exception: pass
         targets = [("18","total=1.5","12","Over 1.5"),("18","total=3.5","13","Under 3.5"),("1","","1","Home"),("1","","3","Away")]
+        picked = False
         for mid,spec,oid,label in targets:
+            if picked:
+                break
             for m in markets:
                 if str(m.get("id"))!=mid: continue
                 if (m.get("specifier") or "")!=(spec or ""): continue
@@ -106,16 +132,16 @@ def scan_banker_band(days=2):
                            market=m.get("name") or label,selection=o.get("desc") or label,odds=odds,x12=x12 or "",
                            kickoff=ko.isoformat().replace("+00:00","Z") if ko else None,date=ko.date().isoformat() if ko else None,
                            ko=ko.strftime("%H:%M") if ko else None,confidence=None,leagueFavRate=None,sample=None,source="verzzify-scan")
-                    if MR.is_btts_no(p) or (MR.is_double_chance(p) and MR.is_dc_vetoed(p)): continue
-                    if MR.is_obscure_league_non_goals(p): continue
-                    ok,cls,why=MR.check(p)
-                    if ok: out.append(p); break
-                    # short fav treated as mismatch for goals markets
-                    if cls=="unverified" and x12 and mid=="18":
-                        try:
-                            fp=min(float(x) for x in x12.split("/"))
-                            if fp<=1.70: p["gate"]="mismatch"; out.append(p); break
-                        except Exception: pass
+                    prepare(p)
+                    if MR.is_btts_no(p) or MR.is_dc_vetoed(p) or MR.is_obscure_league_non_goals(p):
+                        continue
+                    ok, cls, why = MR.check(p)
+                    p["matchup"] = cls
+                    p["gateWhy"] = why
+                    if ok:
+                        out.append(p)
+                        picked = True
+                        break
     return out
 
 
@@ -155,6 +181,7 @@ def edge(p):
 
 
 def eligible(p):
+    prepare(p)
     if SKIP.search(f"{p.get('match','')} {p.get('league','')}"): return False, "youth/women"
     try: o = float(p.get("odds") or 0)
     except Exception: return False, "odds"
@@ -211,7 +238,7 @@ def main():
     day = dt.datetime.now(dt.timezone.utc).date().isoformat()
     picks = research_picks(day)
     try:
-        picks = picks + scan_banker_band(2)
+        picks = picks + scan_banker_band(4)
         print("verzzify scan added", len(picks))
     except Exception as e:
         print("verzzify scan skipped", e)

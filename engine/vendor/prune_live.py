@@ -479,6 +479,27 @@ def prune_hot(doc: dict) -> tuple[dict, list]:
             if hot_slip_live(m, by_eid) or mp:
                 kept.append(m)
         doc[key] = kept
+    models = []
+    for s in doc.get("modelSlips") or []:
+        mp = [p for p in (s.get("picks") or []) if live_pick(p)]
+        if (s.get("picks") or []) and not mp:
+            if all(leg_settled(l) for l in s["picks"]):
+                arch = dict(s)
+                arch["legs"] = s["picks"]
+                archive_settled(arch, "hot-model")
+            removed.append(("hot-model", s.get("strategy") or s.get("name"), s.get("date") or TODAY, "stale"))
+            continue
+        s = dict(s)
+        if mp:
+            s["picks"] = mp
+            s["legs"] = len(mp)
+            s["events"] = [p.get("eventId") for p in mp if p.get("eventId")]
+        if mp or hot_slip_live(s, by_eid):
+            models.append(s)
+        else:
+            removed.append(("hot-model", s.get("strategy") or s.get("name"), s.get("date") or TODAY, "stale"))
+    if "modelSlips" in doc or models:
+        doc["modelSlips"] = models
     return doc, removed
 
 
