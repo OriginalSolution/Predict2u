@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-12T09:49:48Z",
+ "DATA_UPDATED": "2026-11-12T10:15:37Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -14,9 +14,9 @@
   "profit": 313.4,
   "roi": 17.1,
   "pending": 90,
-  "codesSettled": 844,
+  "codesSettled": 845,
   "codesWon": 101,
-  "codesLost": 743
+  "codesLost": 744
  },
  "streak": {
   "current": "lost",
@@ -124,15 +124,15 @@
  ],
  "bySite": [
   {
-   "n": 228,
+   "n": 229,
    "won": 23,
-   "lost": 205,
-   "winRate": 10.1,
+   "lost": 206,
+   "winRate": 10.0,
    "stake": 10.0,
-   "staked": 2280.0,
+   "staked": 2290.0,
    "returned": 2213.5,
-   "profit": -66.5,
-   "roi": -2.9,
+   "profit": -76.5,
+   "roi": -3.3,
    "key": "sportybet"
   },
   {
@@ -210,15 +210,15 @@
    "key": "Under 3.5"
   },
   {
-   "n": 89,
+   "n": 90,
    "won": 18,
-   "lost": 71,
-   "winRate": 20.2,
+   "lost": 72,
+   "winRate": 20.0,
    "stake": 10.0,
-   "staked": 890.0,
+   "staked": 900.0,
    "returned": 1239.4,
-   "profit": 349.4,
-   "roi": 39.3,
+   "profit": 339.4,
+   "roi": 37.7,
    "key": "Match result / other"
   },
   {
@@ -428,15 +428,15 @@
    "key": "2026-11-07"
   },
   {
-   "n": 193,
+   "n": 194,
    "won": 27,
-   "lost": 166,
-   "winRate": 14.0,
+   "lost": 167,
+   "winRate": 13.9,
    "stake": 10.0,
-   "staked": 1930.0,
+   "staked": 1940.0,
    "returned": 745.8,
-   "profit": -1184.2,
-   "roi": -61.4,
+   "profit": -1194.2,
+   "roi": -61.6,
    "key": "2026-11-06"
   },
   {
@@ -477,9 +477,9 @@
   }
  ],
  "picks": {
-  "settled": 1779,
-  "won": 1324,
-  "lost": 455,
+  "settled": 1786,
+  "won": 1328,
+  "lost": 458,
   "winRate": 74.4
  },
  "recent": [
@@ -513,15 +513,15 @@
      "match": "Bengaluru FC B v Rebels FC",
      "selection": "Over 2.5",
      "odds": 2.8,
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "1:2"
     },
     {
      "match": "APIA Leichhardt v Adelaide City FC",
      "selection": "Over 2.5",
      "odds": 1.37,
      "result": "pending",
-     "score": "2:0"
+     "score": "3:0"
     },
     {
      "match": "Hannover v TSV Havelse",
