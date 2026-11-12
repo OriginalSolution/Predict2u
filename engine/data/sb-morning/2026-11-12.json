@@ -1,0 +1,654 @@
+{
+ "date": "2026-11-12",
+ "generatedAt": "2026-11-12T15:42:47.764516+00:00",
+ "eligible": 45,
+ "picked": 16,
+ "picks": [
+  {
+   "eventId": "sr:match:75802266",
+   "match": "Equatorial Guinea v Zimbabwe",
+   "league": "International - Africa Cup of Nations Qualification",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.52,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "true_p": 0.6984,
+   "implied": 0.6579,
+   "ev": 0.0616,
+   "why": "season+form; λ 1.31-1.12; model 70% vs implied 66% (edge 6%); table 3 v 2/4",
+   "lambda": [
+    1.307,
+    1.125
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "16:00",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Over 0.5",
+     "odds": 1.59,
+     "ev": 0.0577,
+     "true_p": 0.6652
+    },
+    {
+     "market": "Home O/U",
+     "selection": "Over 0.5",
+     "odds": 1.43,
+     "ev": 0.0429,
+     "true_p": 0.7293
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76354526",
+   "match": "Lithuania v Suriname",
+   "league": "International - Int. Friendly Games",
+   "market": "Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.48,
+   "marketId": "10",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.7855,
+   "implied": 0.6757,
+   "ev": 0.1625,
+   "why": "season+form; λ 1.96-1.12; model 79% vs implied 68% (edge 16%)",
+   "lambda": [
+    1.96,
+    1.125
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "17:00",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Over 0.5",
+     "odds": 1.54,
+     "ev": 0.1558,
+     "true_p": 0.7505
+    },
+    {
+     "market": "2nd Half - Total",
+     "selection": "Over 0.5",
+     "odds": 1.33,
+     "ev": 0.0862,
+     "true_p": 0.8167
+    },
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.37,
+     "ev": 0.0834,
+     "true_p": 0.7908
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76516976",
+   "match": "Calvo Sotelo Puertollano v Albacete Balompie",
+   "league": "Spain - Copa del Rey",
+   "market": "Away O/U",
+   "selection": "Under 2.5",
+   "odds": 1.51,
+   "marketId": "20",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.7506,
+   "implied": 0.6623,
+   "ev": 0.1334,
+   "why": "season+form; λ 1.31-1.72; model 75% vs implied 66% (edge 13%)",
+   "lambda": [
+    1.307,
+    1.725
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "17:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:76140570",
+   "match": "Malta v Eswatini",
+   "league": "International - Int. Friendly Games",
+   "market": "1X2",
+   "selection": "Home",
+   "odds": 1.45,
+   "marketId": "1",
+   "specifier": "",
+   "outcomeId": "1",
+   "true_p": 0.7509,
+   "implied": 0.6897,
+   "ev": 0.0888,
+   "why": "season+form; λ 2.15-0.52; model 75% vs implied 69% (edge 9%)",
+   "lambda": [
+    2.147,
+    0.525
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "17:30",
+   "alternatives": [
+    {
+     "market": "2nd Half - Draw No Bet",
+     "selection": "Home",
+     "odds": 1.23,
+     "ev": 0.0679,
+     "true_p": 0.8682
+    },
+    {
+     "market": "Over/Under",
+     "selection": "Over 1.5",
+     "odds": 1.4,
+     "ev": 0.0446,
+     "true_p": 0.7461
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:75468312",
+   "match": "Barbados v Guadeloupe",
+   "league": "International - CONCACAF Nations League",
+   "market": "Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.58,
+   "marketId": "10",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.8018,
+   "implied": 0.6329,
+   "ev": 0.2669,
+   "why": "season+form; λ 2.33-1.28; model 80% vs implied 63% (edge 27%); table 1 v 3/6",
+   "lambda": [
+    2.333,
+    1.275
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "19:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.46,
+     "ev": 0.1627,
+     "true_p": 0.7963
+    },
+    {
+     "market": "Away O/U",
+     "selection": "Under 2.5",
+     "odds": 1.23,
+     "ev": 0.0613,
+     "true_p": 0.8628
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Over 0.5",
+     "odds": 1.3,
+     "ev": 0.0437,
+     "true_p": 0.8028
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:75468288",
+   "match": "Cayman Islands v Guyana",
+   "league": "International - CONCACAF Nations League",
+   "market": "1st Half - Over/Under",
+   "selection": "Under 2.5",
+   "odds": 1.4,
+   "marketId": "68",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8671,
+   "implied": 0.7143,
+   "ev": 0.2139,
+   "why": "season+form; λ 0.47-2.33; model 87% vs implied 71% (edge 21%); table 3 v 1/6",
+   "lambda": [
+    0.467,
+    2.325
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "19:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:75802272",
+   "match": "Benin v Central African Republic",
+   "league": "International - Africa Cup of Nations Qualification",
+   "market": "1st Half - Over/Under",
+   "selection": "Over 0.5",
+   "odds": 1.45,
+   "marketId": "68",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7588,
+   "implied": 0.6897,
+   "ev": 0.1002,
+   "why": "season+form; λ 1.96-1.20; model 76% vs implied 69% (edge 10%); table 1 v 4/4",
+   "lambda": [
+    1.96,
+    1.2
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "19:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Total",
+     "selection": "Over 0.5",
+     "odds": 1.31,
+     "ev": 0.0796,
+     "true_p": 0.8241
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:75803686",
+   "match": "Cameroon v Namibia",
+   "league": "International - Africa Cup of Nations Qualification",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.41,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "true_p": 0.774,
+   "implied": 0.7092,
+   "ev": 0.0914,
+   "why": "season+form+h2h; λ 2.02-0.81; model 77% vs implied 71% (edge 9%); table 1 v 3/4",
+   "lambda": [
+    2.017,
+    0.814
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "19:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Total",
+     "selection": "Over 0.5",
+     "odds": 1.33,
+     "ev": 0.0496,
+     "true_p": 0.7892
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:68931500",
+   "match": "Italy v France",
+   "league": "International - UEFA Nations League",
+   "market": "2nd Half - Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.55,
+   "marketId": "85",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.745,
+   "implied": 0.6452,
+   "ev": 0.1548,
+   "why": "season+form+h2h; λ 1.85-1.32; model 75% vs implied 65% (edge 15%); table 2 v 1/4",
+   "lambda": [
+    1.847,
+    1.32
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "19:45",
+   "alternatives": [
+    {
+     "market": "Away O/U",
+     "selection": "Under 2.5",
+     "odds": 1.3,
+     "ev": 0.1082,
+     "true_p": 0.8525
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:68932518",
+   "match": "Albania v Finland",
+   "league": "International - UEFA Nations League",
+   "market": "2nd Half - Total",
+   "selection": "Over 0.5",
+   "odds": 1.44,
+   "marketId": "90",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7631,
+   "implied": 0.6944,
+   "ev": 0.0989,
+   "why": "season+form; λ 1.49-1.12; model 76% vs implied 69% (edge 10%); table 1 v 3/4",
+   "lambda": [
+    1.493,
+    1.125
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "19:45",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Over 0.5",
+     "odds": 1.4,
+     "ev": 0.0855,
+     "true_p": 0.7754
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:68931756",
+   "match": "England v Croatia",
+   "league": "International - UEFA Nations League",
+   "market": "2nd Half - 1X2",
+   "selection": "Home",
+   "odds": 1.6,
+   "marketId": "83",
+   "specifier": "",
+   "outcomeId": "1",
+   "true_p": 0.6651,
+   "implied": 0.625,
+   "ev": 0.0642,
+   "why": "season+form+h2h; λ 3.43-1.21; model 67% vs implied 62% (edge 6%); table 2 v 3/4",
+   "lambda": [
+    3.427,
+    1.208
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "19:45",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:68932520",
+   "match": "San Marino v Belarus",
+   "league": "International - UEFA Nations League",
+   "market": "Away O/U",
+   "selection": "Under 3.5",
+   "odds": 1.32,
+   "marketId": "20",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.7943,
+   "implied": 0.7576,
+   "ev": 0.0484,
+   "why": "season+form; λ 0.75-2.33; model 79% vs implied 76% (edge 5%); table 4 v 2/4",
+   "lambda": [
+    0.747,
+    2.325
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "19:45",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:68931754",
+   "match": "Czechia v Spain",
+   "league": "International - UEFA Nations League",
+   "market": "2nd Half - Total",
+   "selection": "Under 2.5",
+   "odds": 1.33,
+   "marketId": "90",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.787,
+   "implied": 0.7519,
+   "ev": 0.0467,
+   "why": "season+form+h2h; λ 0.73-2.15; model 79% vs implied 75% (edge 5%); table 4 v 1/4",
+   "lambda": [
+    0.735,
+    2.149
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "19:45",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:68932424",
+   "match": "Montenegro v Latvia",
+   "league": "International - UEFA Nations League",
+   "market": "Home O/U",
+   "selection": "Under 2.5",
+   "odds": 1.56,
+   "marketId": "19",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.6673,
+   "implied": 0.641,
+   "ev": 0.041,
+   "why": "season+form+h2h; λ 2.03-0.92; model 67% vs implied 64% (edge 4%); table 1 v 4/4",
+   "lambda": [
+    2.035,
+    0.919
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "19:45",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:68823466",
+   "match": "AA Ponte Preta SP v Operario Ferroviario EC PR",
+   "league": "Brazil - Brasileiro Serie B",
+   "market": "Away O/U",
+   "selection": "Under 2.5",
+   "odds": 1.34,
+   "marketId": "20",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8159,
+   "implied": 0.7463,
+   "ev": 0.0933,
+   "why": "season+form+h2h; λ 1.12-1.47; model 82% vs implied 75% (edge 9%); table 20 v 10/20",
+   "lambda": [
+    1.121,
+    1.472
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "22:00",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.43,
+     "ev": 0.0548,
+     "true_p": 0.7377
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72475084",
+   "match": "Aurora FC v Deportivo Mixco",
+   "league": "Guatemala - Liga Nacional",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.43,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7632,
+   "implied": 0.6993,
+   "ev": 0.0914,
+   "why": "season+form+h2h; λ 1.57-1.44; model 76% vs implied 70% (edge 9%); table 7 v 2/12",
+   "lambda": [
+    1.566,
+    1.441
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-12",
+   "ko": "22:00",
+   "alternatives": []
+  }
+ ],
+ "rejected": {
+  "FC Barcelona W v Arsenal WFC": "youth/reserve/women/virtual",
+  "SL Benfica Lisbon W v FK Austria Wien": "youth/reserve/women/virtual",
+  "CA Barracas Central Reserve v Argentinos Juniors Reserve": "youth/reserve/women/virtual",
+  "CA Huracan v Estudiantes de Rio Cuarto Reserve": "youth/reserve/women/virtual",
+  "CD Godoy Cruz v Gimnasia de la Plata Reserve": "youth/reserve/women/virtual",
+  "Colon de Santa Fe Reserve v CA Central Cordoba SE Reserve": "youth/reserve/women/virtual",
+  "Rosario Central Reserve v CA River Plate (Arg) Reserve": "youth/reserve/women/virtual",
+  "Boca Juniors v Newells Old Boys": "youth/reserve/women/virtual",
+  "France v Denmark": "youth/reserve/women/virtual",
+  "Italy v Portugal": "youth/reserve/women/virtual",
+  "England v Czechia": "youth/reserve/women/virtual",
+  "Red Bull Bragantino SP v SC Corinthians SP": "youth/reserve/women/virtual",
+  "CA Banfield v CA River Plate (ARG)": "youth/reserve/women/virtual",
+  "CA San Lorenzo de Almagro v Union de Santa Fe": "youth/reserve/women/virtual",
+  "Ferro Carril Oeste v Atletico Lanus": "youth/reserve/women/virtual",
+  "CA Talleres de Cordoba v San Luis FC": "youth/reserve/women/virtual",
+  "Gimnasia Y Esgrima La Plata v Belgrano de Cordoba": "youth/reserve/women/virtual",
+  "EC Bahia BA v EC Vitoria BA": "youth/reserve/women/virtual",
+  "Tritones Vallarta MFC v H2O Purepechas FC": "started",
+  "CD Aguila v Municipal Limeno": "youth/reserve/women/virtual",
+  "CD Fas v Inter Santa Tecla": "youth/reserve/women/virtual",
+  "Elche CF U19 v Patacona CF": "youth/reserve/women/virtual",
+  "SCU Torreense v Sparta Prague": "youth/reserve/women/virtual",
+  "Congo DR v Sierra Leone": "no 1.20–1.60 market with an edge",
+  "Armenia v Cyprus": "no 1.20–1.60 market with an edge",
+  "Turkiye v Belgium": "no 1.20–1.60 market with an edge",
+  "Guinea v Eritrea": "insufficient form/stats",
+  "Chambery SF v Grenoble Foot": "model disagrees with the 1X2 board (away favourite)",
+  "CD Tarancon v Levante": "model disagrees with the 1X2 board (away favourite)",
+  "CDA Navalcarnero v Betis": "model disagrees with the 1X2 board (away favourite)",
+  "CA Osasuna v Logrono United": "no 1.20–1.60 market with an edge",
+  "Ceara SC CE v FC Atletico CE": "no 1.20–1.60 market with an edge",
+  "Kimberley de Mar Del Plata v Club Olimpo": "even matchup (5 v 3/10)",
+  "Ivory Coast v Gambia": "no 1.20–1.60 market with an edge",
+  "Senegal v Sudan": "no 1.20–1.60 market with an edge",
+  "CE Europa v RC Deportivo De La Coruna": "model disagrees with the 1X2 board (away favourite)",
+  "CA Atenas de San Carlos v Club Oriental de Football": "no 1.20–1.60 market with an edge",
+  "CS Cerrito v Colon FC": "even matchup (4 v 3/14)",
+  "Plaza Colonia v Club Atletico Rentistas": "even matchup (2 v 4/14)",
+  "Bonaire v Cuba": "model disagrees with the 1X2 board (away favourite)",
+  "Mount Pleasant FC v Portmore United": "no 1.20–1.60 market with an edge",
+  "AD Izalco v AD Forfut": "no 1.20–1.60 market with an edge",
+  "CD Aguila San Miguel v Municipal Limeno": "no 1.20–1.60 market with an edge",
+  "Atletico Balboa v CD Inca": "even matchup (10 v 11/12)",
+  "Aruba v Martinique": "model disagrees with the 1X2 board (away favourite)",
+  "Academia Puerto Cabello v Monagas SC": "even matchup (3 v 4/14)",
+  "AD Pasto v CD Junior FC": "model disagrees with the 1X2 board (away favourite)",
+  "Antigua and Barbuda v Trinidad and Tobago": "model disagrees with the 1X2 board (away favourite)",
+  "Estudiantes de La Plata v Independiente Rivadavia": "no 1.20–1.60 market with an edge",
+  "Sao Bernardo FC v Athletic Club Sjdr MG": "no 1.20–1.60 market with an edge",
+  "Cerro Largo FC v CA Progreso": "no 1.20–1.60 market with an edge",
+  "Real Potosi v CA Nacional Potosi": "no 1.20–1.60 market with an edge"
+ },
+ "slips": [
+  {
+   "name": "SportyBet Stats · part 1/4",
+   "totalOdds": 7.78,
+   "codes": {
+    "sportybet": "9VKXYG",
+    "footballcom": "9VKXYG",
+    "msport": "B3JBX7X",
+    "betika": "rzKaHv",
+    "betpawa": "A5ZV0ZR"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 2/4",
+   "totalOdds": 6.39,
+   "codes": {
+    "sportybet": "AZ3T84",
+    "footballcom": "AZ3T84",
+    "msport": "B3JBXA2",
+    "betika": "NjqfBx",
+    "betpawa": "XCF5WRK"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 3/4",
+   "totalOdds": 5.87,
+   "codes": {
+    "sportybet": "8TPNAS",
+    "footballcom": "8TPNAS",
+    "msport": "B3JBXBL",
+    "betika": "P3RY1S",
+    "betpawa": "AGIEZUI"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 4/4",
+   "totalOdds": 1.43,
+   "codes": {
+    "sportybet": "8VVLUU",
+    "footballcom": "8VVLUU",
+    "msport": "B3JBXCQ",
+    "betika": "CUgPyw",
+    "betpawa": "JN37OY7"
+   },
+   "legs": 1
+  },
+  {
+   "name": "SportyBet Stats · Master",
+   "totalOdds": 417.47,
+   "codes": {
+    "sportybet": "C7J5Q4",
+    "footballcom": "C7J5Q4",
+    "msport": "B3JBXER",
+    "betika": "V31ns4",
+    "betpawa": "6D6IEW7"
+   },
+   "legs": 16
+  }
+ ]
+}

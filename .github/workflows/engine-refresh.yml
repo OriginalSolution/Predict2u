@@ -1,0 +1,65 @@
+name: Predict2u engine — news hub + live scores refresh
+
+# Replaces the old box-sync.sh steps that wrote news-hub.json and live-scores.json
+# (both stale since the box stopped on Nov 7). No booking here: RSS news, SportyBet
+# match-centre scores for codes already published, and a score snapshot for today's picks.
+on:
+  schedule:
+    - cron: "25 */3 * * *"   # fallback only; engine-ticker.yml dispatches this hourly at :25
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: predict2u-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEWS_STATE_DIR: ${{ github.workspace }}/../news-state
+      NEWS_SEED_LEDGER: ${{ github.workspace }}/engine/data/code-ledger.json
+      RESEARCH_DIR: ${{ github.workspace }}/../no-research
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            .github
+            engine
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Restore news ledger / event cache
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ github.workspace }}/../news-state
+          key: p2u-news-state-${{ github.run_id }}
+          restore-keys: |
+            p2u-news-state-
+      - name: Build news-hub.json, live-scores.json and staked-codes.json
+        run: |
+          set -euo pipefail
+          mkdir -p "$NEWS_STATE_DIR" "$RESEARCH_DIR"
+          timeout 600 python3 engine/vendor/news_hub.py "$GITHUB_WORKSPACE" || echo "::warning::news hub step failed"
+          python3 engine/vendor/live_scores.py "$GITHUB_WORKSPACE"
+          timeout 600 python3 engine/vendor/staked_feed.py "$GITHUB_WORKSPACE" || echo "::warning::staked feed step failed"
+      - name: Save news ledger / event cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ github.workspace }}/../news-state
+          key: p2u-news-state-${{ github.run_id }}
+      - name: Commit refreshed files
+        run: |
+          set -euo pipefail
+          git config user.name "predict2u-engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- news-hub.json live-scores.json staked-codes.json staked-index.json staked-status.json
+          if git diff --cached --quiet; then echo "no refresh changes"; exit 0; fi
+          git commit -m "Engine news hub + live scores $(date -u +%FT%TZ)"
+          .github/scripts/p2u_push.sh main

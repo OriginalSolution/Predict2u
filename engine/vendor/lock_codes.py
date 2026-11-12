@@ -88,7 +88,16 @@ def mask_doc(doc, store, fwd):
         if any(c in str(L[b]) for c in fwd): L[b] = ''
     if isinstance(s.get('link'), str) and any(c in s['link'] for c in fwd): s['link'] = ''
     pid = {p[8:].rsplit('-', 1)[0] for p in PH.findall(json.dumps(C))}
-    if pid: s['locked'] = {'id': sorted(pid)[0], 'price': PRICE, 'currency': CUR}
+    if pid:
+      prev = s.get('locked') if isinstance(s.get('locked'), dict) else {}
+      locked = {'id': sorted(pid)[0], 'price': PRICE, 'currency': CUR}
+      if prev.get('odds') is not None: locked['odds'] = prev['odds']
+      if prev.get('legs') is not None: locked['legs'] = prev['legs']
+      s['locked'] = locked
+      try:
+        odds = s.get('totalOdds') if s.get('totalOdds') is not None else s.get('odds')
+        if odds is not None and float(odds) > 25: s['premium'] = True
+      except (TypeError, ValueError): pass
   for k in ('slips', 'byMarket', 'byTeam'):
     for s in doc.get(k) or []: slipmask(s)
   return doc
@@ -99,12 +108,25 @@ def mask_text(t, fwd=None, html=False):
     if len(c) >= 5: t = re.sub(r'(?<![A-Za-z0-9])' + re.escape(c) + r'(?![A-Za-z0-9])', HTML_TXT if html else fwd[c], t)
   return t
 
+def _seal_public(repo, store):
+  """File every odds>25 slip into the paywall store and blank code + picks."""
+  try:
+    root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    if root not in sys.path: sys.path.insert(0, root)
+    from engine.premium import seal_repo_files
+  except Exception as e:
+    print('premium seal skipped', e); return []
+  changed = seal_repo_files(repo, store, ph)
+  if changed: print('premium sealed', changed)
+  return changed
+
 def main(repo):
   global REV
   store = load(STORE, {}) or {}
   # expire: unmask old ones in json, drop them
   exp = {i for i, e in store.items() if e['expires'] < now.strftime('%Y-%m-%dT%H:%M:%SZ')}
   register(store, repo)
+  _seal_public(repo, store)
   exp = {i for i in exp if store[i]['expires'] < now.strftime('%Y-%m-%dT%H:%M:%SZ')}
   live = {i: e for i, e in store.items() if i not in exp}
   _, rev_old = mapping({i: store[i] for i in exp})
@@ -141,5 +163,15 @@ def main(repo):
   if enc: open(ep, 'w').write(enc); changed.append('locked.enc.json')
   print('locked', sorted(store), 'expired', sorted(exp), 'changed', changed)
 
+def _free():
+  try:
+    root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    if root not in sys.path: sys.path.insert(0, root)
+    from engine.premium import free_mode
+    return free_mode(sys.argv[1] if len(sys.argv) > 1 else os.environ.get('REPO_DIR'))
+  except Exception as e:
+    print('free-mode check failed', e); return False
+
 REV = {}
+if __name__ == '__main__' and _free(): print('free-codes mode (p2u-free-mode.js): nothing locked'); sys.exit(0)
 if __name__ == '__main__': main(sys.argv[1] if len(sys.argv) > 1 else (__import__('os').environ.get('REPO_DIR','/workspace/Predict2u')))

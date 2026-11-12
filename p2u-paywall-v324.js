@@ -33,17 +33,45 @@
     '.p2u-lock-m ul{margin:8px 0 14px;padding-left:1.2em;color:#e8eef7}.p2u-lock-m li{margin:3px 0}'+
     '.p2u-lock-m input{width:100%;box-sizing:border-box;min-height:44px;border-radius:10px;border:1px solid #4a5e7d;background:#0a111c;color:#fff;padding:0 12px;font-size:1rem;margin:8px 0 12px}'+
     '.p2u-lock-m small{color:#c9d6e8;display:block;margin-top:10px;font-size:clamp(.78rem,3vw,.88rem)}.p2u-lock-x{position:absolute;top:8px;right:8px;width:44px;height:44px;background:none;border:0;color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;border-radius:50%}.p2u-lock-x:focus-visible,.p2u-lock-m button:focus-visible{outline:3px solid #ffd54a;outline-offset:2px}.p2u-lock-err{color:#ffc0cc;font-size:.9rem}'+
-    '.p2u-lock-soon{display:block;text-align:center;margin-top:8px;color:#ffd54a;font-weight:700}';
+    '.p2u-lock-soon{display:block;text-align:center;margin-top:8px;color:#ffd54a;font-weight:700}'+
+    '.p2u-lock-picks{list-style:none;margin:8px 0 0;padding:0}.p2u-lock-picks li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px;padding:6px 0;border-top:1px dashed rgba(224,184,58,.35);font-size:.86rem;color:#fff7dc}.p2u-lock-picks small{color:#d6e2f2}';
     document.head.appendChild(s);}
-  function chips(g){var c=g.codes||{};return '<div class="p2u-chips" data-p2u-unlocked="'+esc(g.id)+'">'+BOOKS.filter(function(b){return c[b[0]]&&c[b[0]].length;}).map(function(b){return c[b[0]].map(function(x){
+  function codeList(g,book,slipKey){
+    var L=(g.codes||{})[book]||[];
+    if(!Array.isArray(L))L=L?[{code:L}]:[];
+    if(!slipKey)return L;
+    var hit=L.filter(function(x){return x&&x.slipKey===slipKey;});
+    return hit.length?hit:L;
+  }
+  function pickList(rows){
+    var seen={},items=[];
+    rows.forEach(function(x){(x.picks||[]).forEach(function(p){
+      if(!p||!p.match)return;
+      var k=p.match+'|'+p.selection;
+      if(seen[k])return;seen[k]=1;
+      items.push('<li><span>'+esc(p.match)+(p.league?' <small>'+esc(p.league)+'</small>':'')+'</span><b>'+esc(p.selection)+(p.odds?' @'+Number(p.odds).toFixed(2):'')+'</b></li>');
+    });});
+    return items.length?'<ul class="p2u-lock-picks">'+items.join('')+'</ul>':'';
+  }
+  function chips(g,slipKey){var c=g.codes||{},rows=[];return '<div class="p2u-chips" data-p2u-unlocked="'+esc(g.id)+'">'+BOOKS.filter(function(b){return codeList(g,b[0],slipKey).length;}).map(function(b){return codeList(g,b[0],slipKey).map(function(x){
+    rows.push(x);
     var href=b[3]+encodeURIComponent(x.code);
-    return '<div class="p2u-chip p2u-chip-'+b[0]+'"><img src="'+b[2]+'" alt="" width="24" height="24" loading="lazy"><span class="p2u-chip-t"><span class="p2u-chip-n">'+b[1]+'</span><a class="p2u-chip-c" target="_blank" rel="noopener" href="'+href+'">'+esc(x.code)+'</a><span class="p2u-chip-o">'+(x.totalOdds?'@'+Number(x.totalOdds).toFixed(2):'')+(x.legs?' · '+x.legs+' picks':'')+'</span></span><button type="button" class="p2u-chip-cp" data-copy="'+esc(x.code)+'">Copy</button></div>';}).join('');}).join('')+'</div>';}
-  function box(id){var k=id.split('-')[0],m=(cfg&&cfg.locked&&cfg.locked[id])||{},on=cfg&&cfg.enabled,pl=priceHtml();
-    if(got[id]&&got[id].codes)return chips(got[id]);
-    return '<div class="p2u-lock" role="button" tabindex="0" aria-haspopup="dialog" data-p2u-info="'+esc(id)+'" data-p2u-lock="'+esc(id)+'"><b>🔒 '+esc(m.title||TITLE[k]||'Premium slip')+' codes are locked</b><p>See the picks and odds free. Unlock the booking codes for every bookmaker for '+pl+' (mobile money or card).</p><div class="p2u-lock-row">'+
+    return '<div class="p2u-chip p2u-chip-'+b[0]+'"><img src="'+b[2]+'" alt="" width="24" height="24" loading="lazy"><span class="p2u-chip-t"><span class="p2u-chip-n">'+b[1]+'</span><a class="p2u-chip-c" target="_blank" rel="noopener" href="'+href+'">'+esc(x.code)+'</a><span class="p2u-chip-o">'+(x.totalOdds?'@'+Number(x.totalOdds).toFixed(2):'')+(x.legs?' · '+x.legs+' picks':'')+'</span></span><button type="button" class="p2u-chip-cp" data-copy="'+esc(x.code)+'">Copy</button></div>';}).join('');}).join('')+pickList(rows)+'</div>';}
+  function metaOf(el){if(!el||!el.getAttribute)return {};return {odds:el.getAttribute('data-p2u-odds'),legs:el.getAttribute('data-p2u-legs'),slip:el.getAttribute('data-p2u-slip'),title:el.getAttribute('data-p2u-title')};}
+  function lockAttrs(id,meta){return ' data-p2u-lock="'+esc(id)+'" data-p2u-info="'+esc(id)+'"'+(meta.odds!=null&&meta.odds!==''?' data-p2u-odds="'+esc(meta.odds)+'"':'')+(meta.legs!=null&&meta.legs!==''?' data-p2u-legs="'+esc(meta.legs)+'"':'')+(meta.slip?' data-p2u-slip="'+esc(meta.slip)+'"':'')+(meta.title?' data-p2u-title="'+esc(meta.title)+'"':'');}
+  function box(id,el){var k=id.split('-')[0],m=(cfg&&cfg.locked&&cfg.locked[id])||{},on=cfg&&cfg.enabled,pl=priceHtml(),meta=metaOf(el);
+    if(got[id]&&got[id].codes)return chips(got[id], meta.slip);
+    var premium=meta.odds!=null&&meta.odds!=='';
+    var oddsN=premium?Number(meta.odds):NaN;
+    var fact=premium?((isFinite(oddsN)?'@'+oddsN.toLocaleString('en-GB',{maximumFractionDigits:2}):'')+(meta.legs!=null&&meta.legs!==''?' · '+esc(meta.legs)+' legs':'')):'';
+    var title=meta.title||m.title||TITLE[k]||'Premium slip';
+    var blurb=premium?(esc(fact)+'. Unlock this booking code for '+pl+' (mobile money or card). The code and the picks stay hidden until then.'):('See the picks and odds free. Unlock the booking codes for every bookmaker for '+pl+' (mobile money or card).');
+    return '<div class="p2u-lock" role="button" tabindex="0" aria-haspopup="dialog"'+lockAttrs(id,meta)+'><b>🔒 '+esc(title)+(premium?'':' codes are locked')+'</b><p>'+blurb+'</p><div class="p2u-lock-row">'+
       (cfg&&on?'<button type="button" class="p2u-lock-btn" data-p2u-pay="'+esc(id)+'">Unlock for '+pl+'</button><button type="button" class="p2u-lock-r" data-p2u-restore="1">Already paid?</button>':'<button type="button" class="p2u-lock-btn" data-p2u-info="'+esc(id)+'">Unlock for '+pl+(cfg?' · Coming soon':'')+'</button>')+'</div></div>';}
-  function info(id){var k=id.split('-')[0],m=(cfg&&cfg.locked&&cfg.locked[id])||{},on=cfg&&cfg.enabled,t=m.title||TITLE[k]||'Premium slip';
-    var md=modal('<h2 id="p2u-lock-h">🔒 '+esc(t)+' booking codes</h2><div class="p2u-lock-pr">'+priceHtml()+'</div><p style="margin:4px 0">One-time unlock for this slip. You get:</p><ul><li>Booking codes for SportyBet, MSport, Betika, football.com and Betpawa</li><li>One-tap open and copy for each code</li><li>Stays unlocked on this device</li></ul>'+
+  function info(id,el){var k=id.split('-')[0],m=(cfg&&cfg.locked&&cfg.locked[id])||{},on=cfg&&cfg.enabled,meta=metaOf(el),t=meta.title||m.title||TITLE[k]||'Premium slip';
+    var facts='';
+    if(meta.odds){var oddsN=Number(meta.odds);facts='<p style="margin:4px 0">Total odds <b>'+(isFinite(oddsN)?'@'+oddsN.toLocaleString('en-GB',{maximumFractionDigits:2}):esc(meta.odds))+'</b>'+(meta.legs?' · '+esc(meta.legs)+' legs':'')+'. The booking code and the picks stay locked until you pay.</p>';}
+    var md=modal('<h2 id="p2u-lock-h">🔒 '+esc(t)+'</h2><div class="p2u-lock-pr">'+priceHtml()+'</div>'+facts+'<p style="margin:4px 0">One-time unlock. You get:</p><ul><li>Booking codes for SportyBet, MSport, Betika, football.com and Betpawa</li><li>The picks on this slip</li><li>One-tap open and copy for each code</li><li>Stays unlocked on this device</li></ul>'+
       (on?'<button type="button" class="p2u-lock-btn" style="width:100%" data-p2u-go="1">Unlock for '+priceTxt()+'</button><button type="button" class="p2u-lock-r" data-p2u-restore="1">Already paid?</button>':'<button type="button" class="p2u-lock-btn" style="width:100%" disabled>Pay '+priceTxt()+' · Coming soon</button><span class="p2u-lock-soon">Payments open very soon. The free picks and odds are still above.</span>')+
       '<small>Charged as GHS 50 via Paystack (mobile money or card). 18+ only. Gamble responsibly.</small>');
     var g=md.querySelector('[data-p2u-go]');if(g)g.onclick=function(){md.p2uClose();pay(id);};}
@@ -61,11 +89,11 @@
       if(c.classList.contains('p2u-dl')||c.classList.contains('bcod-copy')||c.classList.contains('bcod-open')||/bcod-(chips|act|also)/.test(c.className)||c.matches('.hp-bkd a')||c.closest('.p2u-wa-row')){c.remove();return;}
       var par=c.parentNode;if(!par)return;
       if(par.querySelector(':scope > [data-p2u-lock="'+id+'"],:scope > [data-p2u-unlocked="'+id+'"]')){c.remove();return;}
-      var t=document.createElement('div');t.innerHTML=box(id);var nb=t.firstChild;par.replaceChild(nb,c);
+      var t=document.createElement('div');t.innerHTML=box(id,el);var nb=t.firstChild;par.replaceChild(nb,c);
     });
     document.querySelectorAll('.p2u-wa[href]').forEach(function(a){try{var t=decodeURIComponent(a.getAttribute('href'));if(RX.test(t))a.setAttribute('href',a.getAttribute('href'))}catch(e){}});
   }
-  function refresh(){document.querySelectorAll('[data-p2u-lock]').forEach(function(e){var t=document.createElement('div');t.innerHTML=box(e.getAttribute('data-p2u-lock'));e.parentNode.replaceChild(t.firstChild,e);});}
+  function refresh(){document.querySelectorAll('[data-p2u-lock]').forEach(function(e){var t=document.createElement('div');t.innerHTML=box(e.getAttribute('data-p2u-lock'),e);if(t.firstChild)e.parentNode.replaceChild(t.firstChild,e);});}
   function modal(html){var prev=document.activeElement,m=document.createElement('div');m.className='p2u-lock-m';m.innerHTML='<div role="dialog" aria-modal="true" aria-labelledby="p2u-lock-h"><button type="button" class="p2u-lock-x" aria-label="Close">&times;</button>'+html+'</div>';document.body.appendChild(m);
     var ov=document.body.style.overflow;document.body.style.overflow='hidden';
     function close(){if(!m.isConnected)return;m.remove();document.body.style.overflow=ov;document.removeEventListener('keydown',kd,true);try{prev&&prev.focus&&prev.focus()}catch(e){}}
@@ -88,16 +116,30 @@
   function restore(){var md=modal('<b id="p2u-lock-h">Restore your unlocked codes</b><label style="display:block;margin-top:10px">Email you paid with<input type="email" autocomplete="email"></label><button class="p2u-lock-btn" style="width:100%">Restore</button><div class="p2u-lock-err"></div>');
     var inp=md.querySelector('input'),btn=md.querySelector('.p2u-lock-btn'),err=md.querySelector('.p2u-lock-err');try{inp.value=localStorage.getItem('p2u-email')||''}catch(e){}
     btn.onclick=function(){btn.disabled=true;post('/pay/restore',{email:inp.value.trim()}).then(function(r){(r.unlocks||[]).forEach(save);refresh();if((r.unlocks||[]).length)md.remove();else{err.textContent='No paid codes found for that email.';btn.disabled=false;}}).catch(function(e){err.textContent=e.message;btn.disabled=false;});};}
-  document.addEventListener('click',function(e){var a=e.target.closest('[data-p2u-pay]');if(a){e.preventDefault();if(cfg&&cfg.enabled)pay(a.getAttribute('data-p2u-pay'));return;}
+  document.addEventListener('click',function(e){var a=e.target.closest('[data-p2u-pay]');if(a){e.preventDefault();if(cfg&&cfg.enabled)pay(a.getAttribute('data-p2u-pay'));else info(a.getAttribute('data-p2u-pay'), a.closest('[data-p2u-odds]')||a);return;}
     if(e.target.closest('[data-p2u-restore]')){e.preventDefault();var om=e.target.closest('.p2u-lock-m');if(om)om.p2uClose();restore();return;}
-    var inf=e.target.closest('[data-p2u-info]');if(inf&&!e.target.closest('.p2u-lock-m')){e.preventDefault();info(inf.getAttribute('data-p2u-info'));return;}
+    var inf=e.target.closest('[data-p2u-info]');if(inf&&!e.target.closest('.p2u-lock-m')){e.preventDefault();info(inf.getAttribute('data-p2u-info'),inf.closest('[data-p2u-odds]')||inf);return;}
     var c=e.target.closest('[data-p2u-unlocked] .p2u-chip-cp');if(c){try{navigator.clipboard.writeText(c.getAttribute('data-copy'));c.textContent='Copied';}catch(_){}}});
   document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('.p2u-lock[data-p2u-info]')){e.preventDefault();info(e.target.getAttribute('data-p2u-info'));}});
-  function boot(){scan();new MutationObserver(function(){scan();}).observe(document.body,{childList:true,subtree:true});
+  /* Free-codes mode (/p2u-free-mode.js sets window.P2U_FREE_CODES=true): no payment, no lock boxes, no relay call.
+     Any old sealed placeholder whose real code was not saved is blanked so the code guard hides that chip. */
+  function isFree(){return window.P2U_FREE_CODES===true;}
+  function freeScan(){
+    var RXG=new RegExp(RX.source,'gi'),w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n,hit=[];
+    while((n=w.nextNode())){RXG.lastIndex=0;if(RXG.test(n.nodeValue))hit.push(n);}
+    hit.forEach(function(x){x.nodeValue=x.nodeValue.replace(RXG,'—');});
+    document.querySelectorAll('[href*="P2ULOCK-" i],[data-copy*="P2ULOCK-" i],[data-cc-copy*="P2ULOCK-" i],[data-p2u-share*="P2ULOCK-" i],[data-cx*="P2ULOCK-" i]').forEach(function(e){
+      ['href','data-copy','data-cc-copy','data-p2u-share','data-cx'].forEach(function(a){var v=e.getAttribute(a);if(v&&/P2ULOCK-/i.test(v))e.removeAttribute(a);});});
+    document.querySelectorAll('.p2u-lock-m').forEach(function(m){m.remove();});
+    if(window.P2UCode&&P2UCode.sweep)P2UCode.sweep(document);
+  }
+  function bootFree(){freeScan();var t=0;new MutationObserver(function(){clearTimeout(t);t=setTimeout(freeScan,60);}).observe(document.body,{childList:true,subtree:true,characterData:true});}
+  function boot(){if(isFree())return bootFree();scan();new MutationObserver(function(){scan();}).observe(document.body,{childList:true,subtree:true});
     config().then(function(){var s=store();var ids=Object.keys(s);
       var q=new URLSearchParams(location.search),ref=q.get('reference')||q.get('trxref'),sid=q.get('p2uslip');
       var jobs=ids.map(function(id){return post('/unlock',{token:s[id].token}).then(function(g){got[id]=g;}).catch(function(){});});
       if(ref&&sid&&cfg.enabled)jobs.push(verify(ref,sid).catch(function(){}));
       return Promise.all(jobs);}).then(refresh);}
+  window.P2UPaywall={free:isFree,has:function(id){return !!(got[id]&&got[id].codes);},show:function(g){if(!g||!g.id)return;got[g.id]=g;refresh();}};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();

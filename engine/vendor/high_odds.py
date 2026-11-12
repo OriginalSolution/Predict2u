@@ -607,7 +607,7 @@ def main():
     lost = sum(s['status'] == 'lost' for s in history)
     doc = dict(label='High Odds — higher risk', updatedAt=NOW.isoformat(timespec='seconds').replace('+00:00', 'Z'),
                slips=active, history=history[:90], record=dict(won=won, lost=lost, settled=won + lost, pending=len(active), winRate=round(100 * won / (won + lost), 1) if won + lost else None))
-    save(OUT, doc)
+    save(OUT, doc, pretty=False)
     replacement_ledger = [dict(replacementOf=s.get('replacementOf'), code=s['code'], date=s.get('date') or TODAY) for s in refreshed.values() if s.get('replacementOf')]
     known_rep = {(r['replacementOf'], r['code']) for r in replacement_ledger}
     replacement_ledger += [r for r in (cache.get('dcReplacements') or []) if (r.get('replacementOf'), r.get('code')) not in known_rep]
@@ -625,7 +625,7 @@ def main():
     if not SETTLE_ONLY:
         book_other_sites(active, books_cache)
     # Persist the new per-bookmaker codes and refresh the social card after booking.
-    save(OUT, doc)
+    save(OUT, doc, pretty=False)
     build_og(doc)
     # Keep each High Odds slip's downloadable/share-preview image in the existing card pipeline.
     try:

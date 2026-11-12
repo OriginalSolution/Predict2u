@@ -482,6 +482,23 @@ def publish_high_odds(repo: Path, slip: dict) -> None:
     slips.insert(0, slip)
     doc["slips"] = slips
     path.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")))
+    # Odds above 25 are sealed only when paid mode is on. Free mode (p2u-free-mode.js) leaves the code public.
+    lock_public(repo)
+
+
+def lock_public(repo: Path) -> None:
+    """Same premium lock the morning, M1/M2 and strategies jobs run after they publish.
+
+    `P2U_FREE_CODES` / `p2u-free-mode.js` wins: free mode does not flag or hide a code.
+    Paid mode files the code in the paywall store and blanks it on the public feeds.
+    `high_odds.json` stays one-line JSON either way.
+    """
+    import sys
+    root = str(repo)
+    if root not in sys.path:
+        sys.path.insert(0, root)
+    from engine.premium import lock_published
+    lock_published(root)
 
 
 def write_record(repo: Path, kind: str, day: str, payload: dict) -> Path:

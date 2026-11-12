@@ -4,7 +4,7 @@ Entries are keyed by the slip's SportyBet code, so they vanish automatically whe
 Also drops Betway entries whose SportyBet slip is gone, earlier, or dated before today.
 """
 import json, os, glob, datetime as dt, sys
-sys.path.insert(0, R if 'R' in globals() else '/workspace/predict2u-research')
+sys.path.insert(0, os.environ.get('RESEARCH_DIR', '/workspace/predict2u-research'))
 import matchup_rules as MR
 FEED = os.path.dirname(os.path.abspath(__file__)); R = '/workspace/predict2u-research'
 src_path = os.path.join(FEED, 'betway_codes.json')

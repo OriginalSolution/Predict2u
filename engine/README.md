@@ -15,7 +15,8 @@ This package lets the daily pipeline run on GitHub Actions even when the assista
 | Workflow | Cron (UTC) | Job |
 |---|---|---|
 | `engine-shield.yml` | `0 21 * * *` (9:00 PM) | DC Shield Goals + AH −1 scan + publish |
-| `engine-strategies.yml` | `30 22 * * *` (10:30 PM) | Bets For The Day three-strategy High Odds masters + Verzzify Edge Banker |
+| `engine-m1m2.yml` | `45 21 * * *` (9:45 PM) | Original M1/M2 + Safest market on the Hot page |
+| `engine-strategies.yml` | `30 22 * * *` (10:30 PM) | Bets For The Day strategies 1–5 (High Odds, normal gates) + Verzzify Edge Banker |
 | `engine-morning.yml` | `0 7 * * *` (7:00 AM) | SportyBet stats markets (one 1.20–1.60 pick per match) |
 | `engine-daily.yml` | `0 23 * * *` (11:00 PM) | collect + book + publish (all strategies) |
 | `engine-settle.yml` | `45 1 * * *` (1:45 AM) and `15 */2 * * *` | settle + prune + record |

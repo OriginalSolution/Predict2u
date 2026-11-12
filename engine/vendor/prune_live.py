@@ -490,8 +490,10 @@ def prune_hot(doc: dict) -> tuple[dict, list]:
             continue
         kept = []
         for m in arr:
-            mp = [p for p in (m.get("picks") or []) if live_pick(p)]
-            if not mp and (m.get("picks") or []):
+            raw_picks = m.get("picks")
+            pick_rows = raw_picks if isinstance(raw_picks, list) else []
+            mp = [p for p in pick_rows if isinstance(p, dict) and live_pick(p)]
+            if not mp and pick_rows:
                 removed.append(("hot-" + key, m.get("market") or m.get("team") or m.get("section") or m.get("label") or m.get("name"), TODAY, "stale"))
                 continue
             m = dict(m)
@@ -501,6 +503,38 @@ def prune_hot(doc: dict) -> tuple[dict, list]:
             if hot_slip_live(m, by_eid) or mp:
                 kept.append(m)
         doc[key] = kept
+    models = []
+    for s in doc.get("modelSlips") or []:
+        raw_picks = s.get("picks")
+        # Sealed slips keep a leg count, not the pick list. Leave the locked card up for its day.
+        if not isinstance(raw_picks, list):
+            day = str(s.get("date") or s.get("bookedAt") or "")[:10]
+            if day and day < TODAY:
+                removed.append(("hot-model", s.get("strategy") or s.get("name"), day, "stale"))
+            elif hot_slip_live(s, by_eid):
+                models.append(s)
+            else:
+                removed.append(("hot-model", s.get("strategy") or s.get("name"), s.get("date") or TODAY, "stale"))
+            continue
+        mp = [p for p in raw_picks if isinstance(p, dict) and live_pick(p)]
+        if raw_picks and not mp:
+            if all(leg_settled(l) for l in s["picks"]):
+                arch = dict(s)
+                arch["legs"] = s["picks"]
+                archive_settled(arch, "hot-model")
+            removed.append(("hot-model", s.get("strategy") or s.get("name"), s.get("date") or TODAY, "stale"))
+            continue
+        s = dict(s)
+        if mp:
+            s["picks"] = mp
+            s["legs"] = len(mp)
+            s["events"] = [p.get("eventId") for p in mp if p.get("eventId")]
+        if mp or hot_slip_live(s, by_eid):
+            models.append(s)
+        else:
+            removed.append(("hot-model", s.get("strategy") or s.get("name"), s.get("date") or TODAY, "stale"))
+    if "modelSlips" in doc or models:
+        doc["modelSlips"] = models
     return doc, removed
 
 

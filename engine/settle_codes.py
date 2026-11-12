@@ -68,6 +68,16 @@ def grade(selection: str, match: str, ev: dict, pick: dict | None = None) -> str
         else:
             return "pending"
         return "won" if (goals > line) == (side == "over") else "lost"
+    sl = s.lower()
+    # Combo markets from the M1/M2 model. Checked before the generic "Yes" = BTTS rule.
+    if "team or over 2.5" in sl or sl.endswith("or over 2.5"):
+        home_side = not sl.startswith("away")
+        win = (h > a) if home_side else (a > h)
+        return "won" if win or tot >= 3 else "lost"
+    if "home/draw" in sl and "over 1.5" in sl:
+        return "won" if h >= a and tot >= 2 else "lost"
+    if ("draw/away" in sl or "away/draw" in sl) and "over 1.5" in sl:
+        return "won" if a >= h and tot >= 2 else "lost"
     out = {"1": h > a, "X": h == a, "2": a > h}
 
     def tok(x):

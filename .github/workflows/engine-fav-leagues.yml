@@ -1,0 +1,92 @@
+name: Predict2u engine — favourites by league (stats + day-master codes)
+run-name: "${{ github.workflow }}${{ inputs.dry_run == true && ' (dry run)' || '' }}"
+
+# Home "How favourites perform by league": rebuilds the league stats and books fresh
+# Today/Tomorrow favourites codes (SportyBet, football.com, MSport, Betika, Betpawa)
+# for picks that have not kicked off. Writes only leagues + homeCode.dayMasters.
+on:
+  schedule:
+    - cron: "0 6 * * *"   # 06:00 UTC = 06:00 AM Africa/Accra (fallback; engine-ticker.yml dispatches on time)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Skip booking and commit"
+        type: boolean
+        default: false
+      force:
+        description: "Run even if this slot already ran successfully"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      run: ${{ steps.g.outputs.run }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: .github
+      - name: Run once per slot (GitHub's late cron duplicates skip here)
+        id: g
+        env:
+          GH_TOKEN: ${{ github.token }}
+          P2U_GATE_BYPASS: ${{ github.event_name == 'workflow_dispatch' && (inputs.force == true || inputs.dry_run == true) }}
+        run: python3 .github/scripts/p2u_gate.py --at 06:00 --job fav
+
+  fav:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
+    concurrency:
+      group: predict2u-engine
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install runtime extras
+        run: pip install cryptography
+      - name: Cache Sportradar / engine stats
+        uses: actions/cache@v4
+        with:
+          path: engine/data/stats-cache
+          key: p2u-engine-stats-${{ github.run_id }}
+          restore-keys: |
+            p2u-engine-stats-
+      - name: Collect, then book favourites day masters
+        env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
+          P2U_STRICT_GATES: report
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            python -m engine.pipeline fav --dry-run
+          else
+            python -m engine.pipeline fav
+          fi
+      - name: Commit home-picks.json
+        if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
+        run: |
+          set -euo pipefail
+          if [ -z "${P2U_LOCK_KEY:-}" ] && ! python -m engine.premium --is-free . >/dev/null 2>&1; then
+            echo "::warning::P2U_LOCK_KEY is not set; refusing to commit pick files so premium codes stay locked on the live site (paid-codes mode; free mode is p2u-free-mode.js)."
+            exit 0
+          fi
+          git config user.name "predict2u-engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- home-picks.json locked.enc.json || true
+          if git diff --cached --quiet; then echo "no favourites changes"; exit 0; fi
+          git commit -m "Engine favourites by league $(date -u +%FT%TZ)"
+          .github/scripts/p2u_push.sh main

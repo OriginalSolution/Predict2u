@@ -115,6 +115,9 @@ def publish_master(repo: Path, day: str, code: str, legs: list[dict], total: flo
     daily_master.REPO = str(repo)
     daily_master.DIR = os.path.join(str(repo), "engine", "data", "daily-master")
     daily_master.main()
+    # daily_master writes the real code back onto High Odds, Hot Picks and Home.
+    # The lock no-ops while p2u-free-mode.js says codes are free.
+    lib.lock_public(repo)
 
 
 def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:

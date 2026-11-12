@@ -1,4 +1,5 @@
 name: Predict2u engine — GG strategy
+run-name: "${{ github.workflow }}${{ inputs.dry_run == true && ' (dry run)' || '' }}"
 
 on:
   schedule:
@@ -13,16 +14,40 @@ on:
         description: "Fixture date YYYY-MM-DD (blank uses the night rule)"
         type: string
         default: ""
+      force:
+        description: "Run even if this slot already ran successfully"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
-
-concurrency:
-  group: predict2u-strategy-night
-  cancel-in-progress: false
+  actions: read
 
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      run: ${{ steps.g.outputs.run }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: .github
+      - name: Run once per slot (GitHub's late cron duplicates skip here)
+        id: g
+        env:
+          GH_TOKEN: ${{ github.token }}
+          P2U_GATE_BYPASS: ${{ github.event_name == 'workflow_dispatch' && (inputs.force == true || inputs.dry_run == true) }}
+        run: python3 .github/scripts/p2u_gate.py --at 23:10 --job gg
+
   gg:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
+    concurrency:
+      group: predict2u-strategy-night
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -30,8 +55,11 @@ jobs:
         with: { fetch-depth: 1 }
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
+      - name: Install runtime extras
+        run: pip install cryptography
       - name: GG / BTTS-Yes
         env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
           REPO_DIR: ${{ github.workspace }}
           ENGINE_DIR: ${{ github.workspace }}/engine
         run: |
@@ -40,14 +68,22 @@ jobs:
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
           if [ -n "${{ inputs.date }}" ]; then ARGS+=(--date "${{ inputs.date }}"); fi
           python engine/vendor/gg_strategy.py "${ARGS[@]}"
+          if [ "${{ inputs.dry_run }}" != "true" ]; then
+            python -m engine.premium --lock "$REPO_DIR"
+          fi
       - name: Commit booked GG code
         if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
         run: |
           set -euo pipefail
+          if [ -z "${P2U_LOCK_KEY:-}" ] && ! python -m engine.premium --is-free . >/dev/null 2>&1; then
+            echo "::warning::P2U_LOCK_KEY is not set; refusing to commit pick files so premium codes stay locked on the live site (paid-codes mode; free mode is p2u-free-mode.js)."
+            exit 0
+          fi
           git config user.name "predict2u-engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- high_odds.json engine/data/strategy-codes/gg engine/data/strategy-usage engine/data/gg || true
+          git add -- high_odds.json locked.enc.json engine/data/strategy-codes/gg engine/data/strategy-usage engine/data/gg || true
           if git diff --cached --quiet; then echo "no GG changes"; exit 0; fi
           git commit -m "Engine GG strategy $(date -u +%FT%TZ)"
-          git pull --rebase --autostash -X theirs origin main || git pull --rebase --autostash origin main || true
-          git push origin HEAD
+          .github/scripts/p2u_push.sh main

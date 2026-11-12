@@ -20,3 +20,6 @@ odds-api-cache-*.json
 .private/
 private-auto-learning-report*.json
 __pycache__/
+# Nightly safest-market scan output (published slip lives in hot-picks.json)
+engine/data/safe50/
+engine/data/stats-cache/

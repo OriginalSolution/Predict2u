@@ -1,4 +1,5 @@
 name: Predict2u engine — daily collect, book, publish
+run-name: "${{ github.workflow }}${{ inputs.dry_run == true && ' (dry run)' || '' }}"
 
 on:
   schedule:
@@ -9,16 +10,37 @@ on:
         description: "Skip live booking and skip committing to main"
         type: boolean
         default: false
+      force:
+        description: "Run even if this slot already ran successfully"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
-
-concurrency:
-  group: predict2u-engine
-  cancel-in-progress: false
+  actions: read
 
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      run: ${{ steps.g.outputs.run }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: .github
+      - name: Run once per slot (GitHub's late cron duplicates skip here)
+        id: g
+        env:
+          GH_TOKEN: ${{ github.token }}
+          P2U_GATE_BYPASS: ${{ github.event_name == 'workflow_dispatch' && (inputs.force == true || inputs.dry_run == true) }}
+        run: python3 .github/scripts/p2u_gate.py --at 22:00 --job daily
+
   test:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -34,8 +56,12 @@ jobs:
         run: python -m pytest engine/tests -q && python -m engine.check_rules
 
   daily:
-    needs: test
-    if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main'
+    needs: [gate, test]
+    if: needs.gate.outputs.run == 'true' && (github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main')
+    # Job-level so a gated duplicate never sits in (or cancels) the engine queue.
+    concurrency:
+      group: predict2u-engine
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 150
     steps:
@@ -75,8 +101,8 @@ jobs:
           P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
         run: |
           set -euo pipefail
-          if [ -z "${P2U_LOCK_KEY:-}" ]; then
-            echo "::warning::P2U_LOCK_KEY is not set; refusing to commit pick files so premium codes stay locked on the live site."
+          if [ -z "${P2U_LOCK_KEY:-}" ] && ! python -m engine.premium --is-free . >/dev/null 2>&1; then
+            echo "::warning::P2U_LOCK_KEY is not set; refusing to commit pick files so premium codes stay locked on the live site (paid-codes mode; free mode is p2u-free-mode.js)."
             exit 0
           fi
           git config user.name "predict2u-engine"
@@ -99,5 +125,4 @@ jobs:
             exit 0
           fi
           git commit -m "Engine daily picks $(date -u +%FT%TZ)"
-          git pull --rebase -X theirs || true
-          git push origin HEAD
+          .github/scripts/p2u_push.sh main

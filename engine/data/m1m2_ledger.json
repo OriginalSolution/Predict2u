@@ -1,0 +1,239 @@
+{
+ "source": "Seeded from the research m1m2 ledger. Original M1/M2/MIXED only. Upgrade and combined slips are omitted on purpose.",
+ "rules": {
+  "M1": "pw<=1.30 and O2.5<=1.50 → Team or Over 2.5 (market 854/858, Yes)",
+  "M2": "pw<=1.20 and O2.5<=1.40 → Double Chance & Over 1.5 (market 547, 1727/1729, never 1728)",
+  "MIXED": "team Over 1.5 only when that leg clears the M1 prices and the normal gates",
+  "upgrade": "not used"
+ },
+ "days": {
+  "2026-11-03": {
+   "note": "True Team-or-Over-2.5 was not on the board that night. Booked stand-ins were user-overridden and are kept as history only.",
+   "M1": {
+    "code": "DDRFCQ",
+    "result": "won",
+    "total": 1.212,
+    "legs": 4,
+    "clean": true
+   },
+   "M2": {
+    "code": "EX50LQ",
+    "result": "won",
+    "total": 1.123,
+    "legs": 2,
+    "clean": true
+   },
+   "MIXED": {
+    "code": "89ZJS7",
+    "result": "won",
+    "total": 1.27,
+    "legs": 1
+   }
+  },
+  "2026-11-04": {
+   "M1": {
+    "code": "BDS21A",
+    "result": "won",
+    "total": 1.271,
+    "legs": 3,
+    "clean": true
+   },
+   "M2": {
+    "code": "FWVQJH",
+    "result": "won",
+    "total": 1.15,
+    "legs": 1,
+    "clean": true
+   },
+   "MIXED": {
+    "code": null,
+    "result": "not built",
+    "note": "No team-2+ leg cleared the stat bar"
+   }
+  },
+  "2026-11-05": {
+   "M1": {
+    "code": "BEKY3H",
+    "result": "won",
+    "total": 1.454,
+    "legs": 5,
+    "clean": true
+   },
+   "M2": {
+    "code": "92X32X",
+    "result": "won",
+    "total": 1.354,
+    "legs": 3,
+    "clean": true
+   },
+   "MIXED": {
+    "code": null,
+    "result": "not built",
+    "note": "No team-2+ leg cleared the stat bar"
+   }
+  },
+  "2026-11-06": {
+   "M1": {
+    "code": "AGH31Q",
+    "result": "won",
+    "total": 1.615,
+    "legs": 6,
+    "clean": true
+   },
+   "M2": {
+    "code": "APKG45",
+    "result": "lost",
+    "total": 1.232,
+    "legs": 2,
+    "clean": false,
+    "killing_leg": "Llandudno FC v The New Saints FC (FT 0-1, Draw/Away & Over 1.5)"
+   },
+   "MIXED": {
+    "code": null,
+    "result": "not built",
+    "note": "No team-2+ leg cleared the gates"
+   }
+  },
+  "2026-11-07": {
+   "M1": {
+    "code": "8J5FKM",
+    "result": "won",
+    "total": 3.348,
+    "legs": 16,
+    "clean": true
+   },
+   "M2": {
+    "code": "9UL07V",
+    "result": "lost",
+    "total": 1.737,
+    "legs": 6,
+    "clean": false,
+    "killing_leg": "PSG v Troyes 1-0, DC & Over 1.5"
+   },
+   "MIXED": {
+    "code": null,
+    "result": "not built",
+    "note": "Team-2+ candidates failed the gates; survivors were not team 2+"
+   }
+  },
+  "2026-11-12": {
+   "built": "2026-11-12 21:46 GMT",
+   "slips": {
+    "M2": {
+     "name": "M2 Double Chance & Over 1.5",
+     "codes": {
+      "sportybet": "9HM753",
+      "footballcom": "9HM753",
+      "msport": "B3JG4FH",
+      "betika": "c6pEyh"
+     },
+     "total": 1.12,
+     "legs": 1,
+     "meetsFloor": false,
+     "result": "pending"
+    },
+    "MIXED": {
+     "name": "M1/M2 team 2+",
+     "codes": {
+      "sportybet": "EZC5J2",
+      "footballcom": "EZC5J2",
+      "msport": "B3JG4GQ",
+      "betika": "MYnCkY",
+      "betpawa": "64K5JHL"
+     },
+     "total": 1.86,
+     "legs": 3,
+     "meetsFloor": false,
+     "result": "pending"
+    }
+   },
+   "dropped": [
+    {
+     "match": "US St Philbert de Grandlieu v La Roche Vendee Football",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "US St Philbert de Grandlieu v La Roche Vendee Football",
+     "rule": "T2",
+     "selection": "Away over 1.5 goals",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Stade Bethunois v Nancy-Lorraine",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Stade Bethunois v Nancy-Lorraine",
+     "rule": "M2",
+     "selection": "Draw/Away & Over 1.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Stade Bethunois v Nancy-Lorraine",
+     "rule": "T2",
+     "selection": "Away over 1.5 goals",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Bermuda v Saint Lucia",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — International - CONCACAF Nations League: non-goals market Away or Over 2.5 not allowed"
+    },
+    {
+     "match": "Puerto Rico v Dominica",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — International - CONCACAF Nations League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Saint-Martin v El Salvador",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — International - CONCACAF Nations League: non-goals market Away or Over 2.5 not allowed"
+    },
+    {
+     "match": "Saint-Martin v El Salvador",
+     "rule": "T2",
+     "selection": "Away over 1.5 goals",
+     "reason": "Away over 1.5 goals not allowed in a middle game (fav @1.23, table 1 v 6/6)"
+    },
+    {
+     "match": "Montserrat v Nicaragua",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — International - CONCACAF Nations League: non-goals market Away or Over 2.5 not allowed"
+    },
+    {
+     "match": "Montserrat v Nicaragua",
+     "rule": "T2",
+     "selection": "Away over 1.5 goals",
+     "reason": "Away over 1.5 goals not allowed in a middle game (fav @1.26, table 1 v 6/6)"
+    },
+    {
+     "match": "Coleraine FC v Portadown FC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Northern Ireland - Premiership: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Denbigh Town v Gresford Athletic",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Wales - Cymru Championship, North: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Denbigh Town v Gresford Athletic",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.24, table 11 v 15/16)"
+    }
+   ],
+   "mixed": "built"
+  }
+ }
+}

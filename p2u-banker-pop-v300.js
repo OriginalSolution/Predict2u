@@ -20,6 +20,17 @@
   }
   function show(d){
     var s=pick(d);if(!s)return;
+    if(window.P2UPremium&&P2UPremium.is(s)){
+      var wrapL=document.createElement('div');
+      wrapL.className='bcod-back';
+      wrapL.innerHTML='<div class="bcod" role="dialog" aria-modal="true" aria-labelledby="bcod-t"><button class="bcod-x" type="button" aria-label="Close">&times;</button><p class="bcod-kick">Predict2U</p><h2 id="bcod-t">'+(s.dailyMaster?'Code of the day':'Banker code of the day')+'</h2><div data-p2u-premium-root="1">'+P2UPremium.card(s)+'</div><a class="bcod-all" href="bankers.html">See all codes</a><p class="bcod-18">18+ | Bet responsibly</p></div>';
+      document.body.appendChild(wrapL);
+      var boxL=wrapL.firstChild;
+      function closeL(){wrapL.remove();}
+      boxL.querySelector('.bcod-x').onclick=closeL;
+      wrapL.addEventListener('click',function(e){if(e.target===wrapL)closeL();});
+      return;
+    }
     var day=d.date||'';
     try{if(localStorage.getItem(KEY)===day)return;}catch(e){}
     var code=s.codes.sportybet,link='https://www.sportybet.com/gh/?shareCode='+encodeURIComponent(code);
