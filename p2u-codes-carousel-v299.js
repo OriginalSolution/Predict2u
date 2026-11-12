@@ -80,6 +80,9 @@
   function cardsSectionMasters(d){
     return (d.sectionMasters||[]).filter(function(s){return s&&s.codes&&Object.keys(s.codes).length;}).map(sectionCard);
   }
+  function cardsModel(d){
+    return (d.modelSlips||[]).filter(function(s){return s&&s.codes&&Object.keys(s.codes).length;}).map(sectionCard);
+  }
 
   function mount(el,C,heading){
     if(!el)return;
@@ -98,8 +101,8 @@
   window.P2UCarousel={
     mount:mount,
     cardsHome:cardsHome,
-    cardsHot:cardsHot,cardsSectionMasters:cardsSectionMasters,
-    mountHot:function(el,d){var C=cardsSectionMasters(d); if(C.length){mount(el,C,'Section master slips today'); el.classList.add('cc-sections');} else mount(el,cardsHot(d),'Hot Picks codes today');}
+    cardsHot:cardsHot,cardsSectionMasters:cardsSectionMasters,cardsModel:cardsModel,
+    mountHot:function(el,d){var C=cardsModel(d).concat(cardsSectionMasters(d)).filter(Boolean); if(C.length){mount(el,C,'Hot codes today'); el.classList.add('cc-sections');} else mount(el,cardsHot(d),'Hot Picks codes today');}
   };
   var hc=document.getElementById('hot-carousel');
   if(hc)fetch('hot-picks.json?t='+Date.now()).then(function(r){return r.json();}).then(function(d){window.P2UCarousel.mountHot(hc,d);}).catch(function(){});

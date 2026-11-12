@@ -292,8 +292,13 @@ ALLB=set(BOOK)
 full=lambda x:ALLB<=set(k for k,v in (x.get('codes') or {}).items() if v)
 print('dropped incomplete byMarket',[x['name'] for x in byMarket if not full(x)],'byTeam',sum(1 for x in byTeam if not full(x)))
 byMarket=[x for x in byMarket if full(x)]; byTeam=[x for x in byTeam if full(x)]
+_model=[]
+try:
+  _model=json.load(open(OUT)).get('modelSlips') or []
+except Exception:
+  _model=[]
 out=dict(hotRule=HOT,maxDays=MAXDAYS,mainNote=mainNote,byTeam=byTeam,updatedAt=now.isoformat(timespec='seconds'),codesAnalysed=len(codes),selectionsAnalysed=sum(sel.values()),
-  picks=picks[:60],markets=[dict(name=x['market'],count=x['backed']) for x in byMarket],teams=[dict(name=x['team'],count=x['backed']) for x in byTeam],slips=slips,byMarket=byMarket)
+  picks=picks[:60],markets=[dict(name=x['market'],count=x['backed']) for x in byMarket],teams=[dict(name=x['team'],count=x['backed']) for x in byTeam],slips=slips,byMarket=byMarket,modelSlips=_model)
 out['sectionMasters']=HSM.build_section_masters(out, slip, pass_fn=_pass, today=now.date().isoformat(), engine_dir=str(__import__('pathlib').Path(D).resolve().parent))
 json.dump(out,open(OUT,'w'),indent=1,ensure_ascii=False)
 json.dump(_hdrop,open(os.path.join(D,'hot_dropped.json'),'w'),indent=1,ensure_ascii=False)

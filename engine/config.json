@@ -55,6 +55,8 @@
   },
   "schedules": {
     "shield": "0 21 * * *",
+    "m1m2": "45 21 * * *",
+    "strategies": "30 22 * * *",
     "daily": "0 22 * * *",
     "settle_morning": "45 1 * * *",
     "settle_bihourly": "15 */2 * * *"
@@ -76,7 +78,11 @@
     "ah_minus_one.py",
     "share_cards.py",
     "telegram_post.py",
-    "nerdytips_strategies.py"
+    "nerdytips_strategies.py",
+    "sb_common.py",
+    "publish_hot.py",
+    "m1m2.py",
+    "safe50.py"
   ],
   "combine_under_min_odds": true,
   "one_market_per_game": true,

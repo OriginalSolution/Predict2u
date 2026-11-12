@@ -1,0 +1,58 @@
+name: Predict2u engine — M1/M2 and Safest market
+
+on:
+  schedule:
+    # 21:45 UTC = 9:45 PM GMT, before the 22:00 cleanup and the 22:30 High Odds strategies.
+    - cron: "45 21 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Skip commit"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: predict2u-engine
+  cancel-in-progress: false
+
+jobs:
+  models:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Cache Sportradar / engine stats
+        uses: actions/cache@v4
+        with:
+          path: engine/data/stats-cache
+          key: p2u-engine-stats-${{ github.run_id }}
+          restore-keys: |
+            p2u-engine-stats-
+      - name: M1/M2 and Safest market
+        env:
+          RESEARCH_DIR: ${{ github.workspace }}/engine/data
+          REPO_DIR: ${{ github.workspace }}
+          ENGINE_DIR: ${{ github.workspace }}/engine
+          P2U_STRICT_GATES: report
+        run: |
+          set -euo pipefail
+          python -m engine.vendor.m1m2
+          python -m engine.vendor.safe50
+          python engine/vendor/prune_live.py "$REPO_DIR"
+      - name: Commit published model slips
+        if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        run: |
+          set -euo pipefail
+          git config user.name "predict2u-engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- hot-picks.json engine/data/m1m2_ledger.json || true
+          if git diff --cached --quiet; then echo "no model changes"; exit 0; fi
+          git commit -m "Engine M1/M2 and Safest market $(date -u +%FT%TZ)"
+          git pull --rebase --autostash -X theirs origin main || git pull --rebase --autostash origin main || true
+          git push origin HEAD
