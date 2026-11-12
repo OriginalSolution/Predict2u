@@ -122,10 +122,9 @@ def _prune(env):
     run([sys.executable, str(VENDOR_DIR / "prune_live.py"), str(REPO_DIR)], env=env, timeout=120, check=False)
 
 
-def publish(env, dry_run=False):
-    run([sys.executable, str(VENDOR_DIR / "build.py"), str(REPO_DIR)], env=env, timeout=180)
-    run([sys.executable, str(VENDOR_DIR / "inject_exempt.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
-    _prune(env)
+def _lock_premium(env, dry_run=False):
+    """Flag odds > 25, then (when the lock key exists) hide those codes and picks."""
+    run([sys.executable, "-m", "engine.premium", str(REPO_DIR)], env=env, timeout=60, check=False)
     if os.environ.get("P2U_LOCK_KEY") or (Path(env["PRIV_DIR"]) / "lock.key").exists():
         if os.environ.get("P2U_LOCK_KEY") and not (Path(env["PRIV_DIR"]) / "lock.key").exists():
             Path(env["PRIV_DIR"]).mkdir(parents=True, exist_ok=True)
@@ -138,11 +137,20 @@ def publish(env, dry_run=False):
                 raise SystemExit("refusing to publish unlocked premium codes")
     else:
         print("publish: P2U_LOCK_KEY / lock.key missing — premium lock skipped (do not commit raw banker codes without it)")
+
+
+def publish(env, dry_run=False):
+    run([sys.executable, str(VENDOR_DIR / "build.py"), str(REPO_DIR)], env=env, timeout=180)
+    run([sys.executable, str(VENDOR_DIR / "inject_exempt.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
+    _prune(env)
+    _lock_premium(env, dry_run=dry_run)
     run([sys.executable, str(VENDOR_DIR / "high_odds.py"), str(REPO_DIR), "--settle-only"], env=env, timeout=300, check=False)
     run([sys.executable, str(VENDOR_DIR / "split_codes.py"), str(REPO_DIR)], env=env, timeout=900, check=False)
     run([sys.executable, str(VENDOR_DIR / "daily_master.py"), str(REPO_DIR)], env=env, timeout=300, check=False)
     # daily_master re-inserts ho-master parts; prune again so kicked-off pending codes cannot stay live.
     _prune(env)
+    # Seal again: daily_master can put a >25 code back onto the public pages.
+    _lock_premium(env, dry_run=dry_run)
     run([sys.executable, str(VENDOR_DIR / "build_record.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
 
 

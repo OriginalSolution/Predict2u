@@ -88,7 +88,16 @@ def mask_doc(doc, store, fwd):
         if any(c in str(L[b]) for c in fwd): L[b] = ''
     if isinstance(s.get('link'), str) and any(c in s['link'] for c in fwd): s['link'] = ''
     pid = {p[8:].rsplit('-', 1)[0] for p in PH.findall(json.dumps(C))}
-    if pid: s['locked'] = {'id': sorted(pid)[0], 'price': PRICE, 'currency': CUR}
+    if pid:
+      prev = s.get('locked') if isinstance(s.get('locked'), dict) else {}
+      locked = {'id': sorted(pid)[0], 'price': PRICE, 'currency': CUR}
+      if prev.get('odds') is not None: locked['odds'] = prev['odds']
+      if prev.get('legs') is not None: locked['legs'] = prev['legs']
+      s['locked'] = locked
+      try:
+        odds = s.get('totalOdds') if s.get('totalOdds') is not None else s.get('odds')
+        if odds is not None and float(odds) > 25: s['premium'] = True
+      except (TypeError, ValueError): pass
   for k in ('slips', 'byMarket', 'byTeam'):
     for s in doc.get(k) or []: slipmask(s)
   return doc
@@ -99,12 +108,34 @@ def mask_text(t, fwd=None, html=False):
     if len(c) >= 5: t = re.sub(r'(?<![A-Za-z0-9])' + re.escape(c) + r'(?![A-Za-z0-9])', HTML_TXT if html else fwd[c], t)
   return t
 
+def _seal_public(repo, store):
+  """File every odds>25 slip into the paywall store and blank code + picks."""
+  try:
+    root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    if root not in sys.path: sys.path.insert(0, root)
+    from engine.premium import PUBLIC_JSON, seal_document
+  except Exception as e:
+    print('premium seal skipped', e); return []
+  changed = []
+  for name in PUBLIC_JSON:
+    p = os.path.join(repo, name)
+    if not os.path.isfile(p): continue
+    try: doc = json.load(open(p, encoding='utf-8'))
+    except Exception: continue
+    n = seal_document(doc, store, ph)
+    if not n: continue
+    open(p, 'w', encoding='utf-8').write(json.dumps(doc, separators=(',', ':'), ensure_ascii=False))
+    changed.append(name)
+  if changed: print('premium sealed', changed)
+  return changed
+
 def main(repo):
   global REV
   store = load(STORE, {}) or {}
   # expire: unmask old ones in json, drop them
   exp = {i for i, e in store.items() if e['expires'] < now.strftime('%Y-%m-%dT%H:%M:%SZ')}
   register(store, repo)
+  _seal_public(repo, store)
   exp = {i for i in exp if store[i]['expires'] < now.strftime('%Y-%m-%dT%H:%M:%SZ')}
   live = {i: e for i, e in store.items() if i not in exp}
   _, rev_old = mapping({i: store[i] for i in exp})

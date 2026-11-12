@@ -54,7 +54,7 @@
   }
   if(!/\/high-odds\/?$/i.test(location.pathname)&&!document.querySelector('script[data-p2u-bcod-v300]')){
     const adJs=document.createElement('script');
-    adJs.src='/p2u-banker-pop-v300.js?v=350';
+    adJs.src='/p2u-banker-pop-v300.js?v=362';
     adJs.async=true;
     adJs.dataset.p2uBcodV300='true';
     document.head.appendChild(adJs);
