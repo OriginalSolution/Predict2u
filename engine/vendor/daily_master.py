@@ -137,6 +137,8 @@ def main():
                     codes={'sportybet': dict(code=r['code'], legs=r['legs'], odds=r['totalOdds'], link=r['link'])},
                     parts=r.get('parts'), partsDropped=r.get('partsDropped'), lastKickoff=max((x.get('kickoff') or '') for x in r['legList']) or None,
                     strategySpec=bool(r.get('strategySpec')), gateExempt=bool(r.get('gateExempt')), strategyJob=bool(r.get('strategyJob')))
+        if r.get('relaxed'):
+            slip['relaxed'] = True
         place_slip(ho, slip, front=True)
     # High-Odds-only masters (engine/data/ho-masters): published on High Odds only, in parts, HIGH RISK, settled per leg.
     HD = os.path.join(REPO, 'engine', 'data', 'ho-masters')
@@ -183,13 +185,15 @@ def main():
             hot['slips'] = [s for s in (hot.get('slips') or []) if not s.get('dailyMaster')]
             hot['slips'].insert(0, dict(name=r['name'], legs=r['legs'], totalOdds=r['totalOdds'], codes={'sportybet': chip}, highRisk=True,
                                         riskLabel='HIGH RISK', dailyMaster=True, warning=note_of(r) + ' ' + verification(r) + '.', status=r.get('status'), parts=r.get('parts'),
-                                        strategySpec=bool(r.get('strategySpec')), date=r.get('date'), code=r.get('code')))
+                                        strategySpec=bool(r.get('strategySpec')), date=r.get('date'), code=r.get('code'),
+                                        **({'relaxed': True} if r.get('relaxed') else {})))
         if hp is not None:
             hp['slips'] = [s for s in (hp.get('slips') or []) if not s.get('dailyMaster')]
             hp['slips'].insert(0, dict(name='Main · ' + r['name'], totalOdds=r['totalOdds'], legs=r['legList'], codes={'sportybet': r['code']},
                                        bookPicks={'sportybet': r['legs']}, dailyMaster=True, highRisk=True, riskLabel='HIGH RISK',
                                        warning=note_of(r), verification=verification(r), status=r.get('status'), parts=r.get('parts'),
-                                       strategySpec=bool(r.get('strategySpec')), gateExempt=bool(r.get('gateExempt')), date=r.get('date'), code=r.get('code')))
+                                       strategySpec=bool(r.get('strategySpec')), gateExempt=bool(r.get('gateExempt')), date=r.get('date'), code=r.get('code'),
+                                       **({'relaxed': True} if r.get('relaxed') else {})))
     if not cur:  # yesterday's master must not stay as Code of the Day
         for d in (hot, hp):
             if d is not None: d['slips'] = [s for s in (d.get('slips') or []) if not s.get('dailyMaster')]

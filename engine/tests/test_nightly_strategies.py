@@ -664,3 +664,135 @@ def test_strategy_jobs_use_the_ticker_gate_and_push_retry():
     assert 'cron: "30 23 * * *"' in (ROOT / ".github" / "workflows" / "engine-nysm.yml").read_text()
     assert 'cron: "50 23 * * *"' in (ROOT / ".github" / "workflows" / "engine-nt-tomorrow.yml").read_text()
     assert 'cron: "0 6 * * *"' in (ROOT / ".github" / "workflows" / "engine-strategy-master.yml").read_text()
+
+
+def _short_legs(n, odds, prefix="e"):
+    return [
+        {"eventId": f"{prefix}{i}", "selection": "Over 1.5", "marketId": "18", "odds": odds,
+         "match": f"H{i} v A{i}", "kickoff": f"2026-11-13T{10 + (i % 10):02d}:00:00Z"}
+        for i in range(n)
+    ]
+
+
+def test_thin_day_uses_the_normal_ticket_first():
+    normal = _short_legs(16, 1.25)
+    wider = normal + [{"eventId": "cheap", "selection": "Yes", "marketId": "29", "odds": 1.05}]
+    packed, why, used = lib.thin_pack(normal, wider)
+    assert used is False and why is None
+    assert [leg["eventId"] for leg in packed] == [leg["eventId"] for leg in normal]
+    assert lib.product(leg["odds"] for leg in packed) >= 25
+
+
+def test_thin_day_relaxes_only_when_the_ticket_is_short():
+    short = _short_legs(8, 1.40)
+    extra = _short_legs(8, 1.45, prefix="x")
+    assert lib.pack_slip(short)[0] == []
+    packed, why, used = lib.thin_pack(short, short + extra)
+    assert used is True and why is None
+    assert len(packed) == 16 and lib.product(leg["odds"] for leg in packed) >= 25
+    slip = lib.public_slip("gg", "2026-11-13", "ABCDEF", packed, 40.0, relaxed=True)
+    assert slip["relaxed"] is True and "Relaxed" in slip["name"]
+    assert slip["highRisk"] is True and slip["riskLabel"] == "HIGH RISK"
+    plain = lib.public_slip("gg", "2026-11-13", "ABCDEF", packed, 40.0)
+    assert "relaxed" not in plain and "Relaxed" not in plain["name"]
+
+
+def test_thin_day_still_blocks_ng_dc12_short_tickets_and_a_third_code():
+    clean = _short_legs(4, 1.30)
+    ng = {"eventId": "ng", "selection": "No", "marketId": "29", "outcomeId": "76", "odds": 8.0}
+    dc = {"eventId": "dc", "selection": "Home or Away", "marketId": "10", "outcomeId": "10", "odds": 8.0}
+    packed, _why, used = lib.thin_pack([], clean + [ng, dc])
+    assert packed == [] and used is False
+    assert ng["selection"] == "No"
+    usage = {"full": ["code-a", "code-b"]}
+    pooled = master.choose_pooled(clean + [ng, dc, {"eventId": "full", "selection": "Over 1.5", "marketId": "18", "odds": 1.40}], usage)
+    assert [leg["eventId"] for leg in pooled] == [leg["eventId"] for leg in clean]
+    assert all(not lib.absolute_ban(leg) for leg in pooled)
+
+
+def test_gg_thin_day_opens_the_gg_band_and_an_unchecked_table_only():
+    assert gg.odds_pass(_prices(**{"29||Yes": [1.10, "74"]})) is None
+    assert gg.odds_pass(_prices(**{"29||Yes": [1.80, "74"]})) is None
+    assert gg.odds_pass(_prices(**{"29||Yes": [1.10, "74"]}), relaxed=True)["gg"] == 1.10
+    assert gg.odds_pass(_prices(**{"29||Yes": [1.80, "74"]}), relaxed=True)["gg"] == 1.80
+    assert gg.odds_pass(_prices(**{"29||Yes": [1.80, "74"], "1||Draw": [3.40, "2"]}), relaxed=True) is None
+    unchecked = _row(home_pos=(8, 24, "A"), away_pos=(14, 24, "B"))
+    assert gg.filter_rows([unchecked], lambda row: [4, 5])["keep"] == []
+    assert len(gg.filter_rows([unchecked], lambda row: [4, 5], relaxed=True)["keep"]) == 1
+    top = _row(home_pos=(2, 20, "L"), away_pos=(4, 20, "L"))
+    assert gg.filter_rows([top], lambda row: [4, 5], relaxed=True)["keep"] == []
+    crowded = _row(other_codes=2)
+    assert gg.filter_rows([crowded], lambda row: [4, 5], relaxed=True)["keep"] == []
+
+
+def test_nt_thin_day_keeps_lean_warnings_unchecked_tables_and_the_hard_drops():
+    base = {"verdict": "Agree", "m": "Alpha v Beta", "od": 1.40, "key": "29||Yes", "tab": True, "check": "", "warn": [], "eid": "m1", "trust": 6}
+    lean = dict(base, verdict="Lean")
+    assert nt.eligible_rows([lean], {}) == []
+    assert nt.eligible_rows([lean], {}, relaxed=True)[0]["verdict"] == "Lean"
+    warned = dict(base, warn=["late team news"])
+    assert "warning" in nt.book_filters(dict(warned), 0)["skipwhy"]
+    assert nt.book_filters(dict(warned), 0, relaxed=True)["verdict"] == "Agree"
+    unchecked = dict(base, tab=False)
+    assert nt.book_filters(dict(unchecked), 0)["skipwhy"] == "table unchecked"
+    assert nt.book_filters(dict(unchecked), 0, relaxed=True)["verdict"] == "Agree"
+    below = dict(base, od=1.10)
+    assert "1.20" in nt.book_filters(dict(below), 0)["skipwhy"]
+    assert nt.book_filters(dict(below), 0, relaxed=True)["verdict"] == "Agree"
+    above_cap = dict(base, od=1.60)
+    assert "1.50" in nt.book_filters(dict(above_cap), 0)["skipwhy"]
+    assert nt.book_filters(dict(above_cap), 0, relaxed=True)["verdict"] == "Agree"
+    too_high = dict(base, od=1.90)
+    assert "1.75" in nt.book_filters(dict(too_high), 0, relaxed=True)["skipwhy"]
+    crowded = dict(base)
+    assert "2 other" in nt.book_filters(dict(crowded), 2, relaxed=True)["skipwhy"]
+
+
+def test_ts2_thin_day_drops_only_the_floor():
+    def row(eid, odds):
+        return dict(
+            eid=eid, match=f"H{eid} v A", league="Other", home=f"H{eid}", away="A",
+            HA=130, AA=100, HD=140, AD=140, hd=1.8, ad=1.8, nh=10, na=10,
+            th={"SA": 120, "LD": 120, "RL": 1.40}, same=False, pos_gap=8,
+            hpos=8, apos=16, N=20, women=False, youth=False, cup=False, both_elite=False,
+            O={"1||Home": (1.70, "1"), "1||Away": (4.0, "3"), "19|total=1.5|Over 1.5": (odds, "12")},
+            bar={"home": (0.90, 10)},
+        )
+    assert nysm.ts2_candidates([row("4", 1.10)]) == []
+    assert [item["eid"] for item in nysm.ts2_candidates([row("4", 1.10)], relaxed=True)] == ["4"]
+    assert nysm.ts2_candidates([row("9", 1.80)], relaxed=True) == []
+
+
+def test_unverified_table_stays_a_goals_fallback():
+    event = {
+        "eventId": "sr:match:1", "homeTeamName": "Alpha", "awayTeamName": "Beta",
+        "sport": {"category": {"name": "England", "tournament": {"name": "League Two"}}},
+    }
+    prices = {
+        "1||Home": [2.10, "1"], "1||Draw": [3.40, "2"], "1||Away": [3.20, "3"],
+        "18|total=1.5|Over 1.5": [1.15, "12"], "18|total=1.5|Under 1.5": [5.50, "13"],
+    }
+    assert nysm.model_match(event, [], None, None, {}, prices) is None
+    pick = nysm.tree_pick(nysm.unverified_price_row(event, prices))
+    assert pick["key"].startswith("18|") and pick["selection"] == "Over 1.5"
+    assert pick["tableChecked"] is False
+
+
+def test_master_pools_across_strategies_only_on_a_thin_day():
+    booked = _short_legs(16, 1.25, prefix="a")
+    packed, _why, used = lib.thin_pack(master.choose(booked, {}), booked + _short_legs(4, 1.10, prefix="z"))
+    assert used is False and len(packed) == 16
+    short = _short_legs(8, 1.40, prefix="b")
+    second = [
+        {"eventId": f"b{i}", "selection": "Yes", "marketId": "29", "odds": 1.40, "match": f"H{i} v A{i}"}
+        for i in range(8)
+    ]
+    one_each = master.choose(short, {})
+    pooled = master.choose_pooled(short + second, {})
+    packed, _why, used = lib.thin_pack(one_each, pooled)
+    assert used is True and len(packed) == 16
+    assert lib.product(leg["odds"] for leg in packed) >= 25
+    ng = {"eventId": "b0", "selection": "No", "marketId": "29", "outcomeId": "76", "odds": 1.40}
+    again = master.choose_pooled(short + [ng], {})
+    assert all(leg["selection"] != "No" for leg in again)
+    assert ng["selection"] == "No"

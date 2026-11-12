@@ -164,6 +164,7 @@ def tree_pick(row: dict) -> dict | None:
         return None
     pick["eid"] = row.get("eid")
     pick["match"] = f"{row.get('home')} v {row.get('away')}"
+    pick["tableChecked"] = not row.get("unverifiedTable")
     return pick
 
 
@@ -220,7 +221,7 @@ def assign_slips(picks: list[dict]) -> dict[str, list[dict]]:
     return out
 
 
-def ts2_candidates(rows: list[dict]) -> list[dict]:
+def ts2_candidates(rows: list[dict], relaxed: bool = False) -> list[dict]:
     """Team Over 1.5 candidates that pass the v2.2 qualify rules and the house band.
 
     `rows` items need: eid, match, league, HA, AA, HD, AD, hd, ad, nh, na, th (SA/LD/RL),
@@ -280,7 +281,12 @@ def ts2_candidates(rows: list[dict]) -> list[dict]:
                 tier = "B"
             if tier not in {"A", "B"}:
                 continue
-            if not (1.20 <= float(quote[0]) <= 1.50):
+            odds = float(quote[0])
+            # Thin day: drop the 1.20 floor only. The 1.50 house cap stays.
+            if relaxed:
+                if not (1.0 < odds <= 1.50):
+                    continue
+            elif not (1.20 <= odds <= 1.50):
                 continue
             bar = (row.get("bar") or {}).get(side)
             rate = None if not bar else bar[0]
@@ -291,7 +297,7 @@ def ts2_candidates(rows: list[dict]) -> list[dict]:
             found.append({
                 "eid": row["eid"], "match": row.get("match"), "league": row.get("league"),
                 "team": team, "side": side, "key": f"{market_id}|total=1.5|Over 1.5",
-                "odds": float(quote[0]), "oid": str(quote[1]), "tier": tier, "pts": points,
+                "odds": odds, "oid": str(quote[1]), "tier": tier, "pts": points,
                 "bar": rate, "branch": f"TS2 {tier}",
                 "selection": f"{team} over 1.5 goals", "market": "Team total",
             })
@@ -405,6 +411,49 @@ def model_match(event: dict, table_rows: list[dict], home_uid, away_uid, ga6: di
     }
 
 
+def unverified_price_row(event: dict, prices: dict) -> dict | None:
+    """Price-only row when the clubs are not on one checked table. Thin-day only.
+
+    Fav and gap stay in the middle so the tree does not invent a win from a
+    missing table. A goals fallback can still fire from the prices.
+    """
+    if None in (prices.get("1||Home"), prices.get("1||Draw"), prices.get("1||Away")):
+        return None
+    country, league = lib.league_of(event)
+    home_name = event.get("homeTeamName") or ""
+    away_name = event.get("awayTeamName") or ""
+    dnb = {}
+    if prices.get("11||Home"):
+        dnb["Home"] = tuple(prices["11||Home"])
+    if prices.get("11||Away"):
+        dnb["Away"] = tuple(prices["11||Away"])
+    return {
+        "eid": event.get("eventId"),
+        "home": home_name, "away": away_name,
+        "league": f"{country} - {league}".strip(" -"),
+        "cls": "Medium", "th": thresholds("Medium"),
+        "fo": 2.0, "sH": True, "fav": 0.50, "gap": 0.0,
+        "sDef": None, "wAtt": None, "sRaw": None, "sg6": None,
+        "HA": None, "HD": None, "AA": None, "AD": None,
+        "hd": None, "ad": None, "nh": 0, "na": 0,
+        "ldr": 0, "wdr": 0,
+        "mk": {
+            "O15": _implied(prices, "18|total=1.5|Over 1.5", "18|total=1.5|Under 1.5"),
+            "U35": _implied(prices, "18|total=3.5|Under 3.5", "18|total=3.5|Over 3.5"),
+        },
+        "O": {key: tuple(value) for key, value in prices.items()},
+        "DNB": dnb,
+        "women": lib.women_match(home_name, away_name, league),
+        "youth": lib.youth_or_sim(home_name, away_name, country, league),
+        "top5": False, "unverifiedTable": True,
+        "hpos": None, "apos": None, "N": 0,
+        "pos_gap": 99, "same": False, "both_elite": False,
+        "match": f"{home_name} v {away_name}",
+        "cup": bool(CUP_RE.search(league or "")),
+        "ko": lib.event_kick(event),
+    }
+
+
 def _table_pair(match, cache):
     if not match or "teams" not in match:
         return None, None, None
@@ -477,7 +526,7 @@ def pick_to_leg(event, pick, day: str) -> dict:
         "result": "pending",
         "matchStatus": "Not start",
         "branch": pick.get("branch"),
-        "tableChecked": True,
+        "tableChecked": pick.get("tableChecked", True),
         "strategy": pick.get("strategy"),
     }
 
@@ -497,18 +546,8 @@ def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
         if "srl" in league.lower() or "simulated" in league.lower():
             continue
         events.append(event)
-    tree_picks = []
-    ts2_rows = []
-    skipped_table = 0
-    for event in events:
-        match = lib.sr_get("stats_match_get/" + str(event.get("eventId")).split(":")[-1], cache)
-        home_uid, away_uid, block = _table_pair(match, cache)
-        if not block:
-            skipped_table += 1
-            continue
-        before = (match.get("time") or {}).get("uts") or int(kick_ts(event))
-        ga6 = {home_uid: _ga6(home_uid, before, cache), away_uid: _ga6(away_uid, before, cache)}
-        # Event-list prices, then fill DNB from the event card when the list omitted it.
+
+    def _prices_for(event):
         prices = lib.event_odds(event)
         if "11||Home" not in prices or "19|total=1.5|Over 1.5" not in prices:
             detail = lib.http_json(
@@ -516,43 +555,85 @@ def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
             ).get("data") or {}
             if detail.get("markets"):
                 prices = lib.event_odds(detail)
-        row = model_match(event, block, home_uid, away_uid, ga6, prices)
-        if not row or row.get("youth"):
-            skipped_table += 1
-            continue
-        row["bar"] = {
-            "home": _venue_bar(home_uid, "home", before, cache),
-            "away": _venue_bar(away_uid, "away", before, cache),
-        }
-        pick = tree_pick(row)
-        if pick and lib.can_take(usage, row["eid"]):
-            pick["event"] = event
-            tree_picks.append(pick)
-        if lib.can_take(usage, row["eid"]):
-            ts2_rows.append(row | {"event": event})
-    slips = assign_slips(tree_picks)
-    ts2 = []
-    used = {pick["eid"] for bucket in slips.values() for pick in bucket}
-    for cand in ts2_candidates([{k: v for k, v in row.items() if k != "event"} for row in ts2_rows]):
-        if cand["eid"] in used:
-            continue
-        if not lib.can_take(usage, cand["eid"]):
-            continue
-        ts2.append(cand)
-    slips["nysm-ts2"] = ts2
-    event_by_id = {event.get("eventId"): event for event in events}
-    booked = {}
-    for slip_id, picks in slips.items():
-        legs = []
+        return prices
+
+    def gather(relaxed: bool):
+        """One pass. relaxed keeps an unverified table and drops the TS2 1.20 floor."""
+        tree_picks = []
+        ts2_rows = []
+        skipped = 0
+        for event in events:
+            match = lib.sr_get("stats_match_get/" + str(event.get("eventId")).split(":")[-1], cache)
+            home_uid, away_uid, block = _table_pair(match, cache)
+            prices = _prices_for(event)
+            before = (match.get("time") or {}).get("uts") if match else None
+            before = before or int(kick_ts(event))
+            if block and home_uid and away_uid:
+                ga6 = {home_uid: _ga6(home_uid, before, cache), away_uid: _ga6(away_uid, before, cache)}
+                row = model_match(event, block, home_uid, away_uid, ga6, prices)
+            elif relaxed:
+                skipped += 1
+                row = unverified_price_row(event, prices)
+                home_uid = away_uid = None
+            else:
+                skipped += 1
+                continue
+            if not row or row.get("youth"):
+                skipped += 1
+                continue
+            if home_uid and away_uid:
+                row["bar"] = {
+                    "home": _venue_bar(home_uid, "home", before, cache),
+                    "away": _venue_bar(away_uid, "away", before, cache),
+                }
+            pick = tree_pick(row)
+            if pick and lib.can_take(usage, row["eid"]):
+                pick["event"] = event
+                tree_picks.append(pick)
+            if lib.can_take(usage, row["eid"]):
+                ts2_rows.append(row | {"event": event})
+        grouped = assign_slips(tree_picks)
+        ts2 = []
+        used_ids = {pick["eid"] for bucket in grouped.values() for pick in bucket}
+        for cand in ts2_candidates([{k: v for k, v in row.items() if k != "event"} for row in ts2_rows], relaxed=relaxed):
+            if cand["eid"] in used_ids or not lib.can_take(usage, cand["eid"]):
+                continue
+            ts2.append(cand)
+        grouped["nysm-ts2"] = ts2
+        return grouped, skipped
+
+    def legs_of(picks, slip_id):
+        out = []
         for pick in picks:
             event = pick.get("event") or event_by_id.get(pick["eid"]) or {}
             leg = pick_to_leg(event, pick, day.isoformat())
             leg["strategy"] = slip_id
             if lib.can_take(usage, leg["eventId"]):
-                legs.append(leg)
-        packed, why = lib.pack_slip(legs)
-        entry = {"id": slip_id, "candidates": len(picks), "reason": why, "n": len(packed),
-                 "total": round(lib.product(leg["odds"] for leg in packed), 2) if packed else 0, "legs": packed}
+                out.append(leg)
+        return out
+
+    event_by_id = {event.get("eventId"): event for event in events}
+    normal_slips, skipped_table = gather(False)
+    relaxed_slips = None
+    booked = {}
+    qualifying = []
+    for slip_id in ("nysm-main", "nysm-conservative", "nysm-ts2"):
+        normal_legs = legs_of(normal_slips.get(slip_id) or [], slip_id)
+        packed, why = lib.pack_slip(normal_legs)
+        used_relaxed = False
+        if not packed:
+            if relaxed_slips is None:
+                relaxed_slips, extra_skipped = gather(True)
+                skipped_table += extra_skipped
+            relaxed_legs = legs_of((relaxed_slips or {}).get(slip_id) or [], slip_id)
+            packed, why, used_relaxed = lib.thin_pack(normal_legs, relaxed_legs)
+            qualifying.extend(relaxed_legs)
+        else:
+            qualifying.extend(normal_legs)
+        picks = (relaxed_slips or normal_slips).get(slip_id) if used_relaxed else normal_slips.get(slip_id)
+        entry = {"id": slip_id, "candidates": len(picks or []), "reason": why, "n": len(packed),
+                 "total": round(lib.product(leg["odds"] for leg in packed), 2) if packed else 0,
+                 "legs": packed, "relaxed": used_relaxed}
         if packed and not dry_run:
             result = lib.book_confirmed(packed)
             entry.update({k: v for k, v in result.items() if k != "legs"})
@@ -560,7 +641,9 @@ def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
             if result.get("code"):
                 for leg in entry["legs"]:
                     lib.take(usage, leg["eventId"], result["code"])
-                lib.publish_high_odds(repo, lib.public_slip(slip_id, day.isoformat(), result["code"], entry["legs"], result["total"]))
+                lib.publish_high_odds(repo, lib.public_slip(
+                    slip_id, day.isoformat(), result["code"], entry["legs"], result["total"], relaxed=used_relaxed,
+                ))
         elif dry_run and packed:
             entry["dryRun"] = True
         booked[slip_id] = entry
@@ -571,6 +654,8 @@ def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
         "date": day.isoformat(),
         "events": len(events),
         "tableUnchecked": skipped_table,
+        "relaxed": any(row.get("relaxed") for row in booked.values()),
+        "qualifying": qualifying,
         "slips": {key: {k: v for k, v in row.items() if k != "legs"} | {"legs": row.get("legs")} for key, row in booked.items()},
         "conflicts": [
             "Tree Win/DNB is not limited to goals markets, so obscure leagues can carry a result pick. Published with strategySpec so prune keeps the card; flagged against the goals-only rule.",

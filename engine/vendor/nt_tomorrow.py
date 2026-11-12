@@ -407,28 +407,52 @@ def decide(row: dict, info: dict | None) -> dict:
     return row
 
 
-def book_filters(row: dict, usage_count: int) -> dict:
-    """Forensics from book10.py. Agree legs that fail here are not booked."""
-    if row.get("verdict") != "Agree":
+def book_filters(row: dict, usage_count: int, relaxed: bool = False) -> dict:
+    """Forensics from book10.py. Agree legs that fail here are not booked.
+
+    A thin-day rerun also keeps Lean, an unchecked table, a GG price above 1.50,
+    a NerdyTips form warning, and a price under 1.20. Youth, two codes, the
+    1.75 cap and a favourite mismatch still drop the leg.
+    """
+    allowed = ("Agree", "Lean") if relaxed else ("Agree",)
+    if row.get("verdict") not in allowed:
         return row
     home, away = (row.get("m") or " v ").split(" v ", 1) if " v " in (row.get("m") or "") else ("", "")
     if YOUTH_TEAM.search(home) or YOUTH_TEAM.search(away):
         row.update(verdict="Skip", skipwhy="reserve/B team")
     elif usage_count >= 2:
         row.update(verdict="Skip", skipwhy="already on 2 other codes")
-    elif not row.get("tab"):
+    elif not row.get("tab") and not relaxed:
         row.update(verdict="Skip", skipwhy="table unchecked")
     elif "[SB favourite differs" in (row.get("check") or ""):
         row.update(verdict="Skip", skipwhy="flagged: SB favourite differs from NT pick")
-    elif row.get("key") == "29||Yes" and (row.get("od") or 0) > 1.50:
+    elif row.get("key") == "29||Yes" and (row.get("od") or 0) > 1.50 and not relaxed:
         row.update(verdict="Skip", skipwhy=f"GG @{row.get('od')} above the 1.50 GG cap")
-    elif row.get("warn"):
+    elif row.get("warn") and not relaxed:
         row.update(verdict="Skip", skipwhy="flagged by a NerdyTips warning: " + " / ".join(row["warn"]))
     elif (row.get("od") or 0) > 1.75:
         row.update(verdict="Skip", skipwhy=f"odds {row.get('od')} above 1.75 cap")
-    elif (row.get("od") or 0) < 1.20:
+    elif (row.get("od") or 0) < 1.20 and not relaxed:
         row.update(verdict="Skip", skipwhy=f"odds {row.get('od')} below 1.20")
     return row
+
+
+def eligible_rows(verdicts: list[dict], usage: dict, relaxed: bool = False) -> list[dict]:
+    """Agree rows that survive book_filters. Thin day also keeps Lean."""
+    allowed = {"Agree", "Lean"} if relaxed else {"Agree"}
+    kept = []
+    for row in verdicts:
+        copy = dict(row)
+        if isinstance(copy.get("warn"), list):
+            copy["warn"] = list(copy["warn"])
+        book_filters(copy, len(usage.get(copy.get("eid")) or []), relaxed=relaxed)
+        if copy.get("verdict") not in allowed or not copy.get("key"):
+            continue
+        if not relaxed and (copy.get("od") or 0) < 1.20:
+            continue
+        kept.append(copy)
+    kept.sort(key=lambda row: (-(row.get("trust") or 0), -row.get("score", 0), -(row.get("od") or 0)))
+    return kept[:30]
 
 
 def _form_from_lastx(lastx, uid, before, venue=None):
@@ -613,44 +637,45 @@ def run(repo: Path, dry_run: bool = False, day: dt.date | None = None) -> dict:
     for row in pooled:
         info = independent(row["eid"], cache)
         decide(row, info)
-        book_filters(row, len(usage.get(row["eid"]) or []))
         verdicts.append(row)
-    agree = [row for row in verdicts if row.get("verdict") == "Agree" and (row.get("od") or 0) >= 1.20 and row.get("key")]
-    agree.sort(key=lambda row: (-row["trust"], -row.get("score", 0), -row["od"]))
-    agree = agree[:30]
-    # One market per match, and only while the match is still under two codes.
-    chosen = []
-    seen = set()
-    for row in agree:
-        if row["eid"] in seen or not lib.can_take(usage, row["eid"]):
-            continue
-        seen.add(row["eid"])
-        chosen.append(row)
-    legs = []
-    for row in chosen:
-        mid, spec, desc = row["key"].split("|", 2)
-        kick = dt.datetime.fromtimestamp(row["ko"] / 1000, dt.timezone.utc) if row.get("ko") else None
-        legs.append({
-            "eventId": row["eid"], "marketId": mid, "specifier": spec or None, "outcomeId": str(row["oid"]),
-            "market": row.get("tip") or desc, "selection": "Yes" if row["key"] == "29||Yes" else (desc if desc in {"Over 1.5", "Under 3.5", "Home", "Away"} else row.get("tip") or desc),
-            "odds": float(row["od"]), "match": row["m"], "league": row.get("lg"),
-            "date": target.isoformat(), "ko": row.get("kick"),
-            "kickoff": kick.isoformat().replace("+00:00", "Z") if kick else None,
-            "result": "pending", "matchStatus": "Not start", "tableChecked": bool(row.get("tab")),
-            "trust": row["trust"], "strategy": CODE_ID, "converted": bool(row.get("conv")),
-        })
-    # Team-to-score labels need the "over N goals" shape so the existing settler can grade them.
-    for leg in legs:
-        if leg["marketId"] in {"19", "20"} and "goals" not in leg["selection"].lower():
-            side = leg["match"].split(" v ")[0 if leg["marketId"] == "19" else 1]
-            leg["selection"] = f"{side} over 0.5 goals"
-        if leg["selection"] in {"Home or draw (1X)", "Draw or away (X2)"}:
-            leg["selection"] = "Home or Draw" if leg["marketId"] == "10" and "Home" in leg["selection"] else leg["selection"]
-            if "Draw or away" in leg["market"] or leg["selection"].startswith("Draw or away"):
-                leg["selection"] = "Draw or Away"
-            elif "Home or draw" in leg["market"] or "Home or draw" in leg["selection"]:
-                leg["selection"] = "Home or Draw"
-    packed, why = lib.pack_slip(legs, cap=30)
+    def rows_to_legs(rows):
+        # One market per match, and only while the match is still under two codes.
+        chosen = []
+        seen = set()
+        for row in rows:
+            if row["eid"] in seen or not lib.can_take(usage, row["eid"]):
+                continue
+            seen.add(row["eid"])
+            chosen.append(row)
+        built = []
+        for row in chosen:
+            mid, spec, desc = row["key"].split("|", 2)
+            kick = dt.datetime.fromtimestamp(row["ko"] / 1000, dt.timezone.utc) if row.get("ko") else None
+            built.append({
+                "eventId": row["eid"], "marketId": mid, "specifier": spec or None, "outcomeId": str(row["oid"]),
+                "market": row.get("tip") or desc, "selection": "Yes" if row["key"] == "29||Yes" else (desc if desc in {"Over 1.5", "Under 3.5", "Home", "Away"} else row.get("tip") or desc),
+                "odds": float(row["od"]), "match": row["m"], "league": row.get("lg"),
+                "date": target.isoformat(), "ko": row.get("kick"),
+                "kickoff": kick.isoformat().replace("+00:00", "Z") if kick else None,
+                "result": "pending", "matchStatus": "Not start", "tableChecked": bool(row.get("tab")),
+                "trust": row["trust"], "strategy": CODE_ID, "converted": bool(row.get("conv")),
+            })
+        for leg in built:
+            if leg["marketId"] in {"19", "20"} and "goals" not in leg["selection"].lower():
+                side = leg["match"].split(" v ")[0 if leg["marketId"] == "19" else 1]
+                leg["selection"] = f"{side} over 0.5 goals"
+            if leg["selection"] in {"Home or draw (1X)", "Draw or away (X2)"}:
+                leg["selection"] = "Home or Draw" if leg["marketId"] == "10" and "Home" in leg["selection"] else leg["selection"]
+                if "Draw or away" in leg["market"] or leg["selection"].startswith("Draw or away"):
+                    leg["selection"] = "Draw or Away"
+                elif "Home or draw" in leg["market"] or "Home or draw" in leg["selection"]:
+                    leg["selection"] = "Home or Draw"
+        return built
+
+    normal_legs = rows_to_legs(eligible_rows(verdicts, usage, relaxed=False))
+    relaxed_legs = rows_to_legs(eligible_rows(verdicts, usage, relaxed=True))
+    packed, why, used_relaxed = lib.thin_pack(normal_legs, relaxed_legs, cap=30)
+    agree = eligible_rows(verdicts, usage, relaxed=used_relaxed)
     result = {"code": None, "reason": why, "n": len(packed), "total": round(lib.product(leg["odds"] for leg in packed), 4) if packed else 0, "legs": packed}
     if packed and not dry_run:
         booked = lib.book_confirmed(packed)
@@ -658,7 +683,7 @@ def run(repo: Path, dry_run: bool = False, day: dt.date | None = None) -> dict:
         if booked.get("code"):
             for leg in booked["legs"]:
                 lib.take(usage, leg["eventId"], booked["code"])
-            lib.publish_high_odds(repo, lib.public_slip(CODE_ID, target.isoformat(), booked["code"], booked["legs"], booked["total"]))
+            lib.publish_high_odds(repo, lib.public_slip(CODE_ID, target.isoformat(), booked["code"], booked["legs"], booked["total"], relaxed=used_relaxed))
             lib.save_usage(repo, target.isoformat(), usage)
     elif dry_run and packed:
         result["dryRun"] = True
@@ -672,6 +697,8 @@ def run(repo: Path, dry_run: bool = False, day: dt.date | None = None) -> dict:
         "pooled": len(pooled),
         "skipped": dict(skipped),
         "agree": len(agree),
+        "relaxed": used_relaxed,
+        "qualifying": relaxed_legs if used_relaxed or not packed else normal_legs,
         "booked": {k: v for k, v in result.items() if k != "legs"} | {"n": len(result.get("legs") or [])},
         "legs": result.get("legs") or [],
         "verdicts": [{k: row.get(k) for k in ("m", "trust", "verdict", "tip", "od", "cls", "skipwhy", "key")} for row in verdicts],

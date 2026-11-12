@@ -82,7 +82,33 @@ def choose(legs: list[dict], usage: dict) -> list[dict]:
     return chosen
 
 
-def publish_master(repo: Path, day: str, code: str, legs: list[dict], total: float) -> None:
+def choose_pooled(legs: list[dict], usage: dict) -> list[dict]:
+    """Every qualifying leg across strategies. Still no NG, no DC 12, no third code."""
+    chosen = []
+    seen = set()
+    for leg in legs:
+        eid = leg.get("eventId")
+        if not eid or not lib.can_take(usage, eid) or lib.absolute_ban(leg):
+            continue
+        key = (eid, str(leg.get("marketId") or ""), str(leg.get("selection") or ""))
+        if key in seen:
+            continue
+        seen.add(key)
+        chosen.append(dict(leg))
+    chosen.sort(key=lambda leg: (leg.get("kickoff") or "", leg.get("match") or "", str(leg.get("marketId") or "")))
+    return chosen
+
+
+def qualifying_legs(repo: Path, day: str) -> list[dict]:
+    """Booked legs plus the short lists each strategy saved for a thin day."""
+    rows = []
+    for _kind, payload in load_completed(repo, day):
+        rows.extend(payload.get("qualifying") or [])
+    rows.extend(completed_legs(repo, day))
+    return rows
+
+
+def publish_master(repo: Path, day: str, code: str, legs: list[dict], total: float, relaxed: bool = False) -> None:
     for leg in legs:
         leg["gateExempt"] = True
         leg["strategySpec"] = True
@@ -93,7 +119,8 @@ def publish_master(repo: Path, day: str, code: str, legs: list[dict], total: flo
         "legs": len(legs),
         "totalOdds": total,
         "link": lib.SB_LINK.format(code),
-        "name": f"Code of the Day · {day}",
+        "name": f"Code of the Day · Relaxed · {day}" if relaxed else f"Code of the Day · {day}",
+        "relaxed": relaxed,
         "riskLabel": "HIGH RISK",
         "uncertainLegs": 0,
         "note": "HIGH RISK Code of the Day from the night's strategy codes. Not safe or guaranteed.",
@@ -124,7 +151,8 @@ def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
     usage = lib.load_usage(repo, day.isoformat())
     source = completed_legs(repo, day.isoformat())
     chosen = choose(source, usage)
-    packed, why = lib.pack_slip(chosen)
+    pooled = choose_pooled(qualifying_legs(repo, day.isoformat()), usage)
+    packed, why, used_relaxed = lib.thin_pack(chosen, pooled)
     payload = {
         "strategy": "master",
         "date": day.isoformat(),
@@ -134,6 +162,7 @@ def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
         "code": None,
         "total": round(lib.product(leg["odds"] for leg in packed), 2) if packed else 0,
         "legs": packed,
+        "relaxed": used_relaxed,
         "conflicts": [
             "One selection per match taken from the strategy codes that actually booked.",
             "NG is dropped or replaced by a different qualifying selection. It is never rewritten as GG.",
@@ -155,7 +184,7 @@ def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
         payload.update({k: v for k, v in booked.items() if k != "legs"})
         payload["legs"] = booked.get("legs") or []
         if booked.get("code"):
-            publish_master(repo, day.isoformat(), booked["code"], payload["legs"], booked["total"])
+            publish_master(repo, day.isoformat(), booked["code"], payload["legs"], booked["total"], relaxed=used_relaxed)
             for leg in payload["legs"]:
                 lib.take(usage, leg["eventId"], booked["code"])
             lib.save_usage(repo, day.isoformat(), usage)

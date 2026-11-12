@@ -144,6 +144,8 @@ These four jobs book SportyBet Ghana share codes only. They do not log in and do
 
 They follow the strategy notes where those notes conflict with the standing rules (1X/X2 above 1.35, obscure-league result picks, the 1.30/1.60 caps, SportyBet-only instead of every bookmaker, book-nothing under 25 instead of combining). Public cards from these jobs are marked `strategySpec` so prune keeps that conflict on the card. NG and DC 12 still remove a card. The optional global gates stay off. The 06:00 master is also the Code of the Day (`gateExempt`), which is the existing exception for that one card.
 
+On a thin day (the normal ticket is under 25) each of these four jobs reruns once with only these filters loose: the 1.20 leg floor, the GG price cap, an unverified league table, NerdyTips form warnings, and Lean picks as well as Agree. The 06:00 master may also pool qualifying legs across the four strategies. The slip is marked `relaxed` and its title contains Relaxed, and it stays HIGH RISK. Still never loose, even on a thin day: NG, DC 12, SportyBet only, the 25 combined-odds minimum, two codes per match, no bet placed, the gates, and the free-codes switch.
+
 | Job | Script | Cron (UTC) |
 |---|---|---|
 | GG / BTTS Yes | `vendor/gg_strategy.py` | `10 23 * * *` |

@@ -24,8 +24,12 @@ import strategy_lib as lib
 CODE_ID = "gg"
 
 
-def odds_pass(prices: dict) -> dict | None:
-    """Return the screened prices, or None when the exact band misses."""
+def odds_pass(prices: dict, relaxed: bool = False) -> dict | None:
+    """Return the screened prices, or None when the exact band misses.
+
+    A thin-day rerun drops only the 1.20 GG floor and the 1.55 GG cap.
+    The Over 2.5, Over 1.5 and draw bands stay.
+    """
     gg = prices.get("29||Yes")
     over25 = prices.get("18|total=2.5|Over 2.5")
     over15 = prices.get("18|total=1.5|Over 1.5")
@@ -35,7 +39,8 @@ def odds_pass(prices: dict) -> dict | None:
     if not all([gg, over25, over15, home, draw, away]):
         return None
     g, o25, o15, h, d, a = gg[0], over25[0], over15[0], home[0], draw[0], away[0]
-    if not (1.20 <= g <= 1.55 and 1.60 <= o25 <= 1.69 and 1.15 <= o15 <= 1.20 and d > 3.50):
+    gg_ok = g > 1.0 if relaxed else (1.20 <= g <= 1.55)
+    if not (gg_ok and 1.60 <= o25 <= 1.69 and 1.15 <= o15 <= 1.20 and d > 3.50):
         return None
     return {
         "gg": g, "o25": o25, "o15": o15, "home_odds": h, "draw": d, "away_odds": a,
@@ -69,8 +74,12 @@ def league_tier(current: tuple[int, int, int] | None, previous: tuple[int, int, 
     return {"n": n, "gpg": round(gpg, 2), "gg_rate": round(ggr, 3), "tier": tier}
 
 
-def filter_rows(rows: list[dict], scored5) -> dict:
-    """filt2.py keep / watch / drop. `scored5(row)` -> [home_scored_in_last5, away_scored_in_last5]."""
+def filter_rows(rows: list[dict], scored5, relaxed: bool = False) -> dict:
+    """filt2.py keep / watch / drop. `scored5(row)` -> [home_scored_in_last5, away_scored_in_last5].
+
+    A thin-day rerun keeps a row whose league table could not be checked.
+    Top-5 and bottom-3 still drop when the two clubs share a table.
+    """
     keep, watch, removed, samples = [], [], {}, {}
 
     def drop(key, name):
@@ -112,15 +121,18 @@ def filter_rows(rows: list[dict], scored5) -> dict:
             drop("last-10 goals <1.3", name)
             continue
         home_pos, away_pos = row.get("home_pos"), row.get("away_pos")
-        if not (home_pos and away_pos and home_pos[2] == away_pos[2]):
-            drop("table unchecked", name)
-            continue
-        if home_pos[0] <= 5 and away_pos[0] <= 5:
-            drop("top-5 v top-5", name)
-            continue
-        if home_pos[0] > home_pos[1] - 3 and away_pos[0] > away_pos[1] - 3:
-            drop("bottom-3 v bottom-3", name)
-            continue
+        shared = bool(home_pos and away_pos and home_pos[2] == away_pos[2])
+        if not shared:
+            if not relaxed:
+                drop("table unchecked", name)
+                continue
+        else:
+            if home_pos[0] <= 5 and away_pos[0] <= 5:
+                drop("top-5 v top-5", name)
+                continue
+            if home_pos[0] > home_pos[1] - 3 and away_pos[0] > away_pos[1] - 3:
+                drop("bottom-3 v bottom-3", name)
+                continue
         if row.get("away_fav"):
             drop("away favourite", name)
             continue
@@ -269,7 +281,7 @@ def to_leg(row: dict, day: str) -> dict:
     }
 
 
-def scan(day: dt.date, usage: dict, cache: dict | None = None) -> dict:
+def scan(day: dt.date, usage: dict, cache: dict | None = None, relaxed: bool = False) -> dict:
     cache = cache if cache is not None else {}
     screened = []
     seen = 0
@@ -284,7 +296,7 @@ def scan(day: dt.date, usage: dict, cache: dict | None = None) -> dict:
         home, away = event.get("homeTeamName") or "", event.get("awayTeamName") or ""
         if "srl" in league.lower() or "simulated" in league.lower() or "esoccer" in (country + league).lower():
             continue
-        prices = odds_pass(lib.event_odds(event))
+        prices = odds_pass(lib.event_odds(event), relaxed=relaxed)
         if not prices:
             continue
         screened.append({
@@ -302,7 +314,7 @@ def scan(day: dt.date, usage: dict, cache: dict | None = None) -> dict:
         row["other_codes"] = len(usage.get(row["event_id"]) or [])
         attach_stats(row, cache)
         attach_tier(row, cache, memo)
-    result = filter_rows(screened, lambda row: scored_last5(row, cache))
+    result = filter_rows(screened, lambda row: scored_last5(row, cache), relaxed=relaxed)
     result["screened"] = len(screened)
     result["seen"] = seen
     return result
@@ -327,15 +339,30 @@ def append_log(repo: Path, day: str, legs: list[dict], code: str | None) -> None
             })
 
 
-def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
-    usage = lib.load_usage(repo, day.isoformat())
-    found = scan(day, usage)
+def _collect(day: dt.date, usage: dict, relaxed: bool) -> tuple[dict, list[dict]]:
+    found = scan(day, usage, relaxed=relaxed)
     legs = []
     for row in found["keep"]:
         if not lib.can_take(usage, row["event_id"]):
             continue
-        legs.append(to_leg(row, day.isoformat()))
+        leg = to_leg(row, day.isoformat())
+        home_pos, away_pos = row.get("home_pos"), row.get("away_pos")
+        leg["tableChecked"] = bool(home_pos and away_pos and home_pos[2] == away_pos[2])
+        if relaxed:
+            leg["relaxed"] = True
+        legs.append(leg)
+    return found, legs
+
+
+def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
+    usage = lib.load_usage(repo, day.isoformat())
+    found, legs = _collect(day, usage, False)
     parts = lib.chunk_bookable(legs)
+    used_relaxed = False
+    if not parts:
+        found, legs = _collect(day, usage, True)
+        parts = lib.chunk_bookable(legs)
+        used_relaxed = bool(parts)
     booked = []
     if dry_run:
         for index, part in enumerate(parts, 1):
@@ -351,7 +378,7 @@ def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
             if result.get("code"):
                 for leg in result["legs"]:
                     lib.take(usage, leg["eventId"], result["code"])
-                slip = lib.public_slip(CODE_ID, day.isoformat(), result["code"], result["legs"], result["total"], index if len(parts) > 1 else None)
+                slip = lib.public_slip(CODE_ID, day.isoformat(), result["code"], result["legs"], result["total"], index if len(parts) > 1 else None, relaxed=used_relaxed)
                 lib.publish_high_odds(repo, slip)
                 append_log(repo, day.isoformat(), result["legs"], result["code"])
             booked.append(result)
@@ -365,6 +392,8 @@ def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
         "watch": len(found["watch"]),
         "removed": found["removed"],
         "booked": [{k: v for k, v in row.items() if k != "legs"} | {"n": len(row.get("legs") or [])} for row in booked],
+        "relaxed": used_relaxed,
+        "qualifying": legs,
         "legs": [leg for row in booked if row.get("code") for leg in (row.get("legs") or [])],
         "conflicts": [
             "SportyBet GH only — standing rule books every no-login bookmaker.",

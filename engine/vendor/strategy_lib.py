@@ -125,6 +125,36 @@ def pack_slip(legs: list[dict], cap: int = MAX_LEGS) -> tuple[list[dict], str | 
     return kept, (note.strip() or None)
 
 
+def thin_pack(normal: list[dict], relaxed: list[dict], cap: int = MAX_LEGS):
+    """Book the normal ticket. One relaxed pass only when that ticket is under 25.
+
+    Returns (packed, reason, used_relaxed). NG, DC 12 and the 25 minimum stay in pack_slip.
+    """
+    packed, why = pack_slip(normal, cap=cap)
+    if packed:
+        return packed, why, False
+    packed, why = pack_slip(relaxed, cap=cap)
+    return packed, why, bool(packed)
+
+
+def tag_relaxed(slip: dict) -> dict:
+    """Mark a thin-day slip. It stays HIGH RISK."""
+    slip["relaxed"] = True
+    slip["highRisk"] = True
+    slip["riskRating"] = "HIGH"
+    slip["riskLabel"] = "HIGH RISK"
+    name = str(slip.get("name") or "")
+    if "Relaxed" not in name:
+        if " · HIGH RISK" in name:
+            slip["name"] = name.replace(" · HIGH RISK", " · Relaxed · HIGH RISK", 1)
+        else:
+            slip["name"] = f"{name} · Relaxed".strip()
+    note = str(slip.get("warning") or "")
+    if "Thin-day" not in note:
+        slip["warning"] = (note + " Thin-day relaxed filters. Still HIGH RISK. Not safe or guaranteed.").strip()
+    return slip
+
+
 def chunk_bookable(legs: list[dict], cap: int = MAX_LEGS) -> list[list[dict]]:
     """Split a long qualifying list into bookable parts. Parts under 25 are omitted."""
     clean = [leg for leg in legs if not absolute_ban(leg)]
@@ -443,12 +473,12 @@ def book_confirmed(legs: list[dict]) -> dict:
     return {"code": code, "status": status, "total": round(total, 2), "legs": pending, "link": SB_LINK.format(code)}
 
 
-def public_slip(slip_id: str, day: str, code: str, legs: list[dict], total: float, part: int | None = None) -> dict:
+def public_slip(slip_id: str, day: str, code: str, legs: list[dict], total: float, part: int | None = None, relaxed: bool = False) -> dict:
     name = PUBLIC_NAME.get(slip_id, "Strategy")
     if part:
         name = f"{name} {part}"
     link = SB_LINK.format(code)
-    return {
+    slip = {
         "code": code,
         "bookmaker": "SportyBet",
         "book": "sportybet",
@@ -468,6 +498,9 @@ def public_slip(slip_id: str, day: str, code: str, legs: list[dict], total: floa
         "codes": {"sportybet": {"code": code, "legs": len(legs), "odds": total, "link": link}},
         "lastKickoff": max((leg.get("kickoff") or "") for leg in legs) if legs else None,
     }
+    if relaxed:
+        tag_relaxed(slip)
+    return slip
 
 
 def publish_high_odds(repo: Path, slip: dict) -> None:
