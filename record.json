@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-12T20:15:46Z",
+ "DATA_UPDATED": "2026-11-12T21:04:29Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -477,8 +477,8 @@
   }
  ],
  "picks": {
-  "settled": 1794,
-  "won": 1336,
+  "settled": 1796,
+  "won": 1338,
   "lost": 458,
   "winRate": 74.5
  },
@@ -491,7 +491,7 @@
    "kind": "slip",
    "odds": 310.44,
    "status": "lost",
-   "hit": 7,
+   "hit": 9,
    "total": 25,
    "profit": -10.0,
    "legs": [
@@ -561,7 +561,7 @@
     {
      "match": "Chambery SF v Grenoble Foot",
      "selection": "Over 1.5",
-     "odds": 3.05,
+     "odds": 5.9,
      "result": "won",
      "score": "0:2"
     },
@@ -575,7 +575,7 @@
     {
      "match": "Kimberley de Mar Del Plata v Club Olimpo",
      "selection": "Over 1.5",
-     "odds": 1.39,
+     "odds": 1.7,
      "result": "pending",
      "score": "1:1"
     },
@@ -584,12 +584,12 @@
      "selection": "Over 1.5",
      "odds": 1.1,
      "result": "pending",
-     "score": "3:1"
+     "score": "4:1"
     },
     {
      "match": "Cameroon v Namibia",
      "selection": "Over 1.5",
-     "odds": 1.12,
+     "odds": 1.15,
      "result": "pending",
      "score": "2:0"
     },
@@ -603,9 +603,9 @@
     {
      "match": "Senegal v Sudan",
      "selection": "Over 1.5",
-     "odds": 1.32,
+     "odds": 1.15,
      "result": "pending",
-     "score": "1:1"
+     "score": "2:1"
     },
     {
      "match": "Cayman Islands v Guyana",
@@ -617,28 +617,28 @@
     {
      "match": "Czechia v Spain",
      "selection": "Over 1.5",
-     "odds": 1.16,
+     "odds": 1.12,
      "result": "pending",
-     "score": "0:0"
+     "score": "0:1"
     },
     {
      "match": "England v Croatia",
      "selection": "Over 1.5",
-     "odds": 1.13,
+     "odds": 1.12,
      "result": "pending",
      "score": "1:0"
     },
     {
      "match": "Montenegro v Latvia",
      "selection": "Over 1.5",
-     "odds": 1.26,
+     "odds": 1.7,
      "result": "pending",
      "score": "0:0"
     },
     {
      "match": "San Marino v Belarus",
      "selection": "Over 1.5",
-     "odds": 1.21,
+     "odds": 1.06,
      "result": "pending",
      "score": "0:2"
     },
