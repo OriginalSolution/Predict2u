@@ -128,6 +128,18 @@ Daily (engine-strategies.yml): `vendor/nerdytips_strategies.py` writes inbox pic
 - **BetMines Premium All Trends** — both teams support; price/league/H2H/form/table (needs `engine/data/betmines_trends.json`)
 Candidates then pass standing Predict2u rules (no NG, no DC 12, 1X/X2 ≤1.35, obscure goals-only, combine 25+, ≤50 split, all bookmakers). No padding.
 
+## Nightly GG, NYSM v2, NerdyTips Tomorrow, and the 06:00 master
+These four jobs book SportyBet Ghana share codes only. They do not log in and do not place bets. A ticket under 25 combined odds is not booked and is not padded. A match already on two codes is skipped. NG and DC 12 are never booked. Settling uses `engine/settle_codes.py` (strategy records under `engine/data/strategy-codes/`) plus the existing High Odds / daily-master settler.
+
+They follow the strategy notes where those notes conflict with the standing rules (1X/X2 above 1.35, obscure-league result picks, the 1.30/1.60 caps, SportyBet-only instead of every bookmaker, book-nothing under 25 instead of combining). Public cards from these jobs are marked `strategySpec` so prune keeps that conflict on the card. NG and DC 12 still remove a card. The optional global gates stay off. The 06:00 master is also the Code of the Day (`gateExempt`), which is the existing exception for that one card.
+
+| Job | Script | Cron (UTC) |
+|---|---|---|
+| GG / BTTS Yes | `vendor/gg_strategy.py` | `10 23 * * *` |
+| NYSM tree v2 (Main, Conservative, TS2+) | `vendor/nysm_v2.py` | `30 23 * * *` |
+| NerdyTips Tomorrow, trust ≥ 5.0, Agree only | `vendor/nt_tomorrow.py` | `50 23 * * *` |
+| Code of the Day | `vendor/strategy_master.py` | `0 6 * * *` |
+
 ## Optional global gates (DISABLED by default)
 `engine/gates/optional_gates.py` + `config.json` → `optional_gates`. Master `enabled: false`.
 Proposed gates (all off — several conflict with standing user rules): SportyBet-GH-only, min 25 odds on every code, GG benched, Riddim-Edge legs <1.50, max 2 codes per event, force top5vtop5/bottom3vbottom3 drop, max 25 tips/code, per-league history. Do **not** enable without an explicit user decision.

@@ -1,0 +1,60 @@
+name: Predict2u engine — NYSM decision tree v2
+
+on:
+  schedule:
+    - cron: "30 23 * * *"   # 23:30 UTC = 11:30 PM Africa/Accra
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Scan only — do not book or commit"
+        type: boolean
+        default: false
+      date:
+        description: "Fixture date YYYY-MM-DD (blank uses the night rule)"
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: predict2u-strategy-night
+  cancel-in-progress: false
+
+jobs:
+  nysm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Cache Sportradar reads
+        uses: actions/cache@v4
+        with:
+          path: engine/data/stats-cache
+          key: p2u-nysm-stats-${{ github.run_id }}
+          restore-keys: |
+            p2u-nysm-stats-
+      - name: NYSM Main, Conservative, TS2+
+        env:
+          REPO_DIR: ${{ github.workspace }}
+          ENGINE_DIR: ${{ github.workspace }}/engine
+        run: |
+          set -euo pipefail
+          ARGS=()
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
+          if [ -n "${{ inputs.date }}" ]; then ARGS+=(--date "${{ inputs.date }}"); fi
+          python engine/vendor/nysm_v2.py "${ARGS[@]}"
+      - name: Commit booked NYSM codes
+        if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        run: |
+          set -euo pipefail
+          git config user.name "predict2u-engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- high_odds.json engine/data/strategy-codes/nysm engine/data/strategy-usage || true
+          if git diff --cached --quiet; then echo "no NYSM changes"; exit 0; fi
+          git commit -m "Engine NYSM v2 $(date -u +%FT%TZ)"
+          git pull --rebase --autostash -X theirs origin main || git pull --rebase --autostash origin main || true
+          git push origin HEAD

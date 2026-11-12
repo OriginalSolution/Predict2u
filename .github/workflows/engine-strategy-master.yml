@@ -1,0 +1,53 @@
+name: Predict2u engine — strategy master (Code of the Day)
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # 06:00 UTC = 06:00 Africa/Accra
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Combine only — do not book or commit"
+        type: boolean
+        default: false
+      date:
+        description: "Accra date YYYY-MM-DD (blank = today)"
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: predict2u-strategy-night
+  cancel-in-progress: false
+
+jobs:
+  master:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Code of the Day
+        env:
+          REPO_DIR: ${{ github.workspace }}
+          ENGINE_DIR: ${{ github.workspace }}/engine
+        run: |
+          set -euo pipefail
+          ARGS=()
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
+          if [ -n "${{ inputs.date }}" ]; then ARGS+=(--date "${{ inputs.date }}"); fi
+          python engine/vendor/strategy_master.py "${ARGS[@]}"
+      - name: Commit Code of the Day
+        if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        run: |
+          set -euo pipefail
+          git config user.name "predict2u-engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- high_odds.json home-picks.json hot-picks.json engine/data/daily-master engine/data/strategy-codes/master engine/data/strategy-usage || true
+          if git diff --cached --quiet; then echo "no master changes"; exit 0; fi
+          git commit -m "Engine strategy master $(date -u +%FT%TZ)"
+          git pull --rebase --autostash -X theirs origin main || git pull --rebase --autostash origin main || true
+          git push origin HEAD

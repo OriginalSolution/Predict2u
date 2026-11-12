@@ -1,0 +1,53 @@
+name: Predict2u engine — GG strategy
+
+on:
+  schedule:
+    - cron: "10 23 * * *"   # 23:10 UTC = 11:10 PM Africa/Accra; builds the next day's card
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Scan only — do not book or commit"
+        type: boolean
+        default: false
+      date:
+        description: "Fixture date YYYY-MM-DD (blank uses the night rule)"
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: predict2u-strategy-night
+  cancel-in-progress: false
+
+jobs:
+  gg:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: GG / BTTS-Yes
+        env:
+          REPO_DIR: ${{ github.workspace }}
+          ENGINE_DIR: ${{ github.workspace }}/engine
+        run: |
+          set -euo pipefail
+          ARGS=()
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
+          if [ -n "${{ inputs.date }}" ]; then ARGS+=(--date "${{ inputs.date }}"); fi
+          python engine/vendor/gg_strategy.py "${ARGS[@]}"
+      - name: Commit booked GG code
+        if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        run: |
+          set -euo pipefail
+          git config user.name "predict2u-engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- high_odds.json engine/data/strategy-codes/gg engine/data/strategy-usage engine/data/gg || true
+          if git diff --cached --quiet; then echo "no GG changes"; exit 0; fi
+          git commit -m "Engine GG strategy $(date -u +%FT%TZ)"
+          git pull --rebase --autostash -X theirs origin main || git pull --rebase --autostash origin main || true
+          git push origin HEAD

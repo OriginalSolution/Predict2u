@@ -1,0 +1,53 @@
+name: Predict2u engine — NerdyTips Tomorrow
+
+on:
+  schedule:
+    - cron: "50 23 * * *"   # 23:50 UTC = 11:50 PM Africa/Accra; Tomorrow tab is the next Accra day
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Scan only — do not book or commit"
+        type: boolean
+        default: false
+      date:
+        description: "Fixture date YYYY-MM-DD (blank = the Tomorrow board's own date)"
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: predict2u-strategy-night
+  cancel-in-progress: false
+
+jobs:
+  nt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Tomorrow trust 5.0+ Agree only
+        env:
+          REPO_DIR: ${{ github.workspace }}
+          ENGINE_DIR: ${{ github.workspace }}/engine
+        run: |
+          set -euo pipefail
+          ARGS=()
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
+          if [ -n "${{ inputs.date }}" ]; then ARGS+=(--date "${{ inputs.date }}"); fi
+          python engine/vendor/nt_tomorrow.py "${ARGS[@]}"
+      - name: Commit booked NerdyTips code
+        if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        run: |
+          set -euo pipefail
+          git config user.name "predict2u-engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- high_odds.json engine/data/strategy-codes/nt engine/data/strategy-usage || true
+          if git diff --cached --quiet; then echo "no NerdyTips changes"; exit 0; fi
+          git commit -m "Engine NerdyTips Tomorrow $(date -u +%FT%TZ)"
+          git pull --rebase --autostash -X theirs origin main || git pull --rebase --autostash origin main || true
+          git push origin HEAD
