@@ -1,0 +1,179 @@
+{
+ "checkedAt": "2026-11-12T23:15:28Z",
+ "mode": "post",
+ "ok": false,
+ "problems": [
+  {
+   "area": "code",
+   "msg": "undefined name (will crash when reached): engine/vendor/nysm_v2.py:672:121: undefined name 'tree_picks'"
+  },
+  {
+   "area": "code",
+   "msg": "undefined name (will crash when reached): engine/vendor/nt_tomorrow.py:720:44: undefined name 'chosen'"
+  },
+  {
+   "area": "site",
+   "msg": "live-scores.json is stale: last updated 2026-11-12 08:11 GMT (15h ago, limit 4h)"
+  }
+ ],
+ "warnings": [
+  {
+   "area": "actions",
+   "msg": "engine-morning.yml started 521 min after its 07:00 slot"
+  },
+  {
+   "area": "actions",
+   "msg": "daily-picks-email.yml started 416 min after its 00:15 slot"
+  },
+  {
+   "area": "actions",
+   "msg": "results-email.yml started 420 min after its 00:30 slot"
+  },
+  {
+   "area": "actions",
+   "msg": "tracker-email.yml started 418 min after its 00:45 slot"
+  },
+  {
+   "area": "actions",
+   "msg": "post-social.yml started 417 min after its 00:50 slot"
+  }
+ ],
+ "healed": [],
+ "passed": [
+  {
+   "area": "code",
+   "msg": "engine.check_rules passed"
+  },
+  {
+   "area": "code",
+   "msg": "92 engine files compile; 11 engine modules checked for import"
+  },
+  {
+   "area": "site",
+   "msg": "all 217 pages return 200"
+  },
+  {
+   "area": "site",
+   "msg": "home-picks.json fresh (2.2h old)"
+  },
+  {
+   "area": "site",
+   "msg": "picks.json fresh (1.1h old)"
+  },
+  {
+   "area": "site",
+   "msg": "high_odds.json fresh (1.0h old)"
+  },
+  {
+   "area": "site",
+   "msg": "hot-picks.json fresh (1.5h old)"
+  },
+  {
+   "area": "site",
+   "msg": "record.json fresh (1.1h old)"
+  },
+  {
+   "area": "site",
+   "msg": "news-hub.json fresh (0.8h old)"
+  },
+  {
+   "area": "site",
+   "msg": "data-meta.json fresh (1.9h old)"
+  },
+  {
+   "area": "site",
+   "msg": "staked-codes.json fresh (0.8h old)"
+  },
+  {
+   "area": "site",
+   "msg": "fixtures.js fresh (1.9h old)"
+  },
+  {
+   "area": "site",
+   "msg": "sportybet-odds.js fresh (1.9h old)"
+  },
+  {
+   "area": "site",
+   "msg": "current-data.js fresh (1.9h old)"
+  },
+  {
+   "area": "codes",
+   "msg": "all 54 published live codes load with matches still to play"
+  },
+  {
+   "area": "actions",
+   "msg": "on-time ticker is running"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-morning.yml 07:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-shield.yml 21:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-m1m2.yml 21:45 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-daily.yml 22:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-strategies.yml 22:30 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-settle.yml 22:15 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "sportybet-odds.yml 21:19 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-self-heal.yml 22:15 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "daymasters-guard.yml 22:40 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-refresh.yml 22:25 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "daily-picks-email.yml 00:15 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "results-email.yml 00:30 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "tracker-email.yml 00:45 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "post-social.yml 00:50 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-health.yml 18:00 slot succeeded"
+  },
+  {
+   "area": "registry",
+   "msg": "36 workflows read, 16 run engine commands, 21 on the ticker"
+  }
+ ],
+ "sections": {
+  "codes": {
+   "checked": 54,
+   "dead": [],
+   "uncheckable": []
+  }
+ }
+}
