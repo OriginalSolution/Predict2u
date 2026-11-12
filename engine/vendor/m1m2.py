@@ -191,6 +191,18 @@ def book_groups(groups, day, book=True):
     return slips
 
 
+def _ledger_codes(slip):
+    """The ledger is committed. Odds above 25 keep their code only in the paywall store."""
+    from engine.premium import is_premium_odds
+    if is_premium_odds((slip or {}).get("totalOdds")):
+        return {}
+    out = {}
+    for book, rows in ((slip or {}).get("codes") or {}).items():
+        if isinstance(rows, list) and rows and isinstance(rows[0], dict) and rows[0].get("code"):
+            out[book] = rows[0]["code"]
+    return out
+
+
 def update_ledger(day, slips, dropped):
     try:
         led = json.loads(LEDGER.read_text()) if LEDGER.exists() else {}
@@ -208,7 +220,7 @@ def update_ledger(day, slips, dropped):
         "slips": {
             s["strategy"]: {
                 "name": s["name"],
-                "codes": {b: v[0]["code"] for b, v in (s.get("codes") or {}).items()},
+                "codes": _ledger_codes(s),
                 "total": s.get("totalOdds"),
                 "legs": s.get("legs"),
                 "meetsFloor": s.get("meetsFloor"),

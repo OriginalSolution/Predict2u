@@ -54,6 +54,8 @@ jobs:
         with: { fetch-depth: 1 }
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
+      - name: Install runtime extras
+        run: pip install cryptography
       - name: Cache Sportradar / engine stats
         uses: actions/cache@v4
         with:
@@ -63,6 +65,7 @@ jobs:
             p2u-engine-stats-
       - name: Collect, then book favourites day masters
         env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
           P2U_STRICT_GATES: report
         run: |
           set -euo pipefail
@@ -73,11 +76,17 @@ jobs:
           fi
       - name: Commit home-picks.json
         if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
         run: |
           set -euo pipefail
+          if [ -z "${P2U_LOCK_KEY:-}" ]; then
+            echo "::warning::P2U_LOCK_KEY is not set; refusing to commit pick files so premium codes stay locked on the live site."
+            exit 0
+          fi
           git config user.name "predict2u-engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- home-picks.json
+          git add -- home-picks.json locked.enc.json || true
           if git diff --cached --quiet; then echo "no favourites changes"; exit 0; fi
           git commit -m "Engine favourites by league $(date -u +%FT%TZ)"
           .github/scripts/p2u_push.sh main

@@ -34,6 +34,8 @@
     $('rec-day').innerHTML=table(d.byDay,'Day');
     var recent=d.recent||[];
     $('rec-recent').innerHTML=recent.length?recent.map(function(r){
+      var view={name:r.name||'Settled code',totalOdds:r.odds,odds:r.odds,legs:r.total,date:r.date,premium:r.premium};
+      if(window.P2UPremium&&P2UPremium.is(view))return '<article class="rc" data-p2u-premium-root="1"><div class="rc-top"><div><b>'+esc(r.name||'Premium code')+'</b> '+pill(r.status)+'</div><div class="rc-meta">'+esc(r.date)+' · '+esc(BOOKS[r.book]||r.book)+'</div></div>'+P2UPremium.card(view)+'</article>';
       return '<article class="rc"><div class="rc-top"><div><b>'+esc(r.name||r.code)+'</b> '+pill(r.status)+'</div><div class="rc-meta">'+esc(r.date)+' · '+esc(BOOKS[r.book]||r.book)+'</div></div>'+
         '<div class="rc-bot"><span>Code <b>'+esc(r.code)+'</b></span><span>@'+Number(r.odds||0).toLocaleString('en-GB',{maximumFractionDigits:2})+'</span><span>'+esc(r.hit)+'/'+esc(r.total)+' legs hit</span><span class="'+(r.profit>=0?'pos':'neg')+'">'+money(r.profit)+'</span></div></article>';
     }).join(''):'<p class="empty">No settled codes yet — check back after tonight’s games.</p>';

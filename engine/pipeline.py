@@ -123,27 +123,27 @@ def _prune(env):
     run([sys.executable, str(VENDOR_DIR / "prune_live.py"), str(REPO_DIR)], env=env, timeout=120, check=False)
 
 
+def _lock_premium(env, dry_run=False):
+    """Flag odds > 25, then (when the lock key exists) hide those codes and picks."""
+    for key in ("P2U_LOCK_KEY", "PRIV_DIR", "ENGINE_DIR", "REPO_DIR", "FEED_DIR"):
+        if env.get(key):
+            os.environ.setdefault(key, env[key])
+    from .premium import lock_published
+    lock_published(env.get("REPO_DIR") or REPO_DIR, dry_run=dry_run)
+
+
 def publish(env, dry_run=False):
     run([sys.executable, str(VENDOR_DIR / "build.py"), str(REPO_DIR)], env=env, timeout=180)
     run([sys.executable, str(VENDOR_DIR / "inject_exempt.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
     _prune(env)
-    if os.environ.get("P2U_LOCK_KEY") or (Path(env["PRIV_DIR"]) / "lock.key").exists():
-        if os.environ.get("P2U_LOCK_KEY") and not (Path(env["PRIV_DIR"]) / "lock.key").exists():
-            Path(env["PRIV_DIR"]).mkdir(parents=True, exist_ok=True)
-            (Path(env["PRIV_DIR"]) / "lock.key").write_text(os.environ["P2U_LOCK_KEY"].strip() + "\n")
-        try:
-            run([sys.executable, str(VENDOR_DIR / "lock_codes.py"), str(REPO_DIR)], env=env, timeout=60)
-        except Exception as e:
-            print("lock failed:", e)
-            if not dry_run:
-                raise SystemExit("refusing to publish unlocked premium codes")
-    else:
-        print("publish: P2U_LOCK_KEY / lock.key missing — premium lock skipped (do not commit raw banker codes without it)")
+    _lock_premium(env, dry_run=dry_run)
     run([sys.executable, str(VENDOR_DIR / "high_odds.py"), str(REPO_DIR), "--settle-only"], env=env, timeout=300, check=False)
     run([sys.executable, str(VENDOR_DIR / "split_codes.py"), str(REPO_DIR)], env=env, timeout=900, check=False)
     run([sys.executable, str(VENDOR_DIR / "daily_master.py"), str(REPO_DIR)], env=env, timeout=300, check=False)
     # daily_master re-inserts ho-master parts; prune again so kicked-off pending codes cannot stay live.
     _prune(env)
+    # Seal again: daily_master can put a >25 code back onto the public pages.
+    _lock_premium(env, dry_run=dry_run)
     run([sys.executable, str(VENDOR_DIR / "build_record.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
 
 
@@ -204,9 +204,15 @@ def main(argv=None):
         shield(env, dry_run=args.dry_run)
     if args.command == "fav":
         fav(env, days=args.days, dry_run=args.dry_run)
+        # Favourites day masters land on home-picks.json. Odds above 25 are sealed here.
+        if not args.dry_run:
+            _lock_premium(env, dry_run=False)
         return 0
     if args.command == "morning":
         morning(env, dry_run=args.dry_run)
+        # Morning writes the 25+ master straight into high_odds.json and home-picks.json.
+        if not args.dry_run:
+            _lock_premium(env, dry_run=False)
         return 0
     if args.command in ("publish", "daily", "all", "shield"):
         publish(env, dry_run=args.dry_run)

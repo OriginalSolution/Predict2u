@@ -51,6 +51,8 @@ jobs:
         with: { fetch-depth: 1 }
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
+      - name: Install runtime extras
+        run: pip install cryptography
       - name: Cache Sportradar / engine stats
         uses: actions/cache@v4
         with:
@@ -60,6 +62,7 @@ jobs:
             p2u-engine-stats-
       - name: Analyse and book morning markets
         env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
           RESEARCH_DIR: ${{ github.workspace }}/engine/data
           REPO_DIR: ${{ github.workspace }}
           ENGINE_DIR: ${{ github.workspace }}/engine
@@ -72,11 +75,17 @@ jobs:
           fi
       - name: Commit published morning slips
         if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
         run: |
           set -euo pipefail
+          if [ -z "${P2U_LOCK_KEY:-}" ]; then
+            echo "::warning::P2U_LOCK_KEY is not set; refusing to commit pick files so premium codes stay locked on the live site."
+            exit 0
+          fi
           git config user.name "predict2u-engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- home-picks.json high_odds.json || true
+          git add -- home-picks.json high_odds.json locked.enc.json || true
           [ -e engine/data/sb-morning ] && git add -- engine/data/sb-morning || true
           if git diff --cached --quiet; then echo "no morning changes"; exit 0; fi
           git commit -m "Engine morning markets $(date -u +%FT%TZ)"

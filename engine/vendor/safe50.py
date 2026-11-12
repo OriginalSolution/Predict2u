@@ -296,6 +296,16 @@ def _prod(legs):
     return math.prod(float(p["odds"]) for p in legs)
 
 
+def _archive_row(slip):
+    """safe50 JSON is a publish copy. Odds above 25 do not keep a booking code here."""
+    from engine.premium import is_premium_odds
+    row = {k: slip[k] for k in ("name", "strategy", "legs", "totalOdds", "meetsFloor", "codes")}
+    if is_premium_odds(slip.get("totalOdds")):
+        row["codes"] = {}
+        row["premium"] = True
+    return row
+
+
 def to_slip(name, legs, codes, day, strategy):
     prod = round(_prod(legs), 2)
     return dict(
@@ -353,7 +363,7 @@ def run(days=4, book=True, publish=True, limit_stats=180):
         path = ENGINE_DIR / "data" / "safe50" / f"{day}.json"
         path.parent.mkdir(parents=True, exist_ok=True)
         json.dump({"date": day, "kept": len(kept), "dropped": dropped[:80],
-                   "slips": [{k: s[k] for k in ("name", "strategy", "legs", "totalOdds", "meetsFloor", "codes")} for s in slips]},
+                   "slips": [_archive_row(s) for s in slips]},
                   open(path, "w"), indent=1, ensure_ascii=False)
     return {"day": day, "slips": slips, "dropped": dropped, "kept": len(kept)}
 

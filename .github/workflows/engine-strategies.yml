@@ -73,14 +73,21 @@ jobs:
           python engine/vendor/nerdytips_strategies.py || python -m engine.vendor.nerdytips_strategies || true
           python engine/vendor/daily_master.py "$REPO_DIR"
           python engine/vendor/prune_live.py "$REPO_DIR"
+          python -m engine.premium --lock "$REPO_DIR"
           python engine/vendor/share_cards.py "$REPO_DIR" || true
       - name: Commit published strategies
         if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
         run: |
           set -euo pipefail
+          if [ -z "${P2U_LOCK_KEY:-}" ]; then
+            echo "::warning::P2U_LOCK_KEY is not set; refusing to commit pick files so premium codes stay locked on the live site."
+            exit 0
+          fi
           git config user.name "predict2u-engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- high_odds.json home-picks.json share s || true
+          git add -- high_odds.json home-picks.json locked.enc.json share s || true
           for extra in engine/data/ho-masters engine/data/daily-master engine/data/verzzify-banker-*.json engine/data/code-ledger.json engine/inbox/p2u engine/inbox/nerdytips-*.json; do
             [ -e $extra ] && git add -- $extra || true
           done

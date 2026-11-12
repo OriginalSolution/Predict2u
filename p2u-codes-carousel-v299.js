@@ -17,16 +17,16 @@
   var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});};
   var fmt=function(o){if(!o)return '—';var n=Number(o);if(!isFinite(n))return '—';if(n<100000)return n.toLocaleString('en-GB',{maximumFractionDigits:2});var U=[[1e18,'Qi'],[1e15,'Q'],[1e12,'T'],[1e9,'B'],[1e6,'M'],[1e3,'K']];for(var i=0;i<U.length;i++){if(n>=U[i][0]){var v=n/U[i][0];return (v>=1000?Math.round(v).toLocaleString('en-GB'):v.toFixed(v<10?2:1).replace(/\.?0+$/,''))+U[i][1];}}return String(n);};
   function addFactory(out,seen){
-    return function add(book,code,odds,legs,title,note,link){if(window.P2UCode?!P2UCode.isReal(code):!code)return;code=String(code);if(book!=='betika')code=code.toUpperCase();var k=book+':'+code;if(seen[k])return;seen[k]=1;
+    return function add(book,code,odds,legs,title,note,link,slip){var src=slip||{name:title,totalOdds:odds,odds:odds,legs:legs,picks:legs};if(window.P2UPremium&&(P2UPremium.is(src)||P2UPremium.isOdds(odds))){var lk='lock:'+P2UPremium.id(src)+':'+P2UPremium.key(src);if(seen[lk])return;seen[lk]=1;out.push({lock:true,slip:src});return;}if(window.P2UCode?!P2UCode.isReal(code):!code)return;code=String(code);if(book!=='betika')code=code.toUpperCase();var k=book+':'+code;if(seen[k])return;seen[k]=1;
       var B=BOOKS[book]||{n:book,logo:null,c:'#64748b',link:null};out.push({b:B,code:code,odds:odds,legs:legs,title:title,note:note,link:link||(B.link?B.link.replace('{c}',encodeURIComponent(code)):null)});}
   }
-  function addParts(add,s,title){(s.parts||[]).forEach(function(pt,i){Object.keys(pt.codes||{}).forEach(function(k){(pt.codes[k]||[]).forEach(function(c){add(k,c.code,c.totalOdds,c.legs,title+' · part '+(i+1)+'/'+s.parts.length+' · HIGH RISK',null,c.link);});});});}
+  function addParts(add,s,title){(s.parts||[]).forEach(function(pt,i){Object.keys(pt.codes||{}).forEach(function(k){(pt.codes[k]||[]).forEach(function(c){add(k,c.code,c.totalOdds,c.legs,title+' · part '+(i+1)+'/'+s.parts.length+' · HIGH RISK',null,c.link,Object.assign({name:title,date:s.date},pt));});});});}
   function cardsHome(d){
     var out=[],seen={},h=d.homeCode||{},add=addFactory(out,seen);
     (h.codes||[]).forEach(function(c){add('sportybet',c.sportybet||c.code,c.totalOdds,c.legs,'All picks of the day',null,c.link);});
     Object.keys(h).forEach(function(k){if(k==='codes'||!Array.isArray(h[k]))return;h[k].forEach(function(c){add(k,c[k]||c.code,c.totalOdds,c.legs,'All picks of the day',c.of&&c.of>c.legs?(c.of-c.legs)+((c.of-c.legs)>1?' picks':' pick')+' not on '+((BOOKS[k]||{}).n||k):null,c.link);});});
     (d.slips||[]).forEach(function(s){if(s.earlier||/^earlier code/i.test(String(s.name||'')))return;var C=s.codes||{};Object.keys(C).forEach(function(k){
-      add(k,C[k],(s.bookOdds||{})[k]||(k==='sportybet'?s.totalOdds:null),(s.bookPicks||{})[k]||(s.legs||[]).length,String(s.name||'Banker slip').replace(/\s*\(.*\)$/,''),(s.bookNotes||{})[k]);});addParts(add,s,String(s.name||'Banker slip'));});
+      add(k,C[k],(s.bookOdds||{})[k]||(k==='sportybet'?s.totalOdds:null),(s.bookPicks||{})[k]||(s.legs||[]).length,String(s.name||'Banker slip').replace(/\s*\(.*\)$/,''),(s.bookNotes||{})[k],null,s);});addParts(add,s,String(s.name||'Banker slip'));});
     return out;
   }
   function cardsHot(d){
@@ -40,19 +40,20 @@
         list.forEach(function(c){
           if(!c)return;
           var code=typeof c==='string'?c:(c[k]||c.code);
-          add(k,code,c.totalOdds!=null?c.totalOdds:s.totalOdds,c.legs!=null?c.legs:s.legs,title,null,c.link);
+          add(k,code,c.totalOdds!=null?c.totalOdds:s.totalOdds,c.legs!=null?c.legs:s.legs,title,null,c.link,s);
         });
       });
       addParts(add,s,title);
     });
     return out;
   }
-  function card(x){return '<div class="cc-card" style="--brand:'+x.b.c+'"><div class="cc-top">'+(x.b.logo?'<img src="'+x.b.logo+'" alt="'+esc(x.b.n)+' logo" width="26" height="26" loading="lazy" decoding="async">':'')+'<b>'+esc(x.b.n)+'</b></div>'+
+  function card(x){if(x.lock&&window.P2UPremium)return '<div class="cc-card p2u-cc-lock" data-p2u-premium-root="1">'+P2UPremium.card(x.slip||{name:x.title,totalOdds:x.odds,legs:x.legs})+'</div>';return '<div class="cc-card" style="--brand:'+x.b.c+'"><div class="cc-top">'+(x.b.logo?'<img src="'+x.b.logo+'" alt="'+esc(x.b.n)+' logo" width="26" height="26" loading="lazy" decoding="async">':'')+'<b>'+esc(x.b.n)+'</b></div>'+
     '<div class="cc-t">'+esc(x.title)+'</div><div class="cc-code">'+esc(x.code)+'</div><div class="cc-m">@'+fmt(x.odds)+' · '+esc(x.legs)+' picks</div>'+(x.note?'<div class="cc-n">⚠ '+esc(x.note)+'</div>':'')+
     '<div class="cc-a"><button type="button" data-cc-copy="'+esc(x.code)+'">Copy</button>'+(x.link?'<a target="_blank" rel="noopener" href="'+esc(x.link)+'">Open ↗</a>':'')+'</div></div>';}
 
   function logoFor(book){var B=BOOKS[book];return B&&B.logo?B.logo:('book-'+book+'.webp');}
   function sectionCard(s){
+    if(window.P2UPremium&&P2UPremium.is(s))return '<div class="cc-card p2u-cc-lock" data-p2u-premium-root="1">'+P2UPremium.card(s)+'</div>';
     var C=s.codes||{}, order=['sportybet','footballcom','msport','betika','betpawa','betway'];
     var primary=null, primaryBook=null;
     for(var i=0;i<order.length;i++){var L=C[order[i]]; if(!L)continue; if(!Array.isArray(L))L=[{code:L}]; L=L.filter(function(x){return window.P2UCode?P2UCode.isReal(x&&(x.code||x)):!!(x&&(x.code||x));}); if(L[0]){primary=L[0]; primaryBook=order[i]; break;}}
@@ -81,7 +82,11 @@
     return (d.sectionMasters||[]).filter(function(s){return s&&s.codes&&Object.keys(s.codes).length;}).map(sectionCard);
   }
   function cardsModel(d){
-    return (d.modelSlips||[]).filter(function(s){return s&&s.codes&&Object.keys(s.codes).length;}).map(sectionCard);
+    return (d.modelSlips||[]).filter(function(s){
+      if(!s)return false;
+      if(window.P2UPremium&&P2UPremium.is(s))return true;
+      return s.codes&&Object.keys(s.codes).length;
+    }).map(sectionCard).filter(Boolean);
   }
 
   function mount(el,C,heading){

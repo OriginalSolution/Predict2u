@@ -31,6 +31,7 @@ SCHEDULE = [
     ("engine-fav-leagues.yml", "0", "6", "*"),      # favourites by league: stats + day-master codes (books)
     ("engine-morning.yml", "0", "7", "*"),          # SportyBet morning markets + master (books)
     ("engine-shield.yml", "0", "21", "*"),          # DC Shield Goals (books)
+    ("engine-m1m2.yml", "45", "21", "*"),           # M1/M2 and Safest market (books)
     ("engine-daily.yml", "0", "22", "*"),           # daily collect, book, publish (books)
     ("engine-strategies.yml", "30", "22", "*"),     # three strategies + Verzzify banker (books)
     ("engine-settle.yml", "45", "1", "*"),

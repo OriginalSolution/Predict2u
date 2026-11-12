@@ -3,7 +3,9 @@
 import json, sys, datetime as dt, re
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1].parent))
 from build_seo_pages import page, esc, odds, BASE
+from engine.premium import is_premium_odds
 import prune_live as _pl
 REPO = Path(sys.argv[1] if len(sys.argv) > 1 else "/workspace/Predict2u")
 BOOKS = [("sportybet","SportyBet","sportybet-codes-today"),("betway","Betway","betway-booking-codes-today"),
@@ -30,21 +32,25 @@ def main():
         for s in slips:
             code = (s.get("codes") or {}).get(key)
             if not code: continue
-            locked = bool(s.get("locked"))
+            locked = bool(s.get("locked")) or s.get("premium") is True
             legs = s.get("legs") or []
             bo = (s.get("bookOdds") or {}).get(key) or s.get("totalOdds")
-            nlegs = (s.get("bookPicks") or {}).get(key) or len(legs)
+            nlegs = len(legs) if legs else ((s.get("bookPicks") or {}).get(key) or 0)
             sname = re.sub(r"\s*\(.*?\)", "", s.get("name",""))
-            if locked:
-                codehtml = f'<a href="../index.html">🔒 Unlock this code on Predict2u</a>'
+            premium = locked or is_premium_odds(bo) or is_premium_odds(s.get("totalOdds")) or is_premium_odds(s.get("odds"))
+            if premium:
+                # Static page: no booking code and no pick list. Payment stays on the main site.
+                codehtml = '<a href="../index.html">🔒 Unlock for $4.29 (≈ GHS 50)</a>'
+                picks = ''
             else:
                 codehtml = f'<b style="font-size:1.25rem;letter-spacing:.08em">{esc(code)}</b>'
                 items.append(code)
-            rows = "".join(f'<li>{esc(l.get("match"))} — {esc(l.get("selection"))} @ {odds(l.get("odds"))}</li>' for l in legs[:40])
+                rows = "".join(f'<li>{esc(l.get("match"))} — {esc(l.get("selection"))} @ {odds(l.get("odds"))}</li>' for l in legs[:40])
+                picks = f'<details><summary>See all picks</summary><ul>{rows}</ul></details>'
             cards.append(f'<section class="card"><h2 style="margin:0 0 6px;font-size:1.05rem">{esc(sname)}</h2>'
-                         f'<div class="sel"><span>{codehtml}</span><b>{odds(bo)} odds · {nlegs} picks</b></div>'
-                         f'<details><summary>See all picks</summary><ul>{rows}</ul></details>'
-                         + (f'<p><b>⚠ HIGH RISK — stake small.</b> <a href="../high-odds/#{esc(s.get("highCode"))}">Live progress, all bookmaker codes and sharing →</a></p>' if s.get("highRisk") else '') + '</section>')
+                         f'<div class="sel"><span>{codehtml}</span><b>{odds(bo)} odds · {nlegs} legs</b></div>'
+                         f'{picks}'
+                         + (f'<p><b>⚠ HIGH RISK — stake small.</b> <a href="../high-odds/">Live progress on Predict2u →</a></p>' if s.get("highRisk") else '') + '</section>')
         # Publish an explicit empty state rather than leaving yesterday's codes live.
         pending = not cards
         title = f"{name} Booking Codes Today ({dt.date.fromisoformat(day).strftime('%d %b %Y')}) — Predict2u"
