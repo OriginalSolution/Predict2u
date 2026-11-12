@@ -81,8 +81,8 @@ jobs:
           P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
         run: |
           set -euo pipefail
-          if [ -z "${P2U_LOCK_KEY:-}" ]; then
-            echo "::warning::P2U_LOCK_KEY is not set; refusing to commit pick files so premium codes stay locked on the live site."
+          if [ -z "${P2U_LOCK_KEY:-}" ] && ! python -m engine.premium --is-free . >/dev/null 2>&1; then
+            echo "::warning::P2U_LOCK_KEY is not set; refusing to commit pick files so premium codes stay locked on the live site (paid-codes mode; free mode is p2u-free-mode.js)."
             exit 0
           fi
           git config user.name "predict2u-engine"

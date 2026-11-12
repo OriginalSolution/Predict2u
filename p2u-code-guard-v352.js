@@ -104,6 +104,7 @@
   }
   var mo=null;
   function scrubPremium(root){
+    if(isFree())return; // free-codes mode: nothing to hide
     (root||document).querySelectorAll('[data-p2u-premium-root]').forEach(function(box){
       if(box.querySelector('[data-p2u-unlocked]'))return;
       box.querySelectorAll('.p2u-chip,.cc-code,.bp-card-code,.bp-legs,.bp-card-legs,.p2u-risk-legs,.high-picks,.hot-list,.mk-pl,.bcod-main,.bcod-chips,.bcod-code,.lg-dm-chips,[data-copy],[data-cc-copy],[data-copy-code]').forEach(function(el){
@@ -129,6 +130,8 @@
     try{mo.observe(document.documentElement,{childList:true,subtree:true});}catch(_){mo=null;}
   }
   var LIMIT=25;
+  /* Free-codes switch lives in /p2u-free-mode.js (window.P2U_FREE_CODES). When on, no slip counts as premium. */
+  function isFree(){return window.P2U_FREE_CODES===true;}
   function num(v){var n=Number(v);return isFinite(n)?n:null;}
   function oddsOf(s){
     if(!s)return null;
@@ -171,9 +174,9 @@
     if(Array.isArray(s.picks))return s.picks.length;
     return 0;
   }
-  function isOdds(v){var n=num(v);return n!=null&&n>LIMIT;}
+  function isOdds(v){if(isFree())return false;var n=num(v);return n!=null&&n>LIMIT;}
   function isPremium(s){
-    if(!s)return false;
+    if(!s||isFree())return false;
     if(s.premium===true||s.premium==='true')return true;
     return isOdds(oddsOf(s));
   }
@@ -193,7 +196,7 @@
     var attrs=' data-p2u-lock="'+escP(id)+'" data-p2u-info="'+escP(id)+'" data-p2u-odds="'+escP(o==null?'':o)+'" data-p2u-legs="'+escP(n)+'" data-p2u-slip="'+escP(slipKey(s))+'" data-p2u-title="'+escP(title)+'"';
     return '<div class="p2u-lock" role="button" tabindex="0" aria-haspopup="dialog"'+attrs+'><b>🔒 '+escP(title)+'</b><p>'+escP(fact)+'. Unlock this booking code for '+priceHtml()+' (mobile money or card).</p><div class="p2u-lock-row"><button type="button" class="p2u-lock-btn" data-p2u-pay="'+escP(id)+'">Unlock for '+priceHtml()+'</button><button type="button" class="p2u-lock-r" data-p2u-restore="1">Already paid?</button></div></div>';
   }
-  window.P2UPremium={LIMIT:LIMIT,is:isPremium,isOdds:isOdds,odds:oddsOf,legs:legsOf,id:lockId,key:slipKey,card:card,scrub:scrubPremium};
+  window.P2UPremium={LIMIT:LIMIT,free:isFree,is:isPremium,isOdds:isOdds,odds:oddsOf,legs:legsOf,id:lockId,key:slipKey,card:card,scrub:scrubPremium};
   window.P2UCode={isReal:isReal,extract:extract,parts:parts,hasBook:hasBook,filterMap:filterMap,sweep:sweep,arm:arm};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',arm);else arm();
   try{

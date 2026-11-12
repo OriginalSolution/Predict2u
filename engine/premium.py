@@ -41,8 +41,38 @@ _CODE_KEYS = {
 _PICK_FIELDS = ("match", "selection", "market", "odds", "league", "ko", "date", "kickoff")
 
 
+_FREE_RE = re.compile(r"P2U_FREE_CODES\s*=\s*(true|false)", re.I)
+FREE_FILE = "p2u-free-mode.js"
+
+
+def free_mode(repo=None) -> bool:
+    """The one site switch. True = every code is free: nothing is flagged or sealed.
+
+    Source of truth is `p2u-free-mode.js` at the repo root (the same file the site
+    loads). Env P2U_FREE_CODES=1/0 overrides it for a single run.
+    """
+    env = os.environ.get("P2U_FREE_CODES")
+    if env is not None and env.strip() != "":
+        return env.strip().lower() in ("1", "true", "yes", "on")
+    roots = [repo, os.environ.get("REPO_DIR"), str(Path(__file__).resolve().parent.parent)]
+    for root in roots:
+        if not root:
+            continue
+        path = Path(root) / FREE_FILE
+        if path.is_file():
+            try:
+                match = _FREE_RE.search(path.read_text(encoding="utf-8"))
+            except OSError:
+                continue
+            if match:
+                return match.group(1).lower() == "true"
+    return False
+
+
 def is_premium_odds(value) -> bool:
-    """True only when total odds are strictly greater than 25."""
+    """True only when total odds are strictly greater than 25 (never in free mode)."""
+    if free_mode():
+        return False
     if value is None or isinstance(value, bool):
         return False
     try:
@@ -195,6 +225,10 @@ def is_slip(doc) -> bool:
 def flag_slip(slip, day=None):
     """Set premium from total odds > 25. Does not remove codes or picks."""
     if not isinstance(slip, dict):
+        return slip
+    if free_mode():
+        slip.pop("premium", None)
+        slip.pop("locked", None)
         return slip
     odds = slip_odds(slip)
     premium = is_premium_odds(odds)
@@ -478,6 +512,70 @@ def stamp_repo(repo):
     return changed
 
 
+PH_RE = re.compile(r"P2ULOCK-([a-z]+-\d{8})-([a-z]+)(\d*)")
+FREE_RESTORE = "engine/data/free-restore.json"
+
+
+def _restore_map(repo):
+    """Placeholder -> real code, from codes saved when payment was switched off."""
+    out = {}
+    try:
+        with open(os.path.join(repo, FREE_RESTORE), encoding="utf-8") as handle:
+            data = json.load(handle)
+    except Exception:
+        data = {}
+    for lid, books in (data.get("codes") or {}).items():
+        for book, codes in (books or {}).items():
+            for n, code in enumerate(codes if isinstance(codes, list) else [codes]):
+                if code:
+                    out[f"P2ULOCK-{lid}-{book}" + (str(n) if n else "")] = str(code)
+    return out
+
+
+def unseal_repo(repo):
+    """Free mode: drop premium/locked flags and put back sealed codes we still have.
+
+    Placeholders with no saved code are left for the site to hide (they are old,
+    already-settled slips). Returns repo-relative paths that changed.
+    """
+    repo = str(repo)
+    rmap = _restore_map(repo)
+    paths = [os.path.join(repo, name) for name in PUBLIC_JSON]
+    for pattern in EXTRA_JSON_GLOBS:
+        paths.extend(sorted(glob.glob(os.path.join(repo, pattern))))
+    for name in ("picks-history.json", "staked-codes.json", "staked-index.json", "staked-status.json"):
+        paths.append(os.path.join(repo, name))
+    changed = []
+    seen = set()
+    for path in paths:
+        if path in seen or not os.path.isfile(path):
+            continue
+        seen.add(path)
+        with open(path, encoding="utf-8") as handle:
+            raw = handle.read()
+        text = raw
+        if rmap and "P2ULOCK-" in text:
+            text = PH_RE.sub(lambda m: rmap.get(m.group(0), m.group(0)), text)
+        try:
+            doc = json.loads(text)
+        except Exception:
+            continue
+        flag_document(doc)  # free mode: strips premium/locked
+        compact = "\n" not in raw.strip()
+        if compact:
+            out = json.dumps(doc, separators=(",", ":"), ensure_ascii=False)
+            if raw.endswith("\n"):
+                out += "\n"
+        else:
+            # pretty history files keep their layout; only placeholder text changes
+            out = text
+        if out != raw:
+            with open(path, "w", encoding="utf-8") as handle:
+                handle.write(out)
+            changed.append(os.path.relpath(path, repo))
+    return changed
+
+
 def lock_published(repo=None, dry_run=False) -> int:
     """Flag odds above 25, then hide the code and the picks when the lock key exists.
 
@@ -487,6 +585,10 @@ def lock_published(repo=None, dry_run=False) -> int:
     from .paths import PRIV_DIR, REPO_DIR, VENDOR_DIR, ensure_dirs
 
     repo = str(repo or os.environ.get("REPO_DIR") or REPO_DIR)
+    if free_mode(repo):
+        changed = unseal_repo(repo)
+        print("publish: free-codes mode (p2u-free-mode.js) — nothing flagged or sealed; unsealed", changed or "nothing")
+        return 0
     stamp_repo(repo)
     key_path = Path(os.environ.get("PRIV_DIR") or PRIV_DIR) / "lock.key"
     if os.environ.get("P2U_LOCK_KEY") and not key_path.exists():
@@ -515,9 +617,19 @@ def main(argv=None):
     if "--lock" in args:
         do_lock = True
         args = [a for a in args if a != "--lock"]
+    if "--is-free" in args:
+        args = [a for a in args if a != "--is-free"]
+        repo = args[0] if args else os.environ.get("REPO_DIR", ".")
+        free = free_mode(repo)
+        print("free-codes mode" if free else "paid-codes mode")
+        return 0 if free else 1
     repo = args[0] if args else os.environ.get("REPO_DIR", ".")
     if do_lock:
         return lock_published(repo)
+    if free_mode(repo):
+        changed = unseal_repo(repo)
+        print("free-codes mode: premium flags cleared", changed or "unchanged")
+        return 0
     changed = stamp_repo(repo)
     print("premium flagged", changed or "unchanged")
     return 0
