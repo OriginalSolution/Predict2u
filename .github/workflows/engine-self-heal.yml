@@ -38,7 +38,7 @@ jobs:
         with:
           node-version: "24"
       - name: Install pillow (share cards)
-        run: pip install pillow
+        run: pip install pillow pytest pyyaml
       - name: Self-heal known failures
         id: heal
         run: |
