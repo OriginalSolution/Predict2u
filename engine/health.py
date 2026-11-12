@@ -278,11 +278,11 @@ def check_output_sanity(rep):
                 return None
         return None
     no_ko = [p.get("match") for p in picks if not ko_day(p)]
-    other_day = [f"{p.get('match')} ({ko_day(p)}, {p.get('inboxFile') or p.get('strategy') or 'engine'})" for p in picks if ko_day(p) and ko_day(p) != TOMORROW]
+    other_day = [f"{p.get('match')} ({ko_day(p)}, {p.get('inboxFile') or p.get('strategy') or 'engine'})" for p in picks if ko_day(p) and ko_day(p) < TOMORROW]
     if no_ko:
         rep.warn("strategies", f"{len(no_ko)} picks for {TOMORROW} carry no kickoff time (e.g. {no_ko[:3]})")
     if other_day:
-        rep.warn("strategies", f"{len(other_day)} picks in {TOMORROW}'s file kick off on another day (e.g. {other_day[:3]})")
+        rep.warn("strategies", f"{len(other_day)} picks in {TOMORROW}'s file kick off before {TOMORROW}, i.e. already today (e.g. {other_day[:3]})")
     bad_odds = [f"{p.get('match')} @{p.get('odds')}" for p in picks if not (1.01 <= float(p.get("odds") or 0) <= 50)]
     dc = [p.get("match") for p in picks if is_dc_vetoed(p)]
     youth = [p.get("match") for p in picks if YOUTH.search(f"{p.get('match','')} {p.get('league','')}")]
