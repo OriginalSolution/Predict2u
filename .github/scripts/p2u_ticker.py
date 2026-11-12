@@ -28,6 +28,7 @@ SELF = "engine-ticker.yml"
 
 # (workflow file, minute, hour, day-of-week)  cron-style fields: "*", "*/n", "a,b"
 SCHEDULE = [
+    ("engine-fav-leagues.yml", "0", "6", "*"),      # favourites by league: stats + day-master codes (books)
     ("engine-morning.yml", "0", "7", "*"),          # SportyBet morning markets + master (books)
     ("engine-shield.yml", "0", "21", "*"),          # DC Shield Goals (books)
     ("engine-daily.yml", "0", "22", "*"),           # daily collect, book, publish (books)
