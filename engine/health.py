@@ -228,7 +228,7 @@ def sandbox_env():
         "P2U_HEALTH_DRY_RUN": "1", "P2U_DAY": TOMORROW, "P2U_STRICT_GATES": "report",
         "PATH": guard + os.pathsep + env.get("PATH", ""), "P2U_REAL_CURL": subprocess.run(["bash", "-lc", "command -v curl"], capture_output=True, text=True).stdout.strip() or "/usr/bin/curl",
         "PYTHONPATH": os.pathsep.join([guard] + ([env["PYTHONPATH"]] if env.get("PYTHONPATH") else [])),
-        "RESEARCH_DIR": str(ENGINE / "data"), "REPO_DIR": str(REPO), "ENGINE_DIR": str(ENGINE), "GITHUB_WORKSPACE": str(REPO),
+        "RESEARCH_DIR": str(ENGINE / "data"), "NEWS_STATE_DIR": tempfile.mkdtemp(prefix="p2u-health-state-"), "REPO_DIR": str(REPO), "ENGINE_DIR": str(ENGINE), "GITHUB_WORKSPACE": str(REPO),
     })
     return env
 
@@ -258,13 +258,31 @@ def check_output_sanity(rep):
         n_sb = 0
     if not picks and n_sb:
         rep.bad("strategies", f"favourites engine produced 0 picks for {TOMORROW} although SportyBet lists {n_sb} events")
-    need = ("eventId", "match", "market", "selection", "odds", "date", "ko", "marketId", "outcomeId")
+    need = ("eventId", "match", "market", "selection", "odds", "marketId", "outcomeId")
     sys.path[:0] = [str(ENGINE), str(ENGINE / "vendor")]
     try:
         from engine.rules import is_dc_vetoed
     except Exception:
         is_dc_vetoed = lambda p: False  # noqa: E731
-    bad_fields = [p.get("match") for p in picks if any(p.get(k) in (None, "") for k in need)]
+    bad_fields = [f"{p.get('match')} (no {', '.join(k for k in need if p.get(k) in (None, ''))})" for p in picks if any(p.get(k) in (None, "") for k in need)]
+
+    def ko_day(p):
+        if p.get("date"):
+            return str(p["date"])[:10]
+        if p.get("kickoff"):
+            return str(p["kickoff"])[:10]
+        if p.get("ts"):
+            try:
+                return dt.datetime.fromtimestamp(int(p["ts"]) / 1000, dt.timezone.utc).date().isoformat()
+            except Exception:
+                return None
+        return None
+    no_ko = [p.get("match") for p in picks if not ko_day(p)]
+    other_day = [f"{p.get('match')} ({ko_day(p)}, {p.get('inboxFile') or p.get('strategy') or 'engine'})" for p in picks if ko_day(p) and ko_day(p) != TOMORROW]
+    if no_ko:
+        rep.warn("strategies", f"{len(no_ko)} picks for {TOMORROW} carry no kickoff time (e.g. {no_ko[:3]})")
+    if other_day:
+        rep.warn("strategies", f"{len(other_day)} picks in {TOMORROW}'s file kick off on another day (e.g. {other_day[:3]})")
     bad_odds = [f"{p.get('match')} @{p.get('odds')}" for p in picks if not (1.01 <= float(p.get("odds") or 0) <= 50)]
     dc = [p.get("match") for p in picks if is_dc_vetoed(p)]
     youth = [p.get("match") for p in picks if YOUTH.search(f"{p.get('match','')} {p.get('league','')}")]

@@ -133,7 +133,10 @@ def _lock_premium(env, dry_run=False):
 
 
 def publish(env, dry_run=False):
-    run([sys.executable, str(VENDOR_DIR / "build.py"), str(REPO_DIR)], env=env, timeout=180)
+    # build.py exits 3 when nothing changed — that is not a failure
+    b = run([sys.executable, str(VENDOR_DIR / "build.py"), str(REPO_DIR)], env=env, timeout=180, check=False)
+    if b.returncode not in (0, 3):
+        raise subprocess.CalledProcessError(b.returncode, b.args)
     run([sys.executable, str(VENDOR_DIR / "inject_exempt.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
     _prune(env)
     _lock_premium(env, dry_run=dry_run)
