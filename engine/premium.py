@@ -11,6 +11,7 @@ private store, then blanks them on the public slip.
 """
 from __future__ import annotations
 
+import glob
 import json
 import os
 import re
@@ -23,6 +24,14 @@ PRICE = 50
 CURRENCY = "GHS"
 ID_RE = re.compile(r"^(banker|medium|hot)-\d{8}$")
 PUBLIC_JSON = ("home-picks.json", "picks.json", "hot-picks.json", "high_odds.json")
+# Side copies the new jobs commit next to the public feeds. ho-masters stays
+# readable: the next strategies run decodes those SportyBet codes to settle.
+EXTRA_JSON_GLOBS = (
+    "engine/data/sb-morning/*.json",
+    "engine/data/verzzify-banker-*.json",
+    "engine/data/safe50/*.json",
+    "engine/inbox/p2u/*.json",
+)
 # Keys that mean "this dict is a single bookmaker code", not a slip.
 _CODE_KEYS = {
     "code", "legs", "odds", "link", "totalOdds", "matches", "of", "parts",
@@ -410,6 +419,37 @@ def seal_document(doc, store, placeholder, day=None):
         if seal_slip(slip, store, placeholder, here):
             n += 1
     return n
+
+
+def seal_repo_files(repo, store, placeholder):
+    """Seal every public feed and the side copies the new jobs commit.
+
+    Rewrites each changed file as one-line JSON. Returns repo-relative paths.
+    """
+    repo = str(repo)
+    paths = [os.path.join(repo, name) for name in PUBLIC_JSON]
+    for pattern in EXTRA_JSON_GLOBS:
+        paths.extend(sorted(glob.glob(os.path.join(repo, pattern))))
+    changed = []
+    seen = set()
+    for path in paths:
+        if path in seen or not os.path.isfile(path):
+            continue
+        seen.add(path)
+        try:
+            with open(path, encoding="utf-8") as handle:
+                doc = json.load(handle)
+        except Exception:
+            continue
+        if not seal_document(doc, store, placeholder):
+            continue
+        # Morning report picks are the master leg list. Free slips keep their legs on home-picks.
+        if "/sb-morning/" in path.replace("\\", "/") and isinstance(doc, dict) and isinstance(doc.get("picks"), list):
+            doc["picks"] = []
+        with open(path, "w", encoding="utf-8") as handle:
+            handle.write(json.dumps(doc, separators=(",", ":"), ensure_ascii=False))
+        changed.append(os.path.relpath(path, repo))
+    return changed
 
 
 def stamp_file(path):

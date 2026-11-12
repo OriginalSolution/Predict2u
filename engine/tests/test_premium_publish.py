@@ -3,14 +3,13 @@ import importlib.util
 import json
 from pathlib import Path
 
+from engine.premium import seal_repo_files
+
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def _load_lock_codes():
-    spec = importlib.util.spec_from_file_location("lock_codes", ROOT / "engine" / "vendor" / "lock_codes.py")
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    return mod
+def _ph(lid, book, n):
+    return f"P2ULOCK-{lid}-{book}{n}"
 
 
 def _load_prune():
@@ -53,7 +52,7 @@ def test_seal_public_strips_side_copies_and_keeps_high_odds_one_line(tmp_path):
         "codes": {"sportybet": {"code": "VERZ1", "odds": 28, "legs": 1, "link": "https://www.sportybet.com/gh/?shareCode=VERZ1"}},
     }))
     store = {}
-    changed = _load_lock_codes()._seal_public(str(tmp_path), store)
+    changed = seal_repo_files(str(tmp_path), store, _ph)
     assert any(name.endswith("high_odds.json") for name in changed)
     assert any("sb-morning" in name for name in changed)
     assert any("verzzify-banker" in name for name in changed)

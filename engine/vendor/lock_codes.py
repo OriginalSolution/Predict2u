@@ -108,41 +108,15 @@ def mask_text(t, fwd=None, html=False):
     if len(c) >= 5: t = re.sub(r'(?<![A-Za-z0-9])' + re.escape(c) + r'(?![A-Za-z0-9])', HTML_TXT if html else fwd[c], t)
   return t
 
-# Side copies the new jobs commit next to the public feeds. ho-masters stays
-# readable: the next strategies run decodes those SportyBet codes to settle.
-_EXTRA_GLOBS = (
-  'engine/data/sb-morning/*.json',
-  'engine/data/verzzify-banker-*.json',
-  'engine/data/safe50/*.json',
-  'engine/inbox/p2u/*.json',
-)
-
 def _seal_public(repo, store):
   """File every odds>25 slip into the paywall store and blank code + picks."""
   try:
     root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     if root not in sys.path: sys.path.insert(0, root)
-    from engine.premium import PUBLIC_JSON, seal_document
+    from engine.premium import seal_repo_files
   except Exception as e:
     print('premium seal skipped', e); return []
-  changed = []
-  paths = [os.path.join(repo, name) for name in PUBLIC_JSON]
-  for pattern in _EXTRA_GLOBS:
-    paths.extend(sorted(glob.glob(os.path.join(repo, pattern))))
-  seen = set()
-  for p in paths:
-    if p in seen or not os.path.isfile(p): continue
-    seen.add(p)
-    try: doc = json.load(open(p, encoding='utf-8'))
-    except Exception: continue
-    n = seal_document(doc, store, ph)
-    if not n: continue
-    # Morning report picks are the master leg list. Free slips keep their legs on home-picks.
-    if '/sb-morning/' in p.replace('\\', '/') and isinstance(doc, dict) and isinstance(doc.get('picks'), list):
-      doc['picks'] = []
-    # high_odds.json and every other public feed stay one line. Never pretty-print.
-    open(p, 'w', encoding='utf-8').write(json.dumps(doc, separators=(',', ':'), ensure_ascii=False))
-    changed.append(os.path.relpath(p, repo))
+  changed = seal_repo_files(repo, store, ph)
   if changed: print('premium sealed', changed)
   return changed
 
