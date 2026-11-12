@@ -29,11 +29,15 @@ SELF = "engine-ticker.yml"
 # (workflow file, minute, hour, day-of-week)  cron-style fields: "*", "*/n", "a,b"
 SCHEDULE = [
     ("engine-fav-leagues.yml", "0", "6", "*"),      # favourites by league: stats + day-master codes (books)
+    ("engine-strategy-master.yml", "0", "6", "*"),  # Code of the Day from the night's strategy codes (books)
     ("engine-morning.yml", "0", "7", "*"),          # SportyBet morning markets + master (books)
     ("engine-shield.yml", "0", "21", "*"),          # DC Shield Goals (books)
     ("engine-m1m2.yml", "45", "21", "*"),           # M1/M2 and Safest market (books)
     ("engine-daily.yml", "0", "22", "*"),           # daily collect, book, publish (books)
     ("engine-strategies.yml", "30", "22", "*"),     # three strategies + Verzzify banker (books)
+    ("engine-gg.yml", "10", "23", "*"),             # GG / BTTS Yes for the next Accra day (books)
+    ("engine-nysm.yml", "30", "23", "*"),           # NYSM v2 Main, Conservative, TS2+ (books)
+    ("engine-nt-tomorrow.yml", "50", "23", "*"),    # NerdyTips Tomorrow, trust 5.0+, Agree only (books)
     ("engine-settle.yml", "45", "1", "*"),
     ("engine-settle.yml", "15", "*/2", "*"),
     ("sportybet-odds.yml", "19", "*/3", "*"),

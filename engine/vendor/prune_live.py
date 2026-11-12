@@ -219,6 +219,24 @@ def slip_exempt(slip: dict) -> bool:
     return False
 
 
+def absolute_ban_leg(leg: dict) -> bool:
+    """NG and DC 12. These stay banned on strategy-spec cards and on Code of the Day."""
+    if not isinstance(leg, dict):
+        return False
+    sel = str(leg.get("selection") or leg.get("outcomeDesc") or "").strip().lower()
+    mid = str(leg.get("marketId") or leg.get("mid") or "")
+    oid = str(leg.get("outcomeId") or "")
+    if sel in {"no", "ng", "btts no", "gg no"} or oid == "76":
+        return True
+    if mid in {"29", "60129"} and sel in {"no", "ng"}:
+        return True
+    if sel in {"12", "home or away"}:
+        return True
+    if mid in {"10", "60110"} and oid in {"10", "13"}:
+        return True
+    return False
+
+
 def live_slip(slip: dict) -> bool:
     """True if the slip is still bookable on a live page.
 
@@ -232,6 +250,8 @@ def live_slip(slip: dict) -> bool:
         return False
     legs, known, future = _kick_info(slip)
     dead_share = bool(slip.get("decodeError") or slip.get("shareDead") or slip.get("shareError"))
+    if any(absolute_ban_leg(l) for l in legs):
+        return False
     if slip_exempt(slip):
         if legs and all(leg_settled(l) for l in legs):
             return False
@@ -243,7 +263,9 @@ def live_slip(slip: dict) -> bool:
         if dead_share:
             return False
         return True
-    if any(hard_market_leg(l) for l in legs):
+    # Strategy-spec cards keep 1X/X2 above 1.35 and obscure non-goals.
+    # NG and DC 12 already returned False above.
+    if not slip.get("strategySpec") and any(hard_market_leg(l) for l in legs):
         return False
     if slip.get("earlier"):
         return False

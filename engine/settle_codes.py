@@ -36,7 +36,7 @@ def fetch_event(eid: str) -> dict | None:
     }
 
 
-def grade(selection: str, match: str, ev: dict) -> str:
+def grade(selection: str, match: str, ev: dict, pick: dict | None = None) -> str:
     if ev.get("void"):
         return "void"
     if not ev.get("final") or not ev.get("score"):
@@ -98,10 +98,25 @@ def grade(selection: str, match: str, ev: dict) -> str:
         return "won" if h and a else "lost"
     if sl in ("ng", "no", "btts no"):
         return "won" if not (h and a) else "lost"
+    market = " ".join([
+        str((pick or {}).get("market") or ""),
+        str((pick or {}).get("marketId") or ""),
+    ]).lower()
+    draw_no_bet = "draw no bet" in market or str((pick or {}).get("marketId") or "") == "11"
+    if draw_no_bet and sl in {"home", "away", "1", "2"}:
+        if h == a:
+            return "void"
+        if sl in {"home", "1"}:
+            return "won" if h > a else "lost"
+        return "won" if a > h else "lost"
     if sl == "home":
         return "won" if h > a else "lost"
     if sl == "away":
         return "won" if a > h else "lost"
+    if sl in {"home or draw", "1x"}:
+        return "won" if h >= a else "lost"
+    if sl in {"draw or away", "x2"}:
+        return "won" if a >= h else "lost"
     return "pending"
 
 
@@ -123,7 +138,7 @@ def settle_mapping(picks: list[dict], events: dict) -> int:
         if cur in ("won", "lost", "void"):
             continue
         ev = events.get(p.get("eventId") or p.get("eid")) or {}
-        nxt = grade(p.get("selection") or "", p.get("match") or "", ev)
+        nxt = grade(p.get("selection") or "", p.get("match") or "", ev, p)
         if ev.get("score"):
             p["score"] = ev["score"]
         if ev.get("status"):
@@ -138,6 +153,8 @@ def settle_files(repo: Path | None = None) -> dict:
     repo = Path(repo or REPO_DIR)
     files = [repo / name for name in PUBLIC_FILES]
     research = list(Path(RESEARCH_DIR).glob("????-??-??.json"))
+    # Nightly strategy records stay gradeable after a public card is pruned.
+    research += list((repo / "engine" / "data" / "strategy-codes").glob("*/*.json"))
     blobs = []
     for path in files + research:
         if not path.exists():

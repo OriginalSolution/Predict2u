@@ -20,6 +20,10 @@ This package lets the daily pipeline run on GitHub Actions even when the assista
 | `engine-morning.yml` | `0 7 * * *` (7:00 AM) | SportyBet stats markets (one 1.20–1.60 pick per match) |
 | `engine-daily.yml` | `0 23 * * *` (11:00 PM) | collect + book + publish (all strategies) |
 | `engine-settle.yml` | `45 1 * * *` (1:45 AM) and `15 */2 * * *` | settle + prune + record |
+| `engine-gg.yml` | `10 23 * * *` (11:10 PM) | GG / BTTS-Yes strategy, SportyBet only, books the next Accra day |
+| `engine-nysm.yml` | `30 23 * * *` (11:30 PM) | NYSM decision tree v2 — Main, Conservative, TS2+ |
+| `engine-nt-tomorrow.yml` | `50 23 * * *` (11:50 PM) | NerdyTips Tomorrow, trust 5.0+, Agree only |
+| `engine-strategy-master.yml` | `0 6 * * *` (6:00 AM) | Code of the Day from that day's booked strategy codes |
 | `engine-tests.yml` | on push/PR to `engine/**` | unit tests + `python -m engine.check_rules` |
 
 Scheduled jobs only commit when they run on `main`. Pull requests run the unit tests and a `--dry-run` collect is **not** forced (network-heavy); tests are local.

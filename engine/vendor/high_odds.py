@@ -398,6 +398,27 @@ def mr_is_btts_no(leg):
     import matchup_rules as mr
     return mr.is_btts_no(leg)
 
+def _strategy_spec_keeps(slip) -> bool:
+    """Strategy-spec cards may keep 1X/X2 above 1.35 and obscure non-goals.
+
+    NG and DC 12 still remove the card. This is not a global gate change.
+    """
+    if not slip.get("strategySpec"):
+        return False
+    for leg in slip.get("legs") or []:
+        if mr_is_btts_no(leg):
+            return False
+        try:
+            import matchup_rules as mr
+            if mr.dc_variant(leg) == "12":
+                return False
+        except Exception:
+            sel = str(leg.get("selection") or "").lower()
+            if sel in {"12", "home or away"}:
+                return False
+    return True
+
+
 def mr_is_hard_veto(leg):
     sys.path.insert(0, str(RESEARCH))
     sys.path.insert(0, str(FEED))
@@ -503,7 +524,7 @@ def main():
                 score, rating, flags, err = risk_score(s)
                 s.update(riskScore=score, riskRating=rating, riskFlags=flags, riskError=err)
             continue
-        if any(mr_is_hard_veto(p) for p in s.get('legs') or []):
+        if any(mr_is_hard_veto(p) for p in s.get('legs') or []) and not _strategy_spec_keeps(s):
             print('drop vetoed high-odds code', s.get('code'))
             continue
         if key in by_code and s.get('decodeError') is None:
@@ -546,6 +567,8 @@ def main():
     house = {c['code'] for c in house_candidates()}
     # Teammate batches routed via engine.teamcodes (inbox exports) always publish; the 12-card cap is for the public hub only.
     house |= {c['code'] for c in export_candidates()}
+    # Nightly strategy codes are their own jobs, not hub filler, so the 12-card cap must not drop them.
+    house |= {s['code'] for s in refreshed.values() if s.get('code') and (s.get('strategyJob') or s.get('strategySpec') or str(s.get('origin') or '').startswith('strategy-') or s.get('origin') == 'daily-master')}
     replacement_pairs = {s.get('replacementOf'): s['code'] for s in refreshed.values() if s.get('replacementOf')}
     hub_count = 0
     active, history = [], []
