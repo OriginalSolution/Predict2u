@@ -39,8 +39,8 @@
        "sr:match:76488396",
        "sr:match:76489490"
       ],
-      "hit": 3,
-      "status": "pending"
+      "hit": 4,
+      "status": "lost"
      }
     ],
     "footballcom": [
@@ -60,8 +60,8 @@
        "sr:match:76488396",
        "sr:match:76489490"
       ],
-      "hit": 3,
-      "status": "pending"
+      "hit": 4,
+      "status": "lost"
      }
     ],
     "msport": [
@@ -81,8 +81,8 @@
        "sr:match:76488396",
        "sr:match:76489490"
       ],
-      "hit": 3,
-      "status": "pending"
+      "hit": 4,
+      "status": "lost"
      }
     ],
     "betika": [
@@ -101,8 +101,8 @@
        "sr:match:76488396",
        "sr:match:76489490"
       ],
-      "hit": 2,
-      "status": "pending"
+      "hit": 3,
+      "status": "lost"
      }
     ],
     "betpawa": [
@@ -122,8 +122,8 @@
        "sr:match:76488396",
        "sr:match:76489490"
       ],
-      "hit": 3,
-      "status": "pending"
+      "hit": 4,
+      "status": "lost"
      }
     ]
    },
@@ -134,7 +134,7 @@
    },
    "label": "Descending odds · set · HIGH RISK",
    "source": "desc",
-   "status": "pending"
+   "status": "lost"
   }
  ],
  "legList": [
@@ -176,8 +176,8 @@
    "selection": "Over 2.5",
    "odds": 1.36,
    "liveOdds": 1.8,
-   "result": "pending",
-   "matchStatus": "AET",
+   "result": "won",
+   "matchStatus": "Ended",
    "score": "2:3",
    "played": "117:59",
    "table": null,
@@ -200,8 +200,8 @@
    "selection": "Over 2.5",
    "odds": 1.33,
    "liveOdds": 7.25,
-   "result": "pending",
-   "matchStatus": "AET",
+   "result": "lost",
+   "matchStatus": "Ended",
    "score": "1:2",
    "played": "123:02",
    "table": null,
@@ -357,7 +357,7 @@
  ],
  "legs": 9,
  "totalOdds": 12.18,
- "hit": 3,
+ "hit": 4,
  "total": 9,
- "status": "pending"
+ "status": "lost"
 }
