@@ -600,7 +600,7 @@ def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
                 continue
             ts2.append(cand)
         grouped["nysm-ts2"] = ts2
-        return grouped, skipped
+        return grouped, skipped, len(tree_picks)
 
     def legs_of(picks, slip_id):
         out = []
@@ -613,7 +613,7 @@ def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
         return out
 
     event_by_id = {event.get("eventId"): event for event in events}
-    normal_slips, skipped_table = gather(False)
+    normal_slips, skipped_table, tree_count = gather(False)
     relaxed_slips = None
     booked = {}
     qualifying = []
@@ -623,8 +623,9 @@ def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
         used_relaxed = False
         if not packed:
             if relaxed_slips is None:
-                relaxed_slips, extra_skipped = gather(True)
+                relaxed_slips, extra_skipped, relaxed_tree_count = gather(True)
                 skipped_table += extra_skipped
+                tree_count = max(tree_count, relaxed_tree_count)
             relaxed_legs = legs_of((relaxed_slips or {}).get(slip_id) or [], slip_id)
             packed, why, used_relaxed = lib.thin_pack(normal_legs, relaxed_legs)
             qualifying.extend(relaxed_legs)
@@ -654,6 +655,7 @@ def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
         "date": day.isoformat(),
         "events": len(events),
         "tableUnchecked": skipped_table,
+        "treePicks": tree_count,
         "relaxed": any(row.get("relaxed") for row in booked.values()),
         "qualifying": qualifying,
         "slips": {key: {k: v for k, v in row.items() if k != "legs"} | {"legs": row.get("legs")} for key, row in booked.items()},
@@ -669,7 +671,7 @@ def run(day: dt.date, repo: Path, dry_run: bool = False) -> dict:
     if not dry_run:
         lib.write_record(repo, "nysm", day.isoformat(), payload)
     summary = {key: {"candidates": row["candidates"], "n": row["n"], "total": row["total"], "code": row.get("code"), "reason": row.get("reason")} for key, row in booked.items()}
-    print(json.dumps({"nysm": day.isoformat(), "events": len(events), "tableUnchecked": skipped_table, "treePicks": len(tree_picks), "slips": summary, "dry": dry_run}, default=str))
+    print(json.dumps({"nysm": day.isoformat(), "events": len(events), "tableUnchecked": skipped_table, "treePicks": tree_count, "slips": summary, "dry": dry_run}, default=str))
     return payload
 
 

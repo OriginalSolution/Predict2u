@@ -12,12 +12,22 @@ Rules:
   no run of that workflow was created since the slot. Nothing is caught up
   hours late; the (late) GitHub cron stays as the fallback, and p2u_gate.py
   makes that fallback a no-op once the on-time run has succeeded.
-- One ticker at a time: a new ticker waits a few minutes for older tickers
-  to finish and exits if one is still alive.
+- The live ticker follows main. Every minute it reads main's HEAD; when it
+  moves, it re-reads SCHEDULE from this file at main, so a slot merged at
+  22:07 is on the clock by 22:08 (Nov 12: the PR #17 night slots were merged
+  while a 19:33 ticker held the old list and nothing started them).
+- If the ticker logic itself changed on main, the live ticker dispatches a
+  fresh ticker and keeps working until that one takes over.
+- One ticker at a time. A new ticker cancels older tickers that run different
+  ticker logic (it is the newer code) and starts at once, so there is no gap.
+  An older ticker with the same logic already follows main, so the new one
+  waits a few minutes for it to hand over and exits if it is still alive.
+  A running ticker also yields to a same-logic ticker with a lower run id.
 Times are UTC (= Africa/Accra).
 """
 from __future__ import annotations
-import datetime as dt, json, os, sys, time, urllib.error, urllib.parse, urllib.request
+import ast, base64, datetime as dt, hashlib, json, os, sys, time, urllib.error, urllib.parse, urllib.request
+from pathlib import Path
 
 API = os.environ.get("GITHUB_API_URL", "https://api.github.com")
 REPO = os.environ["GITHUB_REPOSITORY"]
@@ -25,6 +35,7 @@ REF = os.environ.get("P2U_TICKER_REF", "main")
 GRACE = int(os.environ.get("P2U_TICKER_GRACE_MIN", "15"))
 LIFETIME = int(os.environ.get("P2U_TICKER_SECONDS", str(5 * 3600 + 40 * 60)))
 SELF = "engine-ticker.yml"
+SELF_PATH = ".github/scripts/p2u_ticker.py"
 
 # (workflow file, minute, hour, day-of-week)  cron-style fields: "*", "*/n", "a,b"
 SCHEDULE = [
@@ -99,51 +110,197 @@ def log(msg: str):
     print(f"{dt.datetime.now(dt.timezone.utc):%Y-%m-%d %H:%M:%S}Z {msg}", flush=True)
 
 
-def other_tickers_alive() -> bool:
+def read_schedule(src: str) -> list[tuple[str, str, str, str]]:
+    """SCHEDULE from ticker source, without executing it."""
+    for node in ast.parse(src).body:
+        if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id == "SCHEDULE" for t in node.targets):
+            rows = ast.literal_eval(node.value)
+            out = []
+            for row in rows:
+                wf, minute, hour, dow = (str(x) for x in row)
+                if not wf.endswith(".yml"):
+                    raise ValueError(f"bad workflow {wf!r}")
+                for spec in (minute, hour, dow):
+                    for part in spec.split(","):
+                        if not (part == "*" or part.isdigit() or (part.startswith("*/") and part[2:].isdigit() and int(part[2:]) > 0)):
+                            raise ValueError(f"bad field {spec!r} for {wf}")
+                out.append((wf, minute, hour, dow))
+            if not out:
+                raise ValueError("empty SCHEDULE")
+            return out
+    raise ValueError("no SCHEDULE in ticker source")
+
+
+def logic_id(src: str) -> str:
+    """Fingerprint of the ticker logic with the SCHEDULE literal blanked out,
+    so a schedule-only edit is hot-reloaded and a logic edit hands over."""
+    lines = src.splitlines()
+    for node in ast.parse(src).body:
+        if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id == "SCHEDULE" for t in node.targets):
+            lines[node.lineno - 1:node.end_lineno] = ["SCHEDULE = ..."]
+            break
+    return hashlib.sha1("\n".join(lines).encode()).hexdigest()[:12]
+
+
+def source_at(ref: str) -> str:
+    doc = api("GET", f"/repos/{REPO}/contents/{SELF_PATH}?ref={urllib.parse.quote(ref)}")
+    return base64.b64decode(doc["content"]).decode()
+
+
+def main_head() -> str:
+    return api("GET", f"/repos/{REPO}/commits/{urllib.parse.quote(REF)}")["sha"]
+
+
+_logic_cache: dict[str, str | None] = {}
+
+
+def logic_at(sha: str) -> str | None:
+    if sha not in _logic_cache:
+        try:
+            _logic_cache[sha] = logic_id(source_at(sha))
+        except Exception as e:
+            log(f"could not read ticker source at {sha[:8]} ({e})")
+            _logic_cache[sha] = None
+    return _logic_cache[sha]
+
+
+def live_tickers() -> list[dict]:
+    """Other ticker runs that are queued or running."""
     me = int(os.environ["GITHUB_RUN_ID"])
+    out = []
     for status in ("in_progress", "queued"):
         runs = api("GET", f"/repos/{REPO}/actions/workflows/{SELF}/runs?per_page=20&status={status}").get("workflow_runs") or []
-        if any(r["id"] < me for r in runs):
+        out += [r for r in runs if r["id"] != me]
+    return out
+
+
+def cancel(run_id: int):
+    api("POST", f"/repos/{REPO}/actions/runs/{run_id}/cancel")
+
+
+def take_over(my_logic: str) -> bool:
+    """True when this ticker should run. Cancels older tickers on other logic."""
+    me = int(os.environ["GITHUB_RUN_ID"])
+    for _ in range(12):  # up to 4 minutes for a same-logic predecessor to hand over
+        older = [r for r in live_tickers() if r["id"] < me]
+        same = []
+        for r in older:
+            theirs = logic_at(r["head_sha"])
+            if theirs == my_logic:
+                same.append(r)
+            else:
+                # Older logic (e.g. no schedule reload): this ticker is the newer
+                # code, so it replaces that run instead of leaving it in charge.
+                log(f"cancelling older ticker run {r['id']} (sha {r['head_sha'][:8]}, logic {theirs}); taking over")
+                try:
+                    cancel(r["id"])
+                except Exception as e:
+                    log(f"could not cancel run {r['id']} ({e})")
+        if not same:
             return True
+        time.sleep(20)
+    log("an older ticker with the same logic is alive and follows main; exiting")
     return False
 
 
-def main() -> int:
-    for _ in range(12):  # up to 4 minutes for the previous ticker to hand over
+class Plan:
+    """The slot list, kept in step with main."""
+
+    def __init__(self, my_logic: str, local_src: str):
+        self.my_logic = my_logic
+        self.schedule = read_schedule(local_src)
+        self.head = os.environ.get("GITHUB_SHA", "")
+        self.handoff_for: str | None = None
+
+    def refresh(self) -> None:
         try:
-            if not other_tickers_alive():
-                break
+            head = main_head()
         except Exception as e:
-            log(f"could not list tickers ({e}); assuming none alive")
-            break
-        time.sleep(20)
-    else:
-        log("another ticker is alive; exiting")
-        return 0
+            log(f"could not read {REF} HEAD ({e}); keeping {len(self.schedule)} slots")
+            return
+        if head == self.head:
+            return
+        try:
+            src = source_at(head)
+            schedule = read_schedule(src)
+            logic = logic_id(src)
+        except Exception as e:
+            log(f"{REF} moved to {head[:8]} but its schedule is unreadable ({e}); keeping the current one")
+            self.head = head
+            return
+        self.head = head
+        _logic_cache[head] = logic
+        if schedule != self.schedule:
+            added = sorted(set(schedule) - set(self.schedule))
+            removed = sorted(set(self.schedule) - set(schedule))
+            log(f"{REF} {head[:8]}: schedule reloaded ({len(schedule)} slots; +{added} -{removed})")
+            self.schedule = schedule
+        if logic != self.my_logic and self.handoff_for != logic:
+            # The new ticker cancels this one when it starts (see take_over), so
+            # this run keeps dispatching until then and there is no gap.
+            self.handoff_for = logic
+            try:
+                dispatch(SELF)
+                log(f"ticker logic changed on {REF} ({self.my_logic} -> {logic}); dispatched a fresh ticker to take over")
+            except Exception as e:
+                self.handoff_for = None
+                log(f"could not dispatch a fresh ticker ({e}); will retry")
+
+    def should_yield(self) -> bool:
+        """Two same-logic tickers can only overlap when an older queued run
+        started late. The lower run id keeps the clock; the other leaves."""
+        me = int(os.environ["GITHUB_RUN_ID"])
+        try:
+            for r in live_tickers():
+                if r["id"] < me and r["status"] == "in_progress" and logic_at(r["head_sha"]) == self.my_logic:
+                    log(f"older ticker run {r['id']} runs the same logic; leaving the clock to it")
+                    return True
+        except Exception:
+            pass
+        return False
+
+
+def tick(plan: Plan, now: dt.datetime, fired: set) -> None:
+    for wf, minute, hour, dow in plan.schedule:
+        slot = due_slot(now, minute, hour, dow)
+        if slot is None:
+            continue
+        key = (wf, slot.isoformat())
+        if key in fired:
+            continue
+        try:
+            n = runs_since(wf, slot)
+            if n:
+                log(f"{wf} slot {slot:%H:%M}Z already has {n} run(s); not dispatching")
+            else:
+                dispatch(wf)
+                log(f"dispatched {wf} for slot {slot:%H:%M}Z")
+            fired.add(key)
+        except urllib.error.HTTPError as e:
+            log(f"{wf}: HTTP {e.code} {e.read()[:200]!r}; will retry next minute")
+        except Exception as e:
+            log(f"{wf}: {e}; will retry next minute")
+
+
+def main() -> int:
+    local_src = Path(__file__).read_text()
+    my_logic = logic_id(local_src)
+    try:
+        if not take_over(my_logic):
+            return 0
+    except Exception as e:
+        log(f"could not list tickers ({e}); assuming none alive")
+    plan = Plan(my_logic, local_src)
     end = time.time() + LIFETIME
     fired: set[tuple[str, str]] = set()
-    log(f"ticker up for {LIFETIME // 60} min, grace {GRACE} min, {len(SCHEDULE)} slots")
+    log(f"ticker up for {LIFETIME // 60} min, grace {GRACE} min, {len(plan.schedule)} slots, logic {my_logic}, sha {plan.head[:8]}")
+    loops = 0
     while time.time() < end:
-        now = dt.datetime.now(dt.timezone.utc)
-        for wf, minute, hour, dow in SCHEDULE:
-            slot = due_slot(now, minute, hour, dow)
-            if slot is None:
-                continue
-            key = (wf, slot.isoformat())
-            if key in fired:
-                continue
-            try:
-                n = runs_since(wf, slot)
-                if n:
-                    log(f"{wf} slot {slot:%H:%M}Z already has {n} run(s); not dispatching")
-                else:
-                    dispatch(wf)
-                    log(f"dispatched {wf} for slot {slot:%H:%M}Z")
-                fired.add(key)
-            except urllib.error.HTTPError as e:
-                log(f"{wf}: HTTP {e.code} {e.read()[:200]!r}; will retry next minute")
-            except Exception as e:
-                log(f"{wf}: {e}; will retry next minute")
+        plan.refresh()
+        if loops % 5 == 4 and plan.should_yield():
+            return 0
+        tick(plan, dt.datetime.now(dt.timezone.utc), fired)
+        loops += 1
         time.sleep(max(5, 60 - dt.datetime.now(dt.timezone.utc).second))
     log("lifetime reached; handing over to the next ticker")
     # Only a ticker that lived its full span hands over, so a crash can never

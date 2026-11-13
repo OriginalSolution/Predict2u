@@ -58,6 +58,7 @@ jobs:
       - name: Install runtime extras
         run: pip install cryptography
       - name: GG / BTTS-Yes
+        id: strategy
         env:
           P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
           REPO_DIR: ${{ github.workspace }}
@@ -72,11 +73,17 @@ jobs:
             python -m engine.premium --lock "$REPO_DIR"
           fi
       - name: Commit booked GG code
-        if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        # !cancelled(): if the strategy crashes after booking, still save the codes it
+        # booked and the per-match usage (Nov 13: a NameError after write_record skipped this).
+        if: ${{ !cancelled() && steps.strategy.outcome != 'skipped' && github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
         env:
           P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
         run: |
           set -euo pipefail
+          if [ "${{ steps.strategy.outcome }}" = "failure" ]; then
+            echo "::warning::strategy step failed; committing whatever it booked before the failure"
+            python -m engine.premium --lock "$GITHUB_WORKSPACE" || { echo "::error::lock failed after a crash; not committing"; exit 0; }
+          fi
           if [ -z "${P2U_LOCK_KEY:-}" ] && ! python -m engine.premium --is-free . >/dev/null 2>&1; then
             echo "::warning::P2U_LOCK_KEY is not set; refusing to commit pick files so premium codes stay locked on the live site (paid-codes mode; free mode is p2u-free-mode.js)."
             exit 0
