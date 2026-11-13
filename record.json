@@ -1,21 +1,21 @@
 {
- "DATA_UPDATED": "2026-11-12T22:08:33Z",
+ "DATA_UPDATED": "2026-11-13T00:15:36Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
  "overall": {
-  "n": 187,
-  "won": 24,
+  "n": 188,
+  "won": 25,
   "lost": 163,
-  "winRate": 12.8,
+  "winRate": 13.3,
   "stake": 10.0,
-  "staked": 1830.0,
-  "returned": 2143.4,
-  "profit": 313.4,
-  "roi": 17.1,
-  "pending": 97,
-  "codesSettled": 845,
-  "codesWon": 101,
+  "staked": 1880.0,
+  "returned": 2223.8,
+  "profit": 343.8,
+  "roi": 18.3,
+  "pending": 77,
+  "codesSettled": 866,
+  "codesWon": 122,
   "codesLost": 744
  },
  "streak": {
@@ -51,6 +51,18 @@
   },
   {
    "n": 14,
+   "won": 1,
+   "lost": 13,
+   "winRate": 7.1,
+   "stake": 10.0,
+   "staked": 140.0,
+   "returned": 21.1,
+   "profit": -118.9,
+   "roi": -84.9,
+   "key": "high-odds"
+  },
+  {
+   "n": 14,
    "won": 10,
    "lost": 4,
    "winRate": 71.4,
@@ -60,18 +72,6 @@
    "profit": 1563.7,
    "roi": 1116.9,
    "key": "hot"
-  },
-  {
-   "n": 13,
-   "won": 0,
-   "lost": 13,
-   "winRate": 0.0,
-   "stake": 10.0,
-   "staked": 130.0,
-   "returned": 0,
-   "profit": -130.0,
-   "roi": -100.0,
-   "key": "high-odds"
   },
   {
    "n": 6,
@@ -124,15 +124,15 @@
  ],
  "bySite": [
   {
-   "n": 233,
-   "won": 27,
+   "n": 234,
+   "won": 28,
    "lost": 206,
-   "winRate": 11.6,
+   "winRate": 12.0,
    "stake": 10.0,
-   "staked": 2330.0,
-   "returned": 2272.8,
-   "profit": -57.2,
-   "roi": -2.5,
+   "staked": 2340.0,
+   "returned": 2293.9,
+   "profit": -46.1,
+   "roi": -2.0,
    "key": "sportybet"
   },
   {
@@ -234,15 +234,15 @@
    "key": "Over 0.5"
   },
   {
-   "n": 72,
-   "won": 10,
+   "n": 73,
+   "won": 11,
    "lost": 62,
-   "winRate": 13.9,
+   "winRate": 15.1,
    "stake": 10.0,
-   "staked": 720.0,
-   "returned": 318.6,
-   "profit": -401.4,
-   "roi": -55.8,
+   "staked": 730.0,
+   "returned": 339.7,
+   "profit": -390.3,
+   "roi": -53.5,
    "key": "Over 2.5"
   },
   {
@@ -368,15 +368,15 @@
    "key": "2026-11-12"
   },
   {
-   "n": 6,
-   "won": 0,
+   "n": 7,
+   "won": 1,
    "lost": 6,
-   "winRate": 0.0,
+   "winRate": 14.3,
    "stake": 10.0,
-   "staked": 60.0,
-   "returned": 0,
-   "profit": -60.0,
-   "roi": -100.0,
+   "staked": 70.0,
+   "returned": 21.1,
+   "profit": -48.9,
+   "roi": -69.9,
    "key": "2026-11-11"
   },
   {
@@ -477,10 +477,10 @@
   }
  ],
  "picks": {
-  "settled": 1800,
-  "won": 1342,
-  "lost": 458,
-  "winRate": 74.6
+  "settled": 1816,
+  "won": 1357,
+  "lost": 459,
+  "winRate": 74.7
  },
  "recent": [
   {
@@ -491,7 +491,7 @@
    "kind": "slip",
    "odds": 310.44,
    "status": "lost",
-   "hit": 15,
+   "hit": 21,
    "total": 25,
    "profit": -10.0,
    "legs": [
@@ -569,7 +569,7 @@
      "match": "CDA Navalcarnero v Betis",
      "selection": "Over 1.5",
      "odds": 1.14,
-     "result": "pending",
+     "result": "won",
      "score": "2:3"
     },
     {
@@ -617,23 +617,23 @@
     {
      "match": "Czechia v Spain",
      "selection": "Over 1.5",
-     "odds": 1.8,
-     "result": "pending",
-     "score": "0:1"
+     "odds": 6.5,
+     "result": "won",
+     "score": "0:2"
     },
     {
      "match": "England v Croatia",
      "selection": "Over 1.5",
      "odds": 1.35,
-     "result": "pending",
+     "result": "won",
      "score": "2:1"
     },
     {
      "match": "Montenegro v Latvia",
      "selection": "Over 1.5",
      "odds": 1.95,
-     "result": "pending",
-     "score": "1:1"
+     "result": "won",
+     "score": "2:1"
     },
     {
      "match": "San Marino v Belarus",
@@ -646,29 +646,29 @@
      "match": "Bonaire v Cuba",
      "selection": "Over 1.5",
      "odds": 1.14,
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "1:7"
     },
     {
      "match": "CD Aguila San Miguel v Municipal Limeno",
      "selection": "Over 1.5",
-     "odds": 1.2,
-     "result": "pending",
-     "score": "0:0"
+     "odds": 4.0,
+     "result": "won",
+     "score": "1:1"
     },
     {
      "match": "AA Ponte Preta SP v Operario Ferroviario EC PR",
      "selection": "Over 1.5",
-     "odds": 1.24,
-     "result": "pending",
-     "score": "0:0"
+     "odds": 3.55,
+     "result": "won",
+     "score": "0:2"
     },
     {
      "match": "AD Pasto v CD Junior FC",
      "selection": "Over 1.5",
-     "odds": 1.31,
+     "odds": 1.6,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -680,7 +680,7 @@
    "kind": "hot",
    "odds": 1.75,
    "status": "won",
-   "hit": 0,
+   "hit": 3,
    "total": 3,
    "profit": 7.5,
    "legs": [
@@ -701,7 +701,7 @@
     {
      "match": "Czechia v Spain",
      "selection": "Over 1.5",
-     "odds": 1.8,
+     "odds": 6.5,
      "result": "won",
      "score": "0:2"
     }
@@ -715,7 +715,7 @@
    "kind": "hot",
    "odds": 1.8,
    "status": "won",
-   "hit": 0,
+   "hit": 3,
    "total": 3,
    "profit": 8.0,
    "legs": [
@@ -750,7 +750,7 @@
    "kind": "hot",
    "odds": 1.49,
    "status": "won",
-   "hit": 0,
+   "hit": 3,
    "total": 3,
    "profit": 4.9,
    "legs": [
@@ -785,7 +785,7 @@
    "kind": "hot",
    "odds": 1.75,
    "status": "won",
-   "hit": 0,
+   "hit": 3,
    "total": 3,
    "profit": 7.5,
    "legs": [
@@ -806,7 +806,7 @@
     {
      "match": "Czechia v Spain",
      "selection": "Over 1.5",
-     "odds": 1.8,
+     "odds": 5.7,
      "result": "won",
      "score": "0:2"
     }
@@ -820,7 +820,7 @@
    "kind": "hot",
    "odds": 1.8,
    "status": "won",
-   "hit": 0,
+   "hit": 3,
    "total": 3,
    "profit": 8.0,
    "legs": [
@@ -855,14 +855,14 @@
    "kind": "hot",
    "odds": 1.29,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 2.9,
    "legs": [
     {
      "match": "Czechia v Spain",
      "selection": "Over 1.5",
-     "odds": 1.9,
+     "odds": 7.25,
      "result": "won",
      "score": "0:2"
     }
@@ -876,7 +876,7 @@
    "kind": "hot",
    "odds": 1.27,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 2.7,
    "legs": [
@@ -897,7 +897,7 @@
    "kind": "hot",
    "odds": 1.27,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 2.7,
    "legs": [
@@ -918,14 +918,14 @@
    "kind": "hot",
    "odds": 1.3,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 3.0,
    "legs": [
     {
      "match": "Czechia v Spain",
      "selection": "Over 1.5",
-     "odds": 1.95,
+     "odds": 2.65,
      "result": "won",
      "score": "0:2"
     }
@@ -939,7 +939,7 @@
    "kind": "hot",
    "odds": 1.3,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 3.0,
    "legs": [
@@ -960,7 +960,7 @@
    "kind": "hot",
    "odds": 1.59,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 5.9,
    "legs": [
@@ -981,7 +981,7 @@
    "kind": "hot",
    "odds": 1.59,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 5.9,
    "legs": [
@@ -1002,7 +1002,7 @@
    "kind": "hot",
    "odds": 1.55,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 5.5,
    "legs": [
@@ -1023,7 +1023,7 @@
    "kind": "hot",
    "odds": 1.59,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 5.9,
    "legs": [
@@ -1044,7 +1044,7 @@
    "kind": "hot",
    "odds": 1.59,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 5.9,
    "legs": [
@@ -1065,7 +1065,7 @@
    "kind": "hot",
    "odds": 1.3,
    "status": "won",
-   "hit": 1,
+   "hit": 2,
    "total": 2,
    "profit": 3.0,
    "legs": [
@@ -1093,7 +1093,7 @@
    "kind": "hot",
    "odds": 1.25,
    "status": "won",
-   "hit": 1,
+   "hit": 2,
    "total": 2,
    "profit": 2.5,
    "legs": [
@@ -1121,7 +1121,7 @@
    "kind": "hot",
    "odds": 1.25,
    "status": "won",
-   "hit": 1,
+   "hit": 2,
    "total": 2,
    "profit": 2.5,
    "legs": [
@@ -1149,7 +1149,7 @@
    "kind": "hot",
    "odds": 1.3,
    "status": "won",
-   "hit": 1,
+   "hit": 2,
    "total": 2,
    "profit": 3.0,
    "legs": [
@@ -1177,7 +1177,7 @@
    "kind": "hot",
    "odds": 1.3,
    "status": "won",
-   "hit": 1,
+   "hit": 2,
    "total": 2,
    "profit": 3.0,
    "legs": [
@@ -1194,6 +1194,41 @@
      "odds": 1.15,
      "result": "won",
      "score": "1:2"
+    }
+   ]
+  },
+  {
+   "code": "F68ZSU",
+   "book": "sportybet",
+   "date": "2026-11-11",
+   "name": "Descending odds · set · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 2.11,
+   "status": "won",
+   "hit": 2,
+   "total": 3,
+   "profit": 11.1,
+   "legs": [
+    {
+     "match": "CDA Navalcarnero v Betis",
+     "selection": "Over 2.5",
+     "odds": 1.3,
+     "result": "pending",
+     "score": "2:3"
+    },
+    {
+     "match": "Cayman Islands v Guyana",
+     "selection": "Over 2.5",
+     "odds": 1.22,
+     "result": "won",
+     "score": "0:6"
+    },
+    {
+     "match": "Bonaire v Cuba",
+     "selection": "Over 2.5",
+     "odds": 1.33,
+     "result": "won",
+     "score": "1:7"
     }
    ]
   },
@@ -2244,174 +2279,6 @@
      "odds": 1.41,
      "result": "won",
      "score": "2:0"
-    }
-   ]
-  },
-  {
-   "code": "DBL692",
-   "book": "sportybet",
-   "date": "2026-11-08",
-   "name": "High Odds Selection",
-   "kind": "slip",
-   "odds": 2173.57,
-   "status": "lost",
-   "hit": 17,
-   "total": 22,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Napoli v Lazio",
-     "selection": "Over 2.5 & Yes",
-     "odds": 1.83,
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "Elche CF v Betis",
-     "selection": "Over 2.5 & Yes",
-     "odds": 1.86,
-     "result": "lost",
-     "score": "0:2"
-    },
-    {
-     "match": "Brighton v Brentford",
-     "selection": "Over 2.5 & Yes",
-     "odds": 1.8,
-     "result": "lost",
-     "score": "2:0"
-    },
-    {
-     "match": "Crystal Palace v Liverpool",
-     "selection": "Over 2.5 & Yes",
-     "odds": 1.9,
-     "result": "won",
-     "score": "1:3"
-    },
-    {
-     "match": "Genoa v AC Milan",
-     "selection": "Over 2.5 & Yes",
-     "odds": 2.5,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Cologne v Bayer Leverkusen",
-     "selection": "Over 2.5 & Yes",
-     "odds": 1.6,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Man Utd v Aston Villa",
-     "selection": "Over 2.5 & Yes",
-     "odds": 1.76,
-     "result": "won",
-     "score": "4:4"
-    },
-    {
-     "match": "Inter v Como 1907",
-     "selection": "Over 2.5 & Yes",
-     "odds": 1.65,
-     "result": "lost",
-     "score": "2:0"
-    },
-    {
-     "match": "Fiorentina v Juventus",
-     "selection": "Over 2.5 & Yes",
-     "odds": 2.0,
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "Atletico Madrid v Barcelona",
-     "selection": "Over 2.5 & Yes",
-     "odds": 1.46,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Lens v Marseille",
-     "selection": "Over 2.5 & Yes",
-     "odds": 1.65,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Villarreal v Getafe",
-     "selection": "Over 1.5",
-     "odds": 1.26,
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Hoffenheim v Schalke",
-     "selection": "Over 0.5",
-     "odds": 1.02,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Freiburg v Union Berlin",
-     "selection": "Over 0.5",
-     "odds": 1.02,
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Le Mans FC v Monaco",
-     "selection": "Over 0.5",
-     "odds": 1.03,
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Brest v Lyon",
-     "selection": "Over 0.5",
-     "odds": 1.05,
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Angers v Nice",
-     "selection": "Over 0.5",
-     "odds": 1.04,
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "Real Sociedad v Rayo Vallecano",
-     "selection": "Over 0.5",
-     "odds": 1.02,
-     "result": "won",
-     "score": "1:0"
-    },
-    {
-     "match": "Rennes v Lille",
-     "selection": "Over 0.5",
-     "odds": 1.03,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Monza v Atalanta",
-     "selection": "Over 0.5",
-     "odds": 1.02,
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Sunderland AFC v Chelsea",
-     "selection": "Over 2.5 & Yes",
-     "odds": 2.05,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Ipswich Town v Bournemouth",
-     "selection": "Over 0.5",
-     "odds": 1.03,
-     "result": "won",
-     "score": "1:2"
     }
    ]
   }
