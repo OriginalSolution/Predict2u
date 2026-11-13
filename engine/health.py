@@ -391,6 +391,10 @@ def check_site(rep):
                 continue
             if f == "high_odds.json" and txt.strip().count("\n"):
                 rep.bad("site", "high_odds.json is not compact one-line JSON")
+            if f == "hot-picks.json" and isinstance(doc, dict):
+                # settle/prune jobs bump updatedAt, so also require real hub picks
+                if not (doc.get("picks") or doc.get("slips") or doc.get("byMarket") or doc.get("byTeam")):
+                    rep.bad("site", "hot-picks.json has no hot picks, slips or sections: the SportyBet code-hub scrape (hot_picks.py) did not publish")
         else:
             m = re.search(key, txt[:5000])
             ts = parse_ts(m.group(1)) if m else None

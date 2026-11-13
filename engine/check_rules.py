@@ -90,6 +90,10 @@ def main() -> int:
             fail("build.py BOOK_LINKS betpawa must be share-betslip/{}")
 
     hot_src = hot
+    # `info` holds the code-hub selection details; rebinding it at top level
+    # (e.g. `picks, info = _tp.select(...)`) crashed hot_picks.py with KeyError.
+    if re.search(r"(?m)^[^\s#][^\n]*\binfo\s*=\s*_tp\.select", hot_src):
+        fail("hot_picks.py must not rebind the hub `info` dict with thin_pool.select results")
     if "sectionMasters" not in hot_src:
         fail("hot_picks.py must build sectionMasters for each Hot page section")
     if not (ENGINE / "vendor" / "hot_section_masters.py").exists():

@@ -153,8 +153,10 @@ for p in wide:
   try: _MR.enrich(p)
   except Exception: pass
 core=[p for p in wide if p['count']>=HOT]
-picks, info=_tp.select(core, quiet=True)
-if info['used']:
+# keep `info` (hub selection details keyed by selection) intact: thin_pool's
+# report goes in tp_info, or every later info[k] lookup raises KeyError.
+picks, tp_info=_tp.select(core, quiet=True)
+if tp_info['used']:
   wider, info2=_tp.select(wide, quiet=True)
   if info2['used']:
     print(info2['log'], flush=True)
@@ -168,8 +170,8 @@ def _pass(L):
     try: _MR.enrich(p)
     except Exception: pass
     rows.append(p)
-  chosen, info=_tp.select(rows)
-  if info.get('used'): _hdrop.append(dict(note=info.get('log'), candidates=len(rows), added=info.get('added')))
+  chosen, tpi=_tp.select(rows)
+  if tpi.get('used'): _hdrop.append(dict(note=tpi.get('log'), candidates=len(rows), added=tpi.get('added')))
   return chosen
 prev={}
 try: prev={s['name']:s for s in json.load(open(OUT)).get('slips',[])}
