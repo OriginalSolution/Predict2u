@@ -4,7 +4,7 @@
    No email, payment data, raw IP or full user agent. */
 (function(){
   'use strict';
-  var RELAY='https://p2u-relay.onrender.com/live/hit',CONSENT='p2uAnalyticsConsent',SID='p2uLiveSid',VID='p2uLiveVid';
+  var RELAY='https://p2u-relay-c0mn.onrender.com/live/hit',CONSENT='p2uAnalyticsConsent',SID='p2uLiveSid',VID='p2uLiveVid';
   var sent={},timer=null;
   function declined(){try{return localStorage.getItem(CONSENT)==='declined';}catch(e){return false;}}
   function blocked(){try{return navigator.globalPrivacyControl===true||navigator.doNotTrack==='1'||window.doNotTrack==='1'||declined();}catch(e){return true;}}

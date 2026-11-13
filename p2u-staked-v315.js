@@ -11,7 +11,7 @@
       return fetch(PROX[k](u),{signal:c.signal}).then(function(r){clearTimeout(t);if(!r.ok)throw 0;return r.json()}).then(function(j){if(!j||!j.data)throw 0;good=k;sessionStorage.setItem('p2u_st_px',k);return j}).catch(nx)}
     return nx()}
   function side(d,H,A){return d.replace(/\bHome\b/g,H).replace(/\bAway\b/g,A)}
-  var RELAY='https://p2u-relay.onrender.com',relayOk=null,waking=false;
+  var RELAY='https://p2u-relay-c0mn.onrender.com',relayOk=null,waking=false;
   function relayFetch(path,ms){var c=new AbortController(),t=setTimeout(function(){c.abort()},ms||45000),slow=setTimeout(function(){waking=true;var u=document.getElementById('stU');if(u)u.textContent='Live tracker waking up…'},3500);
     return fetch(RELAY+path,{signal:c.signal}).then(function(r){clearTimeout(t);clearTimeout(slow);waking=false;relayOk=true;if(r.status===404)return null;if(!r.ok)throw 0;return r.json()}).catch(function(e){clearTimeout(t);clearTimeout(slow);waking=false;relayOk=false;throw e})}
   function lookup(x){return relayFetch('/code/'+x.book+'/'+encodeURIComponent(x.code)).then(function(j){return j&&j.legs?j.legs.map(function(l){return{eventId:l.eventId,match:l.match,selection:l.selection,market:l.market,odds:l.odds,kickoff:l.kickoff,score:l.score,status:l.status,played:l.played,league:l.league}}):null}).catch(function(){return legacy(x)})}

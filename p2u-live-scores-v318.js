@@ -2,7 +2,7 @@
    Tries the Render relay (CORS) first; falls back to sync home-picks / live-scores.json. */
 (function(global){
   'use strict';
-  var RELAY='https://p2u-relay.onrender.com';
+  var RELAY='https://p2u-relay-c0mn.onrender.com';
   var scores={}; // eventId -> {status,score,played,kickoff,home,away,source}
   var timer=null, lastFetch=0, source='sync';
 
