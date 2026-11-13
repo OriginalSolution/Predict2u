@@ -9,9 +9,10 @@
  "parts": [
   {
    "name": "Ascending odds · set",
-   "legs": 33,
+   "legs": 34,
    "events": [
     "sr:match:74873412",
+    "sr:match:76617952",
     "sr:match:76708728",
     "sr:match:72415692",
     "sr:match:72415682",
@@ -45,14 +46,14 @@
     "sr:match:72477588",
     "sr:match:74172538"
    ],
-   "totalOdds": 2961.15,
+   "totalOdds": 4117.83,
    "codes": {
     "sportybet": [
      {
-      "code": "F5BP2R",
-      "totalOdds": 2961.15,
-      "legs": 33,
-      "link": "https://www.sportybet.com/gh/?shareCode=F5BP2R",
+      "code": "88DDQZ",
+      "totalOdds": 4117.83,
+      "legs": 34,
+      "link": "https://www.sportybet.com/gh/?shareCode=88DDQZ",
       "matches": [
        "sr:match:68380624",
        "sr:match:68823470",
@@ -86,6 +87,7 @@
        "sr:match:74873412",
        "sr:match:75947232",
        "sr:match:76229052",
+       "sr:match:76617952",
        "sr:match:76708728"
       ],
       "hit": 0,
@@ -94,10 +96,10 @@
     ],
     "footballcom": [
      {
-      "code": "F5BP2R",
-      "totalOdds": 2961.15,
-      "legs": 33,
-      "link": "https://www.football.com/gh/?shareCode=F5BP2R",
+      "code": "88DDQZ",
+      "totalOdds": 4117.83,
+      "legs": 34,
+      "link": "https://www.football.com/gh/?shareCode=88DDQZ",
       "matches": [
        "sr:match:68380624",
        "sr:match:68823470",
@@ -131,6 +133,7 @@
        "sr:match:74873412",
        "sr:match:75947232",
        "sr:match:76229052",
+       "sr:match:76617952",
        "sr:match:76708728"
       ],
       "hit": 0,
@@ -139,10 +142,10 @@
     ],
     "msport": [
      {
-      "code": "B3JTPAZ",
-      "totalOdds": 2748.64,
-      "legs": 30,
-      "link": "https://www.msport.com/gh/?shareCode=B3JTPAZ",
+      "code": "B3JTTW1",
+      "totalOdds": 3935.67,
+      "legs": 31,
+      "link": "https://www.msport.com/gh/?shareCode=B3JTTW1",
       "matches": [
        "sr:match:68380624",
        "sr:match:68823470",
@@ -173,6 +176,7 @@
        "sr:match:74873412",
        "sr:match:75947232",
        "sr:match:76229052",
+       "sr:match:76617952",
        "sr:match:76708728"
       ],
       "hit": 0,
@@ -181,10 +185,10 @@
     ],
     "betika": [
      {
-      "code": "hpBNG9",
-      "totalOdds": 1225.67,
-      "legs": 31,
-      "link": "https://betika.com/en-gh/share/hpBNG9",
+      "code": "kh7eBp",
+      "totalOdds": 1679.93,
+      "legs": 32,
+      "link": "https://betika.com/en-gh/share/kh7eBp",
       "matches": [
        "sr:match:68380624",
        "sr:match:68823470",
@@ -216,6 +220,7 @@
        "sr:match:74873412",
        "sr:match:75947232",
        "sr:match:76229052",
+       "sr:match:76617952",
        "sr:match:76708728"
       ],
       "hit": 0,
@@ -224,10 +229,10 @@
     ],
     "betpawa": [
      {
-      "code": "KDRWLYO",
-      "totalOdds": 888.15,
+      "code": "QAXDW9S",
+      "totalOdds": 901.81,
       "legs": 26,
-      "link": "https://www.betpawa.com.gh/share-betslip/KDRWLYO",
+      "link": "https://www.betpawa.com.gh/share-betslip/QAXDW9S",
       "matches": [
        "sr:match:68380624",
        "sr:match:68823470",
@@ -272,6 +277,7 @@
      "Polonia Sroda Wielkopolska v Kss Kotwica Kornik"
     ],
     "betpawa": [
+     "Tauro FC v Alianza FC Panama",
      "KTS-K Luzino v MKS Flota Swinoujscie",
      "FK Laktasi v FK Famos Vojkovici",
      "AE Larissa FC v Nestos Chrysoupoli FC",
@@ -307,8 +313,32 @@
    "score": null,
    "played": null,
    "table": "10 v 3/12",
-   "x12": "10.50/7.50/1.15",
+   "x12": "11.00/7.60/1.14",
    "case": "O2.5 3/3: O2.5@1.3, 1HO1.5@1.81, avgG=3.57/n=350",
+   "leagueFavRate": null,
+   "rate": null
+  },
+  {
+   "eventId": "sr:match:76617952",
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "date": "2026-11-14",
+   "ko": "01:30",
+   "kickoff": "2026-11-14T01:30:00Z",
+   "league": "Panama - Liga Panamena",
+   "match": "Tauro FC v Alianza FC Panama",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.38,
+   "liveOdds": 1.38,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": "4 v 6/6",
+   "x12": "1.48/4.30/5.20",
+   "case": "O2.5 3/3: O2.5@1.38, 1HO1.5@1.91, avgG=2.77/n=90",
    "leagueFavRate": null,
    "rate": null
   },
@@ -876,15 +906,15 @@
    "match": "America FC MG v Avai FC SC",
    "market": "Double Chance",
    "selection": "Draw or Away",
-   "odds": 1.3,
+   "odds": 1.31,
    "liveOdds": 1.31,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
    "played": null,
    "table": "19 v 17/20",
-   "x12": "3.40/3.40/2.10",
-   "case": "bottom3/form DC against Home @1.3",
+   "x12": "3.33/3.40/2.15",
+   "case": "bottom3/form DC against Home @1.31",
    "leagueFavRate": null,
    "rate": null
   },
@@ -1081,9 +1111,9 @@
    "rate": null
   }
  ],
- "legs": 33,
- "totalOdds": 2961.15,
+ "legs": 34,
+ "totalOdds": 4117.83,
  "hit": 0,
- "total": 33,
+ "total": 34,
  "status": "pending"
 }

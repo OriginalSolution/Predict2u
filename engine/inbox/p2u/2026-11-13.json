@@ -1,0 +1,537 @@
+{
+ "date": "2026-11-13",
+ "slips": [
+  {
+   "name": "Verzzify Edge Banker",
+   "code": "FBB3DE",
+   "odds": 28.35,
+   "legs": [
+    {
+     "eventId": "sr:match:72044822",
+     "match": "VVV Venlo v FC Eindhoven",
+     "league": "Netherlands - Eerste Divisie",
+     "market": "Total goals",
+     "selection": "Over 1.5",
+     "odds": 1.14,
+     "marketId": "18",
+     "specifier": "total=1.5",
+     "outcomeId": "12",
+     "date": "2026-11-14",
+     "ko": "19:00",
+     "kickoff": null,
+     "hist": {
+      "implied": 87.7,
+      "band": "1.00-1.15",
+      "market": "Over 1.5",
+      "site": {
+       "rate": 96,
+       "n": 24
+      },
+      "siteAll": {
+       "rate": 81,
+       "n": 130
+      },
+      "league": {
+       "rate": 86,
+       "n": 208
+      },
+      "edge": -1.7
+     },
+     "confidence": 0.839,
+     "leagueFavRate": 0.856,
+     "sample": 208
+    },
+    {
+     "eventId": "sr:match:72044816",
+     "match": "FC Dordrecht v Heracles Almelo",
+     "league": "Netherlands - Eerste Divisie",
+     "market": "Total goals",
+     "selection": "Over 1.5",
+     "odds": 1.14,
+     "marketId": "18",
+     "specifier": "total=1.5",
+     "outcomeId": "12",
+     "date": "2026-11-14",
+     "ko": "19:00",
+     "kickoff": null,
+     "hist": {
+      "implied": 87.7,
+      "band": "1.00-1.15",
+      "market": "Over 1.5",
+      "site": {
+       "rate": 96,
+       "n": 24
+      },
+      "siteAll": {
+       "rate": 81,
+       "n": 130
+      },
+      "league": {
+       "rate": 86,
+       "n": 208
+      },
+      "edge": -1.7
+     },
+     "confidence": 0.83,
+     "leagueFavRate": 0.856,
+     "sample": 208
+    },
+    {
+     "eventId": "sr:match:76709762",
+     "match": "ASC Diambars v Stade de Mbour",
+     "league": "Senegal - Ligue 1",
+     "market": "Total goals",
+     "selection": "Under 2.5",
+     "odds": 1.31,
+     "marketId": "18",
+     "specifier": "total=2.5",
+     "outcomeId": "13",
+     "date": "2026-11-14",
+     "ko": "16:00",
+     "kickoff": null,
+     "hist": {
+      "implied": 76.3,
+      "band": "1.30-1.50",
+      "market": "Under 2.5",
+      "site": {
+       "rate": 25,
+       "n": 12
+      },
+      "siteAll": {
+       "rate": 53,
+       "n": 19
+      },
+      "league": {
+       "rate": 84,
+       "n": 146
+      },
+      "edge": 7.7
+     },
+     "confidence": 0.808,
+     "leagueFavRate": 0.842,
+     "sample": 146
+    },
+    {
+     "eventId": "sr:match:76709758",
+     "match": "Generation Foot v Walidaan Dkr",
+     "league": "Senegal - Ligue 1",
+     "market": "Total goals",
+     "selection": "Under 2.5",
+     "odds": 1.31,
+     "marketId": "18",
+     "specifier": "total=2.5",
+     "outcomeId": "13",
+     "date": "2026-11-14",
+     "ko": "16:00",
+     "kickoff": null,
+     "hist": {
+      "implied": 76.3,
+      "band": "1.30-1.50",
+      "market": "Under 2.5",
+      "site": {
+       "rate": 25,
+       "n": 12
+      },
+      "siteAll": {
+       "rate": 53,
+       "n": 19
+      },
+      "league": {
+       "rate": 84,
+       "n": 146
+      },
+      "edge": 7.7
+     },
+     "confidence": 0.808,
+     "leagueFavRate": 0.842,
+     "sample": 146
+    },
+    {
+     "eventId": "sr:match:72594660",
+     "match": "IJsselmeervogels v BVV Barendrecht",
+     "league": "Netherlands - Tweede Divisie",
+     "market": "Total goals",
+     "selection": "Over 1.5",
+     "odds": 1.12,
+     "marketId": "18",
+     "specifier": "total=1.5",
+     "outcomeId": "12",
+     "date": "2026-11-14",
+     "ko": "14:00",
+     "kickoff": null,
+     "hist": {
+      "implied": 89.3,
+      "band": "1.00-1.15",
+      "market": "Over 1.5",
+      "site": {
+       "rate": 96,
+       "n": 24
+      },
+      "siteAll": {
+       "rate": 81,
+       "n": 130
+      },
+      "league": {
+       "rate": 85,
+       "n": 380
+      },
+      "edge": -4.3
+     },
+     "confidence": 0.836,
+     "leagueFavRate": 0.853,
+     "sample": 380
+    },
+    {
+     "eventId": "sr:match:76455626",
+     "match": "Montevideo Wanderers v CA Juventud de Las Piedras",
+     "league": "Uruguay - Primera Division",
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.29,
+     "marketId": "18",
+     "specifier": "total=3.5",
+     "outcomeId": "13",
+     "date": "2026-11-16",
+     "ko": "23:00",
+     "kickoff": "2026-11-16T23:00:00Z",
+     "hist": {
+      "implied": 77.5,
+      "band": "1.15-1.30",
+      "market": "Under 3.5",
+      "site": {
+       "rate": 83,
+       "n": 102
+      },
+      "siteAll": {
+       "rate": 78,
+       "n": 172
+      }
+     },
+     "confidence": null,
+     "leagueFavRate": null,
+     "sample": null
+    },
+    {
+     "eventId": "sr:match:72559228",
+     "match": "RC Deportivo Fabril v Barakaldo CF",
+     "league": "Spain - Primera Federacion",
+     "market": "Total goals",
+     "selection": "Under 3.5",
+     "odds": 1.28,
+     "marketId": "18",
+     "specifier": "total=3.5",
+     "outcomeId": "13",
+     "date": "2026-11-14",
+     "ko": "17:45",
+     "kickoff": null,
+     "hist": {
+      "implied": 78.1,
+      "band": "1.15-1.30",
+      "market": "Under 3.5",
+      "site": {
+       "rate": 83,
+       "n": 102
+      },
+      "siteAll": {
+       "rate": 78,
+       "n": 172
+      },
+      "league": {
+       "rate": 78,
+       "n": 415
+      },
+      "edge": -0.1
+     },
+     "confidence": 0.763,
+     "leagueFavRate": 0.778,
+     "sample": 415
+    },
+    {
+     "eventId": "sr:match:72559224",
+     "match": "CD Coria v Unionistas de Salamanca CF",
+     "league": "Spain - Primera Federacion",
+     "market": "Total goals",
+     "selection": "Under 3.5",
+     "odds": 1.28,
+     "marketId": "18",
+     "specifier": "total=3.5",
+     "outcomeId": "13",
+     "date": "2026-11-14",
+     "ko": "17:45",
+     "kickoff": null,
+     "hist": {
+      "implied": 78.1,
+      "band": "1.15-1.30",
+      "market": "Under 3.5",
+      "site": {
+       "rate": 83,
+       "n": 102
+      },
+      "siteAll": {
+       "rate": 78,
+       "n": 172
+      },
+      "league": {
+       "rate": 78,
+       "n": 1219
+      },
+      "edge": -0.1
+     },
+     "confidence": 0.747,
+     "leagueFavRate": 0.778,
+     "sample": 1219
+    },
+    {
+     "eventId": "sr:match:73293350",
+     "match": "US Pergolettese Crema v Pro Vercelli 1892",
+     "league": "Italy - Serie C, Group A",
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.28,
+     "marketId": "18",
+     "specifier": "total=3.5",
+     "outcomeId": "13",
+     "date": "2026-11-15",
+     "ko": "16:30",
+     "kickoff": "2026-11-15T16:30:00Z",
+     "hist": {
+      "implied": 78.1,
+      "band": "1.15-1.30",
+      "market": "Under 3.5",
+      "site": {
+       "rate": 83,
+       "n": 102
+      },
+      "siteAll": {
+       "rate": 78,
+       "n": 172
+      }
+     },
+     "confidence": null,
+     "leagueFavRate": null,
+     "sample": null
+    },
+    {
+     "eventId": "sr:match:73585778",
+     "match": "CD Laguna Sad v UD Villa Santa Brigida",
+     "league": "Spain Amateur - Tercera Federacion, Group 12",
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.28,
+     "marketId": "18",
+     "specifier": "total=3.5",
+     "outcomeId": "13",
+     "date": "2026-11-14",
+     "ko": "17:00",
+     "kickoff": "2026-11-14T17:00:00Z",
+     "hist": {
+      "implied": 78.1,
+      "band": "1.15-1.30",
+      "market": "Under 3.5",
+      "site": {
+       "rate": 83,
+       "n": 102
+      },
+      "siteAll": {
+       "rate": 78,
+       "n": 172
+      }
+     },
+     "confidence": null,
+     "leagueFavRate": null,
+     "sample": null
+    },
+    {
+     "eventId": "sr:match:73294824",
+     "match": "SSC Bari v Calcio Foggia",
+     "league": "Italy - Serie C, Group C",
+     "market": "Total goals",
+     "selection": "Under 3.5",
+     "odds": 1.27,
+     "marketId": "18",
+     "specifier": "total=3.5",
+     "outcomeId": "13",
+     "date": "2026-11-14",
+     "ko": "16:30",
+     "kickoff": null,
+     "hist": {
+      "implied": 78.7,
+      "band": "1.15-1.30",
+      "market": "Under 3.5",
+      "site": {
+       "rate": 83,
+       "n": 102
+      },
+      "siteAll": {
+       "rate": 78,
+       "n": 172
+      },
+      "league": {
+       "rate": 78,
+       "n": 243
+      },
+      "edge": -0.7
+     },
+     "confidence": 0.755,
+     "leagueFavRate": 0.778,
+     "sample": 243
+    },
+    {
+     "eventId": "sr:match:74172536",
+     "match": "Hellas Syrou v Panthrakikos FC Komotini",
+     "league": "Greece - Super League 2",
+     "market": "Total goals",
+     "selection": "Under 3.5",
+     "odds": 1.27,
+     "marketId": "18",
+     "specifier": "total=3.5",
+     "outcomeId": "13",
+     "date": "2026-11-14",
+     "ko": "12:00",
+     "kickoff": null,
+     "hist": {
+      "implied": 78.7,
+      "band": "1.15-1.30",
+      "market": "Under 3.5",
+      "site": {
+       "rate": 83,
+       "n": 102
+      },
+      "siteAll": {
+       "rate": 78,
+       "n": 172
+      },
+      "league": {
+       "rate": 78,
+       "n": 151
+      },
+      "edge": -0.7
+     },
+     "confidence": 0.752,
+     "leagueFavRate": 0.775,
+     "sample": 151
+    },
+    {
+     "eventId": "sr:match:76455624",
+     "match": "Defensor Sporting v CA Penarol Montevideo",
+     "league": "Uruguay - Primera Division",
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.27,
+     "marketId": "18",
+     "specifier": "total=3.5",
+     "outcomeId": "13",
+     "date": "2026-11-15",
+     "ko": "23:00",
+     "kickoff": "2026-11-15T23:00:00Z",
+     "hist": {
+      "implied": 78.7,
+      "band": "1.15-1.30",
+      "market": "Under 3.5",
+      "site": {
+       "rate": 83,
+       "n": 102
+      },
+      "siteAll": {
+       "rate": 78,
+       "n": 172
+      }
+     },
+     "confidence": null,
+     "leagueFavRate": null,
+     "sample": null
+    },
+    {
+     "eventId": "sr:match:73584718",
+     "match": "PE Sant Jordi v UE Porreres",
+     "league": "Spain Amateur - Tercera Federacion, Group 11",
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.27,
+     "marketId": "18",
+     "specifier": "total=3.5",
+     "outcomeId": "13",
+     "date": "2026-11-15",
+     "ko": "16:00",
+     "kickoff": "2026-11-15T16:00:00Z",
+     "hist": {
+      "implied": 78.7,
+      "band": "1.15-1.30",
+      "market": "Under 3.5",
+      "site": {
+       "rate": 83,
+       "n": 102
+      },
+      "siteAll": {
+       "rate": 78,
+       "n": 172
+      }
+     },
+     "confidence": null,
+     "leagueFavRate": null,
+     "sample": null
+    },
+    {
+     "eventId": "sr:match:72531678",
+     "match": "CD Tondela v SC Farense",
+     "league": "Portugal - Liga Portugal 2",
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.26,
+     "marketId": "18",
+     "specifier": "total=3.5",
+     "outcomeId": "13",
+     "date": "2026-11-15",
+     "ko": "11:00",
+     "kickoff": "2026-11-15T11:00:00Z",
+     "hist": {
+      "implied": 79.4,
+      "band": "1.15-1.30",
+      "market": "Under 3.5",
+      "site": {
+       "rate": 83,
+       "n": 102
+      },
+      "siteAll": {
+       "rate": 78,
+       "n": 172
+      }
+     },
+     "confidence": null,
+     "leagueFavRate": null,
+     "sample": null
+    }
+   ],
+   "strategy": "verzzify-edge-banker",
+   "verification": "Verzzify Edge Banker: site/league historical edge over implied, banker band 1.12–1.45, all Predict2u rules",
+   "codes": {
+    "sportybet": "FBB3DE",
+    "footballcom": "FBB3DE",
+    "msport": "B3JTU65",
+    "betika": "9TXZbR",
+    "betpawa": "SJPWGHM"
+   },
+   "links": {
+    "sportybet": "https://www.sportybet.com/gh/?shareCode=FBB3DE",
+    "footballcom": "https://www.football.com/gh/?shareCode=FBB3DE",
+    "msport": "https://www.msport.com/gh/?shareCode=B3JTU65",
+    "betika": "https://betika.com/en-gh/share/9TXZbR",
+    "betpawa": "https://www.betpawa.com.gh/share-betslip/SJPWGHM"
+   },
+   "bookOdds": {
+    "sportybet": 28.35,
+    "footballcom": 28.35,
+    "msport": 24.68,
+    "betika": 20.76,
+    "betpawa": 7.94
+   },
+   "bookPicks": {
+    "sportybet": 15,
+    "footballcom": 15,
+    "msport": 14,
+    "betika": 14,
+    "betpawa": 10
+   }
+  }
+ ]
+}
