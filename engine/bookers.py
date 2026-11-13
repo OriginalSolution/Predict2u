@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import math
 import subprocess
+import time
 
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
 SPORTY_SHARE = "https://www.sportybet.com/api/gh/orders/share"
@@ -12,17 +13,33 @@ FOOTBALL_SHARE = "https://www.football.com/api/gh/orders/share"
 NO_LOGIN = ("sportybet", "footballcom", "msport", "betika", "betpawa")
 
 
-def _curl_json(method, url, body=None, headers=None, timeout=30):
+RETRIES = 3  # transport failures (timeout, reset, HTML error page) are retried with backoff
+_DOWN: dict[str, int] = {}  # host -> calls in a row that failed every retry (circuit breaker)
+
+
+def _curl_json(method, url, body=None, headers=None, timeout=30, retries=RETRIES):
+    """JSON answer of a booking API, or {}. An empty / non-JSON answer (network error, 5xx page,
+    rate limit) is retried; a real JSON answer, even a refusal, is returned at once."""
     cmd = ["curl", "-s", "-m", str(timeout), "-A", UA, "-X", method, url]
     for h in headers or ["Content-Type: application/json", "Accept: application/json"]:
         cmd += ["-H", h]
     if body is not None:
         cmd += ["-d", json.dumps(body)]
-    try:
-        out = subprocess.run(cmd, capture_output=True, text=True).stdout
-        return json.loads(out) if out and out.strip()[:1] in "{[" else {}
-    except Exception:
-        return {}
+    host = url.split("/")[2] if "//" in url else url
+    if _DOWN.get(host, 0) >= 3:  # host looks down: one try per call, so a dead book cannot eat the job's time
+        retries = 1
+    for attempt in range(max(1, retries)):
+        try:
+            out = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout + 15).stdout
+            if out and out.strip()[:1] in "{[":
+                _DOWN[host] = 0
+                return json.loads(out)
+        except Exception:
+            pass
+        if attempt < retries - 1:
+            time.sleep(2 * (attempt + 1))
+    _DOWN[host] = _DOWN.get(host, 0) + 1
+    return {}
 
 
 def sportybet(legs):

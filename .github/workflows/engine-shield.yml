@@ -54,7 +54,9 @@ jobs:
 
   shield:
     needs: [gate, test]
-    if: needs.gate.outputs.run == 'true' && (github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main')
+    # A red unit test is reported (test job + health check) but never blocks booking:
+    # one bad merge must not leave the site without codes until someone fixes it.
+    if: ${{ !cancelled() && needs.gate.outputs.run == 'true' && (github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main') }}
     concurrency:
       group: predict2u-engine
       cancel-in-progress: false

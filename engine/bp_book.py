@@ -1,13 +1,16 @@
 """Betpawa Ghana: public no-login booking (POST /api/sportsbook/v3/booking-number). Events matched to our
 Betradar ids via the SPORTRADAR widget id on Betpawa's public search; markets mapped by type + handicap(=line*4)."""
-import json,subprocess,math,re,urllib.parse
+import json,subprocess,math,re,time,urllib.parse
 B='https://www.betpawa.com.gh/api/sportsbook/'
 HD=['-A','Mozilla/5.0 Chrome/120','-H','x-pawa-brand: betpawa-ghana','-H','x-pawa-language: en','-H','devicetype: web','-H','Accept: application/json','-H','Content-Type: application/json']
 def call(m,u,body=None):
   c=['curl','-s','-m','25']+HD+['-X',m,B+u]
   if body is not None: c+=['-d',json.dumps(body)]
-  try: return json.loads(subprocess.run(c,capture_output=True,text=True).stdout)
-  except Exception: return {}
+  for i in range(3):  # retry transport failures (empty / non-JSON answer) with backoff
+    try: return json.loads(subprocess.run(c,capture_output=True,text=True,timeout=40).stdout)
+    except Exception:
+      if i<2: time.sleep(2*(i+1))
+  return {}
 MK={'1':('3743',None,{'1':'1','2':'X','3':'2'}),'10':('4693',None,{'9':'1X','10':'12','11':'X2'}),'11':('4703',None,{'4':'1','5':'2'}),
     '18':('5000','t',{'12':'Over','13':'Under'}),'19':('5006','t',{'12':'Over','13':'Under'}),'20':('5003','t',{'12':'Over','13':'Under'}),
     '68':('4958','t',{'12':'Over','13':'Under'}),'29':('3795',None,{'74':'Yes','76':'No'})}

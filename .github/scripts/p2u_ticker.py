@@ -63,6 +63,8 @@ SCHEDULE = [
     ("engine-health.yml", "30", "7", "*"),         # health: post-run check of the night/morning jobs
     ("engine-health.yml", "0", "18", "*"),         # health: preflight — dry-run every strategy for tomorrow
     ("engine-health.yml", "15", "23", "*"),        # health: post-run check of the evening booking jobs
+    ("engine-watchdog.yml", "5,35", "*", "*"),      # booking catch-up: re-dispatch missed/failed booking jobs
+    ("monitor.yml", "17", "1,7,13,19", "*"),        # site / relay / data-feed monitor (monitor issues)
 ]
 
 

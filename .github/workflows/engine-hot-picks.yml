@@ -1,0 +1,65 @@
+name: Predict2u engine — Hot Picks (catch-up)
+run-name: "${{ github.workflow }}${{ inputs.dry_run == true && ' (dry run)' || '' }}"
+
+# Hot Picks normally runs inside the 22:00 daily (a failure there is non-fatal). When
+# hot-picks.json has no fresh booked slips after the daily, the booking watchdog
+# (engine-watchdog.yml) dispatches this to scan SportyBet Code Hub and book them alone,
+# without re-running the whole daily. No schedule of its own.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Skip the scan/booking and skip committing to main"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  hot:
+    concurrency:
+      group: predict2u-engine
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install runtime extras
+        run: pip install pillow cryptography
+      - name: Cache Sportradar / engine stats
+        uses: actions/cache@v4
+        with:
+          path: engine/data/stats-cache
+          key: p2u-engine-stats-${{ github.run_id }}
+          restore-keys: |
+            p2u-engine-stats-
+      - name: Scan Code Hub and book Hot Picks
+        env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
+        run: |
+          set -euo pipefail
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python -m engine.pipeline hot --dry-run
+          else
+            python -m engine.pipeline hot
+          fi
+      - name: Commit Hot Picks
+        if: ${{ github.ref == 'refs/heads/main' && inputs.dry_run != true }}
+        env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
+        run: |
+          set -euo pipefail
+          if [ -z "${P2U_LOCK_KEY:-}" ] && ! python -m engine.premium --is-free . >/dev/null 2>&1; then
+            echo "::warning::P2U_LOCK_KEY is not set; refusing to commit pick files (paid-codes mode)."
+            exit 0
+          fi
+          git config user.name "predict2u-engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- hot-picks.json locked.enc.json home-picks.json || true
+          if git diff --cached --quiet; then echo "no Hot Picks changes"; exit 0; fi
+          git commit -m "Engine hot picks (catch-up) $(date -u +%FT%TZ)"
+          .github/scripts/p2u_push.sh main
