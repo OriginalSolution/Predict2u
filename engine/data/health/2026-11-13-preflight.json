@@ -1,0 +1,486 @@
+{
+ "checkedAt": "2026-11-13T18:00:28Z",
+ "mode": "preflight",
+ "ok": false,
+ "problems": [
+  {
+   "area": "actions",
+   "msg": "engine-nt-tomorrow.yml failed for its 23:50 GMT slot (https://github.com/OriginalSolution/Predict2u/actions/runs/43360483752)"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-daily.yml: python -m engine.pipeline daily --dry-run hit an error but kept going: TypeError: 'int' object is not iterable"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-shield.yml: python -m engine.pipeline shield --dry-run hit an error but kept going: TypeError: 'int' object is not iterable"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-settle.yml: python -m engine.pipeline settle hit an error but kept going: TypeError: 'int' object is not iterable"
+  }
+ ],
+ "warnings": [
+  {
+   "area": "codes",
+   "msg": "5 of 228 published live codes no longer load or have no match left; hidden via dead-codes.json: sportybet CY0CP0 (every match has started), footballcom CY0CP0 (every match has started), betika 8U2gJY (Sorry. The picks in this betslip are unavailable.), betpawa U7VSKAI (every match has started), betika Le9ApC (Sorry. The picks in this betslip are unavailable.)"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-gg.yml started 252 min after its 23:10 slot"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-nysm.yml started 239 min after its 23:30 slot"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-nt-tomorrow.yml started 230 min after its 23:50 slot"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategy-master.yml: cannot dry-run `engine/vendor/strategy_master.py \"${ARGS[@]}\"` (uses shell variables)"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-gg.yml: cannot dry-run `engine/vendor/gg_strategy.py \"${ARGS[@]}\"` (uses shell variables)"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-nysm.yml: cannot dry-run `engine/vendor/nysm_v2.py \"${ARGS[@]}\"` (uses shell variables)"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-nt-tomorrow.yml: cannot dry-run `engine/vendor/nt_tomorrow.py \"${ARGS[@]}\"` (uses shell variables)"
+  },
+  {
+   "area": "strategies",
+   "msg": "4 picks for 2026-11-14 carry no kickoff time (e.g. ['CR Brasil AL v Ceara SC CE', 'Cucuta Deportivo FC v Jaguares de Cordoba', 'EC Juventude RS v Botafogo FC SP'])"
+  },
+  {
+   "area": "strategies",
+   "msg": "4 picks in 2026-11-14's file kick off before 2026-11-14, i.e. already today (e.g. ['Bermuda v Saint Lucia (2026-11-13, nerdytips-strategies.json)', 'Puerto Rico v Dominica (2026-11-13, nerdytips-strategies.json)', 'ACD Ospitaletto v Dolomiti Bellunesi (2026-11-13, nerdytips-draw_rules.json)'])"
+  }
+ ],
+ "healed": [
+  "hid 5 dead codes on the site (dead-codes.json)"
+ ],
+ "passed": [
+  {
+   "area": "code",
+   "msg": "no undefined names in engine/ (pyflakes)"
+  },
+  {
+   "area": "code",
+   "msg": "engine.check_rules passed"
+  },
+  {
+   "area": "code",
+   "msg": "96 engine files compile; 12 engine modules checked for import"
+  },
+  {
+   "area": "site",
+   "msg": "all 217 pages return 200"
+  },
+  {
+   "area": "site",
+   "msg": "home-picks.json fresh (11.0h old)"
+  },
+  {
+   "area": "site",
+   "msg": "picks.json fresh (19.9h old)"
+  },
+  {
+   "area": "site",
+   "msg": "high_odds.json fresh (0.3h old)"
+  },
+  {
+   "area": "site",
+   "msg": "hot-picks.json fresh (0.3h old)"
+  },
+  {
+   "area": "site",
+   "msg": "record.json fresh (5.7h old)"
+  },
+  {
+   "area": "site",
+   "msg": "news-hub.json fresh (0.6h old)"
+  },
+  {
+   "area": "site",
+   "msg": "live-scores.json fresh (0.7h old)"
+  },
+  {
+   "area": "site",
+   "msg": "data-meta.json fresh (2.7h old)"
+  },
+  {
+   "area": "site",
+   "msg": "staked-codes.json fresh (0.6h old)"
+  },
+  {
+   "area": "site",
+   "msg": "fixtures.js fresh (2.7h old)"
+  },
+  {
+   "area": "site",
+   "msg": "sportybet-odds.js fresh (2.7h old)"
+  },
+  {
+   "area": "site",
+   "msg": "current-data.js fresh (2.7h old)"
+  },
+  {
+   "area": "favourites",
+   "msg": "favourites by league: 114 leagues, 470 fixtures on the site"
+  },
+  {
+   "area": "actions",
+   "msg": "on-time ticker is running"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-fav-leagues.yml 06:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-strategy-master.yml 06:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-morning.yml 07:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-shield.yml 21:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-m1m2.yml 21:45 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-daily.yml 22:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-strategies.yml 22:30 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-gg.yml 23:10 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-nysm.yml 23:30 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-settle.yml 16:15 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "sportybet-odds.yml 15:19 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-self-heal.yml 14:15 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "daymasters-guard.yml 17:40 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-refresh.yml 17:25 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "daily-picks-email.yml 00:15 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "results-email.yml 00:30 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "tracker-email.yml 00:45 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "post-social.yml 00:50 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-health.yml 07:30 slot succeeded"
+  },
+  {
+   "area": "registry",
+   "msg": "36 workflows read, 16 run engine commands, 21 on the ticker"
+  },
+  {
+   "area": "strategies",
+   "msg": "75 favourites picks for 2026-11-14: fields, odds and DC veto all fine"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-fav-leagues.yml: python -m engine.pipeline fav --dry-run ran clean in 60s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-morning.yml: python -m engine.pipeline morning --dry-run ran clean in 30s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-m1m2.yml: python -m engine.vendor.m1m2 ran clean in 32s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-m1m2.yml: python -m engine.vendor.safe50 ran clean in 33s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-m1m2.yml: python engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u ran clean in 0s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategies.yml: python -m engine.vendor.three_strategies 4 ran clean in 34s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategies.yml: python engine/vendor/three_strategies.py 4 ran clean in 32s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategies.yml: python engine/vendor/verzzify_banker.py ran clean in 22s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategies.yml: python engine/vendor/nerdytips_strategies.py ran clean in 16s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategies.yml: python -m engine.vendor.nerdytips_strategies ran clean in 13s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategies.yml: python engine/vendor/daily_master.py /home/runner/work/Predict2u/Predict2u ran clean in 1s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategies.yml: python engine/vendor/share_cards.py /home/runner/work/Predict2u/Predict2u ran clean in 0s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-refresh.yml: python engine/vendor/news_hub.py /home/runner/work/Predict2u/Predict2u ran clean in 2s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-refresh.yml: python engine/vendor/live_scores.py /home/runner/work/Predict2u/Predict2u ran clean in 0s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-refresh.yml: python engine/vendor/staked_feed.py /home/runner/work/Predict2u/Predict2u ran clean in 2s"
+  }
+ ],
+ "sections": {
+  "codes": {
+   "checked": 228,
+   "dead": [
+    {
+     "book": "sportybet",
+     "code": "CY0CP0",
+     "reason": "every match has started",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "footballcom",
+     "code": "CY0CP0",
+     "reason": "every match has started",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "betika",
+     "code": "8U2gJY",
+     "reason": "Sorry. The picks in this betslip are unavailable.",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "betpawa",
+     "code": "U7VSKAI",
+     "reason": "every match has started",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "betika",
+     "code": "Le9ApC",
+     "reason": "Sorry. The picks in this betslip are unavailable.",
+     "in": [
+      "hot-picks.json"
+     ]
+    }
+   ],
+   "uncheckable": []
+  },
+  "strategies": [
+   {
+    "workflow": "engine-daily.yml",
+    "command": "-m engine.pipeline daily --dry-run",
+    "rc": 0,
+    "seconds": 289,
+    "errors": [
+     "TypeError: 'int' object is not iterable"
+    ],
+    "tail": "redict2u/engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u\npublish: free-codes mode (p2u-free-mode.js) — nothing flagged or sealed; unsealed nothing\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/share_cards.py /home/runner/work/Predict2u/Predict2u\npublish: Telegram skipped (TELEGRAM_BOT_TOKEN / TELEGRAM_CHANNEL not set)\nTraceback (most recent call last):\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py\", line 364, in <module>\n    build()\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py\", line 271, in build\n    acc = harvest_sources()\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py\", line 168, in harvest_sources\n    st = _derive_status(s)\n         ^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py\", line 44, in _derive_status\n    results = _leg_results(legs)\n              ^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py\", line 36, in _leg_results\n    return [(l.get('result') or 'pending').lower() for l in (legs or []) if isinstance(l, dict)]\n                                                             ^^^^^^^^^^\nTypeError: 'int' object is not iterable\n"
+   },
+   {
+    "workflow": "engine-fav-leagues.yml",
+    "command": "-m engine.pipeline fav --dry-run",
+    "rc": 0,
+    "seconds": 60,
+    "errors": [],
+    "tail": "stop 19\n1521 /home/runner/work/Predict2u/Predict2u/engine/data/sb.json\n140 leagues 67 picks [('Safe slip (low risk)', 1.99, 5, None), ('Medium slip (balanced)', 7.9, 13, None), ('Main banker: Banker code of the day', 27.01, 20, None), ('Alternative A: higher prices (>=25)', 27.2, 13, None), ('Alternative B: skip the top 5 (>=25)', 27.4, 19, None)]\nfavDayMaster 2026-11-14 legs 41 of 41 odds 4443.68 parts 2 codes {}\nfavDayMaster 2026-11-15 legs 26 of 26 odds 158.57 parts 1 codes {}\nfavLeagues 2026-11-14 leagues 140 picks 75 {'2026-11-13': {'sportybet': ['8YL3UP'], 'footballcom': ['8YL3UP'], 'msport': ['B3JJ18D'], 'betpawa': ['5D1PRNX']}, '2026-11-14': {'sportybet': ['EYJEW8', '8S5VDX'], 'footballcom': ['EYJEW8', '8S5VDX'], 'msport': ['B3JJ1D8', 'B3JJ1FV'], 'betika': ['GgzwqM', '5eg6rU'], 'betpawa': ['LO9SKKB', '7P03VQW']}, '2026-11-15': {}}\nfavLeagues: dry run, home-picks.json not written\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/scan.py\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/run.py 2026-11-14 --days 2\ninbox: kept 8 extra picks, dropped 65, combined slips 1\ncollect: /home/runner/work/Predict2u/Predict2u/engine/data/2026-11-14.json picks 75\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/fav_leagues.py /home/runner/work/Predict2u/Predict2u --dry-run\n"
+   },
+   {
+    "workflow": "engine-morning.yml",
+    "command": "-m engine.pipeline morning --dry-run",
+    "rc": 0,
+    "seconds": 30,
+    "errors": [],
+    "tail": "ted FC: started or no event\n  skip Caernarfon Town FC v Holywell Town: started or no event\n  skip Pen-y-Bont FC v Cardiff Draconians: started or no event\n  skip The New Saints FC v Briton Ferry: started or no event\n  skip Ballymena United v Linfield FC: started or no event\n  skip Coleraine FC v Portadown FC: started or no event\n  skip Crusaders FC v Carrick Rangers: started or no event\n  skip Glentoran FC v Bangor FC: started or no event\n  skip Larne FC v Dungannon Swifts: started or no event\n  skip Limavady United FC v Cliftonville FC: started or no event\n  skip Annagh United FC v Ballinamallard United: started or no event\n  skip Ards FC v Moyola Park FC: started or no event\n  skip Institute FC v Armagh City FC: started or no event\n  skip Loughgall FC v Glenavon FC: started or no event\n  skip Morocco v Niger: started or no event\n  skip Salamanca CF UDS v Celta: started or no event\n  skip Gimnastic de Tarragona v Real Madrid Castilla: started or no event\n  skip Club Calor v Real Apodaca FC: started or no event\n  skip Sao Joao Del Rei EC MG v Nacional AC Muriae MG: started or no event\n  skip Colo-Colo v Racing Club Avellaneda: started or no event\n  skip Argentina v Uruguay: started or no event\n  skip Saint-Martin v El Salvador: started or no event\npublish: dry-run, not writing home-picks.json\n{\n  \"picked\": 0,\n  \"slips\": 0,\n  \"rejected\": 61\n}\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/sb_morning_markets.py --dry-run\n"
+   },
+   {
+    "workflow": "engine-shield.yml",
+    "command": "-m engine.pipeline shield --dry-run",
+    "rc": 0,
+    "seconds": 74,
+    "errors": [
+     "TypeError: 'int' object is not iterable"
+    ],
+    "tail": "redict2u/engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u\npublish: free-codes mode (p2u-free-mode.js) — nothing flagged or sealed; unsealed nothing\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/share_cards.py /home/runner/work/Predict2u/Predict2u\npublish: Telegram skipped (TELEGRAM_BOT_TOKEN / TELEGRAM_CHANNEL not set)\nTraceback (most recent call last):\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py\", line 364, in <module>\n    build()\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py\", line 271, in build\n    acc = harvest_sources()\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py\", line 168, in harvest_sources\n    st = _derive_status(s)\n         ^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py\", line 44, in _derive_status\n    results = _leg_results(legs)\n              ^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py\", line 36, in _leg_results\n    return [(l.get('result') or 'pending').lower() for l in (legs or []) if isinstance(l, dict)]\n                                                             ^^^^^^^^^^\nTypeError: 'int' object is not iterable\n"
+   },
+   {
+    "workflow": "engine-m1m2.yml",
+    "command": "-m engine.vendor.m1m2",
+    "rc": 0,
+    "seconds": 32,
+    "errors": [],
+    "tail": "m1m2: 896 events in 4 days\nm1m2 raw {'M1': 0, 'M2': 0, 'T2': 0}\nm1m2 kept {'M1': 0, 'M2': 0, 'MIXED': 0} dropped 0\n{\n \"counts\": {\n  \"M1\": 0,\n  \"M2\": 0,\n  \"MIXED\": 0\n },\n \"slips\": []\n}\n"
+   },
+   {
+    "workflow": "engine-m1m2.yml",
+    "command": "-m engine.vendor.safe50",
+    "rc": 0,
+    "seconds": 33,
+    "errors": [],
+    "tail": "safe50: 896 events in 4 days\nsafe50 priced 0\nsafe50 kept 0 dropped 0 checked 0\nsafe50 no code for Safest market\n{\n \"kept\": 0,\n \"slips\": []\n}\n"
+   },
+   {
+    "workflow": "engine-m1m2.yml",
+    "command": "engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u",
+    "rc": 0,
+    "seconds": 0,
+    "errors": [],
+    "tail": "home-picks unchanged\npicks.json unchanged\nhot-picks pruned 4 slips 37 picks\nhigh_odds unchanged\nremoved 0 changed\n"
+   },
+   {
+    "workflow": "engine-strategies.yml",
+    "command": "-m engine.vendor.three_strategies 4",
+    "rc": 0,
+    "seconds": 34,
+    "errors": [],
+    "tail": "three_strategies: scanning 896 events (days=4)\nthree_strategies diag {'events': 0, 'no_data': 896, 'raw': 0, 'gated': 0, 'dropped': 0}\npool 0 by strategy: {'o25-2of3': 0, 'top3-form-win': 0, 'top3-form-dnb': 0, 'bottom3-form-dc': 0, 'weaker-score': 0, 'ah-minus1-screen': 0}\nwrote []\n"
+   },
+   {
+    "workflow": "engine-strategies.yml",
+    "command": "engine/vendor/three_strategies.py 4",
+    "rc": 0,
+    "seconds": 32,
+    "errors": [],
+    "tail": "three_strategies: scanning 896 events (days=4)\nthree_strategies diag {'events': 0, 'no_data': 896, 'raw': 0, 'gated': 0, 'dropped': 0}\npool 0 by strategy: {'o25-2of3': 0, 'top3-form-win': 0, 'top3-form-dnb': 0, 'bottom3-form-dc': 0, 'weaker-score': 0, 'ah-minus1-screen': 0}\nwrote []\n"
+   },
+   {
+    "workflow": "engine-strategies.yml",
+    "command": "engine/vendor/verzzify_banker.py",
+    "rc": 0,
+    "seconds": 22,
+    "errors": [],
+    "tail": "verzzify scan added 52\nverzzify: candidates 0 packed 0 @0 (dropped 52)\nverzzify: no banker today (would be under 25 without padding)\n"
+   },
+   {
+    "workflow": "engine-strategies.yml",
+    "command": "engine/vendor/nerdytips_strategies.py",
+    "rc": 0,
+    "seconds": 16,
+    "errors": [],
+    "tail": "nerdytips: 0 picks -> /home/runner/work/Predict2u/Predict2u/engine/inbox/nerdytips-strategies.json ({'streak_2plus': 0, 'team_win_lt_150': 0, 'draw_rules': 0, 'heavy_home_fav': 0, 'team_total_o25': 0, 'exclusive_o25': 0, 'betmines_trends': 0})\n"
+   },
+   {
+    "workflow": "engine-strategies.yml",
+    "command": "-m engine.vendor.nerdytips_strategies",
+    "rc": 0,
+    "seconds": 13,
+    "errors": [],
+    "tail": "nerdytips: 0 picks -> /home/runner/work/Predict2u/Predict2u/engine/inbox/nerdytips-strategies.json ({'streak_2plus': 0, 'team_win_lt_150': 0, 'draw_rules': 0, 'heavy_home_fav': 0, 'team_total_o25': 0, 'exclusive_o25': 0, 'betmines_trends': 0})\n"
+   },
+   {
+    "workflow": "engine-strategies.yml",
+    "command": "engine/vendor/daily_master.py /home/runner/work/Predict2u/Predict2u",
+    "rc": 0,
+    "seconds": 1,
+    "errors": [],
+    "tail": "daily master: [('AJ8D6U', '2026-11-07', 'lost', '47/77')]\n"
+   },
+   {
+    "workflow": "engine-strategies.yml",
+    "command": "engine/vendor/share_cards.py /home/runner/work/Predict2u/Predict2u",
+    "rc": 0,
+    "seconds": 0,
+    "errors": [],
+    "tail": "share cards 111\n"
+   },
+   {
+    "workflow": "engine-settle.yml",
+    "command": "-m engine.pipeline settle",
+    "rc": 0,
+    "seconds": 7,
+    "errors": [
+     "TypeError: 'int' object is not iterable"
+    ],
+    "tail": "engine/vendor/split_codes.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/daily_master.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py /home/runner/work/Predict2u/Predict2u\nfavGuard: ok \nTraceback (most recent call last):\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py\", line 364, in <module>\n    build()\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py\", line 271, in build\n    acc = harvest_sources()\n          ^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py\", line 168, in harvest_sources\n    st = _derive_status(s)\n         ^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py\", line 44, in _derive_status\n    results = _leg_results(legs)\n              ^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py\", line 36, in _leg_results\n    return [(l.get('result') or 'pending').lower() for l in (legs or []) if isinstance(l, dict)]\n                                                             ^^^^^^^^^^\nTypeError: 'int' object is not iterable\n"
+   },
+   {
+    "workflow": "engine-refresh.yml",
+    "command": "engine/vendor/news_hub.py /home/runner/work/Predict2u/Predict2u",
+    "rc": 0,
+    "seconds": 2,
+    "errors": [],
+    "tail": "previews 14 injuries 6 transfers 14 fixtures 41 codes 33 record {'won': 0, 'lost': 13, 'settled': 13, 'pending': 20, 'winRate': 0.0}\nfeed fail ESPN https://www.espn.com/espn/rss/soccer/news no element found: line 1, column 0\n"
+   },
+   {
+    "workflow": "engine-refresh.yml",
+    "command": "engine/vendor/live_scores.py /home/runner/work/Predict2u/Predict2u",
+    "rc": 0,
+    "seconds": 0,
+    "errors": [],
+    "tail": "live-scores 15\n"
+   },
+   {
+    "workflow": "engine-refresh.yml",
+    "command": "engine/vendor/staked_feed.py /home/runner/work/Predict2u/Predict2u",
+    "rc": 0,
+    "seconds": 2,
+    "errors": [],
+    "tail": "77 codes 77 with legs\n"
+   }
+  ]
+ }
+}
