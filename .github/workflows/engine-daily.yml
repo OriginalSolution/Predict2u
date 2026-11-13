@@ -57,7 +57,9 @@ jobs:
 
   daily:
     needs: [gate, test]
-    if: needs.gate.outputs.run == 'true' && (github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main')
+    # A red unit test is reported (test job + health check) but never blocks booking:
+    # one bad merge must not leave the site without codes until someone fixes it.
+    if: ${{ !cancelled() && needs.gate.outputs.run == 'true' && (github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main') }}
     # Job-level so a gated duplicate never sits in (or cancels) the engine queue.
     concurrency:
       group: predict2u-engine

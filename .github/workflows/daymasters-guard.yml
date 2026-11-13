@@ -19,10 +19,10 @@ jobs:
       - name: Check today's dayMasters (rollover + codes)
         id: c
         run: python3 engine/daymasters_check.py home-picks.json && echo "ok=1" >> "$GITHUB_OUTPUT" || echo "ok=0" >> "$GITHUB_OUTPUT"
-      - name: Rebook via engine-daily (skip if one is already queued/running)
+      - name: Hand over to the booking watchdog (it re-books without double booking)
         if: steps.c.outputs.ok == '0'
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
-          busy=$(gh run list --workflow engine-daily.yml --json status -q '[.[]|select(.status!="completed")]|length' -L 5)
-          if [ "$busy" != "0" ]; then echo "engine-daily already running"; exit 0; fi
-          gh workflow run engine-daily.yml -f force=true
+          # The watchdog checks runs, gates and published codes, backs off and caps retries,
+          # and re-runs only the job that books the missing codes (no blind forced daily).
+          gh workflow run engine-watchdog.yml --ref main -R "$GITHUB_REPOSITORY" || echo "::warning::could not dispatch the watchdog"

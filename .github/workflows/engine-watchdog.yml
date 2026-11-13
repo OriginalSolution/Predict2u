@@ -1,0 +1,63 @@
+name: Predict2u engine — booking watchdog
+
+# Catches up any booking job that was missed or failed, with no assistant or human
+# (.github/scripts/p2u_watchdog.py). Several independent triggers, so one broken
+# trigger cannot stop it:
+#   - the on-time ticker dispatches it at :05 and :35 every hour;
+#   - GitHub cron at four odd minutes (late/dropped on this repo, but a free backup);
+#   - right after any booking workflow or the ticker itself finishes (workflow_run
+#     events do not depend on cron, so a dead ticker is restarted within minutes).
+# It re-dispatches a booking workflow only when that slot's codes are missing or its
+# real job never succeeded (backoff 10/30/60 min, max 3 tries), restarts the ticker,
+# and re-enables engine workflows GitHub disabled for inactivity. Never books twice.
+on:
+  schedule:
+    - cron: "12 */2 * * *"
+    - cron: "27 1-23/2 * * *"
+    - cron: "48 */3 * * *"
+    - cron: "53 5,6,7,21,22,23 * * *"
+  workflow_dispatch: {}
+  workflow_run:
+    workflows:
+      - "Predict2u engine — on-time scheduler"
+      - "Predict2u engine — daily collect, book, publish"
+      - "Predict2u engine — favourites by league (stats + day-master codes)"
+      - "Predict2u engine — strategy master (Code of the Day)"
+      - "Predict2u engine — SportyBet morning markets"
+      - "Predict2u engine — DC Shield Goals (21:00)"
+      - "Predict2u engine — M1/M2 and Safest market"
+      - "Predict2u engine — three-strategy High Odds + Verzzify Banker"
+      - "Predict2u engine — GG strategy"
+      - "Predict2u engine — NYSM decision tree v2"
+      - "Predict2u engine — NerdyTips Tomorrow"
+      - "Predict2u engine — Hot Picks (catch-up)"
+    types: [completed]
+
+permissions:
+  actions: write
+  contents: read
+  issues: write
+
+concurrency:
+  group: predict2u-watchdog
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          ref: main
+          sparse-checkout: |
+            .github
+            engine/data/sb-morning
+            home-picks.json
+            hot-picks.json
+          sparse-checkout-cone-mode: false
+      - name: Catch up missed bookings
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/p2u_watchdog.py

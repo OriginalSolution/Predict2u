@@ -1,0 +1,22 @@
+{
+  "checks": [
+    { "name": "Site: home page", "url": "https://predict2u.com/", "contains": "Predict2U" },
+    { "name": "Site: high odds page", "url": "https://predict2u.com/high-odds/" },
+    { "name": "Site: free codes switch is on", "url": "https://predict2u.com/p2u-free-mode.js", "contains": "P2U_FREE_CODES = true" },
+    { "name": "Relay: p2u-relay health", "url": "https://p2u-relay-c0mn.onrender.com/health", "timeout": 75,
+      "json_ok_field": "ok", "redeploy_hook_env": "RENDER_DEPLOY_HOOK", "payment": true },
+    { "name": "Feed: home picks + daily slips (home-picks.json)", "url": "https://predict2u.com/home-picks.json",
+      "max_age_hours": 30, "time_field": "DATA_UPDATED", "catchup": true },
+    { "name": "Feed: hot picks (hot-picks.json)", "url": "https://predict2u.com/hot-picks.json",
+      "max_age_hours": 30, "time_field": "updatedAt", "catchup": true },
+    { "name": "Feed: high odds slips (high_odds.json)", "url": "https://predict2u.com/high_odds.json",
+      "max_age_hours": 30, "time_field": "updatedAt", "catchup": true },
+    { "name": "Feed: picks (picks.json)", "url": "https://predict2u.com/picks.json",
+      "max_age_hours": 30, "time_field": "DATA_UPDATED", "catchup": true },
+    { "name": "Feed: fixtures (fixtures.js)", "url": "https://predict2u.com/fixtures.js",
+      "max_age_hours": 8, "time_regex": "FIXTURE_DATA_UPDATED\\s*=\\s*\"([^\"]+)\"" },
+    { "name": "Feed: SportyBet odds (sportybet-odds.js)", "url": "https://predict2u.com/sportybet-odds.js",
+      "max_age_hours": 8, "time_regex": "\"generatedAt\":\"([^\"]+)\"" }
+  ],
+  "certificates": ["predict2u.com"]
+}
