@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-13T10:15:35Z",
+ "DATA_UPDATED": "2026-11-13T12:15:44Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -489,8 +489,8 @@
   }
  ],
  "picks": {
-  "settled": 1825,
-  "won": 1361,
+  "settled": 1828,
+  "won": 1364,
   "lost": 464,
   "winRate": 74.6
  },
@@ -546,15 +546,15 @@
      "match": "Oakleigh Cannons v Marconi Stallions",
      "selection": "Over 1.5",
      "odds": 1.22,
-     "result": "pending",
-     "score": "1:2"
+     "result": "won",
+     "score": "7:8"
     },
     {
      "match": "Singapore v Paraguay",
      "selection": "Over 2.5",
-     "odds": 1.34,
+     "odds": 1.3,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Haras El Hodood v El Dakhleya Sc",
@@ -573,7 +573,7 @@
     {
      "match": "Etehad Alreef v Um Alhassam",
      "selection": "Over 1.5",
-     "odds": 1.17,
+     "odds": 1.18,
      "result": "pending",
      "score": null
     },
@@ -587,14 +587,14 @@
     {
      "match": "FC Helsingoer v Holstebro BK",
      "selection": "Over 2.5",
-     "odds": 1.48,
+     "odds": 1.57,
      "result": "pending",
      "score": null
     },
     {
      "match": "SC Neusiedl am See 1919 v SV Lackenbach",
      "selection": "Over 2.5",
-     "odds": 1.34,
+     "odds": 1.31,
      "result": "pending",
      "score": null
     },
@@ -615,7 +615,7 @@
     {
      "match": "ACD Ospitaletto v Dolomiti Bellunesi",
      "selection": "Over 1.5",
-     "odds": 1.32,
+     "odds": 1.35,
      "result": "pending",
      "score": null
     },
@@ -629,7 +629,7 @@
     {
      "match": "Ballymena United v Linfield FC",
      "selection": "Over 1.5",
-     "odds": 1.26,
+     "odds": 1.27,
      "result": "pending",
      "score": null
     },
@@ -657,7 +657,7 @@
     {
      "match": "Larne FC v Dungannon Swifts",
      "selection": "Over 1.5",
-     "odds": 1.19,
+     "odds": 1.18,
      "result": "pending",
      "score": null
     },
@@ -685,7 +685,7 @@
    "kind": "slip",
    "odds": 28104107.14,
    "status": "lost",
-   "hit": 2,
+   "hit": 3,
    "total": 65,
    "profit": -10.0,
    "legs": [
@@ -720,7 +720,7 @@
     {
      "match": "Loughgall FC v Glenavon FC",
      "selection": "Yes",
-     "odds": 1.52,
+     "odds": 1.59,
      "result": "pending",
      "score": null
     },
@@ -756,78 +756,78 @@
      "match": "Oakleigh Cannons v Marconi Stallions",
      "selection": "Over 1.5",
      "odds": 1.22,
-     "result": "pending",
-     "score": "1:2"
+     "result": "won",
+     "score": "7:8"
     },
     {
      "match": "Liechtenstein SRL v Azerbaijan SRL",
      "selection": "Over 1.5",
-     "odds": 1.09,
-     "result": "pending",
-     "score": "0:1"
+     "odds": 1.12,
+     "result": "won",
+     "score": "0:4"
     },
     {
      "match": "Slovakia SRL v Faroe Islands SRL",
      "selection": "Over 1.5",
-     "odds": 1.24,
-     "result": "pending",
-     "score": null
+     "odds": 1.3,
+     "result": "won",
+     "score": "3:0"
     },
     {
      "match": "Scotland SRL v North Macedonia SRL",
      "selection": "Over 1.5",
-     "odds": 1.26,
+     "odds": 1.09,
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Serbia SRL v Germany SRL",
      "selection": "Over 1.5",
-     "odds": 1.12,
+     "odds": 1.3,
      "result": "pending",
-     "score": null
+     "score": "2:0"
     },
     {
      "match": "Levels FC v Gezira SC",
      "selection": "Over 1.5",
      "odds": 1.19,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Singapore v Paraguay",
      "selection": "Over 1.5",
-     "odds": 1.1,
+     "odds": 1.09,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Netherlands SRL v Greece SRL",
      "selection": "Over 1.5",
      "odds": 1.18,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Slovenia SRL v Switzerland SRL",
      "selection": "Over 1.5",
      "odds": 1.34,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "FK Drina Zvornik v Velez Nevesinje",
      "selection": "Over 2.5",
      "odds": 1.26,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "CS Drobeta Turnu Severin v Unirea Bascov",
      "selection": "Over 2.5",
      "odds": 1.54,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Haras El Hodood v El Dakhleya Sc",
@@ -846,14 +846,14 @@
     {
      "match": "Zambia v Burundi",
      "selection": "Over 1.5",
-     "odds": 1.46,
+     "odds": 1.48,
      "result": "pending",
      "score": null
     },
     {
      "match": "Etehad Alreef v Um Alhassam",
      "selection": "Over 1.5",
-     "odds": 1.17,
+     "odds": 1.18,
      "result": "pending",
      "score": null
     },
@@ -888,7 +888,7 @@
     {
      "match": "South Africa v Kenya",
      "selection": "Over 1.5",
-     "odds": 1.34,
+     "odds": 1.35,
      "result": "pending",
      "score": null
     },
@@ -902,7 +902,7 @@
     {
      "match": "JS Saoura v USM Khenchela",
      "selection": "Over 1.5",
-     "odds": 1.61,
+     "odds": 1.63,
      "result": "pending",
      "score": null
     },
@@ -930,7 +930,7 @@
     {
      "match": "FC Helsingoer v Holstebro BK",
      "selection": "Over 2.5",
-     "odds": 1.48,
+     "odds": 1.57,
      "result": "pending",
      "score": null
     },
@@ -944,14 +944,14 @@
     {
      "match": "SC Neusiedl am See 1919 v SV Lackenbach",
      "selection": "Over 2.5",
-     "odds": 1.34,
+     "odds": 1.31,
      "result": "pending",
      "score": null
     },
     {
      "match": "Egypt v Malawi",
      "selection": "Over 1.5",
-     "odds": 1.21,
+     "odds": 1.2,
      "result": "pending",
      "score": null
     },
@@ -979,7 +979,7 @@
    "kind": "slip",
    "odds": 21892592.47,
    "status": "lost",
-   "hit": 1,
+   "hit": 2,
    "total": 64,
    "profit": -10.0,
    "legs": [
@@ -1014,7 +1014,7 @@
     {
      "match": "Loughgall FC v Glenavon FC",
      "selection": "Yes",
-     "odds": 1.52,
+     "odds": 1.59,
      "result": "pending",
      "score": null
     },
@@ -1043,78 +1043,78 @@
      "match": "Oakleigh Cannons v Marconi Stallions",
      "selection": "Over 1.5",
      "odds": 1.22,
-     "result": "pending",
-     "score": "1:2"
+     "result": "won",
+     "score": "7:8"
     },
     {
      "match": "Liechtenstein SRL v Azerbaijan SRL",
      "selection": "Over 1.5",
-     "odds": 1.09,
-     "result": "pending",
-     "score": "0:1"
+     "odds": 1.12,
+     "result": "won",
+     "score": "0:4"
     },
     {
      "match": "Slovakia SRL v Faroe Islands SRL",
      "selection": "Over 1.5",
-     "odds": 1.24,
-     "result": "pending",
-     "score": null
+     "odds": 1.3,
+     "result": "won",
+     "score": "3:0"
     },
     {
      "match": "Scotland SRL v North Macedonia SRL",
      "selection": "Over 1.5",
-     "odds": 1.26,
+     "odds": 1.09,
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Serbia SRL v Germany SRL",
      "selection": "Over 1.5",
-     "odds": 1.12,
+     "odds": 1.3,
      "result": "pending",
-     "score": null
+     "score": "2:0"
     },
     {
      "match": "Levels FC v Gezira SC",
      "selection": "Over 1.5",
      "odds": 1.19,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Singapore v Paraguay",
      "selection": "Over 1.5",
-     "odds": 1.1,
+     "odds": 1.09,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Netherlands SRL v Greece SRL",
      "selection": "Over 1.5",
      "odds": 1.18,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Slovenia SRL v Switzerland SRL",
      "selection": "Over 1.5",
      "odds": 1.34,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "FK Drina Zvornik v Velez Nevesinje",
      "selection": "Over 2.5",
      "odds": 1.26,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "CS Drobeta Turnu Severin v Unirea Bascov",
      "selection": "Over 2.5",
      "odds": 1.54,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Haras El Hodood v El Dakhleya Sc",
@@ -1133,14 +1133,14 @@
     {
      "match": "Zambia v Burundi",
      "selection": "Over 1.5",
-     "odds": 1.46,
+     "odds": 1.48,
      "result": "pending",
      "score": null
     },
     {
      "match": "Etehad Alreef v Um Alhassam",
      "selection": "Over 1.5",
-     "odds": 1.17,
+     "odds": 1.18,
      "result": "pending",
      "score": null
     },
@@ -1175,7 +1175,7 @@
     {
      "match": "South Africa v Kenya",
      "selection": "Over 1.5",
-     "odds": 1.34,
+     "odds": 1.35,
      "result": "pending",
      "score": null
     },
@@ -1189,7 +1189,7 @@
     {
      "match": "JS Saoura v USM Khenchela",
      "selection": "Over 1.5",
-     "odds": 1.61,
+     "odds": 1.63,
      "result": "pending",
      "score": null
     },
@@ -1217,7 +1217,7 @@
     {
      "match": "FC Helsingoer v Holstebro BK",
      "selection": "Over 2.5",
-     "odds": 1.48,
+     "odds": 1.57,
      "result": "pending",
      "score": null
     },
@@ -1231,14 +1231,14 @@
     {
      "match": "SC Neusiedl am See 1919 v SV Lackenbach",
      "selection": "Over 2.5",
-     "odds": 1.34,
+     "odds": 1.31,
      "result": "pending",
      "score": null
     },
     {
      "match": "Egypt v Malawi",
      "selection": "Over 1.5",
-     "odds": 1.21,
+     "odds": 1.2,
      "result": "pending",
      "score": null
     },
@@ -2099,7 +2099,7 @@
     {
      "match": "Etehad Alreef v Um Alhassam",
      "selection": "Over 1.5",
-     "odds": 1.17,
+     "odds": 1.18,
      "result": "pending",
      "score": null
     }
@@ -2148,14 +2148,14 @@
     {
      "match": "Limavady United FC v Cliftonville FC",
      "selection": "Over 1.5",
-     "odds": 1.15,
+     "odds": 1.16,
      "result": "pending",
      "score": null
     },
     {
      "match": "Larne FC v Dungannon Swifts",
      "selection": "Over 1.5",
-     "odds": 1.19,
+     "odds": 1.18,
      "result": "pending",
      "score": null
     },
@@ -2176,14 +2176,14 @@
     {
      "match": "Tanta FC v La Viena FC",
      "selection": "Under 2.5",
-     "odds": 1.34,
+     "odds": 1.35,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "ACD Ospitaletto v Dolomiti Bellunesi",
      "selection": "Over 1.5",
-     "odds": 1.32,
+     "odds": 1.35,
      "result": "pending",
      "score": null
     }
@@ -2232,7 +2232,7 @@
     {
      "match": "Etehad Alreef v Um Alhassam",
      "selection": "Over 1.5",
-     "odds": 1.17,
+     "odds": 1.18,
      "result": "pending",
      "score": null
     },
@@ -2246,7 +2246,7 @@
     {
      "match": "Limavady United FC v Cliftonville FC",
      "selection": "Over 1.5",
-     "odds": 1.15,
+     "odds": 1.16,
      "result": "pending",
      "score": null
     },
@@ -2260,7 +2260,7 @@
     {
      "match": "Larne FC v Dungannon Swifts",
      "selection": "Over 1.5",
-     "odds": 1.19,
+     "odds": 1.18,
      "result": "pending",
      "score": null
     },
@@ -2281,21 +2281,21 @@
     {
      "match": "Tanta FC v La Viena FC",
      "selection": "Under 2.5",
-     "odds": 1.34,
+     "odds": 1.35,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "ACD Ospitaletto v Dolomiti Bellunesi",
      "selection": "Over 1.5",
-     "odds": 1.32,
+     "odds": 1.35,
      "result": "pending",
      "score": null
     },
     {
      "match": "Al Hashemehya v Sama AL Sarhan SC",
      "selection": "Under 3.5",
-     "odds": 1.25,
+     "odds": 1.24,
      "result": "pending",
      "score": null
     },
@@ -2309,7 +2309,7 @@
     {
      "match": "Ballymena United v Linfield FC",
      "selection": "Over 1.5",
-     "odds": 1.26,
+     "odds": 1.27,
      "result": "pending",
      "score": null
     }
