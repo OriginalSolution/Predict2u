@@ -2,7 +2,7 @@
    payment runs on Paystack (GHS, mobile money + card) and the relay returns the codes. Unlocks are remembered on this device. */
 (function(){
   'use strict';
-  var RELAY='https://p2u-relay.onrender.com', RX=/P2ULOCK-([a-z]+-\d{8})-[a-z]+\d*/i, KEY='p2u-unlocks-v1';
+  var RELAY='https://p2u-relay-c0mn.onrender.com', RX=/P2ULOCK-([a-z]+-\d{8})-[a-z]+\d*/i, KEY='p2u-unlocks-v1';
   var BOOKS=[['sportybet','SportyBet','book-sportybet.webp','https://www.sportybet.com/gh/?shareCode='],['msport','MSport','book-msport.webp','https://www.msport.com/gh/?shareCode='],
     ['betika','Betika','book-betika.webp','https://betika.com/en-gh/share/'],['footballcom','football.com','book-footballcom.webp','https://www.football.com/gh/?shareCode='],['betpawa','Betpawa','book-betpawa.webp','https://www.betpawa.com.gh/share-betslip/']];
   var TITLE={banker:'Main Banker',medium:'Medium slip',hot:'Hot Picks main'};
