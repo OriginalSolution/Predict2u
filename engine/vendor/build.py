@@ -232,6 +232,15 @@ def home_build():
     old = None
     try: old = json.load(open(hp)); old.pop('DATA_UPDATED', None)
     except Exception: pass
+    # A research "shell" (e.g. dc_shield on Actions, no box day-file) has no leagues/homeCode.
+    # Never let it wipe the favourites-by-league section or the day's picks/codes already published.
+    if isinstance(old, dict):
+        if not out.get('leagues') and old.get('leagues'):
+            out['leagues'] = old['leagues']; print('home: kept published favourites leagues (research file has none)')
+            if not out.get('picks') and old.get('picks') and old.get('date') == out.get('date'): out['picks'] = old['picks']
+        ohc = old.get('homeCode') if isinstance(old.get('homeCode'), dict) else {}
+        if not out.get('homeCode'): out['homeCode'] = ohc or out.get('homeCode')
+        elif ohc.get('dayMasters') and not out['homeCode'].get('dayMasters'): out['homeCode'] = {**out['homeCode'], 'dayMasters': ohc['dayMasters']}
     if old == json.loads(json.dumps(out)): print('home: unchanged'); return False
     json.dump({'DATA_UPDATED': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), **out}, open(hp, 'w'), separators=(',', ':'), ensure_ascii=False)
     print('home:', out['date'], len(out['picks']), 'picks', len(out['leagues']), 'leagues'); return True

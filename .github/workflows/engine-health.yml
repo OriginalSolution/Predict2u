@@ -117,7 +117,7 @@ jobs:
           set -euo pipefail
           git config user.name "predict2u-engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A -- engine/data/health health.json dead-codes.json || true
+          git add -A -- engine/data/health health.json dead-codes.json home-picks.json fav-leagues.json || true
           if git diff --cached --quiet; then echo "no health changes"; exit 0; fi
           git commit -m "Engine health check ${{ needs.gate.outputs.mode }} $(date -u +%FT%TZ)"
           .github/scripts/p2u_push.sh main

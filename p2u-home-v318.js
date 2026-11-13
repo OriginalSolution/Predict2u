@@ -1,4 +1,4 @@
-/* Predict2U v354 hide-empty-codes — was v318b — favourites day-master codes on leagues section (Today/Tomorrow tabs); was v318. */
+/* Predict2U v366 fav-fallback (never empty: falls back to fav-leagues.json / latest league stats) — was v354 hide-empty-codes — was v318b — favourites day-master codes on leagues section (Today/Tomorrow tabs); was v318. */
 (function(){var _hcss=document.createElement('style');_hcss.textContent='.hp-odds{display:inline-flex;flex-direction:column;align-items:flex-end;background:#0f2a1a;border:1px solid #2ecc71;border-radius:10px;padding:4px 10px;line-height:1.15}.hp-odds b{font-size:1.15em;color:#2ecc71}.hp-odds small{font-size:.72em;opacity:.85}.hp-odds i{font-style:normal;font-size:.68em;opacity:.7}.hp-hist{margin:6px 0 4px;font-size:.8em;padding:6px 8px;border-left:3px solid #888;background:rgba(127,127,127,.08);border-radius:4px}.hp-hist.is-up{border-color:#2ecc71}.hp-hist.is-down{border-color:#e67e22}';document.head.appendChild(_hcss);
   'use strict';
   var $=function(id){return document.getElementById(id);};
@@ -121,7 +121,7 @@
     document.head.appendChild(st);}
   function body(x,F){var f=Number(x.favWinPct);f=f<=1?f*100:f;var P=x.picks||[],ids=P.map(function(p){return p.eventId;}),bk=bookedFor(ids),h='';
     var pid={};P.forEach(function(p){pid[p.eventId]=1;});
-    h+='<h3>Fixtures today</h3><ul class="lg-fx">'+F.map(function(z){return '<li><time>'+esc(fko(z))+'</time><span>'+esc(z.match)+'</span>'+(pid[z.eventId]||z.status==='pick'?'<em>✓ pick</em>':'')+'</li>';}).join('')+'</ul>';
+    if(F.length)h+='<h3>Fixtures</h3><ul class="lg-fx">'+F.map(function(z){return '<li><time>'+esc(fko(z))+'</time><span>'+esc(z.match)+'</span>'+(pid[z.eventId]||z.status==='pick'?'<em>✓ pick</em>':'')+'</li>';}).join('')+'</ul>';
     if(P.length)h+='<h3>Our picks</h3><div class="hp-list">'+P.map(function(p){var b=bookedFor([p.eventId]);return card(p).replace('</article>',(b.length?'<div class="hp-bkd"><span>✓ Booked</span>'+b.map(function(c){return '<a href="'+c.url+'" target="_blank" rel="noopener"><img src="book-'+c.b+'.webp" alt="'+c.n+' logo" width="16" height="16" loading="lazy">'+esc(c.n)+' '+esc(c.code)+'</a>';}).join('')+'</div>':'')+'</article>');}).join('')+'</div>';
     else h+='<p class="lg-empty">No pick in this league today'+(x.reason?': '+esc(x.reason):'.')+'</p>';
     var B=x.bands||{},bk2=Object.keys(B).sort();
@@ -160,22 +160,24 @@
 
   function leagues(){css();css2();var host=$('hp-leagues');var hd=host.parentNode.querySelector('h2');if(hd)hd.textContent='Today’s leagues & competitions';
     var L=(data.leagues||[]);
-    var today=stamp(new Date()),dates={};L.forEach(function(x){(x.fixtures||[]).forEach(function(f){var d=fdate(f);if(d>=today)dates[d]=1;});});
-    var D=Object.keys(dates).sort();
+    var today=stamp(new Date()),dates={},all={};L.forEach(function(x){(x.fixtures||[]).forEach(function(f){var d=fdate(f);if(!d)return;all[d]=1;if(d>=today)dates[d]=1;});});
+    var D=Object.keys(dates).sort(),A=Object.keys(all).sort(),past='';
+    if(!D.length&&A.length){past=A[A.length-1];D=[past];} // nothing upcoming: show the latest card we have instead of an empty section
     if(!day||D.indexOf(day)<0)day=D.indexOf(today)>=0?today:(D[0]||today);
     try{open=JSON.parse(sessionStorage.getItem(LKEY+day)||'{}')||{};}catch(_){open={};}
     var rows=L.map(function(x){var F=(x.fixtures||[]).filter(function(f){return fdate(f)===day;}).sort(function(a,b){return String(a.ko).localeCompare(String(b.ko));});
       var P=(x.picks||[]).filter(function(p){return !p.date||p.date===day||F.some(function(f){return f.eventId===p.eventId;});});
-      return {x:Object.assign({},x,{picks:P}),F:F,first:F.length?String(F[0].ko):'~'};}).filter(function(r){return r.F.length;});
+      return {x:Object.assign({},x,{picks:P}),F:F,first:F.length?String(F[0].ko):'~'};});
+    var withF=rows.filter(function(r){return r.F.length;});rows=withF.length?withF:rows.filter(function(r){return r.x.league;}); // no fixtures at all: still show each league's favourite stats
     rows.sort(function(a,b){return a.first.localeCompare(b.first)||b.x.picks.length-a.x.picks.length;});
-    var lbl=function(d){return d===today?'Today':(d===stamp(new Date(Date.now()+864e5))?'Tomorrow':d);};
+    var lbl=function(d){return d===past?'Latest ('+d+')':d===today?'Today':(d===stamp(new Date(Date.now()+864e5))?'Tomorrow':d);};
     var games=rows.reduce(function(s,r){return s+r.F.length;},0),picks=rows.reduce(function(s,r){return s+r.x.picks.length;},0);
-    if(!rows.length){host.innerHTML='<div class="p2u-bankers-empty">No leagues on today’s card yet.</div>';return;}
+    if(!rows.length){host.innerHTML='<div class="p2u-bankers-empty">League stats are refreshing — check back shortly.</div>';favSnap();return;}
     host.innerHTML=(D.length>1?'<div class="lg-days" role="group" aria-label="Match day">'+D.map(function(d){return '<button type="button" data-lg-day="'+d+'" aria-pressed="'+(d===day)+'">'+lbl(d)+'</button>';}).join('')+'</div>':'')+
       '<p class="lg-sum">'+lbl(day)+': '+rows.length+' leagues · '+games+' games · '+picks+' picks. Tap a league to see everything.</p>'+dayMasterHTML(day)+
       '<div class="lg-tools"><input type="search" id="lg-q" placeholder="Search leagues or teams" aria-label="Search leagues or teams"><button type="button" data-lg-all="1">Expand all</button><button type="button" data-lg-all="0">Collapse all</button></div><div id="lg-list">'+
       rows.map(function(r,i){var x=r.x,id='lg'+i,o=!!open[x.league],P=x.picks.length,bk=bookedFor(x.picks.map(function(p){return p.eventId;})).length,sp=split(x.league);
-        return '<section class="lg'+(o?' is-open':'')+'" data-lg="'+esc(x.league)+'" data-s="'+esc((x.league+' '+r.F.map(function(f){return f.match;}).join(' ')).toLowerCase())+'"><button type="button" class="lg-h" aria-expanded="'+o+'" aria-controls="'+id+'"><span class="lg-f" aria-hidden="true">'+flag(x.league)+'</span><span class="lg-n"><b>'+esc(sp[1])+'</b><small>'+esc(sp[0]||'')+(sp[0]?' · ':'')+'first KO '+esc(fko(r.F[0]))+'</small></span><span class="lg-m"><span class="lg-chip">'+r.F.length+' game'+(r.F.length>1?'s':'')+'</span>'+(P?'<span class="lg-chip p">'+P+' pick'+(P>1?'s':'')+'</span>':'')+(bk?'<span class="lg-chip b">✓ Booked</span>':'')+'</span><i class="lg-cv" aria-hidden="true"></i></button>'+
+        return '<section class="lg'+(o?' is-open':'')+'" data-lg="'+esc(x.league)+'" data-s="'+esc((x.league+' '+r.F.map(function(f){return f.match;}).join(' ')).toLowerCase())+'"><button type="button" class="lg-h" aria-expanded="'+o+'" aria-controls="'+id+'"><span class="lg-f" aria-hidden="true">'+flag(x.league)+'</span><span class="lg-n"><b>'+esc(sp[1])+'</b><small>'+esc(sp[0]||'')+(sp[0]?' · ':'')+(r.F.length?'first KO '+esc(fko(r.F[0])):'league stats')+'</small></span><span class="lg-m">'+(r.F.length?'<span class="lg-chip">'+r.F.length+' game'+(r.F.length>1?'s':'')+'</span>':'')+(P?'<span class="lg-chip p">'+P+' pick'+(P>1?'s':'')+'</span>':'')+(bk?'<span class="lg-chip b">✓ Booked</span>':'')+'</span><i class="lg-cv" aria-hidden="true"></i></button>'+
           '<div class="lg-b" id="'+id+'" role="region" aria-label="'+esc(x.league)+'"'+(o?'':' inert')+'><div>'+body(x,r.F)+'</div></div></section>';}).join('')+'</div><p class="lg-empty" id="lg-none" hidden>No league matches your search.</p>';
     $('lg-q').addEventListener('input',function(){var q=this.value.trim().toLowerCase(),n=0;host.querySelectorAll('.lg').forEach(function(s){var m=!q||s.getAttribute('data-s').indexOf(q)>=0;s.hidden=!m;if(m)n++;});$('lg-none').hidden=n>0;});
   }
@@ -183,10 +185,20 @@
   document.addEventListener('click',function(e){if(!e.target.closest)return;var h=e.target.closest('.lg-h');if(h){var s=h.parentNode;setOpen(s,!s.classList.contains('is-open'));save();return;}
     var a=e.target.closest('[data-lg-all]');if(a){document.querySelectorAll('#lg-list .lg').forEach(function(s){if(!s.hidden)setOpen(s,a.getAttribute('data-lg-all')==='1');});save();return;}
     var d=e.target.closest('[data-lg-day]');if(d){day=d.getAttribute('data-lg-day');leagues();}});
+  var snapTried=false;
+  function favSnap(){ // home-picks.json lost the section: load the engine's own snapshot (fav-leagues.json)
+    if(snapTried)return;snapTried=true;
+    fetch('fav-leagues.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(s){
+      if(!s||!data)return;var ch=false;
+      if(!(data.leagues||[]).length&&(s.leagues||[]).length){data.leagues=s.leagues;ch=true;}
+      var hc=data.homeCode=data.homeCode||{},dm=hc.dayMasters=hc.dayMasters||{};
+      Object.keys(s.dayMasters||{}).forEach(function(k){if(!(dm[k]&&dm[k].codes&&Object.keys(dm[k].codes).length)){dm[k]=s.dayMasters[k];ch=true;}});
+      if(ch)leagues();}).catch(function(){});}
   function init(d){data=d||{};
     var dd=$('hp-day');dd.innerHTML='<option>'+esc(d.date||'—')+'</option>';dd.disabled=true;
     $('hp-meta').textContent=d.DATA_UPDATED?'Updated '+new Date(d.DATA_UPDATED).toLocaleString('en-GB',{timeZone:ZONE,day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})+' GMT':'';
-    codes();css();markets();render();leagues();if(window.P2UScores)P2UScores.refresh(data);}
+    codes();css();markets();render();leagues();if(window.P2UScores)P2UScores.refresh(data);
+    var dmx=(data.homeCode||{}).dayMasters||{};if(!(data.leagues||[]).length||!Object.keys(dmx).some(function(k){return k>=stamp(new Date())&&dmx[k]&&dmx[k].codes;}))favSnap();}
   function missing(){init({date:'',picks:[],leagues:[]});$('hp-meta').textContent='Today’s picks are being prepared.';}
   fetch('home-picks.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(init).catch(missing);
 })();

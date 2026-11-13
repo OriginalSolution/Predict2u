@@ -423,6 +423,39 @@ def check_site(rep):
     return files
 
 
+def check_fav(rep, files, heal):
+    """Home "How favourites perform by league" must never be empty; restore it from fav-leagues.json / git (no booking)."""
+    sys.path.insert(0, str(REPO))
+    try:
+        from engine import fav_guard as G
+    except Exception as e:
+        rep.warn("favourites", f"guard unavailable: {e}")
+        return
+    live = files.get("home-picks.json")
+    if live is None:
+        return
+    probs, warns = G.problems(live), G.warnings(live)
+    for w in warns:
+        rep.warn("favourites", w)
+    if not probs:
+        n = sum(len(x.get("fixtures") or []) for x in live.get("leagues") or [])
+        rep.ok("favourites", f"favourites by league: {len(live.get('leagues') or [])} leagues, {n} fixtures on the site")
+        if heal:
+            G.write_snapshot(REPO, G._load(REPO / G.HOME) or live)
+        return
+    for p in probs:
+        rep.bad("favourites", f"favourites by league section is empty on the site: {p}")
+    if not heal:
+        return
+    changes, ok = G.repair_repo(REPO)
+    if changes:
+        rep.heal("favourites by league: " + "; ".join(changes) + " (from fav-leagues.json / last good home-picks.json; no new booking)")
+    if ok:
+        rep.problems[-1]["healed"] = True
+    else:
+        rep.problems[-1]["msg"] += " — no saved copy to restore from; the 06:00 favourites job (engine-fav-leagues.yml) must rebuild it"
+
+
 # ---------------------------------------------------------------- 5. codes
 def walk_codes(node, ctx, out, src):
     if isinstance(node, dict):
@@ -723,6 +756,7 @@ def main(argv=None):
     wfs = load_workflows()
     check_code(rep)
     files = check_site(rep)
+    check_fav(rep, files, a.heal)
     check_codes(rep, files, a.heal)
     states = check_actions(rep, files, a.heal)
     check_registry(rep, wfs, states or {})
