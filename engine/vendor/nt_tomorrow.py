@@ -675,6 +675,9 @@ def run(repo: Path, dry_run: bool = False, day: dt.date | None = None) -> dict:
     normal_legs = rows_to_legs(eligible_rows(verdicts, usage, relaxed=False))
     relaxed_legs = rows_to_legs(eligible_rows(verdicts, usage, relaxed=True))
     packed, why, used_relaxed = lib.thin_pack(normal_legs, relaxed_legs, cap=30)
+    # rows_to_legs builds one leg per chosen match, so the chosen count is the
+    # leg count of whichever pool thin_pack used.
+    chosen_count = len(relaxed_legs if used_relaxed else normal_legs)
     agree = eligible_rows(verdicts, usage, relaxed=used_relaxed)
     result = {"code": None, "reason": why, "n": len(packed), "total": round(lib.product(leg["odds"] for leg in packed), 4) if packed else 0, "legs": packed}
     if packed and not dry_run:
@@ -697,6 +700,7 @@ def run(repo: Path, dry_run: bool = False, day: dt.date | None = None) -> dict:
         "pooled": len(pooled),
         "skipped": dict(skipped),
         "agree": len(agree),
+        "chosen": chosen_count,
         "relaxed": used_relaxed,
         "qualifying": relaxed_legs if used_relaxed or not packed else normal_legs,
         "booked": {k: v for k, v in result.items() if k != "legs"} | {"n": len(result.get("legs") or [])},
@@ -717,7 +721,7 @@ def run(repo: Path, dry_run: bool = False, day: dt.date | None = None) -> dict:
         "nt": target.isoformat(), "listed": len(listed), "pooled": len(pooled),
         "verdicts": dict(Counter(row.get("verdict") for row in verdicts)),
         "skips": dict(Counter(row.get("skipwhy") for row in verdicts if row.get("skipwhy"))),
-        "agree": len(agree), "chosen": len(chosen), "booked": result.get("code") or result.get("reason"), "dry": dry_run,
+        "agree": len(agree), "chosen": chosen_count, "booked": result.get("code") or result.get("reason"), "dry": dry_run,
     }, default=str))
     return payload
 
