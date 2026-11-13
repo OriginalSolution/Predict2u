@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-13T20:25:11+00:00",
+ "updatedAt": "2026-11-13T21:25:11+00:00",
  "sources": [
   "BBC Sport",
   "ESPN",
@@ -14,8 +14,18 @@
    "summary": "Nations League updates from 7.45pm GMT kick-off Live scores | Follow us on BlueSky | And email Scott 3 min: Robertson is into the action quickly. He crosses from the left. The ball’s deflected and sent on a strange…",
    "source": "The Guardian",
    "link": "https://www.theguardian.com/football/live/2026/nov/13/scotland-v-north-macedonia-nations-league-live",
-   "published": "2026-11-13T20:04:52+00:00",
-   "image": "https://i.guim.co.uk/img/media/8a37eca623b768719cb3b1bb0b8319f5426060eb/245_34_1959_1567/master/1959.jpg?width=140&quality=85&auto=format&fit=max&s=631e6f1ecb153145b5707d80e6e143cc",
+   "published": "2026-11-13T21:03:56+00:00",
+   "image": "https://i.guim.co.uk/img/media/540cf517174d4858721517d664b001bf5452cce6/180_14_3415_2732/master/3415.jpg?width=140&quality=85&auto=format&fit=max&s=a70edaab0928827adcb9ac59d43e5ed9",
+   "ourFixture": false,
+   "preview": true
+  },
+  {
+   "title": "'It's a shootout' - Wales out to derail stuttering Norway",
+   "summary": "Norway's golden generation host Wales in a crunch Nations League clash on Saturday, aiming to end a rare losing streak for Erling Haaland and company.",
+   "source": "BBC Sport",
+   "link": "https://www.bbc.co.uk/sport/football/articles/ck9871qr76gmo",
+   "published": "2026-11-13T19:59:40+00:00",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/af0b/live/28b62340-df7c-11f1-b844-3146c4983677.jpg",
    "ourFixture": false,
    "preview": true
   },
@@ -26,16 +36,6 @@
    "link": "https://www.bbc.co.uk/sport/football/articles/cqz0k4e00v0mo",
    "published": "2026-11-13T19:12:37+00:00",
    "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6a24/live/9b132b20-df92-11f1-a9ad-6774a3284d10.jpg",
-   "ourFixture": false,
-   "preview": true
-  },
-  {
-   "title": "McTominay forces good save as Scotland look for opener vs North Macedonia LIVE!",
-   "summary": "",
-   "source": "Sky Sports",
-   "link": "https://www.skysports.com/football/scotland-vs-north-macedonia/live/554098",
-   "published": "2026-11-13T18:30:00+00:00",
-   "image": "https://e2.365dm.com/26/11/1920x1080/skysports-scott-mctominay-scotland_7406051.jpg?20261113201346",
    "ourFixture": false,
    "preview": true
   },
@@ -318,10 +318,71 @@
   "won": 23,
   "lost": 170,
   "settled": 193,
-  "pending": 32,
+  "pending": 33,
   "winRate": 11.9
  },
  "codes": [
+  {
+   "code": "AE2R3H",
+   "book": "sportybet",
+   "date": "2026-11-14",
+   "name": "Slip 1",
+   "kind": "slip",
+   "odds": 20.47,
+   "status": "pending",
+   "hit": 0,
+   "total": 8,
+   "legs": [
+    {
+     "match": "Guerreros Del Pacífico FC v Santiago FC",
+     "selection": "GG (BTTS Yes)",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Hobart FC v Wollongong Wolves FC",
+     "selection": "GG (BTTS Yes)",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "N. Byskovice v FK Velke Hamry",
+     "selection": "GG (BTTS Yes)",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Polonia Warszawa v MKS Korona Kielce",
+     "selection": "GG (BTTS Yes)",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "ACV Assen v ADO 20 Heemskerk",
+     "selection": "GG (BTTS Yes)",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Rohda Raalte v VV Katwijk",
+     "selection": "GG (BTTS Yes)",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Union Titus Petange v FC Koeppchen Wormeldange",
+     "selection": "GG (BTTS Yes)",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "KSK Heist v Hoogstraten VV",
+     "selection": "GG (BTTS Yes)",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
   {
    "code": "F5FARU",
    "book": "sportybet",
@@ -330,7 +391,7 @@
    "kind": "slip",
    "odds": 766.97,
    "status": "lost",
-   "hit": 5,
+   "hit": 8,
    "total": 24,
    "legs": [
     {
@@ -343,13 +404,13 @@
      "match": "Swansea University v Treowen Stars",
      "selection": "Yes",
      "result": "pending",
-     "score": "1:1"
+     "score": "2:3"
     },
     {
      "match": "Denbigh Town v Gresford Athletic",
      "selection": "Yes",
-     "result": "pending",
-     "score": "3:0"
+     "result": "won",
+     "score": "7:1"
     },
     {
      "match": "Llaneros FC v Boyaca Chico FC",
@@ -408,26 +469,26 @@
     {
      "match": "SC Neusiedl am See 1919 v SV Lackenbach",
      "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
+     "result": "lost",
+     "score": "0:0"
     },
     {
      "match": "Bermuda v Saint Lucia",
      "selection": "Over 2.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:2"
     },
     {
      "match": "Puerto Rico v Dominica",
      "selection": "Over 2.5",
-     "result": "pending",
-     "score": "2:0"
+     "result": "won",
+     "score": "4:2"
     },
     {
      "match": "ACD Ospitaletto v Dolomiti Bellunesi",
      "selection": "Over 1.5",
-     "result": "pending",
-     "score": "0:0"
+     "result": "lost",
+     "score": "1:0"
     },
     {
      "match": "Andorra v Gibraltar",
@@ -445,13 +506,13 @@
      "match": "Coleraine FC v Portadown FC",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "1:0"
+     "score": "3:0"
     },
     {
      "match": "Crusaders FC v Carrick Rangers",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "1:0"
+     "score": "1:1"
     },
     {
      "match": "Glentoran FC v Bangor FC",
@@ -469,7 +530,7 @@
      "match": "Salamanca CF UDS v Celta",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:2"
+     "score": "0:3"
     },
     {
      "match": "Argentina v Uruguay",
@@ -487,7 +548,7 @@
    "kind": "slip",
    "odds": 28104107.14,
    "status": "lost",
-   "hit": 21,
+   "hit": 27,
    "total": 65,
    "legs": [
     {
@@ -499,26 +560,26 @@
     {
      "match": "FC Portalban/Gletterens v FC Echallens Region",
      "selection": "Yes",
-     "result": "pending",
-     "score": null
+     "result": "won",
+     "score": "2:1"
     },
     {
      "match": "Swansea University v Treowen Stars",
      "selection": "Yes",
      "result": "pending",
-     "score": "1:1"
+     "score": "2:3"
     },
     {
      "match": "Denbigh Town v Gresford Athletic",
      "selection": "Yes",
-     "result": "pending",
-     "score": "3:0"
+     "result": "won",
+     "score": "7:1"
     },
     {
      "match": "Loughgall FC v Glenavon FC",
      "selection": "Yes",
      "result": "pending",
-     "score": "1:3"
+     "score": "1:6"
     },
     {
      "match": "Llaneros FC v Boyaca Chico FC",
@@ -709,19 +770,19 @@
     {
      "match": "SC Neusiedl am See 1919 v SV Lackenbach",
      "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
+     "result": "lost",
+     "score": "0:0"
     },
     {
      "match": "Egypt v Malawi",
      "selection": "Over 1.5",
-     "result": "pending",
-     "score": "3:0"
+     "result": "won",
+     "score": "5:0"
     },
     {
      "match": "Dijon v US Orleans",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:2"
     },
     {
@@ -733,26 +794,26 @@
     {
      "match": "Bermuda v Saint Lucia",
      "selection": "Over 2.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:2"
     },
     {
      "match": "Puerto Rico v Dominica",
      "selection": "Over 2.5",
-     "result": "pending",
-     "score": "2:0"
+     "result": "won",
+     "score": "4:2"
     },
     {
      "match": "ACD Ospitaletto v Dolomiti Bellunesi",
      "selection": "Over 1.5",
-     "result": "pending",
-     "score": "0:0"
+     "result": "lost",
+     "score": "1:0"
     },
     {
      "match": "AD San Juan Pamplona v CF Gazte Berriak",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "2:2"
+     "score": "4:3"
     },
     {
      "match": "Andorra v Gibraltar",
@@ -770,25 +831,25 @@
      "match": "Netherlands v Greece",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "4:0"
+     "score": "7:0"
     },
     {
      "match": "Scotland v North Macedonia",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "2:1"
     },
     {
      "match": "Serbia v Germany",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:2"
+     "score": "1:3"
     },
     {
      "match": "Slovakia v Faroe Islands",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "1:1"
+     "score": "2:2"
     },
     {
      "match": "Slovenia v Switzerland",
@@ -800,25 +861,25 @@
      "match": "Baglan Dragons v Barry Town United FC",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "1:0"
     },
     {
      "match": "Caernarfon Town FC v Holywell Town",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "3:0"
+     "score": "4:0"
     },
     {
      "match": "Pen-y-Bont FC v Cardiff Draconians",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "3:0"
+     "score": "5:0"
     },
     {
      "match": "The New Saints FC v Briton Ferry",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "2:0"
+     "score": "5:0"
     },
     {
      "match": "Ballymena United v Linfield FC",
@@ -830,13 +891,13 @@
      "match": "Coleraine FC v Portadown FC",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "1:0"
+     "score": "3:0"
     },
     {
      "match": "Crusaders FC v Carrick Rangers",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "1:0"
+     "score": "1:1"
     },
     {
      "match": "Glentoran FC v Bangor FC",
@@ -854,19 +915,19 @@
      "match": "Annagh United FC v Ballinamallard United",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "1:1"
+     "score": "2:1"
     },
     {
      "match": "Institute FC v Armagh City FC",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "3:0"
+     "score": "5:0"
     },
     {
      "match": "Salamanca CF UDS v Celta",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:2"
+     "score": "0:3"
     },
     {
      "match": "Argentina v Uruguay",
@@ -1384,7 +1445,7 @@
    "kind": "slip",
    "odds": 12.18,
    "status": "lost",
-   "hit": 4,
+   "hit": 7,
    "total": 9,
    "legs": [
     {
@@ -1420,26 +1481,26 @@
     {
      "match": "Puerto Rico v Dominica",
      "selection": "Over 2.5",
-     "result": "pending",
-     "score": "2:0"
+     "result": "won",
+     "score": "4:2"
     },
     {
      "match": "Bermuda v Saint Lucia",
      "selection": "Over 2.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:2"
     },
     {
      "match": "Swansea University v Treowen Stars",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "1:1"
+     "score": "2:3"
     },
     {
      "match": "Denbigh Town v Gresford Athletic",
      "selection": "Over 2.5",
-     "result": "pending",
-     "score": "3:0"
+     "result": "won",
+     "score": "7:1"
     }
    ]
   },
@@ -4356,175 +4417,6 @@
      "selection": "Under 2.5",
      "result": "lost",
      "score": "4:3"
-    }
-   ]
-  },
-  {
-   "code": "BGS7FK",
-   "book": "sportybet",
-   "date": "2026-11-07",
-   "name": "Top 5 vs Bottom 3 (no amateur) · part 1/2 · HIGH RISK",
-   "kind": "slip",
-   "odds": 148.46,
-   "status": "lost",
-   "hit": 22,
-   "total": 26,
-   "legs": [
-    {
-     "match": "1 FC Nuremberg v Darmstadt",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "FK Zemun v FK IMT Novi Beograd",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "SK Mazovia Minsk Mazowiecki v MKS Mlawianka Mlawa",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Port FC v Chonburi FC",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Al Akhaa Al Ahli v Jwaaya FC",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "1:0"
-    },
-    {
-     "match": "Besa Kavaje v KS Burreli",
-     "selection": "Under 1.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "FK Kukesi v Sopoti Librazhd",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "KF Iliria Fushe-Kruje v KF Oriku",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "1:0"
-    },
-    {
-     "match": "AL Ittifaq v AL Arabi (UAE)",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:3"
-    },
-    {
-     "match": "AFK Csikszereda Miercurea Ciuc v FC Universitatea Cluj",
-     "selection": "Under 4.5",
-     "result": "won",
-     "score": "0:0"
-    },
-    {
-     "match": "Real Kashmir v Sreenidi Deccan FC",
-     "selection": "Under 2.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "FC Spaeri v FC Dinamo Batumi",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "3:2"
-    },
-    {
-     "match": "NK Mladost Zdralovi v NK Hrvace",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AS Soliman v ES Beni Khalled",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Magesi FC v Orbit College FC",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "AS Ostiamare v Spezia Calcio",
-     "selection": "Under 2.5",
-     "result": "won",
-     "score": "0:4"
-    },
-    {
-     "match": "Chennaiyin FC v East Bengal FC",
-     "selection": "Under 2.5",
-     "result": "lost",
-     "score": "5:3"
-    },
-    {
-     "match": "FC Bavois v FC Paradiso",
-     "selection": "Under 2.5",
-     "result": "lost",
-     "score": "4:1"
-    },
-    {
-     "match": "GIF Sundsvall v Varbergs BoIS",
-     "selection": "Under 5.5",
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "Hassleholms IF v Angelholms FF",
-     "selection": "Under 2.5",
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Torpedo Moscow v FC Neftekhimik Nizhnekamsk",
-     "selection": "Under 2.5",
-     "result": "won",
-     "score": "1:0"
-    },
-    {
-     "match": "AEL Limassol v Krasava ENY Ypsonas FC",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "FC Koper v Mura Murska Sobota",
-     "selection": "Under 2.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Swansea University v Cardiff Draconians",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "MFK Skalica v MSK Zilina",
-     "selection": "Under 2.5",
-     "result": "won",
-     "score": "2:4"
-    },
-    {
-     "match": "Slovan Bratislava v AS Trencin",
-     "selection": "Under 2.5",
-     "result": "won",
-     "score": "2:2"
     }
    ]
   }
