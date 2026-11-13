@@ -188,6 +188,18 @@ def settle(env):
     run([sys.executable, str(VENDOR_DIR / "build_record.py"), str(REPO_DIR)], env=env, timeout=60, check=False)
 
 
+def _fav_guard(dry_run=False):
+    """Never leave the favourites-by-league section empty: restore it from fav-leagues.json (no booking)."""
+    if dry_run:
+        return
+    try:
+        from . import fav_guard
+        changes, ok = fav_guard.repair_repo(REPO_DIR)
+        print("favGuard:", "; ".join(changes) or "ok", "" if ok else "(still empty)")
+    except Exception as e:
+        print("favGuard: skipped", e)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("command", choices=("collect", "book", "publish", "settle", "daily", "all", "shield", "morning", "fav"))
@@ -210,17 +222,21 @@ def main(argv=None):
         # Favourites day masters land on home-picks.json. Odds above 25 are sealed here.
         if not args.dry_run:
             _lock_premium(env, dry_run=False)
+        _fav_guard(args.dry_run)
         return 0
     if args.command == "morning":
         morning(env, dry_run=args.dry_run)
         # Morning writes the 25+ master straight into high_odds.json and home-picks.json.
         if not args.dry_run:
             _lock_premium(env, dry_run=False)
+        _fav_guard(args.dry_run)
         return 0
     if args.command in ("publish", "daily", "all", "shield"):
         publish(env, dry_run=args.dry_run)
     if args.command in ("settle", "all"):
         settle(env)
+    if args.command != "collect":
+        _fav_guard(args.dry_run)
     return 0
 
 

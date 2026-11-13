@@ -1,12 +1,12 @@
-/* Predict2U service worker v365 — fast core install, bounded caches,
+/* Predict2U service worker v366 — fast core install, bounded caches,
    native-install support, offline codes (home/picks/hot/record/staked),
    exact push deep links and recoverable offline navigation.
    current-data.js is 20–30 MB and must not share the 2.8s UI timeout. */
-const VERSION='v365';
-const CACHE_VERSION='predict2u-v365';
+const VERSION='v366';
+const CACHE_VERSION='predict2u-v366';
 const APP_CACHE=CACHE_VERSION;
-const RUNTIME_CACHE='predict2u-runtime-v365';
-const IMAGE_CACHE='predict2u-images-v365';
+const RUNTIME_CACHE='predict2u-runtime-v366';
+const IMAGE_CACHE='predict2u-images-v366';
 const IMAGE_LIMIT=90;
 const RUNTIME_LIMIT=90;
 const NETWORK_TIMEOUT=2800;
@@ -225,7 +225,7 @@ self.addEventListener('fetch',event=>{
   if(!sameOrigin(url))return;
 
   // Latest booking codes — network-first with long timeout, fall back to cached copy offline
-  if(/\/(?:home-picks|picks|hot-picks|high_odds|record|news-hub|staked-codes|staked-index|staked-status|live-scores)\.json$/.test(url.pathname)){
+  if(/\/(?:home-picks|fav-leagues|picks|hot-picks|high_odds|record|news-hub|staked-codes|staked-index|staked-status|live-scores)\.json$/.test(url.pathname)){
     event.respondWith(networkFirst(request, DATA_NETWORK_TIMEOUT));
     return;
   }
@@ -236,7 +236,7 @@ self.addEventListener('fetch',event=>{
   }
 
   // Prediction presentation/context loaders are release-critical. Never serve a stale copy first.
-  if(/(?:unified-shell-v234\.js|mobile-app-nav\.js|team-context-v273\.js|pick-context-flags-v280\.js|pick-context-flags-v280\.css|tip-explanation-clean-v281\.js|tip-explanation-clean-v281\.css|team-rankings\.js|market-intelligence-engine-v277\.js|market-intelligence-v277\.js|market-intelligence-v277\.css|cache-refresh-v278\.js|p2u-live-track-v336\.js)$/.test(url.pathname)){
+  if(/(?:unified-shell-v234\.js|mobile-app-nav\.js|team-context-v273\.js|pick-context-flags-v280\.js|pick-context-flags-v280\.css|tip-explanation-clean-v281\.js|tip-explanation-clean-v281\.css|team-rankings\.js|market-intelligence-engine-v277\.js|market-intelligence-v277\.js|market-intelligence-v277\.css|cache-refresh-v278\.js|p2u-live-track-v336\.js|p2u-home-v318\.js)$/.test(url.pathname)){
     event.respondWith(networkFirst(request));
     return;
   }

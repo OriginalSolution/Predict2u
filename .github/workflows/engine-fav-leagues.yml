@@ -86,7 +86,7 @@ jobs:
           fi
           git config user.name "predict2u-engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- home-picks.json locked.enc.json || true
+          git add -- home-picks.json fav-leagues.json locked.enc.json || true
           if git diff --cached --quiet; then echo "no favourites changes"; exit 0; fi
           git commit -m "Engine favourites by league $(date -u +%FT%TZ)"
           .github/scripts/p2u_push.sh main

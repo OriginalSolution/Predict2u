@@ -149,6 +149,11 @@ def main(argv):
         print("favLeagues: dry run, home-picks.json not written")
         return 0
     hp_path.write_text(json.dumps(hp, separators=(",", ":"), ensure_ascii=False))
+    try:  # fav-leagues.json: the section's own snapshot, used to restore it if another job wipes it
+        from engine import fav_guard
+        fav_guard.write_snapshot(repo, hp, now)
+    except Exception as e:
+        print("favLeagues: snapshot skipped", e)
     return 0
 
 
