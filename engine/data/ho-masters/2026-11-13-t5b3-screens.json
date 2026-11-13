@@ -1,0 +1,114 @@
+{
+ "key": "t5b3-screens",
+ "name": "Top5 v Bottom3 screens",
+ "date": "2026-11-13",
+ "riskLabel": "HIGH RISK",
+ "waived": false,
+ "meetsFloor": false,
+ "verification": "Bets For The Day. Normal Predict2u gates applied. HIGH RISK, no guarantees.",
+ "parts": [
+  {
+   "name": "Top5 v Bottom3 screens · set",
+   "legs": 2,
+   "events": [
+    "sr:match:72202734",
+    "sr:match:72044816"
+   ],
+   "totalOdds": 2.23,
+   "codes": {
+    "sportybet": [
+     {
+      "code": "F6PRCN",
+      "totalOdds": 2.23,
+      "legs": 2,
+      "link": "https://www.sportybet.com/gh/?shareCode=F6PRCN",
+      "matches": [
+       "sr:match:72044816",
+       "sr:match:72202734"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "footballcom": [
+     {
+      "code": "F6PRCN",
+      "totalOdds": 2.23,
+      "legs": 2,
+      "link": "https://www.football.com/gh/?shareCode=F6PRCN",
+      "matches": [
+       "sr:match:72044816",
+       "sr:match:72202734"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ]
+   },
+   "missing": {
+    "msport": "not booked",
+    "betika": "not booked",
+    "betpawa": "not booked"
+   },
+   "label": "Top5 v Bottom3 screens · set · HIGH RISK",
+   "source": "t5b3-screens",
+   "meetsFloor": false,
+   "status": "pending"
+  }
+ ],
+ "legList": [
+  {
+   "eventId": "sr:match:72202734",
+   "marketId": "16",
+   "specifier": "hcp=-1",
+   "outcomeId": "1714",
+   "date": "2026-11-14",
+   "ko": "15:00",
+   "kickoff": "2026-11-14T15:00:00Z",
+   "league": "Scotland - Championship",
+   "match": "Livingston FC v Greenock Morton FC",
+   "market": "Asian Handicap -1",
+   "selection": "Home (-1.0)",
+   "odds": 1.4,
+   "liveOdds": 1.4,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": "5 v 9/10",
+   "x12": "1.28/5.80/9.30",
+   "case": "stronger AH-1 @1.4 (top5 v bottom3)",
+   "leagueFavRate": null,
+   "rate": null
+  },
+  {
+   "eventId": "sr:match:72044816",
+   "marketId": "16",
+   "specifier": "hcp=1",
+   "outcomeId": "1715",
+   "date": "2026-11-14",
+   "ko": "19:00",
+   "kickoff": "2026-11-14T19:00:00Z",
+   "league": "Netherlands - Eerste Divisie",
+   "match": "FC Dordrecht v Heracles Almelo",
+   "market": "Asian Handicap 1",
+   "selection": "Away (-1.0)",
+   "odds": 1.59,
+   "liveOdds": 1.59,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": "18 v 1/20",
+   "x12": "6.50/5.10/1.41",
+   "case": "stronger AH-1 @1.59 (top5 v bottom3)",
+   "leagueFavRate": null,
+   "rate": null
+  }
+ ],
+ "legs": 2,
+ "totalOdds": 2.23,
+ "hit": 0,
+ "total": 2,
+ "status": "pending"
+}
