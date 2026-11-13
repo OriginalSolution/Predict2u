@@ -234,6 +234,130 @@
     }
    ],
    "mixed": "built"
+  },
+  "2026-11-13": {
+   "built": "2026-11-13 21:46 GMT",
+   "slips": {
+    "MIXED": {
+     "name": "M1/M2 team 2+",
+     "codes": {
+      "sportybet": "B4U35U",
+      "footballcom": "B4U35U",
+      "msport": "B3JTE5G",
+      "betika": "mnXDqh",
+      "betpawa": "FEHE5O5"
+     },
+     "total": 1.24,
+     "legs": 1,
+     "meetsFloor": false,
+     "result": "pending"
+    }
+   },
+   "dropped": [
+    {
+     "match": "Norway v Wales",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "Home Team or Over 2.5 not allowed in a middle game (fav @1.25, table 4 v 3/4)"
+    },
+    {
+     "match": "Norway v Wales",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.25, table 4 v 3/4)"
+    },
+    {
+     "match": "Somalia v Ghana",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "Away or Over 2.5 not allowed in a middle game (fav @1.07, table 3 v 4/4)"
+    },
+    {
+     "match": "US Tourcoing FC v Reims",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "US Tourcoing FC v Reims",
+     "rule": "M2",
+     "selection": "Draw/Away & Over 1.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "US Tourcoing FC v Reims",
+     "rule": "T2",
+     "selection": "Away over 1.5 goals",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "C A Boulay v Sochaux-Montbeliard",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "C A Boulay v Sochaux-Montbeliard",
+     "rule": "M2",
+     "selection": "Draw/Away & Over 1.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "C A Boulay v Sochaux-Montbeliard",
+     "rule": "T2",
+     "selection": "Away over 1.5 goals",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Vendee Fontenay Foot v Clermont Foot",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Vendee Fontenay Foot v Clermont Foot",
+     "rule": "T2",
+     "selection": "Away over 1.5 goals",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Fco Firminy v FC Annecy",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Fco Firminy v FC Annecy",
+     "rule": "M2",
+     "selection": "Draw/Away & Over 1.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Fco Firminy v FC Annecy",
+     "rule": "T2",
+     "selection": "Away over 1.5 goals",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "St Ouen Aumone v US Boulogne",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "St Ouen Aumone v US Boulogne",
+     "rule": "M2",
+     "selection": "Draw/Away & Over 1.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "K.v.v. Quick Boys v Jong Almere City FC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Netherlands - Tweede Divisie: non-goals market Home Team or Over 2.5 not allowed"
+    }
+   ],
+   "mixed": "built"
   }
  }
 }
