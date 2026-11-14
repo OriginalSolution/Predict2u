@@ -90,8 +90,8 @@
        "sr:match:76617952",
        "sr:match:76708728"
       ],
-      "hit": 0,
-      "status": "pending"
+      "hit": 1,
+      "status": "lost"
      }
     ],
     "footballcom": [
@@ -136,8 +136,8 @@
        "sr:match:76617952",
        "sr:match:76708728"
       ],
-      "hit": 0,
-      "status": "pending"
+      "hit": 1,
+      "status": "lost"
      }
     ],
     "msport": [
@@ -179,8 +179,8 @@
        "sr:match:76617952",
        "sr:match:76708728"
       ],
-      "hit": 0,
-      "status": "pending"
+      "hit": 1,
+      "status": "lost"
      }
     ],
     "betika": [
@@ -223,8 +223,8 @@
        "sr:match:76617952",
        "sr:match:76708728"
       ],
-      "hit": 0,
-      "status": "pending"
+      "hit": 1,
+      "status": "lost"
      }
     ],
     "betpawa": [
@@ -262,7 +262,7 @@
        "sr:match:76708728"
       ],
       "hit": 0,
-      "status": "pending"
+      "status": "lost"
      }
     ]
    },
@@ -290,7 +290,7 @@
    "label": "Ascending odds · set · HIGH RISK",
    "source": "asc",
    "meetsFloor": true,
-   "status": "pending"
+   "status": "lost"
   }
  ],
  "legList": [
@@ -300,18 +300,18 @@
    "specifier": "total=2.5",
    "outcomeId": "12",
    "date": "2026-11-14",
-   "ko": "00:58",
-   "kickoff": "2026-11-14T00:58:00Z",
+   "ko": "01:00",
+   "kickoff": "2026-11-14T01:00:00Z",
    "league": "New Zealand - National League",
    "match": "Wellington Phoenix FC v Auckland City FC",
    "market": "Over/Under",
    "selection": "Over 2.5",
    "odds": 1.3,
-   "liveOdds": 1.96,
-   "result": "pending",
-   "matchStatus": "H2",
-   "score": "1:0",
-   "played": "59:06",
+   "liveOdds": 10.0,
+   "result": "lost",
+   "matchStatus": "Ended",
+   "score": "1:1",
+   "played": "90:00",
    "table": "10 v 3/12",
    "x12": "11.00/7.60/1.14",
    "case": "O2.5 3/3: O2.5@1.3, 1HO1.5@1.81, avgG=3.57/n=350",
@@ -332,9 +332,9 @@
    "selection": "Over 2.5",
    "odds": 1.38,
    "liveOdds": 1.34,
-   "result": "pending",
-   "matchStatus": "Not start",
-   "score": null,
+   "result": "won",
+   "matchStatus": "Ended",
+   "score": "3:2",
    "played": null,
    "table": "4 v 6/6",
    "x12": "1.48/4.30/5.20",
@@ -715,7 +715,7 @@
    "market": "Over/Under",
    "selection": "Over 2.5",
    "odds": 1.39,
-   "liveOdds": 1.39,
+   "liveOdds": 1.4,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -763,7 +763,7 @@
    "market": "Double Chance",
    "selection": "Home or Draw",
    "odds": 1.2,
-   "liveOdds": 1.2,
+   "liveOdds": 1.22,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -883,7 +883,7 @@
    "market": "Double Chance",
    "selection": "Home or Draw",
    "odds": 1.12,
-   "liveOdds": 1.12,
+   "liveOdds": 1.11,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -907,7 +907,7 @@
    "market": "Double Chance",
    "selection": "Draw or Away",
    "odds": 1.31,
-   "liveOdds": 1.31,
+   "liveOdds": 1.34,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -1113,7 +1113,7 @@
  ],
  "legs": 34,
  "totalOdds": 4117.83,
- "hit": 0,
+ "hit": 1,
  "total": 34,
- "status": "pending"
+ "status": "lost"
 }
