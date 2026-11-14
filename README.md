@@ -1,3 +1,5 @@
+> **New here? Read [HANDOFF.md](HANDOFF.md)** — full hand-off note: what Predict2u is, repos, workflows, services, secrets (names only), rules and how to run/deploy.
+
 # Predict2U Final Week-Fixture Replacement Pack v239
 
 This pack contains only the final files required for the seven-day fixture pipeline.
