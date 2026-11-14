@@ -27,7 +27,7 @@
        "sr:match:72202734"
       ],
       "hit": 1,
-      "status": "pending"
+      "status": "won"
      }
     ],
     "footballcom": [
@@ -41,7 +41,7 @@
        "sr:match:72202734"
       ],
       "hit": 1,
-      "status": "pending"
+      "status": "won"
      }
     ]
    },
@@ -53,7 +53,7 @@
    "label": "Top5 v Bottom3 screens · set · HIGH RISK",
    "source": "t5b3-screens",
    "meetsFloor": false,
-   "status": "pending"
+   "status": "won"
   }
  ],
  "legList": [
@@ -95,10 +95,10 @@
    "selection": "Away (-1.0)",
    "odds": 1.58,
    "liveOdds": 1.53,
-   "result": "pending",
-   "matchStatus": "H2",
-   "score": "0:2",
-   "played": "86:33",
+   "result": "void",
+   "matchStatus": "Ended",
+   "score": "1:2",
+   "played": "90:00",
    "table": "18 v 1/20",
    "x12": "6.50/5.20/1.41",
    "case": "stronger AH-1 @1.58 (top5 v bottom3)",
@@ -110,5 +110,5 @@
  "totalOdds": 2.2,
  "hit": 1,
  "total": 2,
- "status": "pending"
+ "status": "won"
 }
