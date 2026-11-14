@@ -358,6 +358,105 @@
     }
    ],
    "mixed": "built"
+  },
+  "2026-11-14": {
+   "built": "2026-11-14 21:45 GMT",
+   "slips": {
+    "M1": {
+     "name": "M1 Team or Over 2.5",
+     "codes": {
+      "sportybet": "FT3GKB",
+      "footballcom": "FT3GKB",
+      "msport": "B3K9Z28"
+     },
+     "total": 1.09,
+     "legs": 1,
+     "meetsFloor": false,
+     "result": "pending"
+    },
+    "M2": {
+     "name": "M2 Double Chance & Over 1.5",
+     "codes": {
+      "sportybet": "ANSPNG",
+      "footballcom": "ANSPNG"
+     },
+     "total": 1.08,
+     "legs": 1,
+     "meetsFloor": false,
+     "result": "pending"
+    },
+    "MIXED": {
+     "name": "M1/M2 team 2+",
+     "codes": {
+      "sportybet": "DPUP9M",
+      "footballcom": "DPUP9M",
+      "msport": "B3K9Z2T",
+      "betika": "HLHyTF",
+      "betpawa": "F1LCGE0"
+     },
+     "total": 1.24,
+     "legs": 1,
+     "meetsFloor": false,
+     "result": "pending"
+    }
+   },
+   "dropped": [
+    {
+     "match": "Finland v San Marino",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "Home Team or Over 2.5 not allowed in a middle game (fav @1.05, table 3 v 4/4)"
+    },
+    {
+     "match": "Finland v San Marino",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.05, table 3 v 4/4)"
+    },
+    {
+     "match": "Somalia v Ghana",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "Away or Over 2.5 not allowed in a middle game (fav @1.09, table 3 v 4/4)"
+    },
+    {
+     "match": "Martinique v Aruba",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — International - CONCACAF Nations League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Martinique v Aruba",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.19, table 5 v 2/6)"
+    },
+    {
+     "match": "Trinidad and Tobago v Antigua and Barbuda",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — International - CONCACAF Nations League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Trinidad and Tobago v Antigua and Barbuda",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.15, table 5 v 1/6)"
+    },
+    {
+     "match": "Trinidad and Tobago v Antigua and Barbuda",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.15, table 5 v 1/6)"
+    },
+    {
+     "match": "San Juan FC v Metropolitan FA San Juan",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Puerto Rico - LPR Pro: non-goals market Away or Over 2.5 not allowed"
+    }
+   ],
+   "mixed": "built"
   }
  }
 }
