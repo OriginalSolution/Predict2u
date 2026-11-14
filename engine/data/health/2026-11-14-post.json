@@ -1,0 +1,198 @@
+{
+ "checkedAt": "2026-11-14T07:30:24Z",
+ "mode": "post",
+ "ok": false,
+ "problems": [
+  {
+   "area": "site",
+   "msg": "live-scores.json is stale: last updated 2026-11-14 00:25 GMT (7h ago, limit 4h)"
+  }
+ ],
+ "warnings": [
+  {
+   "area": "codes",
+   "msg": "1 of 338 published live codes no longer load or have no match left; hidden via dead-codes.json: betpawa None (BOOKING_CODE_INVALID)"
+  }
+ ],
+ "healed": [
+  "hid 1 dead codes on the site (dead-codes.json)"
+ ],
+ "passed": [
+  {
+   "area": "code",
+   "msg": "no undefined names in engine/ (pyflakes)"
+  },
+  {
+   "area": "code",
+   "msg": "engine.check_rules passed"
+  },
+  {
+   "area": "code",
+   "msg": "97 engine files compile; 12 engine modules checked for import"
+  },
+  {
+   "area": "site",
+   "msg": "all 217 pages return 200"
+  },
+  {
+   "area": "site",
+   "msg": "home-picks.json fresh (0.4h old)"
+  },
+  {
+   "area": "site",
+   "msg": "picks.json fresh (9.3h old)"
+  },
+  {
+   "area": "site",
+   "msg": "high_odds.json fresh (0.4h old)"
+  },
+  {
+   "area": "site",
+   "msg": "hot-picks.json fresh (7.1h old)"
+  },
+  {
+   "area": "site",
+   "msg": "record.json fresh (7.2h old)"
+  },
+  {
+   "area": "site",
+   "msg": "news-hub.json fresh (0.1h old)"
+  },
+  {
+   "area": "site",
+   "msg": "data-meta.json fresh (1.2h old)"
+  },
+  {
+   "area": "site",
+   "msg": "staked-codes.json fresh (0.1h old)"
+  },
+  {
+   "area": "site",
+   "msg": "fixtures.js fresh (1.2h old)"
+  },
+  {
+   "area": "site",
+   "msg": "sportybet-odds.js fresh (1.2h old)"
+  },
+  {
+   "area": "site",
+   "msg": "current-data.js fresh (1.2h old)"
+  },
+  {
+   "area": "favourites",
+   "msg": "favourites by league: 165 leagues, 804 fixtures on the site"
+  },
+  {
+   "area": "actions",
+   "msg": "on-time ticker is running"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-fav-leagues.yml 06:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-strategy-master.yml 06:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-morning.yml 07:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-shield.yml 21:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-m1m2.yml 21:45 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-daily.yml 22:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-strategies.yml 22:30 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-gg.yml 23:10 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-nysm.yml 23:30 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-nt-tomorrow.yml 23:50 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-settle.yml 06:15 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "sportybet-odds.yml 06:19 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-self-heal.yml 06:15 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "daymasters-guard.yml 07:10 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-refresh.yml 06:25 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "daily-picks-email.yml 00:15 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "results-email.yml 00:30 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "tracker-email.yml 00:45 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "post-social.yml 00:50 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-health.yml 23:15 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-watchdog.yml 07:05 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "monitor.yml 01:17 slot succeeded"
+  },
+  {
+   "area": "registry",
+   "msg": "39 workflows read, 17 run engine commands, 23 on the ticker"
+  }
+ ],
+ "sections": {
+  "codes": {
+   "checked": 338,
+   "dead": [
+    {
+     "book": "betpawa",
+     "code": "None",
+     "reason": "BOOKING_CODE_INVALID",
+     "in": [
+      "home-picks.json"
+     ]
+    }
+   ],
+   "uncheckable": []
+  }
+ }
+}
