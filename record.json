@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-15T21:02:14Z",
+ "DATA_UPDATED": "2026-11-15T22:05:23Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -13,7 +13,7 @@
   "returned": 2383.0,
   "profit": 153.0,
   "roi": 6.9,
-  "pending": 81,
+  "pending": 83,
   "codesSettled": 908,
   "codesWon": 126,
   "codesLost": 782
@@ -513,10 +513,10 @@
   }
  ],
  "picks": {
-  "settled": 2263,
-  "won": 1689,
-  "lost": 574,
-  "winRate": 74.6
+  "settled": 2270,
+  "won": 1695,
+  "lost": 575,
+  "winRate": 74.7
  },
  "recent": [
   {
@@ -543,7 +543,7 @@
      "selection": "Home",
      "odds": 1.21,
      "result": "pending",
-     "score": "0:0"
+     "score": "1:0"
     },
     {
      "match": "Angelana 1930 v L’Aquila Calcio 1927",
@@ -788,7 +788,7 @@
      "selection": "Home",
      "odds": 1.35,
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Gsd Ghivizzano Borgoamozzano v Ternana Calcio",
@@ -926,7 +926,7 @@
    "kind": "high-odds",
    "odds": 134.7,
    "status": "lost",
-   "hit": 9,
+   "hit": 11,
    "total": 15,
    "profit": -10.0,
    "legs": [
@@ -948,8 +948,8 @@
      "match": "Danubio FC v Liverpool Montevideo",
      "selection": "Under 3.5",
      "odds": 1.26,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "1:2"
     },
     {
      "match": "Barletta Calcio v Altamura Societa' Sportiva SRL",
@@ -984,14 +984,14 @@
      "selection": "Yes",
      "odds": 1.64,
      "result": "pending",
-     "score": null
+     "score": "1:2"
     },
     {
      "match": "Croatia v Czechia",
      "selection": "Over 1.5",
      "odds": 1.21,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "2:1"
     },
     {
      "match": "Stade Payerne v FC Coffrane",
@@ -1787,7 +1787,7 @@
    "kind": "banker",
    "odds": 26.92,
    "status": "lost",
-   "hit": 11,
+   "hit": 13,
    "total": 17,
    "profit": -10.0,
    "legs": [
@@ -1844,7 +1844,7 @@
      "match": "CA Alvarado v CA Sarmiento de la Banda",
      "selection": "Under 3.5",
      "odds": 1.2,
-     "result": "pending",
+     "result": "won",
      "score": "0:0"
     },
     {
@@ -1900,7 +1900,7 @@
      "match": "Dunbeholden FC v Chapelton Maroons FC",
      "selection": "Under 3.5",
      "odds": 1.27,
-     "result": "pending",
+     "result": "won",
      "score": "2:1"
     },
     {
@@ -1920,7 +1920,7 @@
    "kind": "slip",
    "odds": 122673472849.4,
    "status": "lost",
-   "hit": 63,
+   "hit": 65,
    "total": 95,
    "profit": -10.0,
    "legs": [
@@ -2214,7 +2214,7 @@
    "kind": "alternative",
    "odds": 30.55,
    "status": "lost",
-   "hit": 10,
+   "hit": 11,
    "total": 14,
    "profit": -10.0,
    "legs": [
@@ -2257,7 +2257,7 @@
      "match": "Dunbeholden FC v Chapelton Maroons FC",
      "selection": "Under 3.5",
      "odds": 1.27,
-     "result": "pending",
+     "result": "won",
      "score": "2:1"
     },
     {
@@ -2326,7 +2326,7 @@
    "kind": "alternative",
    "odds": 29.05,
    "status": "lost",
-   "hit": 10,
+   "hit": 12,
    "total": 16,
    "profit": -10.0,
    "legs": [
@@ -2341,7 +2341,7 @@
      "match": "CA Alvarado v CA Sarmiento de la Banda",
      "selection": "Under 3.5",
      "odds": 1.2,
-     "result": "pending",
+     "result": "won",
      "score": "0:0"
     },
     {
@@ -2397,7 +2397,7 @@
      "match": "Dunbeholden FC v Chapelton Maroons FC",
      "selection": "Under 3.5",
      "odds": 1.27,
-     "result": "pending",
+     "result": "won",
      "score": "2:1"
     },
     {
@@ -2655,7 +2655,7 @@
    "kind": "slip",
    "odds": 6.63,
    "status": "lost",
-   "hit": 8,
+   "hit": 9,
    "total": 10,
    "profit": -10.0,
    "legs": [
@@ -2698,7 +2698,7 @@
      "match": "CA Alvarado v CA Sarmiento de la Banda",
      "selection": "Under 3.5",
      "odds": 1.11,
-     "result": "pending",
+     "result": "won",
      "score": "0:0"
     },
     {
