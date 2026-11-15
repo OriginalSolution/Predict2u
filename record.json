@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-15T09:23:20Z",
+ "DATA_UPDATED": "2026-11-15T10:15:35Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -513,9 +513,9 @@
   }
  ],
  "picks": {
-  "settled": 2120,
-  "won": 1581,
-  "lost": 539,
+  "settled": 2125,
+  "won": 1585,
+  "lost": 540,
   "winRate": 74.6
  },
  "recent": [
@@ -723,7 +723,7 @@
    "kind": "high-odds",
    "odds": 134.7,
    "status": "lost",
-   "hit": 2,
+   "hit": 3,
    "total": 15,
    "profit": -10.0,
    "legs": [
@@ -759,8 +759,8 @@
      "match": "Kashiwa Reysol v Kawasaki Frontale",
      "selection": "Yes",
      "odds": 1.47,
-     "result": "pending",
-     "score": "3:3"
+     "result": "won",
+     "score": "5:4"
     },
     {
      "match": "Kashima Antlers v Yokohama F Marinos",
@@ -1472,7 +1472,7 @@
    "kind": "slip",
    "odds": 122673472849.4,
    "status": "lost",
-   "hit": 11,
+   "hit": 13,
    "total": 95,
    "profit": -10.0,
    "legs": [
@@ -1502,7 +1502,7 @@
      "selection": "Yes",
      "odds": 1.45,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Servette FC  v FC La Chaux De Fonds",
@@ -1592,71 +1592,71 @@
      "match": "South China FC v 3 Sing FC",
      "selection": "Yes",
      "odds": 1.85,
-     "result": "pending",
-     "score": "3:0"
+     "result": "lost",
+     "score": "4:0"
     },
     {
      "match": "Freiburg SRL v Austria Wien SRL",
      "selection": "Over 1.5",
      "odds": 1.2,
-     "result": "pending",
-     "score": "0:2"
+     "result": "won",
+     "score": "1:2"
     },
     {
      "match": "Man Utd SRL v Galatasaray SRL",
      "selection": "Over 1.5",
      "odds": 1.17,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "2:0"
     },
     {
      "match": "Finland SRL v San Marino SRL",
      "selection": "Over 1.5",
      "odds": 1.11,
      "result": "pending",
-     "score": "2:1"
+     "score": "3:1"
     },
     {
      "match": "AZ Alkmaar SRL v Toulouse SRL",
      "selection": "Over 1.5",
      "odds": 1.17,
      "result": "pending",
-     "score": "0:0"
+     "score": "1:0"
     },
     {
      "match": "SK Slovan HAC v Simmeringer SC",
      "selection": "Over 2.5",
      "odds": 1.43,
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "AFC Chindia Targoviste v Fotbal Club FCSB",
      "selection": "Over 1.5",
      "odds": 1.22,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "France SRL v Turkiye SRL",
      "selection": "Over 1.5",
      "odds": 1.14,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Marseille SRL v Groningen SRL",
      "selection": "Over 1.5",
      "odds": 1.27,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "FC Kaluga v FC Sokol Saratov",
      "selection": "Over 1.5",
      "odds": 1.35,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Apollon Kalamarias v Kallithea FC",
