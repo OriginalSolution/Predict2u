@@ -50,8 +50,8 @@
        "sr:match:76229052",
        "sr:match:76724838"
       ],
-      "hit": 8,
-      "status": "pending"
+      "hit": 9,
+      "status": "lost"
      }
     ],
     "footballcom": [
@@ -76,7 +76,7 @@
        "sr:match:76724838"
       ],
       "hit": 8,
-      "status": "pending"
+      "status": "lost"
      }
     ],
     "msport": [
@@ -98,8 +98,8 @@
        "sr:match:74441518",
        "sr:match:76229052"
       ],
-      "hit": 6,
-      "status": "pending"
+      "hit": 7,
+      "status": "lost"
      }
     ],
     "betika": [
@@ -123,8 +123,8 @@
        "sr:match:76229052",
        "sr:match:76724838"
       ],
-      "hit": 8,
-      "status": "pending"
+      "hit": 9,
+      "status": "lost"
      }
     ],
     "betpawa": [
@@ -172,7 +172,7 @@
    "label": "Ascending odds · set · HIGH RISK",
    "source": "asc",
    "meetsFloor": false,
-   "status": "pending"
+   "status": "lost"
   }
  ],
  "legList": [
@@ -382,9 +382,9 @@
    "selection": "Over 2.5",
    "odds": 1.25,
    "liveOdds": 1.25,
-   "result": "pending",
-   "matchStatus": "Not start",
-   "score": null,
+   "result": "lost",
+   "matchStatus": "Ended",
+   "score": "2:0",
    "played": null,
    "table": "4 v 11/16",
    "x12": "1.26/5.90/7.30",
@@ -405,11 +405,11 @@
    "market": "Over/Under",
    "selection": "Over 2.5",
    "odds": 1.37,
-   "liveOdds": 1.47,
-   "result": "pending",
-   "matchStatus": "H1",
-   "score": "0:0",
-   "played": "10:00",
+   "liveOdds": 1.8,
+   "result": "won",
+   "matchStatus": "Ended",
+   "score": "3:0",
+   "played": "90:00",
    "table": "3 v 15/16",
    "x12": "1.22/5.70/9.40",
    "case": "O2.5 3/3: O2.5@1.37, 1HO1.5@1.88, avgG=3.31/n=86",
@@ -429,11 +429,11 @@
    "market": "Double Chance",
    "selection": "Home or Draw",
    "odds": 1.11,
-   "liveOdds": 1.11,
+   "liveOdds": 1.06,
    "result": "pending",
-   "matchStatus": "Not start",
-   "score": null,
-   "played": null,
+   "matchStatus": "H1",
+   "score": "0:0",
+   "played": "14:36",
    "table": "9 v 16/18",
    "x12": "1.51/3.60/6.30",
    "case": "bottom3/form DC against Away @1.11",
@@ -515,7 +515,7 @@
  ],
  "legs": 14,
  "totalOdds": 20.59,
- "hit": 8,
+ "hit": 9,
  "total": 14,
- "status": "pending"
+ "status": "lost"
 }
