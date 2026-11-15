@@ -457,6 +457,135 @@
     }
    ],
    "mixed": "built"
+  },
+  "2026-11-15": {
+   "built": "2026-11-15 21:46 GMT",
+   "slips": {
+    "M2": {
+     "name": "M2 Double Chance & Over 1.5",
+     "codes": {
+      "sportybet": "CEQMG6",
+      "footballcom": "CEQMG6",
+      "msport": "B3KQDNH",
+      "betika": "ZBbjcA"
+     },
+     "total": 1.21,
+     "legs": 2,
+     "meetsFloor": false,
+     "result": "pending"
+    }
+   },
+   "dropped": [
+    {
+     "match": "Guadeloupe v Bermuda",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — International - CONCACAF Nations League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Guadeloupe v Bermuda",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.27, table 3 v 4/6)"
+    },
+    {
+     "match": "Martinique v Aruba",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — International - CONCACAF Nations League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Martinique v Aruba",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.15, table 5 v 2/6)"
+    },
+    {
+     "match": "Martinique v Aruba",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.15, table 5 v 2/6)"
+    },
+    {
+     "match": "Trinidad and Tobago v Antigua and Barbuda",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — International - CONCACAF Nations League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Trinidad and Tobago v Antigua and Barbuda",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.14, table 5 v 1/6)"
+    },
+    {
+     "match": "Trinidad and Tobago v Antigua and Barbuda",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.14, table 5 v 1/6)"
+    },
+    {
+     "match": "Canada v Guatemala",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — International - CONCACAF Nations League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Canada v Guatemala",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "USA v Haiti",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — International - CONCACAF Nations League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "USA v Haiti",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Mexico v Jamaica",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — International - CONCACAF Nations League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Mexico v Jamaica",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "CR Flamengo RJ v CA Paranaense PR",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "both teams in league top 5 (1 v 5/20)"
+    },
+    {
+     "match": "CR Flamengo RJ v CA Paranaense PR",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "both teams in league top 5 (1 v 5/20)"
+    },
+    {
+     "match": "Al Wasl FC v Hatta SC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — United Arab Emirates - Arabian Gulf League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Al Ain FC v Al Dhafra SSC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — United Arab Emirates - Arabian Gulf League: non-goals market Home Team or Over 2.5 not allowed"
+    }
+   ],
+   "mixed": "not built (no team-2+ leg cleared the gates)"
   }
  }
 }
