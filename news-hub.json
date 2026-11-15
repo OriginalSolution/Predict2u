@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-15T19:25:13+00:00",
+ "updatedAt": "2026-11-15T20:25:12+00:00",
  "sources": [
   "BBC Sport",
   "ESPN",
@@ -8,18 +8,6 @@
   "SportyBet match centre (final scores)"
  ],
  "fixtures": [
-  {
-   "date": "2026-11-15",
-   "ko": "19:00",
-   "league": "Argentina - Torneo Federal A",
-   "match": "CA Alvarado v CA Sarmiento de la Banda"
-  },
-  {
-   "date": "2026-11-15",
-   "ko": "20:00",
-   "league": "Jamaica - Premier League",
-   "match": "Dunbeholden FC v Chapelton Maroons FC"
-  },
   {
    "date": "2026-11-15",
    "ko": "21:00",
@@ -45,8 +33,18 @@
    "summary": "Updates from 7.45pm (GMT) kick-off in Madrid Get in touch: email Daniel and follow us on BlueSky Tuchel speaks, telling ITV that “it’s a beautiful match”. They’ve qualified, done their homework and now can try and…",
    "source": "The Guardian",
    "link": "https://www.theguardian.com/football/live/2026/nov/15/spain-v-england-nations-league-live",
-   "published": "2026-11-15T19:11:03+00:00",
-   "image": "https://i.guim.co.uk/img/media/eb25859a484613d72c89348a46cf89f5e6032344/252_0_2497_1998/master/2497.jpg?width=140&quality=85&auto=format&fit=max&s=e3687b3721512af69b3aaf271a206b0e",
+   "published": "2026-11-15T20:15:10+00:00",
+   "image": "https://i.guim.co.uk/img/media/083e746d283d6ba8ad4a69115356404436725c27/853_331_2429_1944/master/2429.jpg?width=140&quality=85&auto=format&fit=max&s=6355054736b9660bf44945c7a502415a",
+   "ourFixture": false,
+   "preview": true
+  },
+  {
+   "title": "Aston Villa beat Birmingham in WSL derby",
+   "summary": "Mathilde Harviken scores the only goal as Aston Villa beat Birmingham City in their first Women's Super League derby since May 2022.",
+   "source": "BBC Sport",
+   "link": "https://www.bbc.co.uk/sport/football/videos/cjp3v5pndyz1o",
+   "published": "2026-11-15T19:47:37+00:00",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/2b5a/live/dbf1e190-e10e-11f1-a2d0-ff163dc3689d.jpg",
    "ourFixture": false,
    "preview": true
   },
@@ -55,7 +53,7 @@
    "summary": "Brazil legend Ronaldinho makes his comeback aged 46 for Ravenna, playing the first half of their Italian third-tier derby against Forli.",
    "source": "BBC Sport",
    "link": "https://www.bbc.co.uk/sport/football/articles/ckregz4g823xo",
-   "published": "2026-11-15T18:33:36+00:00",
+   "published": "2026-11-15T19:31:48+00:00",
    "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/45e6/live/30f37df0-e116-11f1-a7db-d90284d21c62.jpg",
    "ourFixture": false,
    "preview": true
@@ -71,32 +69,12 @@
    "preview": true
   },
   {
-   "title": "England latest: King among trio left out of squad for Spain clash",
-   "summary": "",
-   "source": "Sky Sports",
-   "link": "https://www.skysports.com/football/live-blog/11095/13427059/england-football-news-live-updates-schedule-and-analysis-of-thomas-tuchels-three-lions",
-   "published": "2026-11-15T10:28:00+00:00",
-   "image": "https://e1.365dm.com/25/09/1920x1080/skysports-england-tuchel-thomas_7014353.jpg?20250908122212",
-   "ourFixture": false,
-   "preview": true
-  },
-  {
    "title": "How Spain's humble superstar Simon became world's best keeper",
    "summary": "As Spain prepare to host England in the Nations League, BBC Sport columnist Guillem Balague charts the rise of Unai Simon to become the world's best keeper.",
    "source": "BBC Sport",
    "link": "https://www.bbc.co.uk/sport/football/articles/cqvg23nv0jw2o",
    "published": "2026-11-15T07:29:30+00:00",
    "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/41cb/live/396f38d0-dddc-11f1-b865-d17d8611efca.jpg",
-   "ourFixture": false,
-   "preview": true
-  },
-  {
-   "title": "Tuchel unhappy as anti-racism protocol questions overshadow Spain clash",
-   "summary": "Thomas Tuchel insisted his words had been \"twisted\" as questions over anti-racism protocols overshadowed the build-up to England's Nations League showdown in Madrid.",
-   "source": "Sky Sports",
-   "link": "https://www.skysports.com/football/news/11095/13612301/thomas-tuchel-england-boss-unhappy-as-anti-racism-protocol-questions-overshadow-nations-league-test-in-spain",
-   "published": "2026-11-14T21:00:00+00:00",
-   "image": "https://e2.365dm.com/26/11/1920x1080/skysports-thomas-tuchel-england_7406703.jpg?20261114203201",
    "ourFixture": false,
    "preview": true
   },
@@ -345,11 +323,11 @@
   }
  ],
  "record": {
-  "won": 25,
+  "won": 27,
   "lost": 187,
-  "settled": 212,
+  "settled": 214,
   "pending": 46,
-  "winRate": 11.8
+  "winRate": 12.6
  },
  "codes": [
   {
@@ -402,7 +380,7 @@
     {
      "match": "AS Cittadella v US Folgore Caratese",
      "selection": "Home",
-     "result": "pending",
+     "result": "lost",
      "score": "2:2"
     },
     {
@@ -529,7 +507,7 @@
    "kind": "slip",
    "odds": 1203.22,
    "status": "lost",
-   "hit": 17,
+   "hit": 19,
    "total": 27,
    "legs": [
     {
@@ -613,7 +591,7 @@
     {
      "match": "Ravenna FC 1913 v Forli FC",
      "selection": "Home",
-     "result": "pending",
+     "result": "won",
      "score": "2:0"
     },
     {
@@ -673,7 +651,7 @@
     {
      "match": "US Yacoub Mansour v US Musulmane Oujda",
      "selection": "Home",
-     "result": "pending",
+     "result": "won",
      "score": "1:0"
     },
     {
@@ -717,7 +695,7 @@
      "match": "France v Turkiye",
      "selection": "France",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Cyprus v Montenegro",
@@ -748,7 +726,7 @@
      "match": "France v Turkiye",
      "selection": "France",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Cyprus v Montenegro",
@@ -779,7 +757,7 @@
      "match": "France v Turkiye",
      "selection": "France",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Cyprus v Montenegro",
@@ -810,7 +788,7 @@
      "match": "France v Turkiye",
      "selection": "France",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Cyprus v Montenegro",
@@ -841,7 +819,7 @@
      "match": "France v Turkiye",
      "selection": "France",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Cyprus v Montenegro",
@@ -866,7 +844,7 @@
      "match": "France v Turkiye",
      "selection": "France",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -885,7 +863,7 @@
      "match": "France v Turkiye",
      "selection": "France",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -904,7 +882,7 @@
      "match": "France v Turkiye",
      "selection": "France",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -1266,7 +1244,7 @@
    "kind": "slip",
    "odds": 22.81,
    "status": "lost",
-   "hit": 10,
+   "hit": 11,
    "total": 17,
    "legs": [
     {
@@ -1278,7 +1256,7 @@
     {
      "match": "Deportivo Moron v CA Colegiales",
      "selection": "Under 3.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -1363,7 +1341,7 @@
      "match": "Dunbeholden FC v Chapelton Maroons FC",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "CD Manacor v UD Alcudia",
@@ -1381,7 +1359,7 @@
    "kind": "slip",
    "odds": 122673472849.4,
    "status": "lost",
-   "hit": 60,
+   "hit": 62,
    "total": 95,
    "legs": [
     {
@@ -1873,13 +1851,13 @@
     {
      "match": "Club Cipolletti v Juventud Antoniana",
      "selection": "Over 1.5",
-     "result": "pending",
-     "score": "2:0"
+     "result": "won",
+     "score": "3:0"
     },
     {
      "match": "Deportivo Moron v CA Colegiales",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -1898,19 +1876,19 @@
      "match": "Croatia v Czechia",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "France v Turkiye",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Aguilas de la Universidad de Panama v Veraguas United FC B",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "CD Cobreloa Calama v Puerto Montt",
@@ -1964,7 +1942,7 @@
    "kind": "slip",
    "odds": 30.55,
    "status": "lost",
-   "hit": 9,
+   "hit": 10,
    "total": 14,
    "legs": [
     {
@@ -2001,7 +1979,7 @@
      "match": "Dunbeholden FC v Chapelton Maroons FC",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Defensor Sporting v CA Penarol Montevideo",
@@ -2018,7 +1996,7 @@
     {
      "match": "Real Murcia CF v AD Alcorcon",
      "selection": "Under 3.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:2"
     },
     {
@@ -2122,7 +2100,7 @@
      "match": "Dunbeholden FC v Chapelton Maroons FC",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "CD Manacor v UD Alcudia",
@@ -2458,7 +2436,7 @@
      "match": "France v Turkiye",
      "selection": "France",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -2477,7 +2455,7 @@
      "match": "France v Turkiye",
      "selection": "France",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -2496,7 +2474,7 @@
      "match": "France v Turkiye",
      "selection": "France",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -2515,7 +2493,7 @@
      "match": "France v Turkiye",
      "selection": "France",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -2534,7 +2512,7 @@
      "match": "France v Turkiye",
      "selection": "France",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -4310,9 +4288,9 @@
    "name": "Hot Picks slip",
    "kind": "slip",
    "odds": 8.33,
-   "status": "lost",
-   "hit": 8,
-   "total": 9,
+   "status": "won",
+   "hit": 7,
+   "total": 7,
    "legs": [
     {
      "match": "Real Valladolid v CD Castellon",
@@ -4325,18 +4303,6 @@
      "selection": "Over 2",
      "result": "won",
      "score": "3:3"
-    },
-    {
-     "match": "UD Almeria v FC Andorra",
-     "selection": "UD Almeria",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "SD Eibar v Cadiz CF",
-     "selection": "SD Eibar",
-     "result": "lost",
-     "score": "1:1"
     },
     {
      "match": "Carlisle United v Boston United FC",
@@ -4573,9 +4539,9 @@
    "name": "Top 5 hot picks",
    "kind": "slip",
    "odds": 3.26,
-   "status": "lost",
-   "hit": 4,
-   "total": 5,
+   "status": "won",
+   "hit": 3,
+   "total": 3,
    "legs": [
     {
      "match": "Real Valladolid v CD Castellon",
@@ -4588,18 +4554,6 @@
      "selection": "Over 2",
      "result": "won",
      "score": "3:3"
-    },
-    {
-     "match": "UD Almeria v FC Andorra",
-     "selection": "UD Almeria",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "SD Eibar v Cadiz CF",
-     "selection": "SD Eibar",
-     "result": "lost",
-     "score": "1:1"
     },
     {
      "match": "Carlisle United v Boston United FC",
