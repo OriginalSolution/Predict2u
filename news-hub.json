@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-15T22:25:11+00:00",
+ "updatedAt": "2026-11-15T22:58:50+00:00",
  "sources": [
   "BBC Sport",
   "ESPN",
@@ -284,12 +284,21 @@
  ],
  "transfers": [
   {
+   "title": "Papers: Guardiola to reject USA approach to replace Pochettino",
+   "summary": "The top stories and transfer rumours from Monday's newspapers...",
+   "source": "Sky Sports",
+   "link": "https://www.skysports.com/football/news/11095/13612630/pep-guardiola-usa-approach-to-replace-mauricio-pochettino-to-be-rejected-by-ex-man-city-boss-paper-talk",
+   "published": "2026-11-15T22:45:00+00:00",
+   "image": "https://e2.365dm.com/26/08/1920x1080/skysports-paper-talk-football_7317647.jpg?20260809160824",
+   "ourFixture": false
+  },
+  {
    "title": "Man Utd target Fulham's Bassey - Monday's gossip",
    "summary": "Manchester United target Fulham's Calvin Bassey and Brentford's Nathan Collins, AC Milan want Real Madrid's Endrick on loan, plus more.",
    "source": "BBC Sport",
    "link": "https://www.bbc.co.uk/sport/football/articles/cklyegvq86w8o",
    "published": "2026-11-15T20:47:44+00:00",
-   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/a569/live/89f0acc0-e12f-11f1-ac15-d140d3bbd516.png",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3cbd/live/8908cdb0-e143-11f1-a2d0-ff163dc3689d.png",
    "ourFixture": false
   },
   {
@@ -399,56 +408,16 @@
    "published": "2026-09-01T12:12:32+00:00",
    "image": "https://i.guim.co.uk/img/media/c4db9b3a05f09dc57dbb617f0d3fe452157908c5/0_0_5000_4000/master/5000.jpg?width=140&quality=85&auto=format&fit=max&s=06010102296289a1fdca98db21bfaf76",
    "ourFixture": false
-  },
-  {
-   "title": "Life as a Wag in the transfer window",
-   "summary": "What is life like for footballers' families during the transfer window where a last-minute deal means you need to uproot your life and move hundreds of miles?",
-   "source": "BBC Sport",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cx2jpgj24vlo",
-   "published": "2026-08-08T05:15:34+00:00",
-   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8ebc/live/82fc5780-925f-11f1-b9ff-37ae3aba3894.jpg",
-   "ourFixture": false
   }
  ],
  "record": {
-  "won": 29,
+  "won": 28,
   "lost": 187,
-  "settled": 216,
-  "pending": 40,
-  "winRate": 13.4
+  "settled": 215,
+  "pending": 42,
+  "winRate": 13.0
  },
  "codes": [
-  {
-   "code": "D2MTTV",
-   "book": "sportybet",
-   "date": "2026-11-15",
-   "name": "Slip 1",
-   "kind": "slip",
-   "odds": 1.75,
-   "status": "pending",
-   "hit": 0,
-   "total": 3,
-   "legs": [
-    {
-     "match": "Taurinos Cayey v Ponce FC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Aragua FC v Deportivo Lara",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Montevideo Wanderers v CA Juventud de Las Piedras",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
   {
    "code": "C8MD2B",
    "book": "sportybet",
@@ -470,7 +439,7 @@
      "match": "Deportivo San Pedro v CD Marquense",
      "selection": "Home",
      "result": "pending",
-     "score": "1:0"
+     "score": "2:0"
     },
     {
      "match": "Angelana 1930 v L’Aquila Calcio 1927",
@@ -681,7 +650,7 @@
      "match": "CD Cobreloa Calama v Puerto Montt",
      "selection": "Home",
      "result": "pending",
-     "score": "1:0"
+     "score": "2:0"
     },
     {
      "match": "Gsd Ghivizzano Borgoamozzano v Ternana Calcio",
@@ -1199,6 +1168,37 @@
    ]
   },
   {
+   "code": "D2MTTV",
+   "book": "sportybet",
+   "date": "2026-11-15",
+   "name": "Slip 1",
+   "kind": "slip",
+   "odds": 1.75,
+   "status": "pending",
+   "hit": 0,
+   "total": 3,
+   "legs": [
+    {
+     "match": "Taurinos Cayey v Ponce FC",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Aragua FC v Deportivo Lara",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Montevideo Wanderers v CA Juventud de Las Piedras",
+     "selection": "Under 3.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
    "code": "EJNYJF",
    "book": "sportybet",
    "date": "2026-11-14",
@@ -1671,7 +1671,7 @@
    "kind": "slip",
    "odds": 122673472849.4,
    "status": "lost",
-   "hit": 65,
+   "hit": 67,
    "total": 95,
    "legs": [
     {
@@ -2199,26 +2199,26 @@
     {
      "match": "Aguilas de la Universidad de Panama v Veraguas United FC B",
      "selection": "Over 2.5",
-     "result": "pending",
+     "result": "won",
      "score": "2:1"
     },
     {
      "match": "CD Cobreloa Calama v Puerto Montt",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "1:0"
+     "score": "2:0"
     },
     {
      "match": "Cerro Porteno v Sol de America Villa Elisa",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     },
     {
      "match": "Deportivo San Pedro v CD Marquense",
      "selection": "Over 1.5",
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "2:0"
     },
     {
      "match": "Panama v Curacao",
@@ -2236,7 +2236,7 @@
      "match": "CD Inca v CD Aguila San Miguel",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Ferro Carril Oeste v Gimnasia Y Tiro de Salta",
@@ -2459,7 +2459,7 @@
    "name": "Slip 1",
    "kind": "slip",
    "odds": 2.1,
-   "status": "won",
+   "status": "pending",
    "hit": 4,
    "total": 5,
    "legs": [
@@ -2490,7 +2490,7 @@
     {
      "match": "Nairobi United FC v Mara Sugar FC",
      "selection": "Under 3.5",
-     "result": "void",
+     "result": "pending",
      "score": null
     }
    ]
@@ -2594,7 +2594,7 @@
     {
      "match": "Anstey Nomads v Worcester City",
      "selection": "Over 1.5",
-     "result": "void",
+     "result": "pending",
      "score": null
     },
     {
