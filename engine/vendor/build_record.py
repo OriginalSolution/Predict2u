@@ -32,8 +32,13 @@ def _read_json(path: Path):
         return None
 
 
+def _leg_list(legs):
+    """Legs as a list. Some feeds store only a count (Hot Picks slips: "legs": 14), which is not iterable."""
+    return legs if isinstance(legs, list) else []
+
+
 def _leg_results(legs):
-    return [(l.get('result') or 'pending').lower() for l in (legs or []) if isinstance(l, dict)]
+    return [(l.get('result') or 'pending').lower() for l in _leg_list(legs) if isinstance(l, dict)]
 
 
 def _derive_status(entry: dict) -> str:
@@ -72,7 +77,7 @@ def _norm_entry(raw: dict, default_book='sportybet') -> dict | None:
     k = _key(book, code)
     if not k:
         return None
-    legs = raw.get('legs') or raw.get('legList') or []
+    legs = _leg_list(raw.get('legs') or raw.get('legList'))
     status = _derive_status({**raw, 'legs': legs})
     odds = raw.get('odds') or raw.get('totalOdds') or raw.get('total')
     try:
@@ -118,7 +123,7 @@ def _ingest_map(acc: dict, entries):
         new_st = e.get('status')
         if prev_st not in SETTLED and new_st in SETTLED:
             acc[k] = e
-        elif (len(e.get('legs') or []) >= len(prev.get('legs') or [])
+        elif (len(_leg_list(e.get('legs'))) >= len(_leg_list(prev.get('legs')))
               and (e.get('odds') or 0) >= (prev.get('odds') or 0)):
             # keep settled status if previous had it
             if prev_st in SETTLED and new_st not in SETTLED:
@@ -217,9 +222,9 @@ def market_of(e):
     name = e.get('name') or ''
     if e.get('kind') == 'market':
         return name.split(' (')[0].strip() or 'Market'
-    legs = e.get('legs') or []
+    legs = _leg_list(e.get('legs'))
     if not legs: return 'Other'
-    sels = [str(l.get('selection') or '') for l in legs]
+    sels = [str(l.get('selection') or '') for l in legs if isinstance(l, dict)]
     def bucket(s):
         sl = s.lower()
         if sl.startswith('over '): return 'Over ' + s.split(' ', 1)[1] if ' ' in s else 'Over'
@@ -276,7 +281,7 @@ def build():
 
     distinct = {}
     for e in settled:
-        key = (e.get('date'), e.get('name'), e.get('total') or len(e.get('legs') or []))
+        key = (e.get('date'), e.get('name'), e.get('total') or len(_leg_list(e.get('legs'))))
         if key not in distinct or e.get('book') == 'sportybet':
             distinct[key] = e
     distinct_rows = list(distinct.values())
@@ -301,7 +306,8 @@ def build():
 
     picks = {}
     for e in codes:
-        for l in e.get('legs') or []:
+        for l in _leg_list(e.get('legs')):
+            if not isinstance(l, dict): continue
             r = (l.get('result') or '').lower()
             if r not in ('won', 'lost'): continue
             k = (e.get('date'), l.get('match'), l.get('selection'))
@@ -344,7 +350,7 @@ def build():
             legs=[{
                 'match': l.get('match'), 'selection': l.get('selection'),
                 'odds': l.get('odds'), 'result': l.get('result'), 'score': l.get('score'),
-            } for l in (e.get('legs') or []) if isinstance(l, dict)][:40],
+            } for l in _leg_list(e.get('legs')) if isinstance(l, dict)][:40],
         ) for e in recent[:40]],
         ledgerPath=str(ledger_path.relative_to(REPO)) if str(ledger_path).startswith(str(REPO)) else str(ledger_path),
     )

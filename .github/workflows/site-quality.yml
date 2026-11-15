@@ -47,6 +47,8 @@ jobs:
         run: node tests/odds-api-integration.test.js
       - name: Validate SportyBet fixture hydrate
         run: node tests/fixture-hydrate-sportybet.test.js
+      - name: Public data size guard
+        run: node tests/public-data-size.test.js
       - name: Run repository consistency audit
         run: node audit-site.js
       - name: Upload deterministic reports on failure

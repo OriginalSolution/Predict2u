@@ -364,10 +364,24 @@ def site_pages():
     return ["/"] + ["/" + (p[:-10] if p.endswith("/index.html") else p) for p in pages if p != "index.html"]
 
 
+def page_status(url, tries=3, wait=10):
+    """HTTP status of a page. GitHub Pages answers a short-lived 503/5xx now and then (14 Nov:
+    /league/slovakia-2-liga.html, 200 again minutes later); retry those so only a page that
+    stays broken is reported. 404 and other 4xx are final at once."""
+    st = 0
+    for i in range(tries):
+        st = http(url, timeout=30)[0]
+        if st == 200 or 400 <= st < 500:
+            return st
+        if i < tries - 1:
+            time.sleep(wait)
+    return st
+
+
 def check_site(rep):
     pages = site_pages()
     with cf.ThreadPoolExecutor(8) as ex:
-        res = list(ex.map(lambda p: (p, http(SITE + p, timeout=30)[0]), pages))
+        res = list(ex.map(lambda p: (p, page_status(SITE + p)), pages))
     bad = [f"{p} ({st})" for p, st in res if st != 200]
     for b in bad:
         rep.bad("site", f"page {b} does not load")

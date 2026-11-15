@@ -65,3 +65,16 @@ def test_registry_discovers_engine_commands():
 def test_to_dry_adds_dry_run():
     assert health.to_dry("-m engine.pipeline daily")[-1] == "--dry-run"
     assert "--dry-run" not in health.to_dry("-m engine.pipeline settle")
+
+
+def test_transient_pages_5xx_is_retried_not_reported(monkeypatch):
+    """14 Nov 18:00: /league/slovakia-2-liga.html answered one 503 from GitHub Pages and was
+    reported as broken; it served 200 right after. A 5xx is retried, a 404 is final."""
+    from engine import health
+    answers = iter([503, 200])
+    monkeypatch.setattr(health, "http", lambda url, timeout=30: (next(answers), b""))
+    monkeypatch.setattr(health.time, "sleep", lambda s: None)
+    assert health.page_status("https://x/p.html") == 200
+    calls = []
+    monkeypatch.setattr(health, "http", lambda url, timeout=30: calls.append(1) or (404, b""))
+    assert health.page_status("https://x/missing.html") == 404 and len(calls) == 1
