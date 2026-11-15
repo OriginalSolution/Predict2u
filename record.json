@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-15T20:15:37Z",
+ "DATA_UPDATED": "2026-11-15T21:02:14Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -513,8 +513,8 @@
   }
  ],
  "picks": {
-  "settled": 2262,
-  "won": 1688,
+  "settled": 2263,
+  "won": 1689,
   "lost": 574,
   "winRate": 74.6
  },
@@ -543,7 +543,7 @@
      "selection": "Home",
      "odds": 1.21,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Angelana 1930 v L’Aquila Calcio 1927",
@@ -1901,7 +1901,7 @@
      "selection": "Under 3.5",
      "odds": 1.27,
      "result": "pending",
-     "score": "0:0"
+     "score": "2:1"
     },
     {
      "match": "CD Manacor v UD Alcudia",
@@ -1920,7 +1920,7 @@
    "kind": "slip",
    "odds": 122673472849.4,
    "status": "lost",
-   "hit": 62,
+   "hit": 63,
    "total": 95,
    "profit": -10.0,
    "legs": [
@@ -2258,7 +2258,7 @@
      "selection": "Under 3.5",
      "odds": 1.27,
      "result": "pending",
-     "score": "0:0"
+     "score": "2:1"
     },
     {
      "match": "Defensor Sporting v CA Penarol Montevideo",
@@ -2398,7 +2398,7 @@
      "selection": "Under 3.5",
      "odds": 1.27,
      "result": "pending",
-     "score": "0:0"
+     "score": "2:1"
     },
     {
      "match": "CD Manacor v UD Alcudia",
@@ -2488,7 +2488,7 @@
      "match": "Nairobi United FC v Mara Sugar FC",
      "selection": "Under 3.5",
      "odds": 1.14,
-     "result": "void",
+     "result": "pending",
      "score": null
     }
    ]
@@ -2607,7 +2607,7 @@
      "match": "Anstey Nomads v Worcester City",
      "selection": "Over 1.5",
      "odds": 1.2,
-     "result": "void",
+     "result": "pending",
      "score": null
     },
     {
@@ -2697,7 +2697,7 @@
     {
      "match": "CA Alvarado v CA Sarmiento de la Banda",
      "selection": "Under 3.5",
-     "odds": 1.15,
+     "odds": 1.11,
      "result": "pending",
      "score": "0:0"
     },
