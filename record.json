@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-15T22:15:38Z",
+ "DATA_UPDATED": "2026-11-15T22:48:14Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -513,10 +513,10 @@
   }
  ],
  "picks": {
-  "settled": 2272,
-  "won": 1697,
-  "lost": 575,
-  "winRate": 74.7
+  "settled": 2210,
+  "won": 1645,
+  "lost": 565,
+  "winRate": 74.4
  },
  "recent": [
   {
@@ -1045,7 +1045,7 @@
    "kind": "hot",
    "odds": 1.22,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 2.2,
    "legs": [
@@ -1066,7 +1066,7 @@
    "kind": "hot",
    "odds": 1.21,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 2.1,
    "legs": [
@@ -1087,7 +1087,7 @@
    "kind": "hot",
    "odds": 1.23,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 2.3,
    "legs": [
@@ -2551,7 +2551,7 @@
      "match": "Nairobi United FC v Mara Sugar FC",
      "selection": "Under 3.5",
      "odds": 1.14,
-     "result": "void",
+     "result": "pending",
      "score": null
     }
    ]
@@ -2670,7 +2670,7 @@
      "match": "Anstey Nomads v Worcester City",
      "selection": "Over 1.5",
      "odds": 1.2,
-     "result": "void",
+     "result": "pending",
      "score": null
     },
     {
@@ -2802,14 +2802,14 @@
    "kind": "hot",
    "odds": 1.24,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 2.4,
    "legs": [
     {
      "match": "France v Turkiye",
      "selection": "France",
-     "odds": 1.07,
+     "odds": 1.02,
      "result": "won",
      "score": "2:1"
     }
@@ -2823,7 +2823,7 @@
    "kind": "hot",
    "odds": 1.23,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 2.3,
    "legs": [
@@ -2844,7 +2844,7 @@
    "kind": "hot",
    "odds": 1.22,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 2.2,
    "legs": [
@@ -2865,14 +2865,14 @@
    "kind": "hot",
    "odds": 1.24,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 2.4,
    "legs": [
     {
      "match": "France v Turkiye",
      "selection": "France",
-     "odds": 1.08,
+     "odds": 1.02,
      "result": "won",
      "score": "2:1"
     }
@@ -2886,7 +2886,7 @@
    "kind": "hot",
    "odds": 1.24,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 1,
    "profit": 2.4,
    "legs": [
