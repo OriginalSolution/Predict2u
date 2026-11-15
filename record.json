@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-15T17:08:30Z",
+ "DATA_UPDATED": "2026-11-15T18:15:35Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -513,9 +513,9 @@
   }
  ],
  "picks": {
-  "settled": 2223,
-  "won": 1657,
-  "lost": 566,
+  "settled": 2239,
+  "won": 1668,
+  "lost": 571,
   "winRate": 74.5
  },
  "recent": [
@@ -578,7 +578,7 @@
      "selection": "Home",
      "odds": 1.42,
      "result": "pending",
-     "score": "0:0"
+     "score": "1:1"
     },
     {
      "match": "Leopards SC v Mombasa United FC",
@@ -633,8 +633,8 @@
      "match": "FC Pisek v SK Benesov",
      "selection": "Home",
      "odds": 1.3,
-     "result": "pending",
-     "score": "1:0"
+     "result": "lost",
+     "score": "1:2"
     },
     {
      "match": "Turris Calcio v FC Francavilla 1931",
@@ -703,15 +703,15 @@
      "match": "UD Logrones v Arenas Club Getxo",
      "selection": "Home",
      "odds": 1.54,
-     "result": "pending",
-     "score": null
+     "result": "lost",
+     "score": "2:2"
     },
     {
      "match": "Cotillas CD v CD Algar",
      "selection": "Home",
      "odds": 1.57,
-     "result": "pending",
-     "score": "0:0"
+     "result": "lost",
+     "score": "0:1"
     }
    ]
   },
@@ -723,7 +723,7 @@
    "kind": "high-odds",
    "odds": 1203.22,
    "status": "lost",
-   "hit": 14,
+   "hit": 16,
    "total": 27,
    "profit": -10.0,
    "legs": [
@@ -780,8 +780,8 @@
      "match": "UP Langreo v Club Siero",
      "selection": "Home",
      "odds": 1.31,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "4:0"
     },
     {
      "match": "CD Cobreloa Calama v Puerto Montt",
@@ -815,15 +815,15 @@
      "match": "L'Entregu CF v Andes CF",
      "selection": "Home",
      "odds": 1.38,
-     "result": "pending",
-     "score": "1:1"
+     "result": "won",
+     "score": "3:1"
     },
     {
      "match": "Ravenna FC 1913 v Forli FC",
      "selection": "Home",
      "odds": 1.38,
      "result": "pending",
-     "score": "1:0"
+     "score": "2:0"
     },
     {
      "match": "Pencin Turnov v FK Cechie Vykan",
@@ -844,7 +844,7 @@
      "selection": "Over 1.5",
      "odds": 1.24,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tigres FC v Real Cundinamarca",
@@ -935,7 +935,7 @@
      "selection": "Yes",
      "odds": 1.67,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "AC Nagano Parceiro v Ehime FC",
@@ -956,7 +956,7 @@
      "selection": "Under 3.5",
      "odds": 1.25,
      "result": "pending",
-     "score": "0:0"
+     "score": "2:0"
     },
     {
      "match": "Kashiwa Reysol v Kawasaki Frontale",
@@ -977,7 +977,7 @@
      "selection": "Draw or Away",
      "odds": 1.23,
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     },
     {
      "match": "CD Platense Municipal Zacatecoluca v Atletico Balboa",
@@ -1019,7 +1019,7 @@
      "selection": "Over 1.5",
      "odds": 1.17,
      "result": "pending",
-     "score": "0:0"
+     "score": "0:1"
     },
     {
      "match": "CF Pobla de Mafumet v UE San Juan Atletico de Montcada",
@@ -1787,7 +1787,7 @@
    "kind": "banker",
    "odds": 26.92,
    "status": "lost",
-   "hit": 7,
+   "hit": 9,
    "total": 17,
    "profit": -10.0,
    "legs": [
@@ -1803,7 +1803,7 @@
      "selection": "Under 3.5",
      "odds": 1.12,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Ferro Carril Oeste v Gimnasia Y Tiro de Salta",
@@ -1816,7 +1816,7 @@
      "match": "Asante Kotoko v Bibiani Gold Stars FC",
      "selection": "Under 3.5",
      "odds": 1.18,
-     "result": "pending",
+     "result": "won",
      "score": "0:0"
     },
     {
@@ -1837,8 +1837,8 @@
      "match": "Jeunesse Sportive Soualem v Olympique Club of Khouribga",
      "selection": "Under 3.5",
      "odds": 1.18,
-     "result": "pending",
-     "score": null
+     "result": "won",
+     "score": "1:1"
     },
     {
      "match": "CA Alvarado v CA Sarmiento de la Banda",
@@ -1920,7 +1920,7 @@
    "kind": "slip",
    "odds": 122673472849.4,
    "status": "lost",
-   "hit": 49,
+   "hit": 56,
    "total": 95,
    "profit": -10.0,
    "legs": [
@@ -2214,7 +2214,7 @@
    "kind": "alternative",
    "odds": 30.55,
    "status": "lost",
-   "hit": 6,
+   "hit": 7,
    "total": 14,
    "profit": -10.0,
    "legs": [
@@ -2279,7 +2279,7 @@
      "selection": "Under 3.5",
      "odds": 1.26,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "CD Marino v CD Tenerife C",
@@ -2292,7 +2292,7 @@
      "match": "Coton Sport de Garoua v Aigle Royal Du Moungo",
      "selection": "Over 1.5",
      "odds": 1.27,
-     "result": "pending",
+     "result": "won",
      "score": "4:0"
     },
     {
@@ -2326,7 +2326,7 @@
    "kind": "alternative",
    "odds": 29.05,
    "status": "lost",
-   "hit": 6,
+   "hit": 8,
    "total": 16,
    "profit": -10.0,
    "legs": [
@@ -2334,8 +2334,8 @@
      "match": "Jeunesse Sportive Soualem v Olympique Club of Khouribga",
      "selection": "Under 3.5",
      "odds": 1.18,
-     "result": "pending",
-     "score": null
+     "result": "won",
+     "score": "1:1"
     },
     {
      "match": "CA Alvarado v CA Sarmiento de la Banda",
@@ -2439,8 +2439,8 @@
      "match": "AD Llerenense v Atletico Club Pueblonuevo",
      "selection": "Over 1.5",
      "odds": 1.22,
-     "result": "pending",
-     "score": "2:1"
+     "result": "won",
+     "score": "2:2"
     }
    ]
   },
@@ -2655,7 +2655,7 @@
    "kind": "slip",
    "odds": 6.63,
    "status": "lost",
-   "hit": 5,
+   "hit": 7,
    "total": 10,
    "profit": -10.0,
    "legs": [
@@ -2670,7 +2670,7 @@
      "match": "Asante Kotoko v Bibiani Gold Stars FC",
      "selection": "Under 3.5",
      "odds": 1.12,
-     "result": "pending",
+     "result": "won",
      "score": "0:0"
     },
     {
@@ -2690,9 +2690,9 @@
     {
      "match": "Jeunesse Sportive Soualem v Olympique Club of Khouribga",
      "selection": "Under 3.5",
-     "odds": 1.18,
-     "result": "pending",
-     "score": null
+     "odds": 1.27,
+     "result": "won",
+     "score": "1:1"
     },
     {
      "match": "CA Alvarado v CA Sarmiento de la Banda",
@@ -3630,7 +3630,7 @@
      "selection": "Home or Draw",
      "odds": 1.34,
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "GS Marko v APS Zakynthos",
