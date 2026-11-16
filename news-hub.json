@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-16T01:25:11+00:00",
+ "updatedAt": "2026-11-16T02:25:20+00:00",
  "sources": [
   "BBC Sport",
   "ESPN",
@@ -8,12 +8,6 @@
   "SportyBet match centre (final scores)"
  ],
  "fixtures": [
-  {
-   "date": "2026-11-16",
-   "ko": "00:30",
-   "league": "Puerto Rico - LPR Pro",
-   "match": "Taurinos Cayey v Ponce FC"
-  },
   {
    "date": "2026-11-16",
    "ko": "13:00",
@@ -83,6 +77,36 @@
    "link": "https://www.theguardian.com/football/2026/nov/15/kansas-city-current-gotham-fc-nwsl-semi-final-haley-hopkins",
    "published": "2026-11-15T23:03:38+00:00",
    "image": "https://i.guim.co.uk/img/media/5f536d3269026f3a936468cb6e6eceb90f7a1088/488_0_4878_3903/master/4878.jpg?width=140&quality=85&auto=format&fit=max&s=a7362e76062288b356afd34a482c6e77",
+   "ourFixture": false,
+   "preview": true
+  },
+  {
+   "title": "Current score late to beat Gotham, advance to face Spirit in NWSL finals",
+   "summary": "The Kansas City Current are headed to the NWSL final after a late Haley Hopkins goal saw them past defending champions Gotham FC with a 2-1 win on Sunday.",
+   "source": "ESPN",
+   "link": "https://www.espn.com/soccer/report/_/gameId/401933740",
+   "published": "2026-11-15T20:40:35+00:00",
+   "image": "https://s.secure.espncdn.com/stitcher/sports/soccer/usa.nwsl/events/401933740.png?templateId=espn.com.share.1",
+   "ourFixture": false,
+   "preview": true
+  },
+  {
+   "title": "Dual-national Julian Hall officially tied to USMNT with appearance vs. Haiti",
+   "summary": "Teenage forward Julian Hall is now cap-tied to the U.S. men's national team, after starting Saturday's Concacaf Nations League quarterfinal against Haiti.",
+   "source": "ESPN",
+   "link": "https://www.espn.com/soccer/story/_/id/50482590/julian-hall-usa-poland-haiti-fifa-nations-league-concacaf",
+   "published": "2026-11-15T20:40:35+00:00",
+   "image": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F1114%2Fr1745842_1296x729_16%2D9.jpg",
+   "ourFixture": false,
+   "preview": true
+  },
+  {
+   "title": "⌚ USMNT's Folarin Balogun does 'Dame Time' celebration after goal vs. Haiti",
+   "summary": "After the star forward found the back of the net against Haiti, he had a specific celebration in mind: Damian Lillard's iconic \"Dame Time\" motion.",
+   "source": "ESPN",
+   "link": "https://www.espn.com/soccer/story/_/id/50487187/usmnt-folarin-balogun-dame-celebration",
+   "published": "2026-11-15T20:40:35+00:00",
+   "image": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F1115%2Fr1745990_1296x729_16%2D9.jpg",
    "ourFixture": false,
    "preview": true
   },
@@ -317,6 +341,15 @@
    "ourFixture": false
   },
   {
+   "title": "Transfer rumors, news: Arsenal eye former Tottenham striker Lankshear",
+   "summary": "Bruno Fernandes' future at Manchester United is reportedly uncertain with his contract expiring next summer. Transfer Talk has the latest.",
+   "source": "ESPN",
+   "link": "https://www.espn.com/soccer/story/_/id/50489327/transfer-rumors-news-gossip-arsenal-tottenham-lankshear",
+   "published": "2026-11-15T05:30:45+00:00",
+   "image": "https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F1115%2Fr1746239_1296x729_16%2D9.jpg",
+   "ourFixture": false
+  },
+  {
    "title": "How will the USMNT replace Mauricio Pochettino? There’s no clear answer",
    "summary": "The USMNT head coach is on the verge of sealing a move to Manchester United, but it’s hard to know who could be in the chair next Sign up for our free newsletter here Even before the 2026 World Cup, the US Soccer…",
    "source": "The Guardian",
@@ -387,25 +420,1051 @@
    "published": "2026-09-01T12:12:32+00:00",
    "image": "https://i.guim.co.uk/img/media/c4db9b3a05f09dc57dbb617f0d3fe452157908c5/0_0_5000_4000/master/5000.jpg?width=140&quality=85&auto=format&fit=max&s=06010102296289a1fdca98db21bfaf76",
    "ourFixture": false
-  },
-  {
-   "title": "Life as a Wag in the transfer window",
-   "summary": "What is life like for footballers' families during the transfer window where a last-minute deal means you need to uproot your life and move hundreds of miles?",
-   "source": "BBC Sport",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cx2jpgj24vlo",
-   "published": "2026-08-08T05:15:34+00:00",
-   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8ebc/live/82fc5780-925f-11f1-b9ff-37ae3aba3894.jpg",
-   "ourFixture": false
   }
  ],
  "record": {
   "won": 29,
   "lost": 187,
   "settled": 216,
-  "pending": 55,
+  "pending": 70,
   "winRate": 13.4
  },
  "codes": [
+  {
+   "code": "CZN3Z3",
+   "book": "sportybet",
+   "date": "2026-11-16",
+   "name": "Hot Picks slip",
+   "kind": "slip",
+   "odds": 24.83,
+   "status": "pending",
+   "hit": 0,
+   "total": 13,
+   "legs": [
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Malawi v Egypt",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Poland v Sweden",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wales v Portugal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Namibia v Cameroon",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Gambia v Ivory Coast",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Eritrea v Guinea",
+     "selection": "Guinea",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "B3KRBUL",
+   "book": "msport",
+   "date": "2026-11-16",
+   "name": "Hot Picks slip",
+   "kind": "slip",
+   "odds": 26.04,
+   "status": "pending",
+   "hit": 0,
+   "total": 13,
+   "legs": [
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Malawi v Egypt",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Poland v Sweden",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wales v Portugal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Namibia v Cameroon",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Gambia v Ivory Coast",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Eritrea v Guinea",
+     "selection": "Guinea",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "AMBT3G",
+   "book": "betika",
+   "date": "2026-11-16",
+   "name": "Hot Picks slip",
+   "kind": "slip",
+   "odds": 21.88,
+   "status": "pending",
+   "hit": 0,
+   "total": 13,
+   "legs": [
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Malawi v Egypt",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Poland v Sweden",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wales v Portugal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Namibia v Cameroon",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Gambia v Ivory Coast",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Eritrea v Guinea",
+     "selection": "Guinea",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "CZN3Z3",
+   "book": "footballcom",
+   "date": "2026-11-16",
+   "name": "Hot Picks slip",
+   "kind": "slip",
+   "odds": 25.18,
+   "status": "pending",
+   "hit": 0,
+   "total": 13,
+   "legs": [
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Malawi v Egypt",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Poland v Sweden",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wales v Portugal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Namibia v Cameroon",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Gambia v Ivory Coast",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Eritrea v Guinea",
+     "selection": "Guinea",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "F454RST",
+   "book": "betpawa",
+   "date": "2026-11-16",
+   "name": "Hot Picks slip",
+   "kind": "slip",
+   "odds": 27.46,
+   "status": "pending",
+   "hit": 0,
+   "total": 13,
+   "legs": [
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Malawi v Egypt",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Poland v Sweden",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wales v Portugal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Namibia v Cameroon",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Gambia v Ivory Coast",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Eritrea v Guinea",
+     "selection": "Guinea",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "D2MU1B",
+   "book": "sportybet",
+   "date": "2026-11-16",
+   "name": "Top 5 hot picks",
+   "kind": "slip",
+   "odds": 3.11,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Malawi v Egypt",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "B3KRBVD",
+   "book": "msport",
+   "date": "2026-11-16",
+   "name": "Top 5 hot picks",
+   "kind": "slip",
+   "odds": 3.11,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Malawi v Egypt",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "FRY3QJ",
+   "book": "betika",
+   "date": "2026-11-16",
+   "name": "Top 5 hot picks",
+   "kind": "slip",
+   "odds": 2.92,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Malawi v Egypt",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "D2MU1B",
+   "book": "footballcom",
+   "date": "2026-11-16",
+   "name": "Top 5 hot picks",
+   "kind": "slip",
+   "odds": 3.11,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Malawi v Egypt",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "X1HAP3G",
+   "book": "betpawa",
+   "date": "2026-11-16",
+   "name": "Top 5 hot picks",
+   "kind": "slip",
+   "odds": 3.19,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Malawi v Egypt",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "FTCU3E",
+   "book": "sportybet",
+   "date": "2026-11-16",
+   "name": "Top 10 hot picks",
+   "kind": "slip",
+   "odds": 9.46,
+   "status": "pending",
+   "hit": 0,
+   "total": 10,
+   "legs": [
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Malawi v Egypt",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Poland v Sweden",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wales v Portugal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Namibia v Cameroon",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "B3KRBVT",
+   "book": "msport",
+   "date": "2026-11-16",
+   "name": "Top 10 hot picks",
+   "kind": "slip",
+   "odds": 9.78,
+   "status": "pending",
+   "hit": 0,
+   "total": 10,
+   "legs": [
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Malawi v Egypt",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Poland v Sweden",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wales v Portugal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Namibia v Cameroon",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "KF36NE",
+   "book": "betika",
+   "date": "2026-11-16",
+   "name": "Top 10 hot picks",
+   "kind": "slip",
+   "odds": 8.77,
+   "status": "pending",
+   "hit": 0,
+   "total": 10,
+   "legs": [
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Malawi v Egypt",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Poland v Sweden",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wales v Portugal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Namibia v Cameroon",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "FTCU3E",
+   "book": "footballcom",
+   "date": "2026-11-16",
+   "name": "Top 10 hot picks",
+   "kind": "slip",
+   "odds": 9.46,
+   "status": "pending",
+   "hit": 0,
+   "total": 10,
+   "legs": [
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Malawi v Egypt",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Poland v Sweden",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wales v Portugal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Namibia v Cameroon",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "V61NEF1",
+   "book": "betpawa",
+   "date": "2026-11-16",
+   "name": "Top 10 hot picks",
+   "kind": "slip",
+   "odds": 10.17,
+   "status": "pending",
+   "hit": 0,
+   "total": 10,
+   "legs": [
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Malawi v Egypt",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Poland v Sweden",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wales v Portugal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Namibia v Cameroon",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
   {
    "code": "C8MD2B",
    "book": "sportybet",
@@ -2519,7 +3578,7 @@
    "kind": "slip",
    "odds": 1.18,
    "status": "lost",
-   "hit": 13,
+   "hit": 14,
    "total": 17,
    "legs": [
     {
@@ -2537,7 +3596,7 @@
     {
      "match": "Ferro Carril Oeste v Gimnasia Y Tiro de Salta",
      "selection": "Under 3.5",
-     "result": "pending",
+     "result": "won",
      "score": "0:1"
     },
     {
@@ -3204,7 +4263,7 @@
     {
      "match": "Ferro Carril Oeste v Gimnasia Y Tiro de Salta",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     }
    ]
@@ -3832,1869 +4891,6 @@
      "selection": "Under 2.5",
      "result": "won",
      "score": "1:0"
-    }
-   ]
-  },
-  {
-   "code": "81B190",
-   "book": "sportybet",
-   "date": "2026-11-13",
-   "name": "Main banker: Banker code of the day",
-   "kind": "slip",
-   "odds": 25.05,
-   "status": "lost",
-   "hit": 15,
-   "total": 19,
-   "legs": [
-    {
-     "match": "FC Paradiso v FC Amical Saint-Prex",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "5:0"
-    },
-    {
-     "match": "CA Temperley v Club Ciudad de Bolivar",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Gimnasia y Esgrima de Jujuy v Club Almirante Brown",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Real Pilar FC v CA Talleres de Remedios",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Nairobi United FC v Mara Sugar FC",
-     "selection": "Under 3.5",
-     "result": "void",
-     "score": null
-    },
-    {
-     "match": "Villa Dalmine v Deportivo Camioneros",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "CD Armenio v CS Italiano",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "1:0"
-    },
-    {
-     "match": "VVV Venlo v FC Eindhoven",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "IJsselmeervogels v BVV Barendrecht",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "FC Dordrecht v Heracles Almelo",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "SC Recife PE v Goias EC GO",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "3:0"
-    },
-    {
-     "match": "Almere City FC v Helmond Sport",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "6:1"
-    },
-    {
-     "match": "Rohda Raalte v VV Katwijk",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "CF La Solana v UD Socuellamos CF",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Anstey Nomads v Worcester City",
-     "selection": "Over 1.5",
-     "result": "void",
-     "score": null
-    },
-    {
-     "match": "ASC Diambars v Stade de Mbour",
-     "selection": "Under 2.5",
-     "result": "lost",
-     "score": "4:1"
-    },
-    {
-     "match": "Generation Foot v Walidaan Dkr",
-     "selection": "Under 2.5",
-     "result": "lost",
-     "score": "1:3"
-    },
-    {
-     "match": "Needham Market v Banbury United",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Kahramanmaras Istiklalspor v Fethiyespor",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "5:1"
-    }
-   ]
-  },
-  {
-   "code": "DE1Z64",
-   "book": "sportybet",
-   "date": "2026-11-13",
-   "name": "Alternative B: skip the top 5 (>=25)",
-   "kind": "slip",
-   "odds": 27.81,
-   "status": "lost",
-   "hit": 14,
-   "total": 18,
-   "legs": [
-    {
-     "match": "CD Armenio v CS Italiano",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "1:0"
-    },
-    {
-     "match": "VVV Venlo v FC Eindhoven",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "IJsselmeervogels v BVV Barendrecht",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "FC Dordrecht v Heracles Almelo",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "SC Recife PE v Goias EC GO",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "3:0"
-    },
-    {
-     "match": "Almere City FC v Helmond Sport",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "6:1"
-    },
-    {
-     "match": "Rohda Raalte v VV Katwijk",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "CF La Solana v UD Socuellamos CF",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Anstey Nomads v Worcester City",
-     "selection": "Over 1.5",
-     "result": "void",
-     "score": null
-    },
-    {
-     "match": "ASC Diambars v Stade de Mbour",
-     "selection": "Under 2.5",
-     "result": "lost",
-     "score": "4:1"
-    },
-    {
-     "match": "Generation Foot v Walidaan Dkr",
-     "selection": "Under 2.5",
-     "result": "lost",
-     "score": "1:3"
-    },
-    {
-     "match": "Needham Market v Banbury United",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Kahramanmaras Istiklalspor v Fethiyespor",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "5:1"
-    },
-    {
-     "match": "Gateshead FC v Barrow AFC",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:3"
-    },
-    {
-     "match": "FK Frydek-Mistek v MFK Vitkovice",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "5:1"
-    },
-    {
-     "match": "Olympique Dcheira v JS Massira",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "NK Vrhnika v Tabor Sezana",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "0:0"
-    },
-    {
-     "match": "Atletico Saguntino v Torrent CF",
-     "selection": "Under 3.5",
-     "result": "won",
-     "score": "2:1"
-    }
-   ]
-  },
-  {
-   "code": "CWCARD",
-   "book": "sportybet",
-   "date": "2026-11-13",
-   "name": "High Odds Selection",
-   "kind": "slip",
-   "odds": 728.28,
-   "status": "lost",
-   "hit": 4,
-   "total": 11,
-   "legs": [
-    {
-     "match": "Exeter City v Cheltenham Town",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Bristol Rovers v Chesterfield FC",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "0:2"
-    },
-    {
-     "match": "Colchester United v Gillingham FC",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "2:0"
-    },
-    {
-     "match": "Crewe Alexandra v Newport County",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "Port Vale v Accrington Stanley",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "4:2"
-    },
-    {
-     "match": "Rochdale AFC v York City FC",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Salford City v Northampton Town",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "Shrewsbury Town v Oldham Athletic",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Swindon Town v Grimsby Town",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "1:4"
-    },
-    {
-     "match": "Walsall FC v Barnet FC",
-     "selection": "Over 2.5",
-     "result": "void",
-     "score": null
-    },
-    {
-     "match": "Fleetwood Town v Tranmere Rovers FC",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "1:0"
-    }
-   ]
-  },
-  {
-   "code": "CBLSGP",
-   "book": "sportybet",
-   "date": "2026-11-13",
-   "name": "High Odds Selection",
-   "kind": "slip",
-   "odds": 251.56,
-   "status": "lost",
-   "hit": 4,
-   "total": 10,
-   "legs": [
-    {
-     "match": "Bristol Rovers v Chesterfield FC",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "0:2"
-    },
-    {
-     "match": "Colchester United v Gillingham FC",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "2:0"
-    },
-    {
-     "match": "Crewe Alexandra v Newport County",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "Port Vale v Accrington Stanley",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "4:2"
-    },
-    {
-     "match": "Rochdale AFC v York City FC",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Salford City v Northampton Town",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "Swindon Town v Grimsby Town",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "1:4"
-    },
-    {
-     "match": "Walsall FC v Barnet FC",
-     "selection": "Over 2.5",
-     "result": "void",
-     "score": null
-    },
-    {
-     "match": "Fleetwood Town v Tranmere Rovers FC",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Shrewsbury Town v Oldham Athletic",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "2:1"
-    }
-   ]
-  },
-  {
-   "code": "F5FARU",
-   "book": "sportybet",
-   "date": "2026-11-13",
-   "name": "Slip 1",
-   "kind": "slip",
-   "odds": 766.97,
-   "status": "lost",
-   "hit": 17,
-   "total": 24,
-   "legs": [
-    {
-     "match": "MKS Znicz Pruszkow v Sokol Kleczew",
-     "selection": "Yes",
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "Swansea University v Treowen Stars",
-     "selection": "Yes",
-     "result": "won",
-     "score": "2:3"
-    },
-    {
-     "match": "Denbigh Town v Gresford Athletic",
-     "selection": "Yes",
-     "result": "won",
-     "score": "7:1"
-    },
-    {
-     "match": "Llaneros FC v Boyaca Chico FC",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "0:0"
-    },
-    {
-     "match": "Atletico Morelia v Leones Negros UDEG",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Oakleigh Cannons v Marconi Stallions",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "7:8"
-    },
-    {
-     "match": "Singapore v Paraguay",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "1:4"
-    },
-    {
-     "match": "Haras El Hodood v El Dakhleya Sc",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Mozambique v Ethiopia",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Etehad Alreef v Um Alhassam",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "1. Wiener Neustadter SC v SC Wieselburg",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "FC Helsingoer v Holstebro BK",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "3:3"
-    },
-    {
-     "match": "SC Neusiedl am See 1919 v SV Lackenbach",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "0:0"
-    },
-    {
-     "match": "Bermuda v Saint Lucia",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Puerto Rico v Dominica",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "4:2"
-    },
-    {
-     "match": "ACD Ospitaletto v Dolomiti Bellunesi",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Andorra v Gibraltar",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Ballymena United v Linfield FC",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:3"
-    },
-    {
-     "match": "Coleraine FC v Portadown FC",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "3:0"
-    },
-    {
-     "match": "Crusaders FC v Carrick Rangers",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Glentoran FC v Bangor FC",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Larne FC v Dungannon Swifts",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "3:0"
-    },
-    {
-     "match": "Salamanca CF UDS v Celta",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:5"
-    },
-    {
-     "match": "Argentina v Uruguay",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:2"
-    }
-   ]
-  },
-  {
-   "code": "8JJZE2",
-   "book": "sportybet",
-   "date": "2026-11-13",
-   "name": "Slip 1",
-   "kind": "slip",
-   "odds": 28104107.14,
-   "status": "lost",
-   "hit": 49,
-   "total": 65,
-   "legs": [
-    {
-     "match": "MKS Znicz Pruszkow v Sokol Kleczew",
-     "selection": "Yes",
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "FC Portalban/Gletterens v FC Echallens Region",
-     "selection": "Yes",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Swansea University v Treowen Stars",
-     "selection": "Yes",
-     "result": "won",
-     "score": "2:3"
-    },
-    {
-     "match": "Denbigh Town v Gresford Athletic",
-     "selection": "Yes",
-     "result": "won",
-     "score": "7:1"
-    },
-    {
-     "match": "Loughgall FC v Glenavon FC",
-     "selection": "Yes",
-     "result": "won",
-     "score": "1:6"
-    },
-    {
-     "match": "Llaneros FC v Boyaca Chico FC",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "0:0"
-    },
-    {
-     "match": "Atletico Morelia v Leones Negros UDEG",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "FC Real Bengaluru v Bangalore Dream United FC",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "FC Ulaanbaatar v Hunters FC",
-     "selection": "Yes",
-     "result": "won",
-     "score": "7:1"
-    },
-    {
-     "match": "Oakleigh Cannons v Marconi Stallions",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "7:8"
-    },
-    {
-     "match": "Liechtenstein SRL v Azerbaijan SRL",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:4"
-    },
-    {
-     "match": "Slovakia SRL v Faroe Islands SRL",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "3:0"
-    },
-    {
-     "match": "Scotland SRL v North Macedonia SRL",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Serbia SRL v Germany SRL",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "Levels FC v Gezira SC",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Singapore v Paraguay",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:4"
-    },
-    {
-     "match": "Netherlands SRL v Greece SRL",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Slovenia SRL v Switzerland SRL",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "FK Drina Zvornik v Velez Nevesinje",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "5:0"
-    },
-    {
-     "match": "CS Drobeta Turnu Severin v Unirea Bascov",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "4:0"
-    },
-    {
-     "match": "Haras El Hodood v El Dakhleya Sc",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Mozambique v Ethiopia",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Zambia v Burundi",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Etehad Alreef v Um Alhassam",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Burkina Faso v Mauritania",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Cape Verde v Liberia",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "4:2"
-    },
-    {
-     "match": "Gabon v Lesotho",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Nigeria v Tanzania",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "South Africa v Kenya",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "Tunisia v Libya",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "JS Saoura v USM Khenchela",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Shooting Stars v Bendel Insurance FC",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "FC Viktoria Plzen B v FK Loko Prague",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "0:2"
-    },
-    {
-     "match": "1. Wiener Neustadter SC v SC Wieselburg",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "FC Helsingoer v Holstebro BK",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "3:3"
-    },
-    {
-     "match": "FC 08 Homburg-Saar v FSV Frankfurt 1899",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "SC Neusiedl am See 1919 v SV Lackenbach",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "0:0"
-    },
-    {
-     "match": "Egypt v Malawi",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "5:0"
-    },
-    {
-     "match": "Dijon v US Orleans",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "US St Philbert de Grandlieu v La Roche Vendee Football",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:3"
-    },
-    {
-     "match": "Bermuda v Saint Lucia",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Puerto Rico v Dominica",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "4:2"
-    },
-    {
-     "match": "ACD Ospitaletto v Dolomiti Bellunesi",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "AD San Juan Pamplona v CF Gazte Berriak",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "4:4"
-    },
-    {
-     "match": "Andorra v Gibraltar",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Liechtenstein v Azerbaijan",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Netherlands v Greece",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "7:0"
-    },
-    {
-     "match": "Scotland v North Macedonia",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Serbia v Germany",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:3"
-    },
-    {
-     "match": "Slovakia v Faroe Islands",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "Slovenia v Switzerland",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "0:0"
-    },
-    {
-     "match": "Baglan Dragons v Barry Town United FC",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "3:4"
-    },
-    {
-     "match": "Caernarfon Town FC v Holywell Town",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "4:0"
-    },
-    {
-     "match": "Pen-y-Bont FC v Cardiff Draconians",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "6:0"
-    },
-    {
-     "match": "The New Saints FC v Briton Ferry",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "5:0"
-    },
-    {
-     "match": "Ballymena United v Linfield FC",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:3"
-    },
-    {
-     "match": "Coleraine FC v Portadown FC",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "3:0"
-    },
-    {
-     "match": "Crusaders FC v Carrick Rangers",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Glentoran FC v Bangor FC",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Larne FC v Dungannon Swifts",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "3:0"
-    },
-    {
-     "match": "Annagh United FC v Ballinamallard United",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Institute FC v Armagh City FC",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "5:0"
-    },
-    {
-     "match": "Salamanca CF UDS v Celta",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:5"
-    },
-    {
-     "match": "Argentina v Uruguay",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Saint-Martin v El Salvador",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "0:2"
-    }
-   ]
-  },
-  {
-   "code": "82DXBT",
-   "book": "sportybet",
-   "date": "2026-11-13",
-   "name": "Slip 2",
-   "kind": "slip",
-   "odds": 21892592.47,
-   "status": "pending",
-   "hit": 0,
-   "total": 64,
-   "legs": [
-    {
-     "match": "Llaneros FC v Boyaca Chico FC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Atletico Morelia v Leones Negros UDEG",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Ulaanbaatar v Hunters FC",
-     "selection": "GG (BTTS Yes)",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Oakleigh Cannons v Marconi Stallions",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Liechtenstein SRL v Azerbaijan SRL",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Slovakia SRL v Faroe Islands SRL",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Scotland SRL v North Macedonia SRL",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Serbia SRL v Germany SRL",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Levels FC v Gezira SC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Singapore v Paraguay",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Netherlands SRL v Greece SRL",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Slovenia SRL v Switzerland SRL",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FK Drina Zvornik v Velez Nevesinje",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "CS Drobeta Turnu Severin v Unirea Bascov",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Haras El Hodood v El Dakhleya Sc",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Mozambique v Ethiopia",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Zambia v Burundi",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Etehad Alreef v Um Alhassam",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Burkina Faso v Mauritania",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Cape Verde v Liberia",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Gabon v Lesotho",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Nigeria v Tanzania",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "South Africa v Kenya",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Tunisia v Libya",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "MKS Znicz Pruszkow v Sokol Kleczew",
-     "selection": "GG (BTTS Yes)",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "JS Saoura v USM Khenchela",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Shooting Stars v Bendel Insurance FC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Viktoria Plzen B v FK Loko Prague",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "1. Wiener Neustadter SC v SC Wieselburg",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Helsingoer v Holstebro BK",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC 08 Homburg-Saar v FSV Frankfurt 1899",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "SC Neusiedl am See 1919 v SV Lackenbach",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Portalban/Gletterens v FC Echallens Region",
-     "selection": "GG (BTTS Yes)",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Egypt v Malawi",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Dijon v US Orleans",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "US St Philbert de Grandlieu v La Roche Vendee Football",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bermuda v Saint Lucia",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Puerto Rico v Dominica",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Swansea University v Treowen Stars",
-     "selection": "GG (BTTS Yes)",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Denbigh Town v Gresford Athletic",
-     "selection": "GG (BTTS Yes)",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "ACD Ospitaletto v Dolomiti Bellunesi",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AD San Juan Pamplona v CF Gazte Berriak",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Loughgall FC v Glenavon FC",
-     "selection": "GG (BTTS Yes)",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Andorra v Gibraltar",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Liechtenstein v Azerbaijan",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Netherlands v Greece",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Scotland v North Macedonia",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Serbia v Germany",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Slovakia v Faroe Islands",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Slovenia v Switzerland",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Baglan Dragons v Barry Town United FC",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Caernarfon Town FC v Holywell Town",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Pen-y-Bont FC v Cardiff Draconians",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "The New Saints FC v Briton Ferry",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ballymena United v Linfield FC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Coleraine FC v Portadown FC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Crusaders FC v Carrick Rangers",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Glentoran FC v Bangor FC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Larne FC v Dungannon Swifts",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Annagh United FC v Ballinamallard United",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Institute FC v Armagh City FC",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Salamanca CF UDS v Celta",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Argentina v Uruguay",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Saint-Martin v El Salvador",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "A967ZE",
-   "book": "sportybet",
-   "date": "2026-11-13",
-   "name": "Slip 1",
-   "kind": "slip",
-   "odds": 30.41,
-   "status": "pending",
-   "hit": 0,
-   "total": 14,
-   "legs": [
-    {
-     "match": "Tanta FC v La Viena FC",
-     "selection": "Under 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Gunners FC v Iaa SC",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Al Hashemehya v Sama AL Sarhan SC",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "South Africa v Kenya",
-     "selection": "Under 3.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC 08 Homburg-Saar v FSV Frankfurt 1899",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bermuda v Saint Lucia",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Puerto Rico v Dominica",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "ACD Ospitaletto v Dolomiti Bellunesi",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Swansea University v Treowen Stars",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Limavady United FC v Cliftonville FC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Coleraine FC v Portadown FC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Larne FC v Dungannon Swifts",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ballymena United v Linfield FC",
-     "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Grenada v Saint Kitts and Nevis",
-     "selection": "Over 2.5",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "8D9TS4",
-   "book": "sportybet",
-   "date": "2026-11-13",
-   "name": "Hot Picks slip",
-   "kind": "slip",
-   "odds": 8.33,
-   "status": "lost",
-   "hit": 8,
-   "total": 9,
-   "legs": [
-    {
-     "match": "Valladolid v CD Castellon",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Mallorca v Cordoba CF",
-     "selection": "Over 2",
-     "result": "won",
-     "score": "3:3"
-    },
-    {
-     "match": "Almeria v FC Andorra",
-     "selection": "Almeria",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Eibar v Cadiz",
-     "selection": "Eibar",
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "Carlisle United v Boston United FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Harrogate Town v Altrincham FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "4:0"
-    },
-    {
-     "match": "Hartlepool United v Wealdstone FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Gateshead FC v Barrow AFC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "0:3"
-    },
-    {
-     "match": "Southend United v Aldershot Town FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:1"
-    }
-   ]
-  },
-  {
-   "code": "B3JTMWP",
-   "book": "msport",
-   "date": "2026-11-13",
-   "name": "Hot Picks slip",
-   "kind": "slip",
-   "odds": 3.42,
-   "status": "lost",
-   "hit": 8,
-   "total": 9,
-   "legs": [
-    {
-     "match": "Valladolid v CD Castellon",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Mallorca v Cordoba CF",
-     "selection": "Over 2",
-     "result": "won",
-     "score": "3:3"
-    },
-    {
-     "match": "Almeria v FC Andorra",
-     "selection": "Almeria",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Eibar v Cadiz",
-     "selection": "Eibar",
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "Carlisle United v Boston United FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Harrogate Town v Altrincham FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "4:0"
-    },
-    {
-     "match": "Hartlepool United v Wealdstone FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Gateshead FC v Barrow AFC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "0:3"
-    },
-    {
-     "match": "Southend United v Aldershot Town FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:1"
-    }
-   ]
-  },
-  {
-   "code": "CY6T7W",
-   "book": "betika",
-   "date": "2026-11-13",
-   "name": "Hot Picks slip",
-   "kind": "slip",
-   "odds": 3.51,
-   "status": "lost",
-   "hit": 8,
-   "total": 9,
-   "legs": [
-    {
-     "match": "Valladolid v CD Castellon",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Mallorca v Cordoba CF",
-     "selection": "Over 2",
-     "result": "won",
-     "score": "3:3"
-    },
-    {
-     "match": "Almeria v FC Andorra",
-     "selection": "Almeria",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Eibar v Cadiz",
-     "selection": "Eibar",
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "Carlisle United v Boston United FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Harrogate Town v Altrincham FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "4:0"
-    },
-    {
-     "match": "Hartlepool United v Wealdstone FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Gateshead FC v Barrow AFC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "0:3"
-    },
-    {
-     "match": "Southend United v Aldershot Town FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:1"
-    }
-   ]
-  },
-  {
-   "code": "8D9TS4",
-   "book": "footballcom",
-   "date": "2026-11-13",
-   "name": "Hot Picks slip",
-   "kind": "slip",
-   "odds": 8.33,
-   "status": "won",
-   "hit": 7,
-   "total": 7,
-   "legs": [
-    {
-     "match": "Real Valladolid v CD Castellon",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "RCD Mallorca v Cordoba CF",
-     "selection": "Over 2",
-     "result": "won",
-     "score": "3:3"
-    },
-    {
-     "match": "Carlisle United v Boston United FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Harrogate Town v Altrincham FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "4:0"
-    },
-    {
-     "match": "Hartlepool United v Wealdstone FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Gateshead FC v Barrow AFC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "0:3"
-    },
-    {
-     "match": "Southend United v Aldershot Town FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:1"
-    }
-   ]
-  },
-  {
-   "code": "12VFTCQ",
-   "book": "betpawa",
-   "date": "2026-11-13",
-   "name": "Hot Picks slip",
-   "kind": "slip",
-   "odds": 3.15,
-   "status": "lost",
-   "hit": 8,
-   "total": 9,
-   "legs": [
-    {
-     "match": "Valladolid v CD Castellon",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Mallorca v Cordoba CF",
-     "selection": "Over 2",
-     "result": "won",
-     "score": "3:3"
-    },
-    {
-     "match": "Almeria v FC Andorra",
-     "selection": "Almeria",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Eibar v Cadiz",
-     "selection": "Eibar",
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "Carlisle United v Boston United FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Harrogate Town v Altrincham FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "4:0"
-    },
-    {
-     "match": "Hartlepool United v Wealdstone FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Gateshead FC v Barrow AFC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "0:3"
-    },
-    {
-     "match": "Southend United v Aldershot Town FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:1"
-    }
-   ]
-  },
-  {
-   "code": "9ULS47",
-   "book": "sportybet",
-   "date": "2026-11-13",
-   "name": "Top 5 hot picks",
-   "kind": "slip",
-   "odds": 3.26,
-   "status": "lost",
-   "hit": 4,
-   "total": 5,
-   "legs": [
-    {
-     "match": "Valladolid v CD Castellon",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Mallorca v Cordoba CF",
-     "selection": "Over 2",
-     "result": "won",
-     "score": "3:3"
-    },
-    {
-     "match": "Almeria v FC Andorra",
-     "selection": "Almeria",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Eibar v Cadiz",
-     "selection": "Eibar",
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "Carlisle United v Boston United FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:0"
-    }
-   ]
-  },
-  {
-   "code": "B3JTMX8",
-   "book": "msport",
-   "date": "2026-11-13",
-   "name": "Top 5 hot picks",
-   "kind": "slip",
-   "odds": 1.42,
-   "status": "lost",
-   "hit": 4,
-   "total": 5,
-   "legs": [
-    {
-     "match": "Valladolid v CD Castellon",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Mallorca v Cordoba CF",
-     "selection": "Over 2",
-     "result": "won",
-     "score": "3:3"
-    },
-    {
-     "match": "Almeria v FC Andorra",
-     "selection": "Almeria",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Eibar v Cadiz",
-     "selection": "Eibar",
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "Carlisle United v Boston United FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:0"
     }
    ]
   }
