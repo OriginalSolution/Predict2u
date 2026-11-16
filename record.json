@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-15T22:48:14Z",
+ "DATA_UPDATED": "2026-11-16T00:15:37Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -13,7 +13,7 @@
   "returned": 2407.6,
   "profit": 157.6,
   "roi": 7.0,
-  "pending": 75,
+  "pending": 91,
   "codesSettled": 916,
   "codesWon": 134,
   "codesLost": 782
@@ -513,10 +513,10 @@
   }
  ],
  "picks": {
-  "settled": 2210,
-  "won": 1645,
-  "lost": 565,
-  "winRate": 74.4
+  "settled": 2279,
+  "won": 1704,
+  "lost": 575,
+  "winRate": 74.8
  },
  "recent": [
   {
@@ -527,7 +527,7 @@
    "kind": "high-odds",
    "odds": 11804.8,
    "status": "lost",
-   "hit": 12,
+   "hit": 13,
    "total": 26,
    "profit": -10.0,
    "legs": [
@@ -542,8 +542,8 @@
      "match": "Deportivo San Pedro v CD Marquense",
      "selection": "Home",
      "odds": 1.21,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "2:0"
     },
     {
      "match": "Angelana 1930 v L’Aquila Calcio 1927",
@@ -723,7 +723,7 @@
    "kind": "high-odds",
    "odds": 1203.22,
    "status": "lost",
-   "hit": 19,
+   "hit": 20,
    "total": 27,
    "profit": -10.0,
    "legs": [
@@ -787,8 +787,8 @@
      "match": "CD Cobreloa Calama v Puerto Montt",
      "selection": "Home",
      "odds": 1.35,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "3:0"
     },
     {
      "match": "Gsd Ghivizzano Borgoamozzano v Ternana Calcio",
@@ -851,7 +851,7 @@
      "selection": "Under 3.5",
      "odds": 1.14,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Kenya Police FC v Posta Rangers FC",
@@ -926,7 +926,7 @@
    "kind": "high-odds",
    "odds": 134.7,
    "status": "lost",
-   "hit": 11,
+   "hit": 12,
    "total": 15,
    "profit": -10.0,
    "legs": [
@@ -983,7 +983,7 @@
      "match": "CD Platense Municipal Zacatecoluca v Atletico Balboa",
      "selection": "Yes",
      "odds": 1.64,
-     "result": "pending",
+     "result": "won",
      "score": "1:2"
     },
     {
@@ -1873,7 +1873,7 @@
      "selection": "Under 3.5",
      "odds": 1.15,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Asante Kotoko v Bibiani Gold Stars FC",
@@ -1983,7 +1983,7 @@
    "kind": "slip",
    "odds": 122673472849.4,
    "status": "lost",
-   "hit": 65,
+   "hit": 69,
    "total": 95,
    "profit": -10.0,
    "legs": [
@@ -2328,7 +2328,7 @@
      "selection": "Under 3.5",
      "odds": 1.27,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "US Pergolettese Crema v Pro Vercelli 1892",
@@ -2475,7 +2475,7 @@
      "selection": "Under 3.5",
      "odds": 1.27,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "US Pergolettese Crema v Pro Vercelli 1892",
@@ -2551,7 +2551,7 @@
      "match": "Nairobi United FC v Mara Sugar FC",
      "selection": "Under 3.5",
      "odds": 1.14,
-     "result": "pending",
+     "result": "void",
      "score": null
     }
    ]
@@ -2670,7 +2670,7 @@
      "match": "Anstey Nomads v Worcester City",
      "selection": "Over 1.5",
      "odds": 1.2,
-     "result": "pending",
+     "result": "void",
      "score": null
     },
     {
