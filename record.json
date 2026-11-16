@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-16T14:15:36Z",
+ "DATA_UPDATED": "2026-11-16T16:15:37Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -513,8 +513,8 @@
   }
  ],
  "picks": {
-  "settled": 2299,
-  "won": 1721,
+  "settled": 2306,
+  "won": 1728,
   "lost": 578,
   "winRate": 74.9
  },
@@ -1045,7 +1045,7 @@
    "kind": "slip",
    "odds": 1317.75,
    "status": "lost",
-   "hit": 7,
+   "hit": 11,
    "total": 30,
    "profit": -10.0,
    "legs": [
@@ -1109,64 +1109,64 @@
      "match": "Panionios Athens v Olympiacos Piraeus B",
      "selection": "Over 1.5",
      "odds": 1.21,
-     "result": "pending",
+     "result": "won",
      "score": "2:0"
     },
     {
      "match": "Namibia v Cameroon",
      "selection": "Over 1.5",
      "odds": 1.48,
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "0:3"
     },
     {
      "match": "Sudan v Senegal",
      "selection": "Over 1.5",
      "odds": 1.34,
-     "result": "pending",
-     "score": "0:2"
+     "result": "won",
+     "score": "2:4"
     },
     {
      "match": "Niki Volou 1924 PAE v Pas Pyrgos",
      "selection": "Over 1.5",
      "odds": 1.25,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "2:1"
     },
     {
      "match": "Colombe Sportive Du Dja Et Lobo v Dynamo de Douala",
      "selection": "Over 1.5",
      "odds": 1.28,
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
      "odds": 1.16,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Central African Republic v Benin",
      "selection": "Over 1.5",
      "odds": 1.36,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Eritrea v Guinea",
      "selection": "Over 1.5",
      "odds": 1.3,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "1. FC Tatran Presov v MFK Zvolen",
      "selection": "Over 1.5",
      "odds": 1.17,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Iceland v Luxembourg",
