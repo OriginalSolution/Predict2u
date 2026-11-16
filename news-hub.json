@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-15T23:25:14+00:00",
+ "updatedAt": "2026-11-16T00:25:18+00:00",
  "sources": [
   "BBC Sport",
   "ESPN",
@@ -8,18 +8,6 @@
   "SportyBet match centre (final scores)"
  ],
  "fixtures": [
-  {
-   "date": "2026-11-15",
-   "ko": "23:00",
-   "league": "Uruguay - Primera Division",
-   "match": "Defensor Sporting v CA Penarol Montevideo"
-  },
-  {
-   "date": "2026-11-15",
-   "ko": "23:30",
-   "league": "Argentina - Primera Nacional",
-   "match": "Ferro Carril Oeste v Gimnasia Y Tiro de Salta"
-  },
   {
    "date": "2026-11-16",
    "ko": "00:30",
@@ -197,16 +185,6 @@
    "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6cf4/live/14e20490-e078-11f1-9ec0-713bf094c3d1.jpg",
    "ourFixture": true,
    "preview": false
-  },
-  {
-   "title": "Sisters in Sweat: how a former Spurs player got 20,000 Indian women into sport",
-   "summary": "A dinner-party question, a Sunday kickabout and an idea that snowballed. Nine years on, Tanvie Hans and Swetha Subbiah have taken sporting sisterhood to 10 cities On a breezy evening in 2017, as conversations flowed…",
-   "source": "The Guardian",
-   "link": "https://www.theguardian.com/football/2026/nov/10/sisters-in-sweat-indian-women-sport-moving-the-goalposts",
-   "published": "2026-11-10T12:00:51+00:00",
-   "image": "https://i.guim.co.uk/img/media/8b9d0965acc0ef1eea103567b93ef586f2fee635/173_22_939_752/master/939.jpg?width=140&quality=85&auto=format&fit=max&s=06b8b24347489afb77efa8df9e52d6e7",
-   "ourFixture": true,
-   "preview": false
   }
  ],
  "injuries": [
@@ -330,15 +308,6 @@
    "ourFixture": false
   },
   {
-   "title": "Papers: Fernandes wants to see if Poch is 'real deal' before signing new contract",
-   "summary": "The top stories and transfer rumours from Sunday's newspapers...",
-   "source": "Sky Sports",
-   "link": "https://www.skysports.com/football/news/11095/13612415/x-paper-talk",
-   "published": "2026-11-15T09:47:00+00:00",
-   "image": "https://e2.365dm.com/26/08/1920x1080/skysports-paper-talk-football_7317647.jpg?20260809160824",
-   "ourFixture": false
-  },
-  {
    "title": "AFC Wimbledon, a failed £87m investment bid and the challenge for fan ownership",
    "summary": "Clubs with wealthy proprietors can maintain a loss-making operation but things can be more complex when the supporters carry the can When you walk up from Haydons Road railway station to Plough Lane there is a blue…",
    "source": "The Guardian",
@@ -384,15 +353,6 @@
    "ourFixture": false
   },
   {
-   "title": "Women’s transfer window summer 2026: all deals from world’s top six leagues",
-   "summary": "Every deal in the NWSL, WSL, Liga F, Frauen-Bundesliga, Première Ligue and Serie A Femminile as well as a club-by-club guide Men’s transfer window interactive guide Continue reading...",
-   "source": "The Guardian",
-   "link": "https://www.theguardian.com/football/ng-interactive/2026/sep/01/womens-transfer-window-summer-2026-all-deals-from-worlds-top-six-leagues",
-   "published": "2026-09-22T08:59:39+00:00",
-   "image": "https://i.guim.co.uk/img/media/05fc0800306c28571b9c257d5e4854d677517434/0_0_4724_3780/master/4724.jpg?width=140&quality=85&auto=format&fit=max&s=1648b31c3dedbf58aaa124152708ac10",
-   "ourFixture": false
-  },
-  {
    "title": "Arsenal had more than 20 players on shortlist to capitalise on title win",
    "summary": "Senior football correspondent Sami Mokbel goes inside Arsenal's bid to capitalise on their Premier League title and strengthen their squad this summer.",
    "source": "BBC Sport",
@@ -418,14 +378,23 @@
    "published": "2026-09-01T12:12:32+00:00",
    "image": "https://i.guim.co.uk/img/media/c4db9b3a05f09dc57dbb617f0d3fe452157908c5/0_0_5000_4000/master/5000.jpg?width=140&quality=85&auto=format&fit=max&s=06010102296289a1fdca98db21bfaf76",
    "ourFixture": false
+  },
+  {
+   "title": "Life as a Wag in the transfer window",
+   "summary": "What is life like for footballers' families during the transfer window where a last-minute deal means you need to uproot your life and move hundreds of miles?",
+   "source": "BBC Sport",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cx2jpgj24vlo",
+   "published": "2026-08-08T05:15:34+00:00",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8ebc/live/82fc5780-925f-11f1-b9ff-37ae3aba3894.jpg",
+   "ourFixture": false
   }
  ],
  "record": {
-  "won": 28,
+  "won": 29,
   "lost": 187,
-  "settled": 215,
-  "pending": 42,
-  "winRate": 13.0
+  "settled": 216,
+  "pending": 55,
+  "winRate": 13.4
  },
  "codes": [
   {
@@ -436,7 +405,7 @@
    "kind": "slip",
    "odds": 11804.8,
    "status": "lost",
-   "hit": 12,
+   "hit": 13,
    "total": 26,
    "legs": [
     {
@@ -448,7 +417,7 @@
     {
      "match": "Deportivo San Pedro v CD Marquense",
      "selection": "Home",
-     "result": "pending",
+     "result": "won",
      "score": "2:0"
     },
     {
@@ -605,7 +574,7 @@
    "kind": "slip",
    "odds": 1203.22,
    "status": "lost",
-   "hit": 19,
+   "hit": 20,
    "total": 27,
    "legs": [
     {
@@ -659,7 +628,7 @@
     {
      "match": "CD Cobreloa Calama v Puerto Montt",
      "selection": "Home",
-     "result": "pending",
+     "result": "won",
      "score": "3:0"
     },
     {
@@ -1209,6 +1178,981 @@
    ]
   },
   {
+   "code": "91YYH5",
+   "book": "sportybet",
+   "date": "2026-11-15",
+   "name": "Hot Picks slip",
+   "kind": "slip",
+   "odds": 16.09,
+   "status": "pending",
+   "hit": 0,
+   "total": 11,
+   "legs": [
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Senegal",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kenya v South Africa",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sierra Leone v Congo DR",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Eritrea v Guinea",
+     "selection": "Guinea",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wales v Portugal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "B3KQTFD",
+   "book": "msport",
+   "date": "2026-11-15",
+   "name": "Hot Picks slip",
+   "kind": "slip",
+   "odds": 16.64,
+   "status": "pending",
+   "hit": 0,
+   "total": 11,
+   "legs": [
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Senegal",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kenya v South Africa",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sierra Leone v Congo DR",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Eritrea v Guinea",
+     "selection": "Guinea",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wales v Portugal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "VZU1P2",
+   "book": "betika",
+   "date": "2026-11-15",
+   "name": "Hot Picks slip",
+   "kind": "slip",
+   "odds": 13.99,
+   "status": "pending",
+   "hit": 0,
+   "total": 11,
+   "legs": [
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Senegal",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kenya v South Africa",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sierra Leone v Congo DR",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Eritrea v Guinea",
+     "selection": "Guinea",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wales v Portugal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "91YYH5",
+   "book": "footballcom",
+   "date": "2026-11-15",
+   "name": "Hot Picks slip",
+   "kind": "slip",
+   "odds": 16.09,
+   "status": "pending",
+   "hit": 0,
+   "total": 11,
+   "legs": [
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Senegal",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kenya v South Africa",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sierra Leone v Congo DR",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Eritrea v Guinea",
+     "selection": "Guinea",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wales v Portugal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "9ZAM1G2",
+   "book": "betpawa",
+   "date": "2026-11-15",
+   "name": "Hot Picks slip",
+   "kind": "slip",
+   "odds": 17.24,
+   "status": "pending",
+   "hit": 0,
+   "total": 11,
+   "legs": [
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Senegal",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kenya v South Africa",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sierra Leone v Congo DR",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Eritrea v Guinea",
+     "selection": "Guinea",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wales v Portugal",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "E95HDZ",
+   "book": "sportybet",
+   "date": "2026-11-15",
+   "name": "Top 5 hot picks",
+   "kind": "slip",
+   "odds": 4.07,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Senegal",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kenya v South Africa",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "B3KQTGH",
+   "book": "msport",
+   "date": "2026-11-15",
+   "name": "Top 5 hot picks",
+   "kind": "slip",
+   "odds": 4.07,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Senegal",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kenya v South Africa",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "THNSGV",
+   "book": "betika",
+   "date": "2026-11-15",
+   "name": "Top 5 hot picks",
+   "kind": "slip",
+   "odds": 3.72,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Senegal",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kenya v South Africa",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "E95HDZ",
+   "book": "footballcom",
+   "date": "2026-11-15",
+   "name": "Top 5 hot picks",
+   "kind": "slip",
+   "odds": 4.07,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Senegal",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kenya v South Africa",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "V9UGKKN",
+   "book": "betpawa",
+   "date": "2026-11-15",
+   "name": "Top 5 hot picks",
+   "kind": "slip",
+   "odds": 4.16,
+   "status": "pending",
+   "hit": 0,
+   "total": 5,
+   "legs": [
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Senegal",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kenya v South Africa",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "ABWYXR",
+   "book": "sportybet",
+   "date": "2026-11-15",
+   "name": "Top 10 hot picks",
+   "kind": "slip",
+   "odds": 13.75,
+   "status": "pending",
+   "hit": 0,
+   "total": 10,
+   "legs": [
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Senegal",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kenya v South Africa",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sierra Leone v Congo DR",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Eritrea v Guinea",
+     "selection": "Guinea",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "B3KQTH7",
+   "book": "msport",
+   "date": "2026-11-15",
+   "name": "Top 10 hot picks",
+   "kind": "slip",
+   "odds": 14.1,
+   "status": "pending",
+   "hit": 0,
+   "total": 10,
+   "legs": [
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Senegal",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kenya v South Africa",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sierra Leone v Congo DR",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Eritrea v Guinea",
+     "selection": "Guinea",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "XGWWZ6",
+   "book": "betika",
+   "date": "2026-11-15",
+   "name": "Top 10 hot picks",
+   "kind": "slip",
+   "odds": 11.96,
+   "status": "pending",
+   "hit": 0,
+   "total": 10,
+   "legs": [
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Senegal",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kenya v South Africa",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sierra Leone v Congo DR",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Eritrea v Guinea",
+     "selection": "Guinea",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "ABWYXR",
+   "book": "footballcom",
+   "date": "2026-11-15",
+   "name": "Top 10 hot picks",
+   "kind": "slip",
+   "odds": 13.75,
+   "status": "pending",
+   "hit": 0,
+   "total": 10,
+   "legs": [
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Senegal",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kenya v South Africa",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sierra Leone v Congo DR",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Eritrea v Guinea",
+     "selection": "Guinea",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "CYOJVYH",
+   "book": "betpawa",
+   "date": "2026-11-15",
+   "name": "Top 10 hot picks",
+   "kind": "slip",
+   "odds": 14.61,
+   "status": "pending",
+   "hit": 0,
+   "total": 10,
+   "legs": [
+    {
+     "match": "Sudan v Senegal",
+     "selection": "Senegal",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Somalia v Ghana",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tanzania v Nigeria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Kenya v South Africa",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "South Sudan v Angola",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sierra Leone v Congo DR",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Israel v Austria",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Denmark v Norway",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Eritrea v Guinea",
+     "selection": "Guinea",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Greece v Serbia",
+     "selection": "Over 1.5",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
    "code": "EJNYJF",
    "book": "sportybet",
    "date": "2026-11-14",
@@ -1585,7 +2529,7 @@
      "match": "Ferro Carril Oeste v Gimnasia Y Tiro de Salta",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Asante Kotoko v Bibiani Gold Stars FC",
@@ -1681,7 +2625,7 @@
    "kind": "slip",
    "odds": 122673472849.4,
    "status": "lost",
-   "hit": 68,
+   "hit": 69,
    "total": 95,
    "legs": [
     {
@@ -2221,7 +3165,7 @@
     {
      "match": "Cerro Porteno v Sol de America Villa Elisa",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "won",
      "score": "4:5"
     },
     {
@@ -2234,7 +3178,7 @@
      "match": "Panama v Curacao",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "2:0"
     },
     {
      "match": "Defensor Sporting v CA Penarol Montevideo",
@@ -2252,7 +3196,7 @@
      "match": "Ferro Carril Oeste v Gimnasia Y Tiro de Salta",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     }
    ]
   },
@@ -2469,7 +3413,7 @@
    "name": "Slip 1",
    "kind": "slip",
    "odds": 2.1,
-   "status": "pending",
+   "status": "won",
    "hit": 4,
    "total": 5,
    "legs": [
@@ -2500,7 +3444,7 @@
     {
      "match": "Nairobi United FC v Mara Sugar FC",
      "selection": "Under 3.5",
-     "result": "pending",
+     "result": "void",
      "score": null
     }
    ]
@@ -2604,7 +3548,7 @@
     {
      "match": "Anstey Nomads v Worcester City",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "void",
      "score": null
     },
     {
@@ -4742,603 +5686,6 @@
      "selection": "Over 0.5",
      "result": "won",
      "score": "2:0"
-    }
-   ]
-  },
-  {
-   "code": "KS4T3X",
-   "book": "betika",
-   "date": "2026-11-13",
-   "name": "Top 5 hot picks",
-   "kind": "slip",
-   "odds": 1.43,
-   "status": "lost",
-   "hit": 4,
-   "total": 5,
-   "legs": [
-    {
-     "match": "Valladolid v CD Castellon",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Mallorca v Cordoba CF",
-     "selection": "Over 2",
-     "result": "won",
-     "score": "3:3"
-    },
-    {
-     "match": "Almeria v FC Andorra",
-     "selection": "Almeria",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Eibar v Cadiz",
-     "selection": "Eibar",
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "Carlisle United v Boston United FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:0"
-    }
-   ]
-  },
-  {
-   "code": "9ULS47",
-   "book": "footballcom",
-   "date": "2026-11-13",
-   "name": "Top 5 hot picks",
-   "kind": "slip",
-   "odds": 3.26,
-   "status": "won",
-   "hit": 3,
-   "total": 3,
-   "legs": [
-    {
-     "match": "Real Valladolid v CD Castellon",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "RCD Mallorca v Cordoba CF",
-     "selection": "Over 2",
-     "result": "won",
-     "score": "3:3"
-    },
-    {
-     "match": "Carlisle United v Boston United FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:0"
-    }
-   ]
-  },
-  {
-   "code": "12XYPO3",
-   "book": "betpawa",
-   "date": "2026-11-13",
-   "name": "Top 5 hot picks",
-   "kind": "slip",
-   "odds": 1.37,
-   "status": "lost",
-   "hit": 4,
-   "total": 5,
-   "legs": [
-    {
-     "match": "Valladolid v CD Castellon",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Mallorca v Cordoba CF",
-     "selection": "Over 2",
-     "result": "won",
-     "score": "3:3"
-    },
-    {
-     "match": "Almeria v FC Andorra",
-     "selection": "Almeria",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Eibar v Cadiz",
-     "selection": "Eibar",
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "Carlisle United v Boston United FC",
-     "selection": "Over 0.5",
-     "result": "won",
-     "score": "2:0"
-    }
-   ]
-  },
-  {
-   "code": "9FZNJG",
-   "book": "sportybet",
-   "date": "2026-11-12",
-   "name": "Descending odds · set · HIGH RISK",
-   "kind": "slip",
-   "odds": 12.18,
-   "status": "lost",
-   "hit": 8,
-   "total": 9,
-   "legs": [
-    {
-     "match": "APIA Leichhardt v Adelaide City FC",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "3:0"
-    },
-    {
-     "match": "CDA Navalcarnero v Betis",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "2:3"
-    },
-    {
-     "match": "CD Tarancon v Levante",
-     "selection": "Over 2.5",
-     "result": "lost",
-     "score": "1:2"
-    },
-    {
-     "match": "Cayman Islands v Guyana",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "0:6"
-    },
-    {
-     "match": "Bonaire v Cuba",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "1:7"
-    },
-    {
-     "match": "Puerto Rico v Dominica",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "4:2"
-    },
-    {
-     "match": "Bermuda v Saint Lucia",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Swansea University v Treowen Stars",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "2:3"
-    },
-    {
-     "match": "Denbigh Town v Gresford Athletic",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "7:1"
-    }
-   ]
-  },
-  {
-   "code": "EEPTPU",
-   "book": "sportybet",
-   "date": "2026-11-12",
-   "name": "Slip 1",
-   "kind": "slip",
-   "odds": 310.44,
-   "status": "lost",
-   "hit": 23,
-   "total": 25,
-   "legs": [
-    {
-     "match": "Deportes Quindio v Tigres FC",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "New Zealand v India",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "5:0"
-    },
-    {
-     "match": "Bengaluru FC B v Rebels FC",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "APIA Leichhardt v Adelaide City FC",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "3:0"
-    },
-    {
-     "match": "Hannover v TSV Havelse",
-     "selection": "Yes",
-     "result": "won",
-     "score": "6:1"
-    },
-    {
-     "match": "Ghana v Somalia",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Congo DR v Sierra Leone",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Guinea v Eritrea",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Malta v Eswatini",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Chambery SF v Grenoble Foot",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "CDA Navalcarnero v Betis",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:3"
-    },
-    {
-     "match": "Kimberley de Mar Del Plata v Club Olimpo",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Benin v Central African Republic",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "4:1"
-    },
-    {
-     "match": "Cameroon v Namibia",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Ivory Coast v Gambia",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Senegal v Sudan",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "4:1"
-    },
-    {
-     "match": "Cayman Islands v Guyana",
-     "selection": "Over 2.5",
-     "result": "won",
-     "score": "0:6"
-    },
-    {
-     "match": "Czechia v Spain",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "England v Croatia",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Montenegro v Latvia",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "San Marino v Belarus",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "Bonaire v Cuba",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:7"
-    },
-    {
-     "match": "CD Aguila San Miguel v Municipal Limeno",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "AA Ponte Preta SP v Operario Ferroviario EC PR",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "AD Pasto v CD Junior FC",
-     "selection": "Over 1.5",
-     "result": "lost",
-     "score": "0:1"
-    }
-   ]
-  },
-  {
-   "code": "E788AC",
-   "book": "sportybet",
-   "date": "2026-11-12",
-   "name": "Hot by market: Over 1.5 goals",
-   "kind": "slip",
-   "odds": 1.75,
-   "status": "won",
-   "hit": 3,
-   "total": 3,
-   "legs": [
-    {
-     "match": "Montenegro v Latvia",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "San Marino v Belarus",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "Czechia v Spain",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    }
-   ]
-  },
-  {
-   "code": "B3HHDS4",
-   "book": "msport",
-   "date": "2026-11-12",
-   "name": "Hot by market: Over 1.5 goals",
-   "kind": "slip",
-   "odds": 1.8,
-   "status": "won",
-   "hit": 3,
-   "total": 3,
-   "legs": [
-    {
-     "match": "Montenegro v Latvia",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "San Marino v Belarus",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "Czechia v Spain",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    }
-   ]
-  },
-  {
-   "code": "QYQVSN",
-   "book": "betika",
-   "date": "2026-11-12",
-   "name": "Hot by market: Over 1.5 goals",
-   "kind": "slip",
-   "odds": 1.49,
-   "status": "won",
-   "hit": 3,
-   "total": 3,
-   "legs": [
-    {
-     "match": "Montenegro v Latvia",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "San Marino v Belarus",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "Czechia v Spain",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    }
-   ]
-  },
-  {
-   "code": "E788AC",
-   "book": "footballcom",
-   "date": "2026-11-12",
-   "name": "Hot by market: Over 1.5 goals",
-   "kind": "slip",
-   "odds": 1.75,
-   "status": "won",
-   "hit": 3,
-   "total": 3,
-   "legs": [
-    {
-     "match": "Montenegro v Latvia",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "San Marino v Belarus",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "Czechia v Spain",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    }
-   ]
-  },
-  {
-   "code": "Z7G9P6G",
-   "book": "betpawa",
-   "date": "2026-11-12",
-   "name": "Hot by market: Over 1.5 goals",
-   "kind": "slip",
-   "odds": 1.8,
-   "status": "won",
-   "hit": 3,
-   "total": 3,
-   "legs": [
-    {
-     "match": "Montenegro v Latvia",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "San Marino v Belarus",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "Czechia v Spain",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    }
-   ]
-  },
-  {
-   "code": "DGS2DF",
-   "book": "sportybet",
-   "date": "2026-11-12",
-   "name": "Hot by market: Over 2.5 goals",
-   "kind": "slip",
-   "odds": 1.29,
-   "status": "won",
-   "hit": 1,
-   "total": 1,
-   "legs": [
-    {
-     "match": "Czechia v Spain",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    }
-   ]
-  },
-  {
-   "code": "B3HHDRF",
-   "book": "msport",
-   "date": "2026-11-12",
-   "name": "Hot by market: Over 2.5 goals",
-   "kind": "slip",
-   "odds": 1.27,
-   "status": "won",
-   "hit": 1,
-   "total": 1,
-   "legs": [
-    {
-     "match": "Czechia v Spain",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    }
-   ]
-  },
-  {
-   "code": "GXTHRM",
-   "book": "betika",
-   "date": "2026-11-12",
-   "name": "Hot by market: Over 2.5 goals",
-   "kind": "slip",
-   "odds": 1.27,
-   "status": "won",
-   "hit": 1,
-   "total": 1,
-   "legs": [
-    {
-     "match": "Czechia v Spain",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    }
-   ]
-  },
-  {
-   "code": "DGS2DF",
-   "book": "footballcom",
-   "date": "2026-11-12",
-   "name": "Hot by market: Over 2.5 goals",
-   "kind": "slip",
-   "odds": 1.3,
-   "status": "won",
-   "hit": 1,
-   "total": 1,
-   "legs": [
-    {
-     "match": "Czechia v Spain",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
-    }
-   ]
-  },
-  {
-   "code": "C3LQLOA",
-   "book": "betpawa",
-   "date": "2026-11-12",
-   "name": "Hot by market: Over 2.5 goals",
-   "kind": "slip",
-   "odds": 1.3,
-   "status": "won",
-   "hit": 1,
-   "total": 1,
-   "legs": [
-    {
-     "match": "Czechia v Spain",
-     "selection": "Over 1.5",
-     "result": "won",
-     "score": "0:2"
     }
    ]
   }
