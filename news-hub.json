@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-16T16:25:13+00:00",
+ "updatedAt": "2026-11-16T17:25:12+00:00",
  "sources": [
   "BBC Sport",
   "ESPN",
@@ -125,7 +125,7 @@
  ],
  "injuries": [
   {
-   "title": "Wales without injured Williams for Portugal game",
+   "title": "Wales without Williams for Portugal as Bellamy makes Vitinha point",
    "summary": "Wales will be without right-back Neco Williams for their final Nations League group match against Portugal, while goalkeeper Karl Darlow is a doubt.",
    "source": "BBC Sport",
    "link": "https://www.bbc.co.uk/sport/football/articles/cmkgk3nv6pqyo",
@@ -217,6 +217,24 @@
  ],
  "transfers": [
   {
+   "title": "Cameroon and Senegal close in on Afcon 2027 qualification",
+   "summary": "Cameroon and Senegal are on the brink of qualifying for the 2027 Africa Cup of Nations, while Ghana secure another crucial victory in their bid to reach the finals.",
+   "source": "BBC Sport",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cwg7lr2ly3ngo",
+   "published": "2026-11-16T17:07:04+00:00",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9751/live/dd2677a0-e1d7-11f1-ac67-3510ff19b64e.jpg",
+   "ourFixture": false
+  },
+  {
+   "title": "Do good club managers necessarily make good international managers? | Jonathan Wilson",
+   "summary": "In a mailbag edition of our newsletter, we look at Mauricio Pochettino, Pep Guardiola’s international credentials and the lack of elite English managers Sign up for our free newsletter here Who should replace…",
+   "source": "The Guardian",
+   "link": "https://www.theguardian.com/global/2026/nov/16/mauricio-pochettino-usmnt-replacement-coach",
+   "published": "2026-11-16T16:14:29+00:00",
+   "image": "https://i.guim.co.uk/img/media/a05aa098b3152673b6c66abe291ae14babf13bc6/0_0_5000_4000/master/5000.jpg?width=140&quality=85&auto=format&fit=max&s=dbd0d76dc243dd5101ddcb26cd77fe2d",
+   "ourFixture": false
+  },
+  {
    "title": "Transfer Centre LIVE! Vini Jr admits to feeling overwhelmed by Arsenal speculation",
    "summary": "",
    "source": "Sky Sports",
@@ -232,15 +250,6 @@
    "link": "https://www.bbc.co.uk/sport/football/articles/cmqx584jwwpvo",
    "published": "2026-11-16T12:01:16+00:00",
    "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/2464/live/48304950-e1aa-11f1-8ee3-23d0d09d2796.jpg",
-   "ourFixture": false
-  },
-  {
-   "title": "Frank agrees deal in principle to become new Crystal Palace head coach",
-   "summary": "Crystal Palace have agreed terms in principle with Thomas Frank to become their next head coach, Sky Sports News understands.",
-   "source": "Sky Sports",
-   "link": "https://www.skysports.com/football/news/11095/13612758/thomas-frank-crystal-palace-agree-deal-in-principle-with-former-spurs-and-brentford-boss-as-pierre-sages-successor",
-   "published": "2026-11-16T11:30:00+00:00",
-   "image": "https://e0.365dm.com/26/11/1920x1080/skysports-frank-crystal-palace_7401633.jpg?20261108205851",
    "ourFixture": false
   },
   {
@@ -277,15 +286,6 @@
    "link": "https://www.theguardian.com/football/2026/nov/15/afc-wimbledon-a-failed-87m-investment-bid-and-the-challenge-for-fan-ownership",
    "published": "2026-11-15T08:00:09+00:00",
    "image": "https://i.guim.co.uk/img/media/841b080407549ef8762738c7e1433db81e85e6c2/159_664_5449_4359/master/5449.jpg?width=140&quality=85&auto=format&fit=max&s=995d13ac235fcd940c47c99fe974640f",
-   "ourFixture": false
-  },
-  {
-   "title": "How will the USMNT replace Mauricio Pochettino? There’s no clear answer",
-   "summary": "The USMNT head coach is on the verge of sealing a move to Manchester United, but it’s hard to know who could be in the chair next Sign up for our free newsletter here Even before the 2026 World Cup, the US Soccer…",
-   "source": "The Guardian",
-   "link": "https://www.theguardian.com/football/2026/nov/12/mauricio-pochettino-replacements-usmnt-manchester-united",
-   "published": "2026-11-12T19:20:01+00:00",
-   "image": "https://i.guim.co.uk/img/media/0987d0bf192410b25795629cf35bbc8bb01305bb/593_0_2966_2373/master/2966.jpg?width=140&quality=85&auto=format&fit=max&s=f3d6f9219f8f238f0b9d52ab54de1bba",
    "ourFixture": false
   },
   {
@@ -345,10 +345,10 @@
  ],
  "record": {
   "won": 29,
-  "lost": 188,
-  "settled": 217,
-  "pending": 69,
-  "winRate": 13.4
+  "lost": 194,
+  "settled": 223,
+  "pending": 39,
+  "winRate": 13.0
  },
  "codes": [
   {
@@ -358,14 +358,14 @@
    "name": "Hot Picks slip",
    "kind": "slip",
    "odds": 24.83,
-   "status": "pending",
+   "status": "lost",
    "hit": 2,
    "total": 13,
    "legs": [
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -438,7 +438,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Guinea",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     }
    ]
   },
@@ -449,14 +449,14 @@
    "name": "Hot Picks slip",
    "kind": "slip",
    "odds": 26.04,
-   "status": "pending",
+   "status": "lost",
    "hit": 2,
    "total": 13,
    "legs": [
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -529,7 +529,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Guinea",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     }
    ]
   },
@@ -540,14 +540,14 @@
    "name": "Hot Picks slip",
    "kind": "slip",
    "odds": 21.88,
-   "status": "pending",
+   "status": "lost",
    "hit": 2,
    "total": 13,
    "legs": [
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -620,7 +620,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Guinea",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     }
    ]
   },
@@ -631,14 +631,14 @@
    "name": "Hot Picks slip",
    "kind": "slip",
    "odds": 25.18,
-   "status": "pending",
+   "status": "lost",
    "hit": 2,
    "total": 13,
    "legs": [
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -711,7 +711,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Guinea",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     }
    ]
   },
@@ -722,14 +722,14 @@
    "name": "Hot Picks slip",
    "kind": "slip",
    "odds": 27.46,
-   "status": "pending",
+   "status": "lost",
    "hit": 2,
    "total": 13,
    "legs": [
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -802,7 +802,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Guinea",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     }
    ]
   },
@@ -813,14 +813,14 @@
    "name": "Top 5 hot picks",
    "kind": "slip",
    "odds": 3.11,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 5,
    "legs": [
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -856,14 +856,14 @@
    "name": "Top 5 hot picks",
    "kind": "slip",
    "odds": 3.11,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 5,
    "legs": [
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -899,14 +899,14 @@
    "name": "Top 5 hot picks",
    "kind": "slip",
    "odds": 2.92,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 5,
    "legs": [
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -942,14 +942,14 @@
    "name": "Top 5 hot picks",
    "kind": "slip",
    "odds": 3.11,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 5,
    "legs": [
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -985,14 +985,14 @@
    "name": "Top 5 hot picks",
    "kind": "slip",
    "odds": 3.19,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 5,
    "legs": [
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -1028,14 +1028,14 @@
    "name": "Top 10 hot picks",
    "kind": "slip",
    "odds": 9.46,
-   "status": "pending",
+   "status": "lost",
    "hit": 2,
    "total": 10,
    "legs": [
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -1101,14 +1101,14 @@
    "name": "Top 10 hot picks",
    "kind": "slip",
    "odds": 9.78,
-   "status": "pending",
+   "status": "lost",
    "hit": 2,
    "total": 10,
    "legs": [
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -1174,14 +1174,14 @@
    "name": "Top 10 hot picks",
    "kind": "slip",
    "odds": 8.77,
-   "status": "pending",
+   "status": "lost",
    "hit": 2,
    "total": 10,
    "legs": [
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -1247,14 +1247,14 @@
    "name": "Top 10 hot picks",
    "kind": "slip",
    "odds": 9.46,
-   "status": "pending",
+   "status": "lost",
    "hit": 2,
    "total": 10,
    "legs": [
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -1320,14 +1320,14 @@
    "name": "Top 10 hot picks",
    "kind": "slip",
    "odds": 10.17,
-   "status": "pending",
+   "status": "lost",
    "hit": 2,
    "total": 10,
    "legs": [
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -1738,7 +1738,7 @@
    "kind": "slip",
    "odds": 1317.75,
    "status": "lost",
-   "hit": 11,
+   "hit": 12,
    "total": 30,
    "legs": [
     {
@@ -1816,13 +1816,13 @@
     {
      "match": "Colombe Sportive Du Dja Et Lobo v Dynamo de Douala",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -1835,7 +1835,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     },
     {
      "match": "1. FC Tatran Presov v MFK Zvolen",
@@ -1847,13 +1847,13 @@
      "match": "Iceland v Luxembourg",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Lithuania v Liechtenstein",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Andorra v Azerbaijan",
@@ -2173,7 +2173,7 @@
    "name": "Hot Picks slip",
    "kind": "slip",
    "odds": 16.09,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 11,
    "legs": [
@@ -2186,7 +2186,7 @@
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -2229,7 +2229,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Guinea",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     },
     {
      "match": "Greece v Serbia",
@@ -2252,7 +2252,7 @@
    "name": "Hot Picks slip",
    "kind": "slip",
    "odds": 16.64,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 11,
    "legs": [
@@ -2265,7 +2265,7 @@
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -2308,7 +2308,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Guinea",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     },
     {
      "match": "Greece v Serbia",
@@ -2331,7 +2331,7 @@
    "name": "Hot Picks slip",
    "kind": "slip",
    "odds": 13.99,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 11,
    "legs": [
@@ -2344,7 +2344,7 @@
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -2387,7 +2387,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Guinea",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     },
     {
      "match": "Greece v Serbia",
@@ -2410,7 +2410,7 @@
    "name": "Hot Picks slip",
    "kind": "slip",
    "odds": 16.09,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 11,
    "legs": [
@@ -2423,7 +2423,7 @@
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -2466,7 +2466,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Guinea",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     },
     {
      "match": "Greece v Serbia",
@@ -2489,7 +2489,7 @@
    "name": "Hot Picks slip",
    "kind": "slip",
    "odds": 17.24,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 11,
    "legs": [
@@ -2502,7 +2502,7 @@
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -2545,7 +2545,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Guinea",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     },
     {
      "match": "Greece v Serbia",
@@ -2568,7 +2568,7 @@
    "name": "Top 5 hot picks",
    "kind": "slip",
    "odds": 4.07,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 5,
    "legs": [
@@ -2581,7 +2581,7 @@
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -2611,7 +2611,7 @@
    "name": "Top 5 hot picks",
    "kind": "slip",
    "odds": 4.07,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 5,
    "legs": [
@@ -2624,7 +2624,7 @@
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -2654,7 +2654,7 @@
    "name": "Top 5 hot picks",
    "kind": "slip",
    "odds": 3.72,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 5,
    "legs": [
@@ -2667,7 +2667,7 @@
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -2697,7 +2697,7 @@
    "name": "Top 5 hot picks",
    "kind": "slip",
    "odds": 4.07,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 5,
    "legs": [
@@ -2710,7 +2710,7 @@
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -2740,7 +2740,7 @@
    "name": "Top 5 hot picks",
    "kind": "slip",
    "odds": 4.16,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 5,
    "legs": [
@@ -2753,7 +2753,7 @@
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -2783,7 +2783,7 @@
    "name": "Top 10 hot picks",
    "kind": "slip",
    "odds": 13.75,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 10,
    "legs": [
@@ -2796,7 +2796,7 @@
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -2839,7 +2839,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Guinea",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     },
     {
      "match": "Greece v Serbia",
@@ -2856,7 +2856,7 @@
    "name": "Top 10 hot picks",
    "kind": "slip",
    "odds": 14.1,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 10,
    "legs": [
@@ -2869,7 +2869,7 @@
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -2912,7 +2912,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Guinea",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     },
     {
      "match": "Greece v Serbia",
@@ -2929,7 +2929,7 @@
    "name": "Top 10 hot picks",
    "kind": "slip",
    "odds": 11.96,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 10,
    "legs": [
@@ -2942,7 +2942,7 @@
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -2985,7 +2985,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Guinea",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     },
     {
      "match": "Greece v Serbia",
@@ -3002,7 +3002,7 @@
    "name": "Top 10 hot picks",
    "kind": "slip",
    "odds": 13.75,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 10,
    "legs": [
@@ -3015,7 +3015,7 @@
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -3058,7 +3058,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Guinea",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     },
     {
      "match": "Greece v Serbia",
@@ -3075,7 +3075,7 @@
    "name": "Top 10 hot picks",
    "kind": "slip",
    "odds": 14.61,
-   "status": "pending",
+   "status": "lost",
    "hit": 1,
    "total": 10,
    "legs": [
@@ -3088,7 +3088,7 @@
     {
      "match": "Somalia v Ghana",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -3131,7 +3131,7 @@
      "match": "Eritrea v Guinea",
      "selection": "Guinea",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:2"
     },
     {
      "match": "Greece v Serbia",
