@@ -1,0 +1,114 @@
+{
+ "key": "t5b3-screens",
+ "name": "Top5 v Bottom3 screens",
+ "date": "2026-11-17",
+ "riskLabel": "HIGH RISK",
+ "waived": false,
+ "meetsFloor": false,
+ "verification": "Bets For The Day. Normal Predict2u gates applied. HIGH RISK, no guarantees.",
+ "parts": [
+  {
+   "name": "Top5 v Bottom3 screens · set",
+   "legs": 2,
+   "events": [
+    "sr:match:72723334",
+    "sr:match:72202742"
+   ],
+   "totalOdds": 1.83,
+   "codes": {
+    "sportybet": [
+     {
+      "code": "FY9EWQ",
+      "totalOdds": 1.83,
+      "legs": 2,
+      "link": "https://www.sportybet.com/gh/?shareCode=FY9EWQ",
+      "matches": [
+       "sr:match:72202742",
+       "sr:match:72723334"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "footballcom": [
+     {
+      "code": "FY9EWQ",
+      "totalOdds": 1.83,
+      "legs": 2,
+      "link": "https://www.football.com/gh/?shareCode=FY9EWQ",
+      "matches": [
+       "sr:match:72202742",
+       "sr:match:72723334"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ]
+   },
+   "missing": {
+    "msport": "not booked",
+    "betika": "not booked",
+    "betpawa": "not booked"
+   },
+   "label": "Top5 v Bottom3 screens · set · HIGH RISK",
+   "source": "t5b3-screens",
+   "meetsFloor": false,
+   "status": "pending"
+  }
+ ],
+ "legList": [
+  {
+   "eventId": "sr:match:72723334",
+   "marketId": "16",
+   "specifier": "hcp=-1",
+   "outcomeId": "1714",
+   "date": "2026-11-21",
+   "ko": "13:00",
+   "kickoff": "2026-11-21T13:00:00Z",
+   "league": "Turkiye - Super Lig",
+   "match": "Galatasaray Istanbul v Samsunspor",
+   "market": "Asian Handicap -1",
+   "selection": "Home (-1.0)",
+   "odds": 1.3,
+   "liveOdds": 1.3,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": "1 v 17/18",
+   "x12": "1.22/7.12/10.84",
+   "case": "stronger AH-1 @1.3 (top5 v bottom3)",
+   "leagueFavRate": null,
+   "rate": null
+  },
+  {
+   "eventId": "sr:match:72202742",
+   "marketId": "16",
+   "specifier": "hcp=-1",
+   "outcomeId": "1714",
+   "date": "2026-11-21",
+   "ko": "15:00",
+   "kickoff": "2026-11-21T15:00:00Z",
+   "league": "Scotland - Championship",
+   "match": "Dunfermline Athletic FC v Greenock Morton FC",
+   "market": "Asian Handicap -1",
+   "selection": "Home (-1.0)",
+   "odds": 1.41,
+   "liveOdds": 1.41,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": "3 v 9/10",
+   "x12": "1.28/5.50/9.40",
+   "case": "stronger AH-1 @1.41 (top5 v bottom3)",
+   "leagueFavRate": null,
+   "rate": null
+  }
+ ],
+ "legs": 2,
+ "totalOdds": 1.83,
+ "hit": 0,
+ "total": 2,
+ "status": "pending"
+}
