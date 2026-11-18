@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-18T00:15:43Z",
+ "DATA_UPDATED": "2026-11-18T01:45:48Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -13,7 +13,7 @@
   "returned": 2436.2,
   "profit": 16.2,
   "roi": 0.7,
-  "pending": 160,
+  "pending": 215,
   "codesSettled": 982,
   "codesWon": 141,
   "codesLost": 841
@@ -537,10 +537,10 @@
   }
  ],
  "picks": {
-  "settled": 2382,
-  "won": 1778,
+  "settled": 2384,
+  "won": 1780,
   "lost": 604,
-  "winRate": 74.6
+  "winRate": 74.7
  },
  "recent": [
   {
@@ -670,7 +670,7 @@
    "kind": "slip",
    "odds": 662.59,
    "status": "lost",
-   "hit": 17,
+   "hit": 18,
    "total": 26,
    "profit": -10.0,
    "legs": [
@@ -852,9 +852,9 @@
     {
      "match": "Club Olimpo v Kimberley de Mar Del Plata",
      "selection": "Over 1.5",
-     "odds": 1.11,
-     "result": "pending",
-     "score": "1:0"
+     "odds": 2.5,
+     "result": "won",
+     "score": "1:1"
     }
    ]
   },
@@ -880,7 +880,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.25,
      "result": "pending",
      "score": null
     },
@@ -1216,7 +1216,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.25,
      "result": "pending",
      "score": null
     },
@@ -1440,7 +1440,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.25,
      "result": "pending",
      "score": null
     },
@@ -1587,7 +1587,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.25,
      "result": "pending",
      "score": null
     },
@@ -1685,7 +1685,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.25,
      "result": "pending",
      "score": null
     },
@@ -1937,7 +1937,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.25,
      "result": "pending",
      "score": null
     },
@@ -2105,7 +2105,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.25,
      "result": "pending",
      "score": null
     },
@@ -2777,7 +2777,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.25,
      "result": "pending",
      "score": null
     },
@@ -3491,7 +3491,7 @@
    "kind": "slip",
    "odds": 936.04,
    "status": "lost",
-   "hit": 18,
+   "hit": 19,
    "total": 28,
    "profit": -10.0,
    "legs": [
@@ -3688,8 +3688,8 @@
      "match": "Club Olimpo v Kimberley de Mar Del Plata",
      "selection": "Over 1.5",
      "odds": 1.46,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "1:1"
     }
    ]
   },
