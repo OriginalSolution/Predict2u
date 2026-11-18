@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-18T17:14:44Z",
+ "DATA_UPDATED": "2026-11-18T18:15:45Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -549,8 +549,8 @@
   }
  ],
  "picks": {
-  "settled": 2429,
-  "won": 1816,
+  "settled": 2431,
+  "won": 1818,
   "lost": 613,
   "winRate": 74.8
  },
@@ -563,7 +563,7 @@
    "kind": "slip",
    "odds": 5454.19,
    "status": "lost",
-   "hit": 17,
+   "hit": 18,
    "total": 37,
    "profit": -10.0,
    "legs": [
@@ -731,30 +731,30 @@
     {
      "match": "Barycz Sulow v KS Polonia Nysa",
      "selection": "Over 1.5",
-     "odds": 1.25,
-     "result": "pending",
-     "score": "1:1"
+     "odds": 1.53,
+     "result": "won",
+     "score": "4:1"
     },
     {
      "match": "AL Rayyan Nextgen v Al Mesaimeer",
      "selection": "Over 2.5",
-     "odds": 1.52,
+     "odds": 3.35,
      "result": "pending",
-     "score": "0:0"
+     "score": "2:0"
     },
     {
      "match": "Vipers SC v Bul FC",
      "selection": "Over 1.5",
-     "odds": 1.46,
+     "odds": 1.14,
      "result": "pending",
-     "score": "0:0"
+     "score": "0:1"
     },
     {
      "match": "Utebo FC v CE Sabadell FC",
      "selection": "Over 1.5",
-     "odds": 1.31,
+     "odds": 1.32,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Atletico Saguntino v FC Jove Espanol San Vicente",
@@ -766,7 +766,7 @@
     {
      "match": "CD Alcoyano v Mallorca",
      "selection": "Over 1.5",
-     "odds": 1.26,
+     "odds": 1.24,
      "result": "pending",
      "score": null
     },
@@ -955,7 +955,7 @@
    "kind": "slip",
    "odds": 10049.82,
    "status": "lost",
-   "hit": 19,
+   "hit": 20,
    "total": 39,
    "profit": -10.0,
    "legs": [
@@ -1131,29 +1131,29 @@
      "match": "Barycz Sulow v KS Polonia Nysa",
      "selection": "Over 1.5",
      "odds": 1.16,
-     "result": "pending",
-     "score": "1:1"
+     "result": "won",
+     "score": "4:1"
     },
     {
      "match": "AL Rayyan Nextgen v Al Mesaimeer",
      "selection": "Over 2.5",
      "odds": 1.52,
      "result": "pending",
-     "score": "0:0"
+     "score": "2:0"
     },
     {
      "match": "Vipers SC v Bul FC",
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "pending",
-     "score": "0:0"
+     "score": "0:1"
     },
     {
      "match": "Utebo FC v CE Sabadell FC",
      "selection": "Over 1.5",
      "odds": 1.31,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Atletico Saguntino v FC Jove Espanol San Vicente",
