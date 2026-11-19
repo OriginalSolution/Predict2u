@@ -139,6 +139,7 @@ history if any job emptied it. It runs after every engine job and never books.
 | 22:00 | `engine-sure80.yml` | yes | 80% Sure, Reverse U4.5, Reverse U4.5 + Draw rule for the next day (SportyBet GH, §5.4) |
 | 22:00 | `engine-daily.yml` | yes | Daily collect, book, publish (home code, slips, **Hot Picks**, high odds, three strategies, Verzzify, daily master) |
 | 22:30 | `engine-strategies.yml` | yes | Three-strategy High Odds and Verzzify Edge Banker |
+| 22:45 | `engine-master-pipeline.yml` | yes | Master pipeline: next-day master codes rebuilt from the night's codes (§5.5) |
 | 23:10 | `engine-gg.yml` | yes | GG / BTTS-Yes for the next Accra day (SportyBet) |
 | 23:15 | `engine-health.yml` | heal only | Post-run check of the evening booking jobs |
 | 23:30 | `engine-nysm.yml` | yes | NYSM decision tree v2 (SportyBet, odds ≥ 25 only) |
@@ -215,6 +216,34 @@ off the next GMT day; ticker slot 22:00, gate `--at 22:00 --job sure80`, watchdo
   → favourite win, else favourite team O1.5. Balanced (max/min price ≤1.6) → O2.5, else GG (GG only here). Legs 1.20–1.50.
 - **Push merge:** `p2u_merge_live.py` now also slip-merges `high_odds.json` by code after a rebase, so this job
   and the 22:00 daily (different concurrency groups) cannot wipe each other's cards.
+
+
+### 5.5 Master pipeline (22:45, next day)
+`engine-master-pipeline.yml` → `engine/vendor/master_pipeline.py` (tests: `engine/tests/test_master_pipeline.py`).
+Spec from Betting Strategies (NerdyTips), 19 Nov 2026 (hand-booked reference: master EF56AX, league-fit EJE4X9/8NN7CD,
+U4.5 swaps 8YLN1H/FVNVRE, odds halves C2NAPA/8Q627K, 1.42 split 8K9NGE/FFPGB0, >1.45 swaps AEMP9Z/8HN6J7, markets
+CJEL25/CKHKHQ). Ticker 22:45, gate `--at 22:45 --job pipeline`, watchdog `master-pipeline` (waits for
+`engine-sure80.yml`; re-runs only when no run succeeded), concurrency `predict2u-strategy-night`.
+Dry run: `python engine/vendor/master_pipeline.py --dry-run --date D`; `--simulate` builds the input from the
+80% Sure / Reverse dry runs when the night's codes don't exist yet.
+1. **Master pool:** every SportyBet code published for the target day (`high_odds.json` + `engine/data/strategy-codes/*/<day>.json`),
+   minus the pipeline's own cards. One leg per match. **Stronger code** = higher in `STRENGTH`
+   (sure80, nt, nysm-conservative, nysm-main, nysm-ts2, gg, rev-u45, rev-u45-draw, master, sb-morning-master,
+   ho-master, code-hub, then anything else); ties go to the lower geometric-mean leg price. Started or unlisted
+   games and vanished outcomes are dropped; prices are refreshed from SportyBet. No DC, no NG. No pool cap.
+   Codes booked after 22:45 (GG 23:10, NYSM 23:30, NT 23:50) are not in the pool; they feed the 06:00 Code of the Day.
+2. **League-fit:** the 8% rule from §5.4 (price ≤ 1.08 × league median of that market, ≥2 peers). Solo legs are kept.
+3. **U4.5 → overs:** O2.5 when league ≥2.8 gpg, both teams ≥60% over 2.5 in last 10, O2.5 ≤1.50; else O1.5 when
+   league ≥2.5 gpg, both teams ≥80% over 1.5, O1.5 ≥1.15; else keep U4.5.
+4. **>1.45 swap:** first alternative in `ALTERNATIVES` (O2.5→O1.5, U3.5→U4.5→U5.5, team O0.5→O1.5, win→DNB→team O0.5,
+   …) priced 1.15–1.45, league-fit, data estimate >80% (§5.4 estimator). No DC/NG/GG. Otherwise the leg is dropped.
+5. **Outputs** (each ≥25 odds, never padded; skipped codes are logged in the record):
+   Master Early / Master Late (kick-off halves, earliest 35 / latest 35); Low Odds (lowest half, ascending, 35 max) /
+   High Odds (highest half, descending, 35 max); **Master ≤1.42 = THE Master** (`master: true`) and Above 1.42, dealt
+   round-robin into ≤50-leg parts above 50 (engine 50-leg rule); market groups ≤25 legs per code (dealt round-robin).
+   All cards are HIGH RISK, `origin: strategy-mp-*`. Record: `engine/data/strategy-codes/pipeline/<day>.json`.
+   The pipeline's codes reuse matches from codes already booked, so they do not count toward the strategy jobs'
+   2-codes-per-match usage file (the spec books each match on several derived codes).
 
 ## 6. Services and accounts
 

@@ -36,6 +36,7 @@ PUBLIC_NAME = {
     "sure80": "80% Sure",
     "rev-u45": "Reverse U4.5",
     "rev-u45-draw": "Reverse U4.5 + Draw",
+    "mp": "Master",
 }
 
 YOUTH_RE = re.compile(

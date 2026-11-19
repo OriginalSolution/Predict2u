@@ -1,0 +1,97 @@
+name: Predict2u engine — Master pipeline
+run-name: "${{ github.workflow }}${{ inputs.dry_run == true && ' (dry run)' || '' }}"
+
+# Master pipeline (engine/vendor/master_pipeline.py): master, league-fit, U4.5->overs, >1.45 swaps, output codes.
+# Runs after the 22:00 strategy jobs; books the NEXT day's SportyBet GH codes at 22:45 Africa/Accra (= GMT).
+on:
+  schedule:
+    - cron: "45 22 * * *"   # 22:45 UTC = 10:45 PM Africa/Accra; next-day master codes
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Scan only — do not book or commit"
+        type: boolean
+        default: false
+      date:
+        description: "Fixture date YYYY-MM-DD (blank = the next Accra day)"
+        type: string
+        default: ""
+      force:
+        description: "Run even if this slot already ran successfully"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      run: ${{ steps.g.outputs.run }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: .github
+      - name: Run once per slot (GitHub's late cron duplicates skip here)
+        id: g
+        env:
+          GH_TOKEN: ${{ github.token }}
+          P2U_GATE_BYPASS: ${{ github.event_name == 'workflow_dispatch' && (inputs.force == true || inputs.dry_run == true) }}
+        run: python3 .github/scripts/p2u_gate.py --at 22:45 --job pipeline
+
+  pipeline:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
+    concurrency:
+      group: predict2u-strategy-night
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install runtime extras
+        run: pip install cryptography
+      - name: Master pipeline
+        id: strategy
+        env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
+          REPO_DIR: ${{ github.workspace }}
+          ENGINE_DIR: ${{ github.workspace }}/engine
+        run: |
+          set -euo pipefail
+          ARGS=()
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
+          if [ -n "${{ inputs.date }}" ]; then ARGS+=(--date "${{ inputs.date }}"); fi
+          python engine/vendor/master_pipeline.py "${ARGS[@]}"
+          if [ "${{ inputs.dry_run }}" != "true" ]; then
+            python -m engine.premium --lock "$REPO_DIR"
+          fi
+      - name: Commit booked codes
+        # !cancelled(): if the strategy crashes after booking, still save the codes it booked.
+        if: ${{ !cancelled() && steps.strategy.outcome != 'skipped' && github.ref == 'refs/heads/main' && (github.event_name != 'workflow_dispatch' || inputs.dry_run == false) }}
+        env:
+          P2U_LOCK_KEY: ${{ secrets.P2U_LOCK_KEY }}
+        run: |
+          set -euo pipefail
+          if [ "${{ steps.strategy.outcome }}" = "failure" ]; then
+            echo "::warning::strategy step failed; committing whatever it booked before the failure"
+            python -m engine.premium --lock "$GITHUB_WORKSPACE" || { echo "::error::lock failed after a crash; not committing"; exit 0; }
+          fi
+          if [ -z "${P2U_LOCK_KEY:-}" ] && ! python -m engine.premium --is-free . >/dev/null 2>&1; then
+            echo "::warning::P2U_LOCK_KEY is not set; refusing to commit pick files so premium codes stay locked on the live site (paid-codes mode; free mode is p2u-free-mode.js)."
+            exit 0
+          fi
+          git config user.name "predict2u-engine"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- high_odds.json locked.enc.json engine/data/strategy-codes/pipeline || true
+          if git diff --cached --quiet; then echo "no master pipeline changes"; exit 0; fi
+          git commit -m "Engine master pipeline $(date -u +%FT%TZ)"
+          .github/scripts/p2u_push.sh main
