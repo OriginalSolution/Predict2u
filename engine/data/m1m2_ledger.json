@@ -1026,6 +1026,125 @@
     }
    ],
    "mixed": "built"
+  },
+  "2026-11-19": {
+   "built": "2026-11-19 21:46 GMT",
+   "slips": {
+    "M1": {
+     "name": "M1 Team or Over 2.5",
+     "codes": {
+      "sportybet": "BB386E",
+      "footballcom": "BB386E",
+      "msport": "B3LTGF8"
+     },
+     "total": 2.93,
+     "legs": 15,
+     "meetsFloor": false,
+     "result": "pending"
+    },
+    "M2": {
+     "name": "M2 Double Chance & Over 1.5",
+     "codes": {
+      "sportybet": "9085DU",
+      "footballcom": "9085DU",
+      "msport": "B3LTGFW",
+      "betika": "81Lmbz"
+     },
+     "total": 2.63,
+     "legs": 10,
+     "meetsFloor": false,
+     "result": "pending"
+    },
+    "MIXED": {
+     "name": "M1/M2 team 2+",
+     "codes": {
+      "sportybet": "FW3KV8",
+      "footballcom": "FW3KV8",
+      "msport": "B3LTGHE",
+      "betika": "ezPa6z",
+      "betpawa": "QJH89DE"
+     },
+     "total": 39.6,
+     "legs": 18,
+     "meetsFloor": true,
+     "result": "pending"
+    }
+   },
+   "dropped": [
+    {
+     "match": "GNK Dinamo Zagreb v NK Istra 1961",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Croatia - HNL: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Ross County FC v Cove Rangers FC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Scotland - League 1: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Ludogorets v FC Dunav Ruse",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Bulgaria - Parva Liga: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "SV Spakenburg v Rohda Raalte",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Netherlands - Tweede Divisie: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Alianza Lima v FC Cajamarca",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Peru - Liga 1: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Bhayangkara Presisi Indonesia FC v Persijap Jepara",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Indonesia - Super League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Crvena Zvezda v FK Radnik Surdulica",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Serbia - Superliga: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "LASK Linz v TSV Hartberg",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "both teams in league top 5 (3 v 5/12)"
+    },
+    {
+     "match": "LASK Linz v TSV Hartberg",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "both teams in league top 5 (3 v 5/12)"
+    },
+    {
+     "match": "Hougang United FC v BG Tampines Rovers",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Singapore - Premier League: non-goals market Away or Over 2.5 not allowed"
+    },
+    {
+     "match": "Lion City Sailors FC v Geylang International FC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Singapore - Premier League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Linfield FC v Limavady United FC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Northern Ireland - Premiership: non-goals market Home Team or Over 2.5 not allowed"
+    }
+   ],
+   "mixed": "built"
   }
  }
 }
