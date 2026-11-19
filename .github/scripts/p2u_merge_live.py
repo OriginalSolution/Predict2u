@@ -32,6 +32,56 @@ def show(rev):
         return None
 
 
+HIGH_ODDS = "high_odds.json"
+
+
+def merge_slips(base, ours, theirs):
+    """3-way merge of a list of slips keyed by `code`.
+
+    Slips another job added since this run checked out are kept, slips either side
+    removed stay removed, and this run's version wins for slips both sides have.
+    Returns None when the list cannot be keyed (falls back to this run's copy).
+    """
+    def key(row):
+        return row.get("code") if isinstance(row, dict) else None
+    if not all(isinstance(x, list) for x in (base, ours, theirs)):
+        return None
+    if any(key(r) is None for r in base + ours + theirs):
+        return None
+    b, o, t = {key(r) for r in base}, {key(r) for r in ours}, {key(r) for r in theirs}
+    added_theirs = [r for r in theirs if key(r) not in b and key(r) not in o]
+    base_by, theirs_by = {key(r): r for r in base}, {key(r): r for r in theirs}
+    kept_ours = []
+    for r in ours:
+        k = key(r)
+        if k in b and k not in t:
+            continue                      # the other job removed it (e.g. prune after settle)
+        if k in t and base_by.get(k) == r:
+            r = theirs_by[k]              # untouched here, so take the other job's update
+        kept_ours.append(r)
+    return added_theirs + kept_ours
+
+
+def merge_high_odds(b, o, t):
+    """high_odds.json: slip-level merge so a stale copy cannot wipe another job's codes."""
+    merged = dict(o)
+    for field in ("slips", "history"):
+        m = merge_slips((b or {}).get(field) or [], o.get(field) or [], t.get(field) or [])
+        if m is not None:
+            merged[field] = m
+    return merged
+
+
+def show_file(rev, path):
+    if not rev:
+        return None
+    r = subprocess.run(["git", "-C", str(REPO), "show", f"{rev}:{path}"], capture_output=True, text=True)
+    try:
+        return json.loads(r.stdout) if r.returncode == 0 else None
+    except Exception:
+        return None
+
+
 def main(argv):
     base, ours, theirs = (argv + ["", "", ""])[:3]
     b, o, t = show(base), show(ours), show(theirs)
@@ -43,13 +93,20 @@ def main(argv):
         if merged != cur:
             hp.write_text(G._dump(merged))
             msgs.append("3-way merged home-picks.json with the newer main")
+    hb, ho, ht = show_file(base, HIGH_ODDS), show_file(ours, HIGH_ODDS), show_file(theirs, HIGH_ODDS)
+    if base and isinstance(ho, dict) and isinstance(ht, dict) and ho != (hb or {}) and ht != (hb or {}) and base != theirs:
+        merged = merge_high_odds(hb if isinstance(hb, dict) else {}, ho, ht)
+        hpath = REPO / HIGH_ODDS
+        if merged != ho:
+            hpath.write_text(json.dumps(merged, ensure_ascii=False, separators=(",", ":")))  # stays one-line JSON
+            msgs.append("slip-merged high_odds.json with the newer main")
     changes, ok = G.repair_repo(REPO, extra_sources=[t] if t else [], history=False)
     msgs += changes
     if not ok:
         msgs.append("WARNING favourites section still empty")
-    st = subprocess.run(["git", "-C", str(REPO), "status", "--porcelain", "--", FILE, G.SNAPSHOT], capture_output=True, text=True).stdout.strip()
+    st = subprocess.run(["git", "-C", str(REPO), "status", "--porcelain", "--", FILE, G.SNAPSHOT, HIGH_ODDS], capture_output=True, text=True).stdout.strip()
     if st:
-        subprocess.run(["git", "-C", str(REPO), "add", "--", FILE, G.SNAPSHOT], check=True)
+        subprocess.run(["git", "-C", str(REPO), "add", "--", FILE, G.SNAPSHOT, HIGH_ODDS], check=True)
         subprocess.run(["git", "-C", str(REPO), "commit", "--amend", "--no-edit", "--no-verify", "-q"], check=True)
         msgs.append("amended commit")
     print("p2u_merge_live:", "; ".join(msgs) or "nothing to do")
