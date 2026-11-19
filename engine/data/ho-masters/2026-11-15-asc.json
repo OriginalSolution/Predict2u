@@ -30,8 +30,8 @@
        "sr:match:75174740",
        "sr:match:76724840"
       ],
-      "hit": 3,
-      "status": "pending"
+      "hit": 4,
+      "status": "won"
      }
     ],
     "footballcom": [
@@ -46,8 +46,8 @@
        "sr:match:75174740",
        "sr:match:76724840"
       ],
-      "hit": 3,
-      "status": "pending"
+      "hit": 4,
+      "status": "won"
      }
     ],
     "msport": [
@@ -60,8 +60,8 @@
        "sr:match:75174738",
        "sr:match:75174740"
       ],
-      "hit": 1,
-      "status": "pending"
+      "hit": 2,
+      "status": "won"
      }
     ],
     "betika": [
@@ -76,8 +76,8 @@
        "sr:match:75174740",
        "sr:match:76724840"
       ],
-      "hit": 3,
-      "status": "pending"
+      "hit": 4,
+      "status": "won"
      }
     ],
     "betpawa": [
@@ -90,8 +90,8 @@
        "sr:match:75174738",
        "sr:match:75174740"
       ],
-      "hit": 1,
-      "status": "pending"
+      "hit": 2,
+      "status": "won"
      }
     ]
    },
@@ -108,7 +108,7 @@
    "label": "Ascending odds · set · HIGH RISK",
    "source": "asc",
    "meetsFloor": false,
-   "status": "pending"
+   "status": "won"
   }
  ],
  "legList": [
@@ -197,11 +197,11 @@
    "market": "Over/Under",
    "selection": "Over 2.5",
    "odds": 1.31,
-   "liveOdds": 1.5,
-   "result": "pending",
-   "matchStatus": "HT",
-   "score": "1:0",
-   "played": "45:00",
+   "liveOdds": 1.3,
+   "result": "won",
+   "matchStatus": "Ended",
+   "score": "2:1",
+   "played": "90:00",
    "table": "4 v 10/14",
    "x12": "1.14/7.90/11.50",
    "case": "O2.5 3/3: O2.5@1.31, 1HO1.5@1.82, avgG=3.38/n=42",
@@ -211,7 +211,7 @@
  ],
  "legs": 4,
  "totalOdds": 2.29,
- "hit": 3,
+ "hit": 4,
  "total": 4,
- "status": "pending"
+ "status": "won"
 }

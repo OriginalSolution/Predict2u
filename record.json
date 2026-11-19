@@ -1,40 +1,40 @@
 {
- "DATA_UPDATED": "2026-11-19T16:16:02Z",
+ "DATA_UPDATED": "2026-11-19T18:15:50Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
  "overall": {
-  "n": 246,
-  "won": 34,
-  "lost": 212,
-  "winRate": 13.8,
+  "n": 248,
+  "won": 35,
+  "lost": 213,
+  "winRate": 14.1,
   "stake": 10.0,
-  "staked": 2460.0,
-  "returned": 2459.2,
-  "profit": -0.8,
-  "roi": -0.0,
-  "pending": 331,
-  "codesSettled": 986,
-  "codesWon": 142,
-  "codesLost": 844
+  "staked": 2480.0,
+  "returned": 2482.1,
+  "profit": 2.1,
+  "roi": 0.1,
+  "pending": 330,
+  "codesSettled": 988,
+  "codesWon": 143,
+  "codesLost": 845
  },
  "streak": {
   "current": "lost",
-  "currentLen": 1,
+  "currentLen": 2,
   "bestWin": 4,
   "bestLoss": 33
  },
  "byType": [
   {
-   "n": 145,
+   "n": 146,
    "won": 16,
-   "lost": 129,
+   "lost": 130,
    "winRate": 11.0,
    "stake": 10.0,
-   "staked": 1450.0,
+   "staked": 1460.0,
    "returned": 529.1,
-   "profit": -920.9,
-   "roi": -63.5,
+   "profit": -930.9,
+   "roi": -63.8,
    "key": "slip"
   },
   {
@@ -50,15 +50,15 @@
    "key": "hot"
   },
   {
-   "n": 27,
-   "won": 2,
+   "n": 28,
+   "won": 3,
    "lost": 25,
-   "winRate": 7.4,
+   "winRate": 10.7,
    "stake": 10.0,
-   "staked": 270.0,
-   "returned": 43.4,
-   "profit": -226.6,
-   "roi": -83.9,
+   "staked": 280.0,
+   "returned": 66.3,
+   "profit": -213.7,
+   "roi": -76.3,
    "key": "high-odds"
   },
   {
@@ -124,15 +124,15 @@
  ],
  "bySite": [
   {
-   "n": 291,
-   "won": 35,
-   "lost": 256,
-   "winRate": 12.0,
+   "n": 293,
+   "won": 36,
+   "lost": 257,
+   "winRate": 12.3,
    "stake": 10.0,
-   "staked": 2910.0,
-   "returned": 2422.2,
-   "profit": -487.8,
-   "roi": -16.8,
+   "staked": 2930.0,
+   "returned": 2445.1,
+   "profit": -484.9,
+   "roi": -16.5,
    "key": "sportybet"
   },
   {
@@ -198,15 +198,15 @@
    "key": "Over 1.5"
   },
   {
-   "n": 199,
+   "n": 200,
    "won": 33,
-   "lost": 166,
-   "winRate": 16.6,
+   "lost": 167,
+   "winRate": 16.5,
    "stake": 10.0,
-   "staked": 1990.0,
+   "staked": 2000.0,
    "returned": 1044.3,
-   "profit": -945.7,
-   "roi": -47.5,
+   "profit": -955.7,
+   "roi": -47.8,
    "key": "Under 3.5"
   },
   {
@@ -234,15 +234,15 @@
    "key": "Over 0.5"
   },
   {
-   "n": 79,
-   "won": 11,
+   "n": 80,
+   "won": 12,
    "lost": 68,
-   "winRate": 13.9,
+   "winRate": 15.0,
    "stake": 10.0,
-   "staked": 790.0,
-   "returned": 339.7,
-   "profit": -450.3,
-   "roi": -57.0,
+   "staked": 800.0,
+   "returned": 362.6,
+   "profit": -437.4,
+   "roi": -54.7,
    "key": "Over 2.5"
   },
   {
@@ -356,14 +356,14 @@
  ],
  "byDay": [
   {
-   "n": 1,
+   "n": 2,
    "won": 0,
-   "lost": 1,
+   "lost": 2,
    "winRate": 0.0,
    "stake": 10.0,
-   "staked": 10.0,
+   "staked": 20.0,
    "returned": 0,
-   "profit": -10.0,
+   "profit": -20.0,
    "roi": -100.0,
    "key": "2026-11-19"
   },
@@ -404,15 +404,15 @@
    "key": "2026-11-16"
   },
   {
-   "n": 28,
-   "won": 9,
+   "n": 29,
+   "won": 10,
    "lost": 19,
-   "winRate": 32.1,
+   "winRate": 34.5,
    "stake": 10.0,
-   "staked": 280.0,
-   "returned": 154.6,
-   "profit": -125.4,
-   "roi": -44.8,
+   "staked": 290.0,
+   "returned": 177.5,
+   "profit": -112.5,
+   "roi": -38.8,
    "key": "2026-11-15"
   },
   {
@@ -561,9 +561,9 @@
   }
  ],
  "picks": {
-  "settled": 2455,
-  "won": 1838,
-  "lost": 617,
+  "settled": 2464,
+  "won": 1845,
+  "lost": 619,
   "winRate": 74.9
  },
  "recent": [
@@ -575,7 +575,7 @@
    "kind": "slip",
    "odds": 501.26,
    "status": "lost",
-   "hit": 7,
+   "hit": 10,
    "total": 24,
    "profit": -10.0,
    "legs": [
@@ -645,77 +645,77 @@
     {
      "match": "Al Mokawloon Al Arab v El Qanah FC",
      "selection": "Over 1.5",
-     "odds": 1.25,
+     "odds": 2.65,
      "result": "pending",
-     "score": "1:0"
+     "score": "6:4"
     },
     {
      "match": "Al-Masry v Asyut Petroleum",
      "selection": "Over 1.5",
-     "odds": 1.1,
-     "result": "pending",
-     "score": "2:0"
+     "odds": 1.2,
+     "result": "won",
+     "score": "3:0"
     },
     {
      "match": "PFC Dobrudzha Dobrich v FC Fratria Varna",
      "selection": "Over 1.5",
      "odds": 1.27,
-     "result": "pending",
-     "score": "0:4"
+     "result": "won",
+     "score": "0:5"
     },
     {
      "match": "Al Ain FC v Al Dhafra SSC",
      "selection": "Over 1.5",
-     "odds": 1.08,
-     "result": "pending",
-     "score": "1:0"
+     "odds": 1.12,
+     "result": "won",
+     "score": "2:1"
     },
     {
      "match": "AL Jazeera Club Amman v Hay AL Amir Hassan",
      "selection": "Over 1.5",
-     "odds": 1.18,
-     "result": "pending",
-     "score": "0:0"
+     "odds": 2.95,
+     "result": "lost",
+     "score": "0:1"
     },
     {
      "match": "MB Rouissat v CR Belouizdad",
      "selection": "Over 1.5",
-     "odds": 1.56,
+     "odds": 3.0,
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "MC Alger v Olympique Akbou",
      "selection": "Over 1.5",
-     "odds": 1.35,
+     "odds": 1.2,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "KIF Orebro DFF v FC Rosengaard Malmo",
      "selection": "Over 2.5",
-     "odds": 1.54,
+     "odds": 1.27,
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "FC Fredericia v Hillerod Fodbold",
      "selection": "Over 1.5",
-     "odds": 1.13,
+     "odds": 1.12,
      "result": "pending",
-     "score": null
+     "score": "2:0"
     },
     {
      "match": "RC Celta de Vigo v RCD Espanyol Barcelona",
      "selection": "Over 2.5",
      "odds": 1.49,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "CA Penarol Montevideo v Cerro Largo FC",
      "selection": "Over 1.5",
-     "odds": 1.33,
+     "odds": 1.35,
      "result": "pending",
      "score": null
     },
@@ -729,14 +729,14 @@
     {
      "match": "Glebe North v Bangor Celtic",
      "selection": "Over 2.5",
-     "odds": 1.29,
+     "odds": 1.33,
      "result": "pending",
      "score": null
     },
     {
      "match": "CR Vasco da Gama RJ v SC Internacional RS",
      "selection": "Over 1.5",
-     "odds": 1.23,
+     "odds": 1.22,
      "result": "pending",
      "score": null
     },
@@ -750,6 +750,55 @@
    ]
   },
   {
+   "code": "DJEBJB",
+   "book": "sportybet",
+   "date": "2026-11-19",
+   "name": "Slip 1",
+   "kind": "slip",
+   "odds": 2.82,
+   "status": "lost",
+   "hit": 3,
+   "total": 5,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Kigezi Homeboyz FC v Express FC",
+     "selection": "Under 3.5",
+     "odds": 1.09,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Al-Gharraf SC v Al Quwa Al Jawiya",
+     "selection": "Under 3.5",
+     "odds": 2.8,
+     "result": "lost",
+     "score": "2:3"
+    },
+    {
+     "match": "FC Fredericia v Hillerod Fodbold",
+     "selection": "Over 1.5",
+     "odds": 1.12,
+     "result": "pending",
+     "score": "2:0"
+    },
+    {
+     "match": "FK Termez Surkhon v FC Andijon",
+     "selection": "Under 3.5",
+     "odds": 1.12,
+     "result": "won",
+     "score": "0:0"
+    },
+    {
+     "match": "Nkwazi v Mutondo Stars",
+     "selection": "Under 2.5",
+     "odds": 1.01,
+     "result": "won",
+     "score": "0:0"
+    }
+   ]
+  },
+  {
    "code": "BXRTB6",
    "book": "sportybet",
    "date": "2026-11-18",
@@ -757,7 +806,7 @@
    "kind": "slip",
    "odds": 5454.19,
    "status": "lost",
-   "hit": 28,
+   "hit": 30,
    "total": 37,
    "profit": -10.0,
    "legs": [
@@ -1030,7 +1079,7 @@
    "kind": "slip",
    "odds": 2.3,
    "status": "won",
-   "hit": 4,
+   "hit": 5,
    "total": 5,
    "profit": 13.0,
    "legs": [
@@ -1681,7 +1730,7 @@
    "kind": "hot",
    "odds": 36.38,
    "status": "lost",
-   "hit": 7,
+   "hit": 8,
    "total": 14,
    "profit": -10.0,
    "legs": [
@@ -1695,7 +1744,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.27,
      "result": "pending",
      "score": null
     },
@@ -1830,7 +1879,7 @@
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Denmark v Norway",
@@ -1893,7 +1942,7 @@
      "selection": "Over 1.5",
      "odds": 1.46,
      "result": "won",
-     "score": null
+     "score": "0:2"
     }
    ]
   },
@@ -1942,7 +1991,7 @@
      "selection": "Over 1.5",
      "odds": 4.75,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Denmark v Norway",
@@ -2005,7 +2054,7 @@
      "selection": "Over 1.5",
      "odds": 3.8,
      "result": "won",
-     "score": null
+     "score": "0:2"
     }
    ]
   },
@@ -2017,7 +2066,7 @@
    "kind": "hot",
    "odds": 36.38,
    "status": "lost",
-   "hit": 7,
+   "hit": 8,
    "total": 14,
    "profit": -10.0,
    "legs": [
@@ -2031,7 +2080,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.27,
      "result": "pending",
      "score": null
     },
@@ -2166,7 +2215,7 @@
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Denmark v Norway",
@@ -2229,7 +2278,7 @@
      "selection": "Over 1.5",
      "odds": 1.46,
      "result": "won",
-     "score": null
+     "score": "0:2"
     }
    ]
   },
@@ -2255,7 +2304,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.27,
      "result": "pending",
      "score": null
     },
@@ -2327,7 +2376,7 @@
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -2376,7 +2425,7 @@
      "selection": "Over 1.5",
      "odds": 4.75,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -2402,7 +2451,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.27,
      "result": "pending",
      "score": null
     },
@@ -2474,7 +2523,7 @@
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -2500,7 +2549,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.27,
      "result": "pending",
      "score": null
     },
@@ -2607,7 +2656,7 @@
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Denmark v Norway",
@@ -2691,7 +2740,7 @@
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Denmark v Norway",
@@ -2752,7 +2801,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.27,
      "result": "pending",
      "score": null
     },
@@ -2859,7 +2908,7 @@
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Denmark v Norway",
@@ -2906,7 +2955,7 @@
    "kind": "hot",
    "odds": 11051.84,
    "status": "lost",
-   "hit": 17,
+   "hit": 18,
    "total": 30,
    "profit": -10.0,
    "legs": [
@@ -2920,7 +2969,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.27,
      "result": "pending",
      "score": null
     },
@@ -3167,7 +3216,7 @@
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Denmark v Norway",
@@ -3230,7 +3279,7 @@
      "selection": "Over 1.5",
      "odds": 1.46,
      "result": "won",
-     "score": null
+     "score": "0:2"
     },
     {
      "match": "Wales v Portugal",
@@ -3391,7 +3440,7 @@
      "selection": "Over 1.5",
      "odds": 4.75,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Denmark v Norway",
@@ -3454,7 +3503,7 @@
      "selection": "Over 1.5",
      "odds": 3.8,
      "result": "won",
-     "score": null
+     "score": "0:2"
     },
     {
      "match": "Wales v Portugal",
@@ -3578,7 +3627,7 @@
    "kind": "hot",
    "odds": 11051.84,
    "status": "lost",
-   "hit": 17,
+   "hit": 18,
    "total": 30,
    "profit": -10.0,
    "legs": [
@@ -3592,7 +3641,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.26,
+     "odds": 1.27,
      "result": "pending",
      "score": null
     },
@@ -3839,7 +3888,7 @@
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Denmark v Norway",
@@ -3902,7 +3951,7 @@
      "selection": "Over 1.5",
      "odds": 1.46,
      "result": "won",
-     "score": null
+     "score": "0:2"
     },
     {
      "match": "Wales v Portugal",
@@ -4105,7 +4154,7 @@
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Denmark v Norway",
@@ -4161,7 +4210,7 @@
      "selection": "Over 1.5",
      "odds": 4.75,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Denmark v Norway",
@@ -4273,7 +4322,7 @@
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Denmark v Norway",
@@ -4658,7 +4707,7 @@
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Poland v Sweden",
@@ -4679,7 +4728,7 @@
      "selection": "Over 1.5",
      "odds": 1.22,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Wales v Portugal",
@@ -4763,7 +4812,7 @@
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Poland v Sweden",
@@ -4784,7 +4833,7 @@
      "selection": "Over 1.5",
      "odds": 2.5,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Wales v Portugal",
@@ -4973,7 +5022,7 @@
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Poland v Sweden",
@@ -4994,7 +5043,7 @@
      "selection": "Over 1.5",
      "odds": 1.22,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Wales v Portugal",
@@ -5127,56 +5176,7 @@
      "selection": "Over 1.5",
      "odds": 1.38,
      "result": "lost",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "FRY3QJ",
-   "book": "betika",
-   "date": "2026-11-16",
-   "name": "Top 5 hot picks",
-   "kind": "hot",
-   "odds": 2.92,
-   "status": "lost",
-   "hit": 2,
-   "total": 5,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Somalia v Ghana",
-     "selection": "Over 1.5",
-     "odds": 8.25,
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Sudan v Senegal",
-     "selection": "Over 1.5",
-     "odds": 1.07,
-     "result": "won",
-     "score": "2:4"
-    },
-    {
-     "match": "Denmark v Norway",
-     "selection": "Over 1.5",
-     "odds": 1.14,
-     "result": "won",
-     "score": "2:3"
-    },
-    {
-     "match": "Malawi v Egypt",
-     "selection": "Over 1.5",
-     "odds": 1.25,
-     "result": "lost",
      "score": "0:0"
-    },
-    {
-     "match": "Tanzania v Nigeria",
-     "selection": "Over 1.5",
-     "odds": 1.38,
-     "result": "lost",
-     "score": null
     }
    ]
   }
