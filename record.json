@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-19T00:22:06Z",
+ "DATA_UPDATED": "2026-11-19T01:45:57Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -13,7 +13,7 @@
   "returned": 2459.2,
   "profit": 9.2,
   "roi": 0.4,
-  "pending": 285,
+  "pending": 333,
   "codesSettled": 985,
   "codesWon": 142,
   "codesLost": 843
@@ -549,10 +549,10 @@
   }
  ],
  "picks": {
-  "settled": 2429,
-  "won": 1815,
-  "lost": 614,
-  "winRate": 74.7
+  "settled": 2438,
+  "won": 1823,
+  "lost": 615,
+  "winRate": 74.8
  },
  "recent": [
   {
@@ -563,7 +563,7 @@
    "kind": "slip",
    "odds": 5454.19,
    "status": "lost",
-   "hit": 24,
+   "hit": 27,
    "total": 37,
    "profit": -10.0,
    "legs": [
@@ -801,7 +801,7 @@
     {
      "match": "Deportivo Tachira v Academia Puerto Cabello",
      "selection": "Over 1.5",
-     "odds": 3.9,
+     "odds": 13.0,
      "result": "pending",
      "score": "4:5"
     },
@@ -809,22 +809,22 @@
      "match": "Clube do Remo PA v Chapecoense SC",
      "selection": "Over 1.5",
      "odds": 1.05,
-     "result": "pending",
+     "result": "won",
      "score": "2:0"
     },
     {
      "match": "CR Flamengo RJ v CA Paranaense PR",
      "selection": "Over 1.5",
-     "odds": 1.15,
-     "result": "pending",
+     "odds": 1.22,
+     "result": "won",
      "score": "2:1"
     },
     {
      "match": "Always Ready v Real Potosi",
      "selection": "Over 1.5",
-     "odds": 1.16,
-     "result": "pending",
-     "score": "1:1"
+     "odds": 1.32,
+     "result": "won",
+     "score": "3:1"
     }
    ]
   },
@@ -1004,7 +1004,7 @@
    "kind": "slip",
    "odds": 10049.82,
    "status": "lost",
-   "hit": 25,
+   "hit": 29,
    "total": 39,
    "profit": -10.0,
    "legs": [
@@ -1215,7 +1215,7 @@
      "match": "CD Alcoyano v Mallorca",
      "selection": "Over 1.5",
      "odds": 1.32,
-     "result": "pending",
+     "result": "won",
      "score": "1:3"
     },
     {
@@ -1243,7 +1243,7 @@
      "match": "Carabobo FC v Zamora FC",
      "selection": "Over 1.5",
      "odds": 1.29,
-     "result": "pending",
+     "result": "lost",
      "score": "9:8"
     },
     {
@@ -1264,22 +1264,22 @@
      "match": "Clube do Remo PA v Chapecoense SC",
      "selection": "Over 1.5",
      "odds": 1.18,
-     "result": "pending",
+     "result": "won",
      "score": "2:0"
     },
     {
      "match": "CR Flamengo RJ v CA Paranaense PR",
      "selection": "Over 1.5",
      "odds": 1.15,
-     "result": "pending",
+     "result": "won",
      "score": "2:1"
     },
     {
      "match": "Always Ready v Real Potosi",
      "selection": "Over 1.5",
      "odds": 1.14,
-     "result": "pending",
-     "score": "1:1"
+     "result": "won",
+     "score": "3:1"
     }
    ]
   },
@@ -1508,7 +1508,7 @@
     {
      "match": "Troyes v Le Havre",
      "selection": "Le Havre (0:3)",
-     "odds": 1.07,
+     "odds": 1.06,
      "result": "pending",
      "score": null
     },
@@ -1844,7 +1844,7 @@
     {
      "match": "ESTAC Troyes v Le Havre",
      "selection": "Le Havre (0:3)",
-     "odds": 1.07,
+     "odds": 1.06,
      "result": "pending",
      "score": null
     },
@@ -2068,7 +2068,7 @@
     {
      "match": "Troyes v Le Havre",
      "selection": "Le Havre (0:3)",
-     "odds": 1.07,
+     "odds": 1.06,
      "result": "pending",
      "score": null
     },
@@ -2215,7 +2215,7 @@
     {
      "match": "ESTAC Troyes v Le Havre",
      "selection": "Le Havre (0:3)",
-     "odds": 1.07,
+     "odds": 1.06,
      "result": "pending",
      "score": null
     },
@@ -2313,7 +2313,7 @@
     {
      "match": "Troyes v Le Havre",
      "selection": "Le Havre (0:3)",
-     "odds": 1.07,
+     "odds": 1.06,
      "result": "pending",
      "score": null
     },
@@ -2565,7 +2565,7 @@
     {
      "match": "ESTAC Troyes v Le Havre",
      "selection": "Le Havre (0:3)",
-     "odds": 1.07,
+     "odds": 1.06,
      "result": "pending",
      "score": null
     },
@@ -2733,7 +2733,7 @@
     {
      "match": "Troyes v Le Havre",
      "selection": "Le Havre (0:3)",
-     "odds": 1.07,
+     "odds": 1.06,
      "result": "pending",
      "score": null
     },
@@ -3405,7 +3405,7 @@
     {
      "match": "ESTAC Troyes v Le Havre",
      "selection": "Le Havre (0:3)",
-     "odds": 1.07,
+     "odds": 1.06,
      "result": "pending",
      "score": null
     },
