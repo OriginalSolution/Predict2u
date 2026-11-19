@@ -152,6 +152,7 @@ On a thin day (the normal ticket is under 25) each of these four jobs reruns onc
 | NYSM tree v2 (Main, Conservative, TS2+) | `vendor/nysm_v2.py` | `30 23 * * *` |
 | NerdyTips Tomorrow, trust ≥ 5.0, Agree only | `vendor/nt_tomorrow.py` | `50 23 * * *` |
 | Code of the Day | `vendor/strategy_master.py` | `0 6 * * *` |
+| 80% Sure, Reverse U4.5, Reverse U4.5 + Draw (HANDOFF §5.4) | `vendor/sure80_reverse.py` | `0 22 * * *` |
 
 ## Optional global gates (DISABLED by default)
 `engine/gates/optional_gates.py` + `config.json` → `optional_gates`. Master `enabled: false`.

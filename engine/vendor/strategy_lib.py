@@ -33,6 +33,9 @@ PUBLIC_NAME = {
     "nysm-ts2": "Team to score 2+",
     "nt": "Checked goals",
     "master": "Code of the Day",
+    "sure80": "80% Sure",
+    "rev-u45": "Reverse U4.5",
+    "rev-u45-draw": "Reverse U4.5 + Draw",
 }
 
 YOUTH_RE = re.compile(

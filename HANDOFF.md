@@ -136,6 +136,7 @@ history if any job emptied it. It runs after every engine job and never books.
 | 18:00 | `engine-health.yml` | no | **Preflight**: compile/import every module, dry-run every strategy for tomorrow in a no-write sandbox, site checks |
 | 21:00 | `engine-shield.yml` | yes | DC Shield Goals and AH −1 scan |
 | 21:45 | `engine-m1m2.yml` | yes | M1/M2 and Safest market (Hot page) |
+| 22:00 | `engine-sure80.yml` | yes | 80% Sure, Reverse U4.5, Reverse U4.5 + Draw rule for the next day (SportyBet GH, §5.4) |
 | 22:00 | `engine-daily.yml` | yes | Daily collect, book, publish (home code, slips, **Hot Picks**, high odds, three strategies, Verzzify, daily master) |
 | 22:30 | `engine-strategies.yml` | yes | Three-strategy High Odds and Verzzify Edge Banker |
 | 23:10 | `engine-gg.yml` | yes | GG / BTTS-Yes for the next Accra day (SportyBet) |
@@ -162,7 +163,7 @@ and pyflakes on PRs/pushes touching `engine/**`), `site-quality.yml` (PR/push si
   - **Triggers:** ticker at :05/:35, four GitHub crons, and the end of every booking workflow and of the ticker
     (`workflow_run`).
   - **What it checks:** for each product (favourites, Code of the Day, morning, shield, M1/M2, daily, Hot Picks,
-    strategies, GG, NYSM, NT) it looks at the latest slot that is at least 20 min old and still bookable.
+    strategies, 80% Sure/Reverse U4.5, GG, NYSM, NT) it looks at the latest slot that is at least 20 min old and still bookable.
   - **What it does:** if a run is going, it waits. If the codes are published, it does nothing. Otherwise it
     re-dispatches the job, waiting 10/30/60 min between tries, max 3 tries per slot.
   - **No double booking:** if a run succeeded but its codes are missing, it is re-run with `force=true` at most
@@ -191,6 +192,29 @@ and pyflakes on PRs/pushes touching `engine/**`), `site-quality.yml` (PR/push si
 `settle-slips.yml`, `update-data.yml`, `update-scores.yml`. Their outside services are gone or replaced by the engine.
 
 ---
+
+
+### 5.4 80% Sure + Reverse U4.5 (22:00, next day)
+`engine-sure80.yml` → `engine/vendor/sure80_reverse.py` (tests: `engine/tests/test_sure80_reverse.py`). Strategy notes
+from Betting Strategies (NerdyTips), 19 Nov 2026. Books SportyBet GH share codes for three strategies, for matches that kick
+off the next GMT day; ticker slot 22:00, gate `--at 22:00 --job sure80`, watchdog key `sure80-reverse`, concurrency
+`predict2u-strategy-night`. Dry run: dispatch with `dry_run=true` or `python engine/vendor/sure80_reverse.py --dry-run [--date D] [--only sure80]`.
+- **Common:** no NG; ≤25 legs per code, ≥25 combined odds per code, ≤2 codes (50 legs) per strategy; never padded;
+  a match on ≤2 codes overall (shared `engine/data/strategy-usage/`); no-login share + read-back (`strategy_lib.book_confirmed`).
+  Records: `engine/data/strategy-codes/{sure80,rev-u45,rev-u45-draw}/<day>.json`; cards go to `high_odds.json`
+  (free mode keeps them public).
+- **80% Sure (`sure80`):** legs 1.20–1.45; team O0.5, O1.5/O2.5, U3.5/U4.5/U5.5, win, DNB; no DC/NG/GG. Data estimate
+  >80% = mean of home-side, away-side and H2H (≥3 meetings) hit rates over each team's last 10 results, every source
+  ≥70%. Win/DNB also need a shared table with the pick ranked higher and GF/GA in its favour. Drop top-5 v top-5 and
+  bottom-3 v bottom-3. Unders: narrowest line with ≥85%, otherwise the wider line. **League-fit:** price ≤ 1.08 ×
+  median of the same market in the same league that day (≥2 other fixtures); with fewer comparables the price must be ≤1.35.
+- **Reverse U4.5 (`rev-u45`):** pool = U4.5 (or U4) > 1.20 and league ≥2.8 goals/game on current-season results
+  (≥10 finished games, Sportradar `stats_season_fixtures2`); youth/lower leagues included. Over 1.5 if 1.20–1.25;
+  else if Over 1.5 < 1.20, Over 2.5 if ≤1.50; else skip.
+- **Reverse U4.5 + Draw (`rev-u45-draw`):** same pool. Clear favourite (≤1.75 and underdog ≥2.2× it) with draw >3.70
+  → favourite win, else favourite team O1.5. Balanced (max/min price ≤1.6) → O2.5, else GG (GG only here). Legs 1.20–1.50.
+- **Push merge:** `p2u_merge_live.py` now also slip-merges `high_odds.json` by code after a rebase, so this job
+  and the 22:00 daily (different concurrency groups) cannot wipe each other's cards.
 
 ## 6. Services and accounts
 
