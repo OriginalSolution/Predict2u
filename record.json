@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-19T22:14:44Z",
+ "DATA_UPDATED": "2026-11-19T22:15:55Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -13,7 +13,7 @@
   "returned": 2482.1,
   "profit": 2.1,
   "roi": 0.1,
-  "pending": 340,
+  "pending": 343,
   "codesSettled": 988,
   "codesWon": 143,
   "codesLost": 845
@@ -561,8 +561,8 @@
   }
  ],
  "picks": {
-  "settled": 2471,
-  "won": 1850,
+  "settled": 2472,
+  "won": 1851,
   "lost": 621,
   "winRate": 74.9
  },
@@ -730,8 +730,8 @@
      "match": "Glebe North v Bangor Celtic",
      "selection": "Over 2.5",
      "odds": 1.43,
-     "result": "pending",
-     "score": "5:4"
+     "result": "won",
+     "score": "6:4"
     },
     {
      "match": "CR Vasco da Gama RJ v SC Internacional RS",
@@ -745,7 +745,7 @@
      "selection": "Over 1.5",
      "odds": 1.25,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
