@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-19T21:05:06Z",
+ "DATA_UPDATED": "2026-11-19T22:14:44Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -13,7 +13,7 @@
   "returned": 2482.1,
   "profit": 2.1,
   "roi": 0.1,
-  "pending": 330,
+  "pending": 340,
   "codesSettled": 988,
   "codesWon": 143,
   "codesLost": 845
@@ -561,10 +561,10 @@
   }
  ],
  "picks": {
-  "settled": 2469,
-  "won": 1848,
+  "settled": 2471,
+  "won": 1850,
   "lost": 621,
-  "winRate": 74.8
+  "winRate": 74.9
  },
  "recent": [
   {
@@ -575,7 +575,7 @@
    "kind": "slip",
    "odds": 501.26,
    "status": "lost",
-   "hit": 13,
+   "hit": 15,
    "total": 24,
    "profit": -10.0,
    "legs": [
@@ -716,14 +716,14 @@
      "match": "CA Penarol Montevideo v Cerro Largo FC",
      "selection": "Over 1.5",
      "odds": 1.14,
-     "result": "pending",
-     "score": "2:0"
+     "result": "won",
+     "score": "3:0"
     },
     {
      "match": "CA Progreso v Montevideo City Torque",
      "selection": "Over 1.5",
      "odds": 1.07,
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -731,7 +731,7 @@
      "selection": "Over 2.5",
      "odds": 1.43,
      "result": "pending",
-     "score": "3:2"
+     "score": "5:4"
     },
     {
      "match": "CR Vasco da Gama RJ v SC Internacional RS",
@@ -1744,7 +1744,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.27,
+     "odds": 1.28,
      "result": "pending",
      "score": null
     },
@@ -2080,7 +2080,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.27,
+     "odds": 1.28,
      "result": "pending",
      "score": null
     },
@@ -2304,7 +2304,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.27,
+     "odds": 1.28,
      "result": "pending",
      "score": null
     },
@@ -2451,7 +2451,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.27,
+     "odds": 1.28,
      "result": "pending",
      "score": null
     },
@@ -2549,7 +2549,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.27,
+     "odds": 1.28,
      "result": "pending",
      "score": null
     },
@@ -2801,7 +2801,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.27,
+     "odds": 1.28,
      "result": "pending",
      "score": null
     },
@@ -2969,7 +2969,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.27,
+     "odds": 1.28,
      "result": "pending",
      "score": null
     },
@@ -3641,7 +3641,7 @@
     {
      "match": "Athletic Bilbao v Espanyol",
      "selection": "Athletic Bilbao",
-     "odds": 1.27,
+     "odds": 1.28,
      "result": "pending",
      "score": null
     },
