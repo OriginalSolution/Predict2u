@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-19T02:15:55Z",
+ "DATA_UPDATED": "2026-11-19T04:15:53Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -549,8 +549,8 @@
   }
  ],
  "picks": {
-  "settled": 2440,
-  "won": 1824,
+  "settled": 2441,
+  "won": 1825,
   "lost": 616,
   "winRate": 74.8
  },
@@ -563,7 +563,7 @@
    "kind": "slip",
    "odds": 5454.19,
    "status": "lost",
-   "hit": 27,
+   "hit": 30,
    "total": 37,
    "profit": -10.0,
    "legs": [
@@ -2901,7 +2901,7 @@
     {
      "match": "Western Sydney Wanderers v Adelaide United FC",
      "selection": "Over 2.5 & Yes",
-     "odds": 1.73,
+     "odds": 1.71,
      "result": "pending",
      "score": null
     },
@@ -3573,7 +3573,7 @@
     {
      "match": "Western Sydney Wanderers v Adelaide United FC",
      "selection": "Over 2.5 & Yes",
-     "odds": 1.73,
+     "odds": 1.71,
      "result": "pending",
      "score": null
     },
