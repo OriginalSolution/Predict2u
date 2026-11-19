@@ -57,6 +57,8 @@ PRODUCTS = [
     dict(key="hot-picks", wf="engine-hot-picks.yml", at="22:00", job="hot", valid_h=16, check="hot", max_forced=1,
          after="engine-daily.yml", force_input=False, own_slot=False),
     dict(key="sure80-reverse", wf="engine-sure80.yml", at="22:00", job="sure80", valid_h=13),
+    dict(key="master-pipeline", wf="engine-master-pipeline.yml", at="22:45", job="pipeline", valid_h=12,
+         after="engine-sure80.yml"),
     dict(key="strategies", wf="engine-strategies.yml", at="22:30", job="strategies", valid_h=13),
     dict(key="gg", wf="engine-gg.yml", at="23:10", job="gg", valid_h=13),
     dict(key="nysm", wf="engine-nysm.yml", at="23:30", job="nysm", valid_h=12),

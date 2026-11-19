@@ -46,6 +46,7 @@ SCHEDULE = [
     ("engine-m1m2.yml", "45", "21", "*"),           # M1/M2 and Safest market (books)
     ("engine-daily.yml", "0", "22", "*"),           # daily collect, book, publish (books)
     ("engine-sure80.yml", "0", "22", "*"),          # 80% Sure + Reverse U4.5 (+ Draw rule), next day (books)
+    ("engine-master-pipeline.yml", "45", "22", "*"),  # master pipeline from the night's codes, next day (books)
     ("engine-strategies.yml", "30", "22", "*"),     # three strategies + Verzzify banker (books)
     ("engine-gg.yml", "10", "23", "*"),             # GG / BTTS Yes for the next Accra day (books)
     ("engine-nysm.yml", "30", "23", "*"),           # NYSM v2 Main, Conservative, TS2+ (books)
