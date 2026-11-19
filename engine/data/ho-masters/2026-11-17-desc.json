@@ -72,7 +72,7 @@
        "sr:match:76123232",
        "sr:match:76649198"
       ],
-      "hit": 0,
+      "hit": 1,
       "status": "pending"
      }
     ],
@@ -109,7 +109,7 @@
        "sr:match:76123232",
        "sr:match:76649198"
       ],
-      "hit": 0,
+      "hit": 1,
       "status": "pending"
      }
     ],
@@ -146,7 +146,7 @@
        "sr:match:76123232",
        "sr:match:76649198"
       ],
-      "hit": 0,
+      "hit": 1,
       "status": "pending"
      }
     ],
@@ -182,7 +182,7 @@
        "sr:match:76123232",
        "sr:match:76649198"
       ],
-      "hit": 0,
+      "hit": 1,
       "status": "pending"
      }
     ],
@@ -219,7 +219,7 @@
        "sr:match:76123232",
        "sr:match:76649198"
       ],
-      "hit": 0,
+      "hit": 1,
       "status": "pending"
      }
     ]
@@ -576,7 +576,7 @@
        "sr:match:76609134",
        "sr:match:76649198"
       ],
-      "hit": 0,
+      "hit": 1,
       "status": "pending"
      }
     ],
@@ -638,7 +638,7 @@
        "sr:match:76609134",
        "sr:match:76649198"
       ],
-      "hit": 0,
+      "hit": 1,
       "status": "pending"
      }
     ],
@@ -700,7 +700,7 @@
        "sr:match:76609134",
        "sr:match:76649198"
       ],
-      "hit": 0,
+      "hit": 1,
       "status": "pending"
      }
     ],
@@ -760,7 +760,7 @@
        "sr:match:76609134",
        "sr:match:76649198"
       ],
-      "hit": 0,
+      "hit": 1,
       "status": "pending"
      }
     ],
@@ -822,7 +822,7 @@
        "sr:match:76609134",
        "sr:match:76649198"
       ],
-      "hit": 0,
+      "hit": 1,
       "status": "pending"
      }
     ]
@@ -853,11 +853,11 @@
    "market": "Over/Under",
    "selection": "Over 2.5",
    "odds": 1.25,
-   "liveOdds": 1.55,
-   "result": "pending",
-   "matchStatus": "H2",
-   "score": "2:0",
-   "played": "71:13",
+   "liveOdds": 7.25,
+   "result": "won",
+   "matchStatus": "Ended",
+   "score": "2:1",
+   "played": "90:00",
    "table": "3 v 13/14",
    "x12": "1.13/8.25/12.50",
    "case": "O2.5 3/3: O2.5@1.25, 1HO1.5@1.7, avgG=3.38/n=42",
@@ -877,11 +877,11 @@
    "market": "Over/Under",
    "selection": "Over 2.5",
    "odds": 1.31,
-   "liveOdds": 1.26,
+   "liveOdds": 1.5,
    "result": "pending",
-   "matchStatus": "Not start",
-   "score": null,
-   "played": null,
+   "matchStatus": "HT",
+   "score": "1:0",
+   "played": "45:00",
    "table": "4 v 10/14",
    "x12": "1.14/7.80/12.00",
    "case": "O2.5 3/3: O2.5@1.31, 1HO1.5@1.82, avgG=3.38/n=42",
@@ -901,7 +901,7 @@
    "market": "Double Chance",
    "selection": "Home or Draw",
    "odds": 1.17,
-   "liveOdds": 1.15,
+   "liveOdds": 1.14,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -1141,7 +1141,7 @@
    "market": "Double Chance",
    "selection": "Home or Draw",
    "odds": 1.18,
-   "liveOdds": 1.17,
+   "liveOdds": 1.16,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -1261,7 +1261,7 @@
    "market": "Double Chance",
    "selection": "Home or Draw",
    "odds": 1.12,
-   "liveOdds": 1.12,
+   "liveOdds": 1.11,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -1285,7 +1285,7 @@
    "market": "Double Chance",
    "selection": "Home or Draw",
    "odds": 1.12,
-   "liveOdds": 1.12,
+   "liveOdds": 1.11,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -1429,7 +1429,7 @@
    "market": "Double Chance",
    "selection": "Home or Draw",
    "odds": 1.11,
-   "liveOdds": 1.11,
+   "liveOdds": 1.1,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -1477,7 +1477,7 @@
    "market": "Over/Under",
    "selection": "Over 2.5",
    "odds": 1.35,
-   "liveOdds": 1.35,
+   "liveOdds": 1.34,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -1525,7 +1525,7 @@
    "market": "Double Chance",
    "selection": "Draw or Away",
    "odds": 1.2,
-   "liveOdds": 1.17,
+   "liveOdds": 1.18,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -1573,7 +1573,7 @@
    "market": "Over/Under",
    "selection": "Over 2.5",
    "odds": 1.4,
-   "liveOdds": 1.4,
+   "liveOdds": 1.38,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -1621,7 +1621,7 @@
    "market": "Over/Under",
    "selection": "Over 2.5",
    "odds": 1.36,
-   "liveOdds": 1.36,
+   "liveOdds": 1.37,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -1933,7 +1933,7 @@
    "market": "Double Chance",
    "selection": "Draw or Away",
    "odds": 1.11,
-   "liveOdds": 1.12,
+   "liveOdds": 1.11,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -1981,7 +1981,7 @@
    "market": "Double Chance",
    "selection": "Home or Draw",
    "odds": 1.12,
-   "liveOdds": 1.12,
+   "liveOdds": 1.13,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -2043,7 +2043,7 @@
  ],
  "legs": 50,
  "totalOdds": 101330.94,
- "hit": 0,
+ "hit": 1,
  "total": 50,
  "status": "pending"
 }
