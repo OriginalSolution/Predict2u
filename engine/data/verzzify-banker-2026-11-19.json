@@ -1,0 +1,839 @@
+{
+ "date": "2026-11-19",
+ "name": "Verzzify Edge Banker",
+ "strategy": "verzzify-edge-banker",
+ "totalOdds": 28.2,
+ "legs": [
+  {
+   "eventId": "sr:match:72203994",
+   "match": "Ross County FC v Cove Rangers FC",
+   "league": "League 1",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.42,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "date": null,
+   "ko": null,
+   "kickoff": null,
+   "hist": {
+    "implied": 70.4,
+    "band": "1.30-1.50",
+    "market": "Over 2.5",
+    "site": {
+     "rate": 93,
+     "n": 45
+    },
+    "siteAll": {
+     "rate": 83,
+     "n": 92
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:72340052",
+   "match": "West Ham v Preston North End",
+   "league": "Championship",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.37,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "date": null,
+   "ko": null,
+   "kickoff": null,
+   "hist": {
+    "implied": 73.0,
+    "band": "1.30-1.50",
+    "market": "Over 2.5",
+    "site": {
+     "rate": 93,
+     "n": 45
+    },
+    "siteAll": {
+     "rate": 83,
+     "n": 92
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:72723334",
+   "match": "Galatasaray Istanbul v Samsunspor",
+   "league": "Super Lig",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.36,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "date": null,
+   "ko": null,
+   "kickoff": null,
+   "hist": {
+    "implied": 73.5,
+    "band": "1.30-1.50",
+    "market": "Over 2.5",
+    "site": {
+     "rate": 93,
+     "n": 45
+    },
+    "siteAll": {
+     "rate": 83,
+     "n": 92
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:72478722",
+   "match": "Real Madrid v Celta",
+   "league": "LaLiga",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.36,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "date": null,
+   "ko": null,
+   "kickoff": null,
+   "hist": {
+    "implied": 73.5,
+    "band": "1.30-1.50",
+    "market": "Over 2.5",
+    "site": {
+     "rate": 93,
+     "n": 45
+    },
+    "siteAll": {
+     "rate": 83,
+     "n": 92
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:72513312",
+   "match": "Bayer Leverkusen v Paderborn",
+   "league": "Bundesliga",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.35,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "date": null,
+   "ko": null,
+   "kickoff": null,
+   "hist": {
+    "implied": 74.1,
+    "band": "1.30-1.50",
+    "market": "Over 2.5",
+    "site": {
+     "rate": 93,
+     "n": 45
+    },
+    "siteAll": {
+     "rate": 83,
+     "n": 92
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:72041256",
+   "match": "Feyenoord v Excelsior Rotterdam",
+   "league": "Eredivisie",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.34,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "date": null,
+   "ko": null,
+   "kickoff": null,
+   "hist": {
+    "implied": 74.6,
+    "band": "1.30-1.50",
+    "market": "Over 2.5",
+    "site": {
+     "rate": 93,
+     "n": 45
+    },
+    "siteAll": {
+     "rate": 83,
+     "n": 92
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:72513320",
+   "match": "Borussia M´gladbach v Borussia Dortmund",
+   "league": "Germany - Bundesliga",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.14,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "date": "2026-11-21",
+   "ko": "14:30",
+   "kickoff": "2026-11-21T14:30:00Z",
+   "hist": {
+    "implied": 87.7,
+    "band": "1.00-1.15",
+    "market": "Over 1.5",
+    "site": {
+     "rate": 96,
+     "n": 27
+    },
+    "siteAll": {
+     "rate": 82,
+     "n": 164
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:72513318",
+   "match": "Union Berlin v RB Leipzig",
+   "league": "Germany - Bundesliga",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.14,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "date": "2026-11-21",
+   "ko": "14:30",
+   "kickoff": "2026-11-21T14:30:00Z",
+   "hist": {
+    "implied": 87.7,
+    "band": "1.00-1.15",
+    "market": "Over 1.5",
+    "site": {
+     "rate": 96,
+     "n": 27
+    },
+    "siteAll": {
+     "rate": 82,
+     "n": 164
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:72897430",
+   "match": "Western Sydney Wanderers v Adelaide United FC",
+   "league": "Australia - A-League",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.14,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "date": "2026-11-20",
+   "ko": "08:40",
+   "kickoff": "2026-11-20T08:40:00Z",
+   "hist": {
+    "implied": 87.7,
+    "band": "1.00-1.15",
+    "market": "Over 1.5",
+    "site": {
+     "rate": 96,
+     "n": 27
+    },
+    "siteAll": {
+     "rate": 82,
+     "n": 164
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:75174748",
+   "match": "Khor Fakkan Club v Al Jazira (UAE)",
+   "league": "United Arab Emirates - Arabian Gulf League",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.14,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "date": "2026-11-21",
+   "ko": "12:45",
+   "kickoff": "2026-11-21T12:45:00Z",
+   "hist": {
+    "implied": 87.7,
+    "band": "1.00-1.15",
+    "market": "Over 1.5",
+    "site": {
+     "rate": 96,
+     "n": 27
+    },
+    "siteAll": {
+     "rate": 82,
+     "n": 164
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:67126888",
+   "match": "Hammarby IF v IFK Goteborg",
+   "league": "Sweden - Allsvenskan",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.13,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "date": "2026-11-23",
+   "ko": "18:00",
+   "kickoff": "2026-11-23T18:00:00Z",
+   "hist": {
+    "implied": 88.5,
+    "band": "1.00-1.15",
+    "market": "Over 1.5",
+    "site": {
+     "rate": 96,
+     "n": 27
+    },
+    "siteAll": {
+     "rate": 82,
+     "n": 164
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:71945406",
+   "match": "Atalanta v Inter",
+   "league": "Italy - Serie A",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.12,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "date": "2026-11-22",
+   "ko": "19:45",
+   "kickoff": "2026-11-22T19:45:00Z",
+   "hist": {
+    "implied": 89.3,
+    "band": "1.00-1.15",
+    "market": "Over 1.5",
+    "site": {
+     "rate": 96,
+     "n": 27
+    },
+    "siteAll": {
+     "rate": 82,
+     "n": 164
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:72036302",
+   "match": "Nice v PSG",
+   "league": "France - Ligue 1",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.12,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "date": "2026-11-21",
+   "ko": "16:15",
+   "kickoff": "2026-11-21T16:15:00Z",
+   "hist": {
+    "implied": 89.3,
+    "band": "1.00-1.15",
+    "market": "Over 1.5",
+    "site": {
+     "rate": 96,
+     "n": 27
+    },
+    "siteAll": {
+     "rate": 82,
+     "n": 164
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:72513994",
+   "match": "Energie Cottbus v Hertha",
+   "league": "Germany - 2. Bundesliga",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.12,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "date": "2026-11-22",
+   "ko": "12:30",
+   "kickoff": "2026-11-22T12:30:00Z",
+   "hist": {
+    "implied": 89.3,
+    "band": "1.00-1.15",
+    "market": "Over 1.5",
+    "site": {
+     "rate": 96,
+     "n": 27
+    },
+    "siteAll": {
+     "rate": 82,
+     "n": 164
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:72366464",
+   "match": "Yellow-Red KV Mechelen v Club Brugge",
+   "league": "Belgium - Pro League",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.12,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "date": "2026-11-21",
+   "ko": "19:45",
+   "kickoff": "2026-11-21T19:45:00Z",
+   "hist": {
+    "implied": 89.3,
+    "band": "1.00-1.15",
+    "market": "Over 1.5",
+    "site": {
+     "rate": 96,
+     "n": 27
+    },
+    "siteAll": {
+     "rate": 82,
+     "n": 164
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:72521078",
+   "match": "FC Biel-Bienne v AC Bellinzona",
+   "league": "Switzerland - Promotion League",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.12,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "date": "2026-11-22",
+   "ko": "14:00",
+   "kickoff": "2026-11-22T14:00:00Z",
+   "hist": {
+    "implied": 89.3,
+    "band": "1.00-1.15",
+    "market": "Over 1.5",
+    "site": {
+     "rate": 96,
+     "n": 27
+    },
+    "siteAll": {
+     "rate": 82,
+     "n": 164
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  },
+  {
+   "eventId": "sr:match:74056928",
+   "match": "Mathare United FC v Kakamega Homeboyz",
+   "league": "Kenya - Premier League",
+   "market": "Total goals",
+   "selection": "Under 3.5",
+   "odds": 1.14,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "date": "2026-11-20",
+   "ko": "11:00",
+   "kickoff": null,
+   "hist": {
+    "implied": 87.7,
+    "band": "1.00-1.15",
+    "market": "Under 3.5",
+    "site": {
+     "rate": 100,
+     "n": 5
+    },
+    "siteAll": {
+     "rate": 77,
+     "n": 226
+    },
+    "league": {
+     "rate": 88,
+     "n": 182
+    },
+    "edge": 0.3
+   },
+   "confidence": 0.867,
+   "leagueFavRate": 0.885,
+   "sample": 182
+  },
+  {
+   "eventId": "sr:match:76427136",
+   "match": "CS Italiano v CD Armenio",
+   "league": "Argentina - Primera B",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.13,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "date": "2026-11-21",
+   "ko": "18:00",
+   "kickoff": "2026-11-21T18:00:00Z",
+   "hist": {
+    "implied": 88.5,
+    "band": "1.00-1.15",
+    "market": "Under 3.5",
+    "site": {
+     "rate": 100,
+     "n": 5
+    },
+    "siteAll": {
+     "rate": 77,
+     "n": 226
+    }
+   },
+   "confidence": null,
+   "leagueFavRate": null,
+   "sample": null
+  }
+ ],
+ "codes": {
+  "sportybet": {
+   "code": "FM4FES",
+   "legs": 18,
+   "odds": 28.2,
+   "link": "https://www.sportybet.com/gh/?shareCode=FM4FES"
+  },
+  "footballcom": {
+   "code": "FM4FES",
+   "legs": 18,
+   "odds": 28.2,
+   "link": "https://www.football.com/gh/?shareCode=FM4FES"
+  },
+  "msport": {
+   "code": "B3LTU13",
+   "legs": 18,
+   "odds": 29.72,
+   "link": "https://www.msport.com/gh/?shareCode=B3LTU13"
+  },
+  "betika": {
+   "code": "vSetha",
+   "legs": 12,
+   "odds": 13.39,
+   "link": "https://betika.com/en-gh/share/vSetha"
+  },
+  "betpawa": {
+   "code": "866JAFT",
+   "legs": 16,
+   "odds": 24.58,
+   "link": "https://www.betpawa.com.gh/share-betslip/866JAFT"
+  }
+ },
+ "code": "FM4FES",
+ "verification": "Verzzify Edge Banker: site/league historical edge over implied, banker band 1.12–1.45, all Predict2u rules",
+ "dropped": [
+  {
+   "match": "Maleyat Kafr El Zayat v Mega Sport Belqas",
+   "selection": "Under 3.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "TSV Havelse v FC Viktoria Cologne",
+   "selection": "Over 1.5",
+   "reason": "band"
+  },
+  {
+   "match": "Velez Sarsfield v CA Belgrano de Cordoba",
+   "selection": "Under 3.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "MC Oran v JS Saoura",
+   "selection": "Under 3.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "FC Van Charentsavan v FC Ararat-Armenia",
+   "selection": "Over 1.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "El Mansurah v Dayrout",
+   "selection": "Under 3.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "FV Illertissen v VfB Eichstatt",
+   "selection": "Over 1.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Kashiwa Reysol v JEF United Chiba",
+   "selection": "Over 1.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Persepolis FC v Paykan FC",
+   "selection": "Under 3.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Kashima Antlers v Shimizu S-Pulse",
+   "selection": "Over 1.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Uganda Police FC v Kampala Capital City Authority FC",
+   "selection": "Under 3.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "NA Hussein Dey v USM EL Harrach",
+   "selection": "Under 3.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Pen-y-Bont FC v Haverfordwest County AFC",
+   "selection": "Over 1.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Vissel Kobe v Mito Hollyhock",
+   "selection": "Over 1.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "ESM Kolea v WA Tlemcen",
+   "selection": "Under 3.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Negeri Sembilan v Kuching City FC",
+   "selection": "Over 1.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "ASO Chlef v USM Khenchela",
+   "selection": "Under 3.5",
+   "reason": "league-edge"
+  },
+  {
+   "match": "FK Majevica Lopare v FK Zvijezda 09",
+   "selection": "Over 1.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Shabab Al Ahli Dubai v Ajman Club",
+   "selection": "Over 1.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Athletic Bilbao v Espanyol",
+   "selection": "Over 1.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Duhok FC v Erbil SC",
+   "selection": "Under 3.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Al Zawraa v AL Talaba",
+   "selection": "Under 3.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Shakhtar D v FC Livyi Bereh Kyiv",
+   "selection": "Over 1.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "FC Prishtina v KF Drenica Skenderaj",
+   "selection": "Over 1.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Sumgayit FK v Sabah Masazir",
+   "selection": "Over 1.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Club S Hammam-Lif v ES Metlaoui",
+   "selection": "Under 2.5",
+   "reason": "league-edge"
+  },
+  {
+   "match": "Imisli FK v Zira FK",
+   "selection": "Under 3.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Saint George SC v Hadiya Hossana FC",
+   "selection": "Under 2.5",
+   "reason": "confidence"
+  },
+  {
+   "match": "Al Hikma v Shabab AL Sahel",
+   "selection": "Under 3.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Azam FC v Singida Black Stars FC",
+   "selection": "Under 3.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Fajr Sepasi FC v Chador Malu Yazd",
+   "selection": "Under 3.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "FK Septemvri Sofia v PFC Lokomotiv Plovdiv",
+   "selection": "Under 3.5",
+   "reason": "site-edge"
+  },
+  {
+   "match": "Cardiff Metropolitan University FC v Ammanford",
+   "selection": "Over 2.5",
+   "reason": "confidence"
+  },
+  {
+   "match": "Bayern Munich v Cologne",
+   "selection": "Over 2.5",
+   "reason": "league-edge"
+  },
+  {
+   "match": "Borussia M´gladbach v Borussia Dortmund",
+   "selection": "Over 1.5",
+   "reason": "band"
+  },
+  {
+   "match": "CD Castellon v Club Deportivo Eldense",
+   "selection": "Over 1.5",
+   "reason": "band"
+  },
+  {
+   "match": "Celtic v St Mirren FC",
+   "selection": "Over 2.5",
+   "reason": "no-hist"
+  },
+  {
+   "match": "FK Mlada Boleslav v FC Zlin",
+   "selection": "Over 1.5",
+   "reason": "band"
+  },
+  {
+   "match": "Genk v RAAL La Louviere",
+   "selection": "Over 1.5",
+   "reason": "no-hist"
+  },
+  {
+   "match": "Kashiwa Reysol v JEF United Chiba",
+   "selection": "Over 1.5",
+   "reason": "band"
+  },
+  {
+   "match": "Lazio v Lecce",
+   "selection": "Over 1.5",
+   "reason": "no-hist"
+  },
+  {
+   "match": "Lugano v Grasshopper Club Zurich",
+   "selection": "Over 1.5",
+   "reason": "no-hist"
+  },
+  {
+   "match": "Man City v Fulham",
+   "selection": "Over 1.5",
+   "reason": "no-hist"
+  },
+  {
+   "match": "Middlesbrough FC v Bristol City",
+   "selection": "Over 1.5",
+   "reason": "no-hist"
+  },
+  {
+   "match": "Monaco v AJ Auxerre",
+   "selection": "Over 1.5",
+   "reason": "no-hist"
+  },
+  {
+   "match": "Motherwell FC v Rangers",
+   "selection": "Over 1.5",
+   "reason": "band"
+  },
+  {
+   "match": "Nice v PSG",
+   "selection": "Over 1.5",
+   "reason": "no-hist"
+  },
+  {
+   "match": "Parma Calcio v Roma",
+   "selection": "Over 2.5",
+   "reason": "band"
+  },
+  {
+   "match": "Queen of the South FC v Hamilton Academical FC",
+   "selection": "Over 1.5",
+   "reason": "band"
+  },
+  {
+   "match": "Queens Park FC v Livingston FC",
+   "selection": "Over 1.5",
+   "reason": "band"
+  }
+ ]
+}
