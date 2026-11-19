@@ -240,7 +240,8 @@ Dry run: `python engine/vendor/master_pipeline.py --dry-run --date D`; `--simula
 5. **Outputs** (each ≥25 odds, never padded; skipped codes are logged in the record):
    Master Early / Master Late (kick-off halves, earliest 35 / latest 35); Low Odds (lowest half, ascending, 35 max) /
    High Odds (highest half, descending, 35 max); **Master ≤1.42 = THE Master** (`master: true`) and Above 1.42, dealt
-   round-robin into ≤50-leg parts above 50 (engine 50-leg rule); market groups ≤25 legs per code (dealt round-robin).
+   round-robin into ≤50-leg parts above 50 (engine 50-leg rule); market groups ≤25 legs per code. Oversized sets are dealt round-robin, or cut in order
+   when that books more legs (e.g. 26 Over 1.5 legs at ~1.2 → 25 + 1, not 13 + 13).
    All cards are HIGH RISK, `origin: strategy-mp-*`. Record: `engine/data/strategy-codes/pipeline/<day>.json`.
    The pipeline's codes reuse matches from codes already booked, so they do not count toward the strategy jobs'
    2-codes-per-match usage file (the spec books each match on several derived codes).

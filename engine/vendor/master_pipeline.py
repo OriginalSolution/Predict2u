@@ -217,11 +217,20 @@ def swap_alternative(name: str | None, odds: dict, stats: dict | None, fit) -> s
 
 
 def deal(legs: list[dict], cap: int) -> list[list[dict]]:
-    """Split into the fewest parts of <= cap legs, dealt round-robin so the parts carry similar odds."""
+    """Split into the fewest parts of <= cap legs, booking as many legs as possible.
+
+    Two candidates: dealt round-robin (similar odds per part) or cut in order (first `cap`, next `cap`, ...).
+    The one whose parts reaching 25 odds hold more legs wins; ties go to round-robin.
+    """
     if len(legs) <= cap:
         return [list(legs)]
     n = math.ceil(len(legs) / cap)
-    return [legs[i::n] for i in range(n)]
+    dealt = [legs[i::n] for i in range(n)]
+    cut = [legs[i:i + cap] for i in range(0, len(legs), cap)]
+
+    def score(parts):
+        return sum(len(p) for p in parts if lib.product(leg["odds"] for leg in p) >= lib.MIN_TOTAL)
+    return dealt if score(dealt) >= score(cut) else cut
 
 
 def bookable(legs: list[dict], cap: int) -> bool:

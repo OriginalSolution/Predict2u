@@ -130,7 +130,10 @@ def test_step5_master_over_50_is_split_into_parts():
     codes, _ = mp.outputs(_pool(80, 1.30))
     parts = [c for c in codes if c["id"].startswith("mp-master-")]
     assert len(parts) == 2 and all(len(c["legs"]) == 40 for c in parts)
-    assert [len(p) for p in mp.deal(list(range(26)), 25)] == [13, 13]
+    big = [{"odds": 1.5}] * 26
+    assert [len(p) for p in mp.deal(big, 25)] == [13, 13]          # both halves reach 25
+    short = [{"odds": 1.2}] * 26
+    assert [len(p) for p in mp.deal(short, 25)] == [25, 1]         # halves would both miss 25
 
 
 def test_pipeline_slot_wiring():
