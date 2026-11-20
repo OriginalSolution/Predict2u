@@ -72,8 +72,8 @@
        "sr:match:76123232",
        "sr:match:76649198"
       ],
-      "hit": 0,
-      "status": "pending"
+      "hit": 1,
+      "status": "lost"
      }
     ],
     "footballcom": [
@@ -109,8 +109,8 @@
        "sr:match:76123232",
        "sr:match:76649198"
       ],
-      "hit": 0,
-      "status": "pending"
+      "hit": 1,
+      "status": "lost"
      }
     ],
     "msport": [
@@ -146,8 +146,8 @@
        "sr:match:76123232",
        "sr:match:76649198"
       ],
-      "hit": 0,
-      "status": "pending"
+      "hit": 1,
+      "status": "lost"
      }
     ],
     "betika": [
@@ -182,8 +182,8 @@
        "sr:match:76123232",
        "sr:match:76649198"
       ],
-      "hit": 0,
-      "status": "pending"
+      "hit": 1,
+      "status": "lost"
      }
     ],
     "betpawa": [
@@ -219,8 +219,8 @@
        "sr:match:76123232",
        "sr:match:76649198"
       ],
-      "hit": 0,
-      "status": "pending"
+      "hit": 1,
+      "status": "lost"
      }
     ]
    },
@@ -232,7 +232,7 @@
    "label": "Ascending odds · first 25 · HIGH RISK",
    "source": "asc",
    "meetsFloor": true,
-   "status": "pending"
+   "status": "lost"
   },
   {
    "name": "Ascending odds · second 25",
@@ -580,8 +580,8 @@
        "sr:match:76649188",
        "sr:match:76649198"
       ],
-      "hit": 0,
-      "status": "pending"
+      "hit": 1,
+      "status": "lost"
      }
     ],
     "footballcom": [
@@ -642,8 +642,8 @@
        "sr:match:76649188",
        "sr:match:76649198"
       ],
-      "hit": 0,
-      "status": "pending"
+      "hit": 1,
+      "status": "lost"
      }
     ],
     "msport": [
@@ -703,8 +703,8 @@
        "sr:match:76649188",
        "sr:match:76649198"
       ],
-      "hit": 0,
-      "status": "pending"
+      "hit": 1,
+      "status": "lost"
      }
     ],
     "betika": [
@@ -763,8 +763,8 @@
        "sr:match:76649188",
        "sr:match:76649198"
       ],
-      "hit": 0,
-      "status": "pending"
+      "hit": 1,
+      "status": "lost"
      }
     ],
     "betpawa": [
@@ -824,8 +824,8 @@
        "sr:match:76649188",
        "sr:match:76649198"
       ],
-      "hit": 0,
-      "status": "pending"
+      "hit": 1,
+      "status": "lost"
      }
     ]
    },
@@ -844,7 +844,7 @@
    "label": "Ascending odds · master · HIGH RISK",
    "source": "asc",
    "meetsFloor": true,
-   "status": "pending"
+   "status": "lost"
   }
  ],
  "legList": [
@@ -861,11 +861,11 @@
    "market": "Double Chance",
    "selection": "Home or Draw",
    "odds": 1.11,
-   "liveOdds": 1.35,
-   "result": "pending",
-   "matchStatus": "H1",
-   "score": "0:1",
-   "played": "12:06",
+   "liveOdds": 10.0,
+   "result": "lost",
+   "matchStatus": "Ended",
+   "score": "1:2",
+   "played": "90:00",
    "table": "5 v 19/20",
    "x12": "1.42/4.60/7.20",
    "case": "bottom3/form DC against Away @1.11",
@@ -885,11 +885,11 @@
    "market": "Double Chance",
    "selection": "Home or Draw",
    "odds": 1.13,
-   "liveOdds": 1.1,
-   "result": "pending",
-   "matchStatus": "H1",
-   "score": "0:0",
-   "played": "12:31",
+   "liveOdds": 4.5,
+   "result": "won",
+   "matchStatus": "Ended",
+   "score": "1:1",
+   "played": "90:00",
    "table": "6 v 15/20",
    "x12": "1.49/4.40/6.25",
    "case": "bottom3/form DC against Away @1.13",
@@ -909,11 +909,11 @@
    "market": "Double Chance",
    "selection": "Home or Draw",
    "odds": 1.14,
-   "liveOdds": 1.12,
-   "result": "pending",
-   "matchStatus": "H1",
-   "score": "0:0",
-   "played": "12:30",
+   "liveOdds": 9.0,
+   "result": "lost",
+   "matchStatus": "Ended",
+   "score": "0:1",
+   "played": "90:00",
    "table": "2 v 18/20",
    "x12": "1.50/4.50/5.80",
    "case": "bottom3/form DC against Away @1.14",
@@ -933,7 +933,7 @@
    "market": "Over/Under",
    "selection": "Over 2.5",
    "odds": 1.28,
-   "liveOdds": 1.31,
+   "liveOdds": 1.32,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -1461,7 +1461,7 @@
    "market": "Double Chance",
    "selection": "Draw or Away",
    "odds": 1.16,
-   "liveOdds": 1.17,
+   "liveOdds": 1.16,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -1581,7 +1581,7 @@
    "market": "Over/Under",
    "selection": "Over 2.5",
    "odds": 1.23,
-   "liveOdds": 1.23,
+   "liveOdds": 1.24,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -1989,7 +1989,7 @@
    "market": "Draw No Bet",
    "selection": "Away",
    "odds": 1.2,
-   "liveOdds": 1.21,
+   "liveOdds": 1.2,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -2051,7 +2051,7 @@
  ],
  "legs": 50,
  "totalOdds": 2015.5,
- "hit": 0,
+ "hit": 1,
  "total": 50,
- "status": "pending"
+ "status": "lost"
 }

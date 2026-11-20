@@ -42,8 +42,8 @@
        "sr:match:75174740",
        "sr:match:76123232"
       ],
-      "hit": 2,
-      "status": "pending"
+      "hit": 3,
+      "status": "lost"
      }
     ],
     "footballcom": [
@@ -64,8 +64,8 @@
        "sr:match:75174740",
        "sr:match:76123232"
       ],
-      "hit": 2,
-      "status": "pending"
+      "hit": 3,
+      "status": "lost"
      }
     ],
     "msport": [
@@ -86,8 +86,8 @@
        "sr:match:75174740",
        "sr:match:76123232"
       ],
-      "hit": 2,
-      "status": "pending"
+      "hit": 3,
+      "status": "lost"
      }
     ],
     "betika": [
@@ -107,8 +107,8 @@
        "sr:match:75174740",
        "sr:match:76123232"
       ],
-      "hit": 2,
-      "status": "pending"
+      "hit": 3,
+      "status": "lost"
      }
     ],
     "betpawa": [
@@ -129,8 +129,8 @@
        "sr:match:75174740",
        "sr:match:76123232"
       ],
-      "hit": 2,
-      "status": "pending"
+      "hit": 3,
+      "status": "lost"
      }
     ]
    },
@@ -142,7 +142,7 @@
    "label": "Ascending odds · set · HIGH RISK",
    "source": "asc",
    "meetsFloor": false,
-   "status": "pending"
+   "status": "lost"
   }
  ],
  "legList": [
@@ -207,11 +207,11 @@
    "market": "Double Chance",
    "selection": "Home or Draw",
    "odds": 1.1,
-   "liveOdds": 1.35,
-   "result": "pending",
-   "matchStatus": "H1",
-   "score": "0:1",
-   "played": "12:06",
+   "liveOdds": 10.0,
+   "result": "lost",
+   "matchStatus": "Ended",
+   "score": "1:2",
+   "played": "90:00",
    "table": "5 v 19/20",
    "x12": "1.42/4.40/7.25",
    "case": "bottom3/form DC against Away @1.1",
@@ -231,11 +231,11 @@
    "market": "Double Chance",
    "selection": "Home or Draw",
    "odds": 1.14,
-   "liveOdds": 1.12,
-   "result": "pending",
-   "matchStatus": "H1",
-   "score": "0:0",
-   "played": "12:30",
+   "liveOdds": 9.0,
+   "result": "lost",
+   "matchStatus": "Ended",
+   "score": "0:1",
+   "played": "90:00",
    "table": "2 v 18/20",
    "x12": "1.51/4.40/5.50",
    "case": "bottom3/form DC against Away @1.14",
@@ -255,11 +255,11 @@
    "market": "Double Chance",
    "selection": "Home or Draw",
    "odds": 1.15,
-   "liveOdds": 1.1,
-   "result": "pending",
-   "matchStatus": "H1",
-   "score": "0:0",
-   "played": "12:31",
+   "liveOdds": 4.5,
+   "result": "won",
+   "matchStatus": "Ended",
+   "score": "1:1",
+   "played": "90:00",
    "table": "6 v 15/20",
    "x12": "1.56/4.00/5.40",
    "case": "bottom3/form DC against Away @1.15",
@@ -279,7 +279,7 @@
    "market": "Over/Under",
    "selection": "Over 2.5",
    "odds": 1.28,
-   "liveOdds": 1.31,
+   "liveOdds": 1.32,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -389,7 +389,7 @@
  ],
  "legs": 10,
  "totalOdds": 7.33,
- "hit": 2,
+ "hit": 3,
  "total": 10,
- "status": "pending"
+ "status": "lost"
 }
