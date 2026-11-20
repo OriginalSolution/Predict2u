@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-20T09:10:41Z",
+ "DATA_UPDATED": "2026-11-20T10:16:11Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -561,10 +561,10 @@
   }
  ],
  "picks": {
-  "settled": 2467,
-  "won": 1846,
+  "settled": 2479,
+  "won": 1858,
   "lost": 621,
-  "winRate": 74.8
+  "winRate": 74.9
  },
  "recent": [
   {
@@ -575,7 +575,7 @@
    "kind": "slip",
    "odds": 501.26,
    "status": "lost",
-   "hit": 0,
+   "hit": 9,
    "total": 24,
    "profit": -10.0,
    "legs": [
@@ -653,14 +653,14 @@
      "match": "Al-Masry v Asyut Petroleum",
      "selection": "Over 1.5",
      "odds": 1.2,
-     "result": "pending",
+     "result": "won",
      "score": "3:0"
     },
     {
      "match": "PFC Dobrudzha Dobrich v FC Fratria Varna",
      "selection": "Over 1.5",
      "odds": 1.27,
-     "result": "pending",
+     "result": "won",
      "score": "0:5"
     },
     {
@@ -695,7 +695,7 @@
      "match": "KIF Orebro DFF v FC Rosengaard Malmo",
      "selection": "Over 2.5",
      "odds": 1.85,
-     "result": "pending",
+     "result": "won",
      "score": "2:1"
     },
     {
@@ -716,14 +716,14 @@
      "match": "CA Penarol Montevideo v Cerro Largo FC",
      "selection": "Over 1.5",
      "odds": 1.14,
-     "result": "pending",
+     "result": "won",
      "score": "3:0"
     },
     {
      "match": "CA Progreso v Montevideo City Torque",
      "selection": "Over 1.5",
      "odds": 1.07,
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -806,7 +806,7 @@
    "kind": "slip",
    "odds": 5454.19,
    "status": "lost",
-   "hit": 1,
+   "hit": 18,
    "total": 37,
    "profit": -10.0,
    "legs": [
@@ -975,7 +975,7 @@
      "match": "Barycz Sulow v KS Polonia Nysa",
      "selection": "Over 1.5",
      "odds": 1.53,
-     "result": "pending",
+     "result": "won",
      "score": "4:1"
     },
     {
@@ -996,7 +996,7 @@
      "match": "Utebo FC v CE Sabadell FC",
      "selection": "Over 1.5",
      "odds": 1.14,
-     "result": "pending",
+     "result": "won",
      "score": "0:3"
     },
     {
@@ -1024,14 +1024,14 @@
      "match": "Alcantarilla FC v SFC Minerva",
      "selection": "Over 1.5",
      "odds": 3.0,
-     "result": "pending",
+     "result": "won",
      "score": "2:0"
     },
     {
      "match": "San Javier Mar Menor CF v Bullas Deportivo",
      "selection": "Over 1.5",
      "odds": 1.65,
-     "result": "pending",
+     "result": "won",
      "score": "2:0"
     },
     {
@@ -1066,7 +1066,7 @@
      "match": "Always Ready v Real Potosi",
      "selection": "Over 1.5",
      "odds": 1.32,
-     "result": "pending",
+     "result": "won",
      "score": "3:1"
     }
    ]
@@ -1079,7 +1079,7 @@
    "kind": "slip",
    "odds": 2.3,
    "status": "won",
-   "hit": 0,
+   "hit": 3,
    "total": 5,
    "profit": 13.0,
    "legs": [
@@ -1087,7 +1087,7 @@
      "match": "Barycz Sulow v KS Polonia Nysa",
      "selection": "Over 1.5",
      "odds": 1.53,
-     "result": "pending",
+     "result": "won",
      "score": "4:1"
     },
     {
@@ -1534,7 +1534,7 @@
    "kind": "slip",
    "odds": 662.59,
    "status": "lost",
-   "hit": 0,
+   "hit": 3,
    "total": 26,
    "profit": -10.0,
    "legs": [
@@ -1654,7 +1654,7 @@
      "match": "United Arab Emirates v Syria",
      "selection": "Over 1.5",
      "odds": 1.18,
-     "result": "pending",
+     "result": "won",
      "score": "4:2"
     },
     {
@@ -1730,14 +1730,14 @@
    "kind": "hot",
    "odds": 36.38,
    "status": "lost",
-   "hit": 0,
+   "hit": 7,
    "total": 14,
    "profit": -10.0,
    "legs": [
     {
      "match": "Bayern Munich v Cologne",
      "selection": "Bayern Munich",
-     "odds": 1.09,
+     "odds": 1.11,
      "result": "pending",
      "score": null
     },
@@ -1872,7 +1872,7 @@
      "selection": "Over 1.5",
      "odds": 1.26,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -1886,7 +1886,7 @@
      "selection": "Over 1.5",
      "odds": 1.14,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Poland v Sweden",
@@ -1900,49 +1900,49 @@
      "selection": "Over 1.5",
      "odds": 1.42,
      "result": "won",
-     "score": null
+     "score": "2:2"
     },
     {
      "match": "South Sudan v Angola",
      "selection": "Over 1.5",
      "odds": 1.35,
      "result": "lost",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Sierra Leone v Congo DR",
      "selection": "Over 1.5",
      "odds": 1.39,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Israel v Austria",
      "selection": "Over 1.5",
      "odds": 1.2,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Togo v Algeria",
      "selection": "Over 1.5",
      "odds": 1.45,
      "result": "won",
-     "score": null
+     "score": "3:0"
     },
     {
      "match": "Kenya v South Africa",
      "selection": "Over 1.5",
      "odds": 1.51,
      "result": "won",
-     "score": null
+     "score": "1:2"
     },
     {
      "match": "Rwanda v Mali",
      "selection": "Over 1.5",
      "odds": 1.46,
      "result": "won",
-     "score": null
+     "score": "0:2"
     }
    ]
   },
@@ -1984,7 +1984,7 @@
      "selection": "Over 1.5",
      "odds": 4.15,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -1998,7 +1998,7 @@
      "selection": "Over 1.5",
      "odds": 1.18,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Poland v Sweden",
@@ -2012,49 +2012,49 @@
      "selection": "Over 1.5",
      "odds": 1.65,
      "result": "won",
-     "score": null
+     "score": "2:2"
     },
     {
      "match": "South Sudan v Angola",
      "selection": "Over 1.5",
      "odds": 1.25,
      "result": "lost",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Sierra Leone v Congo DR",
      "selection": "Over 1.5",
      "odds": 5.25,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Israel v Austria",
      "selection": "Over 1.5",
      "odds": 1.3,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Togo v Algeria",
      "selection": "Over 1.5",
      "odds": 1.25,
      "result": "won",
-     "score": null
+     "score": "3:0"
     },
     {
      "match": "Kenya v South Africa",
      "selection": "Over 1.5",
      "odds": 3.65,
      "result": "won",
-     "score": null
+     "score": "1:2"
     },
     {
      "match": "Rwanda v Mali",
      "selection": "Over 1.5",
      "odds": 3.8,
      "result": "won",
-     "score": null
+     "score": "0:2"
     }
    ]
   },
@@ -2066,14 +2066,14 @@
    "kind": "hot",
    "odds": 36.38,
    "status": "lost",
-   "hit": 0,
+   "hit": 7,
    "total": 14,
    "profit": -10.0,
    "legs": [
     {
      "match": "Bayern Munich v Cologne",
      "selection": "Bayern Munich",
-     "odds": 1.09,
+     "odds": 1.11,
      "result": "pending",
      "score": null
     },
@@ -2208,7 +2208,7 @@
      "selection": "Over 1.5",
      "odds": 1.26,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -2222,7 +2222,7 @@
      "selection": "Over 1.5",
      "odds": 1.14,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Poland v Sweden",
@@ -2236,49 +2236,49 @@
      "selection": "Over 1.5",
      "odds": 1.42,
      "result": "won",
-     "score": null
+     "score": "2:2"
     },
     {
      "match": "South Sudan v Angola",
      "selection": "Over 1.5",
      "odds": 1.35,
      "result": "lost",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Sierra Leone v Congo DR",
      "selection": "Over 1.5",
      "odds": 1.39,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Israel v Austria",
      "selection": "Over 1.5",
      "odds": 1.2,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Togo v Algeria",
      "selection": "Over 1.5",
      "odds": 1.45,
      "result": "won",
-     "score": null
+     "score": "3:0"
     },
     {
      "match": "Kenya v South Africa",
      "selection": "Over 1.5",
      "odds": 1.51,
      "result": "won",
-     "score": null
+     "score": "1:2"
     },
     {
      "match": "Rwanda v Mali",
      "selection": "Over 1.5",
      "odds": 1.46,
      "result": "won",
-     "score": null
+     "score": "0:2"
     }
    ]
   },
@@ -2297,7 +2297,7 @@
     {
      "match": "Bayern Munich v Cologne",
      "selection": "Bayern Munich",
-     "odds": 1.09,
+     "odds": 1.11,
      "result": "pending",
      "score": null
     },
@@ -2369,7 +2369,7 @@
      "selection": "Over 1.5",
      "odds": 1.26,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -2418,7 +2418,7 @@
      "selection": "Over 1.5",
      "odds": 4.15,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -2444,7 +2444,7 @@
     {
      "match": "Bayern Munich v Cologne",
      "selection": "Bayern Munich",
-     "odds": 1.09,
+     "odds": 1.11,
      "result": "pending",
      "score": null
     },
@@ -2516,7 +2516,7 @@
      "selection": "Over 1.5",
      "odds": 1.26,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -2535,14 +2535,14 @@
    "kind": "hot",
    "odds": 9.48,
    "status": "lost",
-   "hit": 0,
+   "hit": 3,
    "total": 10,
    "profit": -10.0,
    "legs": [
     {
      "match": "Bayern Munich v Cologne",
      "selection": "Bayern Munich",
-     "odds": 1.09,
+     "odds": 1.11,
      "result": "pending",
      "score": null
     },
@@ -2649,7 +2649,7 @@
      "selection": "Over 1.5",
      "odds": 1.26,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -2663,7 +2663,7 @@
      "selection": "Over 1.5",
      "odds": 1.14,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Poland v Sweden",
@@ -2677,21 +2677,21 @@
      "selection": "Over 1.5",
      "odds": 1.42,
      "result": "won",
-     "score": null
+     "score": "2:2"
     },
     {
      "match": "South Sudan v Angola",
      "selection": "Over 1.5",
      "odds": 1.35,
      "result": "lost",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Sierra Leone v Congo DR",
      "selection": "Over 1.5",
      "odds": 1.39,
      "result": "won",
-     "score": null
+     "score": "1:1"
     }
    ]
   },
@@ -2733,7 +2733,7 @@
      "selection": "Over 1.5",
      "odds": 1.26,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -2747,7 +2747,7 @@
      "selection": "Over 1.5",
      "odds": 1.14,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Poland v Sweden",
@@ -2761,21 +2761,21 @@
      "selection": "Over 1.5",
      "odds": 1.42,
      "result": "won",
-     "score": null
+     "score": "2:2"
     },
     {
      "match": "South Sudan v Angola",
      "selection": "Over 1.5",
      "odds": 1.35,
      "result": "lost",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Sierra Leone v Congo DR",
      "selection": "Over 1.5",
      "odds": 1.39,
      "result": "won",
-     "score": null
+     "score": "1:1"
     }
    ]
   },
@@ -2787,14 +2787,14 @@
    "kind": "hot",
    "odds": 9.48,
    "status": "lost",
-   "hit": 0,
+   "hit": 3,
    "total": 10,
    "profit": -10.0,
    "legs": [
     {
      "match": "Bayern Munich v Cologne",
      "selection": "Bayern Munich",
-     "odds": 1.09,
+     "odds": 1.11,
      "result": "pending",
      "score": null
     },
@@ -2901,7 +2901,7 @@
      "selection": "Over 1.5",
      "odds": 1.26,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -2915,7 +2915,7 @@
      "selection": "Over 1.5",
      "odds": 1.14,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Poland v Sweden",
@@ -2929,21 +2929,21 @@
      "selection": "Over 1.5",
      "odds": 1.42,
      "result": "won",
-     "score": null
+     "score": "2:2"
     },
     {
      "match": "South Sudan v Angola",
      "selection": "Over 1.5",
      "odds": 1.35,
      "result": "lost",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Sierra Leone v Congo DR",
      "selection": "Over 1.5",
      "odds": 1.39,
      "result": "won",
-     "score": null
+     "score": "1:1"
     }
    ]
   },
@@ -2955,14 +2955,14 @@
    "kind": "hot",
    "odds": 11051.84,
    "status": "lost",
-   "hit": 0,
+   "hit": 9,
    "total": 30,
    "profit": -10.0,
    "legs": [
     {
      "match": "Bayern Munich v Cologne",
      "selection": "Bayern Munich",
-     "odds": 1.09,
+     "odds": 1.11,
      "result": "pending",
      "score": null
     },
@@ -3146,7 +3146,7 @@
      "selection": "Over 2.5 & Yes",
      "odds": 1.55,
      "result": "pending",
-     "score": "0:0"
+     "score": "2:2"
     },
     {
      "match": "Congo v Comoros",
@@ -3158,16 +3158,16 @@
     {
      "match": "Kashima Antlers v Shimizu S-Pulse",
      "selection": "Kashima Antlers",
-     "odds": 1.27,
+     "odds": 1.29,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Kashiwa Reysol v JEF United Chiba",
      "selection": "Kashiwa Reysol",
      "odds": 1.27,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -3209,7 +3209,7 @@
      "selection": "Over 1.5",
      "odds": 1.26,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -3223,7 +3223,7 @@
      "selection": "Over 1.5",
      "odds": 1.14,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Poland v Sweden",
@@ -3237,49 +3237,49 @@
      "selection": "Over 1.5",
      "odds": 1.42,
      "result": "won",
-     "score": null
+     "score": "2:2"
     },
     {
      "match": "South Sudan v Angola",
      "selection": "Over 1.5",
      "odds": 1.35,
      "result": "lost",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Sierra Leone v Congo DR",
      "selection": "Over 1.5",
      "odds": 1.39,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Israel v Austria",
      "selection": "Over 1.5",
      "odds": 1.2,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Togo v Algeria",
      "selection": "Over 1.5",
      "odds": 1.45,
      "result": "won",
-     "score": null
+     "score": "3:0"
     },
     {
      "match": "Kenya v South Africa",
      "selection": "Over 1.5",
      "odds": 1.51,
      "result": "won",
-     "score": null
+     "score": "1:2"
     },
     {
      "match": "Rwanda v Mali",
      "selection": "Over 1.5",
      "odds": 1.46,
      "result": "won",
-     "score": null
+     "score": "0:2"
     },
     {
      "match": "Wales v Portugal",
@@ -3314,14 +3314,14 @@
      "selection": "Over 1.5",
      "odds": 1.47,
      "result": "won",
-     "score": null
+     "score": "3:0"
     },
     {
      "match": "Libya v Tunisia",
      "selection": "Over 1.5",
      "odds": 1.5,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Bosnia & Herzegovina v Romania",
@@ -3370,7 +3370,7 @@
      "selection": "Over 2.5 & Yes",
      "odds": 1.72,
      "result": "pending",
-     "score": "0:0"
+     "score": "2:2"
     },
     {
      "match": "Congo v Comoros",
@@ -3384,14 +3384,14 @@
      "selection": "Kashima Antlers",
      "odds": 1.31,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Kashiwa Reysol v JEF United Chiba",
      "selection": "Kashiwa Reysol",
      "odds": 1.3,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -3433,7 +3433,7 @@
      "selection": "Over 1.5",
      "odds": 4.15,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -3447,7 +3447,7 @@
      "selection": "Over 1.5",
      "odds": 1.18,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Poland v Sweden",
@@ -3461,49 +3461,49 @@
      "selection": "Over 1.5",
      "odds": 1.65,
      "result": "won",
-     "score": null
+     "score": "2:2"
     },
     {
      "match": "South Sudan v Angola",
      "selection": "Over 1.5",
      "odds": 1.25,
      "result": "lost",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Sierra Leone v Congo DR",
      "selection": "Over 1.5",
      "odds": 5.25,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Israel v Austria",
      "selection": "Over 1.5",
      "odds": 1.3,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Togo v Algeria",
      "selection": "Over 1.5",
      "odds": 1.25,
      "result": "won",
-     "score": null
+     "score": "3:0"
     },
     {
      "match": "Kenya v South Africa",
      "selection": "Over 1.5",
      "odds": 3.65,
      "result": "won",
-     "score": null
+     "score": "1:2"
     },
     {
      "match": "Rwanda v Mali",
      "selection": "Over 1.5",
      "odds": 3.8,
      "result": "won",
-     "score": null
+     "score": "0:2"
     },
     {
      "match": "Wales v Portugal",
@@ -3538,14 +3538,14 @@
      "selection": "Over 1.5",
      "odds": 1.03,
      "result": "won",
-     "score": null
+     "score": "3:0"
     },
     {
      "match": "Libya v Tunisia",
      "selection": "Over 1.5",
      "odds": 1.4,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Bosnia & Herzegovina v Romania",
@@ -3594,7 +3594,7 @@
      "selection": "Over 2.5 & Yes",
      "odds": 1.73,
      "result": "pending",
-     "score": "0:0"
+     "score": "2:2"
     },
     {
      "match": "Congo v Comoros",
@@ -3608,14 +3608,14 @@
      "selection": "Kashima Antlers",
      "odds": 1.31,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Kashiwa Reysol v JEF United Chiba",
      "selection": "Kashiwa Reysol",
      "odds": 1.3,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -3627,14 +3627,14 @@
    "kind": "hot",
    "odds": 11051.84,
    "status": "lost",
-   "hit": 0,
+   "hit": 9,
    "total": 30,
    "profit": -10.0,
    "legs": [
     {
      "match": "Bayern Munich v Cologne",
      "selection": "Bayern Munich",
-     "odds": 1.09,
+     "odds": 1.11,
      "result": "pending",
      "score": null
     },
@@ -3818,7 +3818,7 @@
      "selection": "Over 2.5 & Yes",
      "odds": 1.55,
      "result": "pending",
-     "score": "0:0"
+     "score": "2:2"
     },
     {
      "match": "Congo v Comoros",
@@ -3830,16 +3830,16 @@
     {
      "match": "Kashima Antlers v Shimizu S-Pulse",
      "selection": "Kashima Antlers",
-     "odds": 1.27,
+     "odds": 1.29,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Kashiwa Reysol v JEF United Chiba",
      "selection": "Kashiwa Reysol",
      "odds": 1.27,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -3881,7 +3881,7 @@
      "selection": "Over 1.5",
      "odds": 1.26,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -3895,7 +3895,7 @@
      "selection": "Over 1.5",
      "odds": 1.14,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Poland v Sweden",
@@ -3909,49 +3909,49 @@
      "selection": "Over 1.5",
      "odds": 1.42,
      "result": "won",
-     "score": null
+     "score": "2:2"
     },
     {
      "match": "South Sudan v Angola",
      "selection": "Over 1.5",
      "odds": 1.35,
      "result": "lost",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Sierra Leone v Congo DR",
      "selection": "Over 1.5",
      "odds": 1.39,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Israel v Austria",
      "selection": "Over 1.5",
      "odds": 1.2,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Togo v Algeria",
      "selection": "Over 1.5",
      "odds": 1.45,
      "result": "won",
-     "score": null
+     "score": "3:0"
     },
     {
      "match": "Kenya v South Africa",
      "selection": "Over 1.5",
      "odds": 1.51,
      "result": "won",
-     "score": null
+     "score": "1:2"
     },
     {
      "match": "Rwanda v Mali",
      "selection": "Over 1.5",
      "odds": 1.46,
      "result": "won",
-     "score": null
+     "score": "0:2"
     },
     {
      "match": "Wales v Portugal",
@@ -3986,14 +3986,14 @@
      "selection": "Over 1.5",
      "odds": 1.47,
      "result": "won",
-     "score": null
+     "score": "3:0"
     },
     {
      "match": "Libya v Tunisia",
      "selection": "Over 1.5",
      "odds": 1.5,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Bosnia & Herzegovina v Romania",
@@ -4042,7 +4042,7 @@
      "selection": "Over 2.5 & Yes",
      "odds": 1.72,
      "result": "pending",
-     "score": "0:0"
+     "score": "2:2"
     },
     {
      "match": "Congo v Comoros",
@@ -4056,14 +4056,14 @@
      "selection": "Kashima Antlers",
      "odds": 1.31,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Kashiwa Reysol v JEF United Chiba",
      "selection": "Kashiwa Reysol",
      "odds": 1.3,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -4075,7 +4075,7 @@
    "kind": "hot",
    "odds": 4.22,
    "status": "lost",
-   "hit": 0,
+   "hit": 2,
    "total": 6,
    "profit": -10.0,
    "legs": [
@@ -4147,7 +4147,7 @@
      "selection": "Over 1.5",
      "odds": 1.26,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -4161,7 +4161,7 @@
      "selection": "Over 1.5",
      "odds": 1.14,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Poland v Sweden",
@@ -4175,7 +4175,7 @@
      "selection": "Over 1.5",
      "odds": 1.42,
      "result": "won",
-     "score": null
+     "score": "2:2"
     }
    ]
   },
@@ -4203,7 +4203,7 @@
      "selection": "Over 1.5",
      "odds": 4.15,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -4217,7 +4217,7 @@
      "selection": "Over 1.5",
      "odds": 1.18,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Poland v Sweden",
@@ -4231,7 +4231,7 @@
      "selection": "Over 1.5",
      "odds": 1.65,
      "result": "won",
-     "score": null
+     "score": "2:2"
     }
    ]
   },
@@ -4243,7 +4243,7 @@
    "kind": "hot",
    "odds": 4.22,
    "status": "lost",
-   "hit": 0,
+   "hit": 2,
    "total": 6,
    "profit": -10.0,
    "legs": [
@@ -4315,7 +4315,7 @@
      "selection": "Over 1.5",
      "odds": 1.26,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -4329,7 +4329,7 @@
      "selection": "Over 1.5",
      "odds": 1.14,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Poland v Sweden",
@@ -4343,7 +4343,7 @@
      "selection": "Over 1.5",
      "odds": 1.42,
      "result": "won",
-     "score": null
+     "score": "2:2"
     }
    ]
   },
@@ -4565,7 +4565,7 @@
    "kind": "hot",
    "odds": 24.83,
    "status": "lost",
-   "hit": 0,
+   "hit": 5,
    "total": 13,
    "profit": -10.0,
    "legs": [
@@ -4686,21 +4686,21 @@
      "selection": "Over 1.5",
      "odds": 1.34,
      "result": "won",
-     "score": null
+     "score": "2:4"
     },
     {
      "match": "Denmark v Norway",
      "selection": "Over 1.5",
      "odds": 1.16,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Malawi v Egypt",
      "selection": "Over 1.5",
      "odds": 1.25,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -4721,7 +4721,7 @@
      "selection": "Over 1.5",
      "odds": 1.2,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Greece v Serbia",
@@ -4742,21 +4742,21 @@
      "selection": "Over 1.5",
      "odds": 1.48,
      "result": "won",
-     "score": null
+     "score": "0:3"
     },
     {
      "match": "South Sudan v Angola",
      "selection": "Over 1.5",
      "odds": 1.32,
      "result": "lost",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Gambia v Ivory Coast",
      "selection": "Over 1.5",
      "odds": 1.42,
      "result": "won",
-     "score": null
+     "score": "2:2"
     },
     {
      "match": "Eritrea v Guinea",
@@ -4791,21 +4791,21 @@
      "selection": "Over 1.5",
      "odds": 1.07,
      "result": "won",
-     "score": null
+     "score": "2:4"
     },
     {
      "match": "Denmark v Norway",
      "selection": "Over 1.5",
      "odds": 1.14,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Malawi v Egypt",
      "selection": "Over 1.5",
      "odds": 1.25,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -4826,7 +4826,7 @@
      "selection": "Over 1.5",
      "odds": 1.21,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Greece v Serbia",
@@ -4847,21 +4847,21 @@
      "selection": "Over 1.5",
      "odds": 1.6,
      "result": "won",
-     "score": null
+     "score": "0:3"
     },
     {
      "match": "South Sudan v Angola",
      "selection": "Over 1.5",
      "odds": 1.35,
      "result": "lost",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Gambia v Ivory Coast",
      "selection": "Over 1.5",
      "odds": 1.43,
      "result": "won",
-     "score": null
+     "score": "2:2"
     },
     {
      "match": "Eritrea v Guinea",
@@ -4880,7 +4880,7 @@
    "kind": "hot",
    "odds": 25.18,
    "status": "lost",
-   "hit": 0,
+   "hit": 5,
    "total": 13,
    "profit": -10.0,
    "legs": [
@@ -5001,21 +5001,21 @@
      "selection": "Over 1.5",
      "odds": 1.34,
      "result": "won",
-     "score": null
+     "score": "2:4"
     },
     {
      "match": "Denmark v Norway",
      "selection": "Over 1.5",
      "odds": 1.16,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Malawi v Egypt",
      "selection": "Over 1.5",
      "odds": 1.25,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
@@ -5036,7 +5036,7 @@
      "selection": "Over 1.5",
      "odds": 1.2,
      "result": "won",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Greece v Serbia",
@@ -5057,21 +5057,21 @@
      "selection": "Over 1.5",
      "odds": 1.48,
      "result": "won",
-     "score": null
+     "score": "0:3"
     },
     {
      "match": "South Sudan v Angola",
      "selection": "Over 1.5",
      "odds": 1.32,
      "result": "lost",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Gambia v Ivory Coast",
      "selection": "Over 1.5",
      "odds": 1.42,
      "result": "won",
-     "score": null
+     "score": "2:2"
     },
     {
      "match": "Eritrea v Guinea",
@@ -5090,7 +5090,7 @@
    "kind": "hot",
    "odds": 3.11,
    "status": "lost",
-   "hit": 0,
+   "hit": 2,
    "total": 5,
    "profit": -10.0,
    "legs": [
@@ -5155,21 +5155,21 @@
      "selection": "Over 1.5",
      "odds": 1.34,
      "result": "won",
-     "score": null
+     "score": "2:4"
     },
     {
      "match": "Denmark v Norway",
      "selection": "Over 1.5",
      "odds": 1.16,
      "result": "won",
-     "score": null
+     "score": "2:3"
     },
     {
      "match": "Malawi v Egypt",
      "selection": "Over 1.5",
      "odds": 1.25,
      "result": "lost",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tanzania v Nigeria",
