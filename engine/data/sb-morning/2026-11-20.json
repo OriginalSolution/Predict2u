@@ -1,0 +1,3420 @@
+{
+ "date": "2026-11-20",
+ "generatedAt": "2026-11-20T07:04:31.664823+00:00",
+ "eligible": 236,
+ "picked": 93,
+ "picks": [
+  {
+   "eventId": "sr:match:73576722",
+   "match": "PSS Sleman v Arema FC",
+   "league": "Indonesia - Super League",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.57,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "true_p": 0.7404,
+   "implied": 0.6369,
+   "ev": 0.1624,
+   "why": "season+form+h2h; λ 2.20-1.66; model 74% vs implied 64% (edge 16%); table 17 v 14/18",
+   "lambda": [
+    2.196,
+    1.662
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "08:30",
+   "alternatives": [
+    {
+     "market": "GG/NG",
+     "selection": "Yes",
+     "odds": 1.47,
+     "ev": 0.0585,
+     "true_p": 0.7201
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Over 0.5",
+     "odds": 1.27,
+     "ev": 0.0462,
+     "true_p": 0.8238
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:74827300",
+   "match": "South Melbourne FC v Canberra Croatia FC",
+   "league": "Australia - Australian Championship",
+   "market": "Home O/U",
+   "selection": "Over 2.5",
+   "odds": 1.56,
+   "marketId": "19",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "true_p": 0.7185,
+   "implied": 0.641,
+   "ev": 0.1208,
+   "why": "season+form; λ 3.73-1.95; model 72% vs implied 64% (edge 12%); table 1 v 4/4",
+   "lambda": [
+    3.733,
+    1.95
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "08:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:74827302",
+   "match": "Sydney United 58 FC v Sutherland Sharks",
+   "league": "Australia - Australian Championship",
+   "market": "2nd Half - Double Chance",
+   "selection": "Home or Away",
+   "odds": 1.41,
+   "marketId": "85",
+   "specifier": "",
+   "outcomeId": "10",
+   "true_p": 0.7758,
+   "implied": 0.7092,
+   "ev": 0.0939,
+   "why": "season+form+h2h; λ 3.44-2.27; model 78% vs implied 71% (edge 9%); table 2 v 3/4",
+   "lambda": [
+    3.44,
+    2.27
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "08:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72897430",
+   "match": "Western Sydney Wanderers v Adelaide United FC",
+   "league": "Australia - A-League",
+   "market": "GG/NG",
+   "selection": "Yes",
+   "odds": 1.43,
+   "marketId": "29",
+   "specifier": "",
+   "outcomeId": "74",
+   "true_p": 0.7457,
+   "implied": 0.6993,
+   "ev": 0.0663,
+   "why": "season+form+h2h; λ 2.56-1.65; model 75% vs implied 70% (edge 7%); table 5 v 12/12",
+   "lambda": [
+    2.56,
+    1.651
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "08:40",
+   "alternatives": [
+    {
+     "market": "2nd Half - Total",
+     "selection": "Over 1.5",
+     "odds": 1.58,
+     "ev": 0.0632,
+     "true_p": 0.6729
+    },
+    {
+     "market": "Away O/U",
+     "selection": "Over 0.5",
+     "odds": 1.3,
+     "ev": 0.0506,
+     "true_p": 0.8081
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:75834484",
+   "match": "Rajasthan United v Chanmari FC",
+   "league": "India - IFL",
+   "market": "2nd Half - Double Chance",
+   "selection": "Draw or Away",
+   "odds": 1.51,
+   "marketId": "85",
+   "specifier": "",
+   "outcomeId": "11",
+   "true_p": 0.8195,
+   "implied": 0.6623,
+   "ev": 0.2375,
+   "why": "season+form; λ 1.03-2.10; model 82% vs implied 66% (edge 24%); table 11 v 7/11",
+   "lambda": [
+    1.027,
+    2.1
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "09:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:73730328",
+   "match": "Simal v Zaqatala FK",
+   "league": "Azerbaijan - First Division",
+   "market": "1X2",
+   "selection": "Home",
+   "odds": 1.6,
+   "marketId": "1",
+   "specifier": "",
+   "outcomeId": "1",
+   "true_p": 0.6833,
+   "implied": 0.625,
+   "ev": 0.0932,
+   "why": "season+form; λ 2.97-1.45; model 68% vs implied 62% (edge 9%); table 6 v 8/10",
+   "lambda": [
+    2.97,
+    1.453
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "10:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72149876",
+   "match": "Kashiwa Reysol v JEF United Chiba",
+   "league": "Japan - J1 League",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.56,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.6838,
+   "implied": 0.641,
+   "ev": 0.0668,
+   "why": "season+form+h2h; λ 2.07-1.15; model 68% vs implied 64% (edge 7%); table 2 v 18/20",
+   "lambda": [
+    2.071,
+    1.152
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "10:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:74090506",
+   "match": "Dong A Thanh Hoa v Hoang Anh Gia Lai",
+   "league": "Vietnam - V-League 1",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.41,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7459,
+   "implied": 0.7092,
+   "ev": 0.0518,
+   "why": "season+form+h2h; λ 1.72-1.37; model 75% vs implied 71% (edge 5%); table 10 v 12/14",
+   "lambda": [
+    1.72,
+    1.37
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "10:00",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Over 0.5",
+     "odds": 1.4,
+     "ev": 0.0515,
+     "true_p": 0.7511
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72149874",
+   "match": "Kashima Antlers v Shimizu S-Pulse",
+   "league": "Japan - J1 League",
+   "market": "1st Half - Over/Under",
+   "selection": "Over 0.5",
+   "odds": 1.37,
+   "marketId": "68",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7654,
+   "implied": 0.7299,
+   "ev": 0.0486,
+   "why": "season+form+h2h; λ 2.24-0.98; model 77% vs implied 73% (edge 5%); table 6 v 15/20",
+   "lambda": [
+    2.24,
+    0.982
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "10:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:73409334",
+   "match": "Imisli FK v Zira FK",
+   "league": "Azerbaijan - Premier League",
+   "market": "Home O/U",
+   "selection": "Over 0.5",
+   "odds": 1.54,
+   "marketId": "19",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7397,
+   "implied": 0.6494,
+   "ev": 0.1391,
+   "why": "season+form+h2h; λ 1.35-1.40; model 74% vs implied 65% (edge 14%); table 8 v 6/12",
+   "lambda": [
+    1.346,
+    1.403
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "10:30",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Over 1.5",
+     "odds": 1.4,
+     "ev": 0.064,
+     "true_p": 0.76
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:74056926",
+   "match": "Bandari FC v Muranga Seal",
+   "league": "Kenya - Premier League",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.55,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "true_p": 0.7844,
+   "implied": 0.6452,
+   "ev": 0.2158,
+   "why": "season+form+h2h; λ 1.70-1.20; model 78% vs implied 65% (edge 22%); table 15 v 7/18",
+   "lambda": [
+    1.699,
+    1.195
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "11:00",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Over 0.5",
+     "odds": 1.39,
+     "ev": 0.1357,
+     "true_p": 0.8171
+    },
+    {
+     "market": "Away O/U",
+     "selection": "Over 0.5",
+     "odds": 1.58,
+     "ev": 0.1017,
+     "true_p": 0.6973
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:74056928",
+   "match": "Mathare United FC v Kakamega Homeboyz",
+   "league": "Kenya - Premier League",
+   "market": "Away O/U",
+   "selection": "Under 1.5",
+   "odds": 1.38,
+   "marketId": "20",
+   "specifier": "total=1.5",
+   "outcomeId": "13",
+   "true_p": 0.8062,
+   "implied": 0.7246,
+   "ev": 0.1126,
+   "why": "season+form+h2h; λ 1.02-0.81; model 81% vs implied 72% (edge 11%); table 12 v 16/18",
+   "lambda": [
+    1.023,
+    0.807
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "11:00",
+   "alternatives": [
+    {
+     "market": "Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.51,
+     "ev": 0.0869,
+     "true_p": 0.7198
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:75110510",
+   "match": "East Bengal FC v Sporting Club Delhi",
+   "league": "India - Indian Super League",
+   "market": "GG/NG",
+   "selection": "Yes",
+   "odds": 1.44,
+   "marketId": "29",
+   "specifier": "",
+   "outcomeId": "74",
+   "true_p": 0.7577,
+   "implied": 0.6944,
+   "ev": 0.0911,
+   "why": "season+form+h2h; λ 2.41-1.79; model 76% vs implied 69% (edge 9%); table 6 v 4/13",
+   "lambda": [
+    2.41,
+    1.787
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "11:30",
+   "alternatives": [
+    {
+     "market": "2nd Half - Total",
+     "selection": "Over 1.5",
+     "odds": 1.55,
+     "ev": 0.0402,
+     "true_p": 0.6711
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72398828",
+   "match": "OKS Swit Szczecin v ZKS Stal Stalowa Wola",
+   "league": "Poland - II Liga",
+   "market": "Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.57,
+   "marketId": "10",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.6702,
+   "implied": 0.6369,
+   "ev": 0.0522,
+   "why": "season+form; λ 1.85-1.57; model 67% vs implied 64% (edge 5%); table 16 v 12/18",
+   "lambda": [
+    1.847,
+    1.565
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "11:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:74297732",
+   "match": "Beijing Guoan v Shanghai Port FC",
+   "league": "China - FA Cup",
+   "market": "GG/NG",
+   "selection": "Yes",
+   "odds": 1.52,
+   "marketId": "29",
+   "specifier": "",
+   "outcomeId": "74",
+   "true_p": 0.7694,
+   "implied": 0.6579,
+   "ev": 0.1695,
+   "why": "season+form+h2h; λ 2.11-2.08; model 77% vs implied 66% (edge 17%)",
+   "lambda": [
+    2.11,
+    2.084
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "11:35",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:73774586",
+   "match": "AL Sahel SC v Afief",
+   "league": "Saudi Arabia - Second Division",
+   "market": "Draw No Bet",
+   "selection": "Home",
+   "odds": 1.31,
+   "marketId": "11",
+   "specifier": "",
+   "outcomeId": "4",
+   "true_p": 0.8234,
+   "implied": 0.7634,
+   "ev": 0.0787,
+   "why": "season+form; λ 1.77-0.68; model 82% vs implied 76% (edge 8%); table 1 v 13/16",
+   "lambda": [
+    1.773,
+    0.675
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "11:50",
+   "alternatives": [
+    {
+     "market": "Away O/U",
+     "selection": "Under 1.5",
+     "odds": 1.24,
+     "ev": 0.0575,
+     "true_p": 0.8528
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:73576724",
+   "match": "Dewa United v Persita Tangerang",
+   "league": "Indonesia - Super League",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.5,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7607,
+   "implied": 0.6667,
+   "ev": 0.141,
+   "why": "season+form+h2h; λ 1.86-1.43; model 76% vs implied 67% (edge 14%); table 2 v 6/18",
+   "lambda": [
+    1.856,
+    1.43
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "12:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72045828",
+   "match": "KF Shkendija Haracine v KF Bashkimi Kumanovo 1947",
+   "league": "North Macedonia - 1. MFL",
+   "market": "Home O/U",
+   "selection": "Under 2.5",
+   "odds": 1.49,
+   "marketId": "19",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.7284,
+   "implied": 0.6711,
+   "ev": 0.0853,
+   "why": "season+form; λ 1.81-1.13; model 73% vs implied 67% (edge 9%); table 6 v 9/10",
+   "lambda": [
+    1.808,
+    1.131
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "12:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:68380654",
+   "match": "AGMK FC v Qizilqum Zarafshon",
+   "league": "Uzbekistan - Superliga",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.39,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.7805,
+   "implied": 0.7194,
+   "ev": 0.0849,
+   "why": "season+form+h2h; λ 1.46-0.94; model 78% vs implied 72% (edge 8%); table 4 v 9/16",
+   "lambda": [
+    1.455,
+    0.936
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "12:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:74090508",
+   "match": "The Cong - Viettel FC v Song Lam Nghe An",
+   "league": "Vietnam - V-League 1",
+   "market": "2nd Half - Double Chance",
+   "selection": "Draw or Away",
+   "odds": 1.48,
+   "marketId": "85",
+   "specifier": "",
+   "outcomeId": "11",
+   "true_p": 0.7696,
+   "implied": 0.6757,
+   "ev": 0.139,
+   "why": "season+form+h2h; λ 1.06-1.60; model 77% vs implied 68% (edge 14%); table 13 v 3/14",
+   "lambda": [
+    1.065,
+    1.599
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "12:15",
+   "alternatives": [
+    {
+     "market": "Away O/U",
+     "selection": "Over 0.5",
+     "odds": 1.41,
+     "ev": 0.1249,
+     "true_p": 0.7978
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:75019716",
+   "match": "Al Hikma v Shabab AL Sahel",
+   "league": "Lebanon - Premier League",
+   "market": "Away O/U",
+   "selection": "Under 1.5",
+   "odds": 1.39,
+   "marketId": "20",
+   "specifier": "total=1.5",
+   "outcomeId": "13",
+   "true_p": 0.7907,
+   "implied": 0.7194,
+   "ev": 0.0991,
+   "why": "season+form+h2h; λ 1.03-0.85; model 79% vs implied 72% (edge 10%); table 7 v 8/12",
+   "lambda": [
+    1.031,
+    0.85
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "12:15",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:73774590",
+   "match": "AL Qwarah v Nairea",
+   "league": "Saudi Arabia - Second Division",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.37,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7769,
+   "implied": 0.7299,
+   "ev": 0.0643,
+   "why": "season+form; λ 1.87-1.50; model 78% vs implied 73% (edge 6%); table 8 v 11/16",
+   "lambda": [
+    1.867,
+    1.5
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "12:15",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:73078862",
+   "match": "Team FC Cairo v FC Masar",
+   "league": "Egypt - 2. Division A",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.43,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "true_p": 0.7753,
+   "implied": 0.6993,
+   "ev": 0.1086,
+   "why": "season+form; λ 1.27-1.56; model 78% vs implied 70% (edge 11%); table 13 v 1/20",
+   "lambda": [
+    1.274,
+    1.564
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "12:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:75174742",
+   "match": "Ittihad Kalba FC v Sharjah FC",
+   "league": "United Arab Emirates - Arabian Gulf League",
+   "market": "Home O/U",
+   "selection": "Over 0.5",
+   "odds": 1.38,
+   "marketId": "19",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7866,
+   "implied": 0.7246,
+   "ev": 0.0855,
+   "why": "season+form+h2h; λ 1.54-1.96; model 79% vs implied 72% (edge 9%); table 11 v 6/14",
+   "lambda": [
+    1.544,
+    1.961
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "12:45",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Over 0.5",
+     "odds": 1.34,
+     "ev": 0.0633,
+     "true_p": 0.7935
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:75548164",
+   "match": "FC Palm City v Dubai City FC",
+   "league": "United Arab Emirates - First Division",
+   "market": "GG/NG",
+   "selection": "Yes",
+   "odds": 1.54,
+   "marketId": "29",
+   "specifier": "",
+   "outcomeId": "74",
+   "true_p": 0.692,
+   "implied": 0.6494,
+   "ev": 0.0657,
+   "why": "season+form; λ 2.71-1.35; model 69% vs implied 65% (edge 7%); table 7 v 14/15",
+   "lambda": [
+    2.707,
+    1.353
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "12:45",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:75949132",
+   "match": "Zakho FC v Al Shorta SC",
+   "league": "Iraq - Stars League",
+   "market": "Home O/U",
+   "selection": "Under 1.5",
+   "odds": 1.39,
+   "marketId": "19",
+   "specifier": "total=1.5",
+   "outcomeId": "13",
+   "true_p": 0.8336,
+   "implied": 0.7194,
+   "ev": 0.1587,
+   "why": "season+form+h2h; λ 0.73-1.13; model 83% vs implied 72% (edge 16%); table 15 v 5/20",
+   "lambda": [
+    0.73,
+    1.132
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "13:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Total",
+     "selection": "Under 1.5",
+     "odds": 1.53,
+     "ev": 0.1121,
+     "true_p": 0.7268
+    },
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Draw or Away",
+     "odds": 1.31,
+     "ev": 0.0492,
+     "true_p": 0.8009
+    },
+    {
+     "market": "Double Chance",
+     "selection": "Draw or Away",
+     "odds": 1.37,
+     "ev": 0.0464,
+     "true_p": 0.7638
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:73806116",
+   "match": "Etoile de Lest v Bugesera FC",
+   "league": "Rwanda - Premier League",
+   "market": "Over/Under",
+   "selection": "Under 2.5",
+   "odds": 1.48,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.7447,
+   "implied": 0.6757,
+   "ev": 0.1022,
+   "why": "season+form+h2h; λ 0.79-0.96; model 74% vs implied 68% (edge 10%); table 13 v 6/18",
+   "lambda": [
+    0.786,
+    0.961
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "13:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:76801118",
+   "match": "Ferroviario de Lichinga v Ferroviario Da Beira",
+   "league": "Mozambique - Mocambola",
+   "market": "Over/Under",
+   "selection": "Under 2.5",
+   "odds": 1.49,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.7376,
+   "implied": 0.6711,
+   "ev": 0.099,
+   "why": "season+form; λ 0.94-0.83; model 74% vs implied 67% (edge 10%); table 7 v 3/14",
+   "lambda": [
+    0.943,
+    0.831
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "13:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:73374578",
+   "match": "Al Sadd SC v Lusail SC",
+   "league": "Qatar - Stars League",
+   "market": "Home O/U",
+   "selection": "Under 3.5",
+   "odds": 1.35,
+   "marketId": "19",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.8087,
+   "implied": 0.7407,
+   "ev": 0.0917,
+   "why": "season+form; λ 2.25-1.15; model 81% vs implied 74% (edge 9%); table 2 v 9/12",
+   "lambda": [
+    2.254,
+    1.148
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "13:00",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Under 4.5",
+     "odds": 1.43,
+     "ev": 0.0638,
+     "true_p": 0.7439
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:73019644",
+   "match": "Polisi Tanzania FC v Young Africans SC",
+   "league": "Tanzania - Premier League",
+   "market": "Away O/U",
+   "selection": "Under 2.5",
+   "odds": 1.38,
+   "marketId": "20",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.7816,
+   "implied": 0.7246,
+   "ev": 0.0785,
+   "why": "season+form+h2h; λ 0.87-1.61; model 78% vs implied 72% (edge 8%); table 6 v 2/16",
+   "lambda": [
+    0.874,
+    1.607
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "13:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:76676802",
+   "match": "ES Hammam Sousse v A Sakiet Edayer",
+   "league": "Tunisia - Ligue 1",
+   "market": "Double Chance",
+   "selection": "Draw or Away",
+   "odds": 1.35,
+   "marketId": "10",
+   "specifier": "",
+   "outcomeId": "11",
+   "true_p": 0.8854,
+   "implied": 0.7407,
+   "ev": 0.1954,
+   "why": "season+form; λ 0.34-1.11; model 89% vs implied 74% (edge 20%); table 16 v 6/16",
+   "lambda": [
+    0.344,
+    1.107
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "13:30",
+   "alternatives": [
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Draw or Away",
+     "odds": 1.28,
+     "ev": 0.1532,
+     "true_p": 0.9009
+    },
+    {
+     "market": "Over/Under",
+     "selection": "Under 2.5",
+     "odds": 1.35,
+     "ev": 0.1083,
+     "true_p": 0.821
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:74058138",
+   "match": "Highbury FC v Pretoria University FC",
+   "league": "South Africa - Championship",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.47,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "true_p": 0.7469,
+   "implied": 0.6803,
+   "ev": 0.0979,
+   "why": "season+form+h2h; λ 1.58-1.09; model 75% vs implied 68% (edge 10%); table 8 v 12/16",
+   "lambda": [
+    1.584,
+    1.092
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "13:30",
+   "alternatives": [
+    {
+     "market": "Away O/U",
+     "selection": "Over 0.5",
+     "odds": 1.58,
+     "ev": 0.0497,
+     "true_p": 0.6644
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76741792",
+   "match": "NA Hussein Dey v USM EL Harrach",
+   "league": "Algeria - Ligue 2",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.54,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "true_p": 0.7273,
+   "implied": 0.6494,
+   "ev": 0.12,
+   "why": "season+form+h2h; λ 1.35-1.22; model 73% vs implied 65% (edge 12%); table 9 v 6/16",
+   "lambda": [
+    1.35,
+    1.222
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "14:00",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Over 0.5",
+     "odds": 1.43,
+     "ev": 0.0594,
+     "true_p": 0.7408
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76741790",
+   "match": "ESM Kolea v WA Tlemcen",
+   "league": "Algeria - Ligue 2",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.46,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "true_p": 0.7621,
+   "implied": 0.6849,
+   "ev": 0.1126,
+   "why": "season+form; λ 1.46-1.30; model 76% vs implied 68% (edge 11%); table 12 v 11/16",
+   "lambda": [
+    1.459,
+    1.301
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "14:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:76741768",
+   "match": "CA Batna v JSM Skikda",
+   "league": "Algeria - Ligue 2",
+   "market": "Over/Under",
+   "selection": "Under 2.5",
+   "odds": 1.57,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.7068,
+   "implied": 0.6369,
+   "ev": 0.1096,
+   "why": "season+form+h2h; λ 1.13-0.76; model 71% vs implied 64% (edge 11%); table 11 v 5/16",
+   "lambda": [
+    1.13,
+    0.759
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "14:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:76741788",
+   "match": "ES Mostaganem v ASM Oran",
+   "league": "Algeria - Ligue 2",
+   "market": "Home O/U",
+   "selection": "Under 1.5",
+   "odds": 1.51,
+   "marketId": "19",
+   "specifier": "total=1.5",
+   "outcomeId": "13",
+   "true_p": 0.7277,
+   "implied": 0.6623,
+   "ev": 0.0988,
+   "why": "season+form+h2h; λ 1.02-0.89; model 73% vs implied 66% (edge 10%); table 4 v 8/16",
+   "lambda": [
+    1.022,
+    0.886
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "14:00",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Under 2.5",
+     "odds": 1.52,
+     "ev": 0.0663,
+     "true_p": 0.7015
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76741796",
+   "match": "RC Arbaa v RC Kouba",
+   "league": "Algeria - Ligue 2",
+   "market": "Draw No Bet",
+   "selection": "Away",
+   "odds": 1.56,
+   "marketId": "11",
+   "specifier": "",
+   "outcomeId": "5",
+   "true_p": 0.6698,
+   "implied": 0.641,
+   "ev": 0.0449,
+   "why": "season+form+h2h; λ 0.90-1.41; model 67% vs implied 64% (edge 4%); table 14 v 3/16",
+   "lambda": [
+    0.902,
+    1.41
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "14:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:75110512",
+   "match": "Bengaluru FC v Mumbai City",
+   "league": "India - Indian Super League",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.46,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7131,
+   "implied": 0.6849,
+   "ev": 0.0412,
+   "why": "season+form+h2h; λ 1.61-1.25; model 71% vs implied 68% (edge 4%); table 3 v 11/13",
+   "lambda": [
+    1.611,
+    1.249
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "14:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:75947236",
+   "match": "Al Ittihad v Bouri",
+   "league": "Bahrain - First Division",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.38,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.8497,
+   "implied": 0.7246,
+   "ev": 0.1725,
+   "why": "season+form+h2h; λ 0.95-1.09; model 85% vs implied 72% (edge 17%); table 7 v 6/12",
+   "lambda": [
+    0.953,
+    1.087
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "15:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72814304",
+   "match": "Skenderbeu Korce v KF Egnatia Rrogozhine",
+   "league": "Albania - Kategoria Superiore",
+   "market": "2nd Half - Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.58,
+   "marketId": "85",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.7032,
+   "implied": 0.6329,
+   "ev": 0.111,
+   "why": "season+form+h2h; λ 1.23-1.19; model 70% vs implied 63% (edge 11%); table 7 v 1/10",
+   "lambda": [
+    1.231,
+    1.195
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "15:00",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Over 0.5",
+     "odds": 1.49,
+     "ev": 0.0547,
+     "true_p": 0.7079
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:75881460",
+   "match": "FC Shirak Gyumri v Gandzasar Kapan FC",
+   "league": "Armenia - Premier League",
+   "market": "2nd Half - Draw No Bet",
+   "selection": "Home",
+   "odds": 1.36,
+   "marketId": "86",
+   "specifier": "",
+   "outcomeId": "4",
+   "true_p": 0.7675,
+   "implied": 0.7353,
+   "ev": 0.0438,
+   "why": "season+form+h2h; λ 1.99-0.84; model 77% vs implied 74% (edge 4%); table 7 v 12/12",
+   "lambda": [
+    1.986,
+    0.839
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "15:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:75174744",
+   "match": "Shabab Al Ahli Dubai v Ajman Club",
+   "league": "United Arab Emirates - Arabian Gulf League",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.5,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7048,
+   "implied": 0.6667,
+   "ev": 0.0571,
+   "why": "season+form+h2h; λ 2.16-1.22; model 70% vs implied 67% (edge 6%); table 2 v 7/14",
+   "lambda": [
+    2.156,
+    1.22
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "15:25",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:73374580",
+   "match": "Al Gharafa SC v Al Arabi Doha SC",
+   "league": "Qatar - Stars League",
+   "market": "Over/Under",
+   "selection": "Under 4.5",
+   "odds": 1.32,
+   "marketId": "18",
+   "specifier": "total=4.5",
+   "outcomeId": "13",
+   "true_p": 0.8104,
+   "implied": 0.7576,
+   "ev": 0.0698,
+   "why": "season+form+h2h; λ 1.37-1.66; model 81% vs implied 76% (edge 7%); table 10 v 4/12",
+   "lambda": [
+    1.367,
+    1.661
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "15:30",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Under 2.5",
+     "odds": 1.24,
+     "ev": 0.0432,
+     "true_p": 0.8413
+    },
+    {
+     "market": "2nd Half - Total",
+     "selection": "Under 2.5",
+     "odds": 1.36,
+     "ev": 0.0421,
+     "true_p": 0.7662
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:75949136",
+   "match": "Al Zawraa v AL Talaba",
+   "league": "Iraq - Stars League",
+   "market": "Home O/U",
+   "selection": "Under 1.5",
+   "odds": 1.6,
+   "marketId": "19",
+   "specifier": "total=1.5",
+   "outcomeId": "13",
+   "true_p": 0.6666,
+   "implied": 0.625,
+   "ev": 0.0666,
+   "why": "season+form+h2h; λ 1.19-1.02; model 67% vs implied 62% (edge 7%); table 4 v 8/20",
+   "lambda": [
+    1.189,
+    1.016
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "15:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:73019646",
+   "match": "Namungo FC v Mbeya City FC",
+   "league": "Tanzania - Premier League",
+   "market": "Away O/U",
+   "selection": "Under 1.5",
+   "odds": 1.35,
+   "marketId": "20",
+   "specifier": "total=1.5",
+   "outcomeId": "13",
+   "true_p": 0.7787,
+   "implied": 0.7407,
+   "ev": 0.0512,
+   "why": "season+form+h2h; λ 1.43-0.88; model 78% vs implied 74% (edge 5%); table 7 v 11/16",
+   "lambda": [
+    1.428,
+    0.883
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "15:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72410042",
+   "match": "Shakhtar D v FC Livyi Bereh Kyiv",
+   "league": "Ukraine - Premier League",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.5,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.8395,
+   "implied": 0.6667,
+   "ev": 0.2593,
+   "why": "season+form; λ 1.61-0.49; model 84% vs implied 67% (edge 26%); table 2 v 11/16",
+   "lambda": [
+    1.607,
+    0.488
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "16:00",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 1.5",
+     "odds": 1.57,
+     "ev": 0.1881,
+     "true_p": 0.7567
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76640492",
+   "match": "FC Prishtina v KF Drenica Skenderaj",
+   "league": "Kosovo - Superliga",
+   "market": "Home O/U",
+   "selection": "Under 2.5",
+   "odds": 1.51,
+   "marketId": "19",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.7357,
+   "implied": 0.6623,
+   "ev": 0.1109,
+   "why": "season+form+h2h; λ 1.78-0.84; model 74% vs implied 66% (edge 11%); table 1 v 8/10",
+   "lambda": [
+    1.781,
+    0.844
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "16:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72121026",
+   "match": "FK Naftagas Elemir v FK Borac Cacak",
+   "league": "Serbia - Prva Liga",
+   "market": "Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.48,
+   "marketId": "10",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.7359,
+   "implied": 0.6757,
+   "ev": 0.0892,
+   "why": "season+form; λ 1.66-1.15; model 74% vs implied 68% (edge 9%); table 9 v 3/16",
+   "lambda": [
+    1.66,
+    1.149
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "16:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:73806122",
+   "match": "Police FC Rwanda v AL Hilal (SDN)",
+   "league": "Rwanda - Premier League",
+   "market": "Over/Under",
+   "selection": "Under 2.5",
+   "odds": 1.5,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8048,
+   "implied": 0.6667,
+   "ev": 0.2072,
+   "why": "season+form; λ 0.53-0.99; model 80% vs implied 67% (edge 21%); table 14 v 11/18",
+   "lambda": [
+    0.531,
+    0.985
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "16:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:75947238",
+   "match": "Isa Town v Busaiteen",
+   "league": "Bahrain - First Division",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.6,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "true_p": 0.6776,
+   "implied": 0.625,
+   "ev": 0.0841,
+   "why": "season+form+h2h; λ 1.78-1.71; model 68% vs implied 62% (edge 8%); table 9 v 11/12",
+   "lambda": [
+    1.783,
+    1.709
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "16:30",
+   "alternatives": [
+    {
+     "market": "GG/NG",
+     "selection": "Yes",
+     "odds": 1.53,
+     "ev": 0.0422,
+     "true_p": 0.6812
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72334428",
+   "match": "FK Rostov v PFK Krylia Sovetov Samara",
+   "league": "Russia - Premier League",
+   "market": "Draw No Bet",
+   "selection": "Home",
+   "odds": 1.58,
+   "marketId": "11",
+   "specifier": "",
+   "outcomeId": "4",
+   "true_p": 0.6739,
+   "implied": 0.6329,
+   "ev": 0.0648,
+   "why": "season+form+h2h; λ 1.62-1.05; model 67% vs implied 63% (edge 6%); table 6 v 10/16",
+   "lambda": [
+    1.623,
+    1.05
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "16:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72043338",
+   "match": "GKS Piast Gliwice v Korona Kielce",
+   "league": "Poland - Ekstraklasa",
+   "market": "Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.45,
+   "marketId": "10",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.7964,
+   "implied": 0.6897,
+   "ev": 0.1547,
+   "why": "season+form+h2h; λ 1.78-0.97; model 80% vs implied 69% (edge 15%); table 8 v 11/18",
+   "lambda": [
+    1.782,
+    0.971
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "17:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.39,
+     "ev": 0.1182,
+     "true_p": 0.8045
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72676172",
+   "match": "SC Red Star Penzing v Hellas Kagran",
+   "league": "Austria Amateur - Wiener Stadtliga",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.55,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7221,
+   "implied": 0.6452,
+   "ev": 0.1193,
+   "why": "season+form; λ 1.98-1.28; model 72% vs implied 65% (edge 12%); table 2 v 13/16",
+   "lambda": [
+    1.979,
+    1.281
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "17:00",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Under 4.5",
+     "odds": 1.37,
+     "ev": 0.0549,
+     "true_p": 0.77
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76807840",
+   "match": "Black Bulls FC v Ferroviario de Maputo",
+   "league": "Mozambique - Mocambola",
+   "market": "Over/Under",
+   "selection": "Under 2.5",
+   "odds": 1.48,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.7258,
+   "implied": 0.6757,
+   "ev": 0.0742,
+   "why": "season+form; λ 1.24-0.58; model 73% vs implied 68% (edge 7%); table 1 v 6/14",
+   "lambda": [
+    1.241,
+    0.577
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "17:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72676166",
+   "match": "TWL Elektra v FC 1980 Wien",
+   "league": "Austria Amateur - Wiener Stadtliga",
+   "market": "GG/NG",
+   "selection": "Yes",
+   "odds": 1.42,
+   "marketId": "29",
+   "specifier": "",
+   "outcomeId": "74",
+   "true_p": 0.7523,
+   "implied": 0.7042,
+   "ev": 0.0683,
+   "why": "season+form; λ 2.55-1.70; model 75% vs implied 70% (edge 7%); table 4 v 8/16",
+   "lambda": [
+    2.546,
+    1.695
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "17:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72517418",
+   "match": "KS Wisloka Debica v AKS 1947 Busko Zdroj",
+   "league": "Poland - III Liga, Group 4",
+   "market": "Home O/U",
+   "selection": "Over 1.5",
+   "odds": 1.53,
+   "marketId": "19",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "true_p": 0.6935,
+   "implied": 0.6536,
+   "ev": 0.061,
+   "why": "season+form; λ 2.41-1.15; model 69% vs implied 65% (edge 6%); table 3 v 15/18",
+   "lambda": [
+    2.409,
+    1.151
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "17:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Draw No Bet",
+     "selection": "Home",
+     "odds": 1.41,
+     "ev": 0.058,
+     "true_p": 0.7504
+    },
+    {
+     "market": "Draw No Bet",
+     "selection": "Home",
+     "odds": 1.31,
+     "ev": 0.0434,
+     "true_p": 0.7965
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76463324",
+   "match": "Zabbar Saint Patrick FC v Gzira United FC",
+   "league": "Malta - Premier League",
+   "market": "2nd Half - Draw No Bet",
+   "selection": "Home",
+   "odds": 1.44,
+   "marketId": "86",
+   "specifier": "",
+   "outcomeId": "4",
+   "true_p": 0.7234,
+   "implied": 0.6944,
+   "ev": 0.0417,
+   "why": "season+form+h2h; λ 2.17-1.12; model 72% vs implied 69% (edge 4%); table 8 v 12/12",
+   "lambda": [
+    2.166,
+    1.119
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "17:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72300886",
+   "match": "FK Pribram v FK Usti nad Labem",
+   "league": "Czechia - FNL",
+   "market": "Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.36,
+   "marketId": "10",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.7652,
+   "implied": 0.7353,
+   "ev": 0.0406,
+   "why": "season+form+h2h; λ 2.02-1.25; model 77% vs implied 74% (edge 4%); table 5 v 6/16",
+   "lambda": [
+    2.015,
+    1.254
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "17:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:75598890",
+   "match": "Al Ahli Saudi FC v Al Nassr Club",
+   "league": "Saudi Arabia - Saudi Pro League",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.53,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "true_p": 0.7551,
+   "implied": 0.6536,
+   "ev": 0.1554,
+   "why": "season+form+h2h; λ 1.89-2.07; model 76% vs implied 65% (edge 16%); table 6 v 3/18",
+   "lambda": [
+    1.888,
+    2.067
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "17:30",
+   "alternatives": [
+    {
+     "market": "GG/NG",
+     "selection": "Yes",
+     "odds": 1.49,
+     "ev": 0.1043,
+     "true_p": 0.7411
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72513984",
+   "match": "Darmstadt v Heidenheim",
+   "league": "Germany - 2. Bundesliga",
+   "market": "Away O/U",
+   "selection": "Under 2.5",
+   "odds": 1.34,
+   "marketId": "20",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8384,
+   "implied": 0.7463,
+   "ev": 0.1235,
+   "why": "season+form+h2h; λ 1.43-1.38; model 84% vs implied 75% (edge 12%); table 17 v 7/18",
+   "lambda": [
+    1.432,
+    1.38
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "17:30",
+   "alternatives": [
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.55,
+     "ev": 0.0674,
+     "true_p": 0.6886
+    },
+    {
+     "market": "2nd Half - Total",
+     "selection": "Under 2.5",
+     "odds": 1.33,
+     "ev": 0.0602,
+     "true_p": 0.7972
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72440768",
+   "match": "FAC Wien v Young Violets Wien",
+   "league": "Austria - 2. Liga",
+   "market": "Double Chance",
+   "selection": "Draw or Away",
+   "odds": 1.59,
+   "marketId": "10",
+   "specifier": "",
+   "outcomeId": "11",
+   "true_p": 0.6772,
+   "implied": 0.6289,
+   "ev": 0.0767,
+   "why": "season+form+h2h; λ 1.31-1.55; model 68% vs implied 63% (edge 8%); table 12 v 3/16",
+   "lambda": [
+    1.313,
+    1.552
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "17:30",
+   "alternatives": [
+    {
+     "market": "Away O/U",
+     "selection": "Over 0.5",
+     "odds": 1.34,
+     "ev": 0.0562,
+     "true_p": 0.7882
+    },
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Draw or Away",
+     "odds": 1.46,
+     "ev": 0.0445,
+     "true_p": 0.7154
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:73019648",
+   "match": "Azam FC v Singida Black Stars FC",
+   "league": "Tanzania - Premier League",
+   "market": "Home O/U",
+   "selection": "Under 2.5",
+   "odds": 1.39,
+   "marketId": "19",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8035,
+   "implied": 0.7194,
+   "ev": 0.1168,
+   "why": "season+form+h2h; λ 1.52-0.79; model 80% vs implied 72% (edge 12%); table 3 v 9/16",
+   "lambda": [
+    1.521,
+    0.788
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "18:00",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.38,
+     "ev": 0.1004,
+     "true_p": 0.7974
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 1.5",
+     "odds": 1.46,
+     "ev": 0.0531,
+     "true_p": 0.7213
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72680302",
+   "match": "TSV Havelse v FC Viktoria Cologne",
+   "league": "Germany - 3. Liga",
+   "market": "Home O/U",
+   "selection": "Over 0.5",
+   "odds": 1.38,
+   "marketId": "19",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7686,
+   "implied": 0.7246,
+   "ev": 0.0606,
+   "why": "season+form+h2h; λ 1.46-2.17; model 77% vs implied 72% (edge 6%); table 20 v 1/20",
+   "lambda": [
+    1.464,
+    2.166
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "18:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72727360",
+   "match": "FV Illertissen v VfB Eichstatt",
+   "league": "Germany Amateur - Regionalliga Bavaria",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.3,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "true_p": 0.8005,
+   "implied": 0.7692,
+   "ev": 0.0407,
+   "why": "season+form+h2h; λ 2.03-0.97; model 80% vs implied 77% (edge 4%); table 5 v 13/19",
+   "lambda": [
+    2.031,
+    0.967
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "18:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72388100",
+   "match": "FC Farul Constanta v FC Universitatea Cluj",
+   "league": "Romania - Superliga",
+   "market": "1st Half - Over/Under",
+   "selection": "Over 0.5",
+   "odds": 1.39,
+   "marketId": "68",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7503,
+   "implied": 0.7194,
+   "ev": 0.0429,
+   "why": "season+form+h2h; λ 1.52-1.56; model 75% vs implied 72% (edge 4%); table 6 v 5/16",
+   "lambda": [
+    1.525,
+    1.559
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "18:30",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Over 0.5",
+     "odds": 1.33,
+     "ev": 0.0405,
+     "true_p": 0.7823
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:75049118",
+   "match": "MC Oran v JS Saoura",
+   "league": "Algeria - Ligue 1",
+   "market": "Over/Under",
+   "selection": "Under 2.5",
+   "odds": 1.5,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.9014,
+   "implied": 0.6667,
+   "ev": 0.352,
+   "why": "season+form+h2h; λ 0.76-0.33; model 90% vs implied 67% (edge 35%); table 4 v 15/16",
+   "lambda": [
+    0.765,
+    0.331
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Total",
+     "selection": "Under 1.5",
+     "odds": 1.41,
+     "ev": 0.237,
+     "true_p": 0.8773
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 1.5",
+     "odds": 1.27,
+     "ev": 0.1582,
+     "true_p": 0.9119
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72044838",
+   "match": "Helmond Sport v FC Dordrecht",
+   "league": "Netherlands - Eerste Divisie",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.57,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "true_p": 0.7466,
+   "implied": 0.6369,
+   "ev": 0.1722,
+   "why": "season+form+h2h; λ 2.22-1.68; model 75% vs implied 64% (edge 17%); table 17 v 18/20",
+   "lambda": [
+    2.221,
+    1.678
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:00",
+   "alternatives": [
+    {
+     "market": "GG/NG",
+     "selection": "Yes",
+     "odds": 1.49,
+     "ev": 0.0802,
+     "true_p": 0.7249
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72037464",
+   "match": "Red Star FC v Pau FC",
+   "league": "France - Ligue 2",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.46,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.801,
+   "implied": 0.6849,
+   "ev": 0.1695,
+   "why": "season+form+h2h; λ 1.27-1.61; model 80% vs implied 68% (edge 17%); table 8 v 5/18",
+   "lambda": [
+    1.275,
+    1.614
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Draw or Away",
+     "odds": 1.49,
+     "ev": 0.0873,
+     "true_p": 0.7297
+    },
+    {
+     "market": "Over/Under",
+     "selection": "Over 1.5",
+     "odds": 1.34,
+     "ev": 0.0501,
+     "true_p": 0.7836
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Over 0.5",
+     "odds": 1.43,
+     "ev": 0.0403,
+     "true_p": 0.7275
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72302222",
+   "match": "Club NXT v Royal Excelsior Virton",
+   "league": "Belgium - Challenger Pro League",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.55,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "true_p": 0.71,
+   "implied": 0.6452,
+   "ev": 0.1004,
+   "why": "season+form; λ 1.77-1.90; model 71% vs implied 65% (edge 10%); table 11 v 7/15",
+   "lambda": [
+    1.772,
+    1.901
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72044844",
+   "match": "TOP Oss v Roda JC Kerkrade",
+   "league": "Netherlands - Eerste Divisie",
+   "market": "2nd Half - Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.57,
+   "marketId": "85",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.6889,
+   "implied": 0.6369,
+   "ev": 0.0816,
+   "why": "season+form+h2h; λ 1.55-1.45; model 69% vs implied 64% (edge 8%); table 16 v 6/20",
+   "lambda": [
+    1.548,
+    1.448
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:00",
+   "alternatives": [
+    {
+     "market": "Away O/U",
+     "selection": "Under 2.5",
+     "odds": 1.3,
+     "ev": 0.0683,
+     "true_p": 0.8217
+    },
+    {
+     "market": "Home O/U",
+     "selection": "Over 0.5",
+     "odds": 1.35,
+     "ev": 0.0628,
+     "true_p": 0.7872
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:73080444",
+   "match": "FC De Montlouis v FC Borgo",
+   "league": "France - National 1",
+   "market": "Home O/U",
+   "selection": "Over 0.5",
+   "odds": 1.39,
+   "marketId": "19",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7662,
+   "implied": 0.7194,
+   "ev": 0.065,
+   "why": "season+form; λ 1.45-1.75; model 77% vs implied 72% (edge 7%); table 14 v 12/17",
+   "lambda": [
+    1.453,
+    1.752
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72037454",
+   "match": "Guingamp v Rodez Aveyron Football",
+   "league": "France - Ligue 2",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.52,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.6849,
+   "implied": 0.6579,
+   "ev": 0.0411,
+   "why": "season+form+h2h; λ 1.66-1.18; model 68% vs implied 66% (edge 4%); table 11 v 13/18",
+   "lambda": [
+    1.656,
+    1.175
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72513310",
+   "match": "Bayern Munich v Cologne",
+   "league": "Germany - Bundesliga",
+   "market": "1st Half - Over/Under",
+   "selection": "Under 2.5",
+   "odds": 1.53,
+   "marketId": "68",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.7955,
+   "implied": 0.6536,
+   "ev": 0.2171,
+   "why": "season+form+h2h; λ 2.38-1.07; model 80% vs implied 65% (edge 22%); table 1 v 14/18",
+   "lambda": [
+    2.38,
+    1.071
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72230872",
+   "match": "Miedz Legnica v LKS Lodz",
+   "league": "Poland - 1. Liga",
+   "market": "Away O/U",
+   "selection": "Under 1.5",
+   "odds": 1.55,
+   "marketId": "20",
+   "specifier": "total=1.5",
+   "outcomeId": "13",
+   "true_p": 0.7767,
+   "implied": 0.6452,
+   "ev": 0.2039,
+   "why": "season+form+h2h; λ 1.36-0.89; model 78% vs implied 65% (edge 20%); table 8 v 4/18",
+   "lambda": [
+    1.355,
+    0.889
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:30",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.43,
+     "ev": 0.1592,
+     "true_p": 0.8106
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 1.5",
+     "odds": 1.48,
+     "ev": 0.0836,
+     "true_p": 0.7322
+    },
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.34,
+     "ev": 0.0506,
+     "true_p": 0.784
+    },
+    {
+     "market": "Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.38,
+     "ev": 0.0409,
+     "true_p": 0.7543
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:73294846",
+   "match": "Casertana FC v Salernitana",
+   "league": "Italy - Serie C, Group C",
+   "market": "Away O/U",
+   "selection": "Under 1.5",
+   "odds": 1.5,
+   "marketId": "20",
+   "specifier": "total=1.5",
+   "outcomeId": "13",
+   "true_p": 0.7551,
+   "implied": 0.6667,
+   "ev": 0.1327,
+   "why": "season+form+h2h; λ 1.32-0.95; model 76% vs implied 67% (edge 13%); table 10 v 12/20",
+   "lambda": [
+    1.324,
+    0.947
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:30",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.37,
+     "ev": 0.1031,
+     "true_p": 0.8052
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 1.5",
+     "odds": 1.43,
+     "ev": 0.0406,
+     "true_p": 0.7277
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76883190",
+   "match": "Racing Club Montevideo v Central Espanol FC",
+   "league": "Uruguay - Primera Division",
+   "market": "Draw No Bet",
+   "selection": "Home",
+   "odds": 1.44,
+   "marketId": "11",
+   "specifier": "",
+   "outcomeId": "4",
+   "true_p": 0.7528,
+   "implied": 0.6944,
+   "ev": 0.0841,
+   "why": "season+form+h2h; λ 1.76-0.90; model 75% vs implied 69% (edge 8%); table 5 v 10/16",
+   "lambda": [
+    1.761,
+    0.898
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:30",
+   "alternatives": [
+    {
+     "market": "2nd Half - Draw No Bet",
+     "selection": "Home",
+     "odds": 1.51,
+     "ev": 0.0802,
+     "true_p": 0.7154
+    },
+    {
+     "market": "1st Half - Draw No Bet",
+     "selection": "Home",
+     "odds": 1.49,
+     "ev": 0.0521,
+     "true_p": 0.7061
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:73093090",
+   "match": "Verona v Cesena FC",
+   "league": "Italy - Serie B",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.42,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.7587,
+   "implied": 0.7042,
+   "ev": 0.0773,
+   "why": "season+form+h2h; λ 1.56-0.93; model 76% vs implied 70% (edge 8%); table 5 v 11/20",
+   "lambda": [
+    1.56,
+    0.935
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:30",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Under 2.5",
+     "odds": 1.33,
+     "ev": 0.0556,
+     "true_p": 0.7937
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72202744",
+   "match": "Inverness Caledonian Thistle FC v Ayr United FC",
+   "league": "Scotland - Championship",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.59,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.6724,
+   "implied": 0.6289,
+   "ev": 0.0691,
+   "why": "season+form+h2h; λ 1.57-1.12; model 67% vs implied 63% (edge 7%); table 6 v 7/10",
+   "lambda": [
+    1.568,
+    1.116
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:30",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Under 2.5",
+     "odds": 1.32,
+     "ev": 0.0447,
+     "true_p": 0.7915
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72533348",
+   "match": "Hoogstraten VV v Kvv Thes Sport Tessenderlo",
+   "league": "Belgium - Nationale 1 VV",
+   "market": "2nd Half - Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.47,
+   "marketId": "85",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.7126,
+   "implied": 0.6803,
+   "ev": 0.0475,
+   "why": "season+form+h2h; λ 1.82-1.48; model 71% vs implied 68% (edge 5%); table 10 v 4/16",
+   "lambda": [
+    1.816,
+    1.482
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72546174",
+   "match": "Pontypridd Town v Carmarthen Town",
+   "league": "Wales - Cymru Championship South",
+   "market": "2nd Half - Total",
+   "selection": "Over 1.5",
+   "odds": 1.53,
+   "marketId": "90",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "true_p": 0.6836,
+   "implied": 0.6536,
+   "ev": 0.0459,
+   "why": "season+form+h2h; λ 2.79-1.51; model 68% vs implied 65% (edge 5%); table 1 v 10/16",
+   "lambda": [
+    2.792,
+    1.506
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:30",
+   "alternatives": [
+    {
+     "market": "GG/NG",
+     "selection": "Yes",
+     "odds": 1.43,
+     "ev": 0.0445,
+     "true_p": 0.7304
+    },
+    {
+     "market": "Away O/U",
+     "selection": "Over 0.5",
+     "odds": 1.34,
+     "ev": 0.0427,
+     "true_p": 0.7781
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76883192",
+   "match": "CA Cerro v Club Nacional de Football",
+   "league": "Uruguay - Primera Division",
+   "market": "Home O/U",
+   "selection": "Over 0.5",
+   "odds": 1.55,
+   "marketId": "19",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.6728,
+   "implied": 0.6452,
+   "ev": 0.0428,
+   "why": "season+form+h2h; λ 1.12-1.55; model 67% vs implied 65% (edge 4%); table 14 v 4/16",
+   "lambda": [
+    1.117,
+    1.553
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72522184",
+   "match": "The New Saints FC v Trefelin BGC",
+   "league": "Wales - Cymru Premier",
+   "market": "Over/Under",
+   "selection": "Under 5.5",
+   "odds": 1.52,
+   "marketId": "18",
+   "specifier": "total=5.5",
+   "outcomeId": "13",
+   "true_p": 0.7771,
+   "implied": 0.6579,
+   "ev": 0.1812,
+   "why": "season+form; λ 3.28-0.77; model 78% vs implied 66% (edge 18%); table 1 v 15/16",
+   "lambda": [
+    3.283,
+    0.772
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:45",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 2.5",
+     "odds": 1.55,
+     "ev": 0.1222,
+     "true_p": 0.724
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72366452",
+   "match": "Cercle Brugge v KVC Westerlo",
+   "league": "Belgium - Pro League",
+   "market": "GG/NG",
+   "selection": "Yes",
+   "odds": 1.54,
+   "marketId": "29",
+   "specifier": "",
+   "outcomeId": "74",
+   "true_p": 0.75,
+   "implied": 0.6494,
+   "ev": 0.155,
+   "why": "season+form+h2h; λ 2.13-1.91; model 75% vs implied 65% (edge 15%); table 17 v 9/18",
+   "lambda": [
+    2.127,
+    1.907
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:45",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72522172",
+   "match": "Briton Ferry v Holywell Town",
+   "league": "Wales - Cymru Premier",
+   "market": "GG/NG",
+   "selection": "Yes",
+   "odds": 1.55,
+   "marketId": "29",
+   "specifier": "",
+   "outcomeId": "74",
+   "true_p": 0.7134,
+   "implied": 0.6452,
+   "ev": 0.1058,
+   "why": "season+form; λ 2.91-1.41; model 71% vs implied 65% (edge 11%); table 12 v 16/16",
+   "lambda": [
+    2.907,
+    1.406
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:45",
+   "alternatives": [
+    {
+     "market": "Away O/U",
+     "selection": "Over 0.5",
+     "odds": 1.46,
+     "ev": 0.1018,
+     "true_p": 0.7547
+    },
+    {
+     "market": "2nd Half - Total",
+     "selection": "Over 1.5",
+     "odds": 1.54,
+     "ev": 0.0556,
+     "true_p": 0.6854
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72546170",
+   "match": "Caerau Ely FC v Newport City FC",
+   "league": "Wales - Cymru Championship South",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.46,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "true_p": 0.7356,
+   "implied": 0.6849,
+   "ev": 0.074,
+   "why": "season+form+h2h; λ 2.11-1.71; model 74% vs implied 68% (edge 7%); table 4 v 13/16",
+   "lambda": [
+    2.114,
+    1.714
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:45",
+   "alternatives": [
+    {
+     "market": "Away O/U",
+     "selection": "Over 0.5",
+     "odds": 1.3,
+     "ev": 0.0657,
+     "true_p": 0.8198
+    },
+    {
+     "market": "GG/NG",
+     "selection": "Yes",
+     "odds": 1.46,
+     "ev": 0.0524,
+     "true_p": 0.7208
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72522178",
+   "match": "Flint Town United v Cambrian United",
+   "league": "Wales - Cymru Premier",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.51,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "true_p": 0.7058,
+   "implied": 0.6623,
+   "ev": 0.0657,
+   "why": "season+form; λ 2.29-1.36; model 71% vs implied 66% (edge 7%); table 13 v 9/16",
+   "lambda": [
+    2.289,
+    1.36
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:45",
+   "alternatives": [
+    {
+     "market": "Draw No Bet",
+     "selection": "Home",
+     "odds": 1.45,
+     "ev": 0.0527,
+     "true_p": 0.726
+    },
+    {
+     "market": "2nd Half - Draw No Bet",
+     "selection": "Home",
+     "odds": 1.53,
+     "ev": 0.051,
+     "true_p": 0.6869
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72546172",
+   "match": "Caerphilly Athletic FC v Llanelli Town",
+   "league": "Wales - Cymru Championship South",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.5,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7014,
+   "implied": 0.6667,
+   "ev": 0.0521,
+   "why": "season+form; λ 2.78-1.21; model 70% vs implied 67% (edge 5%); table 12 v 16/16",
+   "lambda": [
+    2.777,
+    1.209
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:45",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72522174",
+   "match": "Caernarfon Town FC v Connah`s Quay Nomads FC",
+   "league": "Wales - Cymru Premier",
+   "market": "Double Chance",
+   "selection": "Draw or Away",
+   "odds": 1.52,
+   "marketId": "10",
+   "specifier": "",
+   "outcomeId": "11",
+   "true_p": 0.6907,
+   "implied": 0.6579,
+   "ev": 0.0499,
+   "why": "season+form+h2h; λ 1.42-1.78; model 69% vs implied 66% (edge 5%); table 6 v 2/16",
+   "lambda": [
+    1.425,
+    1.781
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:45",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72522180",
+   "match": "Llandudno FC v Barry Town United FC",
+   "league": "Wales - Cymru Premier",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.58,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "true_p": 0.6616,
+   "implied": 0.6329,
+   "ev": 0.0453,
+   "why": "season+form+h2h; λ 1.61-1.79; model 66% vs implied 63% (edge 5%); table 10 v 7/16",
+   "lambda": [
+    1.613,
+    1.794
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "19:45",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72478708",
+   "match": "Athletic Bilbao v Espanyol",
+   "league": "Spain - LaLiga",
+   "market": "Home O/U",
+   "selection": "Under 2.5",
+   "odds": 1.42,
+   "marketId": "19",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.7731,
+   "implied": 0.7042,
+   "ev": 0.0979,
+   "why": "season+form+h2h; λ 1.64-0.99; model 77% vs implied 70% (edge 10%); table 7 v 14/20",
+   "lambda": [
+    1.639,
+    0.99
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "20:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72341382",
+   "match": "Barnsley FC v Sheffield Wednesday",
+   "league": "England - League One",
+   "market": "Away O/U",
+   "selection": "Under 2.5",
+   "odds": 1.32,
+   "marketId": "20",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8044,
+   "implied": 0.7576,
+   "ev": 0.0618,
+   "why": "season+form+h2h; λ 1.42-1.52; model 80% vs implied 76% (edge 6%); table 23 v 9/24",
+   "lambda": [
+    1.416,
+    1.518
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "20:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Total",
+     "selection": "Under 2.5",
+     "odds": 1.34,
+     "ev": 0.0451,
+     "true_p": 0.7799
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:73068224",
+   "match": "Real Madrid Castilla v Real Murcia CF",
+   "league": "Spain - Primera Federacion",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.31,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.8272,
+   "implied": 0.7634,
+   "ev": 0.0836,
+   "why": "season+form+h2h; λ 1.15-1.01; model 83% vs implied 76% (edge 8%); table 9 v 4/20",
+   "lambda": [
+    1.153,
+    1.007
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "20:15",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:73038668",
+   "match": "Recoleta FC v Club Guarani Asuncion",
+   "league": "Paraguay - Division de Honor",
+   "market": "Away O/U",
+   "selection": "Under 2.5",
+   "odds": 1.25,
+   "marketId": "20",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8596,
+   "implied": 0.8,
+   "ev": 0.0745,
+   "why": "season+form+h2h; λ 1.32-1.29; model 86% vs implied 80% (edge 7%); table 11 v 3/12",
+   "lambda": [
+    1.318,
+    1.289
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-20",
+   "ko": "23:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.54,
+     "ev": 0.0679,
+     "true_p": 0.6935
+    }
+   ]
+  }
+ ],
+ "rejected": {
+  "FC Volendam v Jong Ajax Amsterdam": "youth/reserve/women/virtual",
+  "Heracles Almelo v Jong PSV Eindhoven": "youth/reserve/women/virtual",
+  "Jong FC Utrecht v FC Emmen": "youth/reserve/women/virtual",
+  "Vitesse Arnhem v Jong AZ Alkmaar": "youth/reserve/women/virtual",
+  "Dinamo-Makhachkala Youth v FK Nizhny Novgorod": "youth/reserve/women/virtual",
+  "FK Rostov v FC Rodina Youth": "youth/reserve/women/virtual",
+  "FK Spartak Moscow v Almaz Antey Youth": "youth/reserve/women/virtual",
+  "Football Academy Of Konoplev v Lokomotiv Moscow": "youth/reserve/women/virtual",
+  "Ural Ekaterinburg v FC Fakel Voronezh Youth": "youth/reserve/women/virtual",
+  "Burnley Reserves v Fleetwood Town U21": "youth/reserve/women/virtual",
+  "Leeds United U21 v Charlton Athletic U21": "youth/reserve/women/virtual",
+  "Queens Park Rangers U21 v Blackburn Rovers U21": "youth/reserve/women/virtual",
+  "West Bromwich Albion FC U21 v Coventry City U21": "youth/reserve/women/virtual",
+  "Villarreal CF B v Gimnastic de Tarragona": "youth/reserve/women/virtual",
+  "Rapid Wien II v Blau-Weiss Linz": "youth/reserve/women/virtual",
+  "FC Silon Taborsko v SK Slavia Prague B": "youth/reserve/women/virtual",
+  "MFK Karvina v FC Banik Ostrava B": "youth/reserve/women/virtual",
+  "Rakow II Czestochowa v KS Gornik Polkowice": "youth/reserve/women/virtual",
+  "Bayern SRL v Cologne SRL": "youth/reserve/women/virtual",
+  "Athletic Bilbao SRL v Espanyol SRL": "youth/reserve/women/virtual",
+  "Estac Troyes Srl v Le Havre AC Srl": "youth/reserve/women/virtual",
+  "NK Opatija v Gnk Dinamo Zagreb II": "youth/reserve/women/virtual",
+  "Recoleta FC Reserve v Guarani Asuncion": "youth/reserve/women/virtual",
+  "Sportivo Ameliano v Sportivo Luqueno": "no 1.20–1.60 market with an edge",
+  "FC Magdeburg II v FSV Zwickau": "youth/reserve/women/virtual",
+  "FSV Mainz II v TSV Steinbach Haiger": "youth/reserve/women/virtual",
+  "SC Wiedenbruck v VfL Bochum II": "youth/reserve/women/virtual",
+  "KV RS Waasland Beveren v Jeugd Lierse Kempenzonen": "youth/reserve/women/virtual",
+  "K Beerschot VA v Jeugd Royal Francs Borains ": "youth/reserve/women/virtual",
+  "RFC Liege v KVC Westerlo": "youth/reserve/women/virtual",
+  "RFC Seraing v RWD Molenbeek Youth": "youth/reserve/women/virtual",
+  "RAAL La Louviere v KV Kortrijk": "youth/reserve/women/virtual",
+  "Moreirense FC v FC Porto": "youth/reserve/women/virtual",
+  "Kalamata v AEK Athens": "youth/reserve/women/virtual",
+  "FC Sudburgenland v SK Sturm Graz": "youth/reserve/women/virtual",
+  "Toulouse FC v Les Marseillaises": "youth/reserve/women/virtual",
+  "Grasshopper Zurich v FC Basel": "youth/reserve/women/virtual",
+  "FC Union Berlin v Bayer Leverkusen": "youth/reserve/women/virtual",
+  "FC Nordsjaelland v Dbk Fortuna Hjoerring": "youth/reserve/women/virtual",
+  "Rio Ave FC v Vitoria SC": "youth/reserve/women/virtual",
+  "ACS Inter Ilfov v Fotbal Club FCSB 2": "youth/reserve/women/virtual",
+  "ACS Sepsi Osk Sfantu Gheorghe 2 v Csm Sacele": "youth/reserve/women/virtual",
+  "FC Dinamo Bucuresti 1948 2 v SC FC Voluntari II": "youth/reserve/women/virtual",
+  "Colo Colo v Universidad Catolica": "youth/reserve/women/virtual",
+  "Real Madrid v CF Trival Valderas Alcorcon": "youth/reserve/women/virtual",
+  "Puskas Akademia v Gyori ETO FC": "youth/reserve/women/virtual",
+  "Puebla v Atletico San Luis": "youth/reserve/women/virtual",
+  "FC Juarez v Atlas FC": "youth/reserve/women/virtual",
+  "Club Tijuana de Caliente v Atlante FC U21": "youth/reserve/women/virtual",
+  "Ipswich Town U21 v FC Porto B": "youth/reserve/women/virtual",
+  "AL Dhafra U23 v AL Ain FC": "youth/reserve/women/virtual",
+  "Hatta SC U23 v AL Wasl": "youth/reserve/women/virtual",
+  "FC Bengaluru United v ASC & Center FC": "no sportradar teams",
+  "Garuda Yaksa v Madura United": "no 1.20–1.60 market with an edge",
+  "Negeri Sembilan v Kuching City FC": "no 1.20–1.60 market with an edge",
+  "Bunga Raya FC v Manjung City FC": "no 1.20–1.60 market with an edge",
+  "Vissel Kobe v Mito Hollyhock": "no 1.20–1.60 market with an edge",
+  "Ho Chi Minh City FC v Thai Nguyen FC": "no 1.20–1.60 market with an edge",
+  "Shahdagh-Samur Gusar v Cabrayil": "even matchup (2 v 1/10)",
+  "FC Van Charentsavan v FC Ararat-Armenia": "no 1.20–1.60 market with an edge",
+  "FSK Mariupol v Agrobiznes Volochisk": "even matchup (2 v 3/16)",
+  "Albirex Niigata Singapore FC v Balestier Khalsa FC": "no 1.20–1.60 market with an edge",
+  "AL Hada v Najran SC": "insufficient form/stats",
+  "Al Taraji v Al Safa SC (SA)": "no 1.20–1.60 market with an edge",
+  "De Red FC v Persis Solo": "no 1.20–1.60 market with an edge",
+  "Persiba Balikpapan v Barito Putera": "no 1.20–1.60 market with an edge",
+  "PSMS Medan v Sumsel United": "no 1.20–1.60 market with an edge",
+  "Police Tero FC v Chanthaburi": "no 1.20–1.60 market with an edge",
+  "Lee Man FC v North District FC": "even matchup (1 v 2/11)",
+  "Fajr Sepasi FC v Chador Malu Yazd": "no 1.20–1.60 market with an edge",
+  "Zob Ahan Isfahan FC v Shams Azar Qazvin": "even matchup (16 v 17/18)",
+  "FK Kom Podgorica v FK Zeta Golubovci": "even matchup (4 v 3/10)",
+  "Lokomotiv Tashkent v Pakhtakor": "even matchup (5 v 2/16)",
+  "KF Ferizaj v KF Prishtina e Re": "even matchup (5 v 2/18)",
+  "FK Majevica Lopare v FK Zvijezda 09": "no 1.20–1.60 market with an edge",
+  "Al-Majd SC v Nawair SC": "insufficient form/stats",
+  "ACS Viitorul Corbeanca v CSO Plopeni": "even matchup (11 v 10/12)",
+  "AFC Odorheiu Secuiesc v CS Bradul Putna": "no 1.20–1.60 market with an edge",
+  "CS Blejoi v FC Pucioasa": "no 1.20–1.60 market with an edge",
+  "CS Timisul Sag v CSO Cugir": "no 1.20–1.60 market with an edge",
+  "CSC Ghiroda SI Giarmata Vii v CSM Unirea Alba Iulia": "no 1.20–1.60 market with an edge",
+  "Csm Flacara Moreni v ACS Vointa 2024 Crevedia": "even matchup (1 v 5/12)",
+  "CSM Pascani v CS Gheorgheni": "even matchup (11 v 10/12)",
+  "El Mansurah v Dayrout": "no 1.20–1.60 market with an edge",
+  "Maleyat Kafr El Zayat v Mega Sport Belqas": "no 1.20–1.60 market with an edge",
+  "Proxy SC v Tanta FC": "no 1.20–1.60 market with an edge",
+  "FC Bihor Oradea v CS Gloria Bistrita": "no 1.20–1.60 market with an edge",
+  "Saint George SC v Hadiya Hossana FC": "no 1.20–1.60 market with an edge",
+  "Baish v AL Rayan": "insufficient form/stats",
+  "Wej Taif SC v AL Qala": "even matchup (2 v 3/16)",
+  "AL Arabi (UAE) v AL Jazira AL Hamra": "no 1.20–1.60 market with an edge",
+  "Al-Hamriyah v Al-Dhaid": "no 1.20–1.60 market with an edge",
+  "Persepolis FC v Paykan FC": "no 1.20–1.60 market with an edge",
+  "Mohammedan SC v Gokulam Kerala FC": "model disagrees with the 1X2 board (away favourite)",
+  "Dinamo Moscow v Rubin Kazan": "no 1.20–1.60 market with an edge",
+  "FC Krasnodar v Chertanovo Moscow": "no 1.20–1.60 market with an edge",
+  "FK Zenit St. Petersburg v CSKA Moscow": "even matchup (2 v 1/16)",
+  "Al Duhail SC v Qatar SC": "no 1.20–1.60 market with an edge",
+  "SC Villa v Updf FC": "insufficient form/stats",
+  "Uganda Police FC v Kampala Capital City Authority FC": "insufficient form/stats",
+  "URA FC v Ntugasaze FC": "no 1.20–1.60 market with an edge",
+  "AD Vilankulo v Chingale De TeTe": "no 1.20–1.60 market with an edge",
+  "Welwalo Adigrat v Defense Force SC": "no 1.20–1.60 market with an edge",
+  "Amagaju v Marines FC Gisenyi": "no 1.20–1.60 market with an edge",
+  "Gasogi United v SC Kiyovu ": "no 1.20–1.60 market with an edge",
+  "Terengganu FC v Brunei DPMM FC": "no 1.20–1.60 market with an edge",
+  "Club S Hammam-Lif v ES Metlaoui": "no 1.20–1.60 market with an edge",
+  "Olympique de Beja v Avenir S Marsa": "no 1.20–1.60 market with an edge",
+  "Navbahor v FK Neftchi Fargona": "even matchup (3 v 1/16)",
+  "FC Gagra v FC Dila Gori": "no 1.20–1.60 market with an edge",
+  "FC Spaeri v FC Meshakhte Tkibuli": "even matchup (8 v 10/10)",
+  "El Bayadh v Jrb Taghit": "even matchup (15 v 16/16)",
+  "GC Mascara v MC Saida": "even matchup (1 v 5/16)",
+  "Irb Sidi M Hamed Benali v Wa Mostaganem": "no 1.20–1.60 market with an edge",
+  "USM Blida v JSM Tiaret": "no 1.20–1.60 market with an edge",
+  "AL Minaa v Karbalaa": "no 1.20–1.60 market with an edge",
+  "Al-Salmiya SC v Khaitan SC": "no 1.20–1.60 market with an edge",
+  "Sanat Naft Abadan FC v Esteghlal Khuzestan FC": "no 1.20–1.60 market with an edge",
+  "Kahrabaa Ismailia v Ceramica Cleopatra": "model disagrees with the 1X2 board (away favourite)",
+  "Qalali Club v Etehad Alreef": "even matchup (10 v 12/12)",
+  "Sumgayit FK v Sabah Masazir": "model disagrees with the 1X2 board (away favourite)",
+  "FC Botosani v SC FC Voluntari": "no 1.20–1.60 market with an edge",
+  "FK Potkozarje Aleksandrovac v FK Famos Vojkovici": "no 1.20–1.60 market with an edge",
+  "FK Septemvri Sofia v PFC Lokomotiv Plovdiv": "no 1.20–1.60 market with an edge",
+  "FC Dinamo Tbilisi v FC Torpedo Kutaisi": "even matchup (4 v 5/10)",
+  "Nd Dravinja v Ilirija Ljubljana": "no 1.20–1.60 market with an edge",
+  "Triglav Kranj v NK Vrhnika": "no 1.20–1.60 market with an edge",
+  "ASO Chlef v USM Khenchela": "no 1.20–1.60 market with an edge",
+  "ES Setif v US Biskra": "no 1.20–1.60 market with an edge",
+  "Al Wehdat v AL Arabi": "no 1.20–1.60 market with an edge",
+  "AS Korofina v Onze Createurs": "no 1.20–1.60 market with an edge",
+  "Duhok FC v Erbil SC": "no 1.20–1.60 market with an edge",
+  "AL Tadhamon v AL Jazira FC (Kuwait)": "insufficient form/stats",
+  "Igdir FK v Umraniyespor": "insufficient form/stats",
+  "CSD Independiente del Valle v CSD Macara": "even matchup (1 v 2/16)",
+  "Chrobry Glogow v Puszcza Niepolomice": "no 1.20–1.60 market with an edge",
+  "KS Lechia Zielona Gora v MKS Chojniczanka Chojnice": "no 1.20–1.60 market with an edge",
+  "PAEEK Kyrenia v Halkanoras": "no 1.20–1.60 market with an edge",
+  "Prisons Xi Gaborone v Tafic FC": "no 1.20–1.60 market with an edge",
+  "Arminia Bielefeld v 1. FC Magdeburg": "no 1.20–1.60 market with an edge",
+  "Kapfenberger SV v FC Hertha Wels": "even matchup (15 v 16/16)",
+  "SKN St Polten v ASK Voitsberg": "no 1.20–1.60 market with an edge",
+  "FK Auda Riga v Riga FC": "model disagrees with the 1X2 board (away favourite)",
+  "Af Elbasani v FC Dinamo City": "even matchup (4 v 3/10)",
+  "Molde v Bodoe/Glimt": "even matchup (3 v 2/16)",
+  "AGF Aarhus v Lyngby BK": "no 1.20–1.60 market with an edge",
+  "Aarhus Fremad v Hobro IK": "no 1.20–1.60 market with an edge",
+  "Kolding IF v Aalborg BK": "no 1.20–1.60 market with an edge",
+  "CD Teruel v Hercules de Alicante CF": "no 1.20–1.60 market with an edge",
+  "TSV Buchbach v Schwaben Augsburg": "no 1.20–1.60 market with an edge",
+  "Kickers Emden v Bremer SV 1906": "no 1.20–1.60 market with an edge",
+  "FC Rot-Weiss Erfurt v VSG Altglienicke": "even matchup (1 v 5/18)",
+  "FC Diarra v AS Kayes": "insufficient form/stats",
+  "FC Rapperswil-Jona v FC Aarau": "no 1.20–1.60 market with an edge",
+  "FC Stade Nyonnais v FC Wil 1900": "no 1.20–1.60 market with an edge",
+  "Neuchatel Xamax v Etoile Carouge FC": "no 1.20–1.60 market with an edge",
+  "Stade Lausanne Ouchy v SC Kriens": "even matchup (1 v 4/10)",
+  "Royal GO v Novo Horizonte GO": "insufficient form/stats",
+  "FC Annecy v Clermont Foot": "no 1.20–1.60 market with an edge",
+  "Metz v US Boulogne": "no 1.20–1.60 market with an edge",
+  "Nancy-Lorraine v Dijon": "no 1.20–1.60 market with an edge",
+  "Koninklijke Lierse Sportkring v KSC Lokeren-Temse": "no 1.20–1.60 market with an edge",
+  "Almere City FC v NAC Breda": "even matchup (3 v 5/20)",
+  "De Graafschap v MVV Maastricht": "no 1.20–1.60 market with an edge",
+  "FC Den Bosch v VVV Venlo": "no 1.20–1.60 market with an edge",
+  "FK Mornar Bar v FK Sutjeska Niksic": "even matchup (3 v 4/10)",
+  "Yverdon-Sport v FC Winterthur": "even matchup (3 v 2/10)",
+  "FC Andorra v Leganes": "no 1.20–1.60 market with an edge",
+  "AC Trento v AS Cittadella": "even matchup (3 v 1/20)",
+  "Liverpool Montevideo v Montevideo Wanderers": "no 1.20–1.60 market with an edge",
+  "Pogon Szczecin v WKS Slask Wroclaw": "no 1.20–1.60 market with an edge",
+  "Austria Salzburg v FC Admira Wacker Modling": "no 1.20–1.60 market with an edge",
+  "Swansea University v Trethomas Bluebirds": "no 1.20–1.60 market with an edge",
+  "Troyes v Le Havre": "even matchup (16 v 18/18)",
+  "Southend United v Boreham Wood FC": "even matchup (3 v 1/24)",
+  "Airbus UK Broughton v Colwyn Bay": "even matchup (5 v 4/16)",
+  "Cardiff Metropolitan University FC v Ammanford": "no 1.20–1.60 market with an edge",
+  "Pen-y-Bont FC v Haverfordwest County AFC": "no 1.20–1.60 market with an edge",
+  "Cliftonville FC v Glentoran FC": "even matchup (5 v 4/12)",
+  "Ballinamallard United v Loughgall FC": "no 1.20–1.60 market with an edge",
+  "Strabane Athletic FC v Dundela FC": "even matchup (15 v 14/16)",
+  "Balzan FC v Mosta FC": "no 1.20–1.60 market with an edge",
+  "Wayside Celtic v St. Francis FC": "no sportradar teams",
+  "SP La Fiorita v SS Folgore Falciano Calcio": "no 1.20–1.60 market with an edge",
+  "SP Tre Fiori v AC Juvenes/Dogana": "no 1.20–1.60 market with an edge",
+  "Porto v Uniao SC Paredes": "model disagrees with the 1X2 board (home favourite)",
+  "Cobresal v Audax Italiano": "no 1.20–1.60 market with an edge",
+  "Deportes Recoleta v Santiago Wanderers": "no 1.20–1.60 market with an edge",
+  "UD Anaza v CD Marino": "no 1.20–1.60 market with an edge",
+  "Independiente Medellin v Independiente Santa Fe": "no 1.20–1.60 market with an edge",
+  "Huracanes Izcalli FC v Gorilas de Juanacatlan": "even matchup (5 v 2/10)",
+  "Velez Sarsfield v CA Belgrano de Cordoba": "no 1.20–1.60 market with an edge",
+  "CD Palestino v Deportes Union La Calera": "no 1.20–1.60 market with an edge",
+  "CA Bucaramanga v America de Cali": "even matchup (4 v 2/20)"
+ },
+ "slips": [
+  {
+   "name": "SportyBet Stats · part 1/19",
+   "totalOdds": 7.46,
+   "codes": {
+    "sportybet": "94VB7H",
+    "footballcom": "94VB7H",
+    "msport": "B3LVM7W",
+    "betika": "ApxLSK",
+    "betpawa": "QR7TAUS"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 2/19",
+   "totalOdds": 7.43,
+   "codes": {
+    "sportybet": "EX6SLA",
+    "footballcom": "EX6SLA",
+    "msport": "B3LVM8G",
+    "betika": "aajDxU",
+    "betpawa": "VUKXY90"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 3/19",
+   "totalOdds": 7.35,
+   "codes": {
+    "sportybet": "C8MSRZ",
+    "footballcom": "C8MSRZ",
+    "msport": "B3LVM9D",
+    "betika": "8RfgqU",
+    "betpawa": "X59IQY2"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 4/19",
+   "totalOdds": 6.02,
+   "codes": {
+    "sportybet": "CHQNH3",
+    "footballcom": "CHQNH3",
+    "msport": "B3LVMAD",
+    "betika": "dF4pnA",
+    "betpawa": "I4VCGBL"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 5/19",
+   "totalOdds": 5.79,
+   "codes": {
+    "sportybet": "9BNF02",
+    "footballcom": "BJZD2J",
+    "msport": "B3LVMBS",
+    "betika": "vNqDya",
+    "betpawa": "32MRY07"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 6/19",
+   "totalOdds": 5.71,
+   "codes": {
+    "sportybet": "F5WNPC",
+    "footballcom": "F5WNPC",
+    "msport": "B3LVMCQ",
+    "betika": "QzLNeM",
+    "betpawa": "2QAFNXB"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 7/19",
+   "totalOdds": 7.01,
+   "codes": {
+    "sportybet": "CQ4TPY",
+    "footballcom": "CQ4TPY",
+    "msport": "B3LVMDT",
+    "betika": "LSNtcC",
+    "betpawa": "GYVRCMQ"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 8/19",
+   "totalOdds": 7.5,
+   "codes": {
+    "sportybet": "CQHTU1",
+    "footballcom": "CQHTU1",
+    "msport": "B3LVMEE",
+    "betika": "S2C5BZ",
+    "betpawa": "7T5XIWO"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 9/19",
+   "totalOdds": 5.82,
+   "codes": {
+    "sportybet": "CLBCJQ",
+    "footballcom": "CLBCJQ",
+    "msport": "B3LVMF5",
+    "betika": "SyQ2pJ",
+    "betpawa": "KGIP6EO"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 10/19",
+   "totalOdds": 8.05,
+   "codes": {
+    "sportybet": "EHVQ4M",
+    "footballcom": "EHVQ4M",
+    "msport": "B3LVMG7",
+    "betika": "Sg6wex",
+    "betpawa": "QCQ45BY"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 11/19",
+   "totalOdds": 7.46,
+   "codes": {
+    "sportybet": "EK7Y0J",
+    "footballcom": "EK7Y0J",
+    "msport": "B3LVMGZ",
+    "betika": "hzsm8b",
+    "betpawa": "IM79NB2"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 12/19",
+   "totalOdds": 6.14,
+   "codes": {
+    "sportybet": "C3G3SF",
+    "footballcom": "C3G3SF",
+    "msport": "B3LVMHF",
+    "betika": "T3tyWT",
+    "betpawa": "6GJFJ04"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 13/19",
+   "totalOdds": 5.51,
+   "codes": {
+    "sportybet": "FGSHSC",
+    "footballcom": "FGSHSC",
+    "msport": "B3LVMJ3",
+    "betika": "eWZupS",
+    "betpawa": "FWWAYX5"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 14/19",
+   "totalOdds": 8.37,
+   "codes": {
+    "sportybet": "ENS4XY",
+    "footballcom": "ENS4XY",
+    "msport": "B3LVMJU",
+    "betika": "pd9kCY",
+    "betpawa": "XEGWP68"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 15/19",
+   "totalOdds": 7.52,
+   "codes": {
+    "sportybet": "EQDM75",
+    "footballcom": "EQDM75",
+    "msport": "B3LVMKT",
+    "betika": "m3Wbem",
+    "betpawa": "6I2QFSM"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 16/19",
+   "totalOdds": 7.31,
+   "codes": {
+    "sportybet": "CXRQ0P",
+    "footballcom": "9Y5FSW",
+    "msport": "B3LVMLM",
+    "betika": "wjWCfG",
+    "betpawa": "NEV3NQ6"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 17/19",
+   "totalOdds": 8.21,
+   "codes": {
+    "sportybet": "D6A3LB",
+    "footballcom": "D6A3LB",
+    "msport": "B3LVMMJ",
+    "betika": "yApc16",
+    "betpawa": "IXUD0J4"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 18/19",
+   "totalOdds": 7.72,
+   "codes": {
+    "sportybet": "CBWR5U",
+    "footballcom": "CBWR5U",
+    "msport": "B3LVMNM",
+    "betika": "8fmh2d",
+    "betpawa": "HXMHCK3"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 19/19",
+   "totalOdds": 2.16,
+   "codes": {
+    "sportybet": "EWD1FL",
+    "footballcom": "EWD1FL",
+    "msport": "B3LVMQ5",
+    "betika": "K1NKsT",
+    "betpawa": "DU2JV0H"
+   },
+   "legs": 3
+  },
+  {
+   "name": "SportyBet Stats · Master · part 1/4",
+   "totalOdds": 81012.13,
+   "codes": {
+    "sportybet": "DBM8UW",
+    "footballcom": "FV9V8C",
+    "msport": "B3LVMT7",
+    "betika": "uz8CmU",
+    "betpawa": "0EZDYXY"
+   },
+   "legs": 30
+  },
+  {
+   "name": "SportyBet Stats · Master · part 2/4",
+   "totalOdds": 112696.34,
+   "codes": {
+    "sportybet": "FXUWS6",
+    "footballcom": "FXUWS6",
+    "msport": "B3LVMVA",
+    "betika": "7EE5Lc",
+    "betpawa": "KKLR0AN"
+   },
+   "legs": 30
+  },
+  {
+   "name": "SportyBet Stats · Master · part 3/4",
+   "totalOdds": 160728.01,
+   "codes": {
+    "sportybet": "DBM8UY",
+    "footballcom": "CKMD4N",
+    "msport": "B3LVMYD",
+    "betika": "jpVH2r",
+    "betpawa": "537N4RK"
+   },
+   "legs": 30
+  },
+  {
+   "name": "SportyBet Stats · Master · part 4/4",
+   "totalOdds": 2.16,
+   "codes": {
+    "sportybet": "EWD1FL",
+    "footballcom": "EWD1FL",
+    "msport": "B3LVMYY",
+    "betika": "xMjwtt",
+    "betpawa": "65ITWVP"
+   },
+   "legs": 3
+  }
+ ]
+}
