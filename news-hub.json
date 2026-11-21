@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-21T06:25:17+00:00",
+ "updatedAt": "2026-11-21T07:25:21+00:00",
  "sources": [
   "BBC Sport",
   "ESPN",
@@ -883,9 +883,9 @@
  ],
  "record": {
   "won": 32,
-  "lost": 258,
-  "settled": 290,
-  "pending": 307,
+  "lost": 260,
+  "settled": 292,
+  "pending": 305,
   "winRate": 11.0
  },
  "codes": [
@@ -1012,7 +1012,7 @@
    "kind": "slip",
    "odds": 35324.69,
    "status": "lost",
-   "hit": 2,
+   "hit": 3,
    "total": 43,
    "legs": [
     {
@@ -1042,8 +1042,8 @@
     {
      "match": "Tochigi City FC v Albirex Niigata",
      "selection": "Over 0.5",
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "0:3"
     },
     {
      "match": "RC Deportivo De La Coruna v ED Val Minor Nigran",
@@ -1109,7 +1109,7 @@
      "match": "Gamba Osaka v Fagiano Okayama",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Empoli v SC Pisa",
@@ -1132,7 +1132,7 @@
     {
      "match": "Machida Zelvia v V-Varen Nagasaki",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:0"
     },
     {
@@ -1392,7 +1392,7 @@
      "match": "Kawasaki Frontale v Avispa Fukuoka",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "1:0"
     },
     {
      "match": "MSK Zilina v FC Kosice",
@@ -1470,7 +1470,7 @@
      "match": "Tai Po FC v Kitchee",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Bayer Leverkusen v Paderborn",
@@ -1554,7 +1554,7 @@
    "kind": "slip",
    "odds": 10819.36,
    "status": "lost",
-   "hit": 3,
+   "hit": 5,
    "total": 35,
    "legs": [
     {
@@ -1590,56 +1590,56 @@
     {
      "match": "Machida Zelvia v V-Varen Nagasaki",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:0"
     },
     {
      "match": "Blaublitz Akita v Montedio Yamagata",
      "selection": "Under 3.5",
-     "result": "pending",
-     "score": "1:1"
+     "result": "lost",
+     "score": "3:1"
     },
     {
      "match": "Tochigi City FC v Albirex Niigata",
      "selection": "Over 0.5",
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "0:3"
     },
     {
      "match": "Tegevajaro Miyazaki v Iwaki FC",
      "selection": "Over 1.5",
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "1:1"
     },
     {
      "match": "Kawasaki Frontale v Avispa Fukuoka",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "1:0"
     },
     {
      "match": "Cerezo Osaka v FC Tokyo",
      "selection": "Away",
      "result": "pending",
-     "score": "0:1"
+     "score": "0:2"
     },
     {
      "match": "Sydney FC v Canberra United FC",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": "1:0"
+     "score": "1:1"
     },
     {
      "match": "Gamba Osaka v Fagiano Okayama",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Tai Po FC v Kitchee",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Southern District Football Club v Hong Kong Rangers",
@@ -2001,7 +2001,7 @@
      "match": "Tai Po FC v Kitchee",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Melaka FC v Star City FC",
@@ -3957,8 +3957,8 @@
    "name": "Master <=1.42 1 · HIGH RISK",
    "kind": "slip",
    "odds": 42820.87,
-   "status": "pending",
-   "hit": 1,
+   "status": "lost",
+   "hit": 2,
    "total": 44,
    "legs": [
     {
@@ -4025,7 +4025,7 @@
      "match": "Sydney FC v Canberra United FC",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": "1:0"
+     "score": "1:1"
     },
     {
      "match": "Wolves v Charlton Athletic",
@@ -4084,8 +4084,8 @@
     {
      "match": "Blaublitz Akita v Montedio Yamagata",
      "selection": "Under 3.5",
-     "result": "pending",
-     "score": "1:1"
+     "result": "lost",
+     "score": "3:1"
     },
     {
      "match": "FC Sudtirol Bolzano v US Cremonese",
@@ -4103,7 +4103,7 @@
      "match": "Cerezo Osaka v FC Tokyo",
      "selection": "Away",
      "result": "pending",
-     "score": "0:1"
+     "score": "0:2"
     },
     {
      "match": "Ynyshir Albions v Llantwit Major",
@@ -4120,8 +4120,8 @@
     {
      "match": "Tegevajaro Miyazaki v Iwaki FC",
      "selection": "Over 1.5",
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "1:1"
     },
     {
      "match": "US Quevilly-Rouen Metropole v PSG",
@@ -4235,7 +4235,7 @@
    "kind": "slip",
    "odds": 7728.87,
    "status": "pending",
-   "hit": 0,
+   "hit": 1,
    "total": 25,
    "legs": [
     {
@@ -4379,8 +4379,8 @@
     {
      "match": "Sanfrecce Hiroshima v Yokohama F Marinos",
      "selection": "Over 2.5",
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "2:2"
     },
     {
      "match": "Radcliffe FC v AFC Telford United",
@@ -4712,7 +4712,7 @@
      "match": "Suwon Bluewings v Gyeongnam FC",
      "selection": "Home",
      "result": "pending",
-     "score": "2:0"
+     "score": "3:1"
     },
     {
      "match": "Fehervar FC Szekesfehervar v Aqvital FC Csakvar",
@@ -4977,7 +4977,7 @@
      "match": "Tai Po FC v Kitchee",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Eintracht Frankfurt v Hoffenheim",
@@ -5097,7 +5097,7 @@
    "kind": "slip",
    "odds": 476.28,
    "status": "pending",
-   "hit": 2,
+   "hit": 3,
    "total": 35,
    "legs": [
     {
@@ -5187,8 +5187,8 @@
     {
      "match": "Tochigi City FC v Albirex Niigata",
      "selection": "Over 0.5",
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "0:3"
     },
     {
      "match": "Dundee FC v Heart of Midlothian FC",
@@ -5284,7 +5284,7 @@
      "match": "Sydney FC v Canberra United FC",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": "1:0"
+     "score": "1:1"
     },
     {
      "match": "CA Talleres de Remedios v Real Pilar FC",
@@ -5345,7 +5345,7 @@
      "match": "Tai Po FC v Kitchee",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Bayer Leverkusen v Paderborn",
@@ -5665,7 +5665,7 @@
    "kind": "slip",
    "odds": 180.72,
    "status": "pending",
-   "hit": 2,
+   "hit": 4,
    "total": 25,
    "legs": [
     {
@@ -5677,8 +5677,8 @@
     {
      "match": "Tochigi City FC v Albirex Niigata",
      "selection": "Over 0.5",
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "0:3"
     },
     {
      "match": "Nejmeh SC v AL Mabarrah",
@@ -5701,8 +5701,8 @@
     {
      "match": "Tegevajaro Miyazaki v Iwaki FC",
      "selection": "Over 1.5",
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "1:1"
     },
     {
      "match": "Wealdstone FC v AFC Hornchurch",
@@ -5726,7 +5726,7 @@
      "match": "Kawasaki Frontale v Avispa Fukuoka",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "1:0"
     },
     {
      "match": "CFR Cluj v ASC Otelul Galati",
@@ -5786,7 +5786,7 @@
      "match": "Sydney FC v Canberra United FC",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": "1:0"
+     "score": "1:1"
     },
     {
      "match": "Aston Villa v Sunderland AFC",
@@ -5883,7 +5883,7 @@
      "match": "Gamba Osaka v Fagiano Okayama",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Bhayangkara Presisi Indonesia FC v Persijap Jepara",
@@ -5990,8 +5990,8 @@
    "name": "Over 1.5 Group 1 · HIGH RISK",
    "kind": "slip",
    "odds": 34.94,
-   "status": "pending",
-   "hit": 0,
+   "status": "lost",
+   "hit": 1,
    "total": 18,
    "legs": [
     {
@@ -6064,7 +6064,7 @@
      "match": "Gamba Osaka v Fagiano Okayama",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Empoli v SC Pisa",
@@ -6081,7 +6081,7 @@
     {
      "match": "Machida Zelvia v V-Varen Nagasaki",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "lost",
      "score": "0:0"
     },
     {
@@ -6093,8 +6093,8 @@
     {
      "match": "Tegevajaro Miyazaki v Iwaki FC",
      "selection": "Over 1.5",
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "1:1"
     },
     {
      "match": "AC Savoia 1908 v ASD Sorrento 1945",
@@ -6191,7 +6191,7 @@
      "match": "Kawasaki Frontale v Avispa Fukuoka",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "1:0"
     },
     {
      "match": "UD Villa Santa Brigida v UD Playas de Sotavento",
