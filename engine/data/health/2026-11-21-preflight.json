@@ -1,0 +1,731 @@
+{
+ "checkedAt": "2026-11-21T18:00:33Z",
+ "mode": "preflight",
+ "ok": true,
+ "problems": [],
+ "warnings": [
+  {
+   "area": "codes",
+   "msg": "33 of 388 published live codes no longer load or have no match left; hidden via dead-codes.json: sportybet E0KUS4 (every match has started), footballcom E0KUS4 (every match has started), betika Mhb37w (Sorry. The picks in this betslip are unavailable.), betpawa 6XXI5N5 (every match has started), sportybet 9XHE3M (every match has started), footballcom 9XHE3M (every match has started), betika sRqFEP (Sorry. The picks in this betslip are unavailable.), betpawa CFHCB45 (every match has started)"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-self-heal.yml started 172 min after its 14:15 slot"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategy-master.yml: cannot dry-run `engine/vendor/strategy_master.py \"${ARGS[@]}\"` (uses shell variables)"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-hs-goals.yml: cannot dry-run `engine/vendor/hs_goals.py \"${ARGS[@]}\"` (uses shell variables)"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-sure80.yml: cannot dry-run `engine/vendor/sure80_reverse.py \"${ARGS[@]}\"` (uses shell variables)"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-master-pipeline.yml: cannot dry-run `engine/vendor/master_pipeline.py \"${ARGS[@]}\"` (uses shell variables)"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-gg.yml: cannot dry-run `engine/vendor/gg_strategy.py \"${ARGS[@]}\"` (uses shell variables)"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-nysm.yml: cannot dry-run `engine/vendor/nysm_v2.py \"${ARGS[@]}\"` (uses shell variables)"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-nt-tomorrow.yml: cannot dry-run `engine/vendor/nt_tomorrow.py \"${ARGS[@]}\"` (uses shell variables)"
+  },
+  {
+   "area": "strategies",
+   "msg": "47 picks for 2026-11-22 carry no kickoff time (e.g. ['Barcelona v Villarreal', 'Bayer Leverkusen v Paderborn', 'CA Paranaense PR v Clube do Remo PA'])"
+  }
+ ],
+ "healed": [
+  "hid 33 dead codes on the site (dead-codes.json)"
+ ],
+ "passed": [
+  {
+   "area": "code",
+   "msg": "no undefined names in engine/ (pyflakes)"
+  },
+  {
+   "area": "code",
+   "msg": "engine.check_rules passed"
+  },
+  {
+   "area": "code",
+   "msg": "109 engine files compile; 12 engine modules checked for import"
+  },
+  {
+   "area": "site",
+   "msg": "all 217 pages return 200"
+  },
+  {
+   "area": "site",
+   "msg": "home-picks.json fresh (10.9h old)"
+  },
+  {
+   "area": "site",
+   "msg": "picks.json fresh (0.9h old)"
+  },
+  {
+   "area": "site",
+   "msg": "high_odds.json fresh (1.7h old)"
+  },
+  {
+   "area": "site",
+   "msg": "hot-picks.json fresh (0.9h old)"
+  },
+  {
+   "area": "site",
+   "msg": "record.json fresh (1.7h old)"
+  },
+  {
+   "area": "site",
+   "msg": "news-hub.json fresh (0.6h old)"
+  },
+  {
+   "area": "site",
+   "msg": "live-scores.json fresh (0.6h old)"
+  },
+  {
+   "area": "site",
+   "msg": "data-meta.json fresh (0.9h old)"
+  },
+  {
+   "area": "site",
+   "msg": "staked-codes.json fresh (0.6h old)"
+  },
+  {
+   "area": "site",
+   "msg": "fixtures.js fresh (2.7h old)"
+  },
+  {
+   "area": "site",
+   "msg": "sportybet-odds.js fresh (2.7h old)"
+  },
+  {
+   "area": "site",
+   "msg": "current-data.js fresh (0.9h old)"
+  },
+  {
+   "area": "favourites",
+   "msg": "favourites by league: 118 leagues, 667 fixtures on the site"
+  },
+  {
+   "area": "actions",
+   "msg": "on-time ticker is running"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-fav-leagues.yml 06:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-strategy-master.yml 06:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-morning.yml 07:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-shield.yml 21:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-m1m2.yml 21:45 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-daily.yml 22:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-sure80.yml 22:00 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-master-pipeline.yml 22:45 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-strategies.yml 22:30 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-gg.yml 23:10 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-nysm.yml 23:30 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-nt-tomorrow.yml 23:50 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-settle.yml 16:15 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "sportybet-odds.yml 15:19 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-self-heal.yml 14:15 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "daymasters-guard.yml 17:40 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-refresh.yml 17:25 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "daily-picks-email.yml 00:15 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "results-email.yml 00:30 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "tracker-email.yml 00:45 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "post-social.yml 00:50 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-health.yml 07:30 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "engine-watchdog.yml 17:35 slot succeeded"
+  },
+  {
+   "area": "actions",
+   "msg": "monitor.yml 13:17 slot succeeded"
+  },
+  {
+   "area": "registry",
+   "msg": "42 workflows read, 20 run engine commands, 26 on the ticker"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-daily.yml: python -m engine.pipeline daily --dry-run ran clean in 78s"
+  },
+  {
+   "area": "strategies",
+   "msg": "68 favourites picks for 2026-11-22: fields, odds and DC veto all fine"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-fav-leagues.yml: python -m engine.pipeline fav --dry-run ran clean in 47s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-morning.yml: python -m engine.pipeline morning --dry-run ran clean in 39s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-shield.yml: python -m engine.pipeline shield --dry-run ran clean in 173s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-m1m2.yml: python -m engine.vendor.m1m2 ran clean in 68s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-m1m2.yml: python -m engine.vendor.safe50 ran clean in 52s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-m1m2.yml: python engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u ran clean in 0s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategies.yml: python -m engine.vendor.three_strategies 4 ran clean in 53s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategies.yml: python engine/vendor/three_strategies.py 4 ran clean in 57s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategies.yml: python engine/vendor/verzzify_banker.py ran clean in 47s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategies.yml: python engine/vendor/nerdytips_strategies.py ran clean in 37s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategies.yml: python -m engine.vendor.nerdytips_strategies ran clean in 112s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategies.yml: python engine/vendor/daily_master.py /home/runner/work/Predict2u/Predict2u ran clean in 1s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-strategies.yml: python engine/vendor/share_cards.py /home/runner/work/Predict2u/Predict2u ran clean in 0s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-settle.yml: python -m engine.pipeline settle ran clean in 32s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-refresh.yml: python engine/vendor/news_hub.py /home/runner/work/Predict2u/Predict2u ran clean in 2s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-refresh.yml: python engine/vendor/live_scores.py /home/runner/work/Predict2u/Predict2u ran clean in 0s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-refresh.yml: python engine/vendor/staked_feed.py /home/runner/work/Predict2u/Predict2u ran clean in 4s"
+  },
+  {
+   "area": "strategies",
+   "msg": "engine-hot-picks.yml: python -m engine.pipeline hot --dry-run ran clean in 0s"
+  }
+ ],
+ "sections": {
+  "codes": {
+   "checked": 388,
+   "dead": [
+    {
+     "book": "sportybet",
+     "code": "E0KUS4",
+     "reason": "every match has started",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "footballcom",
+     "code": "E0KUS4",
+     "reason": "every match has started",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "betika",
+     "code": "Mhb37w",
+     "reason": "Sorry. The picks in this betslip are unavailable.",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "betpawa",
+     "code": "6XXI5N5",
+     "reason": "every match has started",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "sportybet",
+     "code": "9XHE3M",
+     "reason": "every match has started",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "footballcom",
+     "code": "9XHE3M",
+     "reason": "every match has started",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "betika",
+     "code": "sRqFEP",
+     "reason": "Sorry. The picks in this betslip are unavailable.",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "betpawa",
+     "code": "CFHCB45",
+     "reason": "every match has started",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "sportybet",
+     "code": "9ZPCPM",
+     "reason": "every match has started",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "footballcom",
+     "code": "9ZPCPM",
+     "reason": "every match has started",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "betika",
+     "code": "7WXVTB",
+     "reason": "Sorry. The picks in this betslip are unavailable.",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "betpawa",
+     "code": "J2KOOK2",
+     "reason": "every match has started",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "sportybet",
+     "code": "A2FNUL",
+     "reason": "every match has started",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "footballcom",
+     "code": "A2FNUL",
+     "reason": "every match has started",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "betika",
+     "code": "MNk7mv",
+     "reason": "Sorry. The picks in this betslip are unavailable.",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "betpawa",
+     "code": "68U6H6Y",
+     "reason": "every match has started",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "sportybet",
+     "code": "F9NBLB",
+     "reason": "every match has started",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "footballcom",
+     "code": "F9NBLB",
+     "reason": "every match has started",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "betika",
+     "code": "pumtkp",
+     "reason": "Sorry. The picks in this betslip are unavailable.",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "betpawa",
+     "code": "I3EXVTA",
+     "reason": "every match has started",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "sportybet",
+     "code": "AMPHMH",
+     "reason": "every match has started",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "footballcom",
+     "code": "AMPHMH",
+     "reason": "every match has started",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "betika",
+     "code": "XLRhgD",
+     "reason": "Sorry. The picks in this betslip are unavailable.",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "betpawa",
+     "code": "9BGJEJY",
+     "reason": "every match has started",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "sportybet",
+     "code": "AEBLWX",
+     "reason": "every match has started",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "footballcom",
+     "code": "AEBLWX",
+     "reason": "every match has started",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "betika",
+     "code": "qTXtJu",
+     "reason": "Sorry. The picks in this betslip are unavailable.",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "betpawa",
+     "code": "DZ9Z3DK",
+     "reason": "every match has started",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "betika",
+     "code": "dBDZ9a",
+     "reason": "Sorry. The picks in this betslip are unavailable.",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "sportybet",
+     "code": "E6ZSKT",
+     "reason": "every match has started",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "footballcom",
+     "code": "E6ZSKT",
+     "reason": "every match has started",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "betika",
+     "code": "qp2S2n",
+     "reason": "Sorry. The picks in this betslip are unavailable.",
+     "in": [
+      "hot-picks.json"
+     ]
+    },
+    {
+     "book": "betpawa",
+     "code": "HY7CUU3",
+     "reason": "every match has started",
+     "in": [
+      "hot-picks.json"
+     ]
+    }
+   ],
+   "uncheckable": []
+  },
+  "strategies": [
+   {
+    "workflow": "engine-daily.yml",
+    "command": "-m engine.pipeline daily --dry-run",
+    "rc": 0,
+    "seconds": 78,
+    "errors": [],
+    "tail": "12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/inject_exempt.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u\npublish: free-codes mode (p2u-free-mode.js) — nothing flagged or sealed; unsealed nothing\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/high_odds.py /home/runner/work/Predict2u/Predict2u --settle-only\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/split_codes.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/daily_master.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u\npublish: free-codes mode (p2u-free-mode.js) — nothing flagged or sealed; unsealed nothing\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/share_cards.py /home/runner/work/Predict2u/Predict2u\npublish: Telegram skipped (TELEGRAM_BOT_TOKEN / TELEGRAM_CHANNEL not set)\n"
+   },
+   {
+    "workflow": "engine-fav-leagues.yml",
+    "command": "-m engine.pipeline fav --dry-run",
+    "rc": 0,
+    "seconds": 47,
+    "errors": [],
+    "tail": "e-fav\",\"kept\":68,\"known\":0,\"script\":\"scan\",\"threshold\":300,\"topDropped\":{},\"ts\":\"2026-11-21T18:02:54Z\"}\n618 /home/runner/work/Predict2u/Predict2u/engine/data/sb.json\n58 leagues 21 picks [('Safe slip (low risk)', 2.19, 5, None), ('Medium slip (balanced)', 7.9, 10, None), ('Main banker: Banker code of the day', 27.43, 19, None)]\nfavDayMaster 2026-11-22 legs 16 of 16 odds 17.35 parts 1 codes {}\nfavDayMaster 2026-11-23 legs 5 of 5 odds 2.56 parts 1 codes {}\nfavLeagues 2026-11-22 leagues 58 picks 68 {'2026-11-21': {'sportybet': ['A4AJ7F', 'DTY4UG'], 'footballcom': ['A4AJ7F', 'DTY4UG'], 'msport': ['B3M9QK8', 'B3M9QWQ'], 'betika': ['fuc8tk', 'EsTdH7'], 'betpawa': ['TLFYOXH', 'SGA1EAD']}, '2026-11-22': {'sportybet': ['E2CSER', 'BA9MDC'], 'footballcom': ['E2CSER', 'BA9MDC'], 'msport': ['B3M9R41', 'B3M9RA2'], 'betika': ['6E3U3Z', 'L7NJYT'], 'betpawa': ['DK0YCPH', 'H7O90CY']}, '2026-11-23': {}}\nfavLeagues: dry run, home-picks.json not written\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/scan.py\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/run.py 2026-11-22 --days 2\ninbox: kept 48 extra picks, dropped 12, combined slips 4\ncollect: /home/runner/work/Predict2u/Predict2u/engine/data/2026-11-22.json picks 68\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/fav_leagues.py /home/runner/work/Predict2u/Predict2u --dry-run\n"
+   },
+   {
+    "workflow": "engine-morning.yml",
+    "command": "-m engine.pipeline morning --dry-run",
+    "rc": 0,
+    "seconds": 39,
+    "errors": [],
+    "tail": "% (edge 9%); table 2 v 7/30\n  PICK 23:00 Club Santos Laguna v Club Leon | Double Chance Home or Draw @ 1.45 ev=5.15% p=73% — season+form+h2h; λ 1.77-1.27; model 73% vs implied 69% (edge 5%); table 5 v 9/18\n  PICK 23:00 Unan Managua v Indigenas de Matagalpa FC | Away O/U Under 1.5 @ 1.58 ev=11.43% p=71% — season+form+h2h; λ 1.84-1.08; model 71% vs implied 63% (edge 11%); table 4 v 9/10\n  PICK 23:00 Inter Playa Del Carmen v Cordobes FC | Away O/U Over 0.5 @ 1.38 ev=11.66% p=81% — season+form; λ 1.72-1.66; model 81% vs implied 72% (edge 12%); table 8 v 6/9\n  skip CD Estrella Roja v Lobos UPNFM: insufficient form/stats\n  skip Universidad de Concepcion v Nublense: no 1.20–1.60 market with an edge\n  skip Puntarenas FC v CS Herediano: no 1.20–1.60 market with an edge\n  PICK 23:30 Oriente Petrolero v Independiente Petrolero | Away O/U Over 0.5 @ 1.55 ev=15.89% p=75% — season+form+h2h; λ 1.71-1.38; model 75% vs implied 65% (edge 16%); table 5 v 11/16\ndry-run slip 1: 5 legs, 5.82 odds\ndry-run slip 2: 5 legs, 6.06 odds\ndry-run slip 3: 5 legs, 5.76 odds\ndry-run slip 4: 5 legs, 6.96 odds\ndry-run slip 5: 5 legs, 6.24 odds\ndry-run slip 6: 5 legs, 6.2 odds\ndry-run slip 7: 5 legs, 6.56 odds\ndry-run slip 8: 2 legs, 2.25 odds\ndry-run master: 30 legs, 54722.58 odds\npublish: dry-run, not writing home-picks.json\n{\n  \"picked\": 37,\n  \"slips\": 0,\n  \"rejected\": 58\n}\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/sb_morning_markets.py --dry-run\n"
+   },
+   {
+    "workflow": "engine-shield.yml",
+    "command": "-m engine.pipeline shield --dry-run",
+    "rc": 0,
+    "seconds": 173,
+    "errors": [],
+    "tail": "12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/inject_exempt.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u\npublish: free-codes mode (p2u-free-mode.js) — nothing flagged or sealed; unsealed nothing\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/high_odds.py /home/runner/work/Predict2u/Predict2u --settle-only\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/split_codes.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/daily_master.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u\npublish: free-codes mode (p2u-free-mode.js) — nothing flagged or sealed; unsealed nothing\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/share_cards.py /home/runner/work/Predict2u/Predict2u\npublish: Telegram skipped (TELEGRAM_BOT_TOKEN / TELEGRAM_CHANNEL not set)\n"
+   },
+   {
+    "workflow": "engine-m1m2.yml",
+    "command": "-m engine.vendor.m1m2",
+    "rc": 0,
+    "seconds": 68,
+    "errors": [],
+    "tail": "busy-day: {\"busy\":false,\"capable\":0,\"date\":\"2026-11-21\",\"dropped\":0,\"fixtures\":82,\"fixturesUsed\":123,\"input\":93,\"job\":\"m1m2\",\"kept\":93,\"known\":0,\"script\":\"m1m2\",\"threshold\":300,\"topDropped\":{},\"ts\":\"2026-11-21T18:07:10Z\"}\nbusy-day: {\"busy\":true,\"capable\":15,\"date\":\"2026-11-22\",\"dropped\":621,\"fixtures\":547,\"fixturesUsed\":547,\"input\":701,\"job\":\"m1m2\",\"kept\":80,\"known\":65,\"script\":\"m1m2\",\"threshold\":300,\"topDropped\":{\"France - U19 National\":10,\"Greece - Gamma Ethniki\":10,\"Spain - Segunda Federacion\":10,\"Spain - U19 Division de Honor Juvenil\":10,\"Turkiye Amateur - 2. Lig\":10},\"ts\":\"2026-11-21T18:07:10Z\"}\nbusy-day: {\"busy\":false,\"capable\":0,\"date\":\"2026-11-23\",\"dropped\":0,\"fixtures\":57,\"fixturesUsed\":57,\"input\":68,\"job\":\"m1m2\",\"kept\":68,\"known\":0,\"script\":\"m1m2\",\"threshold\":300,\"topDropped\":{},\"ts\":\"2026-11-21T18:07:10Z\"}\nm1m2: 330 events in 4 days\nm1m2 raw {'M1': 16, 'M2': 7, 'T2': 15}\nm1m2 kept {'M1': 11, 'M2': 5, 'MIXED': 13} dropped 9\nM1 no bookmaker returned a code M1 Team or Over 2.5\nM2 no bookmaker returned a code M2 Double Chance & Over 1.5\nMIXED no bookmaker returned a code M1/M2 team 2+\n{\n \"counts\": {\n  \"M1\": 11,\n  \"M2\": 5,\n  \"MIXED\": 13\n },\n \"slips\": []\n}\n"
+   },
+   {
+    "workflow": "engine-m1m2.yml",
+    "command": "-m engine.vendor.safe50",
+    "rc": 0,
+    "seconds": 52,
+    "errors": [],
+    "tail": "busy-day: {\"busy\":false,\"capable\":0,\"date\":\"2026-11-21\",\"dropped\":0,\"fixtures\":82,\"fixturesUsed\":123,\"input\":93,\"job\":\"safe50\",\"kept\":93,\"known\":0,\"script\":\"safe50\",\"threshold\":300,\"topDropped\":{},\"ts\":\"2026-11-21T18:08:21Z\"}\nbusy-day: {\"busy\":true,\"capable\":15,\"date\":\"2026-11-22\",\"dropped\":622,\"fixtures\":548,\"fixturesUsed\":548,\"input\":702,\"job\":\"safe50\",\"kept\":80,\"known\":65,\"script\":\"safe50\",\"threshold\":300,\"topDropped\":{\"France - U19 National\":10,\"Greece - Gamma Ethniki\":10,\"Spain - Segunda Federacion\":10,\"Spain - U19 Division de Honor Juvenil\":10,\"Turkiye Amateur - 2. Lig\":10},\"ts\":\"2026-11-21T18:08:21Z\"}\nbusy-day: {\"busy\":false,\"capable\":0,\"date\":\"2026-11-23\",\"dropped\":0,\"fixtures\":57,\"fixturesUsed\":57,\"input\":68,\"job\":\"safe50\",\"kept\":68,\"known\":0,\"script\":\"safe50\",\"threshold\":300,\"topDropped\":{},\"ts\":\"2026-11-21T18:08:21Z\"}\nsafe50: 330 events in 4 days\nsafe50 priced 0\nsafe50 kept 0 dropped 0 checked 0\nsafe50 no code for Safest market\n{\n \"kept\": 0,\n \"slips\": []\n}\n"
+   },
+   {
+    "workflow": "engine-m1m2.yml",
+    "command": "engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u",
+    "rc": 0,
+    "seconds": 0,
+    "errors": [],
+    "tail": "home-picks unchanged\npicks.json unchanged\nhot-picks pruned 2 slips 2 picks\nhigh_odds unchanged\nremoved 0 changed\n"
+   },
+   {
+    "workflow": "engine-strategies.yml",
+    "command": "-m engine.vendor.three_strategies 4",
+    "rc": 0,
+    "seconds": 53,
+    "errors": [],
+    "tail": "busy-day: {\"busy\":false,\"capable\":0,\"date\":\"2026-11-21\",\"dropped\":0,\"fixtures\":82,\"fixturesUsed\":123,\"input\":93,\"job\":\"three_strategies\",\"kept\":93,\"known\":0,\"script\":\"three_strategies\",\"threshold\":300,\"topDropped\":{},\"ts\":\"2026-11-21T18:09:12Z\"}\nbusy-day: {\"busy\":true,\"capable\":15,\"date\":\"2026-11-22\",\"dropped\":622,\"fixtures\":548,\"fixturesUsed\":548,\"input\":702,\"job\":\"three_strategies\",\"kept\":80,\"known\":65,\"script\":\"three_strategies\",\"threshold\":300,\"topDropped\":{\"France - U19 National\":10,\"Greece - Gamma Ethniki\":10,\"Spain - Segunda Federacion\":10,\"Spain - U19 Division de Honor Juvenil\":10,\"Turkiye Amateur - 2. Lig\":10},\"ts\":\"2026-11-21T18:09:12Z\"}\nbusy-day: {\"busy\":false,\"capable\":0,\"date\":\"2026-11-23\",\"dropped\":0,\"fixtures\":57,\"fixturesUsed\":57,\"input\":68,\"job\":\"three_strategies\",\"kept\":68,\"known\":0,\"script\":\"three_strategies\",\"threshold\":300,\"topDropped\":{},\"ts\":\"2026-11-21T18:09:12Z\"}\nthree_strategies: scanning 330 events (days=4)\nthree_strategies diag {'events': 0, 'no_data': 330, 'raw': 0, 'gated': 0, 'dropped': 0}\npool 0 by strategy: {'o25-2of3': 0, 'top3-form-win': 0, 'top3-form-dnb': 0, 'bottom3-form-dc': 0, 'weaker-score': 0, 'ah-minus1-screen': 0}\nwrote []\n"
+   },
+   {
+    "workflow": "engine-strategies.yml",
+    "command": "engine/vendor/three_strategies.py 4",
+    "rc": 0,
+    "seconds": 57,
+    "errors": [],
+    "tail": "busy-day: {\"busy\":false,\"capable\":0,\"date\":\"2026-11-21\",\"dropped\":0,\"fixtures\":82,\"fixturesUsed\":123,\"input\":93,\"job\":\"three_strategies\",\"kept\":93,\"known\":0,\"script\":\"three_strategies\",\"threshold\":300,\"topDropped\":{},\"ts\":\"2026-11-21T18:10:10Z\"}\nbusy-day: {\"busy\":true,\"capable\":15,\"date\":\"2026-11-22\",\"dropped\":622,\"fixtures\":548,\"fixturesUsed\":548,\"input\":702,\"job\":\"three_strategies\",\"kept\":80,\"known\":65,\"script\":\"three_strategies\",\"threshold\":300,\"topDropped\":{\"France - U19 National\":10,\"Greece - Gamma Ethniki\":10,\"Spain - Segunda Federacion\":10,\"Spain - U19 Division de Honor Juvenil\":10,\"Turkiye Amateur - 2. Lig\":10},\"ts\":\"2026-11-21T18:10:10Z\"}\nbusy-day: {\"busy\":false,\"capable\":0,\"date\":\"2026-11-23\",\"dropped\":0,\"fixtures\":57,\"fixturesUsed\":57,\"input\":68,\"job\":\"three_strategies\",\"kept\":68,\"known\":0,\"script\":\"three_strategies\",\"threshold\":300,\"topDropped\":{},\"ts\":\"2026-11-21T18:10:10Z\"}\nthree_strategies: scanning 330 events (days=4)\nthree_strategies diag {'events': 0, 'no_data': 330, 'raw': 0, 'gated': 0, 'dropped': 0}\npool 0 by strategy: {'o25-2of3': 0, 'top3-form-win': 0, 'top3-form-dnb': 0, 'bottom3-form-dc': 0, 'weaker-score': 0, 'ah-minus1-screen': 0}\nwrote []\n"
+   },
+   {
+    "workflow": "engine-strategies.yml",
+    "command": "engine/vendor/verzzify_banker.py",
+    "rc": 0,
+    "seconds": 47,
+    "errors": [],
+    "tail": "busy-day: {\"busy\":false,\"capable\":0,\"date\":\"2026-11-21\",\"dropped\":0,\"fixtures\":82,\"fixturesUsed\":123,\"input\":58,\"job\":\"verzzify_banker\",\"kept\":58,\"known\":0,\"script\":\"verzzify_banker\",\"threshold\":300,\"topDropped\":{},\"ts\":\"2026-11-21T18:10:58Z\"}\nbusy-day: {\"busy\":true,\"capable\":15,\"date\":\"2026-11-22\",\"dropped\":391,\"fixtures\":548,\"fixturesUsed\":548,\"input\":471,\"job\":\"verzzify_banker\",\"kept\":80,\"known\":65,\"script\":\"verzzify_banker\",\"threshold\":300,\"topDropped\":{\"Italy - Serie D, Group D\":9,\"Italy - Serie D, Group E\":9,\"Italy - Serie D, Group F\":9,\"Italy - Serie D, Group G\":9,\"Spain - Segunda Federacion\":10},\"ts\":\"2026-11-21T18:10:58Z\"}\nbusy-day: {\"busy\":false,\"capable\":0,\"date\":\"2026-11-23\",\"dropped\":0,\"fixtures\":57,\"fixturesUsed\":57,\"input\":55,\"job\":\"verzzify_banker\",\"kept\":55,\"known\":0,\"script\":\"verzzify_banker\",\"threshold\":300,\"topDropped\":{},\"ts\":\"2026-11-21T18:10:58Z\"}\nverzzify scan added 54\nverzzify: candidates 10 packed 0 @0 (dropped 44)\nverzzify: no banker today (would be under 25 without padding)\n"
+   },
+   {
+    "workflow": "engine-strategies.yml",
+    "command": "engine/vendor/nerdytips_strategies.py",
+    "rc": 0,
+    "seconds": 37,
+    "errors": [],
+    "tail": "busy-day: {\"busy\":false,\"capable\":0,\"date\":\"2026-11-21\",\"dropped\":0,\"fixtures\":82,\"fixturesUsed\":123,\"input\":32,\"job\":\"nerdytips_strategies\",\"kept\":32,\"known\":0,\"script\":\"nerdytips_strategies\",\"threshold\":300,\"topDropped\":{},\"ts\":\"2026-11-21T18:11:37Z\"}\nbusy-day: {\"busy\":true,\"capable\":8,\"date\":\"2026-11-22\",\"dropped\":135,\"fixtures\":548,\"fixturesUsed\":548,\"input\":185,\"job\":\"nerdytips_strategies\",\"kept\":50,\"known\":42,\"script\":\"nerdytips_strategies\",\"threshold\":300,\"topDropped\":{\"Italy - Serie D, Group D\":9,\"Italy - Serie D, Group E\":9,\"Italy - Serie D, Group F\":9,\"Italy - Serie D, Group G\":9,\"Italy - Serie D, Group H\":9},\"ts\":\"2026-11-21T18:11:37Z\"}\nnerdytips: 0 picks -> /home/runner/work/Predict2u/Predict2u/engine/inbox/nerdytips-strategies.json ({'streak_2plus': 0, 'team_win_lt_150': 0, 'draw_rules': 0, 'heavy_home_fav': 0, 'team_total_o25': 0, 'exclusive_o25': 0, 'betmines_trends': 0})\n"
+   },
+   {
+    "workflow": "engine-strategies.yml",
+    "command": "-m engine.vendor.nerdytips_strategies",
+    "rc": 0,
+    "seconds": 112,
+    "errors": [],
+    "tail": "busy-day: {\"busy\":false,\"capable\":0,\"date\":\"2026-11-21\",\"dropped\":0,\"fixtures\":82,\"fixturesUsed\":123,\"input\":32,\"job\":\"nerdytips_strategies\",\"kept\":32,\"known\":0,\"script\":\"nerdytips_strategies\",\"threshold\":300,\"topDropped\":{},\"ts\":\"2026-11-21T18:12:15Z\"}\nbusy-day: {\"busy\":true,\"capable\":8,\"date\":\"2026-11-22\",\"dropped\":135,\"fixtures\":548,\"fixturesUsed\":548,\"input\":185,\"job\":\"nerdytips_strategies\",\"kept\":50,\"known\":42,\"script\":\"nerdytips_strategies\",\"threshold\":300,\"topDropped\":{\"Italy - Serie D, Group D\":9,\"Italy - Serie D, Group E\":9,\"Italy - Serie D, Group F\":9,\"Italy - Serie D, Group G\":9,\"Italy - Serie D, Group H\":9},\"ts\":\"2026-11-21T18:12:15Z\"}\nnerdytips: 58 picks -> /home/runner/work/Predict2u/Predict2u/engine/inbox/nerdytips-strategies.json ({'streak_2plus': 10, 'team_win_lt_150': 0, 'draw_rules': 48, 'heavy_home_fav': 0, 'team_total_o25': 0, 'exclusive_o25': 0, 'betmines_trends': 0})\n"
+   },
+   {
+    "workflow": "engine-strategies.yml",
+    "command": "engine/vendor/daily_master.py /home/runner/work/Predict2u/Predict2u",
+    "rc": 0,
+    "seconds": 1,
+    "errors": [],
+    "tail": "daily master: [('AJ8D6U', '2026-11-07', 'lost', '47/77')]\n"
+   },
+   {
+    "workflow": "engine-strategies.yml",
+    "command": "engine/vendor/share_cards.py /home/runner/work/Predict2u/Predict2u",
+    "rc": 0,
+    "seconds": 0,
+    "errors": [],
+    "tail": "share cards 183\n"
+   },
+   {
+    "workflow": "engine-settle.yml",
+    "command": "-m engine.pipeline settle",
+    "rc": 0,
+    "seconds": 32,
+    "errors": [],
+    "tail": "ips 43 picks\npicks.json unchanged\nhot-picks unchanged\nhigh_odds pruned 10 active 92 history\nremoved 0 changed\nrecord wrote settled_slips 357 winRate 10.6 roi -29.3 pending 377 ledger 1630 -> /home/runner/work/Predict2u/Predict2u/engine/data/code-ledger.json\nsettle home-picks.json: 82 updates\nsettle picks.json: 0 updates\nsettle hot-picks.json: 0 updates\nsettle high_odds.json: 489 updates\nsettle staked-codes.json: 1080 updates\nsettle 2026-11-22.json: 48 updates\n{\"pending_looked_up\": 684, \"updated\": 1699, \"events\": 572}\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/inject_exempt.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/high_odds.py /home/runner/work/Predict2u/Predict2u --settle-only\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/split_codes.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/daily_master.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/prune_live.py /home/runner/work/Predict2u/Predict2u\n+ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python /home/runner/work/Predict2u/Predict2u/engine/vendor/build_record.py /home/runner/work/Predict2u/Predict2u\nfavGuard: ok \n"
+   },
+   {
+    "workflow": "engine-refresh.yml",
+    "command": "engine/vendor/news_hub.py /home/runner/work/Predict2u/Predict2u",
+    "rc": 0,
+    "seconds": 2,
+    "errors": [],
+    "tail": "previews 11 injuries 10 transfers 14 fixtures 16 codes 50 record {'won': 0, 'lost': 13, 'settled': 13, 'pending': 37, 'winRate': 0.0}\nfeed fail ESPN https://www.espn.com/espn/rss/soccer/news no element found: line 1, column 0\n"
+   },
+   {
+    "workflow": "engine-refresh.yml",
+    "command": "engine/vendor/live_scores.py /home/runner/work/Predict2u/Predict2u",
+    "rc": 0,
+    "seconds": 0,
+    "errors": [],
+    "tail": "live-scores 39\n"
+   },
+   {
+    "workflow": "engine-refresh.yml",
+    "command": "engine/vendor/staked_feed.py /home/runner/work/Predict2u/Predict2u",
+    "rc": 0,
+    "seconds": 4,
+    "errors": [],
+    "tail": "72 codes 72 with legs\n"
+   },
+   {
+    "workflow": "engine-hot-picks.yml",
+    "command": "-m engine.pipeline hot --dry-run",
+    "rc": 0,
+    "seconds": 0,
+    "errors": [],
+    "tail": "hot: dry-run, skipped the Code Hub scan and booking\n"
+   }
+  ]
+ }
+}
