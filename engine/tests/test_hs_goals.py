@@ -143,3 +143,19 @@ def test_wired_daily_before_publish_and_master_priority():
     watchdog = (ROOT / ".github" / "scripts" / "p2u_watchdog.py").read_text()
     assert 'wf="engine-hs-goals.yml", at="21:30", job="hs15"' in watchdog
     assert "High-Scoring O1.5/O2.5" in (ROOT / "HANDOFF.md").read_text()
+
+
+def test_published_codes_block_a_second_booking(tmp_path):
+    import json
+    (tmp_path / "hot-picks.json").write_text(json.dumps({"modelSlips": [
+        {"strategy": "hs15-o15", "date": "2026-11-22", "codes": {"sportybet": [{"code": "AB12CD"}]}},
+        {"strategy": "ah1-x", "date": "2026-11-22", "codes": {"sportybet": [{"code": "ZZ"}]}}]}))
+    assert hs.published_codes(tmp_path, "2026-11-22") == ["AB12CD"]
+    assert hs.published_codes(tmp_path, "2026-11-23") == []
+    r = hs.run(__import__("datetime").date(2026, 11, 22), tmp_path)
+    assert r == {"skipped": True}
+
+
+def test_build_carries_live_hs15_slips_forward():
+    src = (ROOT / "engine/vendor/build.py").read_text()
+    assert "carry hs15 slips forward from the live picks.json" in src and "sl.get('floorExempt')" in src

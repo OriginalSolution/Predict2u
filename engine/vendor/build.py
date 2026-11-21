@@ -127,6 +127,17 @@ for _day in days:
             _s = dict(_s, floorExempt=True)
             slips.append(_s); seen[_c] = _s
     except Exception as e: print('hs15 slips skipped', e, file=sys.stderr)
+# The record only lives on the runner that booked, so also carry hs15 slips forward from the live picks.json.
+try:
+    for _s in json.load(open(os.path.join(REPO, 'picks.json'))).get('slips') or []:
+        if not _s.get('hsId'): continue
+        _c = (_s.get('codes') or {}).get('sportybet')
+        _L = [x for x in (_s.get('legs') or []) if x.get('date') in days]
+        if not _c or _c in seen or not _L or len(_L) != len(_s.get('legs') or []): continue
+        _s = {k: v for k, v in _s.items() if k not in ('dates', 'date', 'firstKickoff', 'totalOdds', 'combined', 'rating', 'grade')}
+        _s['floorExempt'] = True
+        slips.append(_s); seen[_c] = _s
+except Exception as e: print('hs15 live slips skipped', e, file=sys.stderr)
 _rday = os.path.basename(_rf)[:10] if '_rf' in dir() and _rf else today.isoformat()
 for sl in slips:
     L = sl['legs']; L.sort(key=lambda x: x['kickoff'] or '')

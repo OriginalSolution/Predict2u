@@ -290,6 +290,19 @@ def upsert_bankers(repo: Path, slips: list[dict], day: str) -> None:
     path.write_text(json.dumps(doc, separators=(",", ":"), ensure_ascii=False))
 
 
+def published_codes(repo: Path, ds: str) -> list[str]:
+    """Codes this strategy already has live for the day (records do not survive between runners)."""
+    try:
+        doc = json.loads((repo / "hot-picks.json").read_text())
+    except Exception:
+        return []
+    out = []
+    for s in doc.get("modelSlips") or []:
+        if str(s.get("strategy", "")).startswith(KIND + "-") and s.get("date") == ds:
+            out += [c.get("code") for c in ((s.get("codes") or {}).get("sportybet") or []) if c.get("code")]
+    return out
+
+
 def run(day: dt.date, repo: Path, dry_run: bool = False, force: bool = False) -> dict:
     ds = day.isoformat()
     cfg = load_config()
@@ -301,6 +314,9 @@ def run(day: dt.date, repo: Path, dry_run: bool = False, force: bool = False) ->
                 return {"skipped": True}
         except Exception:
             pass
+    if not dry_run and not force and published_codes(repo, ds):
+        print(json.dumps({"hs_goals": ds, "skipped": "codes already published for this day (use --force)"}))
+        return {"skipped": True}
     usage = lib.load_usage(repo, ds)
     rows = load_rows(day)
     found = select(rows, {}, usage, cfg)
