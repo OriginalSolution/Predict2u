@@ -128,7 +128,7 @@ def test_wiring_names_master_priority_and_site_sections():
     assert lib.PUBLIC_NAME["mo25"] == "Match Over 2.5"
     s = mp.STRENGTH
     assert s.index("rev-u45-draw") < s.index("ttw") < s.index("form80") < s.index("mo25")
-    assert sr.ALL_KINDS[-3:] == ("ttw", "form80", "mo25")
+    assert sr.ALL_KINDS[-4:] == ("ttw", "form80", "mo25", "ah1")  # AH -1 Favourite books last
     wf = (ROOT / ".github/workflows/engine-sure80.yml").read_text()
     for kind in t.KINDS:
         assert f"engine/data/strategy-codes/{kind}" in wf

@@ -40,6 +40,7 @@ PUBLIC_NAME = {
     "ttw": "Team To Win",
     "form80": "80% Form",
     "mo25": "Match Over 2.5",
+    "ah1": "AH -1 Favourite",
 }
 
 YOUTH_RE = re.compile(

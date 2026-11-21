@@ -247,7 +247,7 @@ Dry run: `python engine/vendor/master_pipeline.py --dry-run --date D`; `--simula
    2-codes-per-match usage file (the spec books each match on several derived codes).
 
 
-### 5.6 Team To Win, 80% Form, Match Over 2.5 (22:00, same job as §5.4)
+### 5.6 Team To Win, 80% Form, Match Over 2.5 (22:00, same job as §5.4; AH -1 Favourite §5.8 books after them)
 `engine/vendor/night_trio.py`, called from `sure80_reverse.run` after 80% Sure / Reverse U4.5 / + Draw, so the run-once
 gate (`--job sure80`) and watchdog product `sure80-reverse` cover all six strategies and nothing is double-booked.
 Tests: `engine/tests/test_night_trio.py`. Spec from Betting Strategies (NerdyTips), 21 Nov 2026.
@@ -309,6 +309,29 @@ amateur, regional, women's, youth (U17–U23, Primavera, Juvenil…) and reserve
 - **Switches:** `P2U_BUSY_FILTER=0` disables; `P2U_BUSY_THRESHOLD=<n>` overrides the threshold; `P2U_BUSY_LOG_DIR`
   redirects the log (tests). Dry run (no log, no booking): `python engine/vendor/busy_day.py [YYYY-MM-DD ...]`.
 - **Tests:** `engine/tests/test_busy_day.py`.
+
+### 5.8 AH -1 Favourite (22:00, same job as §5.4, after the §5.6 trio)
+`engine/vendor/ah1_fav.py` (kind `ah1`, public name "AH -1 Favourite"), called from `sure80_reverse.run` after Match
+Over 2.5, so the `sure80` run-once gate, the `sure80-reverse` watchdog product and the shared 2-codes-per-match usage
+cover it. Spec: Riddim Boss via Betting Strategies (NerdyTips), 21 Nov 2026; tested by hand as SportyBet `8H3ZTC`
+(12 legs; the module picks the same market on all 12). Tests: `engine/tests/test_ah1_fav.py`.
+Dry run: `python engine/vendor/sure80_reverse.py --dry-run [--date D] --only ah1`.
+- **Filter:** strong team = 1X2 favourite. Its SportyBet full-time Asian Handicap -1 (market 16: `hcp=-1` "Home (-1.0)"
+  or `hcp=1` "Away (-1.0)") must be **strictly below 1.90**; no AH -1 listed → skip. SportyBet only. The upcoming feed
+  (now fetched with market 16) lists only some AH lines, so when -1 is missing and the favourite's 1X2 is ≤ 2.20 the
+  full event is read once (a fetch shortcut only; a 2.20 favourite is nowhere near AH -1 < 1.90).
+- **Market by the weaker team** (Sportradar last 10 competitive games, friendlies excluded; season goals-for per game
+  from the league table, or the last-10 average when the teams share no table):
+  scores often (scored in 6+ of last 10, OR weak team Over 0.5 < 1.50, OR goals-for ≥ 1.2/game) → **match Over 2.5**;
+  else rarely scores (scored in ≤ 4 of last 10 OR < 0.9/game) AND strong team scored 2+ in 6+ of its last 10 →
+  **strong team Over 1.5**; otherwise → **strong team to win**.
+- **Price floor 1.20:** a chosen market under 1.20 (or not offered) steps up the ladder win → team Over 1.5 → match
+  Over 2.5; nothing at 1.20+ → match dropped. Over 2.5 is the top rung, so it never steps down.
+- **Standing rules:** busy-day league filter (§5.7, at the feed), top-5 v top-5 / bottom-3 v bottom-3 dropped when both
+  share a table, one pick per match, ≤25 legs and ≥25 odds per code (`night_trio.split_many`), never padded.
+  Ranked by AH -1 price (strongest favourite first).
+- **Site / master:** section `#sec-ah1` on `high-odds/index.html` (`origin: strategy-ah1`); in the master pipeline's
+  `STRENGTH` list right after `mo25`. Records: `engine/data/strategy-codes/ah1/<date>.json` (committed by the job).
 
 ## 6. Services and accounts
 
