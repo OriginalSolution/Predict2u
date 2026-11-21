@@ -135,6 +135,7 @@ history if any job emptied it. It runs after every engine job and never books.
 | 07:30 | `engine-health.yml` | heal only | Post-run check of night/morning jobs |
 | 18:00 | `engine-health.yml` | no | **Preflight**: compile/import every module, dry-run every strategy for tomorrow in a no-write sandbox, site checks |
 | 21:00 | `engine-shield.yml` | yes | DC Shield Goals and AH −1 scan |
+| 21:30 | `engine-hs-goals.yml` | yes | High-Scoring O1.5/O2.5 for the next day: Over 1.5 code, Over 2.5 code, master (Hot + Bankers tabs, §5.9) |
 | 21:45 | `engine-m1m2.yml` | yes | M1/M2 and Safest market (Hot page) |
 | 22:00 | `engine-sure80.yml` | yes | 80% Sure, Reverse U4.5, Reverse U4.5 + Draw, then Team To Win, 80% Form, Match Over 2.5 for the next day (SportyBet GH, §5.4, §5.6) |
 | 22:00 | `engine-daily.yml` | yes | Daily collect, book, publish (home code, slips, **Hot Picks**, high odds, three strategies, Verzzify, daily master) |
@@ -332,6 +333,31 @@ Dry run: `python engine/vendor/sure80_reverse.py --dry-run [--date D] --only ah1
   Ranked by AH -1 price (strongest favourite first).
 - **Site / master:** section `#sec-ah1` on `high-odds/index.html` (`origin: strategy-ah1`); in the master pipeline's
   `STRENGTH` list right after `mo25`. Records: `engine/data/strategy-codes/ah1/<date>.json` (committed by the job).
+
+### 5.9 High-Scoring O1.5/O2.5 (21:30, next day; Riddim Boss, 21 Nov 2026)
+`engine/vendor/hs_goals.py` (kind `hs15`), workflow `engine-hs-goals.yml` (ticker slot 21:30, gate `--job hs15`,
+watchdog product `hs-goals`). Config: `engine/hs_goals.json`. Tests: `engine/tests/test_hs_goals.py`.
+Owner's words: "Teams that concede and score a lot ... Avg goal scored and conceded should not be less than 1.5 ...
+odds for over 1.5 not more than 1.30 ... less than 1.20 push to over 2.5 but below 1.55 ... reject teams outside".
+Run by hand: Actions → engine-hs-goals → Run workflow (`date`, `dry_run`, `force`), or
+`python engine/vendor/hs_goals.py --date D [--dry-run] [--force]`.
+- **Teams (both):** average goals **scored ≥ 1.5** AND average goals **conceded ≥ 1.5** per game. Each average is the
+  mean of two windows: the Sportradar season table (goalsFor/goalsAgainst ÷ games, needs ≥3 games and both teams in
+  the same table) and the team's last 10 competitive games (friendlies out, needs ≥5). If only one window exists it is
+  used alone. `combine` = `mean` (default) | `both` (each window must pass) | `season` | `last10`.
+- **Market:** match Over 1.5 at **1.20–1.30** → Over 1.5. Over 1.5 **below 1.20** → match Over 2.5, only if Over 2.5 is
+  **below 1.55**. Everything else is rejected (Over 1.5 above 1.30, or below 1.20 with no Over 2.5 under 1.55).
+- **Standing rules:** busy-day league filter (§5.7, at the feed), one pick per match, the shared 2-codes-per-match
+  usage, ≤25 legs per code (bigger pools split into parts), never padded, at least 2 legs per code.
+- **Codes (SportyBet GH, each read back from the share endpoint before publishing):** an Over 1.5 code, an Over 2.5
+  code and a **Master** of all qualifying legs. A match with only one free usage slot goes on the master only. These
+  are low-odds banker codes, so the 25-odds floor does not apply (`floorExempt`).
+- **Published:** Hot tab (`hot-picks.json` `modelSlips`, strategies `hs15-o15` / `hs15-o25` / `hs15-master`) and
+  Bankers tab (`picks.json` slips with `hsId`; `build.py` re-adds them from `engine/data/strategy-codes/hs15/<day>.json`
+  `bankersSlips` on every rebuild). The record's `booked` list feeds the master pipeline, where `hs15` ranks right after
+  `ah1` in `STRENGTH`. A second run for a day that already has codes is a no-op unless `--force`.
+- **Order:** 21:30 runs before M1/M2 (21:45) and the 22:00 daily/Hot publish and 22:00 strategies, so its matches
+  take their usage slots first.
 
 ## 6. Services and accounts
 

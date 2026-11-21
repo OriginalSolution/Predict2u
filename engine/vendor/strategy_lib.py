@@ -41,6 +41,7 @@ PUBLIC_NAME = {
     "form80": "80% Form",
     "mo25": "Match Over 2.5",
     "ah1": "AH -1 Favourite",
+    "hs15": "High-Scoring O1.5/O2.5",
 }
 
 YOUTH_RE = re.compile(

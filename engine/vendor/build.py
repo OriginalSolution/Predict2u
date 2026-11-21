@@ -115,6 +115,18 @@ if os.path.exists(_rf):
         _sl['dates']=sorted(set(_sl['dates']))
         _sl['date']=_sl['dates'][0]
 
+# High-Scoring O1.5/O2.5 (hs_goals.py, HANDOFF 5.9): its banker codes live in the strategy record so a
+# rebuild keeps them on the Bankers tab. Low-odds by design, so they are exempt from the 25 floor below.
+for _day in days:
+    _hf = os.path.join(REPO, 'engine', 'data', 'strategy-codes', 'hs15', f'{_day}.json')
+    if not os.path.exists(_hf): continue
+    try:
+        for _s in json.load(open(_hf)).get('bankersSlips') or []:
+            _c = (_s.get('codes') or {}).get('sportybet')
+            if not _c or _c in seen or not _s.get('legs'): continue
+            _s = dict(_s, floorExempt=True)
+            slips.append(_s); seen[_c] = _s
+    except Exception as e: print('hs15 slips skipped', e, file=sys.stderr)
 _rday = os.path.basename(_rf)[:10] if '_rf' in dir() and _rf else today.isoformat()
 for sl in slips:
     L = sl['legs']; L.sort(key=lambda x: x['kickoff'] or '')
@@ -131,7 +143,7 @@ for sl in slips:
     sl.update(totalOdds=round(tot, 2), combined=round(comb, 4), rating=round(rating, 3),
               grade='A' if rating >= 0.55 else 'B' if rating >= 0.35 else 'C', picks=len(L))
     sl['links'] = {b: BOOK_LINKS[b].format(c) for b, c in sl['codes'].items() if b in BOOK_LINKS}
-slips = [sl for sl in slips if sl['totalOdds'] >= MIN_TOTAL_ODDS or sl.get('risk') in ('safe','medium')]
+slips = [sl for sl in slips if sl['totalOdds'] >= MIN_TOTAL_ODDS or sl.get('risk') in ('safe','medium') or sl.get('floorExempt')]
 # Max 4 days: drop slips with any leg kicking off more than 4 days ahead, or first leg older than 4 days
 MAX_DAYS = 4
 _now = dt.datetime.now(dt.timezone.utc)

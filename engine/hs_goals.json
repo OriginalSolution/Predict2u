@@ -1,0 +1,14 @@
+{
+  "_doc": "High-Scoring Teams O1.5/O2.5 (engine/vendor/hs_goals.py, HANDOFF section 5.9). Riddim Boss, 21 Nov 2026. A team's average goals SCORED and average goals CONCEDED per game must each be >= min_scored / min_conceded, for BOTH teams. Each average blends the Sportradar season table (goalsFor/goalsAgainst / games) and the team's last 10 competitive games: combine=mean -> mean of the two windows; combine=both -> each window must pass on its own; combine=season or last10 -> that window only. A window counts only with >= min_season_games / min_last_games games. Market: Over 1.5 when priced o15_min..o15_max (inclusive); Over 1.5 below o15_min -> Over 2.5 only when strictly below o25_max; anything else is rejected.",
+  "min_scored": 1.5,
+  "min_conceded": 1.5,
+  "combine": "mean",
+  "min_season_games": 3,
+  "min_last_games": 5,
+  "last_n": 10,
+  "o15_min": 1.20,
+  "o15_max": 1.30,
+  "o25_max": 1.55,
+  "max_legs": 25,
+  "min_legs_per_code": 2
+}
