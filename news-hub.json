@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-21T19:25:14+00:00",
+ "updatedAt": "2026-11-21T19:29:44+00:00",
  "sources": [
   "BBC Sport",
   "ESPN",
@@ -71,6 +71,16 @@
  ],
  "previews": [
   {
+   "title": "Kelsy dropped for Rangers vs Motherwell LIVE on Sky!",
+   "summary": "",
+   "source": "Sky Sports",
+   "link": "https://www.skysports.com/football/motherwell-vs-rangers/live/558416",
+   "published": "2026-11-21T19:00:00+00:00",
+   "image": "https://e2.365dm.com/26/11/1920x1080/skysports-motherwell-rangers_7407749.jpg?20261116124635",
+   "ourFixture": true,
+   "preview": true
+  },
+  {
    "title": "Newcastle United v Arsenal: Premier League – live",
    "summary": "⚽️ Premier League updates from the 5.30pm GMT kick-off ⚽️ Live scores | Latest table | Follow us on TikTok | Mail Rob “There is an ebb and a flow to Arsenal’s front three, isn’t there?” writes Charles Antaki. “Eze,…",
    "source": "The Guardian",
@@ -132,15 +142,6 @@
   }
  ],
  "injuries": [
-  {
-   "title": "Motherwell vs Rangers team news LIVE on Sky!",
-   "summary": "",
-   "source": "Sky Sports",
-   "link": "https://www.skysports.com/football/motherwell-vs-rangers/live/558416",
-   "published": "2026-11-21T19:00:00+00:00",
-   "image": "https://e2.365dm.com/26/11/1920x1080/skysports-motherwell-rangers_7407749.jpg?20261116124635",
-   "ourFixture": true
-  },
   {
    "title": "Which Premier League players are set for yellow card suspensions?",
    "summary": "Thirteen players are on the brink of a one-match ban in the 2026-27 Premier League season.",
@@ -362,10 +363,10 @@
  ],
  "record": {
   "won": 36,
-  "lost": 299,
-  "settled": 335,
-  "pending": 228,
-  "winRate": 10.7
+  "lost": 304,
+  "settled": 340,
+  "pending": 204,
+  "winRate": 10.6
  },
  "codes": [
   {
@@ -1775,7 +1776,7 @@
      "match": "CF Esperanca D Andorra v CE Carroi",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Stamford AFC v Leamington FC",
@@ -2155,7 +2156,7 @@
      "match": "Dundee FC v Heart of Midlothian FC",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:6"
+     "score": "0:7"
     },
     {
      "match": "CF Talavera v Rayo Vallecano",
@@ -2167,7 +2168,7 @@
      "match": "Sporting Lagos FC v Kwara United",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     },
     {
      "match": "FC Juarez v Atlas FC",
@@ -2655,7 +2656,7 @@
      "match": "Dundee FC v Heart of Midlothian FC",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:6"
+     "score": "0:7"
     },
     {
      "match": "Larne FC v Ballymena United",
@@ -2679,7 +2680,7 @@
      "match": "Sporting Lagos FC v Kwara United",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     },
     {
      "match": "Santa Cruz FC PE v Ipojuca FC PE",
@@ -2812,7 +2813,7 @@
      "match": "CSD Xelaju MC v CD Suchitepequez",
      "selection": "Home",
      "result": "pending",
-     "score": "1:0"
+     "score": "2:0"
     },
     {
      "match": "FK Sloboda Tuzla v FK Rudar Kakanj",
@@ -3245,7 +3246,7 @@
      "match": "Dundee FC v Heart of Midlothian FC",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:6"
+     "score": "0:7"
     }
    ]
   },
@@ -3354,7 +3355,7 @@
      "match": "Dundee FC v Heart of Midlothian FC",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:6"
+     "score": "0:7"
     },
     {
      "match": "Eintracht Frankfurt v Hoffenheim",
@@ -3390,7 +3391,7 @@
      "match": "Sporting Lagos FC v Kwara United",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     },
     {
      "match": "Academia del Balompie Boliviano v Club Aurora",
@@ -4091,7 +4092,7 @@
      "match": "Sporting Lagos FC v Kwara United",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     },
     {
      "match": "CF Talavera v Rayo Vallecano",
@@ -4309,7 +4310,7 @@
      "match": "Dundee FC v Heart of Midlothian FC",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:6"
+     "score": "0:7"
     },
     {
      "match": "Santiago FC v Dragones de Oaxaca",
@@ -4678,7 +4679,7 @@
    "name": "Hot Picks slip",
    "kind": "slip",
    "odds": 25.75,
-   "status": "pending",
+   "status": "lost",
    "hit": 6,
    "total": 16,
    "legs": [
@@ -4757,7 +4758,7 @@
     {
      "match": "Newcastle v Arsenal",
      "selection": "Arsenal",
-     "result": "pending",
+     "result": "lost",
      "score": "2:2"
     },
     {
@@ -4903,8 +4904,8 @@
    "name": "All hot picks (part 1)",
    "kind": "slip",
    "odds": 411.5,
-   "status": "pending",
-   "hit": 9,
+   "status": "lost",
+   "hit": 10,
    "total": 30,
    "legs": [
     {
@@ -4982,7 +4983,7 @@
     {
      "match": "Newcastle v Arsenal",
      "selection": "Arsenal",
-     "result": "pending",
+     "result": "lost",
      "score": "2:2"
     },
     {
@@ -5030,7 +5031,7 @@
     {
      "match": "Sevilla v Betis",
      "selection": "Over 0.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -5335,7 +5336,7 @@
    "kind": "slip",
    "odds": 9.86,
    "status": "lost",
-   "hit": 6,
+   "hit": 7,
    "total": 17,
    "legs": [
     {
@@ -5359,7 +5360,7 @@
     {
      "match": "Newcastle v Arsenal",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "won",
      "score": "2:2"
     },
     {
@@ -5670,7 +5671,7 @@
    "kind": "slip",
    "odds": 11.08,
    "status": "lost",
-   "hit": 6,
+   "hit": 8,
    "total": 17,
    "legs": [
     {
@@ -5688,13 +5689,13 @@
     {
      "match": "Sevilla v Betis",
      "selection": "Over 0.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
      "match": "Newcastle v Arsenal",
      "selection": "Over 0.5",
-     "result": "pending",
+     "result": "won",
      "score": "2:2"
     },
     {
@@ -5785,7 +5786,7 @@
    "kind": "slip",
    "odds": 3.09,
    "status": "pending",
-   "hit": 4,
+   "hit": 5,
    "total": 7,
    "legs": [
     {
@@ -5803,7 +5804,7 @@
     {
      "match": "Sevilla v Betis",
      "selection": "Over 0.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -5840,7 +5841,7 @@
    "kind": "slip",
    "odds": 2.74,
    "status": "pending",
-   "hit": 4,
+   "hit": 5,
    "total": 7,
    "legs": [
     {
@@ -5858,7 +5859,7 @@
     {
      "match": "Sevilla v Betis",
      "selection": "Over 0.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -5895,7 +5896,7 @@
    "kind": "slip",
    "odds": 2.91,
    "status": "pending",
-   "hit": 4,
+   "hit": 5,
    "total": 7,
    "legs": [
     {
@@ -5913,7 +5914,7 @@
     {
      "match": "Sevilla v Betis",
      "selection": "Over 0.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -5950,7 +5951,7 @@
    "kind": "slip",
    "odds": 3.14,
    "status": "pending",
-   "hit": 4,
+   "hit": 5,
    "total": 7,
    "legs": [
     {
@@ -5968,7 +5969,7 @@
     {
      "match": "Sevilla v Betis",
      "selection": "Over 0.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -6005,7 +6006,7 @@
    "kind": "slip",
    "odds": 3.01,
    "status": "pending",
-   "hit": 4,
+   "hit": 5,
    "total": 7,
    "legs": [
     {
@@ -6023,7 +6024,7 @@
     {
      "match": "Sevilla v Betis",
      "selection": "Over 0.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -6060,7 +6061,7 @@
    "kind": "slip",
    "odds": 2.28,
    "status": "pending",
-   "hit": 2,
+   "hit": 3,
    "total": 5,
    "legs": [
     {
@@ -6078,7 +6079,7 @@
     {
      "match": "Sevilla v Betis",
      "selection": "Over 0.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -6103,7 +6104,7 @@
    "kind": "slip",
    "odds": 2.07,
    "status": "pending",
-   "hit": 2,
+   "hit": 3,
    "total": 5,
    "legs": [
     {
@@ -6121,7 +6122,7 @@
     {
      "match": "Sevilla v Betis",
      "selection": "Over 0.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -6146,7 +6147,7 @@
    "kind": "slip",
    "odds": 2.18,
    "status": "pending",
-   "hit": 2,
+   "hit": 3,
    "total": 5,
    "legs": [
     {
@@ -6164,7 +6165,7 @@
     {
      "match": "Sevilla v Betis",
      "selection": "Over 0.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -6189,7 +6190,7 @@
    "kind": "slip",
    "odds": 2.3,
    "status": "pending",
-   "hit": 2,
+   "hit": 3,
    "total": 5,
    "legs": [
     {
@@ -6207,7 +6208,7 @@
     {
      "match": "Sevilla v Betis",
      "selection": "Over 0.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -6232,7 +6233,7 @@
    "kind": "slip",
    "odds": 2.3,
    "status": "pending",
-   "hit": 2,
+   "hit": 3,
    "total": 5,
    "legs": [
     {
@@ -6250,7 +6251,7 @@
     {
      "match": "Sevilla v Betis",
      "selection": "Over 0.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -7125,7 +7126,7 @@
    "kind": "slip",
    "odds": 1.07,
    "status": "pending",
-   "hit": 0,
+   "hit": 1,
    "total": 2,
    "legs": [
     {
@@ -7137,7 +7138,7 @@
     {
      "match": "Sevilla v Betis",
      "selection": "Over 0.5",
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     }
    ]
