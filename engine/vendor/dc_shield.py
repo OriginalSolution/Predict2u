@@ -135,6 +135,9 @@ def fetch_dc_games(date_s: str) -> tuple[list, int]:
             E[e['eventId']] = e
         if not new or len(E) >= d.get('totalNum', 0):
             break
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import busy_day  # busy-day league rule (HANDOFF 5.7)
+    E = {e['eventId']: e for e in busy_day.safe_filter(list(E.values()), complete=True)}
     out = []
     now_ms = dt.datetime.now(dt.timezone.utc).timestamp() * 1000
     for e in E.values():

@@ -355,10 +355,11 @@ def upcoming_ids(days=1):
                 ts = e.get("estimateStartTime") or 0
                 ko = dt.datetime.fromtimestamp(ts / 1000, dt.timezone.utc) if ts else now
                 if now < ko <= end:
-                    ids.append(e.get("eventId"))
+                    ids.append(e)
         if not n or page * 100 >= int(d.get("totalNum") or 0):
             break
-    return ids
+    import busy_day  # busy-day league rule (HANDOFF 5.7)
+    return [e.get("eventId") for e in busy_day.safe_filter(ids)]
 
 
 def fetch_event(eid: str) -> dict:

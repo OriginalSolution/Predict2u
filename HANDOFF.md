@@ -273,6 +273,43 @@ Dry run: `python engine/vendor/sure80_reverse.py --dry-run [--date D] [--only tt
 - **Master pipeline:** these codes are pushed by the 22:00 job before the 22:45 pipeline (same concurrency group);
   in its `STRENGTH` list they rank after Reverse + Draw (ttw, form80, mo25).
 
+### 5.7 Busy-day league filter (all strategies; Riddim Boss, 21 Nov 2026)
+Rule: on a **busy** match day every booking strategy picks only from **known** and **capable** leagues; lower-tier,
+amateur, regional, women's, youth (U17–U23, Primavera, Juvenil…) and reserve/II/B/Jong football is dropped.
+**Quiet days keep the full pool unchanged.**
+- **Code:** `engine/vendor/busy_day.py`. **Config:** `engine/busy_day.json` (documented in its `_doc` key).
+- **Busy vs quiet:** count the **open senior fixtures** for that date (not started; youth/women/reserve/SRL/esoccer
+  not counted) in the SportyBet GH upcoming feed. `fixtures >= busy_threshold` (default **300**) = busy. Each date is
+  decided on its own count. `sticky_busy` (default on): if any earlier run logged a higher count for that date, the
+  higher number is used, so a Saturday stays busy after its early games kick off.
+- **Known** (`known` in the config, SportyBet country → tournament names, `*` = prefix): top two tiers of England,
+  Spain, Germany, Italy, France, Netherlands, Portugal, Belgium, Scotland, Türkiye, Brazil, Argentina; MLS; Liga MX;
+  their major domestic cups; UEFA/CONMEBOL/CAF/AFC/CONCACAF club cups; major national-team competitions.
+- **Capable:** a senior men's top flight listed in `capable.top_flights` (curated list of top flights that SportyBet /
+  Sportradar cover with full stats) **and** with a proven record in our own settled legs:
+  `engine/data/code-ledger.json` legs + `picks-history.json` (won/lost only, deduped by match + odds), at least
+  `capable.min_sample` (default 8) legs at `capable.min_hit_rate` (default 0.70). Log rows that carry only a league
+  name count only when that name belongs to exactly one configured league ("Eliteserien" yes, "Super League" no).
+  `capable.always` / `capable.never` (`"Country|League"`) override the record. Re-derived on every run, so a league
+  earns (or loses) its place as the ledgers settle.
+- **Where it runs (once per feed, not per strategy):** `strategy_lib.fetch_upcoming` (80% Sure, Reverse U4.5 (+Draw),
+  Team To Win, 80% Form, Match Over 2.5, master pipeline, GG, NYSM, NerdyTips Tomorrow → Code of the Day uses their
+  codes), `scan.py` (pipeline daily/morning/fav/hot → `run.py`, `book_home.py`, hot model slips, fav engine),
+  `sb_common.upcoming_ids` (three strategies, M1/M2, Safe50), `sb_morning_markets.scan_upcoming`,
+  `nerdytips_strategies`, `verzzify_banker`, `dc_shield`, `ah_minus_one`. The master pipeline drops pool legs whose
+  match is no longer in the (filtered) feed. Not covered: High Odds / Hot Picks cards that mirror SportyBet *featured*
+  community codes (not our own pool). If the filter itself errors, the pool passes through unchanged and a
+  `busy-day: filter skipped` line is printed (a booking job never dies on it).
+- **Match Over 2.5 note:** it deliberately targets youth / lower-tier / high-scoring leagues, so on busy days it can
+  only use high-scoring known/capable leagues and will often book nothing. That is the rule as given.
+- **Log:** every run prints `busy-day: {...}` lines (date, fixtures, threshold, busy, input, kept, dropped, known,
+  capable, top dropped leagues) to the workflow output and the job summary, and appends the same JSON line to
+  `engine/data/busy-day/<date>/<job>.jsonl` (one file per job, so concurrent jobs never conflict). The engine
+  workflows commit `engine/data/busy-day`. Job name = `P2U_JOB` (pipeline sets `pipeline-<command>`) or the script.
+- **Switches:** `P2U_BUSY_FILTER=0` disables; `P2U_BUSY_THRESHOLD=<n>` overrides the threshold; `P2U_BUSY_LOG_DIR`
+  redirects the log (tests). Dry run (no log, no booking): `python engine/vendor/busy_day.py [YYYY-MM-DD ...]`.
+- **Tests:** `engine/tests/test_busy_day.py`.
+
 ## 6. Services and accounts
 
 | Service | What | Account / login | Notes |

@@ -60,6 +60,7 @@ jobs:
           git config user.name "predict2u-engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- hot-picks.json locked.enc.json home-picks.json || true
+          [ -e engine/data/busy-day ] && git add -- engine/data/busy-day || true
           if git diff --cached --quiet; then echo "no Hot Picks changes"; exit 0; fi
           git commit -m "Engine hot picks (catch-up) $(date -u +%FT%TZ)"
           .github/scripts/p2u_push.sh main

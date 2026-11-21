@@ -111,7 +111,8 @@ def scan_upcoming():
             events[e["eventId"]] = e
         if not new or len(events) >= int(data.get("totalNum") or 0):
             break
-    return events
+    import busy_day  # busy-day league rule (HANDOFF 5.7)
+    return {e["eventId"]: e for e in busy_day.safe_filter(list(events.values()), complete=True)}
 
 
 def is_skipped_fixture(e):

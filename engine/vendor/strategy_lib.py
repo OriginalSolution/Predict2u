@@ -378,7 +378,9 @@ def women_match(home: str, away: str, league: str = "") -> bool:
     return bool(WOMEN_RE.search(f"{home} {away} {league}"))
 
 
-def fetch_upcoming(market_ids: str = "1,10,11,18,19,20,29") -> list[dict]:
+def fetch_upcoming(market_ids: str = "1,10,11,18,19,20,29", busy_filter: bool = True) -> list[dict]:
+    """Whole SportyBet upcoming feed. With busy_filter (default) the busy-day
+    league rule (busy_day.py, HANDOFF 5.7) is applied before returning."""
     ids = market_ids.replace(",", "%2C")
     events = []
     page = 1
@@ -400,6 +402,9 @@ def fetch_upcoming(market_ids: str = "1,10,11,18,19,20,29") -> list[dict]:
         if page * 100 >= total:
             break
         page += 1
+    if busy_filter:
+        import busy_day
+        events = busy_day.filter_events(events, complete=True)
     return events
 
 
