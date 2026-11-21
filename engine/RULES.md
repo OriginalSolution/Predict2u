@@ -153,7 +153,7 @@ On a thin day (the normal ticket is under 25) each of these four jobs reruns onc
 | NerdyTips Tomorrow, trust ≥ 5.0, Agree only | `vendor/nt_tomorrow.py` | `50 23 * * *` |
 | Code of the Day | `vendor/strategy_master.py` | `0 6 * * *` |
 | 80% Sure, Reverse U4.5, Reverse U4.5 + Draw (HANDOFF §5.4) | `vendor/sure80_reverse.py` | `0 22 * * *` |
-| Team To Win, 80% Form, Match Over 2.5 (HANDOFF §5.6; same 22:00 job, own site sections) | `vendor/night_trio.py` | `0 22 * * *` |
+| Team To Win, 80% Form, Match Over 2.5 (HANDOFF §5.6; same 22:00 job, own site sections; Match Over 2.5 check (a) = favourite's only team-goals market is team O2.5) | `vendor/night_trio.py` | `0 22 * * *` |
 | Master pipeline: master, league-fit, U4.5→overs, >1.45 swap, output codes (HANDOFF §5.5; its derived codes are exempt from the 2-codes-per-match usage) | `vendor/master_pipeline.py` | `45 22 * * *` |
 
 ## Optional global gates (DISABLED by default)

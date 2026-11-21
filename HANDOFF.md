@@ -265,7 +265,8 @@ Dry run: `python engine/vendor/sure80_reverse.py --dry-run [--date D] [--only tt
 - **Match Over 2.5 (`mo25`):** league must be youth (name regex: U15–U23, youth, junior, primavera, reserves, academy,
   Jong, II…), high-scoring (≥2.8 gpg, `season_gpg` from §5.4) or lower-tier (Sportradar `tournamentlevelorder` ≥3, or
   name regex: amateur, regional, Oberliga/Landesliga, Serie D, Tercera/RFEF, National League N/S, NPL, Division 3–5…).
-  Over 2.5 with ≥2 of 8 checks (fav O2.5 offered; fav win <1.45; dog O0.5 <1.50; draw >4.00; GG <1.60; U3.5 >1.60;
+  Over 2.5 with ≥2 of 8 checks (fav's ONLY team-goals market is team O2.5, i.e. no team O0.5/O1.5 offered
+  for the favourite — Riddim Boss, 21 Nov; so (a) and (h) never pass together; fav win <1.45; dog O0.5 <1.50; draw >4.00; GG <1.60; U3.5 >1.60;
   fav O2.5 <2.00; fav O1.5 <1.50). Ranked by checks, then price.
 - **Site:** `high-odds/index.html` renders each as its own section (`#sec-ttw`, `#sec-form80`, `#sec-mo25`) from
   `high_odds.json` cards with `origin: strategy-<id>`; strategy cards now show their public name.

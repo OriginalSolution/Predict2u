@@ -21,7 +21,8 @@ drop top-5 v top-5 and bottom-3 v bottom-3 (shared table only). Strong team = 1X
    or amateur/lower-tier leagues. Youth = YOUTH_RE on league/team names (U17-U23, youth, junior,
    primavera, reserves, academy...). Lower tier = Sportradar ``tournamentlevelorder`` >= 3 for the
    match's tournament, or AMATEUR_RE on the league name (amateur, regional, oberliga, serie d, ...).
-   Book match Over 2.5 when >= 2 of 8 checks pass: (a) favourite team O2.5 offered; (b) favourite
+   Book match Over 2.5 when >= 2 of 8 checks pass: (a) the favourite's ONLY team-goals market is team O2.5
+   (no team O0.5 / O1.5 offered; so (a) and (h) never pass together); (b) favourite
    win < 1.45; (c) weaker team O0.5 < 1.50; (d) draw > 4.00; (e) GG < 1.60; (f) U3.5 > 1.60;
    (g) favourite O2.5 < 2.00; (h) favourite O1.5 < 1.50. Ranked by checks passed, then price.
 """
@@ -98,6 +99,15 @@ def ttw_checks(odds: dict) -> tuple[int, list[str]]:
     return len(passed), passed
 
 
+def only_team_o25(odds: dict, side: str) -> bool:
+    """Match Over 2.5 check (a): team Over 2.5 offered and no team Over 0.5 / Over 1.5 for that team.
+
+    (h) needs the favourite's team Over 1.5 price, so (a) and (h) can never both pass.
+    """
+    return (p(odds, f"{side}_o25") is not None and p(odds, f"{side}_o05") is None
+            and p(odds, f"{side}_o15") is None)
+
+
 def mo25_checks(odds: dict) -> tuple[int, list[str]]:
     sd = sides(odds)
     if not sd:
@@ -105,7 +115,8 @@ def mo25_checks(odds: dict) -> tuple[int, list[str]]:
     f, d = sd
     win = p(odds, "home" if f == "h" else "away")
     checks = {
-        "a": p(odds, f"{f}_o25") is not None,
+        # (a) the favourite's ONLY team-goals market is team Over 2.5 (no team O0.5 / O1.5 offered)
+        "a": only_team_o25(odds, f),
         "b": lt(win, 1.45),
         "c": lt(p(odds, f"{d}_o05"), 1.50),
         "d": gt(p(odds, "draw"), 4.00),

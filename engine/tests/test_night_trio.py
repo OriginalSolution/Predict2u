@@ -24,9 +24,22 @@ def test_ttw_counts_seven_checks_for_the_favourite():
     assert t.ttw_checks(odds(home=1.4))[0] == 0  # no full 1X2
 
 
-def test_mo25_counts_eight_checks():
+def test_mo25_counts_checks():
     o = odds(home=1.35, draw=4.80, away=8.0, h_o25=1.90, h_o15=1.30, a_o05=1.45, gg=1.55, u35=1.65)
-    assert t.mo25_checks(o) == (8, list("abcdefgh"))
+    assert t.mo25_checks(o) == (7, list("bcdefgh"))      # O1.5 offered -> (a) fails; (a) and (h) exclusive
+    only = odds(home=1.35, draw=4.80, away=8.0, h_o25=1.90, a_o05=1.45, gg=1.55, u35=1.65)
+    assert t.mo25_checks(only) == (7, list("abcdefg"))
+
+
+def test_mo25_check_a_only_when_team_o25_is_the_only_team_goals_market():
+    base = dict(home=2.6, draw=3.3, away=2.8)
+    assert t.mo25_checks(odds(h_o25=2.2, **base))[1] == ["a"]
+    assert "a" not in t.mo25_checks(odds(h_o25=2.2, h_o05=1.20, **base))[1]
+    assert "a" not in t.mo25_checks(odds(h_o25=2.2, h_o15=1.70, **base))[1]
+    assert "a" not in t.mo25_checks(odds(**base))[1]
+    # the weaker team's markets don't matter; Team To Win (a) is unchanged (offered is enough)
+    assert t.mo25_checks(odds(h_o25=2.2, a_o05=1.9, **base))[1][0] == "a"
+    assert "a" in t.ttw_checks(odds(h_o25=2.2, h_o05=1.20, **base))[1]
     assert t.mo25_checks(odds(home=2.3, draw=3.2, away=3.1, gg=1.75, u35=1.40))[0] == 0
 
 
