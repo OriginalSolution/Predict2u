@@ -1252,6 +1252,101 @@
     }
    ],
    "mixed": "built"
+  },
+  "2026-11-21": {
+   "built": "2026-11-21 21:46 GMT",
+   "slips": {
+    "M1": {
+     "name": "M1 Team or Over 2.5",
+     "codes": {
+      "sportybet": "BWSZ6F",
+      "footballcom": "BWSZ6F",
+      "msport": "B3MTQG6"
+     },
+     "total": 2.01,
+     "legs": 10,
+     "meetsFloor": false,
+     "result": "pending"
+    },
+    "M2": {
+     "name": "M2 Double Chance & Over 1.5",
+     "codes": {
+      "sportybet": "D23XB5",
+      "footballcom": "D23XB5",
+      "msport": "B3MTQGZ",
+      "betika": "1PTVcP"
+     },
+     "total": 1.75,
+     "legs": 6,
+     "meetsFloor": false,
+     "result": "pending"
+    },
+    "MIXED": {
+     "name": "M1/M2 team 2+",
+     "codes": {
+      "sportybet": "A4YVXX",
+      "footballcom": "A4YVXX",
+      "msport": "B3MTQJN",
+      "betika": "5C7yMC",
+      "betpawa": "WDQXZ9V"
+     },
+     "total": 10.93,
+     "legs": 12,
+     "meetsFloor": false,
+     "result": "pending"
+    }
+   },
+   "dropped": [
+    {
+     "match": "Gil Vicente Barcelos v SC Olhanense",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Gil Vicente Barcelos v SC Olhanense",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "SCU Torreense v Benfica",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "SCU Torreense v Benfica",
+     "rule": "M2",
+     "selection": "Draw/Away & Over 1.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "SCU Torreense v Benfica",
+     "rule": "T2",
+     "selection": "Away over 1.5 goals",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Ludogorets v FC Dunav Ruse",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Bulgaria - Parva Liga: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Boreham Wood FC v Aldershot Town FC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — England - National League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Apollon Limassol v Als Omonia",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Cyprus - 1st Division: non-goals market Home Team or Over 2.5 not allowed"
+    }
+   ],
+   "mixed": "built"
   }
  }
 }
