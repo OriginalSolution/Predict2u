@@ -43,6 +43,7 @@ SCHEDULE = [
     ("engine-strategy-master.yml", "0", "6", "*"),  # Code of the Day from the night's strategy codes (books)
     ("engine-morning.yml", "0", "7", "*"),          # SportyBet morning markets + master (books)
     ("engine-shield.yml", "0", "21", "*"),          # DC Shield Goals (books)
+    ("engine-hs-goals.yml", "30", "21", "*"),       # High-Scoring O1.5/O2.5, next day: Hot + Bankers + master (books)
     ("engine-m1m2.yml", "45", "21", "*"),           # M1/M2 and Safest market (books)
     ("engine-daily.yml", "0", "22", "*"),           # daily collect, book, publish (books)
     ("engine-sure80.yml", "0", "22", "*"),          # 80% Sure + Reverse U4.5 (+ Draw rule), next day (books)

@@ -52,6 +52,7 @@ PRODUCTS = [
     dict(key="code-of-the-day", wf="engine-strategy-master.yml", at="06:00", job="master", valid_h=11),
     dict(key="morning-tips", wf="engine-morning.yml", at="07:00", job="morning", valid_h=9, check="morning", max_forced=1),
     dict(key="dc-shield", wf="engine-shield.yml", at="21:00", job="shield", valid_h=13),
+    dict(key="hs-goals", wf="engine-hs-goals.yml", at="21:30", job="hs15", valid_h=13),
     dict(key="m1m2", wf="engine-m1m2.yml", at="21:45", job="m1m2", valid_h=13),
     dict(key="daily-slips", wf="engine-daily.yml", at="22:00", job="daily", valid_h=14, check="daily", max_forced=1),
     dict(key="hot-picks", wf="engine-hot-picks.yml", at="22:00", job="hot", valid_h=16, check="hot", max_forced=1,
