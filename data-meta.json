@@ -1,24 +1,33 @@
 {
-  "version": "v287",
-  "generatedAt": "2026-11-21T15:20:00.550Z",
+  "version": "v288",
+  "generatedAt": "2026-11-21T17:05:54.262Z",
   "sourceUpdatedAt": "2026-08-26T00:33:16.095Z",
   "today": "2026-11-21",
   "window": {
-    "from": "2026-11-14",
+    "from": "2026-11-16",
     "to": "2026-11-28"
   },
   "fallback": false,
   "maxFixtureDate": "2026-11-29",
   "totalSourceMatches": 6252,
-  "publicMatches": 4470,
+  "publicMatches": 3025,
   "sharedGovernance": true,
   "hydratedFromFixtures": true,
   "hydratedFromSportybet": false,
-  "profileReady": 1961,
-  "profileAttached": 1253,
+  "profileReady": 1397,
+  "profileAttached": 839,
   "slimmed": {
-    "pastRows": 2263,
-    "droppedPeerIntel": 2263,
-    "droppedHeavy": 6426
+    "pastRows": 818,
+    "leanedPast": 818,
+    "droppedOldPast": 0,
+    "compactedCurrent": 2207,
+    "droppedPeerIntel": 818,
+    "droppedHeavy": 0,
+    "maxEvidence": 8,
+    "dropNotes": false,
+    "dropMeaning": false,
+    "keepPastFrom": null,
+    "tier": "compact",
+    "bytes": 5789163
   }
 }
