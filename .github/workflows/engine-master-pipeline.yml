@@ -92,6 +92,7 @@ jobs:
           git config user.name "predict2u-engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- high_odds.json locked.enc.json engine/data/strategy-codes/pipeline || true
+          [ -e engine/data/busy-day ] && git add -- engine/data/busy-day || true
           if git diff --cached --quiet; then echo "no master pipeline changes"; exit 0; fi
           git commit -m "Engine master pipeline $(date -u +%FT%TZ)"
           .github/scripts/p2u_push.sh main

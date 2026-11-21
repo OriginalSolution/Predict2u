@@ -92,6 +92,7 @@ jobs:
           git config user.name "predict2u-engine"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- high_odds.json locked.enc.json engine/data/strategy-codes/sure80 engine/data/strategy-codes/rev-u45 engine/data/strategy-codes/rev-u45-draw engine/data/strategy-codes/ttw engine/data/strategy-codes/form80 engine/data/strategy-codes/mo25 engine/data/strategy-usage || true
+          [ -e engine/data/busy-day ] && git add -- engine/data/busy-day || true
           if git diff --cached --quiet; then echo "no 80% Sure / Reverse U4.5 changes"; exit 0; fi
           git commit -m "Engine 80% Sure + Reverse U4.5 $(date -u +%FT%TZ)"
           .github/scripts/p2u_push.sh main

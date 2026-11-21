@@ -210,7 +210,7 @@ def upcoming_ids(days=WINDOW_DAYS, max_pages=16):
     """Not-started football event ids kicking off within `days` (default 4)."""
     now = dt.datetime.now(dt.timezone.utc)
     end = now + dt.timedelta(days=days)
-    ids = []
+    keep = []
     for page in range(1, max_pages + 1):
         d = (curl_json(UPCOMING.format(page=page), timeout=40) or {}).get("data") or {}
         n = 0
@@ -223,8 +223,12 @@ def upcoming_ids(days=WINDOW_DAYS, max_pages=16):
                 if st not in ("Not start", "", "0"):
                     continue
                 if now < ko <= end:
-                    ids.append(e.get("eventId"))
+                    keep.append(e)
         total = int(d.get("totalNum") or 0)
         if not n or page * 100 >= total:
             break
-    return ids
+    # Busy-day league rule (busy_day.py, HANDOFF 5.7).
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import busy_day
+    return [e.get("eventId") for e in busy_day.safe_filter(keep)]

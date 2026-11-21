@@ -115,6 +115,7 @@ jobs:
             football-com-booking-codes-today betway-booking-codes-today \
             engine/data/20*.json engine/inbox \
             || true
+          [ -e engine/data/busy-day ] && git add -- engine/data/busy-day || true
           if git diff --cached --quiet; then
             echo "no publish changes"
             exit 0

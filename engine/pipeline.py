@@ -217,6 +217,7 @@ def main(argv=None):
     args = ap.parse_args(argv)
     ensure_dirs()
     env = environ()
+    env.setdefault("P2U_JOB", f"pipeline-{args.command}")  # busy-day log file name (HANDOFF 5.7)
     if args.command in ("daily", "all"):
         # Clear yesterday's and unusable codes before booking, so a failed collect still unpublishes them.
         _prune(env)

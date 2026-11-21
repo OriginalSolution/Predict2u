@@ -9,5 +9,9 @@ for p in range(1,120):
   new=[e for t in d['tournaments'] for e in t['events']]
   for e in new: E[e['eventId']]=e
   if not new or len(E)>=d['totalNum']: break
+# Busy-day league rule (busy_day.py, HANDOFF 5.7): feeds run.py / book_home / fav / hot.
+import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import busy_day
+E={e['eventId']:e for e in busy_day.safe_filter(list(E.values()), complete=True)}
 os.makedirs(os.path.dirname(OUT) or '.', exist_ok=True)
 json.dump(E,open(OUT,'w'));print(len(E), OUT)
