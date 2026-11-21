@@ -136,7 +136,7 @@ history if any job emptied it. It runs after every engine job and never books.
 | 18:00 | `engine-health.yml` | no | **Preflight**: compile/import every module, dry-run every strategy for tomorrow in a no-write sandbox, site checks |
 | 21:00 | `engine-shield.yml` | yes | DC Shield Goals and AH −1 scan |
 | 21:45 | `engine-m1m2.yml` | yes | M1/M2 and Safest market (Hot page) |
-| 22:00 | `engine-sure80.yml` | yes | 80% Sure, Reverse U4.5, Reverse U4.5 + Draw rule for the next day (SportyBet GH, §5.4) |
+| 22:00 | `engine-sure80.yml` | yes | 80% Sure, Reverse U4.5, Reverse U4.5 + Draw, then Team To Win, 80% Form, Match Over 2.5 for the next day (SportyBet GH, §5.4, §5.6) |
 | 22:00 | `engine-daily.yml` | yes | Daily collect, book, publish (home code, slips, **Hot Picks**, high odds, three strategies, Verzzify, daily master) |
 | 22:30 | `engine-strategies.yml` | yes | Three-strategy High Odds and Verzzify Edge Banker |
 | 22:45 | `engine-master-pipeline.yml` | yes | Master pipeline: next-day master codes rebuilt from the night's codes (§5.5) |
@@ -245,6 +245,32 @@ Dry run: `python engine/vendor/master_pipeline.py --dry-run --date D`; `--simula
    All cards are HIGH RISK, `origin: strategy-mp-*`. Record: `engine/data/strategy-codes/pipeline/<day>.json`.
    The pipeline's codes reuse matches from codes already booked, so they do not count toward the strategy jobs'
    2-codes-per-match usage file (the spec books each match on several derived codes).
+
+
+### 5.6 Team To Win, 80% Form, Match Over 2.5 (22:00, same job as §5.4)
+`engine/vendor/night_trio.py`, called from `sure80_reverse.run` after 80% Sure / Reverse U4.5 / + Draw, so the run-once
+gate (`--job sure80`) and watchdog product `sure80-reverse` cover all six strategies and nothing is double-booked.
+Tests: `engine/tests/test_night_trio.py`. Spec from Betting Strategies (NerdyTips), 21 Nov 2026.
+Dry run: `python engine/vendor/sure80_reverse.py --dry-run [--date D] [--only ttw,form80,mo25]`
+(leave `--only` out to see the cap from the earlier three strategies: `cappedByUsage` per strategy).
+- **Shared:** SportyBet GH, not-started legs, no NG/DC, ≤25 legs and ≥25 odds per code, never padded; big pools become
+  several 25-leg codes that each reach 25 (round-robin, or rank-order cut when that books more legs); a match on ≤2
+  codes (shared usage, booked in order sure80 → rev-u45 → rev-u45-draw → ttw → form80 → mo25); top-5 v top-5 and
+  bottom-3 v bottom-3 dropped when both teams share a table (no table = not checked). Strong team = 1X2 favourite.
+- **Team To Win (`ttw`):** favourite WIN with ≥2 of 7 checks (fav team O2.5 offered; win <1.45; dog O0.5 >1.65;
+  draw >4.00; GG >1.70; U3.5 >1.60; fav O2.5 <2.00). Ranked by checks, then lower win price.
+- **80% Form (`form80`):** last 10 competitive games per team from Sportradar `stats_team_lastx/<uid>/20`; tournaments
+  flagged `friendly` are excluded; a team with <10 such games gives no signal. 8+ wins → that team WIN; 8+ losses →
+  opponent WIN; unbeaten 8+ without 8 wins → that team DNB. Opposite-team signals = conflict → skip; WIN beats DNB.
+- **Match Over 2.5 (`mo25`):** league must be youth (name regex: U15–U23, youth, junior, primavera, reserves, academy,
+  Jong, II…), high-scoring (≥2.8 gpg, `season_gpg` from §5.4) or lower-tier (Sportradar `tournamentlevelorder` ≥3, or
+  name regex: amateur, regional, Oberliga/Landesliga, Serie D, Tercera/RFEF, National League N/S, NPL, Division 3–5…).
+  Over 2.5 with ≥2 of 8 checks (fav O2.5 offered; fav win <1.45; dog O0.5 <1.50; draw >4.00; GG <1.60; U3.5 >1.60;
+  fav O2.5 <2.00; fav O1.5 <1.50). Ranked by checks, then price.
+- **Site:** `high-odds/index.html` renders each as its own section (`#sec-ttw`, `#sec-form80`, `#sec-mo25`) from
+  `high_odds.json` cards with `origin: strategy-<id>`; strategy cards now show their public name.
+- **Master pipeline:** these codes are pushed by the 22:00 job before the 22:45 pipeline (same concurrency group);
+  in its `STRENGTH` list they rank after Reverse + Draw (ttw, form80, mo25).
 
 ## 6. Services and accounts
 

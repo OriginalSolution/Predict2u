@@ -54,7 +54,7 @@ O25_GPG, O15_GPG = 2.8, 2.5
 O25_TEAM, O15_TEAM = 0.60, 0.80
 # Stronger code first. Unknown origins rank last; ties go to the lower geometric-mean leg price.
 STRENGTH = ["sure80", "nt", "nysm-conservative", "nysm-main", "nysm-ts2", "gg", "rev-u45",
-            "rev-u45-draw", "master", "sb-morning-master", "ho-master", "code-hub"]
+            "rev-u45-draw", "ttw", "form80", "mo25", "master", "sb-morning-master", "ho-master", "code-hub"]
 ALTERNATIVES = {
     "o25": ["o15"], "u35": ["u45", "u55"], "u45": ["u55"],
     "h_o05": ["o15"], "a_o05": ["o15"], "h_o15": ["h_o05", "o15"], "a_o15": ["a_o05", "o15"],

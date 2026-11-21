@@ -604,7 +604,7 @@ def test_desc_is_not_a_second_copy_of_the_same_legs():
     legs = []
     for i, odds in enumerate((1.22, 1.30, 1.38)):
         legs.append(dict(eventId=f"e{i}", odds=odds, strategy="o25-2of3",
-                         kickoff="2026-11-20T18:00:00Z", marketId="18", specifier="total=2.5", outcomeId="12"))
+                         kickoff="2099-11-20T18:00:00Z", marketId="18", specifier="total=2.5", outcomeId="12"))
     out = TS.book_masters(legs, "2026-11-12", book=False)
     assert [r["key"] for r in out] == ["asc"]
     assert out[0]["legs"] == 3 and out[0]["meetsFloor"] is False
