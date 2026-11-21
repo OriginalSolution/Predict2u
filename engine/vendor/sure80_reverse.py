@@ -51,9 +51,10 @@ HERE = Path(__file__).resolve().parent
 sys.path[:0] = [str(HERE), str(HERE.parent)]
 import strategy_lib as lib  # noqa: E402
 import night_trio as trio  # noqa: E402
+import ah1_fav as ah1  # noqa: E402
 
 KINDS = ("sure80", "rev-u45", "rev-u45-draw")
-ALL_KINDS = KINDS + trio.KINDS   # trio (Team To Win, 80% Form, Match Over 2.5) books after these
+ALL_KINDS = KINDS + trio.KINDS + ah1.KINDS   # trio (Team To Win, 80% Form, Match Over 2.5), then AH -1 Favourite
 CODE_CAP = 25          # legs per code
 MAX_CODES = 2          # codes per strategy per night (50 legs)
 SURE_MIN = 0.80        # data estimate must be strictly above this
@@ -395,7 +396,7 @@ def season_gpg(sid, cache: dict, memo: dict):
 def load_rows(day: dt.date) -> tuple[list[dict], int]:
     rows = []
     now = dt.datetime.now(dt.timezone.utc)
-    for event in lib.fetch_upcoming("1,11,18,19,20,29"):
+    for event in lib.fetch_upcoming("1,11,16,18,19,20,29"):
         kick = lib.event_kick(event)
         if not kick or kick.date() != day or kick <= now + dt.timedelta(minutes=10):
             continue
@@ -470,12 +471,14 @@ def run(day: dt.date, repo: Path, dry_run: bool = False, only: tuple = ALL_KINDS
     found = select_all(rows, cache, usage)
     if any(k in trio.KINDS for k in only):
         found.update(trio.select(rows, cache, usage, season_gpg, make_leg))
+    if any(k in ah1.KINDS for k in only):
+        found.update(ah1.select(rows, cache, usage, make_leg))
     summary = {}
     for kind in [k for k in ALL_KINDS if k in only]:
         # the shared 2-codes-per-match usage, including codes booked earlier in this same run
         legs = [leg for leg in found[kind]["legs"] if lib.can_take(usage, leg["eventId"])]
         capped = len(found[kind]["legs"]) - len(legs)
-        parts = trio.split_many(legs) if kind in trio.KINDS else split_codes(legs)
+        parts = trio.split_many(legs) if kind in trio.KINDS + ah1.KINDS else split_codes(legs)
         booked = []
         for index, part in enumerate(parts, 1):
             if dry_run:
