@@ -358,7 +358,9 @@ Run by hand: Actions → engine-hs-goals → Run workflow (`date`, `dry_run`, `f
 - **Published:** Hot tab (`hot-picks.json` `modelSlips`, strategies `hs15-o15` / `hs15-o25` / `hs15-master`) and
   Bankers tab (`picks.json` slips with `hsId`; `build.py` re-adds them from `engine/data/strategy-codes/hs15/<day>.json`
   `bankersSlips` on every rebuild). The record's `booked` list feeds the master pipeline, where `hs15` ranks right after
-  `ah1` in `STRENGTH`. A second run for a day that already has codes is a no-op unless `--force`.
+  `ah1` in `STRENGTH`. A second run for a day that already has codes is a no-op unless `--force` (checks the record and the
+  live `hot-picks.json` hs15 slips, because `engine/data` records are git-ignored and do not survive between runners; `build.py`
+  likewise carries hs15 slips forward from the live `picks.json`).
 - **Order:** 21:30 runs before M1/M2 (21:45) and the 22:00 daily/Hot publish and 22:00 strategies, so its matches
   take their usage slots first.
 
