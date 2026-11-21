@@ -83,6 +83,9 @@ The site reads these files from the repo root (written only by the engine):
 | `hot-picks.json` | Hot Picks (SportyBet Code Hub scan), M1/M2, Safest | daily (Hot Picks), m1m2, Hot Picks catch-up |
 | `fav-leagues.json` | Favourites-by-league backup used by `engine/fav_guard.py` | fav-leagues |
 | `fixtures.js`, `sportybet-odds.js`, `current-data.js` | Fixtures and odds | sportybet-odds |
+
+`current-data.js` is the public rolling bundle (board, engines, league DNA, scorecards). `build-public-data.js` must keep it **well under 9 MB** (`release-gate-v264.js`). The generator window is this week's Monday (or yesterday, if earlier — e.g. on Monday) through today+7. Past rows in that window are lean fixtures for the date strip; older stale dates are dropped. Null fields, duplicate `sportyEventId`, odds aliases and reconstructable peer-evidence `line` text are stripped (aliases are restored by a hydrator in the same file). The builder fails if the file would still exceed 9 MB.
+
 | `news-hub.json`, `live-scores.json` | News hub and live scores snapshot | engine-refresh |
 | `dead-codes.json`, `health.json` | Codes hidden because they no longer load; health status | health check |
 | `locked.enc.json` | Encrypted store of premium codes (paid mode only) | engine (`engine/premium.py`) |
