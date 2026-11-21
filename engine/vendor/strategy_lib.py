@@ -37,6 +37,9 @@ PUBLIC_NAME = {
     "rev-u45": "Reverse U4.5",
     "rev-u45-draw": "Reverse U4.5 + Draw",
     "mp": "Master",
+    "ttw": "Team To Win",
+    "form80": "80% Form",
+    "mo25": "Match Over 2.5",
 }
 
 YOUTH_RE = re.compile(

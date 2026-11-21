@@ -50,8 +50,10 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path[:0] = [str(HERE), str(HERE.parent)]
 import strategy_lib as lib  # noqa: E402
+import night_trio as trio  # noqa: E402
 
 KINDS = ("sure80", "rev-u45", "rev-u45-draw")
+ALL_KINDS = KINDS + trio.KINDS   # trio (Team To Win, 80% Form, Match Over 2.5) books after these
 CODE_CAP = 25          # legs per code
 MAX_CODES = 2          # codes per strategy per night (50 legs)
 SURE_MIN = 0.80        # data estimate must be strictly above this
@@ -461,14 +463,19 @@ def select_all(rows: list[dict], cache: dict, usage: dict) -> dict:
     return out
 
 
-def run(day: dt.date, repo: Path, dry_run: bool = False, only: tuple = KINDS) -> dict:
+def run(day: dt.date, repo: Path, dry_run: bool = False, only: tuple = ALL_KINDS) -> dict:
     usage = lib.load_usage(repo, day.isoformat())
     rows, seen = load_rows(day)
-    found = select_all(rows, {}, usage)
+    cache: dict = {}
+    found = select_all(rows, cache, usage)
+    if any(k in trio.KINDS for k in only):
+        found.update(trio.select(rows, cache, usage, season_gpg, make_leg))
     summary = {}
-    for kind in only:
+    for kind in [k for k in ALL_KINDS if k in only]:
+        # the shared 2-codes-per-match usage, including codes booked earlier in this same run
         legs = [leg for leg in found[kind]["legs"] if lib.can_take(usage, leg["eventId"])]
-        parts = split_codes(legs)
+        capped = len(found[kind]["legs"]) - len(legs)
+        parts = trio.split_many(legs) if kind in trio.KINDS else split_codes(legs)
         booked = []
         for index, part in enumerate(parts, 1):
             if dry_run:
@@ -490,7 +497,7 @@ def run(day: dt.date, repo: Path, dry_run: bool = False, only: tuple = KINDS) ->
             lib.save_usage(repo, day.isoformat(), usage)
         payload = {
             "strategy": kind, "date": day.isoformat(), "seen": seen,
-            "qualifying": len(found[kind]["legs"]), "removed": found[kind]["removed"],
+            "qualifying": len(found[kind]["legs"]), "cappedByUsage": capped, "removed": found[kind]["removed"],
             "booked": [{k: v for k, v in b.items() if k != "legs"} | {"n": len(b.get("legs") or [])} for b in booked],
             "legs": [leg for b in booked if b.get("code") for leg in (b.get("legs") or [])],
             "rules": {"cap": CODE_CAP, "minTotal": lib.MIN_TOTAL, "leagueFitRatio": LEAGUE_FIT_RATIO,
@@ -498,7 +505,7 @@ def run(day: dt.date, repo: Path, dry_run: bool = False, only: tuple = KINDS) ->
         }
         if not dry_run:
             lib.write_record(repo, kind, day.isoformat(), payload)
-        summary[kind] = {"qualifying": payload["qualifying"],
+        summary[kind] = {"qualifying": payload["qualifying"], "cappedByUsage": capped,
                          "codes": [{"n": b.get("n") or len(b.get("legs") or []), "total": b.get("total"),
                                     "code": b.get("code"), "reason": b.get("reason")} for b in booked],
                          "removed": payload["removed"]}
@@ -511,12 +518,12 @@ def main(argv=None) -> int:
     parser.add_argument("--date")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--repo")
-    parser.add_argument("--only", help="comma list of " + ",".join(KINDS))
+    parser.add_argument("--only", help="comma list of " + ",".join(ALL_KINDS))
     args = parser.parse_args(argv)
     day = lib.nightly_target(explicit=args.date)
     repo = Path(args.repo) if args.repo else lib.repo_root()
     dry = args.dry_run or os.environ.get("P2U_HEALTH_DRY_RUN") == "1"
-    only = tuple(k for k in (args.only or "").split(",") if k in KINDS) or KINDS
+    only = tuple(k for k in (args.only or "").split(",") if k in ALL_KINDS) or ALL_KINDS
     run(day, repo, dry_run=dry, only=only)
     return 0
 
