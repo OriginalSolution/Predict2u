@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-21T22:16:05Z",
+ "DATA_UPDATED": "2026-11-22T00:16:01Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -13,10 +13,10 @@
   "returned": 3235.7,
   "profit": -644.3,
   "roi": -16.6,
-  "pending": 249,
-  "codesSettled": 1377,
+  "pending": 333,
+  "codesSettled": 1378,
   "codesWon": 229,
-  "codesLost": 1148
+  "codesLost": 1149
  },
  "streak": {
   "current": "lost",
@@ -124,15 +124,15 @@
  ],
  "bySite": [
   {
-   "n": 427,
+   "n": 428,
    "won": 51,
-   "lost": 376,
+   "lost": 377,
    "winRate": 11.9,
    "stake": 10.0,
-   "staked": 4270.0,
+   "staked": 4280.0,
    "returned": 2954.4,
-   "profit": -1315.6,
-   "roi": -30.8,
+   "profit": -1325.6,
+   "roi": -31.0,
    "key": "sportybet"
   },
   {
@@ -198,15 +198,15 @@
    "key": "Over 1.5"
   },
   {
-   "n": 211,
+   "n": 212,
    "won": 49,
-   "lost": 162,
-   "winRate": 23.2,
+   "lost": 163,
+   "winRate": 23.1,
    "stake": 10.0,
-   "staked": 2110.0,
+   "staked": 2120.0,
    "returned": 1829.4,
-   "profit": -280.6,
-   "roi": -13.3,
+   "profit": -290.6,
+   "roi": -13.7,
    "key": "Match result / other"
   },
   {
@@ -380,15 +380,15 @@
    "key": "2026-11-20"
   },
   {
-   "n": 95,
+   "n": 96,
    "won": 9,
-   "lost": 86,
-   "winRate": 9.5,
+   "lost": 87,
+   "winRate": 9.4,
    "stake": 10.0,
-   "staked": 950.0,
+   "staked": 960.0,
    "returned": 310.9,
-   "profit": -639.1,
-   "roi": -67.3,
+   "profit": -649.1,
+   "roi": -67.6,
    "key": "2026-11-19"
   },
   {
@@ -585,9 +585,9 @@
   }
  ],
  "picks": {
-  "settled": 3574,
-  "won": 2685,
-  "lost": 889,
+  "settled": 3584,
+  "won": 2692,
+  "lost": 892,
   "winRate": 75.1
  },
  "recent": [
@@ -599,7 +599,7 @@
    "kind": "high-odds",
    "odds": 214.86,
    "status": "lost",
-   "hit": 11,
+   "hit": 12,
    "total": 17,
    "profit": -10.0,
    "legs": [
@@ -677,7 +677,7 @@
      "match": "Alianza Lima v FC Cajamarca",
      "selection": "Over 2.5",
      "odds": 1.38,
-     "result": "pending",
+     "result": "won",
      "score": "5:0"
     },
     {
@@ -732,7 +732,7 @@
    "kind": "high-odds",
    "odds": 35324.69,
    "status": "lost",
-   "hit": 25,
+   "hit": 26,
    "total": 43,
    "profit": -10.0,
    "legs": [
@@ -992,8 +992,8 @@
      "match": "Santa Cruz FC PE v Ipojuca FC PE",
      "selection": "Over 2.5",
      "odds": 1.37,
-     "result": "pending",
-     "score": null
+     "result": "lost",
+     "score": "0:1"
     },
     {
      "match": "Ross County FC v Cove Rangers FC",
@@ -1006,7 +1006,7 @@
      "match": "Alianza Lima v FC Cajamarca",
      "selection": "Over 2.5",
      "odds": 1.38,
-     "result": "pending",
+     "result": "won",
      "score": "5:0"
     },
     {
@@ -1026,7 +1026,7 @@
    "kind": "high-odds",
    "odds": 32621.84,
    "status": "lost",
-   "hit": 32,
+   "hit": 33,
    "total": 43,
    "profit": -10.0,
    "legs": [
@@ -1063,7 +1063,7 @@
      "selection": "Over 0.5",
      "odds": 1.2,
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Eintracht Frankfurt v Hoffenheim",
@@ -1083,8 +1083,8 @@
      "match": "Academia del Balompie Boliviano v Club Aurora",
      "selection": "Over 0.5",
      "odds": 1.2,
-     "result": "pending",
-     "score": "1:1"
+     "result": "won",
+     "score": "1:2"
     },
     {
      "match": "Bournemouth v Nottingham Forest",
@@ -1860,8 +1860,8 @@
      "match": "Santa Cruz FC PE v Ipojuca FC PE",
      "selection": "Over 1.5",
      "odds": 1.22,
-     "result": "pending",
-     "score": null
+     "result": "lost",
+     "score": "0:1"
     },
     {
      "match": "Zabkovia Zabki v Olimpia Zambrow",
@@ -1957,7 +1957,7 @@
    "kind": "high-odds",
    "odds": 47365792.6,
    "status": "lost",
-   "hit": 34,
+   "hit": 35,
    "total": 50,
    "profit": -10.0,
    "legs": [
@@ -2007,7 +2007,7 @@
      "match": "EC Bahia BA v Coritiba FC PR",
      "selection": "Home",
      "odds": 1.52,
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -2168,8 +2168,8 @@
      "match": "Deportivo Mixco v CD Malacateco",
      "selection": "Home",
      "odds": 1.42,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "2:0"
     },
     {
      "match": "ACS Academica Transilvania Tg-Mures v CS Bihorul Beius",
@@ -2251,7 +2251,7 @@
    "kind": "high-odds",
    "odds": 179372.22,
    "status": "lost",
-   "hit": 22,
+   "hit": 24,
    "total": 35,
    "profit": -10.0,
    "legs": [
@@ -2329,8 +2329,8 @@
      "match": "FC Dallas v Portland Timbers",
      "selection": "Home",
      "odds": 1.44,
-     "result": "pending",
-     "score": "0:0"
+     "result": "won",
+     "score": "3:0"
     },
     {
      "match": "Zabkovia Zabki v Olimpia Zambrow",
@@ -2483,7 +2483,7 @@
      "match": "Alianza Lima v FC Cajamarca",
      "selection": "Over 2.5",
      "odds": 1.38,
-     "result": "pending",
+     "result": "won",
      "score": "5:0"
     },
     {
@@ -2778,7 +2778,7 @@
      "selection": "Over 2.5",
      "odds": 1.37,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "FC Prishtina Bern v Lancy FC",
@@ -2918,14 +2918,14 @@
      "selection": "Over 2.5",
      "odds": 1.49,
      "result": "pending",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "CF Pachuca v Deportivo Toluca FC",
      "selection": "Over 2.5",
      "odds": 1.47,
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Rekord Bielsko Biala v Slask II Wroclaw",
@@ -2993,7 +2993,7 @@
    "kind": "high-odds",
    "odds": 6533.89,
    "status": "lost",
-   "hit": 21,
+   "hit": 24,
    "total": 35,
    "profit": -10.0,
    "legs": [
@@ -3141,8 +3141,8 @@
      "match": "Santa Cruz FC PE v Ipojuca FC PE",
      "selection": "Over 2.5",
      "odds": 1.37,
-     "result": "pending",
-     "score": null
+     "result": "lost",
+     "score": "0:1"
     },
     {
      "match": "CA Talleres de Remedios v Real Pilar FC",
@@ -3211,36 +3211,36 @@
      "match": "Alianza Lima v FC Cajamarca",
      "selection": "Over 2.5",
      "odds": 1.38,
-     "result": "pending",
+     "result": "won",
      "score": "5:0"
     },
     {
      "match": "FC Dallas v Portland Timbers",
      "selection": "Home",
      "odds": 1.44,
-     "result": "pending",
-     "score": "0:0"
+     "result": "won",
+     "score": "3:0"
     },
     {
      "match": "Academia del Balompie Boliviano v Club Aurora",
      "selection": "Over 0.5",
      "odds": 1.2,
-     "result": "pending",
-     "score": "1:1"
+     "result": "won",
+     "score": "1:2"
     },
     {
      "match": "CF Pachuca v Deportivo Toluca FC",
      "selection": "Over 0.5",
      "odds": 1.2,
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Inter Miami CF v Columbus Crew",
      "selection": "Over 2.5",
      "odds": 1.37,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     }
    ]
   },
@@ -3534,7 +3534,7 @@
      "selection": "Over 1.5",
      "odds": 1.16,
      "result": "pending",
-     "score": null
+     "score": "1:1"
     }
    ]
   },
@@ -3546,7 +3546,7 @@
    "kind": "high-odds",
    "odds": 3008.86,
    "status": "lost",
-   "hit": 17,
+   "hit": 18,
    "total": 25,
    "profit": -10.0,
    "legs": [
@@ -3610,8 +3610,8 @@
      "match": "Santa Cruz FC PE v Ipojuca FC PE",
      "selection": "Over 2.5",
      "odds": 1.37,
-     "result": "pending",
-     "score": null
+     "result": "lost",
+     "score": "0:1"
     },
     {
      "match": "Caersws v Denbigh Town",
@@ -3646,7 +3646,7 @@
      "selection": "Over 2.5",
      "odds": 1.37,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Parma Calcio v Roma",
@@ -3666,8 +3666,8 @@
      "match": "Academia del Balompie Boliviano v Club Aurora",
      "selection": "Over 2.5",
      "odds": 1.5,
-     "result": "pending",
-     "score": "1:1"
+     "result": "won",
+     "score": "1:2"
     },
     {
      "match": "Wolfsburg v Holstein Kiel",
@@ -3735,7 +3735,7 @@
    "kind": "high-odds",
    "odds": 476.28,
    "status": "lost",
-   "hit": 27,
+   "hit": 28,
    "total": 35,
    "profit": -10.0,
    "legs": [
@@ -3835,7 +3835,7 @@
      "selection": "Over 0.5",
      "odds": 1.2,
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Tochigi City FC v Albirex Niigata",
@@ -3897,8 +3897,8 @@
      "match": "Academia del Balompie Boliviano v Club Aurora",
      "selection": "Over 0.5",
      "odds": 1.2,
-     "result": "pending",
-     "score": "1:1"
+     "result": "won",
+     "score": "1:2"
     },
     {
      "match": "Strasbourg v Brest",
@@ -4066,7 +4066,7 @@
      "selection": "Over 2.5",
      "odds": 1.37,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "BVV Barendrecht v VV Kloetinge",
@@ -4205,8 +4205,8 @@
      "match": "Santa Cruz FC PE v Ipojuca FC PE",
      "selection": "Over 2.5",
      "odds": 1.37,
-     "result": "pending",
-     "score": null
+     "result": "lost",
+     "score": "0:1"
     },
     {
      "match": "Ross County FC v Cove Rangers FC",
@@ -4274,7 +4274,7 @@
    "kind": "high-odds",
    "odds": 240.64,
    "status": "lost",
-   "hit": 8,
+   "hit": 9,
    "total": 15,
    "profit": -10.0,
    "legs": [
@@ -4338,8 +4338,8 @@
      "match": "FC Dallas v Portland Timbers",
      "selection": "Home",
      "odds": 1.44,
-     "result": "pending",
-     "score": "0:0"
+     "result": "won",
+     "score": "3:0"
     },
     {
      "match": "SK Sturm Graz II v SKU Amstetten",
@@ -4393,7 +4393,7 @@
    "kind": "high-odds",
    "odds": 180.72,
    "status": "lost",
-   "hit": 18,
+   "hit": 19,
    "total": 25,
    "profit": -10.0,
    "legs": [
@@ -4513,8 +4513,8 @@
      "match": "Academia del Balompie Boliviano v Club Aurora",
      "selection": "Over 0.5",
      "odds": 1.2,
-     "result": "pending",
-     "score": "1:1"
+     "result": "won",
+     "score": "1:2"
     },
     {
      "match": "Santiago FC v Dragones de Oaxaca",
@@ -4689,7 +4689,7 @@
      "selection": "Over 0.5",
      "odds": 1.2,
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Polonia Warszawa v FKS Stal Mielec",
@@ -5135,7 +5135,7 @@
    "kind": "hot",
    "odds": 4.85,
    "status": "won",
-   "hit": 4,
+   "hit": 5,
    "total": 5,
    "profit": 38.5,
    "legs": [
@@ -5184,7 +5184,7 @@
    "kind": "slip",
    "odds": 48.37,
    "status": "lost",
-   "hit": 2,
+   "hit": 1,
    "total": 11,
    "profit": -10.0,
    "legs": [
@@ -5261,9 +5261,9 @@
     {
      "match": "Inter Miami CF v Columbus Crew",
      "selection": "Yes",
-     "odds": 1.45,
+     "odds": 1.1,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     }
    ]
   },
@@ -5275,7 +5275,7 @@
    "kind": "slip",
    "odds": 25.28,
    "status": "lost",
-   "hit": 1,
+   "hit": 0,
    "total": 13,
    "profit": -10.0,
    "legs": [
@@ -5380,14 +5380,14 @@
    "kind": "hot",
    "odds": 165.18,
    "status": "lost",
-   "hit": 5,
+   "hit": 6,
    "total": 19,
    "profit": -10.0,
    "legs": [
     {
      "match": "Real Madrid v Celta",
      "selection": "Real Madrid",
-     "odds": 2.25,
+     "odds": 1.01,
      "result": "won",
      "score": "2:1"
     },
@@ -5464,7 +5464,7 @@
     {
      "match": "Juventus v Venezia FC",
      "selection": "Juventus",
-     "odds": 1.39,
+     "odds": 1.37,
      "result": "pending",
      "score": null
     },
@@ -5485,7 +5485,7 @@
     {
      "match": "Monaco v AJ Auxerre",
      "selection": "Monaco",
-     "odds": 10.0,
+     "odds": 17.5,
      "result": "lost",
      "score": "1:1"
     },
@@ -5527,7 +5527,7 @@
    "kind": "hot",
    "odds": 9.86,
    "status": "lost",
-   "hit": 7,
+   "hit": 9,
    "total": 17,
    "profit": -10.0,
    "legs": [
@@ -5562,7 +5562,7 @@
     {
      "match": "Monaco v AJ Auxerre",
      "selection": "Over 1.5",
-     "odds": 1.85,
+     "odds": 2.3,
      "result": "won",
      "score": "1:1"
     },
@@ -5618,7 +5618,7 @@
     {
      "match": "Real Madrid v Celta",
      "selection": "Over 1.5",
-     "odds": 1.16,
+     "odds": 1.25,
      "result": "won",
      "score": "2:1"
     },
@@ -5660,7 +5660,7 @@
    "kind": "hot",
    "odds": 3.17,
    "status": "lost",
-   "hit": 4,
+   "hit": 5,
    "total": 9,
    "profit": -10.0,
    "legs": [
@@ -5737,7 +5737,7 @@
    "kind": "hot",
    "odds": 11.08,
    "status": "lost",
-   "hit": 8,
+   "hit": 10,
    "total": 17,
    "profit": -10.0,
    "legs": [
@@ -5870,14 +5870,14 @@
    "kind": "hot",
    "odds": 153.98,
    "status": "lost",
-   "hit": 5,
+   "hit": 6,
    "total": 20,
    "profit": -10.0,
    "legs": [
     {
      "match": "Real Madrid v Celta",
      "selection": "Real Madrid",
-     "odds": 2.2,
+     "odds": 1.01,
      "result": "won",
      "score": "2:1"
     },
@@ -5940,7 +5940,7 @@
     {
      "match": "Juventus v Venezia FC",
      "selection": "Juventus",
-     "odds": 1.39,
+     "odds": 1.37,
      "result": "pending",
      "score": null
     },
@@ -5961,7 +5961,7 @@
     {
      "match": "Monaco v AJ Auxerre",
      "selection": "Monaco",
-     "odds": 10.0,
+     "odds": 17.5,
      "result": "lost",
      "score": "1:1"
     },
@@ -6024,7 +6024,7 @@
    "kind": "hot",
    "odds": 137.51,
    "status": "lost",
-   "hit": 5,
+   "hit": 6,
    "total": 20,
    "profit": -10.0,
    "legs": [
@@ -6178,7 +6178,7 @@
    "kind": "hot",
    "odds": 118.56,
    "status": "lost",
-   "hit": 5,
+   "hit": 6,
    "total": 20,
    "profit": -10.0,
    "legs": [
@@ -6332,14 +6332,14 @@
    "kind": "hot",
    "odds": 151.42,
    "status": "lost",
-   "hit": 5,
+   "hit": 6,
    "total": 20,
    "profit": -10.0,
    "legs": [
     {
      "match": "Real Madrid v Celta",
      "selection": "Real Madrid",
-     "odds": 2.2,
+     "odds": 1.01,
      "result": "won",
      "score": "2:1"
     },
@@ -6402,7 +6402,7 @@
     {
      "match": "Juventus v Venezia FC",
      "selection": "Juventus",
-     "odds": 1.39,
+     "odds": 1.37,
      "result": "pending",
      "score": null
     },
@@ -6423,7 +6423,7 @@
     {
      "match": "Monaco v AJ Auxerre",
      "selection": "Monaco",
-     "odds": 10.0,
+     "odds": 17.5,
      "result": "lost",
      "score": "1:1"
     },
@@ -6486,7 +6486,7 @@
    "kind": "hot",
    "odds": 157.37,
    "status": "lost",
-   "hit": 5,
+   "hit": 6,
    "total": 20,
    "profit": -10.0,
    "legs": [
@@ -6640,7 +6640,7 @@
    "kind": "hot",
    "odds": 220.35,
    "status": "lost",
-   "hit": 13,
+   "hit": 15,
    "total": 30,
    "profit": -10.0,
    "legs": [
@@ -6703,7 +6703,7 @@
     {
      "match": "Napoli v Torino",
      "selection": "Over 1.5",
-     "odds": 2.35,
+     "odds": 4.6,
      "result": "lost",
      "score": "1:0"
     },
@@ -6738,7 +6738,7 @@
     {
      "match": "Monaco v AJ Auxerre",
      "selection": "Over 1.5",
-     "odds": 1.85,
+     "odds": 2.3,
      "result": "won",
      "score": "1:1"
     },
@@ -6815,7 +6815,7 @@
     {
      "match": "Lille v Lyon",
      "selection": "Over 1.5",
-     "odds": 2.45,
+     "odds": 5.25,
      "result": "lost",
      "score": "0:1"
     },
@@ -6829,7 +6829,7 @@
     {
      "match": "Strasbourg v Brest",
      "selection": "Over 1.5",
-     "odds": 2.35,
+     "odds": 4.5,
      "result": "lost",
      "score": "0:1"
     },
@@ -6864,7 +6864,7 @@
    "kind": "hot",
    "odds": 264.74,
    "status": "lost",
-   "hit": 13,
+   "hit": 15,
    "total": 30,
    "profit": -10.0,
    "legs": [
@@ -7088,7 +7088,7 @@
    "kind": "hot",
    "odds": 298.64,
    "status": "lost",
-   "hit": 13,
+   "hit": 15,
    "total": 30,
    "profit": -10.0,
    "legs": [
@@ -7312,7 +7312,7 @@
    "kind": "hot",
    "odds": 220.17,
    "status": "lost",
-   "hit": 13,
+   "hit": 15,
    "total": 30,
    "profit": -10.0,
    "legs": [
@@ -7375,7 +7375,7 @@
     {
      "match": "Napoli v Torino FC",
      "selection": "Over 1.5",
-     "odds": 2.35,
+     "odds": 4.6,
      "result": "lost",
      "score": "1:0"
     },
@@ -7410,7 +7410,7 @@
     {
      "match": "Monaco v AJ Auxerre",
      "selection": "Over 1.5",
-     "odds": 1.85,
+     "odds": 2.3,
      "result": "won",
      "score": "1:1"
     },
@@ -7487,7 +7487,7 @@
     {
      "match": "Lille v Lyon",
      "selection": "Over 1.5",
-     "odds": 2.45,
+     "odds": 5.25,
      "result": "lost",
      "score": "0:1"
     },
@@ -7501,7 +7501,7 @@
     {
      "match": "Strasbourg v Stade Brest 29",
      "selection": "Over 1.5",
-     "odds": 2.35,
+     "odds": 4.5,
      "result": "lost",
      "score": "0:1"
     },
@@ -7536,7 +7536,7 @@
    "kind": "hot",
    "odds": 296.65,
    "status": "lost",
-   "hit": 13,
+   "hit": 15,
    "total": 30,
    "profit": -10.0,
    "legs": [
@@ -7760,7 +7760,7 @@
    "kind": "hot",
    "odds": 20.3,
    "status": "lost",
-   "hit": 2,
+   "hit": 3,
    "total": 11,
    "profit": -10.0,
    "legs": [
@@ -7823,7 +7823,7 @@
     {
      "match": "Real Madrid v Celta",
      "selection": "Over 2.5",
-     "odds": 1.75,
+     "odds": 2.05,
      "result": "won",
      "score": "2:1"
     },
