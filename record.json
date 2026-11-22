@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-22T00:16:01Z",
+ "DATA_UPDATED": "2026-11-22T01:45:53Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -13,7 +13,7 @@
   "returned": 3235.7,
   "profit": -644.3,
   "roi": -16.6,
-  "pending": 333,
+  "pending": 408,
   "codesSettled": 1378,
   "codesWon": 229,
   "codesLost": 1149
@@ -585,9 +585,9 @@
   }
  ],
  "picks": {
-  "settled": 3584,
-  "won": 2692,
-  "lost": 892,
+  "settled": 3591,
+  "won": 2697,
+  "lost": 894,
   "winRate": 75.1
  },
  "recent": [
@@ -1026,7 +1026,7 @@
    "kind": "high-odds",
    "odds": 32621.84,
    "status": "lost",
-   "hit": 33,
+   "hit": 34,
    "total": 43,
    "profit": -10.0,
    "legs": [
@@ -1062,8 +1062,8 @@
      "match": "CF Pachuca v Deportivo Toluca FC",
      "selection": "Over 0.5",
      "odds": 1.2,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "2:0"
     },
     {
      "match": "Eintracht Frankfurt v Hoffenheim",
@@ -2510,7 +2510,7 @@
    "kind": "high-odds",
    "odds": 42820.87,
    "status": "lost",
-   "hit": 31,
+   "hit": 32,
    "total": 44,
    "profit": -10.0,
    "legs": [
@@ -2777,8 +2777,8 @@
      "match": "Inter Miami CF v Columbus Crew",
      "selection": "Over 2.5",
      "odds": 1.37,
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "0:3"
     },
     {
      "match": "FC Prishtina Bern v Lancy FC",
@@ -2804,7 +2804,7 @@
    "kind": "high-odds",
    "odds": 7728.87,
    "status": "lost",
-   "hit": 12,
+   "hit": 13,
    "total": 25,
    "profit": -10.0,
    "legs": [
@@ -2917,15 +2917,15 @@
      "match": "Oriente Petrolero v Independiente Petrolero",
      "selection": "Over 2.5",
      "odds": 1.49,
-     "result": "pending",
-     "score": "1:1"
+     "result": "won",
+     "score": "2:2"
     },
     {
      "match": "CF Pachuca v Deportivo Toluca FC",
      "selection": "Over 2.5",
      "odds": 1.47,
-     "result": "pending",
-     "score": "1:0"
+     "result": "lost",
+     "score": "2:0"
     },
     {
      "match": "Rekord Bielsko Biala v Slask II Wroclaw",
@@ -2993,7 +2993,7 @@
    "kind": "high-odds",
    "odds": 6533.89,
    "status": "lost",
-   "hit": 24,
+   "hit": 26,
    "total": 35,
    "profit": -10.0,
    "legs": [
@@ -3232,15 +3232,15 @@
      "match": "CF Pachuca v Deportivo Toluca FC",
      "selection": "Over 0.5",
      "odds": 1.2,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "2:0"
     },
     {
      "match": "Inter Miami CF v Columbus Crew",
      "selection": "Over 2.5",
      "odds": 1.37,
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "0:3"
     }
    ]
   },
@@ -3252,7 +3252,7 @@
    "kind": "high-odds",
    "odds": 5288.57,
    "status": "lost",
-   "hit": 37,
+   "hit": 38,
    "total": 50,
    "profit": -10.0,
    "legs": [
@@ -3533,8 +3533,8 @@
      "match": "Club Santos Laguna v Club Leon",
      "selection": "Over 1.5",
      "odds": 1.16,
-     "result": "pending",
-     "score": "1:1"
+     "result": "won",
+     "score": "1:2"
     }
    ]
   },
@@ -3546,7 +3546,7 @@
    "kind": "high-odds",
    "odds": 3008.86,
    "status": "lost",
-   "hit": 18,
+   "hit": 19,
    "total": 25,
    "profit": -10.0,
    "legs": [
@@ -3645,8 +3645,8 @@
      "match": "Inter Miami CF v Columbus Crew",
      "selection": "Over 2.5",
      "odds": 1.37,
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "0:3"
     },
     {
      "match": "Parma Calcio v Roma",
@@ -3735,7 +3735,7 @@
    "kind": "high-odds",
    "odds": 476.28,
    "status": "lost",
-   "hit": 28,
+   "hit": 29,
    "total": 35,
    "profit": -10.0,
    "legs": [
@@ -3834,8 +3834,8 @@
      "match": "CF Pachuca v Deportivo Toluca FC",
      "selection": "Over 0.5",
      "odds": 1.2,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "2:0"
     },
     {
      "match": "Tochigi City FC v Albirex Niigata",
@@ -3994,7 +3994,7 @@
    "kind": "high-odds",
    "odds": 297.72,
    "status": "lost",
-   "hit": 11,
+   "hit": 12,
    "total": 18,
    "profit": -10.0,
    "legs": [
@@ -4065,8 +4065,8 @@
      "match": "Inter Miami CF v Columbus Crew",
      "selection": "Over 2.5",
      "odds": 1.37,
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "0:3"
     },
     {
      "match": "BVV Barendrecht v VV Kloetinge",
@@ -4582,7 +4582,7 @@
    "kind": "high-odds",
    "odds": 174.18,
    "status": "lost",
-   "hit": 16,
+   "hit": 17,
    "total": 25,
    "profit": -10.0,
    "legs": [
@@ -4688,8 +4688,8 @@
      "match": "CF Pachuca v Deportivo Toluca FC",
      "selection": "Over 0.5",
      "odds": 1.2,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "2:0"
     },
     {
      "match": "Polonia Warszawa v FKS Stal Mielec",
@@ -5261,9 +5261,9 @@
     {
      "match": "Inter Miami CF v Columbus Crew",
      "selection": "Yes",
-     "odds": 1.1,
-     "result": "pending",
-     "score": "0:1"
+     "odds": 9.75,
+     "result": "lost",
+     "score": "0:3"
     }
    ]
   },
@@ -5464,7 +5464,7 @@
     {
      "match": "Juventus v Venezia FC",
      "selection": "Juventus",
-     "odds": 1.37,
+     "odds": 1.39,
      "result": "pending",
      "score": null
     },
@@ -5940,7 +5940,7 @@
     {
      "match": "Juventus v Venezia FC",
      "selection": "Juventus",
-     "odds": 1.37,
+     "odds": 1.39,
      "result": "pending",
      "score": null
     },
@@ -6402,7 +6402,7 @@
     {
      "match": "Juventus v Venezia FC",
      "selection": "Juventus",
-     "odds": 1.37,
+     "odds": 1.39,
      "result": "pending",
      "score": null
     },
