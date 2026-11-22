@@ -30,6 +30,8 @@ NOW = dt.datetime.now(dt.timezone.utc)
 TODAY = NOW.date().isoformat()
 SETTLE_ONLY = '--settle-only' in sys.argv
 sys.path.insert(0, str(RESEARCH))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import empty_sections as es  # noqa: E402  HANDOFF §5.11
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
 HEADERS = ['-A', UA, '-H', 'Accept: application/json, text/plain, */*', '-H', 'Accept-Language: en-GB,en;q=0.9', '-H', 'Referer: https://www.sportybet.com/gh/']
 
@@ -207,7 +209,7 @@ def house_candidates():
                 continue
             code = (s.get('codes') or {}).get('sportybet')
             if code and s.get('legs'):
-                out.append(dict(code=code, name=s.get('name') or 'House High Odds', odds=s.get('totalOdds'), date=path.stem, original=s['legs'], origin='strategy'))
+                out.append(dict(code=code, name=s.get('name') or 'House High Odds', odds=s.get('totalOdds'), date=path.stem, original=s['legs'], origin=es.preserve_origin(s) if s.get('origin') or s.get('name') else 'strategy'))
     return out
 
 
@@ -591,7 +593,8 @@ def main():
                 hub_count += 1
                 if hub_count > 12:
                     continue
-            s['origin'] = 'strategy' if s['code'] in house else 'code-hub'
+            # Keep strategy-ttw / form80 / mo25 / ah1 (and ho-master). Never stomp to a generic 'strategy'.
+            s['origin'] = es.preserve_origin(s) or ('strategy' if s['code'] in house else 'code-hub')
             s.pop('bookingPending', None)
             active.append(s)
         else:
@@ -607,6 +610,7 @@ def main():
     lost = sum(s['status'] == 'lost' for s in history)
     doc = dict(label='High Odds — higher risk', updatedAt=NOW.isoformat(timespec='seconds').replace('+00:00', 'Z'),
                slips=active, history=history[:90], record=dict(won=won, lost=lost, settled=won + lost, pending=len(active), winRate=round(100 * won / (won + lost), 1) if won + lost else None))
+    doc = es.prepare_high_odds_doc(doc)
     save(OUT, doc, pretty=False)
     replacement_ledger = [dict(replacementOf=s.get('replacementOf'), code=s['code'], date=s.get('date') or TODAY) for s in refreshed.values() if s.get('replacementOf')]
     known_rep = {(r['replacementOf'], r['code']) for r in replacement_ledger}
@@ -625,6 +629,7 @@ def main():
     if not SETTLE_ONLY:
         book_other_sites(active, books_cache)
     # Persist the new per-bookmaker codes and refresh the social card after booking.
+    doc = es.prepare_high_odds_doc(doc)
     save(OUT, doc, pretty=False)
     build_og(doc)
     # Keep each High Odds slip's downloadable/share-preview image in the existing card pipeline.

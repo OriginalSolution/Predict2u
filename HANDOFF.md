@@ -380,6 +380,14 @@ Owner's words: "A hard rule always switch to u3.5 when over 1.5 is greater than 
   get the same legs) and `sb_share_helper17.book` (the SportyBet POST used by bookers, DC shield, team codes).
 - High-Scoring O1.5/O2.5 (5.9) books Over 1.5 only at 1.20-1.30, so it is never affected.
 
+### 5.11 Empty sections are never published
+A strategy section with zero valid codes is not written to the public feeds (High Odds, and the same rule on Hot / Bankers / Home / Code of the Day). No header, no placeholder card. If every section on a tab is empty, the site shows one short tab-level message; the engine publishes an empty list.
+- Helper: `engine/empty_sections.py` (`has_valid_code`, `sections_to_publish`, `drop_empty_strategy_cards`, `preserve_origin`, `prepare_high_odds_doc`). Tests: `engine/tests/test_empty_sections.py`.
+- Applied when writing `high_odds.json` (`strategy_lib.publish_high_odds`, `high_odds.py`, settle, `p2u_merge_live.py`) and when upserting Hot `modelSlips`. `high_odds.json` stays compact one-line JSON.
+- History cards that have codes are kept. Only a card with no valid code is dropped.
+- Each strategy keeps its own origin (`strategy-ttw`, `strategy-form80`, `strategy-mo25`, `strategy-ah1`, …). A generic `strategy` overwrite is forbidden, because the High tab groups codes by that origin.
+- The High tab frontend (PR #51) also hides an empty section. That is a display fallback; this rule is what stops an empty section being published.
+
 ## 6. Services and accounts
 
 | Service | What | Account / login | Notes |

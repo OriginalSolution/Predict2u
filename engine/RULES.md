@@ -107,6 +107,9 @@ Daily job: `engine/vendor/verzzify_banker.py`.
 - ALL normal Predict2u rules (matchup_rules / hard vetoes / obscure goals-only / ≤50 legs).
 - Pack until combined odds first exceeds 25; refuse to pad. Booked on every no-login bookmaker.
 
+## Empty strategy sections are never published
+A strategy section (Team To Win, 80% Form, Match Over 2.5, AH -1 Favourite, and the same idea on Hot / Bankers / Home) with zero valid codes is not written to the public feeds. History cards that have codes are kept. Each High Odds strategy keeps its own `origin` (`strategy-ttw`, `strategy-form80`, …); a generic `strategy` overwrite is forbidden. Helper: `engine/empty_sections.py`. See HANDOFF §5.11.
+
 ## Prune unusable codes from live sections
 `vendor/prune_live.py` runs at the start of the daily job, again after publish (including after `daily_master.py`, which used to put kicked-off High Odds parts back on the active list), and after every settle. It removes a code from Home, Hot, High Odds active slips, Bankers/picks and dayMasters as soon as it is no longer bookable:
 

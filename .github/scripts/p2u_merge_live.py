@@ -18,6 +18,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO))
 from engine import fav_guard as G  # noqa: E402
+from engine import empty_sections as ES  # noqa: E402
 
 FILE = G.HOME
 
@@ -96,9 +97,10 @@ def main(argv):
     hb, ho, ht = show_file(base, HIGH_ODDS), show_file(ours, HIGH_ODDS), show_file(theirs, HIGH_ODDS)
     if base and isinstance(ho, dict) and isinstance(ht, dict) and ho != (hb or {}) and ht != (hb or {}) and base != theirs:
         merged = merge_high_odds(hb if isinstance(hb, dict) else {}, ho, ht)
+        merged = ES.prepare_high_odds_doc(merged)
         hpath = REPO / HIGH_ODDS
         if merged != ho:
-            hpath.write_text(json.dumps(merged, ensure_ascii=False, separators=(",", ":")))  # stays one-line JSON
+            hpath.write_text(ES.compact_text(merged))  # stays one-line JSON
             msgs.append("slip-merged high_odds.json with the newer main")
     changes, ok = G.repair_repo(REPO, extra_sources=[t] if t else [], history=False)
     msgs += changes

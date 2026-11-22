@@ -9,6 +9,10 @@ from __future__ import annotations
 import datetime as dt
 import json
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import empty_sections as es  # noqa: E402
 
 LINKS = {
     "sportybet": "https://www.sportybet.com/gh/?shareCode={}",
@@ -65,8 +69,8 @@ def upsert_model_slips(repo: Path, slips: list[dict], replace_strategies: set[st
     doc = load_hot(repo)
     keys = replace_strategies or {s.get("strategy") for s in slips}
     kept = [s for s in (doc.get("modelSlips") or []) if s.get("strategy") not in keys]
-    # Hide a slip that booked on nobody.
-    fresh = [s for s in slips if s.get("codes")]
+    # Hide a slip that booked on nobody (empty sections are never published).
+    fresh = [s for s in slips if es.has_valid_code(s)]
     doc["modelSlips"] = fresh + kept
     doc["updatedAt"] = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
     save_hot(repo, doc)
