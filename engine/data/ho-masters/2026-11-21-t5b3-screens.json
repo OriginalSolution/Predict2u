@@ -32,7 +32,7 @@
        "sr:match:72723322",
        "sr:match:72735912"
       ],
-      "hit": 0,
+      "hit": 1,
       "status": "pending"
      }
     ],
@@ -49,7 +49,7 @@
        "sr:match:72723322",
        "sr:match:72735912"
       ],
-      "hit": 0,
+      "hit": 1,
       "status": "pending"
      }
     ]
@@ -80,10 +80,10 @@
    "selection": "Home (-1.0)",
    "odds": 1.22,
    "liveOdds": 1.34,
-   "result": "pending",
-   "matchStatus": "H1",
+   "result": "won",
+   "matchStatus": "Ended",
    "score": "3:0",
-   "played": "43:09",
+   "played": "90:00",
    "table": "2 v 17/18",
    "x12": "1.18/8.75/14.41",
    "case": "stronger AH-1 @1.22 (top5 v bottom3)",
@@ -103,11 +103,11 @@
    "market": "Asian Handicap -1",
    "selection": "Home (-1.0)",
    "odds": 1.2,
-   "liveOdds": 1.16,
+   "liveOdds": 1.14,
    "result": "pending",
-   "matchStatus": "Not start",
-   "score": null,
-   "played": null,
+   "matchStatus": "H1",
+   "score": "1:0",
+   "played": "14:40",
    "table": "3 v 18/18",
    "x12": "1.16/9.12/16.97",
    "case": "stronger AH-1 @1.2 (top5 v bottom3)",
@@ -127,11 +127,11 @@
    "market": "Asian Handicap -1",
    "selection": "Home (-1.0)",
    "odds": 1.25,
-   "liveOdds": 1.25,
+   "liveOdds": 1.27,
    "result": "pending",
-   "matchStatus": "Not start",
-   "score": null,
-   "played": null,
+   "matchStatus": "H1",
+   "score": "0:0",
+   "played": "15:11",
    "table": "1 v 18/20",
    "x12": "1.18/6.80/13.00",
    "case": "stronger AH-1 @1.25 (top5 v bottom3)",
@@ -175,7 +175,7 @@
    "market": "Asian Handicap -1",
    "selection": "Home (-1.0)",
    "odds": 1.35,
-   "liveOdds": 1.37,
+   "liveOdds": 1.35,
    "result": "pending",
    "matchStatus": "Not start",
    "score": null,
@@ -189,7 +189,7 @@
  ],
  "legs": 5,
  "totalOdds": 3.58,
- "hit": 0,
+ "hit": 1,
  "total": 5,
  "status": "pending"
 }
