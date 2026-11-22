@@ -30,6 +30,13 @@ def book(selections):
     selections: list of dicts with keys eventId, marketId, specifier, outcomeId.
     Returns (shareCode_or_None, status_str).
     """
+    import os, sys
+    _here = os.path.dirname(os.path.abspath(__file__))
+    if _here not in sys.path:
+        sys.path.insert(0, _here)
+    import leg_guard  # final Over 1.5 <-> Under 3.5 rule (HANDOFF 5.10); edits the caller's list in place
+    if isinstance(selections, list):
+        leg_guard.enforce(selections, "sb_share_helper17.book")
     if not selections:
         return None, "empty"
     payload = {"selections": []}

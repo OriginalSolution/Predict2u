@@ -203,7 +203,7 @@ def plan_codes(legs: list[dict], cfg: dict) -> list[dict]:
 
 # ------------------------------------------------------------------ booking (read back, no 25 floor)
 def book_verified(legs: list[dict], tries: int = 3) -> dict:
-    pending = list(legs)
+    pending = lib.leg_guard().enforce(list(legs), "hs_goals.book_verified")
     for _ in range(tries):
         if not pending:
             break

@@ -352,6 +352,14 @@ def run(day: dt.date, repo: Path, dry_run: bool = False, simulate: bool = False)
             leg = dict(sr.make_leg(row["event"], odds, alt, KIND), sourceCode=leg.get("sourceCode"), swappedFrom=leg.get("selection"), _name=alt)
             swaps["swap"] += 1
         final.append(leg)
+    # Runs last, after the U4.5 -> O2.5/O1.5 switch and the 1.45 swap: Over 1.5 <-> Under 3.5 at 1.39 (HANDOFF 5.10).
+    guard = lib.leg_guard()
+    before = len(guard.LOG)
+    guard.enforce(final, "master_pipeline")
+    for leg in final:
+        if leg.get("ruleSwap") and guard.kind(leg):
+            leg["_name"] = guard.kind(leg)
+    log["o15_u35_rule"] = guard.LOG[before:]
     log.update({"u45_to_overs": swaps["u45"], "swapped_over_145": swaps["swap"], "dropped_over_145": swaps["drop"], "final": len(final)})
     codes, skipped = outputs(final)
     clean = lambda legs: [{k: v for k, v in leg.items() if not k.startswith("_")} for leg in legs]  # noqa: E731

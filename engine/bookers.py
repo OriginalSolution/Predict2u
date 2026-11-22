@@ -122,6 +122,12 @@ BOOKERS = {
 
 
 def book_all(legs, skip=None):
+    import os, sys
+    _here = os.path.dirname(os.path.abspath(__file__))
+    if _here not in sys.path:
+        sys.path.insert(0, _here)
+    import leg_guard  # same Over 1.5 <-> Under 3.5 legs on every book (HANDOFF 5.10)
+    legs = leg_guard.enforce(legs if isinstance(legs, list) else list(legs), "bookers.book_all")
     skip = set(skip or [])
     out = {}
     for name, fn in BOOKERS.items():

@@ -105,7 +105,7 @@ def test_book_verified_reads_back_and_drops_started(monkeypatch):
                  "markets": [{"outcomes": [{"odds": "1.25"}]}]} for i in range(n)]
         return {"outcomes": rows}
     monkeypatch.setattr(lib, "read_share", share)
-    L = [{"eventId": f"e{i}", "marketId": "18", "specifier": "total=1.5", "outcomeId": "12"} for i in range(3)]
+    L = [{"eventId": f"e{i}", "marketId": "18", "specifier": "total=1.5", "outcomeId": "12", "odds": 1.25} for i in range(3)]
     res = hs.book_verified(L)
     assert res["code"] == "C2" and len(res["legs"]) == 2 and res["readBack"] and res["total"] == round(1.25 ** 2, 2)
 
