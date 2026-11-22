@@ -1347,6 +1347,113 @@
     }
    ],
    "mixed": "built"
+  },
+  "2026-11-22": {
+   "built": "2026-11-22 21:46 GMT",
+   "slips": {
+    "M1": {
+     "name": "M1 Team or Over 2.5",
+     "codes": {
+      "sportybet": "D8CQN1",
+      "footballcom": "D8CQN1",
+      "msport": "B3NBPXH"
+     },
+     "total": 1.88,
+     "legs": 8,
+     "meetsFloor": false,
+     "result": "pending"
+    },
+    "M2": {
+     "name": "M2 Double Chance & Over 1.5",
+     "codes": {
+      "sportybet": "AZ8KL4",
+      "footballcom": "AZ8KL4",
+      "msport": "B3NBPXU",
+      "betika": "K9RSJ5"
+     },
+     "total": 1.25,
+     "legs": 3,
+     "meetsFloor": false,
+     "result": "pending"
+    },
+    "MIXED": {
+     "name": "M1/M2 team 2+",
+     "codes": {
+      "sportybet": "83T6N2",
+      "footballcom": "83T6N2",
+      "msport": "B3NBPYX",
+      "betika": "HHfFPt",
+      "betpawa": "LUC6VRJ"
+     },
+     "total": 7.05,
+     "legs": 9,
+     "meetsFloor": false,
+     "result": "pending"
+    }
+   },
+   "dropped": [
+    {
+     "match": "Salzburg v FC Ararat-Armenia",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "Home Team or Over 2.5 not allowed in a middle game (fav @1.18, table 26 v 36/36)"
+    },
+    {
+     "match": "Salzburg v FC Ararat-Armenia",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.18, table 26 v 36/36)"
+    },
+    {
+     "match": "Salzburg v FC Ararat-Armenia",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.18, table 26 v 36/36)"
+    },
+    {
+     "match": "Ajax v FC Thun",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "Home Team or Over 2.5 not allowed in a middle game (fav @1.21, table 11 v 20/36)"
+    },
+    {
+     "match": "Ajax v FC Thun",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.21, table 11 v 20/36)"
+    },
+    {
+     "match": "Brighton v CS Universitatea Craiova",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "Home Team or Over 2.5 not allowed in a middle game (fav @1.17, table 5 v 8/36)"
+    },
+    {
+     "match": "Brighton v CS Universitatea Craiova",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.17, table 5 v 8/36)"
+    },
+    {
+     "match": "Brighton v CS Universitatea Craiova",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.17, table 5 v 8/36)"
+    },
+    {
+     "match": "Boreham Wood FC v Aldershot Town FC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — England - National League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "FC Nizhny Novgorod v FC Tekstilshchik Ivanovo",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Russia - 1. Liga: non-goals market Home Team or Over 2.5 not allowed"
+    }
+   ],
+   "mixed": "built"
   }
  }
 }
