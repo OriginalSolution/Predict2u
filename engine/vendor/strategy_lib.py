@@ -12,6 +12,7 @@ import json
 import os
 import re
 import subprocess
+import sys
 from pathlib import Path
 
 MIN_TOTAL = 25.0
@@ -118,7 +119,7 @@ def pack_slip(legs: list[dict], cap: int = MAX_LEGS) -> tuple[list[dict], str | 
     More than `cap` legs is cut to the first `cap` (caller orders them);
     a leftover chunk under 25 is not booked and is not filled with extras.
     """
-    clean = [leg for leg in legs if not absolute_ban(leg)]
+    clean = leg_guard().enforce([leg for leg in legs if not absolute_ban(leg)], "strategy_lib.pack_slip")
     dropped = len(legs) - len(clean)
     if not clean:
         why = "no legs" if not legs else "only NG/DC 12 legs"
@@ -166,7 +167,7 @@ def tag_relaxed(slip: dict) -> dict:
 
 def chunk_bookable(legs: list[dict], cap: int = MAX_LEGS) -> list[list[dict]]:
     """Split a long qualifying list into bookable parts. Parts under 25 are omitted."""
-    clean = [leg for leg in legs if not absolute_ban(leg)]
+    clean = leg_guard().enforce([leg for leg in legs if not absolute_ban(leg)], "strategy_lib.chunk_bookable")
     if not clean:
         return []
     parts = [clean[i:i + cap] for i in range(0, len(clean), cap)]
@@ -410,8 +411,19 @@ def fetch_upcoming(market_ids: str = "1,10,11,18,19,20,29", busy_filter: bool = 
     return events
 
 
+def leg_guard():
+    """engine/leg_guard.py: the final Over 1.5 <-> Under 3.5 check (HANDOFF 5.10)."""
+    eng = str(Path(__file__).resolve().parents[1])
+    if eng not in sys.path:
+        sys.path.insert(0, eng)
+    import leg_guard as guard
+    return guard
+
+
 def book_sportybet(selections: list[dict]) -> tuple[str | None, str]:
     """POST the public Ghana share endpoint. Does not log in and does not place a bet."""
+    if isinstance(selections, list):
+        leg_guard().enforce(selections, "strategy_lib.book_sportybet")
     if not selections:
         return None, "empty"
     payload = {"selections": []}
@@ -465,7 +477,9 @@ def selection_body(leg: dict) -> dict:
 
 def book_confirmed(legs: list[dict]) -> dict:
     """Book, drop legs that have already started, rebook, refuse a ticket under 25."""
-    pending = list(legs)
+    pending = leg_guard().enforce(list(legs), "strategy_lib.book_confirmed")
+    if not pending:
+        return {"code": None, "reason": "every leg dropped by the Over 1.5 / Under 3.5 rule", "legs": []}
     code, status = book_sportybet([selection_body(leg) for leg in pending])
     if not code:
         return {"code": None, "reason": status or "book failed", "legs": []}

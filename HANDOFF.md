@@ -364,6 +364,22 @@ Run by hand: Actions → engine-hs-goals → Run workflow (`date`, `dry_run`, `f
 - **Order:** 21:30 runs before M1/M2 (21:45) and the 22:00 daily/Hot publish and 22:00 strategies, so its matches
   take their usage slots first.
 
+### 5.10 Over 1.5 <-> Under 3.5 hard rule (every booking; Riddim Boss, 22 Nov 2026 01:39 GMT)
+Owner's words: "A hard rule always switch to u3.5 when over 1.5 is greater than 1.39 And vice versa".
+`engine/leg_guard.py` (`enforce`), cap in `engine/leg_rules.json` (`o15_u35_cap` 1.39, `o15_u35_enabled`). Tests: `engine/tests/test_leg_guard.py`.
+- Match **Over 1.5 above 1.39** -> match **Under 3.5** on the same match; match **Under 3.5 above 1.39** -> match **Over 1.5**.
+- Swap only when SportyBet lists the replacement at **<= 1.39** (live price from factsCenter/event). Otherwise the leg is
+  **dropped**, never booked at a breaking price. A swapped leg carries `ruleSwap` and is never swapped back.
+- Legs already priced <= 1.39 are left alone with no extra request; bare selections without a price are priced live.
+- Every swap/drop is printed as a `leg-guard: {...}` line in the job log (the master pipeline also keeps them in its log as
+  `o15_u35_rule`).
+- **Where it runs (always last, right before booking):** `strategy_lib.book_confirmed` / `book_sportybet` / `pack_slip` /
+  `chunk_bookable` (sure80 family incl. AH -1, GG, NYSM, NerdyTips Tomorrow, strategy master), `sure80_reverse` per strategy
+  before splitting into codes, `master_pipeline` after its U4.5 -> O2.5/O1.5 switch and 1.45 swap (a swapped leg moves to
+  the matching group), `hs_goals.book_verified`, `engine/bookers.book_all` (daily/Hot/favourites/morning markets, all books
+  get the same legs) and `sb_share_helper17.book` (the SportyBet POST used by bookers, DC shield, team codes).
+- High-Scoring O1.5/O2.5 (5.9) books Over 1.5 only at 1.20-1.30, so it is never affected.
+
 ## 6. Services and accounts
 
 | Service | What | Account / login | Notes |

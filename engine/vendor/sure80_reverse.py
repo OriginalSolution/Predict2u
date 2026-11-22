@@ -478,6 +478,7 @@ def run(day: dt.date, repo: Path, dry_run: bool = False, only: tuple = ALL_KINDS
         # the shared 2-codes-per-match usage, including codes booked earlier in this same run
         legs = [leg for leg in found[kind]["legs"] if lib.can_take(usage, leg["eventId"])]
         capped = len(found[kind]["legs"]) - len(legs)
+        lib.leg_guard().enforce(legs, f"sure80:{kind}")  # final Over 1.5 <-> Under 3.5 rule (HANDOFF 5.10)
         parts = trio.split_many(legs) if kind in trio.KINDS + ah1.KINDS else split_codes(legs)
         booked = []
         for index, part in enumerate(parts, 1):
