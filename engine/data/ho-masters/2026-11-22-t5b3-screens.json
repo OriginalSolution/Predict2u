@@ -1,0 +1,141 @@
+{
+ "key": "t5b3-screens",
+ "name": "Top5 v Bottom3 screens",
+ "date": "2026-11-22",
+ "riskLabel": "HIGH RISK",
+ "waived": false,
+ "meetsFloor": false,
+ "verification": "Bets For The Day. Normal Predict2u gates applied. HIGH RISK, no guarantees.",
+ "parts": [
+  {
+   "name": "Top5 v Bottom3 screens · set",
+   "legs": 3,
+   "events": [
+    "sr:match:72340070",
+    "sr:match:72201704",
+    "sr:match:74173072"
+   ],
+   "totalOdds": 3.02,
+   "codes": {
+    "sportybet": [
+     {
+      "code": "CDJMRV",
+      "totalOdds": 3.02,
+      "legs": 3,
+      "link": "https://www.sportybet.com/gh/?shareCode=CDJMRV",
+      "matches": [
+       "sr:match:72201704",
+       "sr:match:72340070",
+       "sr:match:74173072"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "footballcom": [
+     {
+      "code": "CDJMRV",
+      "totalOdds": 3.02,
+      "legs": 3,
+      "link": "https://www.football.com/gh/?shareCode=CDJMRV",
+      "matches": [
+       "sr:match:72201704",
+       "sr:match:72340070",
+       "sr:match:74173072"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ]
+   },
+   "missing": {
+    "msport": "not booked",
+    "betika": "not booked",
+    "betpawa": "not booked"
+   },
+   "label": "Top5 v Bottom3 screens · set · HIGH RISK",
+   "source": "t5b3-screens",
+   "meetsFloor": false,
+   "status": "pending"
+  }
+ ],
+ "legList": [
+  {
+   "eventId": "sr:match:72340070",
+   "marketId": "16",
+   "specifier": "hcp=-1",
+   "outcomeId": "1714",
+   "date": "2026-11-24",
+   "ko": "20:00",
+   "kickoff": "2026-11-24T20:00:00Z",
+   "league": "England - Championship",
+   "match": "Wolves v Derby County",
+   "market": "Asian Handicap -1",
+   "selection": "Home (-1.0)",
+   "odds": 1.46,
+   "liveOdds": 1.46,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": "4 v 23/24",
+   "x12": "1.33/5.77/9.56",
+   "case": "stronger AH-1 @1.46 (top5 v bottom3)",
+   "leagueFavRate": null,
+   "rate": null
+  },
+  {
+   "eventId": "sr:match:72201704",
+   "marketId": "16",
+   "specifier": "hcp=-1",
+   "outcomeId": "1714",
+   "date": "2026-11-24",
+   "ko": "20:00",
+   "kickoff": "2026-11-24T20:00:00Z",
+   "league": "Scotland - Premiership",
+   "match": "Rangers v Aberdeen",
+   "market": "Asian Handicap -1",
+   "selection": "Home (-1.0)",
+   "odds": 1.35,
+   "liveOdds": 1.35,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": "2 v 10/12",
+   "x12": "1.26/6.62/10.53",
+   "case": "stronger AH-1 @1.35 (top5 v bottom3)",
+   "leagueFavRate": null,
+   "rate": null
+  },
+  {
+   "eventId": "sr:match:74173072",
+   "marketId": "16",
+   "specifier": "hcp=-1",
+   "outcomeId": "1714",
+   "date": "2026-11-26",
+   "ko": "17:45",
+   "kickoff": "2026-11-26T17:45:00Z",
+   "league": "International Clubs - UEFA Europa League",
+   "match": "Union Gilloise v KKS Lech Poznan",
+   "market": "Asian Handicap -1",
+   "selection": "Home (-1.0)",
+   "odds": 1.53,
+   "liveOdds": 1.53,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": "4 v 35/36",
+   "x12": "1.38/5.62/7.71",
+   "case": "stronger AH-1 @1.53 (top5 v bottom3)",
+   "leagueFavRate": null,
+   "rate": null
+  }
+ ],
+ "legs": 3,
+ "totalOdds": 3.02,
+ "hit": 0,
+ "total": 3,
+ "status": "pending"
+}
