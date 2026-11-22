@@ -141,6 +141,24 @@ def main() -> int:
         if cron not in text:
             fail(f"{path.name} missing cron {cron}")
 
+    es = (ENGINE / "empty_sections.py").read_text()
+    for token in ("has_valid_code", "sections_to_publish", "drop_empty_strategy_cards", "preserve_origin", "prepare_high_odds_doc"):
+        if f"def {token}" not in es:
+            fail(f"empty_sections.py missing {token}")
+    ho = (ENGINE / "vendor" / "high_odds.py").read_text()
+    if "s['origin'] = 'strategy' if s['code'] in house else 'code-hub'" in ho:
+        fail("high_odds.py must not overwrite strategy origins to a generic 'strategy'")
+    if "preserve_origin" not in ho:
+        fail("high_odds.py must call empty_sections.preserve_origin")
+    sl = (ENGINE / "vendor" / "strategy_lib.py").read_text()
+    if "write_high_odds" not in sl or "has_valid_code" not in sl:
+        fail("strategy_lib.publish_high_odds must use empty_sections")
+    handoff = (ROOT / "HANDOFF.md").read_text()
+    if "### 5.11" not in handoff or "Empty sections are never published" not in handoff:
+        fail("HANDOFF.md must document §5.11 Empty sections are never published")
+    if "empty strategy sections are never published" not in rules.lower():
+        fail("RULES.md must document that empty strategy sections are never published")
+
     print("check_rules: ok")
     return 0
 

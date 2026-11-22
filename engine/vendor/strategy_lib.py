@@ -15,6 +15,10 @@ import subprocess
 import sys
 from pathlib import Path
 
+# engine/ is a sibling of vendor/
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import empty_sections as es  # noqa: E402
+
 MIN_TOTAL = 25.0
 MAX_LEGS = 50
 MAX_CODES_PER_EVENT = 2
@@ -539,10 +543,15 @@ def publish_high_odds(repo: Path, slip: dict) -> None:
         doc = {}
     if not isinstance(doc, dict):
         doc = {}
-    slips = [row for row in (doc.get("slips") or []) if row.get("code") != slip.get("code")]
-    slips.insert(0, slip)
+    if isinstance(slip, dict):
+        slip = dict(slip)
+        slip["origin"] = es.preserve_origin(slip)
+    # A slip with no valid code is not published (empty sections stay unpublished).
+    slips = [row for row in (doc.get("slips") or []) if row.get("code") != (slip or {}).get("code")]
+    if es.has_valid_code(slip):
+        slips.insert(0, slip)
     doc["slips"] = slips
-    path.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")))
+    es.write_high_odds(path, doc)
     # Odds above 25 are sealed only when paid mode is on. Free mode (p2u-free-mode.js) leaves the code public.
     lock_public(repo)
 

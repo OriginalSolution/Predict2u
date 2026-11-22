@@ -7,6 +7,7 @@ import subprocess
 from pathlib import Path
 
 from .paths import REPO_DIR, RESEARCH_DIR, SBJSON
+from . import empty_sections as ES
 
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
 PUBLIC_FILES = ("home-picks.json", "picks.json", "hot-picks.json", "high_odds.json", "staked-codes.json")
@@ -177,7 +178,14 @@ def settle_files(repo: Path | None = None) -> dict:
         rows = []
         _walk(data, rows)
         n = settle_mapping(rows, events)
-        if n:
+        if path.name == "high_odds.json":
+            prepared = ES.prepare_high_odds_doc(data)
+            if prepared != data or n:
+                path.write_text(ES.compact_text(prepared))
+                data.clear(); data.update(prepared)
+            if n:
+                changed += n
+        elif n:
             path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")))
             changed += n
         print(f"settle {path.name}: {n} updates")
