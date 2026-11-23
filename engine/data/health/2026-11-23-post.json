@@ -1,23 +1,22 @@
 {
- "checkedAt": "2026-11-23T07:30:29Z",
+ "checkedAt": "2026-11-23T23:15:37Z",
  "mode": "post",
  "ok": false,
  "problems": [
   {
-   "area": "site",
-   "msg": "live-scores.json is stale: last updated 2026-11-22 21:25 GMT (10h ago, limit 4h)"
-  },
-  {
    "area": "actions",
-   "msg": "engine-daily.yml failed for its 22:00 GMT slot (https://github.com/OriginalSolution/Predict2u/actions/runs/45099508993) — its codes are on the site anyway, not re-run"
-  },
-  {
-   "area": "actions",
-   "msg": "weekly-digest.yml failed for its 18:00 GMT slot (https://github.com/OriginalSolution/Predict2u/actions/runs/45080199738)"
+   "msg": "engine-daily.yml failed for its 22:00 GMT slot (https://github.com/OriginalSolution/Predict2u/actions/runs/45281090255) — its codes are on the site anyway, not re-run"
   }
  ],
- "warnings": [],
- "healed": [],
+ "warnings": [
+  {
+   "area": "codes",
+   "msg": "5 of 370 published live codes no longer load or have no match left; hidden via dead-codes.json: sportybet EW47JP (every match has started), footballcom EW47JP (every match has started), msport B3NDHM4 (The code has expired.), betika smKBQE (Sorry. The picks in this betslip are unavailable.), betpawa ZGGVER4 (not found)"
+  }
+ ],
+ "healed": [
+  "hid 5 dead codes on the site (dead-codes.json)"
+ ],
  "passed": [
   {
    "area": "code",
@@ -37,55 +36,55 @@
   },
   {
    "area": "site",
-   "msg": "home-picks.json fresh (0.5h old)"
+   "msg": "home-picks.json fresh (2.2h old)"
   },
   {
    "area": "site",
-   "msg": "picks.json fresh (7.9h old)"
+   "msg": "picks.json fresh (1.7h old)"
   },
   {
    "area": "site",
-   "msg": "high_odds.json fresh (0.5h old)"
+   "msg": "high_odds.json fresh (1.0h old)"
   },
   {
    "area": "site",
-   "msg": "hot-picks.json fresh (6.9h old)"
+   "msg": "hot-picks.json fresh (0.2h old)"
   },
   {
    "area": "site",
-   "msg": "record.json fresh (1.2h old)"
+   "msg": "record.json fresh (1.0h old)"
   },
   {
    "area": "site",
-   "msg": "news-hub.json fresh (0.1h old)"
+   "msg": "news-hub.json fresh (0.8h old)"
   },
   {
    "area": "site",
-   "msg": "data-meta.json fresh (1.2h old)"
+   "msg": "live-scores.json fresh (1.8h old)"
   },
   {
    "area": "site",
-   "msg": "staked-codes.json fresh (0.1h old)"
+   "msg": "data-meta.json fresh (1.9h old)"
   },
   {
    "area": "site",
-   "msg": "fixtures.js fresh (1.2h old)"
+   "msg": "staked-codes.json fresh (0.8h old)"
   },
   {
    "area": "site",
-   "msg": "sportybet-odds.js fresh (1.2h old)"
+   "msg": "fixtures.js fresh (1.9h old)"
   },
   {
    "area": "site",
-   "msg": "current-data.js fresh (1.2h old)"
+   "msg": "sportybet-odds.js fresh (1.9h old)"
+  },
+  {
+   "area": "site",
+   "msg": "current-data.js fresh (1.9h old)"
   },
   {
    "area": "favourites",
    "msg": "favourites by league: 72 leagues, 173 fixtures on the site"
-  },
-  {
-   "area": "codes",
-   "msg": "all 369 published live codes load with matches still to play"
   },
   {
    "area": "actions",
@@ -141,23 +140,23 @@
   },
   {
    "area": "actions",
-   "msg": "engine-settle.yml 06:15 slot succeeded"
+   "msg": "engine-settle.yml 22:15 slot succeeded"
   },
   {
    "area": "actions",
-   "msg": "sportybet-odds.yml 06:19 slot succeeded"
+   "msg": "sportybet-odds.yml 21:19 slot succeeded"
   },
   {
    "area": "actions",
-   "msg": "engine-self-heal.yml 06:15 slot succeeded"
+   "msg": "engine-self-heal.yml 22:15 slot succeeded"
   },
   {
    "area": "actions",
-   "msg": "daymasters-guard.yml 07:10 slot succeeded"
+   "msg": "daymasters-guard.yml 22:40 slot succeeded"
   },
   {
    "area": "actions",
-   "msg": "engine-refresh.yml 06:25 slot succeeded"
+   "msg": "engine-refresh.yml 22:25 slot succeeded"
   },
   {
    "area": "actions",
@@ -177,15 +176,15 @@
   },
   {
    "area": "actions",
-   "msg": "engine-health.yml 23:15 slot succeeded"
+   "msg": "engine-health.yml 18:00 slot succeeded"
   },
   {
    "area": "actions",
-   "msg": "engine-watchdog.yml 07:05 slot succeeded"
+   "msg": "engine-watchdog.yml 22:35 slot succeeded"
   },
   {
    "area": "actions",
-   "msg": "monitor.yml 01:17 slot succeeded"
+   "msg": "monitor.yml 19:17 slot succeeded"
   },
   {
    "area": "registry",
@@ -194,8 +193,49 @@
  ],
  "sections": {
   "codes": {
-   "checked": 369,
-   "dead": [],
+   "checked": 370,
+   "dead": [
+    {
+     "book": "sportybet",
+     "code": "EW47JP",
+     "reason": "every match has started",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "footballcom",
+     "code": "EW47JP",
+     "reason": "every match has started",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "msport",
+     "code": "B3NDHM4",
+     "reason": "The code has expired.",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "betika",
+     "code": "smKBQE",
+     "reason": "Sorry. The picks in this betslip are unavailable.",
+     "in": [
+      "home-picks.json"
+     ]
+    },
+    {
+     "book": "betpawa",
+     "code": "ZGGVER4",
+     "reason": "not found",
+     "in": [
+      "home-picks.json"
+     ]
+    }
+   ],
    "uncheckable": []
   }
  }
