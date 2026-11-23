@@ -1,0 +1,168 @@
+{
+ "key": "t5b3-screens",
+ "name": "Top5 v Bottom3 screens",
+ "date": "2026-11-23",
+ "riskLabel": "HIGH RISK",
+ "waived": false,
+ "meetsFloor": false,
+ "verification": "Bets For The Day. Normal Predict2u gates applied. HIGH RISK, no guarantees.",
+ "parts": [
+  {
+   "name": "Top5 v Bottom3 screens · set",
+   "legs": 4,
+   "events": [
+    "sr:match:73836074",
+    "sr:match:72340070",
+    "sr:match:72201704",
+    "sr:match:74173072"
+   ],
+   "totalOdds": 4.85,
+   "codes": {
+    "sportybet": [
+     {
+      "code": "BAUHLB",
+      "totalOdds": 4.85,
+      "legs": 4,
+      "link": "https://www.sportybet.com/gh/?shareCode=BAUHLB",
+      "matches": [
+       "sr:match:72201704",
+       "sr:match:72340070",
+       "sr:match:73836074",
+       "sr:match:74173072"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "footballcom": [
+     {
+      "code": "BAUHLB",
+      "totalOdds": 4.85,
+      "legs": 4,
+      "link": "https://www.football.com/gh/?shareCode=BAUHLB",
+      "matches": [
+       "sr:match:72201704",
+       "sr:match:72340070",
+       "sr:match:73836074",
+       "sr:match:74173072"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ]
+   },
+   "missing": {
+    "msport": "not booked",
+    "betika": "not booked",
+    "betpawa": "not booked"
+   },
+   "label": "Top5 v Bottom3 screens · set · HIGH RISK",
+   "source": "t5b3-screens",
+   "meetsFloor": false,
+   "status": "pending"
+  }
+ ],
+ "legList": [
+  {
+   "eventId": "sr:match:73836074",
+   "marketId": "16",
+   "specifier": "hcp=1",
+   "outcomeId": "1715",
+   "date": "2026-11-24",
+   "ko": "07:45",
+   "kickoff": "2026-11-24T07:45:00Z",
+   "league": "International Clubs - AFC Champions League Elite",
+   "match": "Newcastle United Jets v Kashiwa Reysol",
+   "market": "Asian Handicap 1",
+   "selection": "Away (-1.0)",
+   "odds": 1.6,
+   "liveOdds": 1.6,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": "16 v 4/16",
+   "x12": "6.00/5.30/1.42",
+   "case": "stronger AH-1 @1.6 (top5 v bottom3)",
+   "leagueFavRate": null,
+   "rate": null
+  },
+  {
+   "eventId": "sr:match:72340070",
+   "marketId": "16",
+   "specifier": "hcp=-1",
+   "outcomeId": "1714",
+   "date": "2026-11-24",
+   "ko": "20:00",
+   "kickoff": "2026-11-24T20:00:00Z",
+   "league": "England - Championship",
+   "match": "Wolves v Derby County",
+   "market": "Asian Handicap -1",
+   "selection": "Home (-1.0)",
+   "odds": 1.48,
+   "liveOdds": 1.48,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": "4 v 23/24",
+   "x12": "1.34/5.76/9.20",
+   "case": "stronger AH-1 @1.48 (top5 v bottom3)",
+   "leagueFavRate": null,
+   "rate": null
+  },
+  {
+   "eventId": "sr:match:72201704",
+   "marketId": "16",
+   "specifier": "hcp=-1",
+   "outcomeId": "1714",
+   "date": "2026-11-24",
+   "ko": "20:00",
+   "kickoff": "2026-11-24T20:00:00Z",
+   "league": "Scotland - Premiership",
+   "match": "Rangers v Aberdeen",
+   "market": "Asian Handicap -1",
+   "selection": "Home (-1.0)",
+   "odds": 1.34,
+   "liveOdds": 1.34,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": "2 v 10/12",
+   "x12": "1.25/6.71/10.63",
+   "case": "stronger AH-1 @1.34 (top5 v bottom3)",
+   "leagueFavRate": null,
+   "rate": null
+  },
+  {
+   "eventId": "sr:match:74173072",
+   "marketId": "16",
+   "specifier": "hcp=-1",
+   "outcomeId": "1714",
+   "date": "2026-11-26",
+   "ko": "17:45",
+   "kickoff": "2026-11-26T17:45:00Z",
+   "league": "International Clubs - UEFA Europa League",
+   "match": "Union Gilloise v KKS Lech Poznan",
+   "market": "Asian Handicap -1",
+   "selection": "Home (-1.0)",
+   "odds": 1.53,
+   "liveOdds": 1.53,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": "4 v 35/36",
+   "x12": "1.38/5.62/7.71",
+   "case": "stronger AH-1 @1.53 (top5 v bottom3)",
+   "leagueFavRate": null,
+   "rate": null
+  }
+ ],
+ "legs": 4,
+ "totalOdds": 4.85,
+ "hit": 0,
+ "total": 4,
+ "status": "pending"
+}
