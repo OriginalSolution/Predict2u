@@ -1,40 +1,40 @@
 {
- "DATA_UPDATED": "2026-11-23T00:16:01Z",
+ "DATA_UPDATED": "2026-11-23T01:46:11Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
  "overall": {
-  "n": 433,
-  "won": 71,
+  "n": 435,
+  "won": 73,
   "lost": 362,
-  "winRate": 16.4,
+  "winRate": 16.8,
   "stake": 10.0,
-  "staked": 4330.0,
-  "returned": 4547.6,
-  "profit": 217.6,
-  "roi": 5.0,
-  "pending": 399,
-  "codesSettled": 1481,
-  "codesWon": 281,
+  "staked": 4350.0,
+  "returned": 4596.3,
+  "profit": 246.3,
+  "roi": 5.7,
+  "pending": 445,
+  "codesSettled": 1483,
+  "codesWon": 283,
   "codesLost": 1200
  },
  "streak": {
   "current": "lost",
-  "currentLen": 23,
+  "currentLen": 10,
   "bestWin": 4,
   "bestLoss": 33
  },
  "byType": [
   {
-   "n": 161,
-   "won": 18,
+   "n": 163,
+   "won": 20,
    "lost": 143,
-   "winRate": 11.2,
+   "winRate": 12.3,
    "stake": 10.0,
-   "staked": 1610.0,
-   "returned": 570.2,
-   "profit": -1039.8,
-   "roi": -64.6,
+   "staked": 1630.0,
+   "returned": 618.9,
+   "profit": -1011.1,
+   "roi": -62.0,
    "key": "slip"
   },
   {
@@ -124,15 +124,15 @@
  ],
  "bySite": [
   {
-   "n": 467,
-   "won": 63,
+   "n": 469,
+   "won": 65,
    "lost": 404,
-   "winRate": 13.5,
+   "winRate": 13.9,
    "stake": 10.0,
-   "staked": 4670.0,
-   "returned": 3621.9,
-   "profit": -1048.1,
-   "roi": -22.4,
+   "staked": 4690.0,
+   "returned": 3670.6,
+   "profit": -1019.4,
+   "roi": -21.7,
    "key": "sportybet"
   },
   {
@@ -186,15 +186,15 @@
  ],
  "byMarket": [
   {
-   "n": 508,
-   "won": 83,
+   "n": 509,
+   "won": 84,
    "lost": 425,
-   "winRate": 16.3,
+   "winRate": 16.5,
    "stake": 10.0,
-   "staked": 5080.0,
-   "returned": 4734.6,
-   "profit": -345.4,
-   "roi": -6.8,
+   "staked": 5090.0,
+   "returned": 4764.0,
+   "profit": -326.0,
+   "roi": -6.4,
    "key": "Over 1.5"
   },
   {
@@ -234,15 +234,15 @@
    "key": "Under 3.5"
   },
   {
-   "n": 167,
-   "won": 12,
+   "n": 168,
+   "won": 13,
    "lost": 155,
-   "winRate": 7.2,
+   "winRate": 7.7,
    "stake": 10.0,
-   "staked": 1670.0,
-   "returned": 362.6,
-   "profit": -1307.4,
-   "roi": -78.3,
+   "staked": 1680.0,
+   "returned": 381.9,
+   "profit": -1298.1,
+   "roi": -77.3,
    "key": "Over 2.5"
   },
   {
@@ -356,15 +356,15 @@
  ],
  "byDay": [
   {
-   "n": 35,
-   "won": 1,
+   "n": 37,
+   "won": 3,
    "lost": 34,
-   "winRate": 2.9,
+   "winRate": 8.1,
    "stake": 10.0,
-   "staked": 350.0,
-   "returned": 22.9,
-   "profit": -327.1,
-   "roi": -93.5,
+   "staked": 370.0,
+   "returned": 71.6,
+   "profit": -298.4,
+   "roi": -80.6,
    "key": "2026-11-22"
   },
   {
@@ -597,10 +597,10 @@
   }
  ],
  "picks": {
-  "settled": 3952,
-  "won": 2995,
+  "settled": 3944,
+  "won": 2987,
   "lost": 957,
-  "winRate": 75.8
+  "winRate": 75.7
  },
  "recent": [
   {
@@ -737,7 +737,7 @@
    "kind": "high-odds",
    "odds": 41.52,
    "status": "lost",
-   "hit": 8,
+   "hit": 9,
    "total": 11,
    "profit": -10.0,
    "legs": [
@@ -801,8 +801,8 @@
      "match": "Chicago Fire v Charlotte FC",
      "selection": "Over 2.5",
      "odds": 1.34,
-     "result": "pending",
-     "score": "0:0"
+     "result": "won",
+     "score": "1:2"
     },
     {
      "match": "AC Milan v Frosinone",
@@ -828,7 +828,7 @@
    "kind": "high-odds",
    "odds": 127.17,
    "status": "lost",
-   "hit": 14,
+   "hit": 15,
    "total": 19,
    "profit": -10.0,
    "legs": [
@@ -955,15 +955,15 @@
      "match": "Red Bull Bragantino SP v CR Vasco da Gama RJ",
      "selection": "Over 1.5",
      "odds": 1.21,
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
      "match": "Chicago Fire v Charlotte FC",
      "selection": "Over 0.5",
      "odds": 1.27,
-     "result": "pending",
-     "score": "0:0"
+     "result": "won",
+     "score": "1:2"
     }
    ]
   },
@@ -1185,7 +1185,7 @@
    "kind": "high-odds",
    "odds": 5657.34,
    "status": "lost",
-   "hit": 28,
+   "hit": 29,
    "total": 36,
    "profit": -10.0,
    "legs": [
@@ -1242,7 +1242,7 @@
      "match": "Red Bull Bragantino SP v CR Vasco da Gama RJ",
      "selection": "Over 1.5",
      "odds": 1.21,
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -1326,8 +1326,8 @@
      "match": "Chicago Fire v Charlotte FC",
      "selection": "Over 0.5",
      "odds": 1.3,
-     "result": "pending",
-     "score": "0:0"
+     "result": "won",
+     "score": "1:2"
     },
     {
      "match": "Ajax v ADO Den Haag",
@@ -1451,7 +1451,7 @@
    "kind": "high-odds",
    "odds": 285.63,
    "status": "lost",
-   "hit": 15,
+   "hit": 16,
    "total": 19,
    "profit": -10.0,
    "legs": [
@@ -1585,8 +1585,8 @@
      "match": "Chicago Fire v Charlotte FC",
      "selection": "Over 0.5",
      "odds": 1.3,
-     "result": "pending",
-     "score": "0:0"
+     "result": "won",
+     "score": "1:2"
     }
    ]
   },
@@ -1598,7 +1598,7 @@
    "kind": "high-odds",
    "odds": 87.51,
    "status": "lost",
-   "hit": 14,
+   "hit": 15,
    "total": 20,
    "profit": -10.0,
    "legs": [
@@ -1662,14 +1662,14 @@
      "match": "Chicago Fire v Charlotte FC",
      "selection": "Over 0.5",
      "odds": 1.3,
-     "result": "pending",
-     "score": "0:0"
+     "result": "won",
+     "score": "1:2"
     },
     {
      "match": "Red Bull Bragantino SP v CR Vasco da Gama RJ",
      "selection": "Over 1.5",
      "odds": 1.21,
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -1949,7 +1949,7 @@
      "match": "Red Bull Bragantino SP v CR Vasco da Gama RJ",
      "selection": "Over 1.5",
      "odds": 1.21,
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -2032,7 +2032,7 @@
    "kind": "slip",
    "odds": 1385.82,
    "status": "lost",
-   "hit": 12,
+   "hit": 11,
    "total": 34,
    "profit": -10.0,
    "legs": [
@@ -2215,7 +2215,7 @@
      "match": "CA Rosario Central v Gimnasia y Esgrima Mendoza",
      "selection": "Over 1.5",
      "odds": 1.28,
-     "result": "won",
+     "result": "pending",
      "score": "3:1"
     },
     {
@@ -2257,13 +2257,13 @@
      "match": "Nashville SC v FC Cincinnati",
      "selection": "Over 1.5",
      "odds": 6.5,
-     "result": "lost",
+     "result": "pending",
      "score": "0:1"
     },
     {
      "match": "Fluminense FC RJ v Mirassol FC SP",
      "selection": "Over 1.5",
-     "odds": 7.5,
+     "odds": 11.0,
      "result": "lost",
      "score": "1:0"
     },
@@ -2271,7 +2271,7 @@
      "match": "CA River Plate (ARG) v CA Lanus",
      "selection": "Over 1.5",
      "odds": 1.15,
-     "result": "won",
+     "result": "pending",
      "score": "3:1"
     }
    ]
@@ -2333,9 +2333,9 @@
     {
      "match": "Chicago Fire v Charlotte FC",
      "selection": "Over 2.5",
-     "odds": 1.38,
-     "result": "pending",
-     "score": "0:0"
+     "odds": 3.4,
+     "result": "won",
+     "score": "1:2"
     },
     {
      "match": "Augsburg v Mainz",
@@ -2396,9 +2396,9 @@
     {
      "match": "Chicago Fire v Charlotte FC",
      "selection": "Over 2.5",
-     "odds": 1.38,
-     "result": "pending",
-     "score": "0:0"
+     "odds": 3.4,
+     "result": "won",
+     "score": "1:2"
     },
     {
      "match": "Augsburg v Mainz",
@@ -2424,7 +2424,7 @@
    "kind": "high-odds",
    "odds": 22209.22,
    "status": "lost",
-   "hit": 4,
+   "hit": 2,
    "total": 15,
    "profit": -10.0,
    "legs": [
@@ -2502,14 +2502,14 @@
      "match": "Odds BK v Bryne FK",
      "selection": "Odds BK",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "1:0"
     },
     {
      "match": "Gimnasia y Esgrima de Jujuy v Deportivo Madryn",
      "selection": "Gimnasia y Esgrima de Jujuy",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "1:0"
     },
     {
@@ -2543,7 +2543,7 @@
    "kind": "high-odds",
    "odds": 147.34,
    "status": "lost",
-   "hit": 2,
+   "hit": 1,
    "total": 22,
    "profit": -10.0,
    "legs": [
@@ -2593,22 +2593,22 @@
      "match": "Nashville SC v FC Cincinnati",
      "selection": "Under 4.5",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "0:1"
     },
     {
      "match": "CA River Plate (ARG) v CA Lanus",
      "selection": "Under 3.5",
-     "odds": 1.18,
-     "result": "lost",
+     "odds": 1.19,
+     "result": "pending",
      "score": "3:1"
     },
     {
      "match": "Chicago Fire v Charlotte FC",
      "selection": "Over 0.5",
-     "odds": 1.35,
-     "result": "pending",
-     "score": "0:0"
+     "odds": 1.75,
+     "result": "won",
+     "score": "1:2"
     },
     {
      "match": "Pumas UNAM v CF Monterrey",
@@ -2620,8 +2620,8 @@
     {
      "match": "Red Bull Bragantino SP v CR Vasco da Gama RJ",
      "selection": "Over 1.5",
-     "odds": 1.98,
-     "result": "pending",
+     "odds": 8.5,
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -2670,7 +2670,7 @@
      "match": "AC Goianiense GO v Vila Nova FC GO",
      "selection": "Under 3.5",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -2711,7 +2711,7 @@
    "kind": "high-odds",
    "odds": 9181.52,
    "status": "lost",
-   "hit": 7,
+   "hit": 5,
    "total": 38,
    "profit": -10.0,
    "legs": [
@@ -2767,8 +2767,8 @@
     {
      "match": "Red Bull Bragantino SP v CR Vasco da Gama RJ",
      "selection": "Over 1.5",
-     "odds": 1.98,
-     "result": "pending",
+     "odds": 8.5,
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -2803,7 +2803,7 @@
      "match": "AC Goianiense GO v Vila Nova FC GO",
      "selection": "Under 3.5",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -2816,8 +2816,8 @@
     {
      "match": "CA River Plate (ARG) v CA Lanus",
      "selection": "Under 3.5",
-     "odds": 1.18,
-     "result": "lost",
+     "odds": 1.19,
+     "result": "pending",
      "score": "3:1"
     },
     {
@@ -2865,9 +2865,9 @@
     {
      "match": "Chicago Fire v Charlotte FC",
      "selection": "Over 0.5",
-     "odds": 1.35,
-     "result": "pending",
-     "score": "0:0"
+     "odds": 1.75,
+     "result": "won",
+     "score": "1:2"
     },
     {
      "match": "Ajax v ADO Den Haag",
@@ -2908,7 +2908,7 @@
      "match": "Nashville SC v FC Cincinnati",
      "selection": "Under 4.5",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "0:1"
     },
     {
@@ -2991,7 +2991,7 @@
    "kind": "high-odds",
    "odds": 293.1,
    "status": "lost",
-   "hit": 5,
+   "hit": 3,
    "total": 19,
    "profit": -10.0,
    "legs": [
@@ -3083,7 +3083,7 @@
      "match": "Nashville SC v FC Cincinnati",
      "selection": "Under 4.5",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "0:1"
     },
     {
@@ -3124,9 +3124,9 @@
     {
      "match": "Chicago Fire v Charlotte FC",
      "selection": "Over 0.5",
-     "odds": 1.35,
-     "result": "pending",
-     "score": "0:0"
+     "odds": 1.75,
+     "result": "won",
+     "score": "1:2"
     }
    ]
   },
@@ -3348,8 +3348,8 @@
     {
      "match": "Red Bull Bragantino SP v CR Vasco da Gama RJ",
      "selection": "Over 1.5",
-     "odds": 1.98,
-     "result": "pending",
+     "odds": 8.5,
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -3384,7 +3384,7 @@
      "match": "AC Goianiense GO v Vila Nova FC GO",
      "selection": "Under 3.5",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -3397,8 +3397,8 @@
     {
      "match": "CA River Plate (ARG) v CA Lanus",
      "selection": "Under 3.5",
-     "odds": 1.18,
-     "result": "lost",
+     "odds": 1.19,
+     "result": "pending",
      "score": "3:1"
     },
     {
@@ -3446,7 +3446,7 @@
    "kind": "hot",
    "odds": 645.61,
    "status": "lost",
-   "hit": 8,
+   "hit": 6,
    "total": 30,
    "profit": -10.0,
    "legs": [
@@ -3952,14 +3952,14 @@
      "selection": "Over 1.5",
      "odds": 1.22,
      "result": "won",
-     "score": "1:3"
+     "score": null
     },
     {
      "match": "Nordsjaelland v Copenhagen",
      "selection": "Over 1.5",
      "odds": 1.23,
      "result": "won",
-     "score": "5:0"
+     "score": null
     },
     {
      "match": "KV Kortrijk v Union Gilloise",
@@ -4281,14 +4281,14 @@
      "selection": "Over 1.5",
      "odds": 1.19,
      "result": "won",
-     "score": "1:3"
+     "score": null
     },
     {
      "match": "Nordsjaelland v Copenhagen",
      "selection": "Over 1.5",
      "odds": 1.42,
      "result": "won",
-     "score": "5:0"
+     "score": null
     },
     {
      "match": "KV Kortrijk v Union Gilloise",
@@ -4426,7 +4426,7 @@
    "kind": "hot",
    "odds": 640.53,
    "status": "lost",
-   "hit": 7,
+   "hit": 5,
    "total": 28,
    "profit": -10.0,
    "legs": [
@@ -4897,14 +4897,14 @@
      "selection": "Over 1.5",
      "odds": 1.22,
      "result": "won",
-     "score": "1:3"
+     "score": null
     },
     {
      "match": "Nordsjaelland v Copenhagen",
      "selection": "Over 1.5",
      "odds": 1.23,
      "result": "won",
-     "score": "5:0"
+     "score": null
     },
     {
      "match": "KV Kortrijk v Union Gilloise",
@@ -5556,6 +5556,76 @@
      "odds": 1.18,
      "result": "won",
      "score": "3:0"
+    }
+   ]
+  },
+  {
+   "code": "EXRKB9",
+   "book": "sportybet",
+   "date": "2026-11-22",
+   "name": "Slip 2",
+   "kind": "slip",
+   "odds": 1.93,
+   "status": "won",
+   "hit": 1,
+   "total": 2,
+   "profit": 9.3,
+   "legs": [
+    {
+     "match": "Chicago Fire v Charlotte FC",
+     "selection": "Over 2.5",
+     "odds": 3.4,
+     "result": "won",
+     "score": "1:2"
+    },
+    {
+     "match": "Augsburg v Mainz",
+     "selection": "Over 2.5",
+     "odds": 1.15,
+     "result": "won",
+     "score": "3:1"
+    }
+   ]
+  },
+  {
+   "code": "EYA22X",
+   "book": "sportybet",
+   "date": "2026-11-22",
+   "name": "Slip 3",
+   "kind": "slip",
+   "odds": 2.94,
+   "status": "won",
+   "hit": 1,
+   "total": 4,
+   "profit": 19.4,
+   "legs": [
+    {
+     "match": "Churchill Brothers SC v Mohun Bagan Super Giant",
+     "selection": "Over 1.5",
+     "odds": 1.3,
+     "result": "won",
+     "score": "1:2"
+    },
+    {
+     "match": "Burnley v Blackburn Rovers",
+     "selection": "Over 1.5",
+     "odds": 1.1,
+     "result": "won",
+     "score": "2:2"
+    },
+    {
+     "match": "Chicago Fire v Charlotte FC",
+     "selection": "Over 2.5",
+     "odds": 3.4,
+     "result": "won",
+     "score": "1:2"
+    },
+    {
+     "match": "Augsburg v Mainz",
+     "selection": "Over 2.5",
+     "odds": 1.15,
+     "result": "won",
+     "score": "3:1"
     }
    ]
   },
@@ -6249,559 +6319,6 @@
      "odds": 1.39,
      "result": "lost",
      "score": "1:0"
-    }
-   ]
-  },
-  {
-   "code": "AMTX67",
-   "book": "sportybet",
-   "date": "2026-11-21",
-   "name": "Master <=1.42 2 · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 32621.84,
-   "status": "lost",
-   "hit": 34,
-   "total": 43,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Parma Calcio v Roma",
-     "selection": "Over 1.5",
-     "odds": 1.15,
-     "result": "won",
-     "score": "1:5"
-    },
-    {
-     "match": "Bhayangkara Presisi Indonesia FC v Persijap Jepara",
-     "selection": "Over 1.5",
-     "odds": 1.15,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "MFK Zemplin Michalovce v Spartak Trnava",
-     "selection": "Over 1.5",
-     "odds": 1.17,
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Lens v Toulouse",
-     "selection": "Over 1.5",
-     "odds": 1.2,
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "CF Pachuca v Deportivo Toluca FC",
-     "selection": "Over 0.5",
-     "odds": 1.2,
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Eintracht Frankfurt v Hoffenheim",
-     "selection": "Under 5.5",
-     "odds": 1.2,
-     "result": "won",
-     "score": "1:0"
-    },
-    {
-     "match": "Merida v Atletico Madrid",
-     "selection": "Away",
-     "odds": 1.2,
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "Academia del Balompie Boliviano v Club Aurora",
-     "selection": "Over 0.5",
-     "odds": 1.2,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Bournemouth v Nottingham Forest",
-     "selection": "Over 0.5",
-     "odds": 1.21,
-     "result": "won",
-     "score": "2:0"
-    },
-    {
-     "match": "Wealdstone FC v AFC Hornchurch",
-     "selection": "Over 1.5",
-     "odds": 1.21,
-     "result": "won",
-     "score": "4:0"
-    },
-    {
-     "match": "CA Talleres de Remedios v Real Pilar FC",
-     "selection": "Under 3.5",
-     "odds": 1.21,
-     "result": "won",
-     "score": "5:3"
-    },
-    {
-     "match": "Wislanie Skawina v Moravia Morawica",
-     "selection": "Under 4.5",
-     "odds": 1.22,
-     "result": "won",
-     "score": "4:0"
-    },
-    {
-     "match": "Hebburn Town v Marine FC",
-     "selection": "Over 1.5",
-     "odds": 1.22,
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "NK Travnik v HNK Capljina",
-     "selection": "Under 4.5",
-     "odds": 1.22,
-     "result": "lost",
-     "score": "5:0"
-    },
-    {
-     "match": "Young Boys Bern v FC Thun",
-     "selection": "Over 2.5",
-     "odds": 1.22,
-     "result": "won",
-     "score": "3:2"
-    },
-    {
-     "match": "NK Lokomotiva Zagreb v HNK Hajduk Split",
-     "selection": "Over 1.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Larne FC v Ballymena United",
-     "selection": "Over 1.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "4:0"
-    },
-    {
-     "match": "Kawasaki Frontale v Avispa Fukuoka",
-     "selection": "Over 1.5",
-     "odds": 1.24,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "MSK Zilina v FC Kosice",
-     "selection": "Home",
-     "odds": 1.24,
-     "result": "won",
-     "score": "3:2"
-    },
-    {
-     "match": "UD Villa Santa Brigida v UD Playas de Sotavento",
-     "selection": "Over 1.5",
-     "odds": 1.24,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Orijent 1919 Rijeka v NK Sesvete",
-     "selection": "Under 3.5",
-     "odds": 1.25,
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "FK Spartak 1918 Varna v PFC Cherno More Varna",
-     "selection": "Under 3.5",
-     "odds": 1.26,
-     "result": "won",
-     "score": "0:0"
-    },
-    {
-     "match": "SV Spakenburg v Rohda Raalte",
-     "selection": "Over 2.5",
-     "odds": 1.26,
-     "result": "won",
-     "score": "3:0"
-    },
-    {
-     "match": "Notts County v Stevenage FC",
-     "selection": "Under 3.5",
-     "odds": 1.27,
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Chiangmai United v Nakhon Pathom United FC",
-     "selection": "Under 3.5",
-     "odds": 1.28,
-     "result": "lost",
-     "score": "2:5"
-    },
-    {
-     "match": "Northeast United FC v FC Goa",
-     "selection": "Over 1.5",
-     "odds": 1.29,
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Billericay Town v Slough Town",
-     "selection": "Over 2.5",
-     "odds": 1.3,
-     "result": "won",
-     "score": "4:1"
-    },
-    {
-     "match": "Stuttgarter Kickers v SC Freiburg",
-     "selection": "Away",
-     "odds": 1.3,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "FC Brest v Naftan Novopolotsk",
-     "selection": "Over 2.5",
-     "odds": 1.3,
-     "result": "won",
-     "score": "4:1"
-    },
-    {
-     "match": "Trencin v FC DAC 1904 Dunajska Streda",
-     "selection": "Home",
-     "odds": 1.32,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Tai Po FC v Kitchee",
-     "selection": "Over 2.5",
-     "odds": 1.33,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Bayer Leverkusen v Paderborn",
-     "selection": "Over 2.5",
-     "odds": 1.35,
-     "result": "won",
-     "score": "4:0"
-    },
-    {
-     "match": "LASK Linz v TSV Hartberg",
-     "selection": "Over 2.5",
-     "odds": 1.36,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "VV Katwijk v Rijnsburgse Boys",
-     "selection": "Over 2.5",
-     "odds": 1.36,
-     "result": "lost",
-     "score": "0:2"
-    },
-    {
-     "match": "Young Lions FC v Tanjong Pagar United FC",
-     "selection": "Over 2.5",
-     "odds": 1.36,
-     "result": "won",
-     "score": "2:4"
-    },
-    {
-     "match": "Polonia Sroda Wielkopolska v Baltyk Koszalin",
-     "selection": "Over 2.5",
-     "odds": 1.37,
-     "result": "won",
-     "score": "4:2"
-    },
-    {
-     "match": "Wellington Olympic v Birkenhead United AFC",
-     "selection": "Over 2.5",
-     "odds": 1.37,
-     "result": "lost",
-     "score": "2:0"
-    },
-    {
-     "match": "Vaalerenga IF v IK Start",
-     "selection": "Over 2.5",
-     "odds": 1.38,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "BVV Barendrecht v VV Kloetinge",
-     "selection": "Over 2.5",
-     "odds": 1.38,
-     "result": "won",
-     "score": "2:3"
-    },
-    {
-     "match": "Clyde FC v Stirling Albion FC",
-     "selection": "Over 2.5",
-     "odds": 1.39,
-     "result": "won",
-     "score": "4:3"
-    }
-   ]
-  },
-  {
-   "code": "AT549K",
-   "book": "sportybet",
-   "date": "2026-11-21",
-   "name": "Master Early · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 10819.36,
-   "status": "lost",
-   "hit": 24,
-   "total": 35,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Santiago FC v Dragones de Oaxaca",
-     "selection": "Over 1.5",
-     "odds": 1.2,
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Auckland City FC v Napier City Rovers AFC",
-     "selection": "Yes",
-     "odds": 1.41,
-     "result": "won",
-     "score": "7:1"
-    },
-    {
-     "match": "Miramar Rangers v Cashmere Technical",
-     "selection": "Over 2.5",
-     "odds": 1.3,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Wellington Olympic v Birkenhead United AFC",
-     "selection": "Over 2.5",
-     "odds": 1.37,
-     "result": "lost",
-     "score": "2:0"
-    },
-    {
-     "match": "FC Juarez v Atlas FC",
-     "selection": "Over 1.5",
-     "odds": 1.21,
-     "result": "won",
-     "score": "3:3"
-    },
-    {
-     "match": "Machida Zelvia v V-Varen Nagasaki",
-     "selection": "Over 1.5",
-     "odds": 1.25,
-     "result": "lost",
-     "score": "0:0"
-    },
-    {
-     "match": "Blaublitz Akita v Montedio Yamagata",
-     "selection": "Under 3.5",
-     "odds": 1.25,
-     "result": "lost",
-     "score": "3:1"
-    },
-    {
-     "match": "Tochigi City FC v Albirex Niigata",
-     "selection": "Over 0.5",
-     "odds": 1.2,
-     "result": "won",
-     "score": "0:3"
-    },
-    {
-     "match": "Tegevajaro Miyazaki v Iwaki FC",
-     "selection": "Over 1.5",
-     "odds": 1.3,
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Kawasaki Frontale v Avispa Fukuoka",
-     "selection": "Over 1.5",
-     "odds": 1.24,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Cerezo Osaka v FC Tokyo",
-     "selection": "Away",
-     "odds": 1.27,
-     "result": "won",
-     "score": "0:3"
-    },
-    {
-     "match": "Sydney FC v Canberra United FC",
-     "selection": "Under 4.5",
-     "odds": 1.21,
-     "result": "won",
-     "score": "1:3"
-    },
-    {
-     "match": "Gamba Osaka v Fagiano Okayama",
-     "selection": "Over 1.5",
-     "odds": 1.23,
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Tai Po FC v Kitchee",
-     "selection": "Over 2.5",
-     "odds": 1.33,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Southern District Football Club v Hong Kong Rangers",
-     "selection": "Over 2.5",
-     "odds": 1.4,
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "Trencin v FC DAC 1904 Dunajska Streda",
-     "selection": "Home",
-     "odds": 1.32,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Slovan Bratislava v Zemplin Michalovce",
-     "selection": "Home",
-     "odds": 1.36,
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Wisla Plock II v ZKS Olimpia Elblag",
-     "selection": "Under 4.5",
-     "odds": 1.21,
-     "result": "won",
-     "score": "1:1"
-    },
-    {
-     "match": "Jagiellonia II Bialystok v SK Mazovia Minsk Mazowiecki",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "won",
-     "score": "2:4"
-    },
-    {
-     "match": "LKS 1926 Lomza v KS Pelikan Lowicz",
-     "selection": "Yes",
-     "odds": 1.45,
-     "result": "lost",
-     "score": "0:4"
-    },
-    {
-     "match": "Pattani FC v Sukhothai FC",
-     "selection": "Over 1.5",
-     "odds": 1.22,
-     "result": "won",
-     "score": "1:5"
-    },
-    {
-     "match": "Legia Warszawa v Bialystok",
-     "selection": "Yes",
-     "odds": 1.4,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Orijent 1919 Rijeka v NK Sesvete",
-     "selection": "Under 3.5",
-     "odds": 1.25,
-     "result": "won",
-     "score": "0:2"
-    },
-    {
-     "match": "FC Viktoria Cologne v Bayer 04 Leverkusen",
-     "selection": "Away",
-     "odds": 1.4,
-     "result": "lost",
-     "score": "4:2"
-    },
-    {
-     "match": "Becamex Ho Chi Minh City v Huda Hue",
-     "selection": "Over 2.5",
-     "odds": 1.39,
-     "result": "won",
-     "score": "5:0"
-    },
-    {
-     "match": "RC Deportivo De La Coruna v ED Val Minor Nigran",
-     "selection": "Home",
-     "odds": 1.2,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Avia Swidnik v Legia Warszawa II",
-     "selection": "Over 0.5",
-     "odds": 1.26,
-     "result": "won",
-     "score": "8:2"
-    },
-    {
-     "match": "Chiangmai United v Nakhon Pathom United FC",
-     "selection": "Under 3.5",
-     "odds": 1.28,
-     "result": "lost",
-     "score": "2:5"
-    },
-    {
-     "match": "Young Lions FC v Tanjong Pagar United FC",
-     "selection": "Over 2.5",
-     "odds": 1.36,
-     "result": "won",
-     "score": "2:4"
-    },
-    {
-     "match": "Wolfsburg v Holstein Kiel",
-     "selection": "Over 2.5",
-     "odds": 1.41,
-     "result": "won",
-     "score": "3:0"
-    },
-    {
-     "match": "Zabkovia Zabki v Olimpia Zambrow",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "MKS Mlawianka Mlawa v KS Warta Sieradz",
-     "selection": "Over 2.5",
-     "odds": 1.44,
-     "result": "won",
-     "score": "2:3"
-    },
-    {
-     "match": "Sokol Kolbuszowa Dolna v JKS 1909 Jaroslaw",
-     "selection": "Under 4.5",
-     "odds": 1.21,
-     "result": "won",
-     "score": "1:3"
-    },
-    {
-     "match": "MSK Zilina v FC Kosice",
-     "selection": "Home",
-     "odds": 1.24,
-     "result": "won",
-     "score": "3:2"
-    },
-    {
-     "match": "Stuttgarter Kickers v SC Freiburg",
-     "selection": "Away",
-     "odds": 1.3,
-     "result": "won",
-     "score": "1:2"
     }
    ]
   }
