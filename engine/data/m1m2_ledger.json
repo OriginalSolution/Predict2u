@@ -1454,6 +1454,143 @@
     }
    ],
    "mixed": "built"
+  },
+  "2026-11-23": {
+   "built": "2026-11-23 21:46 GMT",
+   "slips": {
+    "M1": {
+     "name": "M1 Team or Over 2.5",
+     "codes": {
+      "sportybet": "D1KN7F",
+      "footballcom": "D1KN7F",
+      "msport": "B3NLR8H"
+     },
+     "total": 1.81,
+     "legs": 8,
+     "meetsFloor": false,
+     "result": "pending"
+    },
+    "M2": {
+     "name": "M2 Double Chance & Over 1.5",
+     "codes": {
+      "sportybet": "B6RU4H",
+      "footballcom": "B6RU4H",
+      "msport": "B3NLR9S",
+      "betika": "yTDgGB"
+     },
+     "total": 1.69,
+     "legs": 6,
+     "meetsFloor": false,
+     "result": "pending"
+    },
+    "MIXED": {
+     "name": "M1/M2 team 2+",
+     "codes": {
+      "sportybet": "CJF52K",
+      "footballcom": "CJF52K",
+      "msport": "B3NLRB6",
+      "betika": "wCALLn",
+      "betpawa": "K4BENZ3"
+     },
+     "total": 9.29,
+     "legs": 11,
+     "meetsFloor": false,
+     "result": "pending"
+    }
+   },
+   "dropped": [
+    {
+     "match": "Salzburg v FC Ararat-Armenia",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "Home Team or Over 2.5 not allowed in a middle game (fav @1.19, table 26 v 36/36)"
+    },
+    {
+     "match": "Salzburg v FC Ararat-Armenia",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.19, table 26 v 36/36)"
+    },
+    {
+     "match": "Salzburg v FC Ararat-Armenia",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.19, table 26 v 36/36)"
+    },
+    {
+     "match": "Ajax v FC Thun",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "Home Team or Over 2.5 not allowed in a middle game (fav @1.2, table 11 v 20/36)"
+    },
+    {
+     "match": "Ajax v FC Thun",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.2, table 11 v 20/36)"
+    },
+    {
+     "match": "Ajax v FC Thun",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.2, table 11 v 20/36)"
+    },
+    {
+     "match": "Brighton v CS Universitatea Craiova",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "Home Team or Over 2.5 not allowed in a middle game (fav @1.17, table 5 v 8/36)"
+    },
+    {
+     "match": "Brighton v CS Universitatea Craiova",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.17, table 5 v 8/36)"
+    },
+    {
+     "match": "Brighton v CS Universitatea Craiova",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.17, table 5 v 8/36)"
+    },
+    {
+     "match": "Al Qadsiah v Al-Fayha FC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Saudi Arabia - Saudi Pro League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Boreham Wood FC v Aldershot Town FC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — England - National League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Holywell Town v Pen-y-Bont FC",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Wales - Cymru Premier: non-goals market Away or Over 2.5 not allowed"
+    },
+    {
+     "match": "Flint Town United v The New Saints FC",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Wales - Cymru Premier: non-goals market Away or Over 2.5 not allowed"
+    },
+    {
+     "match": "FC Nizhny Novgorod v FC Tekstilshchik Ivanovo",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Russia - 1. Liga: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Hansa Rostock v TSV Havelse",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Germany - 3. Liga: non-goals market Home Team or Over 2.5 not allowed"
+    }
+   ],
+   "mixed": "built"
   }
  }
 }
