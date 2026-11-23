@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-23T01:50:29+00:00",
+ "updatedAt": "2026-11-23T02:25:12+00:00",
  "sources": [
   "BBC Sport",
   "ESPN",
@@ -358,12 +358,121 @@
  ],
  "record": {
   "won": 65,
-  "lost": 332,
-  "settled": 397,
-  "pending": 352,
-  "winRate": 16.4
+  "lost": 333,
+  "settled": 398,
+  "pending": 351,
+  "winRate": 16.3
  },
  "codes": [
+  {
+   "code": "94B95K",
+   "book": "sportybet",
+   "date": "2026-11-23",
+   "name": "Team To Win 1 · HIGH RISK",
+   "kind": "slip",
+   "odds": 19872.36,
+   "status": "lost",
+   "hit": 0,
+   "total": 16,
+   "legs": [
+    {
+     "match": "Bayern Munich W v TSG Hoffenheim W",
+     "selection": "Home",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "SC Braga v SL Benfica Lisbon W",
+     "selection": "Away",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Koper v Aluminij Kidricevo",
+     "selection": "Home",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Instituto AC Cordoba v CA Huracan",
+     "selection": "Home",
+     "result": "pending",
+     "score": "2:0"
+    },
+    {
+     "match": "Gimnasia Y Tiro de Salta v CSD Tristan Suarez",
+     "selection": "Home",
+     "result": "lost",
+     "score": "0:0"
+    },
+    {
+     "match": "Istanbul Basaksehir FK v Corum FK",
+     "selection": "Home",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Chelyabinsk v Leningradets",
+     "selection": "Home",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Viborg FF Reserves v AC Horsens Reserves",
+     "selection": "Home",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "US Orleans v Thionville US Lusitanos",
+     "selection": "Home",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Vitesse Arnhem v De Graafschap",
+     "selection": "Home",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "LNZ Cherkasy v FC Polissya Zhytomyr",
+     "selection": "Away",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Albion FC v Danubio FC",
+     "selection": "Home",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Krasava ENY Ypsonas FC v Anorthosis Famagusta",
+     "selection": "Away",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Bodrum FK v Van Spor FK",
+     "selection": "Home",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AL Jabalain FC U21 v AL Kholood U21",
+     "selection": "Home",
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wadi Degla SC v Al Ittihad Alexandria Club",
+     "selection": "Home",
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
   {
    "code": "RD4YEP",
    "book": "betika",
@@ -597,115 +706,6 @@
     {
      "match": "SC Internacional RS v EC Vitoria BA",
      "selection": "Over 1.5",
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "94B95K",
-   "book": "sportybet",
-   "date": "2026-11-23",
-   "name": "Team To Win 1 · HIGH RISK",
-   "kind": "slip",
-   "odds": 19872.36,
-   "status": "pending",
-   "hit": 0,
-   "total": 16,
-   "legs": [
-    {
-     "match": "Bayern Munich W v TSG Hoffenheim W",
-     "selection": "Home",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "SC Braga v SL Benfica Lisbon W",
-     "selection": "Away",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Koper v Aluminij Kidricevo",
-     "selection": "Home",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Instituto AC Cordoba v CA Huracan",
-     "selection": "Home",
-     "result": "pending",
-     "score": "2:0"
-    },
-    {
-     "match": "Gimnasia Y Tiro de Salta v CSD Tristan Suarez",
-     "selection": "Home",
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Istanbul Basaksehir FK v Corum FK",
-     "selection": "Home",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Chelyabinsk v Leningradets",
-     "selection": "Home",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Viborg FF Reserves v AC Horsens Reserves",
-     "selection": "Home",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "US Orleans v Thionville US Lusitanos",
-     "selection": "Home",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Vitesse Arnhem v De Graafschap",
-     "selection": "Home",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "LNZ Cherkasy v FC Polissya Zhytomyr",
-     "selection": "Away",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Albion FC v Danubio FC",
-     "selection": "Home",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Krasava ENY Ypsonas FC v Anorthosis Famagusta",
-     "selection": "Away",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bodrum FK v Van Spor FK",
-     "selection": "Home",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Jabalain FC U21 v AL Kholood U21",
-     "selection": "Home",
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Wadi Degla SC v Al Ittihad Alexandria Club",
-     "selection": "Home",
      "result": "pending",
      "score": null
     }
@@ -949,7 +949,7 @@
     {
      "match": "Gimnasia Y Tiro de Salta v CSD Tristan Suarez",
      "selection": "Away",
-     "result": "pending",
+     "result": "void",
      "score": "0:0"
     },
     {
@@ -1083,7 +1083,7 @@
      "match": "Vancouver Whitecaps FC v Real Salt Lake",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "1:0"
     },
     {
      "match": "Al-Ittihad Club v Pakhtakor",
@@ -1174,7 +1174,7 @@
      "match": "CD Marquense v Aurora FC",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     },
     {
      "match": "Cdt Real Oruro v Guabira Montero",
@@ -1234,7 +1234,7 @@
      "match": "Juticalpa FC v Olancho FC",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     },
     {
      "match": "Kastrioti Kruje v Besa Kavaje",
@@ -1901,7 +1901,7 @@
      "match": "Juticalpa FC v Olancho FC",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     },
     {
      "match": "Queretaro FC v Club Necaxa",
@@ -1991,7 +1991,7 @@
      "match": "CD Marquense v Aurora FC",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     },
     {
      "match": "Cdt Real Oruro v Guabira Montero",
@@ -2045,7 +2045,7 @@
      "match": "Vancouver Whitecaps FC v Real Salt Lake",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "1:0"
     }
    ]
   },
@@ -2094,7 +2094,7 @@
      "match": "Vancouver Whitecaps FC v Real Salt Lake",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "1:0"
     },
     {
      "match": "Jong PSV Eindhoven v Jong FC Utrecht",
@@ -2142,7 +2142,7 @@
      "match": "CD Marquense v Aurora FC",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     },
     {
      "match": "Cdt Real Oruro v Guabira Montero",
@@ -2233,19 +2233,19 @@
      "match": "CD Marquense v Aurora FC",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     },
     {
      "match": "Juticalpa FC v Olancho FC",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     },
     {
      "match": "Vancouver Whitecaps FC v Real Salt Lake",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "1:0"
     },
     {
      "match": "AC Nagano Parceiro v Urawa Red Diamonds",
@@ -2649,7 +2649,7 @@
      "match": "Juticalpa FC v Olancho FC",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     },
     {
      "match": "Queretaro FC v Club Necaxa",
@@ -2746,7 +2746,7 @@
      "match": "Vancouver Whitecaps FC v Real Salt Lake",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "1:0"
     },
     {
      "match": "Al-Ittihad Club v Pakhtakor",
