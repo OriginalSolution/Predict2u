@@ -1,28 +1,28 @@
 {
- "DATA_UPDATED": "2026-11-24T18:15:52Z",
+ "DATA_UPDATED": "2026-11-24T20:16:04Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
  "overall": {
-  "n": 472,
+  "n": 473,
   "won": 75,
-  "lost": 397,
+  "lost": 398,
   "winRate": 15.9,
   "stake": 10.0,
-  "staked": 4720.0,
+  "staked": 4730.0,
   "returned": 8737.8,
-  "profit": 4017.8,
-  "roi": 85.1,
-  "pending": 518,
-  "codesSettled": 1529,
+  "profit": 4007.8,
+  "roi": 84.7,
+  "pending": 517,
+  "codesSettled": 1530,
   "codesWon": 294,
-  "codesLost": 1235
+  "codesLost": 1236
  },
  "streak": {
   "current": "lost",
-  "currentLen": 45,
+  "currentLen": 46,
   "bestWin": 4,
-  "bestLoss": 45
+  "bestLoss": 46
  },
  "byType": [
   {
@@ -38,15 +38,15 @@
    "key": "slip"
   },
   {
-   "n": 138,
+   "n": 139,
    "won": 5,
-   "lost": 133,
+   "lost": 134,
    "winRate": 3.6,
    "stake": 10.0,
-   "staked": 1380.0,
+   "staked": 1390.0,
    "returned": 120.0,
-   "profit": -1260.0,
-   "roi": -91.3,
+   "profit": -1270.0,
+   "roi": -91.4,
    "key": "high-odds"
   },
   {
@@ -124,15 +124,15 @@
  ],
  "bySite": [
   {
-   "n": 506,
+   "n": 507,
    "won": 67,
-   "lost": 439,
+   "lost": 440,
    "winRate": 13.2,
    "stake": 10.0,
-   "staked": 5060.0,
+   "staked": 5070.0,
    "returned": 3724.3,
-   "profit": -1335.7,
-   "roi": -26.4,
+   "profit": -1345.7,
+   "roi": -26.5,
    "key": "sportybet"
   },
   {
@@ -198,15 +198,15 @@
    "key": "Over 1.5"
   },
   {
-   "n": 258,
+   "n": 259,
    "won": 56,
-   "lost": 202,
-   "winRate": 21.7,
+   "lost": 203,
+   "winRate": 21.6,
    "stake": 10.0,
-   "staked": 2580.0,
+   "staked": 2590.0,
    "returned": 2086.9,
-   "profit": -493.1,
-   "roi": -19.1,
+   "profit": -503.1,
+   "roi": -19.4,
    "key": "Match result / other"
   },
   {
@@ -356,14 +356,14 @@
  ],
  "byDay": [
   {
-   "n": 18,
+   "n": 19,
    "won": 0,
-   "lost": 18,
+   "lost": 19,
    "winRate": 0.0,
    "stake": 10.0,
-   "staked": 180.0,
+   "staked": 190.0,
    "returned": 0,
-   "profit": -180.0,
+   "profit": -190.0,
    "roi": -100.0,
    "key": "2026-11-24"
   },
@@ -621,10 +621,10 @@
   }
  ],
  "picks": {
-  "settled": 4173,
-  "won": 3149,
-  "lost": 1024,
-  "winRate": 75.5
+  "settled": 4120,
+  "won": 3113,
+  "lost": 1007,
+  "winRate": 75.6
  },
  "recent": [
   {
@@ -635,7 +635,7 @@
    "kind": "high-odds",
    "odds": 11053.02,
    "status": "lost",
-   "hit": 2,
+   "hit": 4,
    "total": 17,
    "profit": -10.0,
    "legs": [
@@ -644,7 +644,7 @@
      "selection": "Away",
      "odds": 1.16,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Real Madrid v PSV Eindhoven",
@@ -657,15 +657,15 @@
      "match": "Al-Masry v Asyut Petroleum",
      "selection": "Home",
      "odds": 1.42,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "2:0"
     },
     {
      "match": "Dunfermline Athletic FC v Kelty Hearts FC",
      "selection": "Home",
      "odds": 1.09,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Millonarios FC v CA Bucaramanga",
@@ -714,7 +714,7 @@
      "selection": "Home",
      "odds": 1.86,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Zed FC v Abo Qair Semads",
@@ -727,8 +727,8 @@
      "match": "Al Mokawloon Al Arab v El Qanah FC",
      "selection": "Home",
      "odds": 2.05,
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "2:1"
     },
     {
      "match": "Pitbulls Santa Barbara FC v Adr Jicaral",
@@ -749,7 +749,7 @@
      "selection": "Away",
      "odds": 2.65,
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Smouha SC v National Bank of Egypt SC",
@@ -761,2655 +761,128 @@
    ]
   },
   {
-   "code": "CSVSF2",
+   "code": "CSB9QT",
    "book": "sportybet",
    "date": "2026-11-24",
-   "name": "80% Form 2 · HIGH RISK",
+   "name": "Team To Win 2 · HIGH RISK",
    "kind": "high-odds",
-   "odds": 5367.65,
+   "odds": 8323.24,
    "status": "lost",
-   "hit": 1,
-   "total": 15,
+   "hit": 6,
+   "total": 16,
    "profit": -10.0,
    "legs": [
     {
-     "match": "Crawley Town v Barnet FC",
-     "selection": "Away",
-     "odds": 1.41,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ross County FC v Stenhousemuir FC",
+     "match": "Manchester City FC v SSC Napoli U20",
      "selection": "Home",
-     "odds": 1.78,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Kalaa Sport v CS Korba",
-     "selection": "Away",
-     "odds": 2.15,
-     "result": "lost",
-     "score": "2:1"
-    },
-    {
-     "match": "Malvern Town v Hanworth Villa",
-     "selection": "Away",
-     "odds": 1.3,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Rio Ave v UD Leiria U23",
-     "selection": "Home",
-     "odds": 1.37,
+     "odds": 1.16,
      "result": "won",
-     "score": "2:1"
+     "score": "4:1"
     },
     {
-     "match": "Arsenal FC v Borussia Dortmund",
+     "match": "Orlando Pirates FC v Lamontville Golden Arrows",
+     "selection": "Home",
+     "odds": 1.32,
+     "result": "won",
+     "score": "2:0"
+    },
+    {
+     "match": "Slovan Bratislava v Real Betis Balompie",
      "selection": "Away",
-     "odds": 1.46,
+     "odds": 1.44,
+     "result": "won",
+     "score": "1:2"
+    },
+    {
+     "match": "Livingston FC v Peterhead FC",
+     "selection": "Home",
+     "odds": 1.2,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "AL Ittihad Jeddah v AL Hazem U21",
+     "selection": "Home",
+     "odds": 1.49,
      "result": "lost",
-     "score": "3:2"
+     "score": "1:2"
+    },
+    {
+     "match": "FK Arsenal Tivat v FK Decic Tuzi",
+     "selection": "Away",
+     "odds": 1.59,
+     "result": "won",
+     "score": "0:6"
+    },
+    {
+     "match": "Charlton Athletic U21 v Coventry City U21",
+     "selection": "Home",
+     "odds": 1.75,
+     "result": "won",
+     "score": "4:2"
+    },
+    {
+     "match": "Durban City FC v Polokwane City",
+     "selection": "Home",
+     "odds": 2.2,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "Eastbourne Borough v Aveley FC",
+     "selection": "Home",
+     "odds": 1.69,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Merthyr Town v Bedford Town Football Club",
+     "selection": "Home",
+     "odds": 1.72,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Portsmouth FC v West Ham",
+     "selection": "Away",
+     "odds": 1.92,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Farnham Town v Maidenhead United FC",
+     "selection": "Home",
+     "odds": 2.0,
+     "result": "pending",
+     "score": "0:0"
     },
     {
      "match": "Port Vale v Northampton Town",
      "selection": "Home",
-     "odds": 1.49,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Nakhon Pathom United FC v Chainat Hornbill FC",
-     "selection": "Home",
-     "odds": 1.5,
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Yate Town v Evesham United",
-     "selection": "Home",
-     "odds": 1.83,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bromley FC v Wycombe Wanderers",
-     "selection": "Away",
-     "odds": 1.89,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sheffield United v Southampton",
-     "selection": "Away",
-     "odds": 1.93,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Samaleswari SC v FC Bengaluru United",
-     "selection": "Away",
-     "odds": 2.0,
-     "result": "void",
-     "score": "2:2"
-    },
-    {
-     "match": "Horsham FC v Truro City",
-     "selection": "Away",
-     "odds": 2.05,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Feyenoord v Porto",
-     "selection": "Away",
-     "odds": 2.36,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Charlton Athletic U21 v Coventry City U21",
-     "selection": "Away",
-     "odds": 2.65,
-     "result": "lost",
-     "score": "4:2"
-    }
-   ]
-  },
-  {
-   "code": "AA12U0",
-   "book": "sportybet",
-   "date": "2026-11-24",
-   "name": "Reverse U4.5 · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 925.03,
-   "status": "lost",
-   "hit": 1,
-   "total": 20,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "MSK Zilina v MFK Ruzomberok",
-     "selection": "Over 2.5",
-     "odds": 1.44,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Ipswich Town U21 v Bromley FC U21",
-     "selection": "Over 2.5",
-     "odds": 1.32,
+     "odds": 2.1,
      "result": "pending",
      "score": "0:0"
     },
     {
-     "match": "Queens Park Rangers U21 v Southampton U21",
-     "selection": "Over 2.5",
-     "odds": 1.32,
+     "match": "Virtus Entella v Verona",
+     "selection": "Away",
+     "odds": 2.25,
      "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Sheffield United U21 v Millwall U21",
-     "selection": "Over 2.5",
-     "odds": 1.44,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bodoe/Glimt v LASK Linz",
-     "selection": "Over 2.5",
-     "odds": 1.28,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "RB Leipzig v Lens",
-     "selection": "Over 2.5",
-     "odds": 1.31,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Galatasaray Istanbul v Aston Villa",
-     "selection": "Over 2.5",
-     "odds": 1.38,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Deportiva Venados v Reboceros de La Piedad",
-     "selection": "Over 2.5",
-     "odds": 1.46,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Al Nassr Club v Al Sadd SC",
-     "selection": "Over 2.5",
-     "odds": 1.29,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Forest Green Rovers v Southend United",
-     "selection": "Over 2.5",
-     "odds": 1.38,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AFC Fylde v FC Halifax Town",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Scunthorpe United v Gateshead FC",
-     "selection": "Over 2.5",
-     "odds": 1.46,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Altrincham FC v Wealdstone FC",
-     "selection": "Over 2.5",
-     "odds": 1.5,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Ettifaq U21 v AL Nassr",
-     "selection": "Over 2.5",
-     "odds": 1.47,
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Slough Town v Farnborough FC",
-     "selection": "Over 2.5",
-     "odds": 1.33,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Torquay United v Chesham United",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Farnham Town v Maidenhead United FC",
-     "selection": "Over 2.5",
-     "odds": 1.46,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Weston-super-Mare v Walton and Hersham FC",
-     "selection": "Over 2.5",
-     "odds": 1.5,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Macclesfield FC v Morecambe FC",
-     "selection": "Over 2.5",
-     "odds": 1.49,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Blackpool FC v Leicester",
-     "selection": "Over 2.5",
-     "odds": 1.49,
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "CZNXPN",
-   "book": "sportybet",
-   "date": "2026-11-24",
-   "name": "Match Over 2.5 · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 527.49,
-   "status": "lost",
-   "hit": 4,
-   "total": 14,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Manchester City FC v SSC Napoli U20",
-     "selection": "Over 2.5",
-     "odds": 1.26,
-     "result": "won",
-     "score": "4:1"
-    },
-    {
-     "match": "FC Dietikon v USV Eschen-Mauren",
-     "selection": "Over 2.5",
-     "odds": 1.44,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Halesowen Town FC v Stourbridge FC",
-     "selection": "Over 2.5",
-     "odds": 1.46,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Khaleej Saihat v AL Ansar U21",
-     "selection": "Over 2.5",
-     "odds": 1.56,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Como 1907 v AEK Athens",
-     "selection": "Over 2.5",
-     "odds": 1.57,
-     "result": "lost",
      "score": "1:1"
     },
     {
-     "match": "Kings Lynn FC v Radcliffe FC",
-     "selection": "Over 2.5",
-     "odds": 1.57,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Marine FC v Spennymoor Town FC",
-     "selection": "Over 2.5",
-     "odds": 1.57,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Feyenoord v Porto",
-     "selection": "Over 2.5",
-     "odds": 1.59,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Eastleigh FC v Yeovil Town",
-     "selection": "Over 2.5",
-     "odds": 1.6,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AFC Telford United v Buxton FC",
-     "selection": "Over 2.5",
-     "odds": 1.61,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Saint Louis City SC v Los Angeles FC",
-     "selection": "Over 2.5",
-     "odds": 1.63,
-     "result": "won",
-     "score": "3:2"
-    },
-    {
-     "match": "Shanghai Port FC v Buriram United",
-     "selection": "Over 2.5",
-     "odds": 1.67,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Sheffield United v Southampton",
-     "selection": "Over 2.5",
-     "odds": 1.72,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Horsham FC v Truro City",
-     "selection": "Over 2.5",
-     "odds": 1.72,
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "CGTNX6",
-   "book": "sportybet",
-   "date": "2026-11-24",
-   "name": "Reverse U4.5 + Draw 2 · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 237.97,
-   "status": "lost",
-   "hit": 5,
-   "total": 16,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Salford City v Sunderland U21",
-     "selection": "Over 1.5",
-     "odds": 1.36,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Harland And Wolff Welders v Linfield FC",
-     "selection": "Away",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Moyola Park FC v Ballymena United",
-     "selection": "Away",
-     "odds": 1.4,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Persiraja Banda v Dewa United",
-     "selection": "Away",
-     "odds": 1.28,
-     "result": "won",
-     "score": "1:4"
-    },
-    {
-     "match": "Bodoe/Glimt v LASK Linz",
-     "selection": "Over 1.5",
-     "odds": 1.34,
-     "result": "won",
-     "score": "2:6"
-    },
-    {
-     "match": "Galatasaray SK v Aston Villa",
-     "selection": "Over 2.5",
-     "odds": 1.37,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Queens Park Rangers U21 v Southampton U21",
-     "selection": "Over 1.5",
-     "odds": 1.4,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ipswich Town U21 v Bromley FC U21",
+     "match": "Bristol City v Wrexham AFC",
      "selection": "Home",
-     "odds": 1.45,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Pec Zwolle U21 v FC Twente Heracles",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Eastbourne Borough v Aveley FC",
-     "selection": "Over 1.5",
-     "odds": 1.5,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Deportiva Venados v Reboceros de La Piedad",
-     "selection": "Over 1.5",
-     "odds": 1.49,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Malvern Town v Hanworth Villa",
-     "selection": "Over 1.5",
-     "odds": 1.49,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Woking FC v Worthing FC",
-     "selection": "Yes",
-     "odds": 1.45,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Eastleigh FC v Yeovil Town",
-     "selection": "Yes",
-     "odds": 1.5,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Hampton & Richmond Borough v Dover Athletic FC",
-     "selection": "Yes",
-     "odds": 1.45,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Chattogram City Football Club v Brothers Union",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "lost",
-     "score": "1:0"
-    }
-   ]
-  },
-  {
-   "code": "D1KN98",
-   "book": "sportybet",
-   "date": "2026-11-24",
-   "name": "Reverse U4.5 + Draw 1 · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 236.91,
-   "status": "lost",
-   "hit": 1,
-   "total": 16,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Oxford United v Tottenham Hotspur U21",
-     "selection": "Home",
-     "odds": 1.35,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Fleetwood Town v Leeds United U21",
-     "selection": "Home",
-     "odds": 1.45,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Limavady United FC v Rathfriland Rangers",
-     "selection": "Home",
-     "odds": 1.38,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Loughgall FC v Queens University",
-     "selection": "Yes",
-     "odds": 1.43,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Real Madrid v PSV Eindhoven",
-     "selection": "Home",
-     "odds": 1.26,
-     "result": "lost",
-     "score": "3:3"
-    },
-    {
-     "match": "Feyenoord Rotterdam v FC Porto",
-     "selection": "Over 1.5",
-     "odds": 1.36,
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Slovan Bratislava v Real Betis Balompie",
-     "selection": "Away",
-     "odds": 1.44,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Sheffield United U21 v Millwall U21",
-     "selection": "Over 2.5",
-     "odds": 1.44,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Galatasaray Istanbul v Aston Villa",
-     "selection": "Over 2.5",
-     "odds": 1.38,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Cray Wanderers v Wingate & Finchley",
-     "selection": "Over 1.5",
-     "odds": 1.48,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "FC Dietikon v USV Eschen-Mauren",
-     "selection": "Over 2.5",
-     "odds": 1.44,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Halesowen Town FC v Stourbridge FC",
-     "selection": "Over 2.5",
-     "odds": 1.46,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Forest Green Rovers v Southend United",
-     "selection": "Over 2.5",
-     "odds": 1.38,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Boston United FC v Barrow AFC",
-     "selection": "Yes",
-     "odds": 1.5,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Slough Town v Farnborough FC",
-     "selection": "Over 2.5",
-     "odds": 1.33,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Salisbury FC v AFC Totton",
-     "selection": "Home",
-     "odds": 1.46,
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "A8NV4M",
-   "book": "sportybet",
-   "date": "2026-11-24",
-   "name": "80% Sure 1 · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 61.91,
-   "status": "lost",
-   "hit": 3,
-   "total": 18,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Hibernian FC v Dundee FC",
-     "selection": "Over 1.5",
-     "odds": 1.21,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Crawley Town v Barnet FC",
-     "selection": "Over 0.5",
-     "odds": 1.32,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Harborough Town FC v Chester FC",
-     "selection": "Over 0.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Macclesfield FC v Morecambe FC",
-     "selection": "Over 0.5",
-     "odds": 1.24,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Virtus Entella v Verona",
-     "selection": "Over 0.5",
-     "odds": 1.28,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Samaleswari SC v FC Bengaluru United",
-     "selection": "Over 0.5",
-     "odds": 1.29,
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "Leek Town FC v Gainsborough Trinity",
-     "selection": "Over 1.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Saint Louis City SC v Los Angeles FC",
-     "selection": "Over 0.5",
-     "odds": 1.22,
-     "result": "won",
-     "score": "3:2"
-    },
-    {
-     "match": "Al Mokawloon Al Arab v El Qanah FC",
-     "selection": "Over 0.5",
-     "odds": 1.29,
+     "odds": 2.44,
      "result": "pending",
      "score": "0:1"
     },
     {
-     "match": "Daejeon Citizen FC v Beijing Guoan",
-     "selection": "Under 4.5",
-     "odds": 1.21,
-     "result": "lost",
-     "score": "3:2"
-    },
-    {
-     "match": "Feyenoord Rotterdam v FC Porto",
-     "selection": "Under 5.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Pitbulls Santa Barbara FC v Adr Jicaral",
-     "selection": "Over 0.5",
-     "odds": 1.26,
-     "result": "lost",
-     "score": "0:0"
-    },
-    {
-     "match": "Merthyr Town v Bedford Town Football Club",
-     "selection": "Over 0.5",
-     "odds": 1.34,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Hampton & Richmond Borough v Dover Athletic FC",
-     "selection": "Under 4.5",
-     "odds": 1.23,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ebbsfleet United FC v Billericay Town",
-     "selection": "Under 4.5",
-     "odds": 1.28,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Boston United FC v Barrow AFC",
-     "selection": "Under 4.5",
-     "odds": 1.21,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Portsmouth FC v West Ham",
-     "selection": "Over 1.5",
-     "odds": 1.26,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Coquimbo Unido v Deportes Union La Calera",
-     "selection": "Under 3.5",
-     "odds": 1.33,
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "94LLCG",
-   "book": "sportybet",
-   "date": "2026-11-24",
-   "name": "80% Sure 2 · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 41.95,
-   "status": "lost",
-   "hit": 5,
-   "total": 17,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "AL Jabalain FC v Al-Zlfe",
-     "selection": "Under 3.5",
-     "odds": 1.25,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Chorley FC v Hebburn Town",
-     "selection": "Over 1.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AFC Fylde v FC Halifax Town",
-     "selection": "Over 0.5",
-     "odds": 1.24,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Middlesbrough FC v Swansea",
-     "selection": "Under 4.5",
-     "odds": 1.27,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Zed FC v Abo Qair Semads",
-     "selection": "Over 0.5",
-     "odds": 1.28,
-     "result": "lost",
-     "score": "0:0"
-    },
-    {
-     "match": "AL Khaleej Saihat v AL Ansar U21",
-     "selection": "Under 4.5",
-     "odds": 1.22,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Arsenal v Borussia Dortmund",
-     "selection": "Under 4.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AGMK FC v Navbahor",
-     "selection": "Over 1.5",
-     "odds": 1.26,
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Bromley FC v Wycombe Wanderers",
-     "selection": "Over 1.5",
-     "odds": 1.2,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Woking FC v Worthing FC",
-     "selection": "Over 0.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Ettifaq U21 v AL Nassr",
-     "selection": "Over 0.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Rio Ave v UD Leiria U23",
-     "selection": "Over 1.5",
-     "odds": 1.26,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Galatasaray SK v Aston Villa",
-     "selection": "Under 4.5",
-     "odds": 1.38,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Marine FC v Spennymoor Town FC",
-     "selection": "Under 4.5",
-     "odds": 1.21,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bradford City FC v Barnsley FC",
-     "selection": "Under 4.5",
-     "odds": 1.21,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Brackley Town FC v Hereford FC",
-     "selection": "Over 0.5",
-     "odds": 1.25,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Blackpool FC v Leicester",
-     "selection": "Under 4.5",
-     "odds": 1.27,
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "DYAG83",
-   "book": "sportybet",
-   "date": "2026-11-24",
-   "name": "High Odds · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 70209.33,
-   "status": "lost",
-   "hit": 6,
-   "total": 35,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Fleetwood Town v Leeds United U21",
-     "selection": "Home",
-     "odds": 1.45,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Slovan Bratislava v Real Betis Balompie",
+     "match": "Charlton Athletic v Lincoln City",
      "selection": "Away",
-     "odds": 1.44,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Dungannon Swifts v Coleraine FC",
-     "selection": "Away",
-     "odds": 1.44,
+     "odds": 2.68,
      "result": "pending",
-     "score": null
-    },
-    {
-     "match": "MSK Zilina v MFK Ruzomberok",
-     "selection": "Over 2.5",
-     "odds": 1.44,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "FC Dietikon v USV Eschen-Mauren",
-     "selection": "Over 2.5",
-     "odds": 1.44,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Torquay United v Chesham United",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Shanghai Port FC v Buriram United",
-     "selection": "Home",
-     "odds": 1.43,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Pec Zwolle U21 v FC Twente Heracles",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Chattogram City Football Club v Brothers Union",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Loughgall FC v Queens University",
-     "selection": "Yes",
-     "odds": 1.43,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Chapecoense SC v SE Palmeiras SP",
-     "selection": "Away",
-     "odds": 1.42,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Al-Masry v Asyut Petroleum",
-     "selection": "Home",
-     "odds": 1.42,
-     "result": "pending",
-     "score": "1:0"
-    },
-    {
-     "match": "Moyola Park FC v Ballymena United",
-     "selection": "Away",
-     "odds": 1.4,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Forest Green Rovers v Southend United",
-     "selection": "Over 2.5",
-     "odds": 1.38,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Galatasaray Istanbul v Aston Villa",
-     "selection": "Over 2.5",
-     "odds": 1.38,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Limavady United FC v Rathfriland Rangers",
-     "selection": "Home",
-     "odds": 1.38,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Carlisle United v Tamworth FC",
-     "selection": "Over 2.5",
-     "odds": 1.37,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Galatasaray SK v Aston Villa",
-     "selection": "Over 2.5",
-     "odds": 1.37,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Salford City v Sunderland U21",
-     "selection": "Over 1.5",
-     "odds": 1.36,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Slovan Bratislava v Betis",
-     "selection": "Over 2.5",
-     "odds": 1.36,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Oxford United v Tottenham Hotspur U21",
-     "selection": "Home",
-     "odds": 1.35,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Coquimbo Unido v Deportes Union La Calera",
-     "selection": "Under 3.5",
-     "odds": 1.35,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Rangers v Aberdeen",
-     "selection": "Home (-1.0)",
-     "odds": 1.34,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Merthyr Town v Bedford Town Football Club",
-     "selection": "Over 0.5",
-     "odds": 1.34,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Newcastle United Jets v Kashiwa Reysol",
-     "selection": "Over 2.5",
-     "odds": 1.34,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Como 1907 v AEK Athens",
-     "selection": "Over 2.5",
-     "odds": 1.34,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bodoe/Glimt v LASK Linz",
-     "selection": "Over 1.5",
-     "odds": 1.34,
-     "result": "won",
-     "score": "2:6"
-    },
-    {
-     "match": "Slough Town v Farnborough FC",
-     "selection": "Over 2.5",
-     "odds": 1.33,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Al-Orobah v Al-Najma",
-     "selection": "Away",
-     "odds": 1.33,
-     "result": "void",
-     "score": "0:0"
-    },
-    {
-     "match": "Orlando Pirates FC v Lamontville Golden Arrows",
-     "selection": "Home",
-     "odds": 1.32,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Queens Park Rangers U21 v Southampton U21",
-     "selection": "Over 2.5",
-     "odds": 1.32,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ipswich Town U21 v Bromley FC U21",
-     "selection": "Over 2.5",
-     "odds": 1.32,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Man City v Napoli",
-     "selection": "Over 2.5",
-     "odds": 1.32,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Crawley Town v Barnet FC",
-     "selection": "Over 0.5",
-     "odds": 1.32,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "RB Leipzig v Lens",
-     "selection": "Over 2.5",
-     "odds": 1.31,
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "BBN8QZ",
-   "book": "sportybet",
-   "date": "2026-11-24",
-   "name": "Master Early · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 12054.42,
-   "status": "lost",
-   "hit": 16,
-   "total": 35,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Pitbulls Santa Barbara FC v Adr Jicaral",
-     "selection": "Over 0.5",
-     "odds": 1.26,
-     "result": "lost",
-     "score": "0:0"
-    },
-    {
-     "match": "Saint Louis City SC v Los Angeles FC",
-     "selection": "Over 0.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "3:2"
-    },
-    {
-     "match": "Deportiva Venados v Reboceros de La Piedad",
-     "selection": "Over 1.5",
-     "odds": 1.16,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Newcastle United Jets v Kashiwa Reysol",
-     "selection": "Over 2.5",
-     "odds": 1.34,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Chattogram City Football Club v Brothers Union",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Daejeon Citizen FC v Beijing Guoan",
-     "selection": "Under 4.5",
-     "odds": 1.21,
-     "result": "lost",
-     "score": "3:2"
-    },
-    {
-     "match": "Bodoe/Glimt v LASK Linz",
-     "selection": "Over 1.5",
-     "odds": 1.34,
-     "result": "won",
-     "score": "2:6"
-    },
-    {
-     "match": "Samaleswari SC v FC Bengaluru United",
-     "selection": "Over 0.5",
-     "odds": 1.29,
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "Galatasaray SK v Aston Villa",
-     "selection": "Over 2.5",
-     "odds": 1.37,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Pec Zwolle U21 v FC Twente Heracles",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Shanghai Port FC v Buriram United",
-     "selection": "Home",
-     "odds": 1.43,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "AL Jabalain FC v Al-Zlfe",
-     "selection": "Under 3.5",
-     "odds": 1.25,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Al-Orobah v Al-Najma",
-     "selection": "Away",
-     "odds": 1.33,
-     "result": "void",
-     "score": "0:0"
-    },
-    {
-     "match": "Slovan Bratislava v Real Betis Balompie",
-     "selection": "Away",
-     "odds": 1.44,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "AGMK FC v Navbahor",
-     "selection": "Over 1.5",
-     "odds": 1.26,
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Persiraja Banda v Dewa United",
-     "selection": "Away",
-     "odds": 1.28,
-     "result": "won",
-     "score": "1:4"
-    },
-    {
-     "match": "AL Khaleej Saihat v AL Ansar U21",
-     "selection": "Under 4.5",
-     "odds": 1.22,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "AL Ettifaq U21 v AL Nassr",
-     "selection": "Over 0.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Rio Ave v UD Leiria U23",
-     "selection": "Over 1.5",
-     "odds": 1.26,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Zed FC v Abo Qair Semads",
-     "selection": "Over 0.5",
-     "odds": 1.28,
-     "result": "lost",
-     "score": "0:0"
-    },
-    {
-     "match": "Feyenoord Rotterdam v FC Porto",
-     "selection": "Under 5.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Manchester City FC v SSC Napoli U20",
-     "selection": "Home",
-     "odds": 1.2,
-     "result": "won",
-     "score": "4:1"
-    },
-    {
-     "match": "Real Madrid v PSV Eindhoven",
-     "selection": "Home",
-     "odds": 1.25,
-     "result": "lost",
-     "score": "3:3"
-    },
-    {
-     "match": "MSK Zilina v MFK Ruzomberok",
-     "selection": "Over 2.5",
-     "odds": 1.44,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Orlando Pirates FC v Lamontville Golden Arrows",
-     "selection": "Home",
-     "odds": 1.32,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Bodoe/Glimt v LASK Linz",
-     "selection": "Over 2.5",
-     "odds": 1.28,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Galatasaray Istanbul v Aston Villa",
-     "selection": "Over 2.5",
-     "odds": 1.38,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Al-Masry v Asyut Petroleum",
-     "selection": "Home",
-     "odds": 1.42,
-     "result": "pending",
-     "score": "1:0"
-    },
-    {
-     "match": "Al Mokawloon Al Arab v El Qanah FC",
-     "selection": "Over 0.5",
-     "odds": 1.29,
-     "result": "pending",
-     "score": "0:1"
-    },
-    {
-     "match": "Al Nassr Club v Al Sadd SC",
-     "selection": "Over 2.5",
-     "odds": 1.29,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Virtus Entella v Verona",
-     "selection": "Over 0.5",
-     "odds": 1.28,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Oxford United v Tottenham Hotspur U21",
-     "selection": "Home",
-     "odds": 1.35,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Fleetwood Town v Leeds United U21",
-     "selection": "Home",
-     "odds": 1.45,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Queens Park Rangers U21 v Southampton U21",
-     "selection": "Over 2.5",
-     "odds": 1.32,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ipswich Town U21 v Bromley FC U21",
-     "selection": "Over 2.5",
-     "odds": 1.32,
-     "result": "pending",
-     "score": "0:0"
-    }
-   ]
-  },
-  {
-   "code": "DYYRPF",
-   "book": "sportybet",
-   "date": "2026-11-24",
-   "name": "Master <=1.42 2 · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 3437.02,
-   "status": "lost",
-   "hit": 8,
-   "total": 34,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Weston-super-Mare v Walton and Hersham FC",
-     "selection": "Over 1.5",
-     "odds": 1.15,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Deportiva Venados v Reboceros de La Piedad",
-     "selection": "Over 1.5",
-     "odds": 1.16,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Middlesbrough FC v Swansea",
-     "selection": "Over 1.5",
-     "odds": 1.17,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Real Madrid v PSV Eindhoven",
-     "selection": "Over 2.5",
-     "odds": 1.17,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AFC Telford United v Buxton FC",
-     "selection": "Over 1.5",
-     "odds": 1.19,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bromley FC v Wycombe Wanderers",
-     "selection": "Over 1.5",
-     "odds": 1.2,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Daejeon Citizen FC v Beijing Guoan",
-     "selection": "Under 4.5",
-     "odds": 1.21,
-     "result": "lost",
-     "score": "3:2"
-    },
-    {
-     "match": "Bradford City FC v Barnsley FC",
-     "selection": "Under 4.5",
-     "odds": 1.21,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Chorley FC v Hebburn Town",
-     "selection": "Over 1.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Khaleej Saihat v AL Ansar U21",
-     "selection": "Under 4.5",
-     "odds": 1.22,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Leek Town FC v Gainsborough Trinity",
-     "selection": "Over 1.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Hampton & Richmond Borough v Dover Athletic FC",
-     "selection": "Under 4.5",
-     "odds": 1.23,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Feyenoord Rotterdam v FC Porto",
-     "selection": "Under 5.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "AFC Fylde v FC Halifax Town",
-     "selection": "Over 0.5",
-     "odds": 1.24,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Brackley Town FC v Hereford FC",
-     "selection": "Over 0.5",
-     "odds": 1.25,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Real Madrid v PSV Eindhoven",
-     "selection": "Home",
-     "odds": 1.25,
-     "result": "lost",
-     "score": "3:3"
-    },
-    {
-     "match": "Rio Ave v UD Leiria U23",
-     "selection": "Over 1.5",
-     "odds": 1.26,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Pitbulls Santa Barbara FC v Adr Jicaral",
-     "selection": "Over 0.5",
-     "odds": 1.26,
-     "result": "lost",
-     "score": "0:0"
-    },
-    {
-     "match": "Zed FC v Abo Qair Semads",
-     "selection": "Over 0.5",
-     "odds": 1.28,
-     "result": "lost",
-     "score": "0:0"
-    },
-    {
-     "match": "Persiraja Banda v Dewa United",
-     "selection": "Away",
-     "odds": 1.28,
-     "result": "won",
-     "score": "1:4"
-    },
-    {
-     "match": "Al Nassr Club v Al Sadd SC",
-     "selection": "Over 2.5",
-     "odds": 1.29,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "RB Leipzig v Lens",
-     "selection": "Over 2.5",
-     "odds": 1.31,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Queens Park Rangers U21 v Southampton U21",
-     "selection": "Over 2.5",
-     "odds": 1.32,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Man City v Napoli",
-     "selection": "Over 2.5",
-     "odds": 1.32,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Slough Town v Farnborough FC",
-     "selection": "Over 2.5",
-     "odds": 1.33,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Rangers v Aberdeen",
-     "selection": "Home (-1.0)",
-     "odds": 1.34,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Newcastle United Jets v Kashiwa Reysol",
-     "selection": "Over 2.5",
-     "odds": 1.34,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Bodoe/Glimt v LASK Linz",
-     "selection": "Over 1.5",
-     "odds": 1.34,
-     "result": "won",
-     "score": "2:6"
-    },
-    {
-     "match": "Coquimbo Unido v Deportes Union La Calera",
-     "selection": "Under 3.5",
-     "odds": 1.35,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Slovan Bratislava v Betis",
-     "selection": "Over 2.5",
-     "odds": 1.36,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Galatasaray SK v Aston Villa",
-     "selection": "Over 2.5",
-     "odds": 1.37,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Galatasaray Istanbul v Aston Villa",
-     "selection": "Over 2.5",
-     "odds": 1.38,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Moyola Park FC v Ballymena United",
-     "selection": "Away",
-     "odds": 1.4,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Al-Masry v Asyut Petroleum",
-     "selection": "Home",
-     "odds": 1.42,
-     "result": "pending",
-     "score": "1:0"
-    }
-   ]
-  },
-  {
-   "code": "D1UWRE",
-   "book": "sportybet",
-   "date": "2026-11-24",
-   "name": "Master <=1.42 1 · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 2963.52,
-   "status": "lost",
-   "hit": 5,
-   "total": 34,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Dunfermline Athletic FC v Kelty Hearts FC",
-     "selection": "Home",
-     "odds": 1.09,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Blackpool FC v Leicester",
-     "selection": "Over 1.5",
-     "odds": 1.15,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Holywell Town v Pen-y-Bont FC",
-     "selection": "Away",
-     "odds": 1.16,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Marine FC v Spennymoor Town FC",
-     "selection": "Over 1.5",
-     "odds": 1.17,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Boston United FC v Barrow AFC",
-     "selection": "Over 1.5",
-     "odds": 1.19,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Manchester City FC v SSC Napoli U20",
-     "selection": "Home",
-     "odds": 1.2,
-     "result": "won",
-     "score": "4:1"
-    },
-    {
-     "match": "Livingston FC v Peterhead FC",
-     "selection": "Home",
-     "odds": 1.2,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Hibernian FC v Dundee FC",
-     "selection": "Over 1.5",
-     "odds": 1.21,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Woking FC v Worthing FC",
-     "selection": "Over 0.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Harborough Town FC v Chester FC",
-     "selection": "Over 0.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Arsenal v Borussia Dortmund",
-     "selection": "Under 4.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Harland And Wolff Welders v Linfield FC",
-     "selection": "Away",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Ettifaq U21 v AL Nassr",
-     "selection": "Over 0.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Saint Louis City SC v Los Angeles FC",
-     "selection": "Over 0.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "3:2"
-    },
-    {
-     "match": "Macclesfield FC v Morecambe FC",
-     "selection": "Over 0.5",
-     "odds": 1.24,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Jabalain FC v Al-Zlfe",
-     "selection": "Under 3.5",
-     "odds": 1.25,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Portsmouth FC v West Ham",
-     "selection": "Over 1.5",
-     "odds": 1.26,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AGMK FC v Navbahor",
-     "selection": "Over 1.5",
-     "odds": 1.26,
-     "result": "lost",
-     "score": "0:1"
-    },
-    {
-     "match": "Virtus Entella v Verona",
-     "selection": "Over 0.5",
-     "odds": 1.28,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bodoe/Glimt v LASK Linz",
-     "selection": "Over 2.5",
-     "odds": 1.28,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Al Mokawloon Al Arab v El Qanah FC",
-     "selection": "Over 0.5",
-     "odds": 1.29,
-     "result": "pending",
-     "score": "0:1"
-    },
-    {
-     "match": "Samaleswari SC v FC Bengaluru United",
-     "selection": "Over 0.5",
-     "odds": 1.29,
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "Orlando Pirates FC v Lamontville Golden Arrows",
-     "selection": "Home",
-     "odds": 1.32,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Ipswich Town U21 v Bromley FC U21",
-     "selection": "Over 2.5",
-     "odds": 1.32,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Crawley Town v Barnet FC",
-     "selection": "Over 0.5",
-     "odds": 1.32,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Al-Orobah v Al-Najma",
-     "selection": "Away",
-     "odds": 1.33,
-     "result": "void",
-     "score": "0:0"
-    },
-    {
-     "match": "Merthyr Town v Bedford Town Football Club",
-     "selection": "Over 0.5",
-     "odds": 1.34,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Como 1907 v AEK Athens",
-     "selection": "Over 2.5",
-     "odds": 1.34,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Oxford United v Tottenham Hotspur U21",
-     "selection": "Home",
-     "odds": 1.35,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Salford City v Sunderland U21",
-     "selection": "Over 1.5",
-     "odds": 1.36,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Carlisle United v Tamworth FC",
-     "selection": "Over 2.5",
-     "odds": 1.37,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Forest Green Rovers v Southend United",
-     "selection": "Over 2.5",
-     "odds": 1.38,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Limavady United FC v Rathfriland Rangers",
-     "selection": "Home",
-     "odds": 1.38,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Chapecoense SC v SE Palmeiras SP",
-     "selection": "Away",
-     "odds": 1.42,
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "DK8NAK",
-   "book": "sportybet",
-   "date": "2026-11-24",
-   "name": "Low Odds · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 744.93,
-   "status": "lost",
-   "hit": 8,
-   "total": 35,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Dunfermline Athletic FC v Kelty Hearts FC",
-     "selection": "Home",
-     "odds": 1.09,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Weston-super-Mare v Walton and Hersham FC",
-     "selection": "Over 1.5",
-     "odds": 1.15,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Blackpool FC v Leicester",
-     "selection": "Over 1.5",
-     "odds": 1.15,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Deportiva Venados v Reboceros de La Piedad",
-     "selection": "Over 1.5",
-     "odds": 1.16,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Holywell Town v Pen-y-Bont FC",
-     "selection": "Away",
-     "odds": 1.16,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Middlesbrough FC v Swansea",
-     "selection": "Over 1.5",
-     "odds": 1.17,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Marine FC v Spennymoor Town FC",
-     "selection": "Over 1.5",
-     "odds": 1.17,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Real Madrid v PSV Eindhoven",
-     "selection": "Over 2.5",
-     "odds": 1.17,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Boston United FC v Barrow AFC",
-     "selection": "Over 1.5",
-     "odds": 1.19,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AFC Telford United v Buxton FC",
-     "selection": "Over 1.5",
-     "odds": 1.19,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Manchester City FC v SSC Napoli U20",
-     "selection": "Home",
-     "odds": 1.2,
-     "result": "won",
-     "score": "4:1"
-    },
-    {
-     "match": "Bromley FC v Wycombe Wanderers",
-     "selection": "Over 1.5",
-     "odds": 1.2,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Livingston FC v Peterhead FC",
-     "selection": "Home",
-     "odds": 1.2,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Daejeon Citizen FC v Beijing Guoan",
-     "selection": "Under 4.5",
-     "odds": 1.21,
-     "result": "lost",
-     "score": "3:2"
-    },
-    {
-     "match": "Hibernian FC v Dundee FC",
-     "selection": "Over 1.5",
-     "odds": 1.21,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bradford City FC v Barnsley FC",
-     "selection": "Under 4.5",
-     "odds": 1.21,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Woking FC v Worthing FC",
-     "selection": "Over 0.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Chorley FC v Hebburn Town",
-     "selection": "Over 1.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Harborough Town FC v Chester FC",
-     "selection": "Over 0.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Khaleej Saihat v AL Ansar U21",
-     "selection": "Under 4.5",
-     "odds": 1.22,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Arsenal v Borussia Dortmund",
-     "selection": "Under 4.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Leek Town FC v Gainsborough Trinity",
-     "selection": "Over 1.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Harland And Wolff Welders v Linfield FC",
-     "selection": "Away",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Hampton & Richmond Borough v Dover Athletic FC",
-     "selection": "Under 4.5",
-     "odds": 1.23,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Ettifaq U21 v AL Nassr",
-     "selection": "Over 0.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Feyenoord Rotterdam v FC Porto",
-     "selection": "Under 5.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Saint Louis City SC v Los Angeles FC",
-     "selection": "Over 0.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "3:2"
-    },
-    {
-     "match": "AFC Fylde v FC Halifax Town",
-     "selection": "Over 0.5",
-     "odds": 1.24,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Macclesfield FC v Morecambe FC",
-     "selection": "Over 0.5",
-     "odds": 1.24,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Brackley Town FC v Hereford FC",
-     "selection": "Over 0.5",
-     "odds": 1.25,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Jabalain FC v Al-Zlfe",
-     "selection": "Under 3.5",
-     "odds": 1.25,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Real Madrid v PSV Eindhoven",
-     "selection": "Home",
-     "odds": 1.25,
-     "result": "lost",
-     "score": "3:3"
-    },
-    {
-     "match": "Portsmouth FC v West Ham",
-     "selection": "Over 1.5",
-     "odds": 1.26,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Rio Ave v UD Leiria U23",
-     "selection": "Over 1.5",
-     "odds": 1.26,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "AGMK FC v Navbahor",
-     "selection": "Over 1.5",
-     "odds": 1.26,
-     "result": "lost",
-     "score": "0:1"
-    }
-   ]
-  },
-  {
-   "code": "DX7GQZ",
-   "book": "sportybet",
-   "date": "2026-11-24",
-   "name": "Over 2.5 Group · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 409.74,
-   "status": "lost",
-   "hit": 3,
-   "total": 20,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Real Madrid v PSV Eindhoven",
-     "selection": "Over 2.5",
-     "odds": 1.17,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Bodoe/Glimt v LASK Linz",
-     "selection": "Over 2.5",
-     "odds": 1.28,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Al Nassr Club v Al Sadd SC",
-     "selection": "Over 2.5",
-     "odds": 1.29,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "RB Leipzig v Lens",
-     "selection": "Over 2.5",
-     "odds": 1.31,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Queens Park Rangers U21 v Southampton U21",
-     "selection": "Over 2.5",
-     "odds": 1.32,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Ipswich Town U21 v Bromley FC U21",
-     "selection": "Over 2.5",
-     "odds": 1.32,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Man City v Napoli",
-     "selection": "Over 2.5",
-     "odds": 1.32,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Slough Town v Farnborough FC",
-     "selection": "Over 2.5",
-     "odds": 1.33,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Newcastle United Jets v Kashiwa Reysol",
-     "selection": "Over 2.5",
-     "odds": 1.34,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Como 1907 v AEK Athens",
-     "selection": "Over 2.5",
-     "odds": 1.34,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Slovan Bratislava v Betis",
-     "selection": "Over 2.5",
-     "odds": 1.36,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Carlisle United v Tamworth FC",
-     "selection": "Over 2.5",
-     "odds": 1.37,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Galatasaray SK v Aston Villa",
-     "selection": "Over 2.5",
-     "odds": 1.37,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Forest Green Rovers v Southend United",
-     "selection": "Over 2.5",
-     "odds": 1.38,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Galatasaray Istanbul v Aston Villa",
-     "selection": "Over 2.5",
-     "odds": 1.38,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Torquay United v Chesham United",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Pec Zwolle U21 v FC Twente Heracles",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Chattogram City Football Club v Brothers Union",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "MSK Zilina v MFK Ruzomberok",
-     "selection": "Over 2.5",
-     "odds": 1.44,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "FC Dietikon v USV Eschen-Mauren",
-     "selection": "Over 2.5",
-     "odds": 1.44,
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "F0G84U",
-   "book": "sportybet",
-   "date": "2026-11-24",
-   "name": "Above 1.42 · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 37.28,
-   "status": "lost",
-   "hit": 3,
-   "total": 10,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Torquay United v Chesham United",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Shanghai Port FC v Buriram United",
-     "selection": "Home",
-     "odds": 1.43,
-     "result": "won",
-     "score": "3:1"
-    },
-    {
-     "match": "Pec Zwolle U21 v FC Twente Heracles",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "won",
-     "score": "2:1"
-    },
-    {
-     "match": "Chattogram City Football Club v Brothers Union",
-     "selection": "Over 2.5",
-     "odds": 1.43,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "Loughgall FC v Queens University",
-     "selection": "Yes",
-     "odds": 1.43,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Slovan Bratislava v Real Betis Balompie",
-     "selection": "Away",
-     "odds": 1.44,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Dungannon Swifts v Coleraine FC",
-     "selection": "Away",
-     "odds": 1.44,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "MSK Zilina v MFK Ruzomberok",
-     "selection": "Over 2.5",
-     "odds": 1.44,
-     "result": "lost",
-     "score": "1:0"
-    },
-    {
-     "match": "FC Dietikon v USV Eschen-Mauren",
-     "selection": "Over 2.5",
-     "odds": 1.44,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Fleetwood Town v Leeds United U21",
-     "selection": "Home",
-     "odds": 1.45,
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "9Y2A68",
-   "book": "sportybet",
-   "date": "2026-11-24",
-   "name": "Win Group · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 36.28,
-   "status": "lost",
-   "hit": 3,
-   "total": 14,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Dunfermline Athletic FC v Kelty Hearts FC",
-     "selection": "Home",
-     "odds": 1.09,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Holywell Town v Pen-y-Bont FC",
-     "selection": "Away",
-     "odds": 1.16,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Manchester City FC v SSC Napoli U20",
-     "selection": "Home",
-     "odds": 1.2,
-     "result": "won",
-     "score": "4:1"
-    },
-    {
-     "match": "Livingston FC v Peterhead FC",
-     "selection": "Home",
-     "odds": 1.2,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Harland And Wolff Welders v Linfield FC",
-     "selection": "Away",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Real Madrid v PSV Eindhoven",
-     "selection": "Home",
-     "odds": 1.25,
-     "result": "lost",
-     "score": "3:3"
-    },
-    {
-     "match": "Persiraja Banda v Dewa United",
-     "selection": "Away",
-     "odds": 1.28,
-     "result": "won",
-     "score": "1:4"
-    },
-    {
-     "match": "Orlando Pirates FC v Lamontville Golden Arrows",
-     "selection": "Home",
-     "odds": 1.32,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Oxford United v Tottenham Hotspur U21",
-     "selection": "Home",
-     "odds": 1.35,
-     "result": "pending",
-     "score": "0:0"
-    },
-    {
-     "match": "Limavady United FC v Rathfriland Rangers",
-     "selection": "Home",
-     "odds": 1.38,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Moyola Park FC v Ballymena United",
-     "selection": "Away",
-     "odds": 1.4,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Al-Masry v Asyut Petroleum",
-     "selection": "Home",
-     "odds": 1.42,
-     "result": "pending",
-     "score": "1:0"
-    },
-    {
-     "match": "Slovan Bratislava v Real Betis Balompie",
-     "selection": "Away",
-     "odds": 1.44,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Fleetwood Town v Leeds United U21",
-     "selection": "Home",
-     "odds": 1.45,
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "DZDFQQ",
-   "book": "sportybet",
-   "date": "2026-11-24",
-   "name": "Team Over 0.5 Group · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 26.3,
-   "status": "lost",
-   "hit": 3,
-   "total": 14,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Woking FC v Worthing FC",
-     "selection": "Over 0.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Harborough Town FC v Chester FC",
-     "selection": "Over 0.5",
-     "odds": 1.22,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "AL Ettifaq U21 v AL Nassr",
-     "selection": "Over 0.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "0:1"
-    },
-    {
-     "match": "Saint Louis City SC v Los Angeles FC",
-     "selection": "Over 0.5",
-     "odds": 1.23,
-     "result": "won",
-     "score": "3:2"
-    },
-    {
-     "match": "AFC Fylde v FC Halifax Town",
-     "selection": "Over 0.5",
-     "odds": 1.24,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Macclesfield FC v Morecambe FC",
-     "selection": "Over 0.5",
-     "odds": 1.24,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Brackley Town FC v Hereford FC",
-     "selection": "Over 0.5",
-     "odds": 1.25,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Pitbulls Santa Barbara FC v Adr Jicaral",
-     "selection": "Over 0.5",
-     "odds": 1.26,
-     "result": "lost",
-     "score": "0:0"
-    },
-    {
-     "match": "Virtus Entella v Verona",
-     "selection": "Over 0.5",
-     "odds": 1.28,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Zed FC v Abo Qair Semads",
-     "selection": "Over 0.5",
-     "odds": 1.28,
-     "result": "lost",
-     "score": "0:0"
-    },
-    {
-     "match": "Al Mokawloon Al Arab v El Qanah FC",
-     "selection": "Over 0.5",
-     "odds": 1.29,
-     "result": "pending",
-     "score": "0:1"
-    },
-    {
-     "match": "Samaleswari SC v FC Bengaluru United",
-     "selection": "Over 0.5",
-     "odds": 1.29,
-     "result": "won",
-     "score": "2:2"
-    },
-    {
-     "match": "Crawley Town v Barnet FC",
-     "selection": "Over 0.5",
-     "odds": 1.32,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Merthyr Town v Bedford Town Football Club",
-     "selection": "Over 0.5",
-     "odds": 1.34,
-     "result": "pending",
-     "score": null
+     "score": "2:0"
     }
    ]
   },
@@ -3451,7 +924,7 @@
      "selection": "Away",
      "odds": 3.1,
      "result": "pending",
-     "score": null
+     "score": "2:1"
     },
     {
      "match": "Al-Orobah v Al-Najma",
@@ -3465,7 +938,7 @@
      "selection": "Away",
      "odds": 1.44,
      "result": "pending",
-     "score": null
+     "score": "0:2"
     },
     {
      "match": "FC Andijon v Lokomotiv Tashkent",
@@ -3478,15 +951,15 @@
      "match": "AL Ittihad Jeddah v AL Hazem U21",
      "selection": "Home",
      "odds": 1.49,
-     "result": "pending",
-     "score": "1:0"
+     "result": "lost",
+     "score": "1:2"
     },
     {
      "match": "East Kilbride FC v Partick Thistle FC",
      "selection": "Away",
      "odds": 1.69,
      "result": "pending",
-     "score": null
+     "score": "0:2"
     },
     {
      "match": "Basingstoke Town FC v Sholing FC",
@@ -3500,7 +973,7 @@
      "selection": "Home",
      "odds": 1.91,
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Peterborough Sports v Alvechurch",
@@ -3514,14 +987,14 @@
      "selection": "Home",
      "odds": 2.05,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Clydebank FC v Queens Park FC",
      "selection": "Home",
      "odds": 2.25,
      "result": "pending",
-     "score": null
+     "score": "2:0"
     },
     {
      "match": "Como 1907 v AEK Athens",
@@ -3529,6 +1002,2659 @@
      "odds": 2.6,
      "result": "void",
      "score": "1:1"
+    }
+   ]
+  },
+  {
+   "code": "CSVSF2",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "80% Form 2 · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 5367.65,
+   "status": "lost",
+   "hit": 1,
+   "total": 15,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Crawley Town v Barnet FC",
+     "selection": "Away",
+     "odds": 1.41,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Ross County FC v Stenhousemuir FC",
+     "selection": "Home",
+     "odds": 1.78,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Kalaa Sport v CS Korba",
+     "selection": "Away",
+     "odds": 2.15,
+     "result": "lost",
+     "score": "2:1"
+    },
+    {
+     "match": "Malvern Town v Hanworth Villa",
+     "selection": "Away",
+     "odds": 1.3,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Rio Ave v UD Leiria U23",
+     "selection": "Home",
+     "odds": 1.37,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Arsenal FC v Borussia Dortmund",
+     "selection": "Away",
+     "odds": 1.46,
+     "result": "lost",
+     "score": "3:2"
+    },
+    {
+     "match": "Port Vale v Northampton Town",
+     "selection": "Home",
+     "odds": 1.49,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Nakhon Pathom United FC v Chainat Hornbill FC",
+     "selection": "Home",
+     "odds": 1.5,
+     "result": "lost",
+     "score": "0:1"
+    },
+    {
+     "match": "Yate Town v Evesham United",
+     "selection": "Home",
+     "odds": 1.83,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Bromley FC v Wycombe Wanderers",
+     "selection": "Away",
+     "odds": 1.89,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Sheffield United v Southampton",
+     "selection": "Away",
+     "odds": 1.93,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Samaleswari SC v FC Bengaluru United",
+     "selection": "Away",
+     "odds": 2.0,
+     "result": "void",
+     "score": "2:2"
+    },
+    {
+     "match": "Horsham FC v Truro City",
+     "selection": "Away",
+     "odds": 2.05,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Feyenoord v Porto",
+     "selection": "Away",
+     "odds": 2.36,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Charlton Athletic U21 v Coventry City U21",
+     "selection": "Away",
+     "odds": 2.65,
+     "result": "lost",
+     "score": "4:2"
+    }
+   ]
+  },
+  {
+   "code": "AA12U0",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "Reverse U4.5 · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 925.03,
+   "status": "lost",
+   "hit": 2,
+   "total": 20,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "MSK Zilina v MFK Ruzomberok",
+     "selection": "Over 2.5",
+     "odds": 1.44,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "Ipswich Town U21 v Bromley FC U21",
+     "selection": "Over 2.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Queens Park Rangers U21 v Southampton U21",
+     "selection": "Over 2.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Sheffield United U21 v Millwall U21",
+     "selection": "Over 2.5",
+     "odds": 1.44,
+     "result": "pending",
+     "score": "2:1"
+    },
+    {
+     "match": "Bodoe/Glimt v LASK Linz",
+     "selection": "Over 2.5",
+     "odds": 1.28,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "RB Leipzig v Lens",
+     "selection": "Over 2.5",
+     "odds": 1.31,
+     "result": "pending",
+     "score": "2:0"
+    },
+    {
+     "match": "Galatasaray Istanbul v Aston Villa",
+     "selection": "Over 2.5",
+     "odds": 1.38,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "Deportiva Venados v Reboceros de La Piedad",
+     "selection": "Over 2.5",
+     "odds": 1.46,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Al Nassr Club v Al Sadd SC",
+     "selection": "Over 2.5",
+     "odds": 1.29,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Forest Green Rovers v Southend United",
+     "selection": "Over 2.5",
+     "odds": 1.38,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "AFC Fylde v FC Halifax Town",
+     "selection": "Over 2.5",
+     "odds": 1.43,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Scunthorpe United v Gateshead FC",
+     "selection": "Over 2.5",
+     "odds": 1.46,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Altrincham FC v Wealdstone FC",
+     "selection": "Over 2.5",
+     "odds": 1.5,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "AL Ettifaq U21 v AL Nassr",
+     "selection": "Over 2.5",
+     "odds": 1.47,
+     "result": "lost",
+     "score": "0:1"
+    },
+    {
+     "match": "Slough Town v Farnborough FC",
+     "selection": "Over 2.5",
+     "odds": 1.33,
+     "result": "pending",
+     "score": "2:0"
+    },
+    {
+     "match": "Torquay United v Chesham United",
+     "selection": "Over 2.5",
+     "odds": 1.43,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Farnham Town v Maidenhead United FC",
+     "selection": "Over 2.5",
+     "odds": 1.46,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Weston-super-Mare v Walton and Hersham FC",
+     "selection": "Over 2.5",
+     "odds": 1.5,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Macclesfield FC v Morecambe FC",
+     "selection": "Over 2.5",
+     "odds": 1.49,
+     "result": "pending",
+     "score": "2:1"
+    },
+    {
+     "match": "Blackpool FC v Leicester",
+     "selection": "Over 2.5",
+     "odds": 1.49,
+     "result": "pending",
+     "score": "0:0"
+    }
+   ]
+  },
+  {
+   "code": "CZNXPN",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "Match Over 2.5 · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 527.49,
+   "status": "lost",
+   "hit": 4,
+   "total": 14,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Manchester City FC v SSC Napoli U20",
+     "selection": "Over 2.5",
+     "odds": 1.26,
+     "result": "won",
+     "score": "4:1"
+    },
+    {
+     "match": "FC Dietikon v USV Eschen-Mauren",
+     "selection": "Over 2.5",
+     "odds": 1.44,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Halesowen Town FC v Stourbridge FC",
+     "selection": "Over 2.5",
+     "odds": 1.46,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AL Khaleej Saihat v AL Ansar U21",
+     "selection": "Over 2.5",
+     "odds": 1.56,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "Como 1907 v AEK Athens",
+     "selection": "Over 2.5",
+     "odds": 1.57,
+     "result": "lost",
+     "score": "1:1"
+    },
+    {
+     "match": "Kings Lynn FC v Radcliffe FC",
+     "selection": "Over 2.5",
+     "odds": 1.57,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Marine FC v Spennymoor Town FC",
+     "selection": "Over 2.5",
+     "odds": 1.57,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Feyenoord v Porto",
+     "selection": "Over 2.5",
+     "odds": 1.59,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Eastleigh FC v Yeovil Town",
+     "selection": "Over 2.5",
+     "odds": 1.6,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "AFC Telford United v Buxton FC",
+     "selection": "Over 2.5",
+     "odds": 1.61,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Saint Louis City SC v Los Angeles FC",
+     "selection": "Over 2.5",
+     "odds": 1.63,
+     "result": "won",
+     "score": "3:2"
+    },
+    {
+     "match": "Shanghai Port FC v Buriram United",
+     "selection": "Over 2.5",
+     "odds": 1.67,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "Sheffield United v Southampton",
+     "selection": "Over 2.5",
+     "odds": 1.72,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Horsham FC v Truro City",
+     "selection": "Over 2.5",
+     "odds": 1.72,
+     "result": "pending",
+     "score": "1:0"
+    }
+   ]
+  },
+  {
+   "code": "CGTNX6",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "Reverse U4.5 + Draw 2 · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 237.97,
+   "status": "lost",
+   "hit": 5,
+   "total": 16,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Salford City v Sunderland U21",
+     "selection": "Over 1.5",
+     "odds": 1.36,
+     "result": "pending",
+     "score": "2:2"
+    },
+    {
+     "match": "Harland And Wolff Welders v Linfield FC",
+     "selection": "Away",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Moyola Park FC v Ballymena United",
+     "selection": "Away",
+     "odds": 1.4,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Persiraja Banda v Dewa United",
+     "selection": "Away",
+     "odds": 1.28,
+     "result": "won",
+     "score": "1:4"
+    },
+    {
+     "match": "Bodoe/Glimt v LASK Linz",
+     "selection": "Over 1.5",
+     "odds": 1.34,
+     "result": "won",
+     "score": "2:6"
+    },
+    {
+     "match": "Galatasaray SK v Aston Villa",
+     "selection": "Over 2.5",
+     "odds": 1.37,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "Queens Park Rangers U21 v Southampton U21",
+     "selection": "Over 1.5",
+     "odds": 1.4,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Ipswich Town U21 v Bromley FC U21",
+     "selection": "Home",
+     "odds": 1.45,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Pec Zwolle U21 v FC Twente Heracles",
+     "selection": "Over 2.5",
+     "odds": 1.43,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Eastbourne Borough v Aveley FC",
+     "selection": "Over 1.5",
+     "odds": 1.5,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Deportiva Venados v Reboceros de La Piedad",
+     "selection": "Over 1.5",
+     "odds": 1.49,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Malvern Town v Hanworth Villa",
+     "selection": "Over 1.5",
+     "odds": 1.49,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Woking FC v Worthing FC",
+     "selection": "Yes",
+     "odds": 1.45,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Eastleigh FC v Yeovil Town",
+     "selection": "Yes",
+     "odds": 1.5,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Hampton & Richmond Borough v Dover Athletic FC",
+     "selection": "Yes",
+     "odds": 1.45,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Chattogram City Football Club v Brothers Union",
+     "selection": "Over 2.5",
+     "odds": 1.43,
+     "result": "lost",
+     "score": "1:0"
+    }
+   ]
+  },
+  {
+   "code": "D1KN98",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "Reverse U4.5 + Draw 1 · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 236.91,
+   "status": "lost",
+   "hit": 1,
+   "total": 16,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Oxford United v Tottenham Hotspur U21",
+     "selection": "Home",
+     "odds": 1.35,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Fleetwood Town v Leeds United U21",
+     "selection": "Home",
+     "odds": 1.45,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Limavady United FC v Rathfriland Rangers",
+     "selection": "Home",
+     "odds": 1.38,
+     "result": "pending",
+     "score": "2:0"
+    },
+    {
+     "match": "Loughgall FC v Queens University",
+     "selection": "Yes",
+     "odds": 1.43,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Real Madrid v PSV Eindhoven",
+     "selection": "Home",
+     "odds": 1.26,
+     "result": "lost",
+     "score": "3:3"
+    },
+    {
+     "match": "Feyenoord Rotterdam v FC Porto",
+     "selection": "Over 1.5",
+     "odds": 1.36,
+     "result": "lost",
+     "score": "0:1"
+    },
+    {
+     "match": "Slovan Bratislava v Real Betis Balompie",
+     "selection": "Away",
+     "odds": 1.44,
+     "result": "won",
+     "score": "1:2"
+    },
+    {
+     "match": "Sheffield United U21 v Millwall U21",
+     "selection": "Over 2.5",
+     "odds": 1.44,
+     "result": "pending",
+     "score": "2:1"
+    },
+    {
+     "match": "Galatasaray Istanbul v Aston Villa",
+     "selection": "Over 2.5",
+     "odds": 1.38,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "Cray Wanderers v Wingate & Finchley",
+     "selection": "Over 1.5",
+     "odds": 1.48,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "FC Dietikon v USV Eschen-Mauren",
+     "selection": "Over 2.5",
+     "odds": 1.44,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Halesowen Town FC v Stourbridge FC",
+     "selection": "Over 2.5",
+     "odds": 1.46,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Forest Green Rovers v Southend United",
+     "selection": "Over 2.5",
+     "odds": 1.38,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Boston United FC v Barrow AFC",
+     "selection": "Yes",
+     "odds": 1.5,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Slough Town v Farnborough FC",
+     "selection": "Over 2.5",
+     "odds": 1.33,
+     "result": "pending",
+     "score": "2:0"
+    },
+    {
+     "match": "Salisbury FC v AFC Totton",
+     "selection": "Home",
+     "odds": 1.46,
+     "result": "pending",
+     "score": "0:1"
+    }
+   ]
+  },
+  {
+   "code": "A8NV4M",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "80% Sure 1 · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 61.91,
+   "status": "lost",
+   "hit": 4,
+   "total": 18,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Hibernian FC v Dundee FC",
+     "selection": "Over 1.5",
+     "odds": 1.21,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Crawley Town v Barnet FC",
+     "selection": "Over 0.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Harborough Town FC v Chester FC",
+     "selection": "Over 0.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "0:2"
+    },
+    {
+     "match": "Macclesfield FC v Morecambe FC",
+     "selection": "Over 0.5",
+     "odds": 1.24,
+     "result": "pending",
+     "score": "2:1"
+    },
+    {
+     "match": "Virtus Entella v Verona",
+     "selection": "Over 0.5",
+     "odds": 1.28,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Samaleswari SC v FC Bengaluru United",
+     "selection": "Over 0.5",
+     "odds": 1.29,
+     "result": "won",
+     "score": "2:2"
+    },
+    {
+     "match": "Leek Town FC v Gainsborough Trinity",
+     "selection": "Over 1.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Saint Louis City SC v Los Angeles FC",
+     "selection": "Over 0.5",
+     "odds": 1.22,
+     "result": "won",
+     "score": "3:2"
+    },
+    {
+     "match": "Al Mokawloon Al Arab v El Qanah FC",
+     "selection": "Over 0.5",
+     "odds": 1.29,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Daejeon Citizen FC v Beijing Guoan",
+     "selection": "Under 4.5",
+     "odds": 1.21,
+     "result": "lost",
+     "score": "3:2"
+    },
+    {
+     "match": "Feyenoord Rotterdam v FC Porto",
+     "selection": "Under 5.5",
+     "odds": 1.23,
+     "result": "won",
+     "score": "0:1"
+    },
+    {
+     "match": "Pitbulls Santa Barbara FC v Adr Jicaral",
+     "selection": "Over 0.5",
+     "odds": 1.26,
+     "result": "lost",
+     "score": "0:0"
+    },
+    {
+     "match": "Merthyr Town v Bedford Town Football Club",
+     "selection": "Over 0.5",
+     "odds": 1.34,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Hampton & Richmond Borough v Dover Athletic FC",
+     "selection": "Under 4.5",
+     "odds": 1.23,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Ebbsfleet United FC v Billericay Town",
+     "selection": "Under 4.5",
+     "odds": 1.28,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Boston United FC v Barrow AFC",
+     "selection": "Under 4.5",
+     "odds": 1.21,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Portsmouth FC v West Ham",
+     "selection": "Over 1.5",
+     "odds": 1.26,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Coquimbo Unido v Deportes Union La Calera",
+     "selection": "Under 3.5",
+     "odds": 1.33,
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "94LLCG",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "80% Sure 2 · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 41.95,
+   "status": "lost",
+   "hit": 5,
+   "total": 17,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "AL Jabalain FC v Al-Zlfe",
+     "selection": "Under 3.5",
+     "odds": 1.25,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Chorley FC v Hebburn Town",
+     "selection": "Over 1.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "AFC Fylde v FC Halifax Town",
+     "selection": "Over 0.5",
+     "odds": 1.24,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Middlesbrough FC v Swansea",
+     "selection": "Under 4.5",
+     "odds": 1.27,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Zed FC v Abo Qair Semads",
+     "selection": "Over 0.5",
+     "odds": 1.28,
+     "result": "lost",
+     "score": "0:0"
+    },
+    {
+     "match": "AL Khaleej Saihat v AL Ansar U21",
+     "selection": "Under 4.5",
+     "odds": 1.22,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "Arsenal v Borussia Dortmund",
+     "selection": "Under 4.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "AGMK FC v Navbahor",
+     "selection": "Over 1.5",
+     "odds": 1.26,
+     "result": "lost",
+     "score": "0:1"
+    },
+    {
+     "match": "Bromley FC v Wycombe Wanderers",
+     "selection": "Over 1.5",
+     "odds": 1.2,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Woking FC v Worthing FC",
+     "selection": "Over 0.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "AL Ettifaq U21 v AL Nassr",
+     "selection": "Over 0.5",
+     "odds": 1.23,
+     "result": "won",
+     "score": "0:1"
+    },
+    {
+     "match": "Rio Ave v UD Leiria U23",
+     "selection": "Over 1.5",
+     "odds": 1.26,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Galatasaray SK v Aston Villa",
+     "selection": "Under 4.5",
+     "odds": 1.38,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "Marine FC v Spennymoor Town FC",
+     "selection": "Under 4.5",
+     "odds": 1.21,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Bradford City FC v Barnsley FC",
+     "selection": "Under 4.5",
+     "odds": 1.21,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Brackley Town FC v Hereford FC",
+     "selection": "Over 0.5",
+     "odds": 1.25,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Blackpool FC v Leicester",
+     "selection": "Under 4.5",
+     "odds": 1.27,
+     "result": "pending",
+     "score": "0:0"
+    }
+   ]
+  },
+  {
+   "code": "DYAG83",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "High Odds · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 70209.33,
+   "status": "lost",
+   "hit": 8,
+   "total": 35,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Fleetwood Town v Leeds United U21",
+     "selection": "Home",
+     "odds": 1.45,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Slovan Bratislava v Real Betis Balompie",
+     "selection": "Away",
+     "odds": 1.44,
+     "result": "won",
+     "score": "1:2"
+    },
+    {
+     "match": "Dungannon Swifts v Coleraine FC",
+     "selection": "Away",
+     "odds": 1.44,
+     "result": "pending",
+     "score": "0:2"
+    },
+    {
+     "match": "MSK Zilina v MFK Ruzomberok",
+     "selection": "Over 2.5",
+     "odds": 1.44,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "FC Dietikon v USV Eschen-Mauren",
+     "selection": "Over 2.5",
+     "odds": 1.44,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Torquay United v Chesham United",
+     "selection": "Over 2.5",
+     "odds": 1.43,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Shanghai Port FC v Buriram United",
+     "selection": "Home",
+     "odds": 1.43,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "Pec Zwolle U21 v FC Twente Heracles",
+     "selection": "Over 2.5",
+     "odds": 1.43,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Chattogram City Football Club v Brothers Union",
+     "selection": "Over 2.5",
+     "odds": 1.43,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "Loughgall FC v Queens University",
+     "selection": "Yes",
+     "odds": 1.43,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Chapecoense SC v SE Palmeiras SP",
+     "selection": "Away",
+     "odds": 1.42,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Al-Masry v Asyut Petroleum",
+     "selection": "Home",
+     "odds": 1.42,
+     "result": "won",
+     "score": "2:0"
+    },
+    {
+     "match": "Moyola Park FC v Ballymena United",
+     "selection": "Away",
+     "odds": 1.4,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Forest Green Rovers v Southend United",
+     "selection": "Over 2.5",
+     "odds": 1.38,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Galatasaray Istanbul v Aston Villa",
+     "selection": "Over 2.5",
+     "odds": 1.38,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "Limavady United FC v Rathfriland Rangers",
+     "selection": "Home",
+     "odds": 1.38,
+     "result": "pending",
+     "score": "2:0"
+    },
+    {
+     "match": "Carlisle United v Tamworth FC",
+     "selection": "Over 2.5",
+     "odds": 1.37,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Galatasaray SK v Aston Villa",
+     "selection": "Over 2.5",
+     "odds": 1.37,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "Salford City v Sunderland U21",
+     "selection": "Over 1.5",
+     "odds": 1.36,
+     "result": "pending",
+     "score": "2:2"
+    },
+    {
+     "match": "Slovan Bratislava v Betis",
+     "selection": "Over 2.5",
+     "odds": 1.36,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Oxford United v Tottenham Hotspur U21",
+     "selection": "Home",
+     "odds": 1.35,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Coquimbo Unido v Deportes Union La Calera",
+     "selection": "Under 3.5",
+     "odds": 1.35,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Rangers v Aberdeen",
+     "selection": "Home (-1.0)",
+     "odds": 1.34,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Merthyr Town v Bedford Town Football Club",
+     "selection": "Over 0.5",
+     "odds": 1.34,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Newcastle United Jets v Kashiwa Reysol",
+     "selection": "Over 2.5",
+     "odds": 1.34,
+     "result": "won",
+     "score": "1:2"
+    },
+    {
+     "match": "Como 1907 v AEK Athens",
+     "selection": "Over 2.5",
+     "odds": 1.34,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Bodoe/Glimt v LASK Linz",
+     "selection": "Over 1.5",
+     "odds": 1.34,
+     "result": "won",
+     "score": "2:6"
+    },
+    {
+     "match": "Slough Town v Farnborough FC",
+     "selection": "Over 2.5",
+     "odds": 1.33,
+     "result": "pending",
+     "score": "2:0"
+    },
+    {
+     "match": "Al-Orobah v Al-Najma",
+     "selection": "Away",
+     "odds": 1.33,
+     "result": "void",
+     "score": "0:0"
+    },
+    {
+     "match": "Orlando Pirates FC v Lamontville Golden Arrows",
+     "selection": "Home",
+     "odds": 1.32,
+     "result": "won",
+     "score": "2:0"
+    },
+    {
+     "match": "Queens Park Rangers U21 v Southampton U21",
+     "selection": "Over 2.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Ipswich Town U21 v Bromley FC U21",
+     "selection": "Over 2.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Man City v Napoli",
+     "selection": "Over 2.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Crawley Town v Barnet FC",
+     "selection": "Over 0.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "RB Leipzig v Lens",
+     "selection": "Over 2.5",
+     "odds": 1.31,
+     "result": "pending",
+     "score": "2:0"
+    }
+   ]
+  },
+  {
+   "code": "BBN8QZ",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "Master Early · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 12054.42,
+   "status": "lost",
+   "hit": 20,
+   "total": 35,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Pitbulls Santa Barbara FC v Adr Jicaral",
+     "selection": "Over 0.5",
+     "odds": 1.26,
+     "result": "lost",
+     "score": "0:0"
+    },
+    {
+     "match": "Saint Louis City SC v Los Angeles FC",
+     "selection": "Over 0.5",
+     "odds": 1.23,
+     "result": "won",
+     "score": "3:2"
+    },
+    {
+     "match": "Deportiva Venados v Reboceros de La Piedad",
+     "selection": "Over 1.5",
+     "odds": 1.16,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Newcastle United Jets v Kashiwa Reysol",
+     "selection": "Over 2.5",
+     "odds": 1.34,
+     "result": "won",
+     "score": "1:2"
+    },
+    {
+     "match": "Chattogram City Football Club v Brothers Union",
+     "selection": "Over 2.5",
+     "odds": 1.43,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "Daejeon Citizen FC v Beijing Guoan",
+     "selection": "Under 4.5",
+     "odds": 1.21,
+     "result": "lost",
+     "score": "3:2"
+    },
+    {
+     "match": "Bodoe/Glimt v LASK Linz",
+     "selection": "Over 1.5",
+     "odds": 1.34,
+     "result": "won",
+     "score": "2:6"
+    },
+    {
+     "match": "Samaleswari SC v FC Bengaluru United",
+     "selection": "Over 0.5",
+     "odds": 1.29,
+     "result": "won",
+     "score": "2:2"
+    },
+    {
+     "match": "Galatasaray SK v Aston Villa",
+     "selection": "Over 2.5",
+     "odds": 1.37,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "Pec Zwolle U21 v FC Twente Heracles",
+     "selection": "Over 2.5",
+     "odds": 1.43,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Shanghai Port FC v Buriram United",
+     "selection": "Home",
+     "odds": 1.43,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "AL Jabalain FC v Al-Zlfe",
+     "selection": "Under 3.5",
+     "odds": 1.25,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Al-Orobah v Al-Najma",
+     "selection": "Away",
+     "odds": 1.33,
+     "result": "void",
+     "score": "0:0"
+    },
+    {
+     "match": "Slovan Bratislava v Real Betis Balompie",
+     "selection": "Away",
+     "odds": 1.44,
+     "result": "won",
+     "score": "1:2"
+    },
+    {
+     "match": "AGMK FC v Navbahor",
+     "selection": "Over 1.5",
+     "odds": 1.26,
+     "result": "lost",
+     "score": "0:1"
+    },
+    {
+     "match": "Persiraja Banda v Dewa United",
+     "selection": "Away",
+     "odds": 1.28,
+     "result": "won",
+     "score": "1:4"
+    },
+    {
+     "match": "AL Khaleej Saihat v AL Ansar U21",
+     "selection": "Under 4.5",
+     "odds": 1.22,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "AL Ettifaq U21 v AL Nassr",
+     "selection": "Over 0.5",
+     "odds": 1.23,
+     "result": "won",
+     "score": "0:1"
+    },
+    {
+     "match": "Rio Ave v UD Leiria U23",
+     "selection": "Over 1.5",
+     "odds": 1.26,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Zed FC v Abo Qair Semads",
+     "selection": "Over 0.5",
+     "odds": 1.28,
+     "result": "lost",
+     "score": "0:0"
+    },
+    {
+     "match": "Feyenoord Rotterdam v FC Porto",
+     "selection": "Under 5.5",
+     "odds": 1.23,
+     "result": "won",
+     "score": "0:1"
+    },
+    {
+     "match": "Manchester City FC v SSC Napoli U20",
+     "selection": "Home",
+     "odds": 1.2,
+     "result": "won",
+     "score": "4:1"
+    },
+    {
+     "match": "Real Madrid v PSV Eindhoven",
+     "selection": "Home",
+     "odds": 1.25,
+     "result": "lost",
+     "score": "3:3"
+    },
+    {
+     "match": "MSK Zilina v MFK Ruzomberok",
+     "selection": "Over 2.5",
+     "odds": 1.44,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "Orlando Pirates FC v Lamontville Golden Arrows",
+     "selection": "Home",
+     "odds": 1.32,
+     "result": "won",
+     "score": "2:0"
+    },
+    {
+     "match": "Bodoe/Glimt v LASK Linz",
+     "selection": "Over 2.5",
+     "odds": 1.28,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "Galatasaray Istanbul v Aston Villa",
+     "selection": "Over 2.5",
+     "odds": 1.38,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "Al-Masry v Asyut Petroleum",
+     "selection": "Home",
+     "odds": 1.42,
+     "result": "won",
+     "score": "2:0"
+    },
+    {
+     "match": "Al Mokawloon Al Arab v El Qanah FC",
+     "selection": "Over 0.5",
+     "odds": 1.29,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Al Nassr Club v Al Sadd SC",
+     "selection": "Over 2.5",
+     "odds": 1.29,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Virtus Entella v Verona",
+     "selection": "Over 0.5",
+     "odds": 1.28,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Oxford United v Tottenham Hotspur U21",
+     "selection": "Home",
+     "odds": 1.35,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Fleetwood Town v Leeds United U21",
+     "selection": "Home",
+     "odds": 1.45,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Queens Park Rangers U21 v Southampton U21",
+     "selection": "Over 2.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Ipswich Town U21 v Bromley FC U21",
+     "selection": "Over 2.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "1:0"
+    }
+   ]
+  },
+  {
+   "code": "DYYRPF",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "Master <=1.42 2 · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 3437.02,
+   "status": "lost",
+   "hit": 10,
+   "total": 34,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Weston-super-Mare v Walton and Hersham FC",
+     "selection": "Over 1.5",
+     "odds": 1.15,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Deportiva Venados v Reboceros de La Piedad",
+     "selection": "Over 1.5",
+     "odds": 1.16,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Middlesbrough FC v Swansea",
+     "selection": "Over 1.5",
+     "odds": 1.17,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Real Madrid v PSV Eindhoven",
+     "selection": "Over 2.5",
+     "odds": 1.17,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "AFC Telford United v Buxton FC",
+     "selection": "Over 1.5",
+     "odds": 1.19,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Bromley FC v Wycombe Wanderers",
+     "selection": "Over 1.5",
+     "odds": 1.2,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Daejeon Citizen FC v Beijing Guoan",
+     "selection": "Under 4.5",
+     "odds": 1.21,
+     "result": "lost",
+     "score": "3:2"
+    },
+    {
+     "match": "Bradford City FC v Barnsley FC",
+     "selection": "Under 4.5",
+     "odds": 1.21,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Chorley FC v Hebburn Town",
+     "selection": "Over 1.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "AL Khaleej Saihat v AL Ansar U21",
+     "selection": "Under 4.5",
+     "odds": 1.22,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "Leek Town FC v Gainsborough Trinity",
+     "selection": "Over 1.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Hampton & Richmond Borough v Dover Athletic FC",
+     "selection": "Under 4.5",
+     "odds": 1.23,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Feyenoord Rotterdam v FC Porto",
+     "selection": "Under 5.5",
+     "odds": 1.23,
+     "result": "won",
+     "score": "0:1"
+    },
+    {
+     "match": "AFC Fylde v FC Halifax Town",
+     "selection": "Over 0.5",
+     "odds": 1.24,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Brackley Town FC v Hereford FC",
+     "selection": "Over 0.5",
+     "odds": 1.25,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Real Madrid v PSV Eindhoven",
+     "selection": "Home",
+     "odds": 1.25,
+     "result": "lost",
+     "score": "3:3"
+    },
+    {
+     "match": "Rio Ave v UD Leiria U23",
+     "selection": "Over 1.5",
+     "odds": 1.26,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Pitbulls Santa Barbara FC v Adr Jicaral",
+     "selection": "Over 0.5",
+     "odds": 1.26,
+     "result": "lost",
+     "score": "0:0"
+    },
+    {
+     "match": "Zed FC v Abo Qair Semads",
+     "selection": "Over 0.5",
+     "odds": 1.28,
+     "result": "lost",
+     "score": "0:0"
+    },
+    {
+     "match": "Persiraja Banda v Dewa United",
+     "selection": "Away",
+     "odds": 1.28,
+     "result": "won",
+     "score": "1:4"
+    },
+    {
+     "match": "Al Nassr Club v Al Sadd SC",
+     "selection": "Over 2.5",
+     "odds": 1.29,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "RB Leipzig v Lens",
+     "selection": "Over 2.5",
+     "odds": 1.31,
+     "result": "pending",
+     "score": "2:0"
+    },
+    {
+     "match": "Queens Park Rangers U21 v Southampton U21",
+     "selection": "Over 2.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Man City v Napoli",
+     "selection": "Over 2.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Slough Town v Farnborough FC",
+     "selection": "Over 2.5",
+     "odds": 1.33,
+     "result": "pending",
+     "score": "2:0"
+    },
+    {
+     "match": "Rangers v Aberdeen",
+     "selection": "Home (-1.0)",
+     "odds": 1.34,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Newcastle United Jets v Kashiwa Reysol",
+     "selection": "Over 2.5",
+     "odds": 1.34,
+     "result": "won",
+     "score": "1:2"
+    },
+    {
+     "match": "Bodoe/Glimt v LASK Linz",
+     "selection": "Over 1.5",
+     "odds": 1.34,
+     "result": "won",
+     "score": "2:6"
+    },
+    {
+     "match": "Coquimbo Unido v Deportes Union La Calera",
+     "selection": "Under 3.5",
+     "odds": 1.35,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Slovan Bratislava v Betis",
+     "selection": "Over 2.5",
+     "odds": 1.36,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Galatasaray SK v Aston Villa",
+     "selection": "Over 2.5",
+     "odds": 1.37,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "Galatasaray Istanbul v Aston Villa",
+     "selection": "Over 2.5",
+     "odds": 1.38,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "Moyola Park FC v Ballymena United",
+     "selection": "Away",
+     "odds": 1.4,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Al-Masry v Asyut Petroleum",
+     "selection": "Home",
+     "odds": 1.42,
+     "result": "won",
+     "score": "2:0"
+    }
+   ]
+  },
+  {
+   "code": "D1UWRE",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "Master <=1.42 1 · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 2963.52,
+   "status": "lost",
+   "hit": 7,
+   "total": 34,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Dunfermline Athletic FC v Kelty Hearts FC",
+     "selection": "Home",
+     "odds": 1.09,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Blackpool FC v Leicester",
+     "selection": "Over 1.5",
+     "odds": 1.15,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Holywell Town v Pen-y-Bont FC",
+     "selection": "Away",
+     "odds": 1.16,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Marine FC v Spennymoor Town FC",
+     "selection": "Over 1.5",
+     "odds": 1.17,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Boston United FC v Barrow AFC",
+     "selection": "Over 1.5",
+     "odds": 1.19,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Manchester City FC v SSC Napoli U20",
+     "selection": "Home",
+     "odds": 1.2,
+     "result": "won",
+     "score": "4:1"
+    },
+    {
+     "match": "Livingston FC v Peterhead FC",
+     "selection": "Home",
+     "odds": 1.2,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Hibernian FC v Dundee FC",
+     "selection": "Over 1.5",
+     "odds": 1.21,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Woking FC v Worthing FC",
+     "selection": "Over 0.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Harborough Town FC v Chester FC",
+     "selection": "Over 0.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "0:2"
+    },
+    {
+     "match": "Arsenal v Borussia Dortmund",
+     "selection": "Under 4.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Harland And Wolff Welders v Linfield FC",
+     "selection": "Away",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "AL Ettifaq U21 v AL Nassr",
+     "selection": "Over 0.5",
+     "odds": 1.23,
+     "result": "won",
+     "score": "0:1"
+    },
+    {
+     "match": "Saint Louis City SC v Los Angeles FC",
+     "selection": "Over 0.5",
+     "odds": 1.23,
+     "result": "won",
+     "score": "3:2"
+    },
+    {
+     "match": "Macclesfield FC v Morecambe FC",
+     "selection": "Over 0.5",
+     "odds": 1.24,
+     "result": "pending",
+     "score": "2:1"
+    },
+    {
+     "match": "AL Jabalain FC v Al-Zlfe",
+     "selection": "Under 3.5",
+     "odds": 1.25,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Portsmouth FC v West Ham",
+     "selection": "Over 1.5",
+     "odds": 1.26,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "AGMK FC v Navbahor",
+     "selection": "Over 1.5",
+     "odds": 1.26,
+     "result": "lost",
+     "score": "0:1"
+    },
+    {
+     "match": "Virtus Entella v Verona",
+     "selection": "Over 0.5",
+     "odds": 1.28,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Bodoe/Glimt v LASK Linz",
+     "selection": "Over 2.5",
+     "odds": 1.28,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "Al Mokawloon Al Arab v El Qanah FC",
+     "selection": "Over 0.5",
+     "odds": 1.29,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Samaleswari SC v FC Bengaluru United",
+     "selection": "Over 0.5",
+     "odds": 1.29,
+     "result": "won",
+     "score": "2:2"
+    },
+    {
+     "match": "Orlando Pirates FC v Lamontville Golden Arrows",
+     "selection": "Home",
+     "odds": 1.32,
+     "result": "won",
+     "score": "2:0"
+    },
+    {
+     "match": "Ipswich Town U21 v Bromley FC U21",
+     "selection": "Over 2.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Crawley Town v Barnet FC",
+     "selection": "Over 0.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Al-Orobah v Al-Najma",
+     "selection": "Away",
+     "odds": 1.33,
+     "result": "void",
+     "score": "0:0"
+    },
+    {
+     "match": "Merthyr Town v Bedford Town Football Club",
+     "selection": "Over 0.5",
+     "odds": 1.34,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Como 1907 v AEK Athens",
+     "selection": "Over 2.5",
+     "odds": 1.34,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Oxford United v Tottenham Hotspur U21",
+     "selection": "Home",
+     "odds": 1.35,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Salford City v Sunderland U21",
+     "selection": "Over 1.5",
+     "odds": 1.36,
+     "result": "pending",
+     "score": "2:2"
+    },
+    {
+     "match": "Carlisle United v Tamworth FC",
+     "selection": "Over 2.5",
+     "odds": 1.37,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Forest Green Rovers v Southend United",
+     "selection": "Over 2.5",
+     "odds": 1.38,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Limavady United FC v Rathfriland Rangers",
+     "selection": "Home",
+     "odds": 1.38,
+     "result": "pending",
+     "score": "2:0"
+    },
+    {
+     "match": "Chapecoense SC v SE Palmeiras SP",
+     "selection": "Away",
+     "odds": 1.42,
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "DK8NAK",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "Low Odds · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 744.93,
+   "status": "lost",
+   "hit": 8,
+   "total": 35,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Dunfermline Athletic FC v Kelty Hearts FC",
+     "selection": "Home",
+     "odds": 1.09,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Weston-super-Mare v Walton and Hersham FC",
+     "selection": "Over 1.5",
+     "odds": 1.15,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Blackpool FC v Leicester",
+     "selection": "Over 1.5",
+     "odds": 1.15,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Deportiva Venados v Reboceros de La Piedad",
+     "selection": "Over 1.5",
+     "odds": 1.16,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Holywell Town v Pen-y-Bont FC",
+     "selection": "Away",
+     "odds": 1.16,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Middlesbrough FC v Swansea",
+     "selection": "Over 1.5",
+     "odds": 1.17,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Marine FC v Spennymoor Town FC",
+     "selection": "Over 1.5",
+     "odds": 1.17,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Real Madrid v PSV Eindhoven",
+     "selection": "Over 2.5",
+     "odds": 1.17,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Boston United FC v Barrow AFC",
+     "selection": "Over 1.5",
+     "odds": 1.19,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "AFC Telford United v Buxton FC",
+     "selection": "Over 1.5",
+     "odds": 1.19,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Manchester City FC v SSC Napoli U20",
+     "selection": "Home",
+     "odds": 1.2,
+     "result": "won",
+     "score": "4:1"
+    },
+    {
+     "match": "Bromley FC v Wycombe Wanderers",
+     "selection": "Over 1.5",
+     "odds": 1.2,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Livingston FC v Peterhead FC",
+     "selection": "Home",
+     "odds": 1.2,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Daejeon Citizen FC v Beijing Guoan",
+     "selection": "Under 4.5",
+     "odds": 1.21,
+     "result": "lost",
+     "score": "3:2"
+    },
+    {
+     "match": "Hibernian FC v Dundee FC",
+     "selection": "Over 1.5",
+     "odds": 1.21,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Bradford City FC v Barnsley FC",
+     "selection": "Under 4.5",
+     "odds": 1.21,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Woking FC v Worthing FC",
+     "selection": "Over 0.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Chorley FC v Hebburn Town",
+     "selection": "Over 1.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Harborough Town FC v Chester FC",
+     "selection": "Over 0.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "0:2"
+    },
+    {
+     "match": "AL Khaleej Saihat v AL Ansar U21",
+     "selection": "Under 4.5",
+     "odds": 1.22,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "Arsenal v Borussia Dortmund",
+     "selection": "Under 4.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Leek Town FC v Gainsborough Trinity",
+     "selection": "Over 1.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Harland And Wolff Welders v Linfield FC",
+     "selection": "Away",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Hampton & Richmond Borough v Dover Athletic FC",
+     "selection": "Under 4.5",
+     "odds": 1.23,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "AL Ettifaq U21 v AL Nassr",
+     "selection": "Over 0.5",
+     "odds": 1.23,
+     "result": "won",
+     "score": "0:1"
+    },
+    {
+     "match": "Feyenoord Rotterdam v FC Porto",
+     "selection": "Under 5.5",
+     "odds": 1.23,
+     "result": "won",
+     "score": "0:1"
+    },
+    {
+     "match": "Saint Louis City SC v Los Angeles FC",
+     "selection": "Over 0.5",
+     "odds": 1.23,
+     "result": "won",
+     "score": "3:2"
+    },
+    {
+     "match": "AFC Fylde v FC Halifax Town",
+     "selection": "Over 0.5",
+     "odds": 1.24,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Macclesfield FC v Morecambe FC",
+     "selection": "Over 0.5",
+     "odds": 1.24,
+     "result": "pending",
+     "score": "2:1"
+    },
+    {
+     "match": "Brackley Town FC v Hereford FC",
+     "selection": "Over 0.5",
+     "odds": 1.25,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "AL Jabalain FC v Al-Zlfe",
+     "selection": "Under 3.5",
+     "odds": 1.25,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Real Madrid v PSV Eindhoven",
+     "selection": "Home",
+     "odds": 1.25,
+     "result": "lost",
+     "score": "3:3"
+    },
+    {
+     "match": "Portsmouth FC v West Ham",
+     "selection": "Over 1.5",
+     "odds": 1.26,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Rio Ave v UD Leiria U23",
+     "selection": "Over 1.5",
+     "odds": 1.26,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "AGMK FC v Navbahor",
+     "selection": "Over 1.5",
+     "odds": 1.26,
+     "result": "lost",
+     "score": "0:1"
+    }
+   ]
+  },
+  {
+   "code": "DX7GQZ",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "Over 2.5 Group · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 409.74,
+   "status": "lost",
+   "hit": 4,
+   "total": 20,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Real Madrid v PSV Eindhoven",
+     "selection": "Over 2.5",
+     "odds": 1.17,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Bodoe/Glimt v LASK Linz",
+     "selection": "Over 2.5",
+     "odds": 1.28,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "Al Nassr Club v Al Sadd SC",
+     "selection": "Over 2.5",
+     "odds": 1.29,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "RB Leipzig v Lens",
+     "selection": "Over 2.5",
+     "odds": 1.31,
+     "result": "pending",
+     "score": "2:0"
+    },
+    {
+     "match": "Queens Park Rangers U21 v Southampton U21",
+     "selection": "Over 2.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Ipswich Town U21 v Bromley FC U21",
+     "selection": "Over 2.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Man City v Napoli",
+     "selection": "Over 2.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Slough Town v Farnborough FC",
+     "selection": "Over 2.5",
+     "odds": 1.33,
+     "result": "pending",
+     "score": "2:0"
+    },
+    {
+     "match": "Newcastle United Jets v Kashiwa Reysol",
+     "selection": "Over 2.5",
+     "odds": 1.34,
+     "result": "won",
+     "score": "1:2"
+    },
+    {
+     "match": "Como 1907 v AEK Athens",
+     "selection": "Over 2.5",
+     "odds": 1.34,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Slovan Bratislava v Betis",
+     "selection": "Over 2.5",
+     "odds": 1.36,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Carlisle United v Tamworth FC",
+     "selection": "Over 2.5",
+     "odds": 1.37,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Galatasaray SK v Aston Villa",
+     "selection": "Over 2.5",
+     "odds": 1.37,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "Forest Green Rovers v Southend United",
+     "selection": "Over 2.5",
+     "odds": 1.38,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Galatasaray Istanbul v Aston Villa",
+     "selection": "Over 2.5",
+     "odds": 1.38,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "Torquay United v Chesham United",
+     "selection": "Over 2.5",
+     "odds": 1.43,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Pec Zwolle U21 v FC Twente Heracles",
+     "selection": "Over 2.5",
+     "odds": 1.43,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Chattogram City Football Club v Brothers Union",
+     "selection": "Over 2.5",
+     "odds": 1.43,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "MSK Zilina v MFK Ruzomberok",
+     "selection": "Over 2.5",
+     "odds": 1.44,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "FC Dietikon v USV Eschen-Mauren",
+     "selection": "Over 2.5",
+     "odds": 1.44,
+     "result": "pending",
+     "score": "1:1"
+    }
+   ]
+  },
+  {
+   "code": "F0G84U",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "Above 1.42 · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 37.28,
+   "status": "lost",
+   "hit": 3,
+   "total": 10,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Torquay United v Chesham United",
+     "selection": "Over 2.5",
+     "odds": 1.43,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Shanghai Port FC v Buriram United",
+     "selection": "Home",
+     "odds": 1.43,
+     "result": "won",
+     "score": "3:1"
+    },
+    {
+     "match": "Pec Zwolle U21 v FC Twente Heracles",
+     "selection": "Over 2.5",
+     "odds": 1.43,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Chattogram City Football Club v Brothers Union",
+     "selection": "Over 2.5",
+     "odds": 1.43,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "Loughgall FC v Queens University",
+     "selection": "Yes",
+     "odds": 1.43,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Slovan Bratislava v Real Betis Balompie",
+     "selection": "Away",
+     "odds": 1.44,
+     "result": "won",
+     "score": "1:2"
+    },
+    {
+     "match": "Dungannon Swifts v Coleraine FC",
+     "selection": "Away",
+     "odds": 1.44,
+     "result": "pending",
+     "score": "0:2"
+    },
+    {
+     "match": "MSK Zilina v MFK Ruzomberok",
+     "selection": "Over 2.5",
+     "odds": 1.44,
+     "result": "lost",
+     "score": "1:0"
+    },
+    {
+     "match": "FC Dietikon v USV Eschen-Mauren",
+     "selection": "Over 2.5",
+     "odds": 1.44,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Fleetwood Town v Leeds United U21",
+     "selection": "Home",
+     "odds": 1.45,
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "9Y2A68",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "Win Group · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 36.28,
+   "status": "lost",
+   "hit": 5,
+   "total": 14,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Dunfermline Athletic FC v Kelty Hearts FC",
+     "selection": "Home",
+     "odds": 1.09,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Holywell Town v Pen-y-Bont FC",
+     "selection": "Away",
+     "odds": 1.16,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Manchester City FC v SSC Napoli U20",
+     "selection": "Home",
+     "odds": 1.2,
+     "result": "won",
+     "score": "4:1"
+    },
+    {
+     "match": "Livingston FC v Peterhead FC",
+     "selection": "Home",
+     "odds": 1.2,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Harland And Wolff Welders v Linfield FC",
+     "selection": "Away",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "0:1"
+    },
+    {
+     "match": "Real Madrid v PSV Eindhoven",
+     "selection": "Home",
+     "odds": 1.25,
+     "result": "lost",
+     "score": "3:3"
+    },
+    {
+     "match": "Persiraja Banda v Dewa United",
+     "selection": "Away",
+     "odds": 1.28,
+     "result": "won",
+     "score": "1:4"
+    },
+    {
+     "match": "Orlando Pirates FC v Lamontville Golden Arrows",
+     "selection": "Home",
+     "odds": 1.32,
+     "result": "won",
+     "score": "2:0"
+    },
+    {
+     "match": "Oxford United v Tottenham Hotspur U21",
+     "selection": "Home",
+     "odds": 1.35,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Limavady United FC v Rathfriland Rangers",
+     "selection": "Home",
+     "odds": 1.38,
+     "result": "pending",
+     "score": "2:0"
+    },
+    {
+     "match": "Moyola Park FC v Ballymena United",
+     "selection": "Away",
+     "odds": 1.4,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Al-Masry v Asyut Petroleum",
+     "selection": "Home",
+     "odds": 1.42,
+     "result": "won",
+     "score": "2:0"
+    },
+    {
+     "match": "Slovan Bratislava v Real Betis Balompie",
+     "selection": "Away",
+     "odds": 1.44,
+     "result": "won",
+     "score": "1:2"
+    },
+    {
+     "match": "Fleetwood Town v Leeds United U21",
+     "selection": "Home",
+     "odds": 1.45,
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
+  {
+   "code": "DZDFQQ",
+   "book": "sportybet",
+   "date": "2026-11-24",
+   "name": "Team Over 0.5 Group · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 26.3,
+   "status": "lost",
+   "hit": 4,
+   "total": 14,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Woking FC v Worthing FC",
+     "selection": "Over 0.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Harborough Town FC v Chester FC",
+     "selection": "Over 0.5",
+     "odds": 1.22,
+     "result": "pending",
+     "score": "0:2"
+    },
+    {
+     "match": "AL Ettifaq U21 v AL Nassr",
+     "selection": "Over 0.5",
+     "odds": 1.23,
+     "result": "won",
+     "score": "0:1"
+    },
+    {
+     "match": "Saint Louis City SC v Los Angeles FC",
+     "selection": "Over 0.5",
+     "odds": 1.23,
+     "result": "won",
+     "score": "3:2"
+    },
+    {
+     "match": "AFC Fylde v FC Halifax Town",
+     "selection": "Over 0.5",
+     "odds": 1.24,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Macclesfield FC v Morecambe FC",
+     "selection": "Over 0.5",
+     "odds": 1.24,
+     "result": "pending",
+     "score": "2:1"
+    },
+    {
+     "match": "Brackley Town FC v Hereford FC",
+     "selection": "Over 0.5",
+     "odds": 1.25,
+     "result": "pending",
+     "score": "1:0"
+    },
+    {
+     "match": "Pitbulls Santa Barbara FC v Adr Jicaral",
+     "selection": "Over 0.5",
+     "odds": 1.26,
+     "result": "lost",
+     "score": "0:0"
+    },
+    {
+     "match": "Virtus Entella v Verona",
+     "selection": "Over 0.5",
+     "odds": 1.28,
+     "result": "pending",
+     "score": "1:1"
+    },
+    {
+     "match": "Zed FC v Abo Qair Semads",
+     "selection": "Over 0.5",
+     "odds": 1.28,
+     "result": "lost",
+     "score": "0:0"
+    },
+    {
+     "match": "Al Mokawloon Al Arab v El Qanah FC",
+     "selection": "Over 0.5",
+     "odds": 1.29,
+     "result": "won",
+     "score": "2:1"
+    },
+    {
+     "match": "Samaleswari SC v FC Bengaluru United",
+     "selection": "Over 0.5",
+     "odds": 1.29,
+     "result": "won",
+     "score": "2:2"
+    },
+    {
+     "match": "Crawley Town v Barnet FC",
+     "selection": "Over 0.5",
+     "odds": 1.32,
+     "result": "pending",
+     "score": "0:0"
+    },
+    {
+     "match": "Merthyr Town v Bedford Town Football Club",
+     "selection": "Over 0.5",
+     "odds": 1.34,
+     "result": "pending",
+     "score": "1:0"
     }
    ]
   },
@@ -4940,7 +5066,7 @@
    "kind": "slip",
    "odds": 308.87,
    "status": "lost",
-   "hit": 4,
+   "hit": 0,
    "total": 26,
    "profit": -10.0,
    "legs": [
@@ -4948,7 +5074,7 @@
      "match": "Cdt Real Oruro v Guabira Montero",
      "selection": "Yes",
      "odds": 4.65,
-     "result": "lost",
+     "result": "pending",
      "score": "0:3"
     },
     {
@@ -4962,14 +5088,14 @@
      "match": "Vancouver Whitecaps FC v Real Salt Lake",
      "selection": "Over 1.5",
      "odds": 1.22,
-     "result": "won",
+     "result": "pending",
      "score": "2:0"
     },
     {
      "match": "Juticalpa FC v Olancho FC",
      "selection": "Over 1.5",
      "odds": 1.25,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -4983,7 +5109,7 @@
      "match": "FC Talanta v Kibera Soccer",
      "selection": "Over 1.5",
      "odds": 1.11,
-     "result": "won",
+     "result": "pending",
      "score": "2:2"
     },
     {
@@ -4997,21 +5123,21 @@
      "match": "Pas Pyrgos v GS Marko",
      "selection": "Over 1.5",
      "odds": 6.5,
-     "result": "lost",
+     "result": "pending",
      "score": "0:0"
     },
     {
      "match": "PAOK Thessaloniki B v Niki Volou 1924 PAE",
      "selection": "Over 1.5",
      "odds": 8.5,
-     "result": "lost",
+     "result": "pending",
      "score": "0:1"
     },
     {
      "match": "ES Bouchamma v Olympique Du Kef",
      "selection": "Under 3.5",
      "odds": 4.75,
-     "result": "won",
+     "result": "pending",
      "score": "0:3"
     },
     {
@@ -5025,14 +5151,14 @@
      "match": "FC Chelyabinsk v Leningradets",
      "selection": "Over 1.5",
      "odds": 1.9,
-     "result": "won",
+     "result": "pending",
      "score": "2:0"
     },
     {
      "match": "Bahla Club v Samail SC",
      "selection": "Over 1.5",
      "odds": 1.14,
-     "result": "won",
+     "result": "pending",
      "score": "2:1"
     },
     {
@@ -5067,7 +5193,7 @@
      "match": "FC Koper v Aluminij Kidricevo",
      "selection": "Over 1.5",
      "odds": 1.13,
-     "result": "won",
+     "result": "pending",
      "score": "2:0"
     },
     {
@@ -5088,14 +5214,14 @@
      "match": "Diosgyori VTK v Karcag SE",
      "selection": "Over 1.5",
      "odds": 1.27,
-     "result": "won",
+     "result": "pending",
      "score": "2:1"
     },
     {
      "match": "Nantes v Grenoble Foot",
      "selection": "Over 1.5",
      "odds": 7.0,
-     "result": "lost",
+     "result": "pending",
      "score": "1:0"
     },
     {
@@ -5109,14 +5235,14 @@
      "match": "FC Universitario de Vinto v GV Club Deportivo San Jose de Oruro",
      "selection": "Over 1.5",
      "odds": 1.2,
-     "result": "won",
+     "result": "pending",
      "score": "3:0"
     },
     {
      "match": "Tru-Juice FC v Dunbeholden FC",
      "selection": "Over 1.5",
      "odds": 1.32,
-     "result": "void",
+     "result": "pending",
      "score": null
     },
     {
@@ -5151,7 +5277,7 @@
      "match": "PAOK Thessaloniki B v Niki Volou 1924 PAE",
      "selection": "Niki Volou 1924 PAE",
      "odds": 1.02,
-     "result": "won",
+     "result": "pending",
      "score": "0:1"
     },
     {
@@ -5179,7 +5305,7 @@
      "match": "CA Banfield v CA Huracan",
      "selection": "CA Banfield",
      "odds": 8.1,
-     "result": "lost",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -5193,7 +5319,7 @@
      "match": "ES Bouchamma v Olympique Du Kef",
      "selection": "ES Bouchamma",
      "odds": 29.0,
-     "result": "lost",
+     "result": "pending",
      "score": "0:3"
     },
     {
@@ -5221,7 +5347,7 @@
      "match": "CA Juventud de Las Piedras v Defensor Sporting",
      "selection": "CA Juventud de Las Piedras",
      "odds": 100.0,
-     "result": "lost",
+     "result": "pending",
      "score": "0:1"
     },
     {
@@ -5235,7 +5361,7 @@
      "match": "Ben Aknoun v USM Alger",
      "selection": "USM Alger",
      "odds": 1.04,
-     "result": "won",
+     "result": "pending",
      "score": "0:1"
     },
     {
@@ -5255,7 +5381,7 @@
    "kind": "high-odds",
    "odds": 1436.42,
    "status": "lost",
-   "hit": 1,
+   "hit": 0,
    "total": 14,
    "profit": -10.0,
    "legs": [
@@ -5270,7 +5396,7 @@
      "match": "Instituto AC Cordoba v CA Huracan",
      "selection": "Instituto AC Cordoba",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "2:1"
     },
     {
@@ -5291,7 +5417,7 @@
      "match": "Gimnasia Y Tiro de Salta v CSD Tristan Suarez",
      "selection": "CSD Tristan Suarez",
      "odds": 2.19,
-     "result": "lost",
+     "result": "pending",
      "score": "0:0"
     },
     {
@@ -5319,7 +5445,7 @@
      "match": "Shenavar Sazi Qeshm v Naft Gachsaran",
      "selection": "Shenavar Sazi Qeshm",
      "odds": 1.53,
-     "result": "lost",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -5340,14 +5466,14 @@
      "match": "Stade Soussienf v AS Soliman",
      "selection": "AS Soliman",
      "odds": 1.6,
-     "result": "lost",
+     "result": "pending",
      "score": "1:1"
     },
     {
      "match": "Real Kashmir v Dempo SC",
      "selection": "Dempo SC",
      "odds": 10.0,
-     "result": "lost",
+     "result": "pending",
      "score": "3:1"
     },
     {
@@ -5367,7 +5493,7 @@
    "kind": "high-odds",
    "odds": 81.46,
    "status": "lost",
-   "hit": 3,
+   "hit": 0,
    "total": 20,
    "profit": -10.0,
    "legs": [
@@ -5375,7 +5501,7 @@
      "match": "Tru-Juice FC v Dunbeholden FC",
      "selection": "Under 4.5",
      "odds": 1.19,
-     "result": "void",
+     "result": "pending",
      "score": null
     },
     {
@@ -5396,7 +5522,7 @@
      "match": "Real Kashmir v Dempo SC",
      "selection": "Over 1.5",
      "odds": 1.1,
-     "result": "won",
+     "result": "pending",
      "score": "3:1"
     },
     {
@@ -5410,14 +5536,14 @@
      "match": "Podbeskidzie Bielsko-Biała v Bruk-Bet Termalica Nieciecza",
      "selection": "Over 0.5",
      "odds": 1.2,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
      "match": "CA Banfield v CA Huracan",
      "selection": "Under 3.5",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -5431,7 +5557,7 @@
      "match": "Cdt Real Oruro v Guabira Montero",
      "selection": "Over 0.5",
      "odds": 1.32,
-     "result": "won",
+     "result": "pending",
      "score": "0:3"
     },
     {
@@ -5466,7 +5592,7 @@
      "match": "Nantes v Grenoble Foot",
      "selection": "Under 3.5",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "1:0"
     },
     {
@@ -5494,7 +5620,7 @@
      "match": "Juticalpa FC v Olancho FC",
      "selection": "Under 4.5",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -5536,7 +5662,7 @@
      "match": "Newcastle United U21 v Nottingham Forest U21",
      "selection": "Over 2.5",
      "odds": 2.0,
-     "result": "won",
+     "result": "pending",
      "score": "2:2"
     },
     {
@@ -5571,7 +5697,7 @@
      "match": "Puerto Rico Surf SC v San Juan FC",
      "selection": "Over 2.5",
      "odds": 1.44,
-     "result": "won",
+     "result": "pending",
      "score": "1:5"
     },
     {
@@ -5619,7 +5745,7 @@
    "kind": "high-odds",
    "odds": 38.4,
    "status": "lost",
-   "hit": 1,
+   "hit": 0,
    "total": 9,
    "profit": -10.0,
    "legs": [
@@ -5696,7 +5822,7 @@
    "kind": "high-odds",
    "odds": 190.5,
    "status": "lost",
-   "hit": 4,
+   "hit": 1,
    "total": 24,
    "profit": -10.0,
    "legs": [
@@ -5718,7 +5844,7 @@
      "match": "Podbeskidzie Bielsko-Biała v Bruk-Bet Termalica Nieciecza",
      "selection": "Over 0.5",
      "odds": 1.2,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -5753,7 +5879,7 @@
      "match": "Diosgyori VTK v Karcag SE",
      "selection": "Over 1.5",
      "odds": 1.27,
-     "result": "won",
+     "result": "pending",
      "score": "2:1"
     },
     {
@@ -5802,14 +5928,14 @@
      "match": "Newcastle United U21 v Nottingham Forest U21",
      "selection": "Over 2.5",
      "odds": 2.0,
-     "result": "won",
+     "result": "pending",
      "score": "2:2"
     },
     {
      "match": "Cdt Real Oruro v Guabira Montero",
      "selection": "Over 0.5",
      "odds": 1.32,
-     "result": "won",
+     "result": "pending",
      "score": "0:3"
     },
     {
@@ -5830,7 +5956,7 @@
      "match": "Nantes v Grenoble Foot",
      "selection": "Under 3.5",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "1:0"
     },
     {
@@ -5844,21 +5970,21 @@
      "match": "CA Banfield v CA Huracan",
      "selection": "Under 3.5",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
      "match": "FC Universitario de Vinto v GV Club Deportivo San Jose de Oruro",
      "selection": "Over 1.5",
      "odds": 1.2,
-     "result": "won",
+     "result": "pending",
      "score": "3:0"
     },
     {
      "match": "Tru-Juice FC v Dunbeholden FC",
      "selection": "Under 4.5",
      "odds": 1.19,
-     "result": "void",
+     "result": "pending",
      "score": null
     },
     {
@@ -5878,7 +6004,7 @@
    "kind": "high-odds",
    "odds": 83.89,
    "status": "lost",
-   "hit": 3,
+   "hit": 1,
    "total": 24,
    "profit": -10.0,
    "legs": [
@@ -5893,14 +6019,14 @@
      "match": "Diosgyori VTK v Karcag SE",
      "selection": "Over 1.5",
      "odds": 1.27,
-     "result": "won",
+     "result": "pending",
      "score": "2:1"
     },
     {
      "match": "FC Universitario de Vinto v GV Club Deportivo San Jose de Oruro",
      "selection": "Over 1.5",
      "odds": 1.2,
-     "result": "won",
+     "result": "pending",
      "score": "3:0"
     },
     {
@@ -5921,7 +6047,7 @@
      "match": "Tru-Juice FC v Dunbeholden FC",
      "selection": "Under 4.5",
      "odds": 1.19,
-     "result": "void",
+     "result": "pending",
      "score": null
     },
     {
@@ -5935,7 +6061,7 @@
      "match": "Pas Pyrgos v GS Marko",
      "selection": "GS Marko",
      "odds": 1.2,
-     "result": "lost",
+     "result": "pending",
      "score": "0:0"
     },
     {
@@ -5977,7 +6103,7 @@
      "match": "Podbeskidzie Bielsko-Biała v Bruk-Bet Termalica Nieciecza",
      "selection": "Over 0.5",
      "odds": 1.2,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -6019,7 +6145,7 @@
      "match": "Juticalpa FC v Olancho FC",
      "selection": "Under 4.5",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -6033,7 +6159,7 @@
      "match": "Real Kashmir v Dempo SC",
      "selection": "Over 1.5",
      "odds": 1.1,
-     "result": "won",
+     "result": "pending",
      "score": "3:1"
     },
     {
@@ -6721,118 +6847,6 @@
      "odds": 1.45,
      "result": "won",
      "score": "2:2"
-    }
-   ]
-  },
-  {
-   "code": "BZ4FUH",
-   "book": "sportybet",
-   "date": "2026-11-22",
-   "name": "Team To Win 2 · HIGH RISK",
-   "kind": "high-odds",
-   "odds": 9958.7,
-   "status": "lost",
-   "hit": 9,
-   "total": 14,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "UD Leiria v Leca FC",
-     "selection": "Home",
-     "odds": 1.5,
-     "result": "pending",
-     "score": "4:2"
-    },
-    {
-     "match": "Konyaspor v Besiktas Istanbul",
-     "selection": "Away",
-     "odds": 1.63,
-     "result": "won",
-     "score": "2:4"
-    },
-    {
-     "match": "Kenya Commercial Bank v 3K FC",
-     "selection": "Home",
-     "odds": 1.72,
-     "result": "won",
-     "score": "1:0"
-    },
-    {
-     "match": "Liverpool v Man Utd",
-     "selection": "Home",
-     "odds": 1.76,
-     "result": "won",
-     "score": "4:0"
-    },
-    {
-     "match": "Racing Santander v Real Sociedad",
-     "selection": "Away",
-     "odds": 2.09,
-     "result": "lost",
-     "score": "3:2"
-    },
-    {
-     "match": "AD Sanjoanense v Academica de Coimbra",
-     "selection": "Away",
-     "odds": 1.57,
-     "result": "won",
-     "score": "1:2"
-    },
-    {
-     "match": "Estrela Amadora v Portimonense SC",
-     "selection": "Home",
-     "odds": 1.71,
-     "result": "won",
-     "score": "1:0"
-    },
-    {
-     "match": "Osasuna v Malaga CF",
-     "selection": "Home",
-     "odds": 1.88,
-     "result": "won",
-     "score": "1:0"
-    },
-    {
-     "match": "Burnley v Blackburn Rovers",
-     "selection": "Home",
-     "odds": 1.94,
-     "result": "lost",
-     "score": "2:2"
-    },
-    {
-     "match": "Burgos CF v Albacete Balompie",
-     "selection": "Home",
-     "odds": 2.05,
-     "result": "won",
-     "score": "1:0"
-    },
-    {
-     "match": "Odds BK v Bryne FK",
-     "selection": "Home",
-     "odds": 2.1,
-     "result": "won",
-     "score": "1:0"
-    },
-    {
-     "match": "SS Arezzo v Calcio Padova",
-     "selection": "Home",
-     "odds": 2.35,
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "Lorient v Rennes",
-     "selection": "Away",
-     "odds": 2.49,
-     "result": "lost",
-     "score": "1:1"
-    },
-    {
-     "match": "Erzurumspor FK v Goztepe Izmir",
-     "selection": "Away",
-     "odds": 2.61,
-     "result": "won",
-     "score": "0:1"
     }
    ]
   }
