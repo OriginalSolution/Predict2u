@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-24T14:25:13+00:00",
+ "updatedAt": "2026-11-24T15:25:18+00:00",
  "sources": [
   "BBC Sport",
   "ESPN",
@@ -10,22 +10,22 @@
  "fixtures": [],
  "previews": [
   {
+   "title": "Millwall face partial stadium closure after discriminatory chants",
+   "summary": "Millwall must play a home game in front of a partially-closed stadium as punishment for fans' discriminatory chants.",
+   "source": "BBC Sport",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c6wy474lxd22o",
+   "published": "2026-11-24T14:23:49+00:00",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/33d0/live/0672fcd0-e7fc-11f1-ab60-79086b6495b8.jpg",
+   "ourFixture": false,
+   "preview": true
+  },
+  {
    "title": "‘I’m loving it at Brugge’: Freddie Potts on going from West Ham’s bench to Champions League",
    "summary": "Midfielder is preparing to face Liverpool after leaving the club he loves and overcoming a tough start in Belgium In April Freddie Potts was absorbing the disappointment of being substituted at half-time during West…",
    "source": "The Guardian",
    "link": "https://www.theguardian.com/football/2026/nov/24/freddie-potts-brugge-champions-league-liverpool-west-ham",
    "published": "2026-11-24T13:00:47+00:00",
    "image": "https://i.guim.co.uk/img/media/009ae39f5dafdf2a626834892e694ee73d0935d6/432_0_6220_4976/master/6220.jpg?width=140&quality=85&auto=format&fit=max&s=57344264b66417a7289ef044211d0a23",
-   "ourFixture": false,
-   "preview": true
-  },
-  {
-   "title": "Man Utd latest: Shaw returns to training ahead of Sporting tie",
-   "summary": "",
-   "source": "Sky Sports",
-   "link": "https://www.skysports.com/football/live-blog/11095/13025492/man-utd-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
-   "published": "2026-11-24T11:45:00+00:00",
-   "image": "https://e1.365dm.com/26/11/1920x1080/skysports-premier-league-manchester-united_7403807.jpg?20261111114625",
    "ourFixture": false,
    "preview": true
   },
@@ -358,9 +358,9 @@
  ],
  "record": {
   "won": 67,
-  "lost": 356,
-  "settled": 423,
-  "pending": 437,
+  "lost": 357,
+  "settled": 424,
+  "pending": 436,
   "winRate": 15.8
  },
  "codes": [
@@ -385,7 +385,7 @@
      "match": "Real Madrid v PSV Eindhoven",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "2:1"
     },
     {
      "match": "Al-Masry v Asyut Petroleum",
@@ -421,7 +421,7 @@
      "match": "Arsenal FC v Borussia Dortmund",
      "selection": "Away",
      "result": "pending",
-     "score": "2:2"
+     "score": "3:2"
     },
     {
      "match": "MOFA FC v Nairobi City Stars",
@@ -445,7 +445,7 @@
      "match": "Zed FC v Abo Qair Semads",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Al Mokawloon Al Arab v El Qanah FC",
@@ -475,7 +475,7 @@
      "match": "Smouha SC v National Bank of Egypt SC",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -506,7 +506,7 @@
      "match": "Kalaa Sport v CS Korba",
      "selection": "Away",
      "result": "pending",
-     "score": "0:1"
+     "score": "2:1"
     },
     {
      "match": "Malvern Town v Hanworth Villa",
@@ -518,13 +518,13 @@
      "match": "Rio Ave v UD Leiria U23",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Arsenal FC v Borussia Dortmund",
      "selection": "Away",
      "result": "pending",
-     "score": "2:2"
+     "score": "3:2"
     },
     {
      "match": "Port Vale v Northampton Town",
@@ -578,7 +578,7 @@
      "match": "Charlton Athletic U21 v Coventry City U21",
      "selection": "Away",
      "result": "pending",
-     "score": "2:2"
+     "score": "4:2"
     }
    ]
   },
@@ -615,7 +615,7 @@
      "match": "Persiraja Banda v Dewa United",
      "selection": "Away",
      "result": "pending",
-     "score": "0:3"
+     "score": "1:4"
     },
     {
      "match": "Bodoe/Glimt v LASK Linz",
@@ -766,7 +766,7 @@
      "match": "Feyenoord Rotterdam v FC Porto",
      "selection": "Under 5.5",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Pitbulls Santa Barbara FC v Adr Jicaral",
@@ -1140,49 +1140,49 @@
      "match": "Persiraja Banda v Dewa United",
      "selection": "Away",
      "result": "pending",
-     "score": "0:3"
+     "score": "1:4"
     },
     {
      "match": "AL Khaleej Saihat v AL Ansar U21",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": null
+     "score": "3:0"
     },
     {
      "match": "AL Ettifaq U21 v AL Nassr",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Rio Ave v UD Leiria U23",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Zed FC v Abo Qair Semads",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Feyenoord Rotterdam v FC Porto",
      "selection": "Under 5.5",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Manchester City FC v SSC Napoli U20",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Real Madrid v PSV Eindhoven",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "2:1"
     },
     {
      "match": "MSK Zilina v MFK Ruzomberok",
@@ -1327,7 +1327,7 @@
      "match": "AL Khaleej Saihat v AL Ansar U21",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": null
+     "score": "3:0"
     },
     {
      "match": "Leek Town FC v Gainsborough Trinity",
@@ -1345,7 +1345,7 @@
      "match": "Feyenoord Rotterdam v FC Porto",
      "selection": "Under 5.5",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "AFC Fylde v FC Halifax Town",
@@ -1363,13 +1363,13 @@
      "match": "Real Madrid v PSV Eindhoven",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "2:1"
     },
     {
      "match": "Rio Ave v UD Leiria U23",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Pitbulls Santa Barbara FC v Adr Jicaral",
@@ -1381,13 +1381,13 @@
      "match": "Zed FC v Abo Qair Semads",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Persiraja Banda v Dewa United",
      "selection": "Away",
      "result": "pending",
-     "score": "0:3"
+     "score": "1:4"
     },
     {
      "match": "Al Nassr Club v Al Sadd SC",
@@ -1550,7 +1550,7 @@
      "match": "Manchester City FC v SSC Napoli U20",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Bromley FC v Wycombe Wanderers",
@@ -1604,7 +1604,7 @@
      "match": "AL Khaleej Saihat v AL Ansar U21",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": null
+     "score": "3:0"
     },
     {
      "match": "Arsenal v Borussia Dortmund",
@@ -1634,13 +1634,13 @@
      "match": "AL Ettifaq U21 v AL Nassr",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Feyenoord Rotterdam v FC Porto",
      "selection": "Under 5.5",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Saint Louis City SC v Los Angeles FC",
@@ -1676,7 +1676,7 @@
      "match": "Real Madrid v PSV Eindhoven",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "2:1"
     },
     {
      "match": "Portsmouth FC v West Ham",
@@ -1688,7 +1688,7 @@
      "match": "Rio Ave v UD Leiria U23",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "AGMK FC v Navbahor",
@@ -1931,7 +1931,7 @@
      "match": "AL Ettifaq U21 v AL Nassr",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Saint Louis City SC v Los Angeles FC",
@@ -1973,7 +1973,7 @@
      "match": "Zed FC v Abo Qair Semads",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Al Mokawloon Al Arab v El Qanah FC",
@@ -2634,7 +2634,7 @@
      "match": "Manchester City FC v SSC Napoli U20",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Orlando Pirates FC v Lamontville Golden Arrows",
@@ -2664,13 +2664,13 @@
      "match": "FK Arsenal Tivat v FK Decic Tuzi",
      "selection": "Away",
      "result": "pending",
-     "score": "0:3"
+     "score": "0:6"
     },
     {
      "match": "Charlton Athletic U21 v Coventry City U21",
      "selection": "Home",
      "result": "pending",
-     "score": "2:2"
+     "score": "4:2"
     },
     {
      "match": "Durban City FC v Polokwane City",
@@ -2827,7 +2827,7 @@
      "match": "Como 1907 v AEK Athens",
      "selection": "Away",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     }
    ]
   },
@@ -2924,7 +2924,7 @@
      "match": "AL Ettifaq U21 v AL Nassr",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Slough Town v Farnborough FC",
@@ -2971,7 +2971,7 @@
    "name": "Match Over 2.5 · HIGH RISK",
    "kind": "slip",
    "odds": 527.49,
-   "status": "pending",
+   "status": "lost",
    "hit": 2,
    "total": 14,
    "legs": [
@@ -2979,7 +2979,7 @@
      "match": "Manchester City FC v SSC Napoli U20",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "FC Dietikon v USV Eschen-Mauren",
@@ -2997,13 +2997,13 @@
      "match": "AL Khaleej Saihat v AL Ansar U21",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "3:0"
     },
     {
      "match": "Como 1907 v AEK Athens",
      "selection": "Over 2.5",
-     "result": "pending",
-     "score": "0:1"
+     "result": "lost",
+     "score": "1:1"
     },
     {
      "match": "Kings Lynn FC v Radcliffe FC",
@@ -3100,13 +3100,13 @@
      "match": "Real Madrid v PSV Eindhoven",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "2:1"
     },
     {
      "match": "Feyenoord Rotterdam v FC Porto",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Slovan Bratislava v Real Betis Balompie",
@@ -3209,13 +3209,13 @@
      "match": "Zed FC v Abo Qair Semads",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "AL Khaleej Saihat v AL Ansar U21",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": null
+     "score": "3:0"
     },
     {
      "match": "Arsenal v Borussia Dortmund",
@@ -3245,13 +3245,13 @@
      "match": "AL Ettifaq U21 v AL Nassr",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Rio Ave v UD Leiria U23",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Galatasaray SK v Aston Villa",
@@ -3779,7 +3779,7 @@
      "match": "Manchester City FC v SSC Napoli U20",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Livingston FC v Peterhead FC",
@@ -3821,7 +3821,7 @@
      "match": "AL Ettifaq U21 v AL Nassr",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Saint Louis City SC v Los Angeles FC",
@@ -3978,7 +3978,7 @@
      "match": "Manchester City FC v SSC Napoli U20",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Livingston FC v Peterhead FC",
@@ -3996,13 +3996,13 @@
      "match": "Real Madrid v PSV Eindhoven",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "2:1"
     },
     {
      "match": "Persiraja Banda v Dewa United",
      "selection": "Away",
      "result": "pending",
-     "score": "0:3"
+     "score": "1:4"
     },
     {
      "match": "Orlando Pirates FC v Lamontville Golden Arrows",
