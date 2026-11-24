@@ -1591,6 +1591,263 @@
     }
    ],
    "mixed": "built"
+  },
+  "2026-11-24": {
+   "built": "2026-11-24 21:46 GMT",
+   "slips": {
+    "M1": {
+     "name": "M1 Team or Over 2.5",
+     "codes": {
+      "sportybet": "AZYU2M",
+      "footballcom": "AZYU2M",
+      "msport": "B3P272Q"
+     },
+     "total": 1.43,
+     "legs": 6,
+     "meetsFloor": false,
+     "result": "pending"
+    },
+    "M2": {
+     "name": "M2 Double Chance & Over 1.5",
+     "codes": {
+      "sportybet": "FWXZ2D",
+      "footballcom": "FWXZ2D",
+      "msport": "B3P273T",
+      "betika": "MXNDPV"
+     },
+     "total": 1.73,
+     "legs": 7,
+     "meetsFloor": false,
+     "result": "pending"
+    },
+    "MIXED": {
+     "name": "M1/M2 team 2+",
+     "codes": {
+      "sportybet": "EQE8VL",
+      "footballcom": "EQE8VL",
+      "msport": "B3P276E",
+      "betika": "N9rAzD",
+      "betpawa": "EH29O6E"
+     },
+     "total": 22.35,
+     "legs": 15,
+     "meetsFloor": false,
+     "result": "pending"
+    }
+   },
+   "dropped": [
+    {
+     "match": "Atletico Madrid v Viking FK",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "Home Team or Over 2.5 not allowed in a middle game (fav @1.13, table 23 v 22/36)"
+    },
+    {
+     "match": "Atletico Madrid v Viking FK",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.13, table 23 v 22/36)"
+    },
+    {
+     "match": "Atletico Madrid v Viking FK",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.13, table 23 v 22/36)"
+    },
+    {
+     "match": "Real Madrid v Alaves",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "Home Team or Over 2.5 not allowed in a middle game (fav @1.18, table 3 v 9/20)"
+    },
+    {
+     "match": "Real Madrid v Alaves",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.18, table 3 v 9/20)"
+    },
+    {
+     "match": "Real Madrid v Alaves",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.18, table 3 v 9/20)"
+    },
+    {
+     "match": "Salzburg v FC Ararat-Armenia",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "Home Team or Over 2.5 not allowed in a middle game (fav @1.2, table 26 v 36/36)"
+    },
+    {
+     "match": "Salzburg v FC Ararat-Armenia",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.2, table 26 v 36/36)"
+    },
+    {
+     "match": "Salzburg v FC Ararat-Armenia",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.2, table 26 v 36/36)"
+    },
+    {
+     "match": "Ajax v FC Thun",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "Home Team or Over 2.5 not allowed in a middle game (fav @1.19, table 11 v 20/36)"
+    },
+    {
+     "match": "Ajax v FC Thun",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.19, table 11 v 20/36)"
+    },
+    {
+     "match": "Ajax v FC Thun",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.19, table 11 v 20/36)"
+    },
+    {
+     "match": "Brighton v CS Universitatea Craiova",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "Home Team or Over 2.5 not allowed in a middle game (fav @1.17, table 5 v 8/36)"
+    },
+    {
+     "match": "Brighton v CS Universitatea Craiova",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.17, table 5 v 8/36)"
+    },
+    {
+     "match": "Brighton v CS Universitatea Craiova",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.17, table 5 v 8/36)"
+    },
+    {
+     "match": "Rangers v Falkirk FC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "both teams in league top 5 (2 v 4/12)"
+    },
+    {
+     "match": "Rangers v Falkirk FC",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "both teams in league top 5 (2 v 4/12)"
+    },
+    {
+     "match": "Al Qadsiah v Al-Fayha FC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Saudi Arabia - Saudi Pro League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Al-Hazm v Al Nassr Club",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Saudi Arabia - Saudi Pro League: non-goals market Away or Over 2.5 not allowed"
+    },
+    {
+     "match": "Al-Ettifaq FC v Al Hilal SFC",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Saudi Arabia - Saudi Pro League: non-goals market Away or Over 2.5 not allowed"
+    },
+    {
+     "match": "Fotbal Club FCSB v AFK Csikszereda Miercurea Ciuc",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Romania - Superliga: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Boreham Wood FC v Aldershot Town FC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — England - National League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Boreham Wood FC v Gateshead FC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — England - National League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Persija Jakarta v Garuda Yaksa",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Indonesia - Super League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Al Wasl FC v Al Dhafra SSC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — United Arab Emirates - Arabian Gulf League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Flint Town United v The New Saints FC",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Wales - Cymru Premier: non-goals market Away or Over 2.5 not allowed"
+    },
+    {
+     "match": "Crusaders FC v Linfield FC",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Northern Ireland - Premiership: non-goals market Away or Over 2.5 not allowed"
+    },
+    {
+     "match": "CS Herediano v CD Escorpiones Belen",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Costa Rica - Primera Division: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "FC Nizhny Novgorod v FC Tekstilshchik Ivanovo",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Russia - 1. Liga: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Maccabi Tel Aviv FC v Hapoel Petah Tikva FC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Israel - Premier League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Naftan Novopolotsk v FC Dinamo Minsk",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Belarus - Vysshaya Liga: non-goals market Away or Over 2.5 not allowed"
+    },
+    {
+     "match": "Hansa Rostock v TSV Havelse",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Germany - 3. Liga: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Tabor Sezana v Fuzinar Ravne",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Slovenia - Slovenia Cup: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Tabor Sezana v Fuzinar Ravne",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Rasisalai United v Buriram United",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Thailand - Thai League 1: non-goals market Away or Over 2.5 not allowed"
+    }
+   ],
+   "mixed": "built"
   }
  }
 }
