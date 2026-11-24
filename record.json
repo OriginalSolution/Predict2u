@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-24T02:15:54Z",
+ "DATA_UPDATED": "2026-11-24T04:16:08Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -621,8 +621,8 @@
   }
  ],
  "picks": {
-  "settled": 4100,
-  "won": 3096,
+  "settled": 4105,
+  "won": 3101,
   "lost": 1004,
   "winRate": 75.5
  },
@@ -635,7 +635,7 @@
    "kind": "high-odds",
    "odds": 11053.02,
    "status": "lost",
-   "hit": 0,
+   "hit": 1,
    "total": 17,
    "profit": -10.0,
    "legs": [
@@ -706,7 +706,7 @@
      "match": "Portmore United v Racing United FC",
      "selection": "Home",
      "odds": 1.69,
-     "result": "pending",
+     "result": "void",
      "score": null
     },
     {
@@ -741,7 +741,7 @@
      "match": "Boca Juniors de Cali v Deportes Quindio",
      "selection": "Away",
      "odds": 2.35,
-     "result": "pending",
+     "result": "won",
      "score": "0:2"
     },
     {
@@ -768,7 +768,7 @@
    "kind": "high-odds",
    "odds": 61.91,
    "status": "lost",
-   "hit": 0,
+   "hit": 1,
    "total": 18,
    "profit": -10.0,
    "legs": [
@@ -825,8 +825,8 @@
      "match": "Saint Louis City SC v Los Angeles FC",
      "selection": "Over 0.5",
      "odds": 1.22,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "3:2"
     },
     {
      "match": "Al Mokawloon Al Arab v El Qanah FC",
@@ -908,7 +908,7 @@
    "kind": "high-odds",
    "odds": 12054.42,
    "status": "lost",
-   "hit": 0,
+   "hit": 2,
    "total": 35,
    "profit": -10.0,
    "legs": [
@@ -923,15 +923,15 @@
      "match": "Saint Louis City SC v Los Angeles FC",
      "selection": "Over 0.5",
      "odds": 1.23,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "3:2"
     },
     {
      "match": "Deportiva Venados v Reboceros de La Piedad",
      "selection": "Over 1.5",
      "odds": 1.16,
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "2:1"
     },
     {
      "match": "Newcastle United Jets v Kashiwa Reysol",
@@ -1167,7 +1167,7 @@
    "kind": "high-odds",
    "odds": 3437.02,
    "status": "lost",
-   "hit": 0,
+   "hit": 1,
    "total": 34,
    "profit": -10.0,
    "legs": [
@@ -1182,8 +1182,8 @@
      "match": "Deportiva Venados v Reboceros de La Piedad",
      "selection": "Over 1.5",
      "odds": 1.16,
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "2:1"
     },
     {
      "match": "Middlesbrough FC v Swansea",
@@ -1419,7 +1419,7 @@
    "kind": "high-odds",
    "odds": 26.3,
    "status": "lost",
-   "hit": 0,
+   "hit": 1,
    "total": 14,
    "profit": -10.0,
    "legs": [
@@ -1448,8 +1448,8 @@
      "match": "Saint Louis City SC v Los Angeles FC",
      "selection": "Over 0.5",
      "odds": 1.23,
-     "result": "pending",
-     "score": "1:0"
+     "result": "won",
+     "score": "3:2"
     },
     {
      "match": "AFC Fylde v FC Halifax Town",
@@ -2931,7 +2931,7 @@
    "kind": "slip",
    "odds": 308.87,
    "status": "lost",
-   "hit": 2,
+   "hit": 3,
    "total": 26,
    "profit": -10.0,
    "legs": [
@@ -3127,7 +3127,7 @@
    "kind": "high-odds",
    "odds": 8171.23,
    "status": "lost",
-   "hit": 0,
+   "hit": 3,
    "total": 15,
    "profit": -10.0,
    "legs": [
@@ -3246,7 +3246,7 @@
    "kind": "high-odds",
    "odds": 1436.42,
    "status": "lost",
-   "hit": 0,
+   "hit": 3,
    "total": 14,
    "profit": -10.0,
    "legs": [
@@ -3358,7 +3358,7 @@
    "kind": "high-odds",
    "odds": 81.46,
    "status": "lost",
-   "hit": 0,
+   "hit": 4,
    "total": 20,
    "profit": -10.0,
    "legs": [
@@ -3869,7 +3869,7 @@
    "kind": "high-odds",
    "odds": 83.89,
    "status": "lost",
-   "hit": 2,
+   "hit": 4,
    "total": 24,
    "profit": -10.0,
    "legs": [
@@ -6074,7 +6074,7 @@
    "kind": "high-odds",
    "odds": 22209.22,
    "status": "lost",
-   "hit": 2,
+   "hit": 3,
    "total": 15,
    "profit": -10.0,
    "legs": [
@@ -6193,7 +6193,7 @@
    "kind": "high-odds",
    "odds": 147.34,
    "status": "lost",
-   "hit": 1,
+   "hit": 2,
    "total": 22,
    "profit": -10.0,
    "legs": [
@@ -6361,7 +6361,7 @@
    "kind": "high-odds",
    "odds": 9181.52,
    "status": "lost",
-   "hit": 4,
+   "hit": 5,
    "total": 38,
    "profit": -10.0,
    "legs": [
@@ -6641,7 +6641,7 @@
    "kind": "high-odds",
    "odds": 293.1,
    "status": "lost",
-   "hit": 3,
+   "hit": 5,
    "total": 19,
    "profit": -10.0,
    "legs": [
