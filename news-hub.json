@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-24T12:25:18+00:00",
+ "updatedAt": "2026-11-24T13:25:16+00:00",
  "sources": [
   "BBC Sport",
   "ESPN",
@@ -9,6 +9,16 @@
  ],
  "fixtures": [],
  "previews": [
+  {
+   "title": "‘I’m loving it at Brugge’: Freddie Potts on going from West Ham’s bench to Champions League",
+   "summary": "Midfielder is preparing to face Liverpool after leaving the club he loves and overcoming a tough start in Belgium In April Freddie Potts was absorbing the disappointment of being substituted at half-time during West…",
+   "source": "The Guardian",
+   "link": "https://www.theguardian.com/football/2026/nov/24/freddie-potts-brugge-champions-league-liverpool-west-ham",
+   "published": "2026-11-24T13:00:47+00:00",
+   "image": "https://i.guim.co.uk/img/media/009ae39f5dafdf2a626834892e694ee73d0935d6/432_0_6220_4976/master/6220.jpg?width=140&quality=85&auto=format&fit=max&s=57344264b66417a7289ef044211d0a23",
+   "ourFixture": false,
+   "preview": true
+  },
   {
    "title": "Man Utd latest: Shaw returns to training ahead of Sporting tie",
    "summary": "",
@@ -36,6 +46,16 @@
    "link": "https://www.theguardian.com/football/2026/nov/23/sevilla-real-betis-seville-derby-la-liga-kike-salas",
    "published": "2026-11-23T17:49:56+00:00",
    "image": "https://i.guim.co.uk/img/media/78eb4438af997a0ecf96018dd1a84e293136cbc4/204_0_3363_2690/master/3363.jpg?width=140&quality=85&auto=format&fit=max&s=0dc5b62b7fcc04192a0344e30de11411",
+   "ourFixture": false,
+   "preview": true
+  },
+  {
+   "title": "Rangers' McInnes wary of Frick's Aberdeen ahead of clash, live on Sky",
+   "summary": "Derek McInnes wants to strike the \"fine balance\" between consistency and using his squad during a hectic spell.",
+   "source": "Sky Sports",
+   "link": "https://www.skysports.com/football/news/11095/13615718/rangers-vs-aberdeen-derek-mcinnes-ready-for-different-dons-challenge-under-mario-frick-live-on-sky",
+   "published": "2026-11-23T16:03:00+00:00",
+   "image": "https://e0.365dm.com/26/11/1920x1080/skysports-rangers-derek-mcinnes_7414629.jpg?20261123164655",
    "ourFixture": false,
    "preview": true
   },
@@ -81,6 +101,15 @@
   }
  ],
  "injuries": [
+  {
+   "title": "Non-league player injured falling down badger hole",
+   "summary": "Cav Miley missed Chelmsford City's draw with Walton and Hersham after spraining an ankle falling down a badger hole.",
+   "source": "BBC Sport",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cw0k636m0vr3o",
+   "published": "2026-11-24T12:31:12+00:00",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/da19/live/dba64620-e7ff-11f1-99a1-253766e7ad8b.png",
+   "ourFixture": false
+  },
   {
    "title": "Glens boss Ferguson apologises after seven-game ban",
    "summary": "Glentoran manager Duncan Ferguson will be suspended for seven games following his red card in the side's 3-2 defeat by Cliftonville last week.",
@@ -160,15 +189,6 @@
    "link": "https://www.bbc.co.uk/sport/football/videos/cq23jmklrj33o",
    "published": "2026-11-22T23:59:59+00:00",
    "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/97fd/live/e0c07400-e6c9-11f1-99b6-a35a62fa4264.jpg",
-   "ourFixture": false
-  },
-  {
-   "title": "Pepe did not injure eyes staring at sun, say Villarreal",
-   "summary": "Villarreal say reports striker Nicolas Pepe needed eye surgery because he stared directly at the solar eclipse are \"completely false\".",
-   "source": "BBC Sport",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c8zx9y6d29vyo",
-   "published": "2026-11-22T21:04:55+00:00",
-   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/fac4/live/e82d54b0-e6b5-11f1-a367-d7fb45f4e865.jpg",
    "ourFixture": false
   },
   {
@@ -338,10 +358,10 @@
  ],
  "record": {
   "won": 67,
-  "lost": 351,
-  "settled": 418,
-  "pending": 442,
-  "winRate": 16.0
+  "lost": 355,
+  "settled": 422,
+  "pending": 438,
+  "winRate": 15.9
  },
  "codes": [
   {
@@ -395,13 +415,13 @@
      "match": "Ratchaburi FC v Johor Darul Tazim FC",
      "selection": "Away",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:1"
     },
     {
      "match": "Arsenal FC v Borussia Dortmund",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "MOFA FC v Nairobi City Stars",
@@ -588,7 +608,7 @@
    "kind": "slip",
    "odds": 12054.42,
    "status": "lost",
-   "hit": 5,
+   "hit": 6,
    "total": 35,
    "legs": [
     {
@@ -618,7 +638,7 @@
     {
      "match": "Chattogram City Football Club v Brothers Union",
      "selection": "Over 2.5",
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -642,26 +662,26 @@
     {
      "match": "Galatasaray SK v Aston Villa",
      "selection": "Over 2.5",
-     "result": "pending",
+     "result": "won",
      "score": "3:1"
     },
     {
      "match": "Pec Zwolle U21 v FC Twente Heracles",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "1:0"
+     "score": "2:0"
     },
     {
      "match": "Shanghai Port FC v Buriram United",
      "selection": "Home",
      "result": "pending",
-     "score": "0:0"
+     "score": "2:1"
     },
     {
      "match": "AL Jabalain FC v Al-Zlfe",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:1"
     },
     {
      "match": "Al-Orobah v Al-Najma",
@@ -673,13 +693,13 @@
      "match": "Slovan Bratislava v Real Betis Balompie",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "AGMK FC v Navbahor",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Persiraja Banda v Dewa United",
@@ -811,7 +831,7 @@
    "kind": "slip",
    "odds": 3437.02,
    "status": "lost",
-   "hit": 3,
+   "hit": 4,
    "total": 34,
    "legs": [
     {
@@ -997,7 +1017,7 @@
     {
      "match": "Galatasaray SK v Aston Villa",
      "selection": "Over 2.5",
-     "result": "pending",
+     "result": "won",
      "score": "3:1"
     },
     {
@@ -1215,7 +1235,7 @@
      "match": "AL Jabalain FC v Al-Zlfe",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:1"
     },
     {
      "match": "Real Madrid v PSV Eindhoven",
@@ -1239,7 +1259,7 @@
      "match": "AGMK FC v Navbahor",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -1985,7 +2005,7 @@
      "match": "Slovan Bratislava v Real Betis Balompie",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Livingston FC v Peterhead FC",
@@ -2003,13 +2023,13 @@
      "match": "FK Arsenal Tivat v FK Decic Tuzi",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Charlton Athletic U21 v Coventry City U21",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Durban City FC v Polokwane City",
@@ -2082,13 +2102,13 @@
      "match": "AGMK FC v Navbahor",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Shanghai Port FC v Buriram United",
      "selection": "Home",
      "result": "pending",
-     "score": "0:0"
+     "score": "2:1"
     },
     {
      "match": "Chapecoense SC v SE Palmeiras SP",
@@ -2118,7 +2138,7 @@
      "match": "FC Andijon v Lokomotiv Tashkent",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "AL Ittihad Jeddah v AL Hazem U21",
@@ -2197,7 +2217,7 @@
      "match": "Kalaa Sport v CS Korba",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Malvern Town v Hanworth Villa",
@@ -2215,7 +2235,7 @@
      "match": "Arsenal FC v Borussia Dortmund",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Port Vale v Northampton Town",
@@ -2269,7 +2289,7 @@
      "match": "Charlton Athletic U21 v Coventry City U21",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     }
    ]
   },
@@ -2487,7 +2507,7 @@
      "match": "Shanghai Port FC v Buriram United",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "2:1"
     },
     {
      "match": "Sheffield United v Southampton",
@@ -2510,8 +2530,8 @@
    "name": "Reverse U4.5 + Draw 2 · HIGH RISK",
    "kind": "slip",
    "odds": 237.97,
-   "status": "pending",
-   "hit": 2,
+   "status": "lost",
+   "hit": 3,
    "total": 16,
    "legs": [
     {
@@ -2547,7 +2567,7 @@
     {
      "match": "Galatasaray SK v Aston Villa",
      "selection": "Over 2.5",
-     "result": "pending",
+     "result": "won",
      "score": "3:1"
     },
     {
@@ -2566,7 +2586,7 @@
      "match": "Pec Zwolle U21 v FC Twente Heracles",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "1:0"
+     "score": "2:0"
     },
     {
      "match": "Eastbourne Borough v Aveley FC",
@@ -2607,7 +2627,7 @@
     {
      "match": "Chattogram City Football Club v Brothers Union",
      "selection": "Over 2.5",
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     }
    ]
@@ -2663,7 +2683,7 @@
      "match": "Slovan Bratislava v Real Betis Balompie",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Sheffield United U21 v Millwall U21",
@@ -2729,14 +2749,14 @@
    "kind": "slip",
    "odds": 41.95,
    "status": "pending",
-   "hit": 0,
+   "hit": 1,
    "total": 17,
    "legs": [
     {
      "match": "AL Jabalain FC v Al-Zlfe",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:1"
     },
     {
      "match": "Chorley FC v Hebburn Town",
@@ -2778,7 +2798,7 @@
      "match": "AGMK FC v Navbahor",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Bromley FC v Wycombe Wanderers",
@@ -2807,7 +2827,7 @@
     {
      "match": "Galatasaray SK v Aston Villa",
      "selection": "Under 4.5",
-     "result": "pending",
+     "result": "won",
      "score": "3:1"
     },
     {
@@ -3069,8 +3089,8 @@
    "name": "High Odds · HIGH RISK",
    "kind": "slip",
    "odds": 70209.33,
-   "status": "pending",
-   "hit": 2,
+   "status": "lost",
+   "hit": 3,
    "total": 35,
    "legs": [
     {
@@ -3083,7 +3103,7 @@
      "match": "Slovan Bratislava v Real Betis Balompie",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Dungannon Swifts v Coleraine FC",
@@ -3113,18 +3133,18 @@
      "match": "Shanghai Port FC v Buriram United",
      "selection": "Home",
      "result": "pending",
-     "score": "0:0"
+     "score": "2:1"
     },
     {
      "match": "Pec Zwolle U21 v FC Twente Heracles",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "1:0"
+     "score": "2:0"
     },
     {
      "match": "Chattogram City Football Club v Brothers Union",
      "selection": "Over 2.5",
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -3178,7 +3198,7 @@
     {
      "match": "Galatasaray SK v Aston Villa",
      "selection": "Over 2.5",
-     "result": "pending",
+     "result": "won",
      "score": "3:1"
     },
     {
@@ -3613,7 +3633,7 @@
      "match": "AL Jabalain FC v Al-Zlfe",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "0:1"
     },
     {
      "match": "Portsmouth FC v West Ham",
@@ -3625,7 +3645,7 @@
      "match": "AGMK FC v Navbahor",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Virtus Entella v Verona",
@@ -3732,8 +3752,8 @@
    "name": "Over 2.5 Group · HIGH RISK",
    "kind": "slip",
    "odds": 409.74,
-   "status": "pending",
-   "hit": 1,
+   "status": "lost",
+   "hit": 2,
    "total": 20,
    "legs": [
     {
@@ -3811,7 +3831,7 @@
     {
      "match": "Galatasaray SK v Aston Villa",
      "selection": "Over 2.5",
-     "result": "pending",
+     "result": "won",
      "score": "3:1"
     },
     {
@@ -3836,12 +3856,12 @@
      "match": "Pec Zwolle U21 v FC Twente Heracles",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "1:0"
+     "score": "2:0"
     },
     {
      "match": "Chattogram City Football Club v Brothers Union",
      "selection": "Over 2.5",
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -3865,7 +3885,7 @@
    "name": "Above 1.42 · HIGH RISK",
    "kind": "slip",
    "odds": 37.28,
-   "status": "pending",
+   "status": "lost",
    "hit": 0,
    "total": 10,
    "legs": [
@@ -3879,18 +3899,18 @@
      "match": "Shanghai Port FC v Buriram United",
      "selection": "Home",
      "result": "pending",
-     "score": "0:0"
+     "score": "2:1"
     },
     {
      "match": "Pec Zwolle U21 v FC Twente Heracles",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": "1:0"
+     "score": "2:0"
     },
     {
      "match": "Chattogram City Football Club v Brothers Union",
      "selection": "Over 2.5",
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -3903,7 +3923,7 @@
      "match": "Slovan Bratislava v Real Betis Balompie",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Dungannon Swifts v Coleraine FC",
@@ -4018,7 +4038,7 @@
      "match": "Slovan Bratislava v Real Betis Balompie",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Fleetwood Town v Leeds United U21",
