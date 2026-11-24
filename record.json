@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-24T06:15:59Z",
+ "DATA_UPDATED": "2026-11-24T08:16:17Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -621,9 +621,9 @@
   }
  ],
  "picks": {
-  "settled": 4096,
-  "won": 3097,
-  "lost": 999,
+  "settled": 4084,
+  "won": 3086,
+  "lost": 998,
   "winRate": 75.6
  },
  "recent": [
@@ -938,7 +938,7 @@
      "selection": "Over 2.5",
      "odds": 1.34,
      "result": "pending",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Chattogram City Football Club v Brothers Union",
@@ -1358,7 +1358,7 @@
      "selection": "Over 2.5",
      "odds": 1.34,
      "result": "pending",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Bodoe/Glimt v LASK Linz",
@@ -2175,7 +2175,7 @@
    "kind": "high-odds",
    "odds": 18280.76,
    "status": "lost",
-   "hit": 31,
+   "hit": 32,
    "total": 44,
    "profit": -10.0,
    "legs": [
@@ -2351,7 +2351,7 @@
      "match": "Sportivo 2 de Mayo v Sportivo San Lorenzo",
      "selection": "Over 2.5",
      "odds": 1.26,
-     "result": "pending",
+     "result": "won",
      "score": null
     },
     {
@@ -2469,7 +2469,7 @@
    "kind": "high-odds",
    "odds": 930.51,
    "status": "lost",
-   "hit": 16,
+   "hit": 17,
    "total": 24,
    "profit": -10.0,
    "legs": [
@@ -2624,7 +2624,7 @@
      "match": "Sportivo 2 de Mayo v Sportivo San Lorenzo",
      "selection": "Over 2.5",
      "odds": 1.26,
-     "result": "pending",
+     "result": "won",
      "score": null
     },
     {
@@ -2833,7 +2833,7 @@
    "kind": "high-odds",
    "odds": 28.09,
    "status": "lost",
-   "hit": 5,
+   "hit": 6,
    "total": 12,
    "profit": -10.0,
    "legs": [
@@ -2862,7 +2862,7 @@
      "match": "Sportivo 2 de Mayo v Sportivo San Lorenzo",
      "selection": "Over 2.5",
      "odds": 1.26,
-     "result": "pending",
+     "result": "won",
      "score": null
     },
     {
@@ -2931,7 +2931,7 @@
    "kind": "slip",
    "odds": 308.87,
    "status": "lost",
-   "hit": 0,
+   "hit": 3,
    "total": 26,
    "profit": -10.0,
    "legs": [
@@ -2960,7 +2960,7 @@
      "match": "Juticalpa FC v Olancho FC",
      "selection": "Over 1.5",
      "odds": 1.25,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -2974,7 +2974,7 @@
      "match": "FC Talanta v Kibera Soccer",
      "selection": "Over 1.5",
      "odds": 1.11,
-     "result": "pending",
+     "result": "won",
      "score": "2:2"
     },
     {
@@ -3002,7 +3002,7 @@
      "match": "ES Bouchamma v Olympique Du Kef",
      "selection": "Under 3.5",
      "odds": 4.75,
-     "result": "won",
+     "result": "pending",
      "score": "0:3"
     },
     {
@@ -3058,7 +3058,7 @@
      "match": "FC Koper v Aluminij Kidricevo",
      "selection": "Over 1.5",
      "odds": 1.13,
-     "result": "won",
+     "result": "pending",
      "score": "2:0"
     },
     {
@@ -3079,14 +3079,14 @@
      "match": "Diosgyori VTK v Karcag SE",
      "selection": "Over 1.5",
      "odds": 1.27,
-     "result": "won",
+     "result": "pending",
      "score": "2:1"
     },
     {
      "match": "Nantes v Grenoble Foot",
      "selection": "Over 1.5",
      "odds": 7.0,
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -3170,7 +3170,7 @@
      "match": "CA Banfield v CA Huracan",
      "selection": "CA Banfield",
      "odds": 8.1,
-     "result": "pending",
+     "result": "lost",
      "score": "1:1"
     },
     {
@@ -3184,7 +3184,7 @@
      "match": "ES Bouchamma v Olympique Du Kef",
      "selection": "ES Bouchamma",
      "odds": 29.0,
-     "result": "lost",
+     "result": "pending",
      "score": "0:3"
     },
     {
@@ -3212,7 +3212,7 @@
      "match": "CA Juventud de Las Piedras v Defensor Sporting",
      "selection": "CA Juventud de Las Piedras",
      "odds": 100.0,
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -3226,7 +3226,7 @@
      "match": "Ben Aknoun v USM Alger",
      "selection": "USM Alger",
      "odds": 1.04,
-     "result": "won",
+     "result": "pending",
      "score": "0:1"
     },
     {
@@ -3261,7 +3261,7 @@
      "match": "Instituto AC Cordoba v CA Huracan",
      "selection": "Instituto AC Cordoba",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "2:1"
     },
     {
@@ -3282,7 +3282,7 @@
      "match": "Gimnasia Y Tiro de Salta v CSD Tristan Suarez",
      "selection": "CSD Tristan Suarez",
      "odds": 2.19,
-     "result": "pending",
+     "result": "lost",
      "score": "0:0"
     },
     {
@@ -3310,7 +3310,7 @@
      "match": "Shenavar Sazi Qeshm v Naft Gachsaran",
      "selection": "Shenavar Sazi Qeshm",
      "odds": 1.53,
-     "result": "lost",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -3331,7 +3331,7 @@
      "match": "Stade Soussienf v AS Soliman",
      "selection": "AS Soliman",
      "odds": 1.6,
-     "result": "lost",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -3358,7 +3358,7 @@
    "kind": "high-odds",
    "odds": 81.46,
    "status": "lost",
-   "hit": 0,
+   "hit": 2,
    "total": 20,
    "profit": -10.0,
    "legs": [
@@ -3408,7 +3408,7 @@
      "match": "CA Banfield v CA Huracan",
      "selection": "Under 3.5",
      "odds": 1.01,
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -3457,7 +3457,7 @@
      "match": "Nantes v Grenoble Foot",
      "selection": "Under 3.5",
      "odds": 1.01,
-     "result": "pending",
+     "result": "won",
      "score": "1:0"
     },
     {
@@ -3485,7 +3485,7 @@
      "match": "Juticalpa FC v Olancho FC",
      "selection": "Under 4.5",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -3512,7 +3512,7 @@
    "kind": "high-odds",
    "odds": 52.12,
    "status": "lost",
-   "hit": 0,
+   "hit": 1,
    "total": 12,
    "profit": -10.0,
    "legs": [
@@ -3562,7 +3562,7 @@
      "match": "Puerto Rico Surf SC v San Juan FC",
      "selection": "Over 2.5",
      "odds": 1.44,
-     "result": "pending",
+     "result": "won",
      "score": "1:5"
     },
     {
@@ -3687,7 +3687,7 @@
    "kind": "high-odds",
    "odds": 190.5,
    "status": "lost",
-   "hit": 1,
+   "hit": 3,
    "total": 24,
    "profit": -10.0,
    "legs": [
@@ -3744,7 +3744,7 @@
      "match": "Diosgyori VTK v Karcag SE",
      "selection": "Over 1.5",
      "odds": 1.27,
-     "result": "won",
+     "result": "pending",
      "score": "2:1"
     },
     {
@@ -3821,7 +3821,7 @@
      "match": "Nantes v Grenoble Foot",
      "selection": "Under 3.5",
      "odds": 1.01,
-     "result": "pending",
+     "result": "won",
      "score": "1:0"
     },
     {
@@ -3835,7 +3835,7 @@
      "match": "CA Banfield v CA Huracan",
      "selection": "Under 3.5",
      "odds": 1.01,
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -3884,7 +3884,7 @@
      "match": "Diosgyori VTK v Karcag SE",
      "selection": "Over 1.5",
      "odds": 1.27,
-     "result": "won",
+     "result": "pending",
      "score": "2:1"
     },
     {
@@ -4010,7 +4010,7 @@
      "match": "Juticalpa FC v Olancho FC",
      "selection": "Under 4.5",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -5725,7 +5725,7 @@
      "match": "AD Sanjoanense v Academica de Coimbra",
      "selection": "Over 1.5",
      "odds": 1.02,
-     "result": "won",
+     "result": "pending",
      "score": "1:2"
     },
     {
@@ -5788,7 +5788,7 @@
      "match": "Gil Vicente Barcelos v SC Olhanense",
      "selection": "Over 1.5",
      "odds": 1.08,
-     "result": "won",
+     "result": "pending",
      "score": "3:1"
     },
     {
@@ -5802,7 +5802,7 @@
      "match": "SC Farense v CD Fatima",
      "selection": "Over 1.5",
      "odds": 8.0,
-     "result": "lost",
+     "result": "pending",
      "score": "1:0"
     },
     {
@@ -5851,7 +5851,7 @@
      "match": "Estrela Amadora v Portimonense SC",
      "selection": "Over 1.5",
      "odds": 9.0,
-     "result": "lost",
+     "result": "pending",
      "score": "1:0"
     },
     {
@@ -5865,7 +5865,7 @@
      "match": "CA Rosario Central v Gimnasia y Esgrima Mendoza",
      "selection": "Over 1.5",
      "odds": 1.28,
-     "result": "won",
+     "result": "pending",
      "score": "3:1"
     },
     {
@@ -5907,7 +5907,7 @@
      "match": "Nashville SC v FC Cincinnati",
      "selection": "Over 1.5",
      "odds": 6.5,
-     "result": "pending",
+     "result": "lost",
      "score": "0:1"
     },
     {
@@ -5921,7 +5921,7 @@
      "match": "CA River Plate (ARG) v CA Lanus",
      "selection": "Over 1.5",
      "odds": 1.15,
-     "result": "won",
+     "result": "pending",
      "score": "3:1"
     }
    ]
@@ -5934,7 +5934,7 @@
    "kind": "slip",
    "odds": 2.29,
    "status": "won",
-   "hit": 0,
+   "hit": 1,
    "total": 4,
    "profit": 12.9,
    "legs": [
@@ -5984,7 +5984,7 @@
      "match": "Chicago Fire v Charlotte FC",
      "selection": "Over 2.5",
      "odds": 6.75,
-     "result": "won",
+     "result": "pending",
      "score": "1:2"
     },
     {
@@ -6011,7 +6011,7 @@
    "kind": "slip",
    "odds": 6.57,
    "status": "lost",
-   "hit": 1,
+   "hit": 2,
    "total": 7,
    "profit": -10.0,
    "legs": [
@@ -6047,7 +6047,7 @@
      "match": "Chicago Fire v Charlotte FC",
      "selection": "Over 2.5",
      "odds": 6.75,
-     "result": "won",
+     "result": "pending",
      "score": "1:2"
     },
     {
@@ -6074,7 +6074,7 @@
    "kind": "high-odds",
    "odds": 22209.22,
    "status": "lost",
-   "hit": 2,
+   "hit": 4,
    "total": 15,
    "profit": -10.0,
    "legs": [
@@ -6117,14 +6117,14 @@
      "match": "AD Sanjoanense v Academica de Coimbra",
      "selection": "Academica de Coimbra",
      "odds": 1.04,
-     "result": "won",
+     "result": "pending",
      "score": "1:2"
     },
     {
      "match": "Estrela Amadora v Portimonense SC",
      "selection": "Estrela Amadora",
      "odds": 1.04,
-     "result": "won",
+     "result": "pending",
      "score": "1:0"
     },
     {
@@ -6152,14 +6152,14 @@
      "match": "Odds BK v Bryne FK",
      "selection": "Odds BK",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "1:0"
     },
     {
      "match": "Gimnasia y Esgrima de Jujuy v Deportivo Madryn",
      "selection": "Gimnasia y Esgrima de Jujuy",
      "odds": 1.01,
-     "result": "pending",
+     "result": "won",
      "score": "1:0"
     },
     {
@@ -6193,7 +6193,7 @@
    "kind": "high-odds",
    "odds": 147.34,
    "status": "lost",
-   "hit": 1,
+   "hit": 6,
    "total": 22,
    "profit": -10.0,
    "legs": [
@@ -6243,21 +6243,21 @@
      "match": "Nashville SC v FC Cincinnati",
      "selection": "Under 4.5",
      "odds": 1.01,
-     "result": "pending",
+     "result": "won",
      "score": "0:1"
     },
     {
      "match": "CA River Plate (ARG) v CA Lanus",
      "selection": "Under 3.5",
      "odds": 1.19,
-     "result": "lost",
+     "result": "pending",
      "score": "3:1"
     },
     {
      "match": "Chicago Fire v Charlotte FC",
      "selection": "Over 0.5",
      "odds": 1.75,
-     "result": "won",
+     "result": "pending",
      "score": "1:2"
     },
     {
@@ -6313,7 +6313,7 @@
      "match": "FC Vizela v CD Feirense",
      "selection": "Under 3.5",
      "odds": 2.1,
-     "result": "lost",
+     "result": "pending",
      "score": "2:2"
     },
     {
@@ -6361,7 +6361,7 @@
    "kind": "high-odds",
    "odds": 9181.52,
    "status": "lost",
-   "hit": 4,
+   "hit": 10,
    "total": 38,
    "profit": -10.0,
    "legs": [
@@ -6446,7 +6446,7 @@
      "match": "FC Vizela v CD Feirense",
      "selection": "Under 3.5",
      "odds": 2.1,
-     "result": "lost",
+     "result": "pending",
      "score": "2:2"
     },
     {
@@ -6467,7 +6467,7 @@
      "match": "CA River Plate (ARG) v CA Lanus",
      "selection": "Under 3.5",
      "odds": 1.19,
-     "result": "lost",
+     "result": "pending",
      "score": "3:1"
     },
     {
@@ -6516,7 +6516,7 @@
      "match": "Chicago Fire v Charlotte FC",
      "selection": "Over 0.5",
      "odds": 1.75,
-     "result": "won",
+     "result": "pending",
      "score": "1:2"
     },
     {
@@ -6530,7 +6530,7 @@
      "match": "SC Farense v CD Fatima",
      "selection": "SC Farense",
      "odds": 1.03,
-     "result": "won",
+     "result": "pending",
      "score": "1:0"
     },
     {
@@ -6558,7 +6558,7 @@
      "match": "Nashville SC v FC Cincinnati",
      "selection": "Under 4.5",
      "odds": 1.01,
-     "result": "pending",
+     "result": "won",
      "score": "0:1"
     },
     {
@@ -6621,7 +6621,7 @@
      "match": "Gil Vicente Barcelos v SC Olhanense",
      "selection": "Over 2.5",
      "odds": 1.15,
-     "result": "won",
+     "result": "pending",
      "score": "3:1"
     },
     {
@@ -6641,7 +6641,7 @@
    "kind": "high-odds",
    "odds": 293.1,
    "status": "lost",
-   "hit": 3,
+   "hit": 5,
    "total": 19,
    "profit": -10.0,
    "legs": [
@@ -6670,7 +6670,7 @@
      "match": "Gil Vicente Barcelos v SC Olhanense",
      "selection": "Over 2.5",
      "odds": 1.15,
-     "result": "won",
+     "result": "pending",
      "score": "3:1"
     },
     {
@@ -6733,7 +6733,7 @@
      "match": "Nashville SC v FC Cincinnati",
      "selection": "Under 4.5",
      "odds": 1.01,
-     "result": "pending",
+     "result": "won",
      "score": "0:1"
     },
     {
@@ -6761,7 +6761,7 @@
      "match": "SC Farense v CD Fatima",
      "selection": "SC Farense",
      "odds": 1.03,
-     "result": "won",
+     "result": "pending",
      "score": "1:0"
     },
     {
@@ -6775,7 +6775,7 @@
      "match": "Chicago Fire v Charlotte FC",
      "selection": "Over 0.5",
      "odds": 1.75,
-     "result": "won",
+     "result": "pending",
      "score": "1:2"
     }
    ]
