@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-25T17:25:16+00:00",
+ "updatedAt": "2026-11-25T18:25:17+00:00",
  "sources": [
   "BBC Sport",
   "ESPN",
@@ -9,6 +9,16 @@
  ],
  "fixtures": [],
  "previews": [
+  {
+   "title": "Club Brugge vs Liverpool LIVE!",
+   "summary": "",
+   "source": "Sky Sports",
+   "link": "https://www.skysports.com/football/club-brugge-vs-liverpool/live/577679",
+   "published": "2026-11-25T17:58:00+00:00",
+   "image": "https://e0.365dm.com/26/09/1920x1080/skysports-alexis-mac-allister_7346585.jpg?20260909222846",
+   "ourFixture": false,
+   "preview": true
+  },
   {
    "title": "EFL Trophy holders Luton face Palace U21s in last 32",
    "summary": "EFL Trophy holders Luton Town will meet Crystal Palace Under-21s in the last 32 of the competition.",
@@ -132,6 +142,15 @@
  ],
  "injuries": [
   {
+   "title": "Sporting vs Man Utd team news LIVE!",
+   "summary": "",
+   "source": "Sky Sports",
+   "link": "https://www.skysports.com/football/sporting-lisbon-vs-manchester-united/live/577686",
+   "published": "2026-11-25T17:51:00+00:00",
+   "image": "https://e1.365dm.com/26/11/1920x1080/skysports-pochettino-mauricio_7416442.jpg?20261125181010",
+   "ourFixture": false
+  },
+  {
    "title": "Sunderland latest: Key players out for Europa League clash",
    "summary": "",
    "source": "Sky Sports",
@@ -204,15 +223,6 @@
    "ourFixture": false
   },
   {
-   "title": "Pochettino criticises Premier League officiating after Yoro red card overturned",
-   "summary": "Manchester United defender wrongly sent off in 4-0 loss ‘If we have VAR, what were they doing?’ asks head coach Mauricio Pochettino has criticised officiating in English football, saying: “We have an unbelievable…",
-   "source": "The Guardian",
-   "link": "https://www.theguardian.com/football/2026/nov/23/manchester-united-appeal-leny-yoro-red-card-liverpool",
-   "published": "2026-11-24T21:51:31+00:00",
-   "image": "https://i.guim.co.uk/img/media/7a1a4bacec389b5bc1af1db0bec9ad7be7c7dda1/377_76_2758_2206/master/2758.jpg?width=140&quality=85&auto=format&fit=max&s=9a0bb87b496186fdd001f7d172f4cbdf",
-   "ourFixture": false
-  },
-  {
    "title": "Poch fumes at Yoro red and thinks Szoboszlai goal shouldn't have stood",
    "summary": "Mauricio Pochettino has heavily criticised VAR in Manchester United's loss at Liverpool after Leny Yoro's red card was overturned, while the Argentine believes Dominik Szoboszlai’s opener should not have stood.",
    "source": "Sky Sports",
@@ -259,15 +269,6 @@
   }
  ],
  "transfers": [
-  {
-   "title": "Brentford latest: Lewis-Potter signs new long-term contract",
-   "summary": "",
-   "source": "Sky Sports",
-   "link": "https://www.skysports.com/football/live-blog/11095/13279280/brentford-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
-   "published": "2026-11-25T16:02:00+00:00",
-   "image": "https://e1.365dm.com/26/08/1920x1080/skysports-brentford-club-blog_7326692.jpg?20260820165049",
-   "ourFixture": false
-  },
   {
    "title": "Celtic consider move for midfielder Ashour - gossip",
    "summary": "Celtic linked with Egypt midfielder as Rangers prepare to offload striker...",
@@ -402,7 +403,7 @@
    "kind": "slip",
    "odds": 147707.12,
    "status": "lost",
-   "hit": 5,
+   "hit": 6,
    "total": 25,
    "legs": [
     {
@@ -450,13 +451,13 @@
     {
      "match": "Primeiro de Agosto v Kabuscorp SCP",
      "selection": "Home",
-     "result": "pending",
+     "result": "lost",
      "score": "1:2"
     },
     {
      "match": "Moreirense FC v FC Penafiel",
      "selection": "Home",
-     "result": "pending",
+     "result": "won",
      "score": "2:1"
     },
     {
@@ -540,7 +541,7 @@
     {
      "match": "Victoria United Limbe v Aigle Royal",
      "selection": "Away",
-     "result": "pending",
+     "result": "lost",
      "score": "3:1"
     },
     {
@@ -553,7 +554,7 @@
      "match": "US Cremonese v US Avellino",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -607,7 +608,7 @@
     {
      "match": "Primeiro de Agosto v Kabuscorp SCP",
      "selection": "Home",
-     "result": "pending",
+     "result": "lost",
      "score": "1:2"
     },
     {
@@ -638,7 +639,7 @@
      "match": "Al Sharqiya Enppi v Ceramica Cleopatra",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Independiente Santa Fe v CD Once Caldas",
@@ -673,7 +674,7 @@
     {
      "match": "Talaea El Gaish v Modern Sport FC",
      "selection": "Away",
-     "result": "pending",
+     "result": "lost",
      "score": "0:0"
     }
    ]
@@ -686,20 +687,20 @@
    "kind": "slip",
    "odds": 33961.0,
    "status": "lost",
-   "hit": 4,
+   "hit": 5,
    "total": 17,
    "legs": [
     {
      "match": "AL Ula v AL Adalh FC",
      "selection": "Home",
-     "result": "pending",
+     "result": "won",
      "score": "3:0"
     },
     {
      "match": "Qadsia SC v Al-Fahaheel",
      "selection": "Home",
-     "result": "pending",
-     "score": "1:2"
+     "result": "lost",
+     "score": "2:3"
     },
     {
      "match": "FC Viktoria Plzen v Sparta Prague",
@@ -723,7 +724,7 @@
      "match": "Al-Shaab Hadramaut v Al-Shabab",
      "selection": "Away",
      "result": "pending",
-     "score": "0:0"
+     "score": "2:1"
     },
     {
      "match": "Renofa Yamaguchi v Fukushima United FC",
@@ -765,7 +766,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Kakamega Homeboyz v Shabana FC",
@@ -789,7 +790,7 @@
      "match": "Ghazl El Mahallah v Suez Petrojet",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -832,12 +833,12 @@
      "match": "Bravo Ljubljana v NK Odranci",
      "selection": "Home",
      "result": "pending",
-     "score": "2:1"
+     "score": "5:1"
     },
     {
      "match": "Uniao de Leiria v SL Benfica",
      "selection": "Away",
-     "result": "pending",
+     "result": "lost",
      "score": "1:1"
     },
     {
@@ -868,18 +869,18 @@
      "match": "US Cremonese v US Avellino",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Atalanta BC U23 v ASD Pineto Calcio",
      "selection": "Home",
      "result": "pending",
-     "score": "0:0"
+     "score": "1:0"
     },
     {
      "match": "FC Kamaz Naberezhnye Chelny v FC Yenisey Krasnoyarsk",
      "selection": "Home",
-     "result": "pending",
+     "result": "lost",
      "score": "2:2"
     },
     {
@@ -922,13 +923,13 @@
    "kind": "slip",
    "odds": 199.76,
    "status": "lost",
-   "hit": 7,
+   "hit": 8,
    "total": 16,
    "legs": [
     {
      "match": "Tabor Sezana v Fuzinar Ravne",
      "selection": "Home",
-     "result": "pending",
+     "result": "won",
      "score": "6:1"
     },
     {
@@ -989,7 +990,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Jagiellonia II Bialystok v Widzew Lodz II",
@@ -1152,7 +1153,7 @@
      "match": "Ghazl El Mahallah v Suez Petrojet",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -1195,7 +1196,7 @@
      "match": "Al-Khor SC v AL Shamal Future",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "3:0"
     },
     {
      "match": "SC Pisa v Modena FC",
@@ -1207,13 +1208,13 @@
      "match": "Atletico Petroleos de Luanda v FC Cabinda",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "2:0"
+     "score": "3:1"
     },
     {
      "match": "Al Sharqiya Enppi v Ceramica Cleopatra",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Burnley v Birmingham City",
@@ -1322,7 +1323,7 @@
      "match": "Ghazl El Mahallah v Suez Petrojet",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Shillong Lajong FC v Nagaland United SC",
@@ -1369,8 +1370,8 @@
     {
      "match": "Qadsia SC v Al-Fahaheel",
      "selection": "Home",
-     "result": "pending",
-     "score": "1:2"
+     "result": "lost",
+     "score": "2:3"
     },
     {
      "match": "AL Anwar v AL Jandal",
@@ -1448,7 +1449,7 @@
      "match": "Atletico Petroleos de Luanda v FC Cabinda",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "2:0"
+     "score": "3:1"
     },
     {
      "match": "Arema FC v Adhyaksa Farmel FC",
@@ -1701,7 +1702,7 @@
    "kind": "slip",
    "odds": 1527.5,
    "status": "lost",
-   "hit": 3,
+   "hit": 5,
    "total": 31,
    "legs": [
     {
@@ -1737,38 +1738,38 @@
     {
      "match": "Uniao de Leiria v SL Benfica",
      "selection": "Away",
-     "result": "pending",
+     "result": "lost",
      "score": "1:1"
     },
     {
      "match": "Tabor Sezana v Fuzinar Ravne",
      "selection": "Home",
-     "result": "pending",
+     "result": "won",
      "score": "6:1"
     },
     {
      "match": "AL Ula v AL Adalh FC",
      "selection": "Home",
-     "result": "pending",
+     "result": "won",
      "score": "3:0"
     },
     {
      "match": "Qadsia SC v Al-Fahaheel",
      "selection": "Home",
-     "result": "pending",
-     "score": "1:2"
+     "result": "lost",
+     "score": "2:3"
     },
     {
      "match": "Al-Khor SC v AL Shamal Future",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "3:0"
     },
     {
      "match": "Atletico Petroleos de Luanda v FC Cabinda",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "2:0"
+     "score": "3:1"
     },
     {
      "match": "Matebele v Gaborone United",
@@ -1780,19 +1781,19 @@
      "match": "Bravo Ljubljana v NK Odranci",
      "selection": "Home",
      "result": "pending",
-     "score": "2:1"
+     "score": "5:1"
     },
     {
      "match": "Al Sharqiya Enppi v Ceramica Cleopatra",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Ghazl El Mahallah v Suez Petrojet",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Calcio Padova v Sampdoria",
@@ -1900,14 +1901,14 @@
    "kind": "slip",
    "odds": 834.92,
    "status": "lost",
-   "hit": 15,
+   "hit": 16,
    "total": 29,
    "legs": [
     {
      "match": "Bravo Ljubljana v NK Odranci",
      "selection": "Home",
      "result": "pending",
-     "score": "2:1"
+     "score": "5:1"
     },
     {
      "match": "SP Tre Penne v SS Pennarossa",
@@ -1990,7 +1991,7 @@
     {
      "match": "Tabor Sezana v Fuzinar Ravne",
      "selection": "Home",
-     "result": "pending",
+     "result": "won",
      "score": "6:1"
     },
     {
@@ -2027,7 +2028,7 @@
      "match": "Atletico Petroleos de Luanda v FC Cabinda",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": "2:0"
+     "score": "3:1"
     },
     {
      "match": "Vanraure Hachinohe FC v Albirex Niigata",
@@ -2068,8 +2069,8 @@
     {
      "match": "Qadsia SC v Al-Fahaheel",
      "selection": "Home",
-     "result": "pending",
-     "score": "1:2"
+     "result": "lost",
+     "score": "2:3"
     },
     {
      "match": "FC Gifu v Thespa Gunma",
@@ -2087,7 +2088,7 @@
    "kind": "slip",
    "odds": 709.64,
    "status": "lost",
-   "hit": 11,
+   "hit": 12,
    "total": 28,
    "legs": [
     {
@@ -2123,7 +2124,7 @@
     {
      "match": "Uniao de Leiria v SL Benfica",
      "selection": "Away",
-     "result": "pending",
+     "result": "lost",
      "score": "1:1"
     },
     {
@@ -2136,7 +2137,7 @@
      "match": "Al Sharqiya Enppi v Ceramica Cleopatra",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Sao Paulo FC SP v Atletico Mineiro MG",
@@ -2154,7 +2155,7 @@
      "match": "Al-Khor SC v AL Shamal Future",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "3:0"
     },
     {
      "match": "Burnley v Birmingham City",
@@ -2177,7 +2178,7 @@
     {
      "match": "AL Ula v AL Adalh FC",
      "selection": "Home",
-     "result": "pending",
+     "result": "won",
      "score": "3:0"
     },
     {
@@ -2268,14 +2269,14 @@
    "kind": "slip",
    "odds": 427.86,
    "status": "lost",
-   "hit": 16,
+   "hit": 18,
    "total": 32,
    "legs": [
     {
      "match": "Bravo Ljubljana v NK Odranci",
      "selection": "Home",
      "result": "pending",
-     "score": "2:1"
+     "score": "5:1"
     },
     {
      "match": "Vaqueros Reynosa FC v Ciervos FC",
@@ -2340,7 +2341,7 @@
     {
      "match": "Uniao de Leiria v SL Benfica",
      "selection": "Away",
-     "result": "pending",
+     "result": "lost",
      "score": "1:1"
     },
     {
@@ -2365,7 +2366,7 @@
      "match": "Al Sharqiya Enppi v Ceramica Cleopatra",
      "selection": "Under 3.5",
      "result": "pending",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Peterborough United U21 v Hull City U21",
@@ -2401,7 +2402,7 @@
      "match": "Al-Khor SC v AL Shamal Future",
      "selection": "Under 4.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "3:0"
     },
     {
      "match": "Polonia Sroda Wielkopolska v Sokol Kleczew",
@@ -2442,13 +2443,13 @@
     {
      "match": "Tabor Sezana v Fuzinar Ravne",
      "selection": "Home",
-     "result": "pending",
+     "result": "won",
      "score": "6:1"
     },
     {
      "match": "AL Ula v AL Adalh FC",
      "selection": "Home",
-     "result": "pending",
+     "result": "won",
      "score": "3:0"
     },
     {
@@ -2473,14 +2474,14 @@
    "kind": "slip",
    "odds": 97.77,
    "status": "lost",
-   "hit": 5,
+   "hit": 7,
    "total": 19,
    "legs": [
     {
      "match": "Bravo Ljubljana v NK Odranci",
      "selection": "Home",
      "result": "pending",
-     "score": "2:1"
+     "score": "5:1"
     },
     {
      "match": "Vaqueros Reynosa FC v Ciervos FC",
@@ -2509,19 +2510,19 @@
     {
      "match": "Uniao de Leiria v SL Benfica",
      "selection": "Away",
-     "result": "pending",
+     "result": "lost",
      "score": "1:1"
     },
     {
      "match": "Tabor Sezana v Fuzinar Ravne",
      "selection": "Home",
-     "result": "pending",
+     "result": "won",
      "score": "6:1"
     },
     {
      "match": "AL Ula v AL Adalh FC",
      "selection": "Home",
-     "result": "pending",
+     "result": "won",
      "score": "3:0"
     },
     {
@@ -2557,8 +2558,8 @@
     {
      "match": "Qadsia SC v Al-Fahaheel",
      "selection": "Home",
-     "result": "pending",
-     "score": "1:2"
+     "result": "lost",
+     "score": "2:3"
     },
     {
      "match": "Matebele v Gaborone United",
@@ -2685,7 +2686,7 @@
      "match": "Ghazl El Mahallah v Suez Petrojet",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -2704,7 +2705,7 @@
      "match": "Sabah Masazir v Barcelona",
      "selection": "Over 3.5",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     }
    ]
   },
@@ -3175,7 +3176,7 @@
      "match": "Sabah Masazir v Barcelona",
      "selection": "Barcelona",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     },
     {
      "match": "Viktoria Plzen v Benfica",
@@ -3719,7 +3720,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Sporting v Man Utd",
@@ -3912,7 +3913,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Sporting v Man Utd",
@@ -4105,7 +4106,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Sporting v Man Utd",
@@ -4298,7 +4299,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Sporting CP v Man Utd",
@@ -4491,7 +4492,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Sporting v Man Utd",
@@ -4714,7 +4715,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Olympiacos v AC Milan",
@@ -4726,7 +4727,7 @@
      "match": "Sabah Masazir v Barcelona",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     }
    ]
   },
@@ -4793,7 +4794,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Olympiacos v AC Milan",
@@ -4805,7 +4806,7 @@
      "match": "Sabah Masazir v Barcelona",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     }
    ]
   },
@@ -4872,7 +4873,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Olympiacos v AC Milan",
@@ -4884,7 +4885,7 @@
      "match": "Sabah Masazir v Barcelona",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     }
    ]
   },
@@ -4951,7 +4952,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Olympiacos Piraeus v Milan",
@@ -4963,7 +4964,7 @@
      "match": "Sabah Masazir v Barcelona",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     }
    ]
   },
@@ -5030,7 +5031,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Olympiacos v AC Milan",
@@ -5042,7 +5043,7 @@
      "match": "Sabah Masazir v Barcelona",
      "selection": "Over 2.5",
      "result": "pending",
-     "score": null
+     "score": "0:1"
     }
    ]
   },
@@ -5079,7 +5080,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Yes",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Club Brugge v Liverpool",
@@ -5122,7 +5123,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Yes",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Club Brugge v Liverpool",
@@ -5165,7 +5166,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Yes",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Club Brugge v Liverpool",
@@ -5214,7 +5215,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Yes",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     }
    ]
   },
@@ -5251,7 +5252,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Yes",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Club Brugge v Liverpool",
@@ -5976,7 +5977,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Olympiacos v AC Milan",
@@ -6115,7 +6116,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Olympiacos v AC Milan",
@@ -6254,7 +6255,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Olympiacos v AC Milan",
@@ -6393,7 +6394,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Olympiacos Piraeus v Milan",
@@ -6532,7 +6533,7 @@
      "match": "Slavia Prague v Villarreal",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Olympiacos v AC Milan",
