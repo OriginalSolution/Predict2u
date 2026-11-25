@@ -1,0 +1,114 @@
+{
+ "key": "t5b3-screens",
+ "name": "Top5 v Bottom3 screens",
+ "date": "2026-11-25",
+ "riskLabel": "HIGH RISK",
+ "waived": false,
+ "meetsFloor": false,
+ "verification": "Bets For The Day. Normal Predict2u gates applied. HIGH RISK, no guarantees.",
+ "parts": [
+  {
+   "name": "Top5 v Bottom3 screens · set",
+   "legs": 2,
+   "events": [
+    "sr:match:74173072",
+    "sr:match:71945436"
+   ],
+   "totalOdds": 1.93,
+   "codes": {
+    "sportybet": [
+     {
+      "code": "BECZ5L",
+      "totalOdds": 1.93,
+      "legs": 2,
+      "link": "https://www.sportybet.com/gh/?shareCode=BECZ5L",
+      "matches": [
+       "sr:match:71945436",
+       "sr:match:74173072"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "footballcom": [
+     {
+      "code": "BECZ5L",
+      "totalOdds": 1.93,
+      "legs": 2,
+      "link": "https://www.football.com/gh/?shareCode=BECZ5L",
+      "matches": [
+       "sr:match:71945436",
+       "sr:match:74173072"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ]
+   },
+   "missing": {
+    "msport": "not booked",
+    "betika": "not booked",
+    "betpawa": "not booked"
+   },
+   "label": "Top5 v Bottom3 screens · set · HIGH RISK",
+   "source": "t5b3-screens",
+   "meetsFloor": false,
+   "status": "pending"
+  }
+ ],
+ "legList": [
+  {
+   "eventId": "sr:match:74173072",
+   "marketId": "16",
+   "specifier": "hcp=-1",
+   "outcomeId": "1714",
+   "date": "2026-11-26",
+   "ko": "17:45",
+   "kickoff": "2026-11-26T17:45:00Z",
+   "league": "International Clubs - UEFA Europa League",
+   "match": "Union Gilloise v KKS Lech Poznan",
+   "market": "Asian Handicap -1",
+   "selection": "Home (-1.0)",
+   "odds": 1.52,
+   "liveOdds": 1.52,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": "4 v 35/36",
+   "x12": "1.38/5.93/7.98",
+   "case": "stronger AH-1 @1.52 (top5 v bottom3)",
+   "leagueFavRate": null,
+   "rate": null
+  },
+  {
+   "eventId": "sr:match:71945436",
+   "marketId": "16",
+   "specifier": "hcp=-1",
+   "outcomeId": "1714",
+   "date": "2026-11-29",
+   "ko": "17:00",
+   "kickoff": "2026-11-29T17:00:00Z",
+   "league": "Italy - Serie A",
+   "match": "Roma v Monza",
+   "market": "Asian Handicap -1",
+   "selection": "Home (-1.0)",
+   "odds": 1.27,
+   "liveOdds": 1.27,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": "2 v 18/20",
+   "x12": "1.22/7.76/12.67",
+   "case": "stronger AH-1 @1.27 (top5 v bottom3)",
+   "leagueFavRate": null,
+   "rate": null
+  }
+ ],
+ "legs": 2,
+ "totalOdds": 1.93,
+ "hit": 0,
+ "total": 2,
+ "status": "pending"
+}
