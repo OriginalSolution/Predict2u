@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-25T06:15:59Z",
+ "DATA_UPDATED": "2026-11-25T08:16:03Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -621,10 +621,10 @@
   }
  ],
  "picks": {
-  "settled": 4451,
-  "won": 3328,
-  "lost": 1123,
-  "winRate": 74.8
+  "settled": 4411,
+  "won": 3303,
+  "lost": 1108,
+  "winRate": 74.9
  },
  "recent": [
   {
@@ -4185,14 +4185,14 @@
      "match": "Portmore United v Racing United FC",
      "selection": "Over 1.5",
      "odds": 1.28,
-     "result": "void",
+     "result": "pending",
      "score": null
     },
     {
      "match": "Persija Jakarta v Sumsel United",
      "selection": "Over 2.5",
      "odds": 1.22,
-     "result": "won",
+     "result": "pending",
      "score": "7:0"
     },
     {
@@ -4227,7 +4227,7 @@
      "match": "Bhayangkara Presisi Indonesia FC v Semen Padang FC",
      "selection": "Over 1.5",
      "odds": 4.75,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -4241,7 +4241,7 @@
      "match": "Sreenidi Deccan FC v Chanmari FC",
      "selection": "Over 1.5",
      "odds": 1.75,
-     "result": "won",
+     "result": "pending",
      "score": "2:1"
     },
     {
@@ -4255,21 +4255,21 @@
      "match": "FK Jedinstvo Bijelo Polje v FK Sutjeska Niksic",
      "selection": "Over 1.5",
      "odds": 13.0,
-     "result": "won",
+     "result": "pending",
      "score": "3:4"
     },
     {
      "match": "FK Mornar Bar v FK Jezero Plav",
      "selection": "Over 1.5",
      "odds": 7.5,
-     "result": "won",
+     "result": "pending",
      "score": "2:0"
     },
     {
      "match": "Persiraja Banda v Dewa United",
      "selection": "Over 2.5",
      "odds": 1.3,
-     "result": "won",
+     "result": "pending",
      "score": "1:4"
     },
     {
@@ -4311,7 +4311,7 @@
      "match": "MSK Zilina v MFK Ruzomberok",
      "selection": "Over 1.5",
      "odds": 7.0,
-     "result": "lost",
+     "result": "pending",
      "score": "1:0"
     },
     {
@@ -4388,7 +4388,7 @@
      "match": "Hibernian FC v Dundee FC",
      "selection": "Over 1.5",
      "odds": 1.14,
-     "result": "won",
+     "result": "pending",
      "score": "2:1"
     },
     {
@@ -4402,7 +4402,7 @@
      "match": "Bradford City FC v Barnsley FC",
      "selection": "Over 1.5",
      "odds": 1.53,
-     "result": "won",
+     "result": "pending",
      "score": "3:0"
     },
     {
@@ -4695,7 +4695,7 @@
     {
      "match": "GNK Dinamo Zagreb v Bayer Leverkusen",
      "selection": "Over 0.5",
-     "odds": 1.35,
+     "odds": 1.36,
      "result": "pending",
      "score": null
     },
@@ -4709,7 +4709,7 @@
     {
      "match": "PFC CSKA Sofia v Trabzonspor",
      "selection": "Over 0.5",
-     "odds": 1.15,
+     "odds": 1.14,
      "result": "pending",
      "score": null
     },
@@ -5052,7 +5052,7 @@
     {
      "match": "GNK Dinamo Zagreb v Bayer Leverkusen",
      "selection": "Over 0.5",
-     "odds": 1.35,
+     "odds": 1.36,
      "result": "pending",
      "score": null
     },
@@ -5066,7 +5066,7 @@
     {
      "match": "PFC CSKA Sofia v Trabzonspor",
      "selection": "Over 0.5",
-     "odds": 1.15,
+     "odds": 1.14,
      "result": "pending",
      "score": null
     },
@@ -5290,7 +5290,7 @@
     {
      "match": "GNK Dinamo Zagreb v Bayer Leverkusen",
      "selection": "Over 0.5",
-     "odds": 1.35,
+     "odds": 1.36,
      "result": "pending",
      "score": null
     }
@@ -5437,7 +5437,7 @@
     {
      "match": "GNK Dinamo Zagreb v Bayer Leverkusen",
      "selection": "Over 0.5",
-     "odds": 1.35,
+     "odds": 1.36,
      "result": "pending",
      "score": null
     }
@@ -5535,7 +5535,7 @@
     {
      "match": "GNK Dinamo Zagreb v Bayer Leverkusen",
      "selection": "Over 0.5",
-     "odds": 1.35,
+     "odds": 1.36,
      "result": "pending",
      "score": null
     },
@@ -5549,7 +5549,7 @@
     {
      "match": "PFC CSKA Sofia v Trabzonspor",
      "selection": "Over 0.5",
-     "odds": 1.15,
+     "odds": 1.14,
      "result": "pending",
      "score": null
     },
@@ -5787,7 +5787,7 @@
     {
      "match": "GNK Dinamo Zagreb v Bayer Leverkusen",
      "selection": "Over 0.5",
-     "odds": 1.35,
+     "odds": 1.36,
      "result": "pending",
      "score": null
     },
@@ -5801,7 +5801,7 @@
     {
      "match": "PFC CSKA Sofia v Trabzonspor",
      "selection": "Over 0.5",
-     "odds": 1.15,
+     "odds": 1.14,
      "result": "pending",
      "score": null
     },
