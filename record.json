@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-25T10:16:09Z",
+ "DATA_UPDATED": "2026-11-25T10:28:54Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -621,10 +621,10 @@
   }
  ],
  "picks": {
-  "settled": 4378,
-  "won": 3272,
-  "lost": 1106,
-  "winRate": 74.7
+  "settled": 4412,
+  "won": 3303,
+  "lost": 1109,
+  "winRate": 74.9
  },
  "recent": [
   {
@@ -3934,7 +3934,7 @@
      "selection": "Real Madrid",
      "odds": 1.09,
      "result": "won",
-     "score": null
+     "score": "5:1"
     },
     {
      "match": "PSG v Roma",
@@ -3948,7 +3948,7 @@
      "selection": "Como 1907",
      "odds": 1.14,
      "result": "won",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Atletico Madrid v Viking FK",
@@ -3962,21 +3962,21 @@
      "selection": "Man City",
      "odds": 1.8,
      "result": "lost",
-     "score": null
+     "score": "2:2"
     },
     {
      "match": "Arsenal v Borussia Dortmund",
      "selection": "Arsenal",
      "odds": 2.35,
      "result": "lost",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "RB Leipzig v Lens",
      "selection": "RB Leipzig",
      "odds": 1.16,
      "result": "won",
-     "score": null
+     "score": "3:1"
     },
     {
      "match": "Inter v Stuttgart",
@@ -4067,7 +4067,7 @@
      "selection": "Yes",
      "odds": 7.5,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Inter v Stuttgart",
@@ -4095,14 +4095,14 @@
      "selection": "Yes",
      "odds": 1.1,
      "result": "won",
-     "score": null
+     "score": "5:1"
     },
     {
      "match": "RB Leipzig v Lens",
      "selection": "Yes",
      "odds": 2.25,
      "result": "won",
-     "score": null
+     "score": "3:1"
     },
     {
      "match": "Sporting v Man Utd",
@@ -4130,7 +4130,7 @@
      "selection": "Yes",
      "odds": 14.5,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Sparta Prague v Alkmaar",
@@ -4149,7 +4149,7 @@
    "kind": "slip",
    "odds": 88747.35,
    "status": "lost",
-   "hit": 1,
+   "hit": 6,
    "total": 57,
    "profit": -10.0,
    "legs": [
@@ -4157,14 +4157,14 @@
      "match": "Newcastle United Jets v Kashiwa Reysol",
      "selection": "Yes",
      "odds": 1.7,
-     "result": "pending",
+     "result": "won",
      "score": "1:2"
     },
     {
      "match": "Bodoe/Glimt v LASK Linz",
      "selection": "Yes",
      "odds": 14.5,
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -4199,14 +4199,14 @@
      "match": "Daejeon Citizen FC v Beijing Guoan",
      "selection": "Over 1.5",
      "odds": 1.08,
-     "result": "pending",
+     "result": "won",
      "score": "3:2"
     },
     {
      "match": "Kyoto Sanga FC v FC Pohang Steelers",
      "selection": "Over 1.5",
      "odds": 9.25,
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -4234,7 +4234,7 @@
      "match": "Ratchaburi FC v Johor Darul Tazim FC",
      "selection": "Over 1.5",
      "odds": 1.25,
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -4339,21 +4339,21 @@
      "match": "Orlando Pirates FC v Lamontville Golden Arrows",
      "selection": "Over 1.5",
      "odds": 8.0,
-     "result": "pending",
+     "result": "won",
      "score": "2:0"
     },
     {
      "match": "Al-Masry v Asyut Petroleum",
      "selection": "Over 1.5",
      "odds": 2.0,
-     "result": "pending",
+     "result": "won",
      "score": "2:0"
     },
     {
      "match": "Al Nassr Club v Al Sadd SC",
      "selection": "Over 1.5",
      "odds": 1.1,
-     "result": "pending",
+     "result": "won",
      "score": "2:1"
     },
     {
@@ -4473,14 +4473,14 @@
      "selection": "Over 2.5",
      "odds": 1.18,
      "result": "won",
-     "score": null
+     "score": "3:1"
     },
     {
      "match": "Galatasaray Istanbul v Aston Villa",
      "selection": "Over 2.5",
      "odds": 14.0,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Inter v Stuttgart",
@@ -4494,28 +4494,28 @@
      "selection": "Over 2.5",
      "odds": 3.2,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Bodoe/Glimt v LASK Linz",
      "selection": "Over 2.5",
      "odds": 9.25,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Man City v Napoli",
      "selection": "Over 2.5",
      "odds": 1.35,
      "result": "won",
-     "score": null
+     "score": "2:2"
     },
     {
      "match": "Slovan Bratislava v Betis",
      "selection": "Over 2.5",
      "odds": 1.52,
      "result": "lost",
-     "score": null
+     "score": "0:2"
     },
     {
      "match": "Sporting v Man Utd",
@@ -4550,7 +4550,7 @@
      "selection": "Over 2.5",
      "odds": 1.14,
      "result": "won",
-     "score": null
+     "score": "5:1"
     },
     {
      "match": "Slavia Prague v Villarreal",
@@ -4564,7 +4564,7 @@
      "selection": "Over 2.5",
      "odds": 1.52,
      "result": "lost",
-     "score": null
+     "score": "1:1"
     },
     {
      "match": "Juventus v AC Omonia Nicosia",
@@ -4627,7 +4627,7 @@
      "selection": "Under 4.5",
      "odds": 1.21,
      "result": "won",
-     "score": null
+     "score": "1:1"
     }
    ]
   },
@@ -4648,7 +4648,7 @@
      "selection": "Over 0.5",
      "odds": 1.21,
      "result": "won",
-     "score": null
+     "score": "1:0"
     }
    ]
   },
@@ -4675,7 +4675,7 @@
      "match": "Galatasaray Istanbul v Aston Villa",
      "selection": "Yes",
      "odds": 7.5,
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -4795,7 +4795,7 @@
      "selection": "Yes",
      "odds": 1.37,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Sporting v Man Utd",
@@ -4914,7 +4914,7 @@
      "selection": "Yes",
      "odds": 7.5,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Sporting v Man Utd",
@@ -5032,7 +5032,7 @@
      "match": "Galatasaray Istanbul v Aston Villa",
      "selection": "Yes",
      "odds": 3.9,
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -5152,7 +5152,7 @@
      "selection": "Yes",
      "odds": 1.37,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Sporting v Man Utd",
@@ -5270,7 +5270,7 @@
      "match": "Galatasaray Istanbul v Aston Villa",
      "selection": "Yes",
      "odds": 7.5,
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -5320,7 +5320,7 @@
      "selection": "Yes",
      "odds": 1.37,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Sporting v Man Utd",
@@ -5369,7 +5369,7 @@
      "selection": "Yes",
      "odds": 7.5,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Sporting v Man Utd",
@@ -5417,7 +5417,7 @@
      "match": "Galatasaray Istanbul v Aston Villa",
      "selection": "Yes",
      "odds": 3.9,
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -5467,7 +5467,7 @@
      "selection": "Yes",
      "odds": 1.37,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Sporting v Man Utd",
@@ -5515,7 +5515,7 @@
      "match": "Galatasaray Istanbul v Aston Villa",
      "selection": "Yes",
      "odds": 7.5,
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -5600,7 +5600,7 @@
      "selection": "Yes",
      "odds": 1.37,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Sporting v Man Utd",
@@ -5684,7 +5684,7 @@
      "selection": "Yes",
      "odds": 7.5,
      "result": "lost",
-     "score": null
+     "score": "1:0"
     },
     {
      "match": "Sporting v Man Utd",
@@ -5767,7 +5767,7 @@
      "match": "Galatasaray Istanbul v Aston Villa",
      "selection": "Yes",
      "odds": 3.9,
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
