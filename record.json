@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-25T04:16:04Z",
+ "DATA_UPDATED": "2026-11-25T06:15:59Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -621,10 +621,10 @@
   }
  ],
  "picks": {
-  "settled": 4410,
-  "won": 3302,
-  "lost": 1108,
-  "winRate": 74.9
+  "settled": 4451,
+  "won": 3328,
+  "lost": 1123,
+  "winRate": 74.8
  },
  "recent": [
   {
@@ -4185,14 +4185,14 @@
      "match": "Portmore United v Racing United FC",
      "selection": "Over 1.5",
      "odds": 1.28,
-     "result": "pending",
+     "result": "void",
      "score": null
     },
     {
      "match": "Persija Jakarta v Sumsel United",
      "selection": "Over 2.5",
      "odds": 1.22,
-     "result": "pending",
+     "result": "won",
      "score": "7:0"
     },
     {
@@ -4227,7 +4227,7 @@
      "match": "Bhayangkara Presisi Indonesia FC v Semen Padang FC",
      "selection": "Over 1.5",
      "odds": 4.75,
-     "result": "pending",
+     "result": "won",
      "score": "1:1"
     },
     {
@@ -4241,7 +4241,7 @@
      "match": "Sreenidi Deccan FC v Chanmari FC",
      "selection": "Over 1.5",
      "odds": 1.75,
-     "result": "pending",
+     "result": "won",
      "score": "2:1"
     },
     {
@@ -4255,21 +4255,21 @@
      "match": "FK Jedinstvo Bijelo Polje v FK Sutjeska Niksic",
      "selection": "Over 1.5",
      "odds": 13.0,
-     "result": "pending",
+     "result": "won",
      "score": "3:4"
     },
     {
      "match": "FK Mornar Bar v FK Jezero Plav",
      "selection": "Over 1.5",
      "odds": 7.5,
-     "result": "pending",
+     "result": "won",
      "score": "2:0"
     },
     {
      "match": "Persiraja Banda v Dewa United",
      "selection": "Over 2.5",
      "odds": 1.3,
-     "result": "pending",
+     "result": "won",
      "score": "1:4"
     },
     {
@@ -4311,7 +4311,7 @@
      "match": "MSK Zilina v MFK Ruzomberok",
      "selection": "Over 1.5",
      "odds": 7.0,
-     "result": "pending",
+     "result": "lost",
      "score": "1:0"
     },
     {
@@ -4388,7 +4388,7 @@
      "match": "Hibernian FC v Dundee FC",
      "selection": "Over 1.5",
      "odds": 1.14,
-     "result": "pending",
+     "result": "won",
      "score": "2:1"
     },
     {
@@ -4402,7 +4402,7 @@
      "match": "Bradford City FC v Barnsley FC",
      "selection": "Over 1.5",
      "odds": 1.53,
-     "result": "pending",
+     "result": "won",
      "score": "3:0"
     },
     {
