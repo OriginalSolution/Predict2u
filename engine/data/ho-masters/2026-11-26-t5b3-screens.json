@@ -1,0 +1,87 @@
+{
+ "key": "t5b3-screens",
+ "name": "Top5 v Bottom3 screens",
+ "date": "2026-11-26",
+ "riskLabel": "HIGH RISK",
+ "waived": false,
+ "meetsFloor": false,
+ "verification": "Bets For The Day. Normal Predict2u gates applied. HIGH RISK, no guarantees.",
+ "parts": [
+  {
+   "name": "Top5 v Bottom3 screens · set",
+   "legs": 1,
+   "events": [
+    "sr:match:71945436"
+   ],
+   "totalOdds": 1.27,
+   "codes": {
+    "sportybet": [
+     {
+      "code": "E83QAW",
+      "totalOdds": 1.27,
+      "legs": 1,
+      "link": "https://www.sportybet.com/gh/?shareCode=E83QAW",
+      "matches": [
+       "sr:match:71945436"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ],
+    "footballcom": [
+     {
+      "code": "E83QAW",
+      "totalOdds": 1.27,
+      "legs": 1,
+      "link": "https://www.football.com/gh/?shareCode=E83QAW",
+      "matches": [
+       "sr:match:71945436"
+      ],
+      "hit": 0,
+      "status": "pending"
+     }
+    ]
+   },
+   "missing": {
+    "msport": "not booked",
+    "betika": "not booked",
+    "betpawa": "not booked"
+   },
+   "label": "Top5 v Bottom3 screens · set · HIGH RISK",
+   "source": "t5b3-screens",
+   "meetsFloor": false,
+   "status": "pending"
+  }
+ ],
+ "legList": [
+  {
+   "eventId": "sr:match:71945436",
+   "marketId": "16",
+   "specifier": "hcp=-1",
+   "outcomeId": "1714",
+   "date": "2026-11-29",
+   "ko": "17:00",
+   "kickoff": "2026-11-29T17:00:00Z",
+   "league": "Italy - Serie A",
+   "match": "Roma v Monza",
+   "market": "Asian Handicap -1",
+   "selection": "Home (-1.0)",
+   "odds": 1.27,
+   "liveOdds": 1.27,
+   "result": "pending",
+   "matchStatus": "Not start",
+   "score": null,
+   "played": null,
+   "table": "2 v 18/20",
+   "x12": "1.22/7.76/12.61",
+   "case": "stronger AH-1 @1.27 (top5 v bottom3)",
+   "leagueFavRate": null,
+   "rate": null
+  }
+ ],
+ "legs": 1,
+ "totalOdds": 1.27,
+ "hit": 0,
+ "total": 1,
+ "status": "pending"
+}
