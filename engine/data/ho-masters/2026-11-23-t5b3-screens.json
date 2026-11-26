@@ -31,7 +31,7 @@
        "sr:match:74173072"
       ],
       "hit": 1,
-      "status": "pending"
+      "status": "lost"
      }
     ],
     "footballcom": [
@@ -47,7 +47,7 @@
        "sr:match:74173072"
       ],
       "hit": 1,
-      "status": "pending"
+      "status": "lost"
      }
     ]
    },
@@ -59,7 +59,7 @@
    "label": "Top5 v Bottom3 screens · set · HIGH RISK",
    "source": "t5b3-screens",
    "meetsFloor": false,
-   "status": "pending"
+   "status": "lost"
   }
  ],
  "legList": [
@@ -148,11 +148,11 @@
    "market": "Asian Handicap -1",
    "selection": "Home (-1.0)",
    "odds": 1.53,
-   "liveOdds": 2.6,
-   "result": "pending",
-   "matchStatus": "H1",
-   "score": "0:2",
-   "played": "29:18",
+   "liveOdds": 2.95,
+   "result": "lost",
+   "matchStatus": "Ended",
+   "score": "2:2",
+   "played": "90:00",
    "table": "4 v 35/36",
    "x12": "1.38/5.62/7.71",
    "case": "stronger AH-1 @1.53 (top5 v bottom3)",
@@ -164,5 +164,5 @@
  "totalOdds": 4.85,
  "hit": 1,
  "total": 4,
- "status": "pending"
+ "status": "lost"
 }
