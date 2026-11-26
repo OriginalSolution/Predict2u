@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-26T02:25:15+00:00",
+ "updatedAt": "2026-11-26T03:25:14+00:00",
  "sources": [
   "BBC Sport",
   "ESPN",
@@ -440,10 +440,10 @@
  ],
  "record": {
   "won": 96,
-  "lost": 430,
-  "settled": 526,
-  "pending": 343,
-  "winRate": 18.3
+  "lost": 433,
+  "settled": 529,
+  "pending": 340,
+  "winRate": 18.1
  },
  "codes": [
   {
@@ -454,7 +454,7 @@
    "kind": "slip",
    "odds": 2798.44,
    "status": "pending",
-   "hit": 1,
+   "hit": 3,
    "total": 44,
    "legs": [
     {
@@ -466,20 +466,20 @@
     {
      "match": "Deportivo Toluca FC v Atlas FC",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "won",
      "score": "2:0"
     },
     {
      "match": "Real Esteli FC v Rancho Santana FC",
      "selection": "Over 1.5",
-     "result": "pending",
+     "result": "won",
      "score": "3:0"
     },
     {
      "match": "CSD Municipal v Aurora FC",
      "selection": "Over 1.5",
      "result": "pending",
-     "score": "0:0"
+     "score": "3:1"
     },
     {
      "match": "BG Tampines Rovers v Shanghai Shenhua FC",
@@ -786,7 +786,7 @@
      "match": "Atletico Nacional v Independiente Medellin",
      "selection": "Home",
      "result": "pending",
-     "score": "1:1"
+     "score": "3:1"
     },
     {
      "match": "Doncaster Rovers v Huddersfield",
@@ -834,7 +834,7 @@
      "match": "Barcelona SC v CSD Independiente del Valle",
      "selection": "Away",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     },
     {
      "match": "Mara Sugar FC v Kenya Police FC",
@@ -852,7 +852,7 @@
      "match": "CF Monterrey v CF America",
      "selection": "Away",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Santiago Wanderers v Deportes Recoleta",
@@ -901,7 +901,7 @@
      "match": "CSD Municipal v Aurora FC",
      "selection": "Home",
      "result": "pending",
-     "score": "0:0"
+     "score": "3:1"
     },
     {
      "match": "Al Arabi v Khaitan SC",
@@ -949,7 +949,7 @@
      "match": "Atletico Nacional v Independiente Medellin",
      "selection": "Home",
      "result": "pending",
-     "score": "1:1"
+     "score": "3:1"
     },
     {
      "match": "Celta v Bournemouth",
@@ -967,13 +967,13 @@
      "match": "CF Monterrey v CF America",
      "selection": "Home",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Barcelona SC v CSD Independiente del Valle",
      "selection": "Away",
      "result": "pending",
-     "score": "0:1"
+     "score": "1:1"
     },
     {
      "match": "Mara Sugar FC v Kenya Police FC",
@@ -1099,7 +1099,7 @@
    "name": "Reverse U4.5 + Draw · HIGH RISK",
    "kind": "slip",
    "odds": 27.1,
-   "status": "pending",
+   "status": "lost",
    "hit": 0,
    "total": 10,
    "legs": [
@@ -1112,8 +1112,8 @@
     {
      "match": "Udelas FC v Chorrillo FC",
      "selection": "Yes",
-     "result": "pending",
-     "score": "0:0"
+     "result": "lost",
+     "score": "0:1"
     },
     {
      "match": "Brighton v CS Universitatea Craiova",
@@ -1216,7 +1216,7 @@
    "kind": "slip",
    "odds": 1704.21,
    "status": "pending",
-   "hit": 1,
+   "hit": 2,
    "total": 32,
    "legs": [
     {
@@ -1313,7 +1313,7 @@
      "match": "CF Monterrey v CF America",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "URA FC v Kigezi Homeboyz FC",
@@ -1330,8 +1330,8 @@
     {
      "match": "Barcelona SC v CSD Independiente del Valle",
      "selection": "Over 0.5",
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "1:1"
     },
     {
      "match": "Baku SC v Shahdagh-Samur Gusar",
@@ -1343,7 +1343,7 @@
      "match": "CSD Municipal v Aurora FC",
      "selection": "Home",
      "result": "pending",
-     "score": "0:0"
+     "score": "3:1"
     },
     {
      "match": "Gor Mahia FC v Mombasa United FC",
@@ -1420,15 +1420,15 @@
    "name": "High Odds · HIGH RISK",
    "kind": "slip",
    "odds": 191.47,
-   "status": "pending",
-   "hit": 0,
+   "status": "lost",
+   "hit": 1,
    "total": 17,
    "legs": [
     {
      "match": "Udelas FC v Chorrillo FC",
      "selection": "Yes",
-     "result": "pending",
-     "score": "0:0"
+     "result": "lost",
+     "score": "0:1"
     },
     {
      "match": "Uttaradit Saksiam FC v Songkhla FC",
@@ -1512,13 +1512,13 @@
      "match": "CSD Municipal v Aurora FC",
      "selection": "Home",
      "result": "pending",
-     "score": "0:0"
+     "score": "3:1"
     },
     {
      "match": "Barcelona SC v CSD Independiente del Valle",
      "selection": "Over 0.5",
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "1:1"
     },
     {
      "match": "Umm-Salal SC v AL Rayyan Nextgen",
@@ -1535,8 +1535,8 @@
    "name": "Master Early · HIGH RISK",
    "kind": "slip",
    "odds": 64.89,
-   "status": "pending",
-   "hit": 1,
+   "status": "lost",
+   "hit": 2,
    "total": 17,
    "legs": [
     {
@@ -1548,14 +1548,14 @@
     {
      "match": "Barcelona SC v CSD Independiente del Valle",
      "selection": "Over 0.5",
-     "result": "pending",
-     "score": "0:1"
+     "result": "won",
+     "score": "1:1"
     },
     {
      "match": "Udelas FC v Chorrillo FC",
      "selection": "Yes",
-     "result": "pending",
-     "score": "0:0"
+     "result": "lost",
+     "score": "0:1"
     },
     {
      "match": "Real Esteli FC v Rancho Santana FC",
@@ -1573,13 +1573,13 @@
      "match": "CSD Municipal v Aurora FC",
      "selection": "Home",
      "result": "pending",
-     "score": "0:0"
+     "score": "3:1"
     },
     {
      "match": "CF Monterrey v CF America",
      "selection": "Over 0.5",
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Baku SC v Shahdagh-Samur Gusar",
@@ -1821,7 +1821,7 @@
      "match": "CSD Municipal v Aurora FC",
      "selection": "Home",
      "result": "pending",
-     "score": "0:0"
+     "score": "3:1"
     },
     {
      "match": "Gor Mahia FC v Mombasa United FC",
