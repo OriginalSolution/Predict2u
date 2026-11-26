@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-26T08:16:08Z",
+ "DATA_UPDATED": "2026-11-26T10:02:35Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -645,9 +645,9 @@
   }
  ],
  "picks": {
-  "settled": 4816,
-  "won": 3587,
-  "lost": 1229,
+  "settled": 4786,
+  "won": 3565,
+  "lost": 1221,
   "winRate": 74.5
  },
  "recent": [
@@ -1011,7 +1011,7 @@
      "selection": "Away",
      "odds": 1.33,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "CSD Municipal v Aurora FC",
@@ -1207,7 +1207,7 @@
      "selection": "Away",
      "odds": 1.33,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "CSD Municipal v Aurora FC",
@@ -1298,7 +1298,7 @@
      "selection": "Away",
      "odds": 1.33,
      "result": "pending",
-     "score": null
+     "score": "0:0"
     },
     {
      "match": "Uttaradit Saksiam FC v Songkhla FC",
@@ -1508,7 +1508,7 @@
      "selection": "Home",
      "odds": 2.0,
      "result": "pending",
-     "score": null
+     "score": "1:2"
     },
     {
      "match": "CF Monterrey v CF America",
@@ -4229,7 +4229,7 @@
    "kind": "slip",
    "odds": 101765.85,
    "status": "lost",
-   "hit": 9,
+   "hit": 0,
    "total": 53,
    "profit": -10.0,
    "legs": [
@@ -4237,7 +4237,7 @@
      "match": "Lech II Poznan v Baltyk Koszalin",
      "selection": "Yes",
      "odds": 8.25,
-     "result": "lost",
+     "result": "pending",
      "score": "2:0"
     },
     {
@@ -4335,7 +4335,7 @@
      "match": "FC Kryvbas Kriviy Rih v FC Kharkiv",
      "selection": "Over 1.5",
      "odds": 1.04,
-     "result": "won",
+     "result": "pending",
      "score": "0:2"
     },
     {
@@ -4349,7 +4349,7 @@
      "match": "Sabah Masazir Srl v Barcelona SRL",
      "selection": "Over 1.5",
      "odds": 1.06,
-     "result": "won",
+     "result": "pending",
      "score": "2:3"
     },
     {
@@ -4447,28 +4447,28 @@
      "match": "Atletico Madrid SRL v Viking FK Srl",
      "selection": "Over 1.5",
      "odds": 1.35,
-     "result": "won",
+     "result": "pending",
      "score": "3:0"
     },
     {
      "match": "Inter SRL v VfB Stuttgart Srl",
      "selection": "Over 1.5",
      "odds": 1.1,
-     "result": "won",
+     "result": "pending",
      "score": "6:1"
     },
     {
      "match": "Lille SRL v Bayern SRL",
      "selection": "Over 1.5",
      "odds": 1.05,
-     "result": "won",
+     "result": "pending",
      "score": "1:3"
     },
     {
      "match": "PSG SRL v Roma SRL",
      "selection": "Over 1.5",
      "odds": 1.16,
-     "result": "won",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -4496,7 +4496,7 @@
      "match": "Pro Patria Busto Arsizio v SSD Sanremese Calcio",
      "selection": "Under 3.5",
      "odds": 1.19,
-     "result": "lost",
+     "result": "pending",
      "score": "6:5"
     },
     {
