@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-27T01:46:01Z",
+ "DATA_UPDATED": "2026-11-27T02:16:15Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -645,10 +645,10 @@
   }
  ],
  "picks": {
-  "settled": 5238,
-  "won": 3920,
-  "lost": 1318,
-  "winRate": 74.8
+  "settled": 5144,
+  "won": 3844,
+  "lost": 1300,
+  "winRate": 74.7
  },
  "recent": [
   {
@@ -2228,14 +2228,14 @@
      "match": "Makeni All Stars v Power Dynamos",
      "selection": "Under 3.5",
      "odds": 1.18,
-     "result": "won",
+     "result": "pending",
      "score": "2:1"
     },
     {
      "match": "Boca Juniors v Independiente Rivadavia",
      "selection": "Under 3.5",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "2:0"
     },
     {
@@ -2277,7 +2277,7 @@
      "match": "Juventus v AC Omonia Nicosia",
      "selection": "Juventus",
      "odds": 1.1,
-     "result": "won",
+     "result": "pending",
      "score": "4:1"
     },
     {
@@ -2291,14 +2291,14 @@
      "match": "Lyon v Lillestroem SK",
      "selection": "Lyon",
      "odds": 6.0,
-     "result": "lost",
+     "result": "pending",
      "score": "0:0"
     },
     {
      "match": "Sunderland AFC v Jagiellonia Bialystok",
      "selection": "Sunderland AFC",
      "odds": 12.0,
-     "result": "lost",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -2312,14 +2312,14 @@
      "match": "Salzburg v FC Ararat-Armenia",
      "selection": "Salzburg",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "2:0"
     },
     {
      "match": "Marseille v PFC Levski Sofia",
      "selection": "Marseille",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "1:0"
     },
     {
@@ -2332,7 +2332,7 @@
     {
      "match": "Roma v Monza",
      "selection": "Roma",
-     "odds": 1.22,
+     "odds": 1.21,
      "result": "pending",
      "score": null
     },
@@ -2354,14 +2354,14 @@
      "match": "Ajax v FC Thun",
      "selection": "Ajax",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "4:0"
     },
     {
      "match": "Brighton v CS Universitatea Craiova",
      "selection": "Brighton",
      "odds": 1.03,
-     "result": "won",
+     "result": "pending",
      "score": "4:0"
     },
     {
@@ -2676,7 +2676,7 @@
      "match": "Juventus v AC Omonia Nicosia",
      "selection": "Juventus",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "4:1"
     },
     {
@@ -2690,14 +2690,14 @@
      "match": "Lyon v Lillestroem SK",
      "selection": "Lyon",
      "odds": 5.9,
-     "result": "lost",
+     "result": "pending",
      "score": "0:0"
     },
     {
      "match": "Sunderland AFC v Jagiellonia Bialystok",
      "selection": "Sunderland AFC",
      "odds": 11.5,
-     "result": "lost",
+     "result": "pending",
      "score": "1:1"
     },
     {
@@ -2711,14 +2711,14 @@
      "match": "FC Salzburg v FC Ararat-Armenia",
      "selection": "FC Salzburg",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "2:0"
     },
     {
      "match": "Olympique Marseille v PFC Levski Sofia",
      "selection": "Olympique Marseille",
      "odds": 1.02,
-     "result": "won",
+     "result": "pending",
      "score": "1:0"
     },
     {
@@ -2731,7 +2731,7 @@
     {
      "match": "Roma v Monza",
      "selection": "Roma",
-     "odds": 1.22,
+     "odds": 1.21,
      "result": "pending",
      "score": null
     },
@@ -2753,14 +2753,14 @@
      "match": "Ajax Amsterdam v FC Thun",
      "selection": "Ajax Amsterdam",
      "odds": 1.01,
-     "result": "won",
+     "result": "pending",
      "score": "4:0"
     },
     {
      "match": "Brighton v CS Universitatea Craiova",
      "selection": "Brighton",
      "odds": 1.04,
-     "result": "won",
+     "result": "pending",
      "score": "4:0"
     },
     {
@@ -2970,7 +2970,7 @@
      "match": "FC Iberia 1999 v Getafe",
      "selection": "Getafe",
      "odds": 150.0,
-     "result": "lost",
+     "result": "pending",
      "score": "1:0"
     }
    ]
@@ -3117,7 +3117,7 @@
      "match": "FC Iberia 1999 v Getafe",
      "selection": "Getafe",
      "odds": 150.0,
-     "result": "lost",
+     "result": "pending",
      "score": "1:0"
     }
    ]
