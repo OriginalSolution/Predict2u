@@ -20,6 +20,7 @@ Bookmaker codes: sportybet from the source `code`; optional `msport` / `onexbet`
 fields on a source slip are passed through. Empty bookmakers are omitted.
 """
 import json, os, sys, datetime as dt
+import slip_order
 SRC = (__import__('os').environ.get('INBOX_PARENT', (__import__('os').environ.get('ENGINE_DIR','')+'/inbox') if __import__('os').environ.get('ENGINE_DIR') else '/workspace/picks_export'))
 SOURCES = []  # free lists are house strategy only (predict2u-research); never tipster/bot exports
 MIN_TOTAL_ODDS = 25  # only slips whose total odds are >= this are published (site, emails, Telegram)
@@ -97,7 +98,9 @@ if os.path.exists(_rf):
             legs = []
             for l in s.get('legs') or []:
                 c = _conf.get(l.get('eventId')); c = c if isinstance(c, (int, float)) else None
-                legs.append({'date': l.get('date'), 'kickoff': ko_iso(l.get('date'), l.get('ko')), 'league': l.get('league'),
+                _day = slip_order.leg_date(l, today.isoformat())
+                _ko = l.get('ko') or l.get('kickoff')
+                legs.append({'date': _day, 'kickoff': ko_iso(_day, _ko), 'league': l.get('league'),
                     'match': l.get('match'), 'market': l.get('market'), 'selection': l.get('selection'), 'odds': l.get('odds'),
                     'score': score(l.get('odds'), c), 'result': (l.get('result') or 'pending').lower()})
             if not legs: continue
@@ -112,7 +115,7 @@ if os.path.exists(_rf):
       if _sl.get('risk') in ('safe','medium'):
         _sl.setdefault('dates', [])
         if _rday not in _sl['dates']: _sl['dates'].append(_rday)
-        _sl['dates']=sorted(set(_sl['dates']))
+        _sl['dates']=sorted({d for d in _sl['dates'] if slip_order.ymd(d)}) or [today.isoformat()]
         _sl['date']=_sl['dates'][0]
 
 # High-Scoring O1.5/O2.5 (hs_goals.py, HANDOFF 5.9): its banker codes live in the strategy record so a
@@ -140,11 +143,16 @@ try:
 except Exception as e: print('hs15 live slips skipped', e, file=sys.stderr)
 _rday = os.path.basename(_rf)[:10] if '_rf' in dir() and _rf else today.isoformat()
 for sl in slips:
-    L = sl['legs']; L.sort(key=lambda x: x['kickoff'] or '')
-    sl['dates'] = sorted({x['date'] for x in L}); sl['date'] = sl['dates'][0]; sl['firstKickoff'] = L[0]['kickoff']
+    L = sl['legs']
+    for x in L:
+        if not slip_order.ymd(x.get('date')):
+            x['date'] = slip_order.leg_date(x, today.isoformat())
+    L.sort(key=lambda x: x.get('kickoff') or '')
+    sl['dates'] = sorted({x['date'] for x in L if slip_order.ymd(x.get('date'))}) or [today.isoformat()]
+    sl['date'] = sl['dates'][0]; sl['firstKickoff'] = L[0].get('kickoff')
     # Keep Safe/Medium visible on the research card day (legs may all be tomorrow)
     if sl.get('risk') in ('safe','medium'):
-        sl['dates'] = sorted(set(sl.get('dates') or []) | {_rday, today.isoformat()})
+        sl['dates'] = sorted({d for d in list(sl.get('dates') or []) + [_rday, today.isoformat()] if slip_order.ymd(d)}) or [today.isoformat()]
         sl['date'] = min(sl['dates'])
     tot = comb = 1.0
     for x in L: tot *= float(x['odds'] or 1); comb *= x['score']
@@ -180,7 +188,7 @@ def _live(sl):
 slips = [sl for sl in slips if _live(sl)]
 def _risk_ord(s):
     return {'safe':0,'medium':1,'high':2}.get(s.get('risk'), 3 if s.get('house') else 4)
-slips.sort(key=lambda s: (s['date'], _risk_ord(s), s['grade'], -s['rating']))
+slips.sort(key=lambda s: slip_order.slip_sort_key(s, _risk_ord))
 n = {}
 for sl in slips:
     n[sl['date']] = n.get(sl['date'], 0) + 1; sl['label'] = f"Slip {n[sl['date']]}"

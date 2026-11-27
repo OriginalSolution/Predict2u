@@ -1,6 +1,7 @@
 import datetime as dt
 from engine.combine import (
-    dedupe_one_per_game, filter_legs, is_started, pack_slips, process, product,
+    dedupe_one_per_game, ensure_slip_date, filter_legs, is_started, pack_slips, process, product,
+    stamp_date,
 )
 
 
@@ -69,6 +70,18 @@ def test_is_started_numeric_ts():
     now = dt.datetime(2026, 11, 6, 12, 0, tzinfo=dt.timezone.utc)
     assert is_started({"ts": dt.datetime(2026, 11, 6, 11, 0, tzinfo=dt.timezone.utc).timestamp() * 1000}, now=now)
     assert not is_started({"ts": dt.datetime(2026, 11, 6, 13, 0, tzinfo=dt.timezone.utc).timestamp() * 1000}, now=now)
+
+
+def test_pack_stamps_date_from_kickoff_or_today():
+    dated = _p(date=None)
+    slips = pack_slips([dated], min_odds=1, today="2026-11-27")
+    assert slips[0]["date"] == "2026-11-07"
+    assert slips[0]["legs"][0]["date"] == "2026-11-07"
+    blank = {"match": "A v B", "odds": 2.0, "eventId": "sr:match:9", "date": None, "kickoff": None}
+    assert stamp_date(blank, today="2026-11-27") == "2026-11-27"
+    slip = {"name": "Combined selection", "date": None, "legs": [blank]}
+    assert ensure_slip_date(slip, today="2026-11-27") == "2026-11-27"
+    assert slip["legs"][0]["date"] == "2026-11-27"
 
 
 def test_process_combines_short_inbox_slips():

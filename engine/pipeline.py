@@ -82,7 +82,12 @@ def _book_combined(env, day, dry_run=False):
     slips = data.get("combinedSlips") or []
     if not slips:
         return
+    # Combined legs decoded from a share code have kickoff and no date. Stamp every
+    # slip on the research file (including one already booked) before publish.
+    for pub in data.get("slips") or []:
+        combine.ensure_slip_date(pub, today=day)
     for s in slips:
+        combine.ensure_slip_date(s, today=day)
         if s.get("codes"):
             continue
         if dry_run:
@@ -91,13 +96,15 @@ def _book_combined(env, day, dry_run=False):
         books = book_all(s.get("legs") or [])
         s["codes"] = books
         sporty = (books.get("sportybet") or {}).get("code") if isinstance(books.get("sportybet"), dict) else None
-        data.setdefault("slips", []).append({
+        published = {
             "name": s.get("name") or "Combined selection",
             "totalOdds": s.get("odds"),
             "legs": s.get("legs") or [],
             "codes": {"sportybet": sporty} if sporty else {},
             "bookCodes": books,
-        })
+        }
+        combine.ensure_slip_date(published, today=day)
+        data.setdefault("slips", []).append(published)
         print("combined booked", s.get("label"), s.get("odds"), {k: (v or {}).get("code") if isinstance(v, dict) else v for k, v in books.items()})
     path.write_text(json.dumps(data, indent=1, ensure_ascii=False))
 

@@ -22,6 +22,7 @@ import sys
 if str(VENDOR_DIR) not in sys.path:
     sys.path.insert(0, str(VENDOR_DIR))
 import matchup_rules as mr  # noqa: E402
+import slip_order  # noqa: E402
 
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
 MIN_SLIP_DEFAULT = 25
@@ -67,6 +68,34 @@ def load_min_odds() -> float:
         return float(json.loads(cfg.read_text()).get("min_main_slip_odds") or MIN_SLIP_DEFAULT)
     except Exception:
         return float(MIN_SLIP_DEFAULT)
+
+
+def stamp_date(p, today=None):
+    """Every leg needs YYYY-MM-DD. Use kickoff when date is missing, else today."""
+    day = today or dt.datetime.now(dt.timezone.utc).date().isoformat()
+    if not isinstance(day, str):
+        day = day.isoformat()
+    if not isinstance(p, dict):
+        return str(day)[:10]
+    return slip_order.stamp_leg(p, str(day)[:10])
+
+
+def ensure_slip_date(slip, today=None):
+    """Fill a missing slip date from its legs (or today) and stamp each leg."""
+    day = today or dt.datetime.now(dt.timezone.utc).date().isoformat()
+    if not isinstance(day, str):
+        day = day.isoformat()
+    day = str(day)[:10]
+    if not isinstance(slip, dict):
+        return day
+    dates = []
+    for leg in slip.get("legs") or []:
+        if isinstance(leg, dict):
+            dates.append(stamp_date(leg, today=day))
+    if not slip_order.ymd(slip.get("date")):
+        good = sorted({d for d in dates if d})
+        slip["date"] = good[0] if good else day
+    return slip["date"]
 
 
 def product(legs) -> float:
@@ -125,7 +154,7 @@ def decode_share(code: str) -> list[dict]:
                     odds = float(o.get("odds") or 0)
                 except Exception:
                     odds = 0
-                out.append({
+                row = {
                     "eventId": ev.get("eventId"),
                     "match": f"{home} v {away}",
                     "league": lg,
@@ -139,7 +168,9 @@ def decode_share(code: str) -> list[dict]:
                     "ts": ts,
                     "matchStatus": ev.get("matchStatus") or ev.get("status"),
                     "sourceCode": code,
-                })
+                }
+                stamp_date(row)
+                out.append(row)
     return out
 
 
@@ -220,10 +251,14 @@ def dedupe_one_per_game(picks):
     return kept, dropped
 
 
-def pack_slips(legs, min_odds=None):
+def pack_slips(legs, min_odds=None, today=None):
     """Pack legs into slips at or above min_odds. Do not drop a leftover under-25 group; merge it."""
     min_odds = float(min_odds if min_odds is not None else load_min_odds())
-    ordered = sorted(legs, key=lambda p: (p.get("kickoff") or p.get("ko") or "", p.get("match") or ""))
+    day = today or dt.datetime.now(dt.timezone.utc).date().isoformat()
+    for p in legs:
+        if isinstance(p, dict):
+            stamp_date(p, today=day)
+    ordered = sorted(legs, key=lambda p: (p.get("date") or p.get("kickoff") or p.get("ko") or "", p.get("match") or ""))
     slips, cur = [], []
     for p in ordered:
         cur.append(p)
@@ -237,14 +272,16 @@ def pack_slips(legs, min_odds=None):
             slips.append(cur)
     out = []
     for i, s in enumerate(slips, 1):
-        out.append({
+        slip = {
             "name": "Combined selection",
             "label": f"Combined {i}",
             "odds": product(s),
             "legs": s,
             "minOdds": min_odds,
             "meetsFloor": product(s) >= min_odds,
-        })
+        }
+        ensure_slip_date(slip, today=day)
+        out.append(slip)
     return out
 
 
