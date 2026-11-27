@@ -31,6 +31,7 @@ HERE = Path(__file__).resolve().parent
 sys.path[:0] = [str(HERE), str(HERE.parent), str(HERE.parent.parent)]
 import matchup_rules as MR
 import pick_history as PH
+import slip_order
 from engine.paths import REPO_DIR, RESEARCH_DIR, ENGINE_DIR, INBOX_DIR
 from engine import bookers
 
@@ -258,6 +259,8 @@ def main():
         if ok: kept.append(p)
         else: dropped.append(dict(match=p.get("match"), selection=p.get("selection"), reason=why))
     slip = pack(kept)
+    for p in slip:
+        slip_order.stamp_leg(p, day)
     tot = round(math.prod(float(p["odds"]) for p in slip), 2) if slip else 0
     print(f"verzzify: candidates {len(kept)} packed {len(slip)} @{tot} (dropped {len(dropped)})")
     if not slip:
@@ -272,7 +275,7 @@ def main():
     # Merge into today's inbox slips so high_odds + bankers publish pick it up
     inbox = load_json(d / f"{day}.json", {"date": day, "slips": []}) or {"date": day, "slips": []}
     inbox["slips"] = [s for s in (inbox.get("slips") or []) if s.get("strategy") != "verzzify-edge-banker"]
-    inbox["slips"].insert(0, dict(name=rec["name"], code=sb, odds=tot, legs=rec["legs"], strategy="verzzify-edge-banker",
+    inbox["slips"].insert(0, dict(name=rec["name"], code=sb, odds=tot, date=day, legs=rec["legs"], strategy="verzzify-edge-banker",
                                   verification=rec["verification"], codes={k: v["code"] for k, v in codes.items()},
                                   links={k: v["link"] for k, v in codes.items()}, bookOdds={k: v["odds"] for k, v in codes.items()},
                                   bookPicks={k: v["legs"] for k, v in codes.items()}))
@@ -282,7 +285,7 @@ def main():
     hp = load_json(REPO_DIR / "home-picks.json")
     if hp is not None and sb:
         slips = [s for s in (hp.get("slips") or []) if not s.get("verzzify")]
-        slips.insert(0, dict(name="Main · Verzzify Edge Banker", totalOdds=tot, legs=rec["legs"],
+        slips.insert(0, dict(name="Main · Verzzify Edge Banker", totalOdds=tot, date=day, legs=rec["legs"],
                              codes={k: v["code"] for k, v in codes.items()}, bookOdds={k: v["odds"] for k, v in codes.items()},
                              bookPicks={k: v["legs"] for k, v in codes.items()}, verzzify=True,
                              verification=rec["verification"]))
