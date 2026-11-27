@@ -2194,6 +2194,173 @@
     }
    ],
    "mixed": "built"
+  },
+  "2026-11-27": {
+   "built": "2026-11-27 21:46 GMT",
+   "slips": {
+    "M1": {
+     "name": "M1 Team or Over 2.5",
+     "codes": {
+      "sportybet": "CKJLBS",
+      "footballcom": "CKJLBS",
+      "msport": "B3Q61SN"
+     },
+     "total": 1.51,
+     "legs": 6,
+     "meetsFloor": false,
+     "result": "pending"
+    },
+    "M2": {
+     "name": "M2 Double Chance & Over 1.5",
+     "codes": {
+      "sportybet": "BKU36S",
+      "footballcom": "BKU36S",
+      "msport": "B3Q61T9",
+      "betika": "JyJvnW"
+     },
+     "total": 1.06,
+     "legs": 1,
+     "meetsFloor": false,
+     "result": "pending"
+    },
+    "MIXED": {
+     "name": "M1/M2 team 2+",
+     "codes": {
+      "sportybet": "BM6B0M",
+      "footballcom": "BM6B0M",
+      "msport": "B3Q61U4",
+      "betika": "fwM3ny",
+      "betpawa": "NPQP29O"
+     },
+     "total": 4.87,
+     "legs": 8,
+     "meetsFloor": false,
+     "result": "pending"
+    }
+   },
+   "dropped": [
+    {
+     "match": "Real Madrid v Alaves",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "Home Team or Over 2.5 not allowed in a middle game (fav @1.15, table 3 v 9/20)"
+    },
+    {
+     "match": "Real Madrid v Alaves",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.15, table 3 v 9/20)"
+    },
+    {
+     "match": "Real Madrid v Alaves",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "Home over 1.5 goals not allowed in a middle game (fav @1.15, table 3 v 9/20)"
+    },
+    {
+     "match": "Inter v Genoa",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Inter v Genoa",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Stuttgart v Dynamo Dresden",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Stuttgart v Dynamo Dresden",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Bayern Munich v Hertha",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Bayern Munich v Hertha",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Bayern Munich v Hertha",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Tremblay FC v Red Star FC",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Tremblay FC v Red Star FC",
+     "rule": "T2",
+     "selection": "Away over 1.5 goals",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Musselburgh Athletic FC v Airdrieonians FC",
+     "rule": "M1",
+     "selection": "Away or Over 2.5",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Musselburgh Athletic FC v Airdrieonians FC",
+     "rule": "T2",
+     "selection": "Away over 1.5 goals",
+     "reason": "no league table to verify the matchup"
+    },
+    {
+     "match": "Slavia Prague v FC Banik Ostrava",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Czechia - 1. Liga: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "Rangers v Falkirk FC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "both teams in league top 5 (2 v 4/12)"
+    },
+    {
+     "match": "Rangers v Falkirk FC",
+     "rule": "T2",
+     "selection": "Home over 1.5 goals",
+     "reason": "both teams in league top 5 (2 v 4/12)"
+    },
+    {
+     "match": "Al Wasl FC v Al Dhafra SSC",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — United Arab Emirates - Arabian Gulf League: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "CA Nacional Potosi v Oriente Petrolero",
+     "rule": "M1",
+     "selection": "Home Team or Over 2.5",
+     "reason": "HARD VETO: obscure league goals-only — Bolivia - Division Profesional: non-goals market Home Team or Over 2.5 not allowed"
+    },
+    {
+     "match": "CA Nacional Potosi v Oriente Petrolero",
+     "rule": "M2",
+     "selection": "Home/Draw & Over 1.5",
+     "reason": "Home/Draw & Over 1.5 not allowed in a middle game (fav @1.15, table 8 v 5/16)"
+    }
+   ],
+   "mixed": "built"
   }
  }
 }
