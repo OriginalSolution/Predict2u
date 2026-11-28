@@ -1,0 +1,2829 @@
+{
+ "date": "2026-11-28",
+ "generatedAt": "2026-11-28T07:03:46.822821+00:00",
+ "eligible": 132,
+ "picked": 75,
+ "picks": [
+  {
+   "eventId": "sr:match:72531684",
+   "match": "AVS Futebol SAD v Leixoes SC",
+   "league": "Portugal - Liga Portugal 2",
+   "market": "2nd Half - Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.48,
+   "marketId": "85",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.781,
+   "implied": 0.6757,
+   "ev": 0.1559,
+   "why": "season+form; λ 1.85-1.12; model 78% vs implied 68% (edge 16%); table 10 v 11/18",
+   "lambda": [
+    1.848,
+    1.125
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "11:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72514004",
+   "match": "Holstein Kiel v 1 FC Kaiserslautern",
+   "league": "Germany - 2. Bundesliga",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.44,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.8072,
+   "implied": 0.6944,
+   "ev": 0.1624,
+   "why": "season+form+h2h; λ 1.12-1.14; model 81% vs implied 69% (edge 16%); table 18 v 3/18",
+   "lambda": [
+    1.119,
+    1.142
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "12:00",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 1.5",
+     "odds": 1.52,
+     "ev": 0.1086,
+     "true_p": 0.7293
+    },
+    {
+     "market": "Away O/U",
+     "selection": "Under 1.5",
+     "odds": 1.58,
+     "ev": 0.0803,
+     "true_p": 0.6837
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72514002",
+   "match": "Dynamo Dresden v FC St. Pauli",
+   "league": "Germany - 2. Bundesliga",
+   "market": "Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.57,
+   "marketId": "10",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.6883,
+   "implied": 0.6369,
+   "ev": 0.0807,
+   "why": "season+form+h2h; λ 1.46-1.20; model 69% vs implied 64% (edge 8%); table 14 v 8/18",
+   "lambda": [
+    1.457,
+    1.201
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "12:00",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.47,
+     "ev": 0.0636,
+     "true_p": 0.7235
+    },
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.46,
+     "ev": 0.0622,
+     "true_p": 0.7276
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72513998",
+   "match": "Hertha v Karlsruher SC",
+   "league": "Germany - 2. Bundesliga",
+   "market": "Over/Under",
+   "selection": "Under 4.5",
+   "odds": 1.38,
+   "marketId": "18",
+   "specifier": "total=4.5",
+   "outcomeId": "13",
+   "true_p": 0.7625,
+   "implied": 0.7246,
+   "ev": 0.0522,
+   "why": "season+form+h2h; λ 2.32-0.98; model 76% vs implied 72% (edge 5%); table 1 v 16/18",
+   "lambda": [
+    2.324,
+    0.977
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "12:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72340082",
+   "match": "Blackburn Rovers v Charlton Athletic",
+   "league": "England - Championship",
+   "market": "Draw No Bet",
+   "selection": "Home",
+   "odds": 1.54,
+   "marketId": "11",
+   "specifier": "",
+   "outcomeId": "4",
+   "true_p": 0.6901,
+   "implied": 0.6494,
+   "ev": 0.0627,
+   "why": "season+form+h2h; λ 1.74-1.09; model 69% vs implied 65% (edge 6%); table 13 v 19/24",
+   "lambda": [
+    1.738,
+    1.085
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "12:30",
+   "alternatives": [
+    {
+     "market": "1st Half - Draw No Bet",
+     "selection": "Home",
+     "odds": 1.6,
+     "ev": 0.0422,
+     "true_p": 0.6514
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72723356",
+   "match": "Samsunspor v Genclerbirligi SK",
+   "league": "Turkiye - Super Lig",
+   "market": "2nd Half - Double Chance",
+   "selection": "Draw or Away",
+   "odds": 1.6,
+   "marketId": "85",
+   "specifier": "",
+   "outcomeId": "11",
+   "true_p": 0.7356,
+   "implied": 0.625,
+   "ev": 0.177,
+   "why": "season+form+h2h; λ 1.32-1.76; model 74% vs implied 62% (edge 18%); table 17 v 14/18",
+   "lambda": [
+    1.323,
+    1.759
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "13:00",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Under 2.5",
+     "odds": 1.27,
+     "ev": 0.0819,
+     "true_p": 0.8519
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76735504",
+   "match": "La Roche Vendee Football v Voltigeurs de Chateaubriant",
+   "league": "France - Coupe de France",
+   "market": "Home O/U",
+   "selection": "Under 2.5",
+   "odds": 1.5,
+   "marketId": "19",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.7625,
+   "implied": 0.6667,
+   "ev": 0.1437,
+   "why": "season+form; λ 1.68-1.05; model 76% vs implied 67% (edge 14%)",
+   "lambda": [
+    1.68,
+    1.05
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "13:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:76163324",
+   "match": "Young Africans SC v MC Alger",
+   "league": "International Clubs - CAF Champions League",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.53,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "true_p": 0.7353,
+   "implied": 0.6536,
+   "ev": 0.1251,
+   "why": "season+form+h2h; λ 1.62-0.99; model 74% vs implied 65% (edge 13%); table 1 v 1/4",
+   "lambda": [
+    1.624,
+    0.99
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "13:00",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Over 0.5",
+     "odds": 1.55,
+     "ev": 0.072,
+     "true_p": 0.6916
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72083164",
+   "match": "FK Radnik Surdulica v FK Vojvodina Novi Sad",
+   "league": "Serbia - Superliga",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.53,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.7295,
+   "implied": 0.6536,
+   "ev": 0.1162,
+   "why": "season+form+h2h; λ 1.17-1.46; model 73% vs implied 65% (edge 12%); table 6 v 2/14",
+   "lambda": [
+    1.173,
+    1.456
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "13:00",
+   "alternatives": [
+    {
+     "market": "Away O/U",
+     "selection": "Under 2.5",
+     "odds": 1.31,
+     "ev": 0.0738,
+     "true_p": 0.8197
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 1.5",
+     "odds": 1.56,
+     "ev": 0.0431,
+     "true_p": 0.6686
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72083156",
+   "match": "FK Zemun v FK Radnicki 1923 Kragujevac",
+   "league": "Serbia - Superliga",
+   "market": "Away O/U",
+   "selection": "Under 2.5",
+   "odds": 1.29,
+   "marketId": "20",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8304,
+   "implied": 0.7752,
+   "ev": 0.0712,
+   "why": "season+form+h2h; λ 1.15-1.41; model 83% vs implied 78% (edge 7%); table 14 v 4/14",
+   "lambda": [
+    1.151,
+    1.413
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "13:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72735942",
+   "match": "Van Spor FK v Bursaspor",
+   "league": "Turkiye - 1. Lig",
+   "market": "Away O/U",
+   "selection": "Under 2.5",
+   "odds": 1.4,
+   "marketId": "20",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.7499,
+   "implied": 0.7143,
+   "ev": 0.0498,
+   "why": "season+form+h2h; λ 1.32-1.73; model 75% vs implied 71% (edge 5%); table 12 v 1/20",
+   "lambda": [
+    1.319,
+    1.728
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "13:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:76735446",
+   "match": "Epinal v Amiens",
+   "league": "France - Coupe de France",
+   "market": "Home O/U",
+   "selection": "Over 0.5",
+   "odds": 1.53,
+   "marketId": "19",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7359,
+   "implied": 0.6536,
+   "ev": 0.1259,
+   "why": "season+form+h2h; λ 1.33-1.52; model 74% vs implied 65% (edge 13%)",
+   "lambda": [
+    1.331,
+    1.522
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "14:00",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Over 1.5",
+     "odds": 1.37,
+     "ev": 0.0658,
+     "true_p": 0.7779
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Over 0.5",
+     "odds": 1.46,
+     "ev": 0.0558,
+     "true_p": 0.7231
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72796036",
+   "match": "FK Teplice v FC Slovan Liberec",
+   "league": "Czechia - 1. Liga",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.37,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.8217,
+   "implied": 0.7299,
+   "ev": 0.1258,
+   "why": "season+form+h2h; λ 1.13-1.06; model 82% vs implied 73% (edge 13%); table 6 v 5/16",
+   "lambda": [
+    1.125,
+    1.062
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "14:00",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 1.5",
+     "odds": 1.45,
+     "ev": 0.0751,
+     "true_p": 0.7414
+    },
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.47,
+     "ev": 0.0591,
+     "true_p": 0.7205
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:77150268",
+   "match": "Chennaiyin FC v Mumbai City",
+   "league": "India - Indian Super League",
+   "market": "2nd Half - Double Chance",
+   "selection": "Draw or Away",
+   "odds": 1.5,
+   "marketId": "85",
+   "specifier": "",
+   "outcomeId": "11",
+   "true_p": 0.7294,
+   "implied": 0.6667,
+   "ev": 0.0941,
+   "why": "season+form+h2h; λ 1.16-1.41; model 73% vs implied 67% (edge 9%); table 8 v 11/13",
+   "lambda": [
+    1.165,
+    1.406
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "14:00",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.45,
+     "ev": 0.0765,
+     "true_p": 0.7424
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:73093164",
+   "match": "Carrarese Calcio v Juve Stabia",
+   "league": "Italy - Serie B",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.32,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.8287,
+   "implied": 0.7576,
+   "ev": 0.0939,
+   "why": "season+form+h2h; λ 1.08-1.07; model 83% vs implied 76% (edge 9%); table 16 v 12/20",
+   "lambda": [
+    1.078,
+    1.074
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "14:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Draw or Away",
+     "odds": 1.51,
+     "ev": 0.0737,
+     "true_p": 0.711
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 1.5",
+     "odds": 1.41,
+     "ev": 0.0538,
+     "true_p": 0.7474
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:73093162",
+   "match": "Ascoli Calcio 1898 v Virtus Entella",
+   "league": "Italy - Serie B",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.31,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.83,
+   "implied": 0.7634,
+   "ev": 0.0873,
+   "why": "season+form+h2h; λ 1.40-0.75; model 83% vs implied 76% (edge 9%); table 2 v 15/20",
+   "lambda": [
+    1.397,
+    0.748
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "14:00",
+   "alternatives": [
+    {
+     "market": "Away O/U",
+     "selection": "Under 1.5",
+     "odds": 1.29,
+     "ev": 0.0672,
+     "true_p": 0.8273
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 1.5",
+     "odds": 1.4,
+     "ev": 0.0479,
+     "true_p": 0.7485
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:71945430",
+   "match": "Frosinone v Parma Calcio",
+   "league": "Italy - Serie A",
+   "market": "Over/Under",
+   "selection": "Under 4.5",
+   "odds": 1.41,
+   "marketId": "18",
+   "specifier": "total=4.5",
+   "outcomeId": "13",
+   "true_p": 0.7692,
+   "implied": 0.7092,
+   "ev": 0.0846,
+   "why": "season+form+h2h; λ 2.09-1.18; model 77% vs implied 71% (edge 8%); table 6 v 16/20",
+   "lambda": [
+    2.086,
+    1.177
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "14:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Total",
+     "selection": "Under 2.5",
+     "odds": 1.44,
+     "ev": 0.054,
+     "true_p": 0.732
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72531686",
+   "match": "GD Chaves v CD Tondela",
+   "league": "Portugal - Liga Portugal 2",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.34,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "true_p": 0.7986,
+   "implied": 0.7463,
+   "ev": 0.0702,
+   "why": "season+form+h2h; λ 1.25-1.73; model 80% vs implied 75% (edge 7%); table 17 v 7/18",
+   "lambda": [
+    1.252,
+    1.734
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "14:00",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Over 0.5",
+     "odds": 1.42,
+     "ev": 0.0494,
+     "true_p": 0.739
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76554916",
+   "match": "Al Wasl FC v Al Dhafra SSC",
+   "league": "United Arab Emirates - Arabian Gulf League",
+   "market": "Home O/U",
+   "selection": "Under 3.5",
+   "odds": 1.47,
+   "marketId": "19",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.7092,
+   "implied": 0.6803,
+   "ev": 0.0425,
+   "why": "season+form+h2h; λ 2.72-1.34; model 71% vs implied 68% (edge 4%); table 3 v 10/14",
+   "lambda": [
+    2.723,
+    1.337
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "14:15",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72513344",
+   "match": "Paderborn v Schalke",
+   "league": "Germany - Bundesliga",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.55,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.8413,
+   "implied": 0.6452,
+   "ev": 0.3039,
+   "why": "season+form+h2h; λ 1.14-0.95; model 84% vs implied 65% (edge 30%); table 15 v 17/18",
+   "lambda": [
+    1.136,
+    0.951
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "14:30",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 1.5",
+     "odds": 1.59,
+     "ev": 0.2057,
+     "true_p": 0.7583
+    },
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.42,
+     "ev": 0.0618,
+     "true_p": 0.7478
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72513336",
+   "match": "Mainz v Union Berlin",
+   "league": "Germany - Bundesliga",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.55,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7585,
+   "implied": 0.6452,
+   "ev": 0.1756,
+   "why": "season+form+h2h; λ 1.85-1.42; model 76% vs implied 65% (edge 18%); table 10 v 16/18",
+   "lambda": [
+    1.846,
+    1.421
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "14:30",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Under 2.5",
+     "odds": 1.55,
+     "ev": 0.1134,
+     "true_p": 0.7183
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72513338",
+   "match": "Hamburg v Bayern Munich",
+   "league": "Germany - Bundesliga",
+   "market": "Away O/U",
+   "selection": "Under 3.5",
+   "odds": 1.34,
+   "marketId": "20",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.8076,
+   "implied": 0.7463,
+   "ev": 0.0822,
+   "why": "season+form+h2h; λ 1.16-2.26; model 81% vs implied 75% (edge 8%); table 8 v 1/18",
+   "lambda": [
+    1.165,
+    2.259
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "14:30",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Over 0.5",
+     "odds": 1.54,
+     "ev": 0.0596,
+     "true_p": 0.6881
+    },
+    {
+     "market": "Over/Under",
+     "selection": "Under 4.5",
+     "odds": 1.41,
+     "ev": 0.043,
+     "true_p": 0.7397
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76073874",
+   "match": "Elgin City FC v Partick Thistle FC",
+   "league": "Scotland - Scottish Cup",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.58,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.8284,
+   "implied": 0.6329,
+   "ev": 0.309,
+   "why": "season+form; λ 0.65-1.50; model 83% vs implied 63% (edge 31%)",
+   "lambda": [
+    0.653,
+    1.5
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72221424",
+   "match": "Leeds United v Coventry City",
+   "league": "England - Premier League",
+   "market": "Home O/U",
+   "selection": "Under 2.5",
+   "odds": 1.48,
+   "marketId": "19",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8231,
+   "implied": 0.6757,
+   "ev": 0.2182,
+   "why": "season+form+h2h; λ 1.44-0.95; model 82% vs implied 68% (edge 22%); table 12 v 16/20",
+   "lambda": [
+    1.443,
+    0.954
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:00",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.52,
+     "ev": 0.1847,
+     "true_p": 0.7794
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 1.5",
+     "odds": 1.59,
+     "ev": 0.124,
+     "true_p": 0.7069
+    },
+    {
+     "market": "2nd Half - Total",
+     "selection": "Under 2.5",
+     "odds": 1.27,
+     "ev": 0.0832,
+     "true_p": 0.8529
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76073880",
+   "match": "Boness United v Brechin City FC",
+   "league": "Scotland - Scottish Cup",
+   "market": "2nd Half - Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.53,
+   "marketId": "85",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.782,
+   "implied": 0.6536,
+   "ev": 0.1965,
+   "why": "season+form; λ 3.36-1.95; model 78% vs implied 65% (edge 20%)",
+   "lambda": [
+    3.36,
+    1.95
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:00",
+   "alternatives": [
+    {
+     "market": "GG/NG",
+     "selection": "Yes",
+     "odds": 1.42,
+     "ev": 0.1748,
+     "true_p": 0.8273
+    },
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Away",
+     "odds": 1.35,
+     "ev": 0.0437,
+     "true_p": 0.7731
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76073886",
+   "match": "Montrose FC v Hamilton Academical FC",
+   "league": "Scotland - Scottish Cup",
+   "market": "Home O/U",
+   "selection": "Over 0.5",
+   "odds": 1.46,
+   "marketId": "19",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.8073,
+   "implied": 0.6849,
+   "ev": 0.1787,
+   "why": "season+form+h2h; λ 1.65-1.48; model 81% vs implied 68% (edge 18%)",
+   "lambda": [
+    1.647,
+    1.478
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:00",
+   "alternatives": [
+    {
+     "market": "Away O/U",
+     "selection": "Under 2.5",
+     "odds": 1.31,
+     "ev": 0.067,
+     "true_p": 0.8145
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:67015482",
+   "match": "Bodoe/Glimt v KFUM Oslo",
+   "league": "Norway - Eliteserien",
+   "market": "1st Half - Over/Under",
+   "selection": "Under 2.5",
+   "odds": 1.39,
+   "marketId": "68",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8377,
+   "implied": 0.7194,
+   "ev": 0.1644,
+   "why": "season+form+h2h; λ 1.94-1.13; model 84% vs implied 72% (edge 16%); table 2 v 10/16",
+   "lambda": [
+    1.939,
+    1.133
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72340100",
+   "match": "West Ham v Stoke",
+   "league": "England - Championship",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.56,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7444,
+   "implied": 0.641,
+   "ev": 0.1613,
+   "why": "season+form+h2h; λ 1.82-1.36; model 74% vs implied 64% (edge 16%); table 9 v 3/24",
+   "lambda": [
+    1.819,
+    1.364
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72221426",
+   "match": "Man Utd v Brentford",
+   "league": "England - Premier League",
+   "market": "Double Chance",
+   "selection": "Draw or Away",
+   "odds": 1.59,
+   "marketId": "10",
+   "specifier": "",
+   "outcomeId": "11",
+   "true_p": 0.7067,
+   "implied": 0.6289,
+   "ev": 0.1236,
+   "why": "season+form+h2h; λ 1.29-1.69; model 71% vs implied 63% (edge 12%); table 17 v 7/20",
+   "lambda": [
+    1.29,
+    1.687
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:00",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Under 2.5",
+     "odds": 1.27,
+     "ev": 0.0916,
+     "true_p": 0.8595
+    },
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Draw or Away",
+     "odds": 1.48,
+     "ev": 0.0871,
+     "true_p": 0.7345
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76073878",
+   "match": "Annan Athletic FC v Greenock Morton FC",
+   "league": "Scotland - Scottish Cup",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.6,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "true_p": 0.6999,
+   "implied": 0.625,
+   "ev": 0.1198,
+   "why": "season+form+h2h; λ 1.57-2.05; model 70% vs implied 62% (edge 12%)",
+   "lambda": [
+    1.567,
+    2.048
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:00",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Over 0.5",
+     "odds": 1.39,
+     "ev": 0.1,
+     "true_p": 0.7914
+    },
+    {
+     "market": "GG/NG",
+     "selection": "Yes",
+     "odds": 1.57,
+     "ev": 0.0821,
+     "true_p": 0.6893
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72201730",
+   "match": "Aberdeen v Dundee FC",
+   "league": "Scotland - Premiership",
+   "market": "Home O/U",
+   "selection": "Under 2.5",
+   "odds": 1.32,
+   "marketId": "19",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8472,
+   "implied": 0.7576,
+   "ev": 0.1183,
+   "why": "season+form+h2h; λ 1.34-1.42; model 85% vs implied 76% (edge 12%); table 10 v 5/12",
+   "lambda": [
+    1.343,
+    1.423
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Draw or Away",
+     "odds": 1.6,
+     "ev": 0.1121,
+     "true_p": 0.695
+    },
+    {
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.51,
+     "ev": 0.0563,
+     "true_p": 0.6995
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72201732",
+   "match": "Dundee United v St. Johnstone FC",
+   "league": "Scotland - Premiership",
+   "market": "Home O/U",
+   "selection": "Under 2.5",
+   "odds": 1.46,
+   "marketId": "19",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.7582,
+   "implied": 0.6849,
+   "ev": 0.1069,
+   "why": "season+form+h2h; λ 1.70-1.13; model 76% vs implied 68% (edge 11%); table 6 v 7/12",
+   "lambda": [
+    1.696,
+    1.134
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Total",
+     "selection": "Under 2.5",
+     "odds": 1.33,
+     "ev": 0.0567,
+     "true_p": 0.7945
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72340084",
+   "match": "Derby County v Watford",
+   "league": "England - Championship",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.41,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7608,
+   "implied": 0.7092,
+   "ev": 0.0727,
+   "why": "season+form+h2h; λ 1.41-1.43; model 76% vs implied 71% (edge 7%); table 23 v 20/24",
+   "lambda": [
+    1.415,
+    1.431
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:00",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Over 1.5",
+     "odds": 1.35,
+     "ev": 0.0483,
+     "true_p": 0.7765
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72366486",
+   "match": "KVC Westerlo v RAAL La Louviere",
+   "league": "Belgium - Pro League",
+   "market": "2nd Half - Double Chance",
+   "selection": "Home or Away",
+   "odds": 1.44,
+   "marketId": "85",
+   "specifier": "",
+   "outcomeId": "10",
+   "true_p": 0.729,
+   "implied": 0.6944,
+   "ev": 0.0497,
+   "why": "season+form; λ 2.53-1.78; model 73% vs implied 69% (edge 5%); table 9 v 16/18",
+   "lambda": [
+    2.534,
+    1.778
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72340098",
+   "match": "West Bromwich v Bristol City",
+   "league": "England - Championship",
+   "market": "2nd Half - Draw No Bet",
+   "selection": "Home",
+   "odds": 1.4,
+   "marketId": "86",
+   "specifier": "",
+   "outcomeId": "4",
+   "true_p": 0.7489,
+   "implied": 0.7143,
+   "ev": 0.0484,
+   "why": "season+form+h2h; λ 1.93-0.88; model 75% vs implied 71% (edge 5%); table 5 v 17/24",
+   "lambda": [
+    1.929,
+    0.877
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72340088",
+   "match": "Millwall FC v Burnley",
+   "league": "England - Championship",
+   "market": "GG/NG",
+   "selection": "Yes",
+   "odds": 1.59,
+   "marketId": "29",
+   "specifier": "",
+   "outcomeId": "74",
+   "true_p": 0.6553,
+   "implied": 0.6289,
+   "ev": 0.0419,
+   "why": "season+form+h2h; λ 1.85-1.50; model 66% vs implied 63% (edge 4%); table 16 v 22/24",
+   "lambda": [
+    1.853,
+    1.501
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72477626",
+   "match": "Albacete Balompie v Tenerife CD",
+   "league": "Spain - LALIGA HYPERMOTION",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.48,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7431,
+   "implied": 0.6757,
+   "ev": 0.0998,
+   "why": "season+form+h2h; λ 1.39-1.36; model 74% vs implied 68% (edge 10%); table 21 v 14/22",
+   "lambda": [
+    1.386,
+    1.359
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:15",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Over 1.5",
+     "odds": 1.37,
+     "ev": 0.0405,
+     "true_p": 0.7595
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72478738",
+   "match": "Malaga CF v Athletic Bilbao",
+   "league": "Spain - LaLiga",
+   "market": "Home O/U",
+   "selection": "Over 0.5",
+   "odds": 1.54,
+   "marketId": "19",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.6892,
+   "implied": 0.6494,
+   "ev": 0.0614,
+   "why": "season+form+h2h; λ 1.17-1.59; model 69% vs implied 65% (edge 6%); table 20 v 7/20",
+   "lambda": [
+    1.169,
+    1.595
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:15",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72041268",
+   "match": "Excelsior Rotterdam v SC Telstar",
+   "league": "Netherlands - Eredivisie",
+   "market": "1st Half - Over/Under",
+   "selection": "Over 0.5",
+   "odds": 1.36,
+   "marketId": "68",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.821,
+   "implied": 0.7353,
+   "ev": 0.1166,
+   "why": "season+form+h2h; λ 1.85-1.97; model 82% vs implied 74% (edge 12%); table 15 v 16/18",
+   "lambda": [
+    1.855,
+    1.969
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:73374590",
+   "match": "Al Ahli Doha SC v Al Duhail SC",
+   "league": "Qatar - Stars League",
+   "market": "Home O/U",
+   "selection": "Over 0.5",
+   "odds": 1.37,
+   "marketId": "19",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7758,
+   "implied": 0.7299,
+   "ev": 0.0629,
+   "why": "season+form+h2h; λ 1.50-2.04; model 78% vs implied 73% (edge 6%); table 6 v 1/12",
+   "lambda": [
+    1.495,
+    2.038
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72531688",
+   "match": "SC Farense v UD Leiria",
+   "league": "Portugal - Liga Portugal 2",
+   "market": "Over/Under",
+   "selection": "Over 1.5",
+   "odds": 1.3,
+   "marketId": "18",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "true_p": 0.8004,
+   "implied": 0.7692,
+   "ev": 0.0406,
+   "why": "season+form; λ 1.73-1.27; model 80% vs implied 77% (edge 4%); table 6 v 9/18",
+   "lambda": [
+    1.73,
+    1.268
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "15:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:76163236",
+   "match": "Esperance Sportive de Tunis v Wiliete SC",
+   "league": "International Clubs - CAF Champions League",
+   "market": "2nd Half - Total",
+   "selection": "Under 1.5",
+   "odds": 1.57,
+   "marketId": "90",
+   "specifier": "total=1.5",
+   "outcomeId": "13",
+   "true_p": 0.7442,
+   "implied": 0.6369,
+   "ev": 0.1683,
+   "why": "season+form; λ 1.03-0.75; model 74% vs implied 64% (edge 17%); table 1 v 1/4",
+   "lambda": [
+    1.027,
+    0.75
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "16:00",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 1.5",
+     "odds": 1.41,
+     "ev": 0.1407,
+     "true_p": 0.809
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72735946",
+   "match": "Muglaspor v Mardin 1969 Spor",
+   "league": "Turkiye - 1. Lig",
+   "market": "Home O/U",
+   "selection": "Over 0.5",
+   "odds": 1.41,
+   "marketId": "19",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7622,
+   "implied": 0.7092,
+   "ev": 0.0747,
+   "why": "season+form; λ 1.44-1.70; model 76% vs implied 71% (edge 7%); table 9 v 4/20",
+   "lambda": [
+    1.436,
+    1.696
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "16:00",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Over 0.5",
+     "odds": 1.42,
+     "ev": 0.0731,
+     "true_p": 0.7557
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72723340",
+   "match": "Gaziantep FK v Amed Sportif Faaliyetler",
+   "league": "Turkiye - Super Lig",
+   "market": "1st Half - Over/Under",
+   "selection": "Over 0.5",
+   "odds": 1.35,
+   "marketId": "68",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7782,
+   "implied": 0.7407,
+   "ev": 0.0506,
+   "why": "season+form; λ 1.34-2.00; model 78% vs implied 74% (edge 5%); table 16 v 2/18",
+   "lambda": [
+    1.344,
+    2.002
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "16:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72043354",
+   "match": "WKS Slask Wroclaw v GKS Katowice",
+   "league": "Poland - Ekstraklasa",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.58,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.7002,
+   "implied": 0.6329,
+   "ev": 0.1062,
+   "why": "season+form+h2h; λ 1.23-1.53; model 70% vs implied 63% (edge 11%); table 16 v 7/18",
+   "lambda": [
+    1.23,
+    1.533
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "16:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:76735476",
+   "match": "Nimes v Grenoble Foot",
+   "league": "France - Coupe de France",
+   "market": "2nd Half - Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.46,
+   "marketId": "85",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.8065,
+   "implied": 0.6849,
+   "ev": 0.1775,
+   "why": "season+form+h2h; λ 1.80-0.97; model 81% vs implied 68% (edge 18%)",
+   "lambda": [
+    1.799,
+    0.968
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "17:00",
+   "alternatives": [
+    {
+     "market": "Away O/U",
+     "selection": "Under 1.5",
+     "odds": 1.57,
+     "ev": 0.1737,
+     "true_p": 0.7476
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Over 0.5",
+     "odds": 1.47,
+     "ev": 0.0468,
+     "true_p": 0.7121
+    },
+    {
+     "market": "Over/Under",
+     "selection": "Over 1.5",
+     "odds": 1.37,
+     "ev": 0.0457,
+     "true_p": 0.7633
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:74375420",
+   "match": "Grasshopper Club Zurich v Basel",
+   "league": "Switzerland - Super League",
+   "market": "Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.59,
+   "marketId": "10",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.723,
+   "implied": 0.6289,
+   "ev": 0.1496,
+   "why": "season+form+h2h; λ 2.06-1.48; model 72% vs implied 63% (edge 15%); table 10 v 7/12",
+   "lambda": [
+    2.061,
+    1.482
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "17:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.47,
+     "ev": 0.0846,
+     "true_p": 0.7378
+    },
+    {
+     "market": "Over/Under",
+     "selection": "Over 2.5",
+     "odds": 1.54,
+     "ev": 0.0578,
+     "true_p": 0.6869
+    },
+    {
+     "market": "Away O/U",
+     "selection": "Under 2.5",
+     "odds": 1.28,
+     "ev": 0.0412,
+     "true_p": 0.8135
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:74379774",
+   "match": "FC Vaduz v FC Zurich",
+   "league": "Switzerland - Super League",
+   "market": "GG/NG",
+   "selection": "Yes",
+   "odds": 1.39,
+   "marketId": "29",
+   "specifier": "",
+   "outcomeId": "74",
+   "true_p": 0.7976,
+   "implied": 0.7194,
+   "ev": 0.1086,
+   "why": "season+form+h2h; λ 2.58-1.99; model 80% vs implied 72% (edge 11%); table 11 v 4/12",
+   "lambda": [
+    2.579,
+    1.988
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "17:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:71945440",
+   "match": "Torino v Lazio",
+   "league": "Italy - Serie A",
+   "market": "1st Half - Over/Under",
+   "selection": "Over 0.5",
+   "odds": 1.41,
+   "marketId": "68",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7676,
+   "implied": 0.7092,
+   "ev": 0.0824,
+   "why": "season+form+h2h; λ 1.37-1.88; model 77% vs implied 71% (edge 8%); table 11 v 1/20",
+   "lambda": [
+    1.368,
+    1.875
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "17:00",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Over 0.5",
+     "odds": 1.4,
+     "ev": 0.0436,
+     "true_p": 0.7454
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:75619118",
+   "match": "Unisport Du Haut Nkam v Gazelle FA de Garoua",
+   "league": "Cameroon - Elite One",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.52,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.6988,
+   "implied": 0.6579,
+   "ev": 0.0622,
+   "why": "season+form; λ 1.59-1.20; model 70% vs implied 66% (edge 6%); table 2 v 13/14",
+   "lambda": [
+    1.587,
+    1.2
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "17:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:76735518",
+   "match": "Football Bourg-En-Bresse Peronnas 01 v Thionville US Lusitanos",
+   "league": "France - Coupe de France",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.35,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.7759,
+   "implied": 0.7407,
+   "ev": 0.0475,
+   "why": "season+form; λ 1.21-1.20; model 78% vs implied 74% (edge 5%)",
+   "lambda": [
+    1.213,
+    1.2
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "17:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:76735460",
+   "match": "FC Chambly Oise v US Avranches",
+   "league": "France - Coupe de France",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.37,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7625,
+   "implied": 0.7299,
+   "ev": 0.0446,
+   "why": "season+form+h2h; λ 1.19-1.44; model 76% vs implied 73% (edge 4%)",
+   "lambda": [
+    1.194,
+    1.438
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "17:00",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72522200",
+   "match": "Holywell Town v Llandudno FC",
+   "league": "Wales - Cymru Premier",
+   "market": "GG/NG",
+   "selection": "Yes",
+   "odds": 1.56,
+   "marketId": "29",
+   "specifier": "",
+   "outcomeId": "74",
+   "true_p": 0.7522,
+   "implied": 0.641,
+   "ev": 0.1735,
+   "why": "season+form+h2h; λ 1.90-2.16; model 75% vs implied 64% (edge 17%); table 16 v 10/16",
+   "lambda": [
+    1.898,
+    2.162
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "17:15",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72366482",
+   "match": "Cercle Brugge v Yellow-Red KV Mechelen",
+   "league": "Belgium - Pro League",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.35,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.8066,
+   "implied": 0.7407,
+   "ev": 0.0889,
+   "why": "season+form+h2h; λ 1.75-1.64; model 81% vs implied 74% (edge 9%); table 17 v 10/18",
+   "lambda": [
+    1.753,
+    1.643
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "17:15",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Over 0.5",
+     "odds": 1.34,
+     "ev": 0.0493,
+     "true_p": 0.783
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72478732",
+   "match": "Elche CF v Atletico Madrid",
+   "league": "Spain - LaLiga",
+   "market": "Away O/U",
+   "selection": "Under 2.5",
+   "odds": 1.51,
+   "marketId": "20",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8469,
+   "implied": 0.6623,
+   "ev": 0.2788,
+   "why": "season+form+h2h; λ 1.06-1.34; model 85% vs implied 66% (edge 28%); table 17 v 2/20",
+   "lambda": [
+    1.063,
+    1.344
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "17:30",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.55,
+     "ev": 0.2049,
+     "true_p": 0.7774
+    },
+    {
+     "market": "2nd Half - Total",
+     "selection": "Under 2.5",
+     "odds": 1.28,
+     "ev": 0.0901,
+     "true_p": 0.8516
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72513330",
+   "match": "Stuttgart v Eintracht Frankfurt",
+   "league": "Germany - Bundesliga",
+   "market": "Over/Under",
+   "selection": "Under 4.5",
+   "odds": 1.53,
+   "marketId": "18",
+   "specifier": "total=4.5",
+   "outcomeId": "13",
+   "true_p": 0.7406,
+   "implied": 0.6536,
+   "ev": 0.1332,
+   "why": "season+form+h2h; λ 2.00-1.42; model 74% vs implied 65% (edge 13%); table 12 v 9/18",
+   "lambda": [
+    2.004,
+    1.415
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "17:30",
+   "alternatives": [
+    {
+     "market": "2nd Half - Total",
+     "selection": "Under 2.5",
+     "odds": 1.54,
+     "ev": 0.0918,
+     "true_p": 0.709
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 2.5",
+     "odds": 1.31,
+     "ev": 0.0468,
+     "true_p": 0.7991
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72221422",
+   "match": "Ipswich Town v Aston Villa",
+   "league": "England - Premier League",
+   "market": "Away O/U",
+   "selection": "Under 2.5",
+   "odds": 1.32,
+   "marketId": "20",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.8286,
+   "implied": 0.7576,
+   "ev": 0.0938,
+   "why": "season+form+h2h; λ 1.53-1.42; model 83% vs implied 76% (edge 9%); table 14 v 10/20",
+   "lambda": [
+    1.534,
+    1.42
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "17:30",
+   "alternatives": [
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.56,
+     "ev": 0.0806,
+     "true_p": 0.6927
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72041280",
+   "match": "PSV Eindhoven v Go Ahead Eagles",
+   "league": "Netherlands - Eredivisie",
+   "market": "Away O/U",
+   "selection": "Over 0.5",
+   "odds": 1.53,
+   "marketId": "20",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7354,
+   "implied": 0.6536,
+   "ev": 0.1251,
+   "why": "season+form+h2h; λ 2.69-1.33; model 74% vs implied 65% (edge 13%); table 3 v 10/18",
+   "lambda": [
+    2.694,
+    1.33
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "17:45",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Under 3.5",
+     "odds": 1.56,
+     "ev": 0.1161,
+     "true_p": 0.7155
+    },
+    {
+     "market": "GG/NG",
+     "selection": "Yes",
+     "odds": 1.6,
+     "ev": 0.0971,
+     "true_p": 0.6857
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72201736",
+   "match": "Motherwell FC v Hibernian FC",
+   "league": "Scotland - Premiership",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.49,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.7017,
+   "implied": 0.6711,
+   "ev": 0.0456,
+   "why": "season+form+h2h; λ 1.35-1.41; model 70% vs implied 67% (edge 5%); table 9 v 12/12",
+   "lambda": [
+    1.347,
+    1.409
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "17:45",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72531018",
+   "match": "Academico de Viseu FC v Alverca Futebol",
+   "league": "Portugal - Liga Portugal",
+   "market": "Away O/U",
+   "selection": "Under 1.5",
+   "odds": 1.52,
+   "marketId": "20",
+   "specifier": "total=1.5",
+   "outcomeId": "13",
+   "true_p": 0.7419,
+   "implied": 0.6579,
+   "ev": 0.1277,
+   "why": "season+form; λ 1.47-0.98; model 74% vs implied 66% (edge 13%); table 6 v 11/18",
+   "lambda": [
+    1.47,
+    0.983
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "18:00",
+   "alternatives": [
+    {
+     "market": "Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.45,
+     "ev": 0.0836,
+     "true_p": 0.7473
+    },
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.38,
+     "ev": 0.0684,
+     "true_p": 0.7742
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72531694",
+   "match": "Lusitania FC Lourosa v FC Vizela",
+   "league": "Portugal - Liga Portugal 2",
+   "market": "Draw No Bet",
+   "selection": "Home",
+   "odds": 1.59,
+   "marketId": "11",
+   "specifier": "",
+   "outcomeId": "4",
+   "true_p": 0.682,
+   "implied": 0.6289,
+   "ev": 0.0844,
+   "why": "season+form+h2h; λ 1.74-1.11; model 68% vs implied 63% (edge 8%); table 3 v 8/18",
+   "lambda": [
+    1.74,
+    1.112
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "18:00",
+   "alternatives": [
+    {
+     "market": "Home O/U",
+     "selection": "Over 0.5",
+     "odds": 1.27,
+     "ev": 0.0471,
+     "true_p": 0.8245
+    },
+    {
+     "market": "Over/Under",
+     "selection": "Over 1.5",
+     "odds": 1.34,
+     "ev": 0.0421,
+     "true_p": 0.7777
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72302234",
+   "match": "KSC Lokeren-Temse v K Beerschot VA",
+   "league": "Belgium - Challenger Pro League",
+   "market": "Over/Under",
+   "selection": "Over 2.5",
+   "odds": 1.6,
+   "marketId": "18",
+   "specifier": "total=2.5",
+   "outcomeId": "12",
+   "true_p": 0.7172,
+   "implied": 0.625,
+   "ev": 0.1475,
+   "why": "season+form; λ 1.79-1.93; model 72% vs implied 62% (edge 15%); table 8 v 1/15",
+   "lambda": [
+    1.786,
+    1.929
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "19:00",
+   "alternatives": [
+    {
+     "market": "GG/NG",
+     "selection": "Yes",
+     "odds": 1.5,
+     "ev": 0.0673,
+     "true_p": 0.7115
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72514012",
+   "match": "VfL 1899 Osnabruck v Hannover",
+   "league": "Germany - 2. Bundesliga",
+   "market": "Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.57,
+   "marketId": "10",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.7023,
+   "implied": 0.6369,
+   "ev": 0.1026,
+   "why": "season+form+h2h; λ 1.47-1.16; model 70% vs implied 64% (edge 10%); table 13 v 15/18",
+   "lambda": [
+    1.474,
+    1.159
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "19:30",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.49,
+     "ev": 0.0859,
+     "true_p": 0.7288
+    },
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.46,
+     "ev": 0.0775,
+     "true_p": 0.738
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 1.5",
+     "odds": 1.56,
+     "ev": 0.0422,
+     "true_p": 0.6681
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:74379776",
+   "match": "Servette Geneva v Lausanne-Sport",
+   "league": "Switzerland - Super League",
+   "market": "2nd Half - Draw No Bet",
+   "selection": "Home",
+   "odds": 1.56,
+   "marketId": "86",
+   "specifier": "",
+   "outcomeId": "4",
+   "true_p": 0.6775,
+   "implied": 0.641,
+   "ev": 0.0568,
+   "why": "season+form+h2h; λ 2.06-1.24; model 68% vs implied 64% (edge 6%); table 6 v 12/12",
+   "lambda": [
+    2.057,
+    1.238
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "19:30",
+   "alternatives": [
+    {
+     "market": "Draw No Bet",
+     "selection": "Home",
+     "odds": 1.48,
+     "ev": 0.0562,
+     "true_p": 0.7136
+    },
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Over 0.5",
+     "odds": 1.36,
+     "ev": 0.0513,
+     "true_p": 0.773
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72366474",
+   "match": "Lommel SK v SV Zulte Waregem",
+   "league": "Belgium - Pro League",
+   "market": "Double Chance",
+   "selection": "Home or Draw",
+   "odds": 1.57,
+   "marketId": "10",
+   "specifier": "",
+   "outcomeId": "9",
+   "true_p": 0.7951,
+   "implied": 0.6369,
+   "ev": 0.2483,
+   "why": "season+form+h2h; λ 1.84-1.01; model 80% vs implied 64% (edge 25%); table 8 v 11/18",
+   "lambda": [
+    1.84,
+    1.01
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "19:45",
+   "alternatives": [
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Draw",
+     "odds": 1.47,
+     "ev": 0.1787,
+     "true_p": 0.8019
+    },
+    {
+     "market": "Over/Under",
+     "selection": "Under 3.5",
+     "odds": 1.57,
+     "ev": 0.069,
+     "true_p": 0.6809
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72366472",
+   "match": "Royal Charleroi SC v KV Waasland-Beveren",
+   "league": "Belgium - Pro League",
+   "market": "Home O/U",
+   "selection": "Over 1.5",
+   "odds": 1.6,
+   "marketId": "19",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "true_p": 0.6859,
+   "implied": 0.625,
+   "ev": 0.0975,
+   "why": "season+form+h2h; λ 2.37-1.12; model 69% vs implied 62% (edge 10%); table 4 v 13/18",
+   "lambda": [
+    2.374,
+    1.122
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "19:45",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:72036316",
+   "match": "Le Havre v Strasbourg",
+   "league": "France - Ligue 1",
+   "market": "Home O/U",
+   "selection": "Over 0.5",
+   "odds": 1.32,
+   "marketId": "19",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.824,
+   "implied": 0.7576,
+   "ev": 0.0877,
+   "why": "season+form+h2h; λ 1.74-1.73; model 82% vs implied 76% (edge 9%); table 18 v 13/18",
+   "lambda": [
+    1.737,
+    1.729
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "19:45",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Over 0.5",
+     "odds": 1.35,
+     "ev": 0.0663,
+     "true_p": 0.7898
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72036324",
+   "match": "PSG v Lorient",
+   "league": "France - Ligue 1",
+   "market": "2nd Half - Total",
+   "selection": "Under 2.5",
+   "odds": 1.37,
+   "marketId": "90",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.7926,
+   "implied": 0.7299,
+   "ev": 0.0859,
+   "why": "season+form+h2h; λ 2.05-0.79; model 79% vs implied 73% (edge 9%); table 1 v 12/18",
+   "lambda": [
+    2.05,
+    0.793
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "19:45",
+   "alternatives": [
+    {
+     "market": "1st Half - Over/Under",
+     "selection": "Under 2.5",
+     "odds": 1.23,
+     "ev": 0.06,
+     "true_p": 0.8618
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72036318",
+   "match": "Le Mans FC v Lille",
+   "league": "France - Ligue 1",
+   "market": "Home O/U",
+   "selection": "Over 0.5",
+   "odds": 1.51,
+   "marketId": "19",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7067,
+   "implied": 0.6623,
+   "ev": 0.0671,
+   "why": "season+form+h2h; λ 1.23-1.42; model 71% vs implied 66% (edge 7%); table 17 v 3/18",
+   "lambda": [
+    1.226,
+    1.417
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "19:45",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:75924888",
+   "match": "SE Palmeiras SP v Estudiantes de La Plata",
+   "league": "International Clubs - CONMEBOL Libertadores",
+   "market": "1st Half - Over/Under",
+   "selection": "Over 0.5",
+   "odds": 1.6,
+   "marketId": "68",
+   "specifier": "total=0.5",
+   "outcomeId": "12",
+   "true_p": 0.7593,
+   "implied": 0.625,
+   "ev": 0.2149,
+   "why": "season+form; λ 2.03-1.13; model 76% vs implied 62% (edge 21%); table 2 v 2/4",
+   "lambda": [
+    2.032,
+    1.133
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "20:00",
+   "alternatives": [
+    {
+     "market": "2nd Half - Total",
+     "selection": "Over 0.5",
+     "odds": 1.39,
+     "ev": 0.1462,
+     "true_p": 0.8246
+    },
+    {
+     "market": "2nd Half - Double Chance",
+     "selection": "Home or Away",
+     "odds": 1.59,
+     "ev": 0.0804,
+     "true_p": 0.6795
+    },
+    {
+     "market": "2nd Half - Draw No Bet",
+     "selection": "Home",
+     "odds": 1.51,
+     "ev": 0.0557,
+     "true_p": 0.6991
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72478740",
+   "match": "Real Madrid v Alaves",
+   "league": "Spain - LaLiga",
+   "market": "Home O/U",
+   "selection": "Under 3.5",
+   "odds": 1.55,
+   "marketId": "19",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.7461,
+   "implied": 0.6452,
+   "ev": 0.1564,
+   "why": "season+form+h2h; λ 2.55-0.98; model 75% vs implied 65% (edge 16%); table 3 v 9/20",
+   "lambda": [
+    2.554,
+    0.979
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "20:00",
+   "alternatives": [
+    {
+     "market": "Over/Under",
+     "selection": "Under 4.5",
+     "odds": 1.49,
+     "ev": 0.0719,
+     "true_p": 0.7194
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72041282",
+   "match": "SC Cambuur v Sparta Rotterdam",
+   "league": "Netherlands - Eredivisie",
+   "market": "Home O/U",
+   "selection": "Over 1.5",
+   "odds": 1.59,
+   "marketId": "19",
+   "specifier": "total=1.5",
+   "outcomeId": "12",
+   "true_p": 0.7251,
+   "implied": 0.6289,
+   "ev": 0.1529,
+   "why": "season+form+h2h; λ 2.56-1.62; model 73% vs implied 63% (edge 15%); table 9 v 11/18",
+   "lambda": [
+    2.562,
+    1.623
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "20:00",
+   "alternatives": [
+    {
+     "market": "Draw No Bet",
+     "selection": "Home",
+     "odds": 1.54,
+     "ev": 0.0956,
+     "true_p": 0.7114
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:72531034",
+   "match": "Vitoria SC Guimaraes v Estrela Amadora",
+   "league": "Portugal - Liga Portugal",
+   "market": "Over/Under",
+   "selection": "Under 3.5",
+   "odds": 1.45,
+   "marketId": "18",
+   "specifier": "total=3.5",
+   "outcomeId": "13",
+   "true_p": 0.7367,
+   "implied": 0.6897,
+   "ev": 0.0683,
+   "why": "season+form+h2h; λ 1.74-0.86; model 74% vs implied 69% (edge 7%); table 13 v 12/18",
+   "lambda": [
+    1.738,
+    0.859
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "20:30",
+   "alternatives": [
+    {
+     "market": "Away O/U",
+     "selection": "Under 1.5",
+     "odds": 1.34,
+     "ev": 0.0551,
+     "true_p": 0.7874
+    }
+   ]
+  },
+  {
+   "eventId": "sr:match:76609956",
+   "match": "Philadelphia Union v New England Revolution",
+   "league": "USA - MLS",
+   "market": "Home O/U",
+   "selection": "Under 2.5",
+   "odds": 1.52,
+   "marketId": "19",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.739,
+   "implied": 0.6579,
+   "ev": 0.1233,
+   "why": "season+form+h2h; λ 1.77-1.31; model 74% vs implied 66% (edge 12%); table 6 v 3/30",
+   "lambda": [
+    1.769,
+    1.314
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "21:30",
+   "alternatives": []
+  },
+  {
+   "eventId": "sr:match:73038674",
+   "match": "Sportivo Trinidense v Recoleta FC",
+   "league": "Paraguay - Division de Honor",
+   "market": "Home O/U",
+   "selection": "Under 2.5",
+   "odds": 1.49,
+   "marketId": "19",
+   "specifier": "total=2.5",
+   "outcomeId": "13",
+   "true_p": 0.7727,
+   "implied": 0.6711,
+   "ev": 0.1513,
+   "why": "season+form+h2h; λ 1.64-1.18; model 77% vs implied 67% (edge 15%); table 4 v 11/12",
+   "lambda": [
+    1.641,
+    1.176
+   ],
+   "form_games": [
+    6,
+    6
+   ],
+   "date": "2026-11-28",
+   "ko": "23:00",
+   "alternatives": [
+    {
+     "market": "Away O/U",
+     "selection": "Over 0.5",
+     "odds": 1.57,
+     "ev": 0.0857,
+     "true_p": 0.6915
+    }
+   ]
+  }
+ ],
+ "rejected": {
+  "Bandirmaspor v Batman Petrolspor": "no 1.20–1.60 market with an edge",
+  "Sivasspor v Bodrum FK": "no 1.20–1.60 market with an edge",
+  "Tractor Tabriz v Zob Ahan Isfahan FC": "no 1.20–1.60 market with an edge",
+  "Olympique Charleville Prix Ardenne Metropole v Reims": "insufficient form/stats",
+  "Lincoln City v Wolves": "no 1.20–1.60 market with an edge",
+  "Preston North End v Norwich": "no 1.20–1.60 market with an edge",
+  "Barry Town United FC v Caernarfon Town FC": "model disagrees with the 1X2 board (away favourite)",
+  "Betis v Rayo Vallecano": "insufficient form/stats",
+  "Tremblay FC v Red Star FC": "insufficient form/stats",
+  "Las Palmas v FC Andorra": "no 1.20–1.60 market with an edge",
+  "AL Wakrah SC v Al Sadd SC": "no 1.20–1.60 market with an edge",
+  "Kitara FC v Ntugasaze FC": "no 1.20–1.60 market with an edge",
+  "Widzew Lodz v Zaglebie Lubin": "no 1.20–1.60 market with an edge",
+  "Esteghlal FC Tehran v Sanat Naft Abadan FC": "no 1.20–1.60 market with an edge",
+  "Empoli v Verona": "no 1.20–1.60 market with an edge",
+  "FK Mlada Boleslav v SK Sigma Olomouc": "even matchup (2 v 2/16)",
+  "Sepahan SC v Nassaji Mazandaran FC": "no 1.20–1.60 market with an edge",
+  "Cologne v SV 07 Elversberg": "no 1.20–1.60 market with an edge",
+  "Aigle Royal Du Moungo v Pwd Bamenda": "no 1.20–1.60 market with an edge",
+  "Birmingham City v Bolton Wanderers": "no 1.20–1.60 market with an edge",
+  "Queens Park Rangers v Sheffield United": "no 1.20–1.60 market with an edge",
+  "Wrexham AFC v Portsmouth FC": "no 1.20–1.60 market with an edge",
+  "Clydebank FC v Livingston FC": "model disagrees with the 1X2 board (away favourite)",
+  "Cumnock v Arbroath FC": "model disagrees with the 1X2 board (away favourite)",
+  "Dumbarton FC v Johnstone Burgh FC": "model disagrees with the 1X2 board (home favourite)",
+  "East Kilbride FC v Clyde FC": "insufficient form/stats",
+  "Inverness Caledonian Thistle FC v Cove Rangers FC": "insufficient form/stats",
+  "Musselburgh Athletic FC v Airdrieonians FC": "model disagrees with the 1X2 board (away favourite)",
+  "Rangers v Falkirk FC": "even matchup (2 v 4/12)",
+  "St Mirren FC v Kilmarnock FC": "no 1.20–1.60 market with an edge",
+  "Club NXT v Koninklijke Lierse Sportkring": "no 1.20–1.60 market with an edge",
+  "Cukaricki v FK Mladost Lucani": "no 1.20–1.60 market with an edge",
+  "Club Deportivo Eldense v Girona": "no 1.20–1.60 market with an edge",
+  "FC Arouca v Rio Ave FC": "no 1.20–1.60 market with an edge",
+  "Moreirense FC v Santa Clara Azores": "no 1.20–1.60 market with an edge",
+  "Biesheim ASC v Racing Besancon": "insufficient form/stats",
+  "US Feurs v FC Annecy": "model disagrees with the 1X2 board (away favourite)",
+  "Pyramids FC v Maghreb AS de Fes": "no 1.20–1.60 market with an edge",
+  "Zamalek SC v Africain": "no 1.20–1.60 market with an edge",
+  "Angers v Lens": "model disagrees with the 1X2 board (away favourite)",
+  "L.R. Vicenza v Cesena FC": "no 1.20–1.60 market with an edge",
+  "Saint-Pryve Saint-Hilaire FC v SC Selongey": "insufficient form/stats",
+  "Rosenborg BK v Molde": "even matchup (4 v 3/16)",
+  "FC Hradec Kralove v Bohemians Prague 1905": "no 1.20–1.60 market with an edge",
+  "Eibar v Burgos CF": "even matchup (4 v 3/22)",
+  "Charlotte FC v Chicago Fire": "even matchup (5 v 4/30)",
+  "FK Partizan Belgrade v FK Radnicki Nis": "no 1.20–1.60 market with an edge",
+  "Palermo FC v Benevento": "no 1.20–1.60 market with an edge",
+  "Rs Berkane v Colombe Sportive Du Dja Et Lobo": "model disagrees with the 1X2 board (home favourite)",
+  "Wisla Krakow v LKP Motor Lublin": "no 1.20–1.60 market with an edge",
+  "Houston Dynamo v San Jose Earthquakes": "even matchup (5 v 4/30)",
+  "Inter v Genoa": "no 1.20–1.60 market with an edge",
+  "Nice v Troyes": "no 1.20–1.60 market with an edge",
+  "Velez Sarsfield v CA Independiente Avellaneda": "no 1.20–1.60 market with an edge",
+  "Fortaleza EC CE v Criciuma EC SC": "even matchup (5 v 4/20)",
+  "Deportivo Madryn v Gimnasia y Esgrima de Jujuy": "even matchup (4 v 4/18)",
+  "FC Cincinnati v Nashville SC": "no 1.20–1.60 market with an edge"
+ },
+ "slips": [
+  {
+   "name": "SportyBet Stats · part 1/15",
+   "totalOdds": 7.11,
+   "codes": {
+    "sportybet": "8NUX8V",
+    "footballcom": "8NUX8V",
+    "msport": "B3QAHA8",
+    "betika": "paPp8m",
+    "betpawa": "25H71BH"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 2/15",
+   "totalOdds": 7.25,
+   "codes": {
+    "sportybet": "CEGPUL",
+    "footballcom": "CEGPUL",
+    "msport": "B3QAHCW",
+    "betika": "W7ARRB",
+    "betpawa": "R3VCFFF"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 3/15",
+   "totalOdds": 5.81,
+   "codes": {
+    "sportybet": "FTE3WU",
+    "footballcom": "FTE3WU",
+    "msport": "B3QAHFF",
+    "betika": "UB4fpQ",
+    "betpawa": "6P3JXE3"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 4/15",
+   "totalOdds": 5.64,
+   "codes": {
+    "sportybet": "B6H2MH",
+    "footballcom": "B6H2MH",
+    "msport": "B3QAHJS",
+    "betika": "zcAz4X",
+    "betpawa": "2JAJUL8"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 5/15",
+   "totalOdds": 7.43,
+   "codes": {
+    "sportybet": "B08EFZ",
+    "footballcom": "B08EFZ",
+    "msport": "B3QAHN1",
+    "betika": "SSXdjM",
+    "betpawa": "MDA5PLM"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 6/15",
+   "totalOdds": 8.05,
+   "codes": {
+    "sportybet": "B384CE",
+    "footballcom": "B384CE",
+    "msport": "B3QAHQK",
+    "betika": "6VuHyy",
+    "betpawa": "YXWIOAM"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 7/15",
+   "totalOdds": 5.48,
+   "codes": {
+    "sportybet": "DCFZM2",
+    "footballcom": "DCFZM2",
+    "msport": "B3QAHT9",
+    "betika": "LV8TCD",
+    "betpawa": "TZGF255"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 8/15",
+   "totalOdds": 6.75,
+   "codes": {
+    "sportybet": "9859FZ",
+    "footballcom": "9859FZ",
+    "msport": "B3QAHVM",
+    "betika": "x1fxcx",
+    "betpawa": "90J3F8W"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 9/15",
+   "totalOdds": 6.14,
+   "codes": {
+    "sportybet": "DKTMJK",
+    "footballcom": "DKTMJK",
+    "msport": "B3QAHXX",
+    "betika": "X5MYRH",
+    "betpawa": "CE0UVZD"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 10/15",
+   "totalOdds": 6.92,
+   "codes": {
+    "sportybet": "CX870J",
+    "footballcom": "CX870J",
+    "msport": "B3QAHZK",
+    "betika": "u1fCYm",
+    "betpawa": "6XF8YW6"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 11/15",
+   "totalOdds": 5.88,
+   "codes": {
+    "sportybet": "BDA7K9",
+    "footballcom": "BDA7K9",
+    "msport": "B3QAJ28",
+    "betika": "BM6Uyq",
+    "betpawa": "0KWR9RF"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 12/15",
+   "totalOdds": 7.0,
+   "codes": {
+    "sportybet": "8GVJ8L",
+    "footballcom": "8GVJ8L",
+    "msport": "B3QAJ51",
+    "betika": "3jPp1D",
+    "betpawa": "1S7V45T"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 13/15",
+   "totalOdds": 9.78,
+   "codes": {
+    "sportybet": "9L411Q",
+    "footballcom": "9L411Q",
+    "msport": "B3QAJ82",
+    "betika": "gfTmtB",
+    "betpawa": "1ZXOPLZ"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 14/15",
+   "totalOdds": 6.99,
+   "codes": {
+    "sportybet": "B5E37F",
+    "footballcom": "B5E37F",
+    "msport": "B3QAJA8",
+    "betika": "C2P3nT",
+    "betpawa": "A8WU7Q6"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · part 15/15",
+   "totalOdds": 8.09,
+   "codes": {
+    "sportybet": "AHNF74",
+    "footballcom": "AHNF74",
+    "msport": "B3QAJD9",
+    "betika": "J65X9a",
+    "betpawa": "N02HAD8"
+   },
+   "legs": 5
+  },
+  {
+   "name": "SportyBet Stats · Master · part 1/3",
+   "totalOdds": 101067.85,
+   "codes": {
+    "sportybet": "BB48R3",
+    "footballcom": "BB48R3",
+    "msport": "B3QAJHV",
+    "betika": "hbEhA6",
+    "betpawa": "OITJ002"
+   },
+   "legs": 30
+  },
+  {
+   "name": "SportyBet Stats · Master · part 2/3",
+   "totalOdds": 64629.71,
+   "codes": {
+    "sportybet": "DRT1R6",
+    "footballcom": "DRT1R6",
+    "msport": "B3QAJMQ",
+    "betika": "ZEuCDN",
+    "betpawa": "X4B2VQD"
+   },
+   "legs": 30
+  },
+  {
+   "name": "SportyBet Stats · Master · part 3/3",
+   "totalOdds": 553.45,
+   "codes": {
+    "sportybet": "A0T89C",
+    "footballcom": "A0T89C",
+    "msport": "B3QAJPT",
+    "betika": "kU7LMA",
+    "betpawa": "92I1PF9"
+   },
+   "legs": 15
+  }
+ ]
+}
