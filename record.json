@@ -1,28 +1,28 @@
 {
- "DATA_UPDATED": "2026-11-28T01:46:09Z",
+ "DATA_UPDATED": "2026-11-28T02:15:52Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
  "overall": {
-  "n": 657,
+  "n": 658,
   "won": 121,
-  "lost": 536,
+  "lost": 537,
   "winRate": 18.4,
   "stake": 10.0,
-  "staked": 6570.0,
+  "staked": 6580.0,
   "returned": 19585.1,
-  "profit": 13015.1,
-  "roi": 198.1,
-  "pending": 475,
-  "codesSettled": 2113,
+  "profit": 13005.1,
+  "roi": 197.6,
+  "pending": 474,
+  "codesSettled": 2114,
   "codesWon": 474,
-  "codesLost": 1639
+  "codesLost": 1640
  },
  "streak": {
   "current": "lost",
-  "currentLen": 53,
+  "currentLen": 54,
   "bestWin": 4,
-  "bestLoss": 53
+  "bestLoss": 54
  },
  "byType": [
   {
@@ -38,15 +38,15 @@
    "key": "hot"
   },
   {
-   "n": 199,
+   "n": 200,
    "won": 7,
-   "lost": 192,
+   "lost": 193,
    "winRate": 3.5,
    "stake": 10.0,
-   "staked": 1990.0,
+   "staked": 2000.0,
    "returned": 200.8,
-   "profit": -1789.2,
-   "roi": -89.9,
+   "profit": -1799.2,
+   "roi": -90.0,
    "key": "high-odds"
   },
   {
@@ -124,15 +124,15 @@
  ],
  "bySite": [
   {
-   "n": 670,
+   "n": 671,
    "won": 105,
-   "lost": 565,
-   "winRate": 15.7,
+   "lost": 566,
+   "winRate": 15.6,
    "stake": 10.0,
-   "staked": 6700.0,
+   "staked": 6710.0,
    "returned": 14430.1,
-   "profit": 7730.1,
-   "roi": 115.4,
+   "profit": 7720.1,
+   "roi": 115.1,
    "key": "sportybet"
   },
   {
@@ -210,15 +210,15 @@
    "key": "Over 0.5"
   },
   {
-   "n": 363,
+   "n": 364,
    "won": 74,
-   "lost": 289,
-   "winRate": 20.4,
+   "lost": 290,
+   "winRate": 20.3,
    "stake": 10.0,
-   "staked": 3630.0,
+   "staked": 3640.0,
    "returned": 2483.1,
-   "profit": -1146.9,
-   "roi": -31.6,
+   "profit": -1156.9,
+   "roi": -31.8,
    "key": "Match result / other"
   },
   {
@@ -355,6 +355,18 @@
   }
  ],
  "byDay": [
+  {
+   "n": 1,
+   "won": 0,
+   "lost": 1,
+   "winRate": 0.0,
+   "stake": 10.0,
+   "staked": 10.0,
+   "returned": 0,
+   "profit": -10.0,
+   "roi": -100.0,
+   "key": "2026-11-28"
+  },
   {
    "n": 47,
    "won": 0,
@@ -657,12 +669,201 @@
   }
  ],
  "picks": {
-  "settled": 5484,
-  "won": 4068,
-  "lost": 1416,
+  "settled": 5515,
+  "won": 4091,
+  "lost": 1424,
   "winRate": 74.2
  },
  "recent": [
+  {
+   "code": "CDK6BS",
+   "book": "sportybet",
+   "date": "2026-11-28",
+   "name": "Team To Win 2 · HIGH RISK",
+   "kind": "high-odds",
+   "odds": 10957667.87,
+   "status": "lost",
+   "hit": 0,
+   "total": 25,
+   "profit": -10.0,
+   "legs": [
+    {
+     "match": "Castanet US v Pau FC",
+     "selection": "Away",
+     "odds": 1.41,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Sepahan SC v Nassaji Mazandaran FC",
+     "selection": "Home",
+     "odds": 1.33,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Leeds United v Coventry City",
+     "selection": "Home",
+     "odds": 1.52,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Dundee United v St. Johnstone FC",
+     "selection": "Home",
+     "odds": 1.69,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "CSD Tristan Suarez v Gimnasia Y Tiro de Salta",
+     "selection": "Home",
+     "odds": 1.83,
+     "result": "lost",
+     "score": "1:1"
+    },
+    {
+     "match": "SE Palmeiras SP v Estudiantes de La Plata",
+     "selection": "Home",
+     "odds": 2.1,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Esteghlal FC Tehran v Sanat Naft Abadan FC",
+     "selection": "Home",
+     "odds": 1.45,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Tractor Tabriz v Zob Ahan Isfahan FC",
+     "selection": "Home",
+     "odds": 1.64,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Holywell Town v Llandudno FC",
+     "selection": "Away",
+     "odds": 1.65,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Barry Town United FC v Caernarfon Town FC",
+     "selection": "Away",
+     "odds": 1.71,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FK Zemun v FK Radnicki 1923 Kragujevac",
+     "selection": "Away",
+     "odds": 1.76,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Empoli v Verona",
+     "selection": "Away",
+     "odds": 1.81,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Saint-Pryve Saint-Hilaire FC v SC Selongey",
+     "selection": "Home",
+     "odds": 1.88,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wisla Krakow v LKP Motor Lublin",
+     "selection": "Home",
+     "odds": 1.88,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Epinal v Amiens",
+     "selection": "Away",
+     "odds": 1.97,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Blackburn Rovers v Charlton Athletic",
+     "selection": "Home",
+     "odds": 2.08,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "AVS Futebol SAD v Leixoes SC",
+     "selection": "Away",
+     "odds": 2.1,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Le Mans FC v Lille",
+     "selection": "Away",
+     "odds": 2.14,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Muglaspor v Mardin 1969 Spor",
+     "selection": "Away",
+     "odds": 2.15,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Lusitania FC Lourosa v FC Vizela",
+     "selection": "Home",
+     "odds": 2.2,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Wrexham AFC v Portsmouth FC",
+     "selection": "Home",
+     "odds": 2.25,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Derby County v Watford",
+     "selection": "Home",
+     "odds": 2.33,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "FC Chambly Oise v US Avranches",
+     "selection": "Home",
+     "odds": 2.5,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "Academico de Viseu FC v Alverca Futebol",
+     "selection": "Home",
+     "odds": 2.59,
+     "result": "pending",
+     "score": null
+    },
+    {
+     "match": "L.R. Vicenza v Cesena FC",
+     "selection": "Home",
+     "odds": 2.65,
+     "result": "pending",
+     "score": null
+    }
+   ]
+  },
   {
    "code": "EXS4YC",
    "book": "sportybet",
@@ -7280,62 +7481,6 @@
      "match": "Betis v Rayo Vallecano",
      "selection": "Over 1.5",
      "odds": 1.18,
-     "result": "pending",
-     "score": null
-    }
-   ]
-  },
-  {
-   "code": "B3PUT98",
-   "book": "msport",
-   "date": "2026-11-27",
-   "name": "Hot by market: Both teams to score",
-   "kind": "hot",
-   "odds": 13.58,
-   "status": "lost",
-   "hit": 0,
-   "total": 6,
-   "profit": -10.0,
-   "legs": [
-    {
-     "match": "Freiburg v RB Leipzig",
-     "selection": "Yes",
-     "odds": 1.45,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Stuttgart v Eintracht Frankfurt",
-     "selection": "Yes",
-     "odds": 1.34,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Borussia Dortmund v Bayer Leverkusen",
-     "selection": "Yes",
-     "odds": 1.45,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Brest v Paris FC",
-     "selection": "Yes",
-     "odds": 1.76,
-     "result": "lost",
-     "score": null
-    },
-    {
-     "match": "Arsenal v Man City",
-     "selection": "Yes",
-     "odds": 1.66,
-     "result": "pending",
-     "score": null
-    },
-    {
-     "match": "Brighton v Newcastle",
-     "selection": "Yes",
-     "odds": 1.65,
      "result": "pending",
      "score": null
     }
