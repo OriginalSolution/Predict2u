@@ -1,5 +1,5 @@
 {
- "DATA_UPDATED": "2026-11-28T08:16:00Z",
+ "DATA_UPDATED": "2026-11-28T09:26:34Z",
  "stakeCurrency": "GHS",
  "flatStake": 10.0,
  "note": "Figures use only settled booking codes from our published slips. Pending codes are excluded. ROI assumes a flat GH₵10 stake on every settled code (no cash-out). The same slip booked on several sites is counted once in the headline, and once per site in the by-site table.",
@@ -669,8 +669,8 @@
   }
  ],
  "picks": {
-  "settled": 5524,
-  "won": 4099,
+  "settled": 5519,
+  "won": 4094,
   "lost": 1425,
   "winRate": 74.2
  },
@@ -5814,7 +5814,7 @@
    "kind": "slip",
    "odds": 1826619.82,
    "status": "lost",
-   "hit": 36,
+   "hit": 0,
    "total": 63,
    "profit": -10.0,
    "legs": [
@@ -5850,7 +5850,7 @@
      "match": "Diriangen FC Diriamba v Indigenas de Matagalpa FC",
      "selection": "Over 1.5",
      "odds": 1.25,
-     "result": "won",
+     "result": "pending",
      "score": "4:0"
     },
     {
@@ -5864,7 +5864,7 @@
      "match": "Groningen SRL v Willem SRL",
      "selection": "Over 1.5",
      "odds": 1.14,
-     "result": "won",
+     "result": "pending",
      "score": "3:0"
     },
     {
@@ -5955,7 +5955,7 @@
      "match": "KF Malisheva v KF Llapi",
      "selection": "Over 1.5",
      "odds": 1.35,
-     "result": "won",
+     "result": "pending",
      "score": "2:3"
     },
     {
@@ -6108,7 +6108,7 @@
    "kind": "high-odds",
    "odds": 323.35,
    "status": "lost",
-   "hit": 9,
+   "hit": 0,
    "total": 16,
    "profit": -10.0,
    "legs": [
@@ -6234,7 +6234,7 @@
    "kind": "high-odds",
    "odds": 164.97,
    "status": "lost",
-   "hit": 9,
+   "hit": 0,
    "total": 15,
    "profit": -10.0,
    "legs": [
@@ -6353,7 +6353,7 @@
    "kind": "high-odds",
    "odds": 122.57,
    "status": "lost",
-   "hit": 9,
+   "hit": 0,
    "total": 14,
    "profit": -10.0,
    "legs": [
@@ -6465,7 +6465,7 @@
    "kind": "high-odds",
    "odds": 3169.37,
    "status": "lost",
-   "hit": 25,
+   "hit": 0,
    "total": 35,
    "profit": -10.0,
    "legs": [
@@ -6711,7 +6711,7 @@
      "match": "Bolivia v Uruguay",
      "selection": "Uruguay",
      "odds": 1.05,
-     "result": "won",
+     "result": "pending",
      "score": "0:8"
     }
    ]
@@ -6724,7 +6724,7 @@
    "kind": "hot",
    "odds": 14.12,
    "status": "lost",
-   "hit": 1,
+   "hit": 0,
    "total": 16,
    "profit": -10.0,
    "legs": [
@@ -6922,14 +6922,14 @@
      "selection": "Over 0.5",
      "odds": 1.25,
      "result": "won",
-     "score": "1:0"
+     "score": null
     },
     {
      "match": "Venezia FC v Bologna",
      "selection": "Over 0.5",
      "odds": 1.29,
      "result": "lost",
-     "score": "0:0"
+     "score": null
     },
     {
      "match": "Cologne v SV 07 Elversberg",
@@ -7048,14 +7048,14 @@
      "selection": "Over 0.5",
      "odds": 3.3,
      "result": "won",
-     "score": "1:0"
+     "score": null
     },
     {
      "match": "Venezia FC v Bologna",
      "selection": "Over 0.5",
      "odds": 4.75,
      "result": "lost",
-     "score": "0:0"
+     "score": null
     },
     {
      "match": "Cologne v SV 07 Elversberg",
@@ -7102,7 +7102,7 @@
    "kind": "hot",
    "odds": 14.48,
    "status": "lost",
-   "hit": 1,
+   "hit": 0,
    "total": 16,
    "profit": -10.0,
    "legs": [
@@ -7300,14 +7300,14 @@
      "selection": "Over 0.5",
      "odds": 1.25,
      "result": "won",
-     "score": "1:0"
+     "score": null
     },
     {
      "match": "Venezia FC v Bologna",
      "selection": "Over 0.5",
      "odds": 1.29,
      "result": "lost",
-     "score": "0:0"
+     "score": null
     },
     {
      "match": "Cologne v SV 07 Elversberg",
@@ -7354,7 +7354,7 @@
    "kind": "hot",
    "odds": 1.96,
    "status": "lost",
-   "hit": 1,
+   "hit": 0,
    "total": 20,
    "profit": -10.0,
    "legs": [
